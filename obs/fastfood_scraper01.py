@@ -8,8 +8,9 @@ import sys
 import doltcli as dolt
 from doltpy.cli.write import write_pandas
 import json
+from size_scraper import size_scraper
 
-webpage = "https://fastfoodnutrition.org/smoothie-king"
+webpage = "https://fastfoodnutrition.org/quiznos"
 identifier = "NATIONAL"
 
 headers = {
@@ -24,20 +25,66 @@ scheme = parsed.scheme
 web_path_split = web_path.split('/')
 restaurant_name = web_path_split[1].upper().replace("-", " ")
 
+print("    [*] Selecting Menus...")
+db = dolt.Dolt("menus")
+print("    [*] Switching to Master...")
+db.checkout(branch="master")
+print("    [*] Pulling remote")
+db.pull(remote="dolt-origin")
+branch_name = "add_" + web_path_split[1]
+print("    [*] Created and checked out branch " + branch_name)
+try:
+    db.checkout(branch=branch_name, checkout_branch=True)
+except Exception as error:
+    print("      [!] Branch probably already exists, but I can't tell due to non-existant exceptions")
+    print("        " + str(error))
+    db.checkout(branch=branch_name)
+    pass
+
 # print("    [*] One last pull for fun")
 # db.pull(remote="origin")
 
 html_page = requests.get(webpage, headers=headers).text
 
 print(restaurant_name)
-
 ignored_list = [f"/weight-watchers", "/popular", "/discontinued", "/calculator"]
 columns = ["name", "restaurant_name", "identifier", "calories", "fat_g", "cholesterol_mg", "sodium_mg", "carbohydrates_g", "fiber_g", "sugars_g", "protein_g"]
 
-filename = "sizes_" + restaurant_name.replace(" ", "_") + ".csv"
+soup = BeautifulSoup(html_page, "html.parser")
+#
+# for ignored_words in ignored_list:
+#     print(ignored_words)
+
+# Extract every food item
+try:
+    os.remove("url_name.txt")
+except:
+    pass
+
+for link in soup.findAll("a"):
+    if link.get("href") is None:
+        # print(link)
+        continue
+    if not link["href"].startswith(web_path):
+        # print("href not startswith")
+        # print(link)
+        continue
+    if any(ignored_words in link["href"] for ignored_words in ignored_list):
+        print("Ignoring: " + link["href"])
+        # print("fdjaskfhasdklh")
+        continue
+    print("link: " + link.get("href"))
+    url = str(link["href"])
+    with open("url_name.txt", "a+") as output:
+        if url not in output.read():
+            if url.count("/") > 1:
+                output.write(url+"\n")
+
+filename = restaurant_name.replace(" ", "_") + ".csv"
+
 
 question_mark = False
-with open("url.txt", "r") as input_file:
+with open("url_name.txt", "r") as input_file:
     print(" [*] Getting files")
     with open(filename, "a") as output:
         writer = csv.DictWriter(output, fieldnames=columns)
@@ -46,11 +93,11 @@ with open("url.txt", "r") as input_file:
 
         for line in input_file:
             line_list = line.split("/")
-            line_url = "/".join(line_list[2:]) # Could concat scheme + domain but im lazy
+            line_url = line_list[-1]  # Could concat scheme + domain but im lazy
             info_url = webpage + "/" + line_url
             print("PAGE: " + info_url)
 
-            food_name = line_url.upper().replace("-"," ").replace("/", " ") # For exporting
+            food_name = line_url.upper().replace("-"," ") # For exporting
             headers = {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
             }
@@ -81,7 +128,7 @@ with open("url.txt", "r") as input_file:
                         rd = cells[1].get_text().strip()
                     except IndexError:  # This happens when there are multiple sizes
                         with open("url.txt", "a") as url2:
-                            for buttons in info_soup.findAll("a", {"class": "stub_box"}):
+                            for buttons in info_soup.findAll("a", {"class": "stub_box:"}):
                                 url2.write(buttons.get("href") +"\n")
                                 print("       [!] LNIKSKSKSK: " + buttons.get("href"))
                         print(cells)
@@ -198,6 +245,8 @@ if question_mark:
     print("Replace 40489 with Null")
 
 try:
-    os.remove("url.txt")
+    os.remove("url_name.txt")
 except:
     pass
+
+size_scraper(webpage, identifier, headers)
