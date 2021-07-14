@@ -36,7 +36,8 @@ def size_scraper(webpage, identifier, headers):
     ignored_list = [f"/weight-watchers", "/popular", "/discontinued", "/calculator"]
     columns = ["name", "restaurant_name", "identifier", "calories", "fat_g", "cholesterol_mg", "sodium_mg", "carbohydrates_g", "fiber_g", "sugars_g", "protein_g"]
 
-    filename = "sizes_" + restaurant_name.replace(" ", "_") + ".csv"
+    # filename = "sizes_" + restaurant_name.replace(" ", "_") + ".csv"
+    filename = restaurant_name.replace(" ", "_") + ".csv"
 
     question_mark = False
     with open("url.txt", "r") as input_file:
