@@ -10,7 +10,7 @@ from doltpy.cli.write import write_pandas
 import json
 from size_scraper import size_scraper
 
-webpage = "https://fastfoodnutrition.org/smoothie-king"
+webpage = "https://fastfoodnutrition.org/tropical-smoothie-cafe"
 identifier = "NATIONAL"
 
 headers = {
