@@ -128,7 +128,7 @@ with open("url_name.txt", "r") as input_file:
                         rd = cells[1].get_text().strip()
                     except IndexError:  # This happens when there are multiple sizes
                         with open("url.txt", "a") as url2:
-                            for buttons in info_soup.findAll("a", {"class": "stub_box:"}):
+                            for buttons in info_soup.findAll("a", {"class": "stub_box"}):
                                 url2.write(buttons.get("href") +"\n")
                                 print("       [!] LNIKSKSKSK: " + buttons.get("href"))
                         print(cells)
