@@ -1,0 +1,82 @@
+{
+  "head": "refs/heads/add_quiznos",
+  "staged": "ejdq8o49mr8uk0eh3vvvkrg3a8q6d4r4",
+  "working": "ejdq8o49mr8uk0eh3vvvkrg3a8q6d4r4",
+  "merge": null,
+  "remotes": {
+    "dolt-origin": {
+      "name": "dolt-origin",
+      "url": "https://doltremoteapi.dolthub.com/dolthub/menus",
+      "fetch_specs": [
+        "refs/heads/*:refs/remotes/dolt-origin/*"
+      ],
+      "params": {}
+    },
+    "dolt_origin": {
+      "name": "dolt_origin",
+      "url": "https://doltremoteapi.dolthub.com/dolthub/menus",
+      "fetch_specs": [
+        "refs/heads/*:refs/remotes/dolt_origin/*"
+      ],
+      "params": {}
+    },
+    "origin": {
+      "name": "origin",
+      "url": "https://doltremoteapi.dolthub.com/captainstabs/menus",
+      "fetch_specs": [
+        "refs/heads/*:refs/remotes/origin/*"
+      ],
+      "params": {}
+    }
+  },
+  "branches": {
+    "add_firehouse-subs": {
+      "head": "refs/heads/add_firehouse-subs",
+      "remote": "origin"
+    },
+    "add_habit": {
+      "head": "refs/heads/add_habit",
+      "remote": "origin"
+    },
+    "add_ihop": {
+      "head": "refs/heads/add_ihop",
+      "remote": "origin"
+    },
+    "add_jamba-juice": {
+      "head": "refs/heads/add_jamba-juice",
+      "remote": "origin"
+    },
+    "add_little-caesars": {
+      "head": "refs/heads/add_little-caesars",
+      "remote": "origin"
+    },
+    "add_newks-eatery": {
+      "head": "refs/heads/add_newks-eatery",
+      "remote": "origin"
+    },
+    "add_penn-station": {
+      "head": "refs/heads/add_penn-station",
+      "remote": "origin"
+    },
+    "add_pf-changs": {
+      "head": "refs/heads/add_pf-changs",
+      "remote": "origin"
+    },
+    "add_qdoba": {
+      "head": "refs/heads/add_qdoba",
+      "remote": "origin"
+    },
+    "add_quiznos": {
+      "head": "refs/heads/add_quiznos",
+      "remote": "origin"
+    },
+    "add_smashburger": {
+      "head": "refs/heads/add_smashburger",
+      "remote": "origin"
+    },
+    "add_smoothie-king": {
+      "head": "refs/heads/add_smoothie-king",
+      "remote": "origin"
+    }
+  }
+}
