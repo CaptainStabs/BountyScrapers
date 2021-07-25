@@ -8,7 +8,8 @@ __pycache__/
 *.so
 
 # Dolt stuff
-menus/.dolt/
+menus/.dolt/noms/
+menus/.dolt/temptf/
 
 # Distribution / packaging
 .Python
