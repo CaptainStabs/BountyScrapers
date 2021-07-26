@@ -87,7 +87,7 @@ menu_payload = json.dumps({
     "operationName": "MENUS",
     "variables": {
         "input": {
-            "shortUrl": "okiboru", # no idea why this doesn't matter
+            "shortUrl": f"{short_url}", # no idea why this doesn't matter
             "restaurantGuid": f"{restaurant_guid}",
             "menuApi": "DO"
         }
