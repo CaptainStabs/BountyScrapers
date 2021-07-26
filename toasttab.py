@@ -1,8 +1,11 @@
 from bs4 import BeautifulSoup
 import requests
 import json
+from urllib.parse import urlparse
+import os
+import jmespath
 
-webpage = "https://www.toasttab.com/okiboru/v3"
+webpage = "https://www.toasttab.com/hearth-pizza-tavern/v3/"
 url = "https://ws.toasttab.com/consumer-app-bff/v1/graphql" #  API endpoint
 
 # use python's requests module to fetch the webpage as plain html
@@ -20,6 +23,13 @@ soup = BeautifulSoup(html_page, "html.parser")
     # print(script)
     # variable_dict = json.loads(script)["window.OO_GLOBALS"]
     # script = script.replace("window.OO_GLOBALS =", "")
+
+parsed = urlparse(webpage) # Parse url
+web_path = parsed.path # Extract info from parse
+web_path_split = web_path.split("/")
+short_url = web_path_split[1]
+print("   [*] Short URL: " + short_url)
+
 
 print("   [*] Finding third script")
 scripts = soup.find_all("script")[2]
@@ -52,7 +62,7 @@ headers = {
     'content-type': 'application/json',
     'accept': '*/*',
     'apollographql-client-version': '542',
-    'Toast-Restaurant-External-ID': '59b9a2ee-a68e-46d9-a638-be93aa6ae27f',
+    'Toast-Restaurant-External-ID': f'{restaurant_guid}',
     'Sec-Fetch-Site': 'same-site',
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Dest': 'empty'
@@ -62,9 +72,46 @@ response = requests.request("POST", url, headers=headers, data=payload)
 
 parsed = json.loads(response.text)
 # print(json.dumps(parsed, indent=4))
-restaurant_info = 
-restaurant_name = parsed[0]["data"]["restaurantV2"]["whiteLabelName"]
-city = parsed[0]["data"]["restaurantV2"]["location"]["city"].upper()
+restaurant_info = parsed[0]["data"]["restaurantV2"]
+city = restaurant_info["location"]["city"].upper()
+state = restaurant_info["location"]["state"].upper()
 
-identifier = parsed[0]["data"]["restaurantV2"]["whiteLabelName"]
-print(restaurant_name)
+restaurant_name = restaurant_info["whiteLabelName"]
+identifier = f"{city}, {state}"
+
+print("\n   [*] Restaurant Info: ")
+print("      [*] Restaurant Name: " + restaurant_name)
+print("      [*] Identifier: " + identifier)
+
+menu_payload = json.dumps({
+    "operationName": "MENUS",
+    "variables": {
+        "input": {
+            "shortUrl": "okiboru",
+            "restaurantGuid": f"{restaurant_guid}",
+            "menuApi": "DO"
+        }
+    },
+    "query": "query MENUS($input: MenusInput!) {\n  menusV3(input: $input) {\n    ... on MenusResponse {\n      menus {\n        id\n        name\n        groups {\n          guid\n          name\n          items {\n            description\n            guid\n            name\n            outOfStock\n            price\n            calories\n            itemGroupGuid\n            unitOfMeasure\n            usesFractionalQuantity\n            masterId\n            __typename\n          }}}}... on GeneralError {\n      code\n      message\n      __typename\n    }\n    __typename\n  }\n}\n"
+})
+menu_response = requests.request("POST", url, headers=headers, data=menu_payload)
+
+
+# print(menu_response.text)
+# with open("test.json", "w") as output:
+#     output.write(json.dumps(menu_parsed, indent=4))
+
+csv_headers = ["name", "restaurant_name", "identifier", "price_usd"]
+# menu_parsed = json.loads(menu_response.text)
+# menus = menu_parsed["data"]["menusV3"]["menus"] # menusV3
+# menu = json.dumps(menu_parsed, indent=4)
+# print(menu)
+expression = jmespath.compile('data.menusV3.menus[][name, groups[].[name, items[*][name,price,calories]]]')
+#expression = jmespath.compile('length(data)')
+data = json.loads(menu_response.text)
+searched = expression.search(data)
+#print(data)
+print(searched)
+
+# menu_parsed = json.loads(searched)
+# print(json.dumps(menu_parsed, indent=4))
