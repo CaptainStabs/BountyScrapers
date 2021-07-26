@@ -46,7 +46,7 @@ print("      [*] Switching to Master...")
 db.checkout(branch="master")
 print("      [*] Pulling remote")
 db.pull(remote="dolt-origin")
-branch_name = "add_" + short_url
+branch_name = "add_" + short_url.replace("%20", "_")
 print("      [*] Created and checked out branch " + branch_name)
 try:
     db.checkout(branch=branch_name, checkout_branch=True)
@@ -175,6 +175,7 @@ with open(filename, "a") as output:
                     writer.writerow(nutrition_facts)
                 except TypeError as exception:
                     print(exception)
+                    print("   [!!!!] UH OH")
                     pass
 
 
@@ -184,7 +185,8 @@ with open(filename, "a") as output:
 
 choice = input("   [!!!] Automatically (attempt) to load data? Y/N: ")
 if choice.lower() == "y":
-    dolt.write_file(dolt=db, table="menu_items", file_handle=open(filename, "r"), import_mode="create", commit=True, commit_message="Add data")
-    dolt.push(remote="origin", set_upstream=True, refspec=branch_name)
+    # dolt.write_file(dolt=db, table="menu_items", file_handle=open(filename, "r"), import_mode="create", commit=True, commit_message="Add data")
+    dolt.write_file(dolt=db, table="menu_items", file_handle=open(filename, "r"), import_mode="create")
+    # dolt.push(remote="origin", set_upstream=True, refspec=branch_name)
 # menu_parsed = json.loads(searched)
 # print(json.dumps(menu_parsed, indent=4))
