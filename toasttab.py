@@ -127,14 +127,16 @@ for i in range(len(searched)):  # Loop over menus (lists)
         # print(sub_menu[item_list])
         items_list = sub_menu[item_list]
         print(json.dumps(items_list, indent=4))
-        # for items in range(len(items_list[1])):
-        #     # print(items_list[0])
-        #     final_list = items_list[items]
-        #     print(final_list)
-        #     item_name = items_list[0]
-        #     # item_price = item_list[1]
-        #     # item_calories = item_list[2]
-        #     # print(item_name)
+        for items in items_list[1]:
+            # print(items_list[0])
+            # final_list = items_list[items]
+            print(items)
+            print(final_list)
+            item_name = items_list[0]
+            # item_price = item_list[1]
+            # item_calories = item_list[2]
+            # print(item_name)
+
 
 
 
