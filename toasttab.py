@@ -6,10 +6,13 @@ import os
 import jmespath
 import re
 import doltcli as dolt
+from doltcli import DoltHubContext
+# from doltclie import write_file
+
 import csv
 
 # https://www.toasttab.com/hearth-pizza-tavern/v3/
-webpage = "https://www.toasttab.com/il-giallo/v3"
+webpage = "https://www.toasttab.com/arrowhead-ales-brewing-company/v3"
 url = "https://ws.toasttab.com/consumer-app-bff/v1/graphql" #  API endpoint
 
 
@@ -165,7 +168,7 @@ with open(filename, "a") as output:
                 nutrition_facts["name"] =  item_list[0].replace('\\"', " inch ").replace('"', " inch ").upper()
                 nutrition_facts["restaurant_name"] = restaurant_name.upper()
                 nutrition_facts["identifier"] = identifier.upper()
-                nutrition_facts["calories"] = str(item_list[2]).replace("None", "null")
+                nutrition_facts["calories"] = str(item_list[2]).replace("None", "")
                 nutrition_facts["price_usd"] = "{:.2f}".format(item_list[1])
 
                 writer.writerow(nutrition_facts)
@@ -175,6 +178,9 @@ with open(filename, "a") as output:
             #
             #
 
-
+choice = input("   [!!!] Automatically (attmept) to load data? Y/N")
+if choice.lower() == "y":
+    dolt.write_file(dolt=db, table="menu_items", file_handle=open(filename, "r"), import_mode="create", commit=True, commit_message="Add data")
+    dolt.push(remote="origin", set_upstream=True, refspec=branch_name)
 # menu_parsed = json.loads(searched)
 # print(json.dumps(menu_parsed, indent=4))
