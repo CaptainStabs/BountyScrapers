@@ -4,7 +4,7 @@ import json
 from urllib.parse import urlparse
 import os
 import jmespath
-
+# https://www.toasttab.com/hearth-pizza-tavern/v3/
 webpage = "https://www.toasttab.com/hearth-pizza-tavern/v3/"
 url = "https://ws.toasttab.com/consumer-app-bff/v1/graphql" #  API endpoint
 
@@ -87,7 +87,7 @@ menu_payload = json.dumps({
     "operationName": "MENUS",
     "variables": {
         "input": {
-            "shortUrl": "okiboru",
+            "shortUrl": "okiboru", # no idea why this doesn't matter
             "restaurantGuid": f"{restaurant_guid}",
             "menuApi": "DO"
         }
@@ -98,8 +98,9 @@ menu_response = requests.request("POST", url, headers=headers, data=menu_payload
 
 
 # print(menu_response.text)
-# with open("test.json", "w") as output:
-#     output.write(json.dumps(menu_parsed, indent=4))
+menu_parsed = json.loads(menu_response.text)
+with open("test.json", "w") as output:
+    output.write(json.dumps(menu_parsed, indent=4))
 
 csv_headers = ["name", "restaurant_name", "identifier", "price_usd"]
 # menu_parsed = json.loads(menu_response.text)
@@ -111,7 +112,19 @@ expression = jmespath.compile('data.menusV3.menus[][name, groups[].[name, items[
 data = json.loads(menu_response.text)
 searched = expression.search(data)
 #print(data)
-print(searched)
+# print(json.dumps(searched, indent=4))
+
+for i in range(len(searched)):  # Array
+    array_child = searched[i]
+    for j in range(len(array_child)):  # Top level menu
+        sub_menus = array_child # [1][1][1][0]
+        print(json.dumps(sub_menus,indent=4))
+        # print(json.dumps(sub_menus, indent=4))
+        # for sub_menu in range(len(sub_menus)):  # Access specials menus
+        #     menu_name = sub_menus[0]
+        #     print(json.dumps(menu_name, indent=4))
+        #     # print(menu_name)
+
 
 # menu_parsed = json.loads(searched)
 # print(json.dumps(menu_parsed, indent=4))
