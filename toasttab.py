@@ -4,14 +4,32 @@ import json
 from urllib.parse import urlparse
 import os
 import jmespath
+import re
 # https://www.toasttab.com/hearth-pizza-tavern/v3/
 webpage = "https://www.toasttab.com/okiboru/v3/"
 url = "https://ws.toasttab.com/consumer-app-bff/v1/graphql" #  API endpoint
 
-# use python's requests module to fetch the webpage as plain html
+### Dolt stuff
+print("    [*] Selecting Menus...")
+db = dolt.Dolt("menus")
+print("    [*] Switching to Master...")
+db.checkout(branch="master")
+print("    [*] Pulling remote")
+db.pull(remote="dolt-origin")
+branch_name = "add_" + web_path_split[1]
+print("    [*] Created and checked out branch " + branch_name)
+try:
+    db.checkout(branch=branch_name, checkout_branch=True)
+except Exception as error:
+    print("      [!] Branch probably already exists, but I can't tell due to non-existant exceptions")
+    print("        " + str(error))
+    db.checkout(branch=branch_name)
+    pass
+
+### use python's requests module to fetch the webpage as plain html
 html_page = requests.get(webpage).text
 
-# use BeautifulSoup4 (bs4) to parse the returned html_page using BeautifulSoup4's html parser (html.parser)
+### use BeautifulSoup4 (bs4) to parse the returned html_page using BeautifulSoup4's html parser (html.parser)
 soup = BeautifulSoup(html_page, "html.parser")
 
 # for script in soup.find_all("script")[2]:
@@ -35,7 +53,7 @@ print("   [*] Finding third script")
 scripts = soup.find_all("script")[2]
 # print("Scripts: " + str(scripts))
 
-#  Regex? never heard of it
+###  Regex? never heard of it
 script = str(scripts).replace("window.OO_GLOBALS =", "").replace("<script>", "").replace("</script>", "").replace(";", "")
 # print("Script: " + script)
 data = json.loads(script)
@@ -71,7 +89,7 @@ headers = {
 response = requests.request("POST", url, headers=headers, data=payload)
 
 parsed = json.loads(response.text)
-# print(json.dumps(parsed, indent=4))
+
 restaurant_info = parsed[0]["data"]["restaurantV2"]
 city = restaurant_info["location"]["city"].upper()
 state = restaurant_info["location"]["state"].upper()
@@ -102,7 +120,7 @@ menu_response = requests.request("POST", url, headers=headers, data=menu_payload
 # with open("testokiboru.json", "w") as output:
 #     output.write(json.dumps(menu_parsed, indent=4))
 
-csv_headers = ["name", "restaurant_name", "identifier", "price_usd"]
+columns = ["name", "restaurant_name", "identifier", "calories", "price_usd"]
 # menu_parsed = json.loads(menu_response.text)
 # menus = menu_parsed["data"]["menusV3"]["menus"] # menusV3
 # menu = json.dumps(menu_parsed, indent=4)
@@ -116,28 +134,31 @@ searched = expression.search(data)
 
 print("   [*] Beginning loop... Number of menus: " + str(len(searched)))
 print("      [*] Menus: ")
-for i in range(len(searched)):  # Loop over menus (lists)
-    menu_name = searched[i][0]
+### searched[0] # this is second list, containing menus
+nutrition_facts= {}
+for i in range(len(searched)):  # Loop over array (top-level)
+    menu_name = searched[i][0]  # This works
     print("         [*] " + str(menu_name))
+    print("RERESRESRSE " + str(i) )
     menu = searched[i][1]
     # print(json.dumps(menu, indent=4))
-    sub_menu_name = menu[0][0]
-    sub_menu = menu[0]
-    for item_list in range(len(sub_menu)):
-        # print(sub_menu[item_list])
-        items_list = sub_menu[item_list]
-        print(json.dumps(items_list, indent=4))
-        for items in items_list[1]:
-            # print(items_list[0])
-            # final_list = items_list[items]
-            print(items)
-            print(final_list)
-            item_name = items_list[0]
-            # item_price = item_list[1]
-            # item_calories = item_list[2]
-            # print(item_name)
+    for j in range(len(menu)):
+        sub_menu_category = menu[j][0]
+        print("            [*] "+ sub_menu_category)
+        category_items = menu[j][1]
+        for item_list in category_items:
+            # print(sub_menu[item_list])
+            # items_list = category_items[item_list]
+            # print(json.dumps(items_list, indent=4))
+            nutrition_facts["name"] =  item_list[0].replace('\\"', " inch ").replace('"', " inch ")
+            nutrition_facts["restaurant_name"] = restaurant_name.upper()
+            nutrition_facts["identifer"] = identifer.upper()
+            nutrition_facts["calories"] = item_list[2].replace("None", "null")
 
 
+
+        #
+        #
 
 
 # menu_parsed = json.loads(searched)
