@@ -9,7 +9,7 @@ import doltcli as dolt
 import csv
 
 # https://www.toasttab.com/hearth-pizza-tavern/v3/
-webpage = "https://www.toasttab.com/okiboru/v3/"
+webpage = "https://www.toasttab.com/il-giallo/v3"
 url = "https://ws.toasttab.com/consumer-app-bff/v1/graphql" #  API endpoint
 
 
@@ -162,7 +162,7 @@ with open(filename, "a") as output:
                 # print(sub_menu[item_list])
                 # items_list = category_items[item_list]
                 # print(json.dumps(items_list, indent=4))
-                nutrition_facts["name"] =  item_list[0].replace('\\"', " inch ").replace('"', " inch ")
+                nutrition_facts["name"] =  item_list[0].replace('\\"', " inch ").replace('"', " inch ").upper()
                 nutrition_facts["restaurant_name"] = restaurant_name.upper()
                 nutrition_facts["identifier"] = identifier.upper()
                 nutrition_facts["calories"] = str(item_list[2]).replace("None", "null")
