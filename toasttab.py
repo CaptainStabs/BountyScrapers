@@ -10,9 +10,9 @@ from doltcli import DoltHubContext
 # from doltclie import write_file
 
 import csv
-
+webpage = input("Enter URL: ")
 # https://www.toasttab.com/hearth-pizza-tavern/v3/
-webpage = "https://www.toasttab.com/arrowhead-ales-brewing-company/v3"
+# webpage = "https://www.toasttab.com/arbed-llc-142-w-wisconsin-ave/v3"
 url = "https://ws.toasttab.com/consumer-app-bff/v1/graphql" #  API endpoint
 
 
@@ -165,13 +165,17 @@ with open(filename, "a") as output:
                 # print(sub_menu[item_list])
                 # items_list = category_items[item_list]
                 # print(json.dumps(items_list, indent=4))
-                nutrition_facts["name"] =  item_list[0].replace('\\"', " inch ").replace('"', " inch ").upper()
-                nutrition_facts["restaurant_name"] = restaurant_name.upper()
-                nutrition_facts["identifier"] = identifier.upper()
-                nutrition_facts["calories"] = str(item_list[2]).replace("None", "")
-                nutrition_facts["price_usd"] = "{:.2f}".format(item_list[1])
+                try:
+                    nutrition_facts["name"] =  item_list[0].replace('\\"', " inch ").replace('"', " inch ").upper()
+                    nutrition_facts["restaurant_name"] = restaurant_name.upper()
+                    nutrition_facts["identifier"] = identifier.upper()
+                    nutrition_facts["calories"] = str(item_list[2]).replace("None", "")
+                    nutrition_facts["price_usd"] = "{:.2f}".format(item_list[1])
 
-                writer.writerow(nutrition_facts)
+                    writer.writerow(nutrition_facts)
+                except TypeError as exception:
+                    print(exception)
+                    pass
 
 
 
