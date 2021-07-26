@@ -9,22 +9,6 @@ import re
 webpage = "https://www.toasttab.com/okiboru/v3/"
 url = "https://ws.toasttab.com/consumer-app-bff/v1/graphql" #  API endpoint
 
-### Dolt stuff
-print("    [*] Selecting Menus...")
-db = dolt.Dolt("menus")
-print("    [*] Switching to Master...")
-db.checkout(branch="master")
-print("    [*] Pulling remote")
-db.pull(remote="dolt-origin")
-branch_name = "add_" + web_path_split[1]
-print("    [*] Created and checked out branch " + branch_name)
-try:
-    db.checkout(branch=branch_name, checkout_branch=True)
-except Exception as error:
-    print("      [!] Branch probably already exists, but I can't tell due to non-existant exceptions")
-    print("        " + str(error))
-    db.checkout(branch=branch_name)
-    pass
 
 ### use python's requests module to fetch the webpage as plain html
 html_page = requests.get(webpage).text
@@ -48,6 +32,22 @@ web_path_split = web_path.split("/")
 short_url = web_path_split[1]
 print("   [*] Short URL: " + short_url)
 
+### Dolt stuff
+print("    [*] Selecting Menus...")
+db = dolt.Dolt("menus")
+print("    [*] Switching to Master...")
+db.checkout(branch="master")
+print("    [*] Pulling remote")
+db.pull(remote="dolt-origin")
+branch_name = "add_" + web_path_split[1]
+print("    [*] Created and checked out branch " + branch_name)
+try:
+    db.checkout(branch=branch_name, checkout_branch=True)
+except Exception as error:
+    print("      [!] Branch probably already exists, but I can't tell due to non-existant exceptions")
+    print("        " + str(error))
+    db.checkout(branch=branch_name)
+    pass
 
 print("   [*] Finding third script")
 scripts = soup.find_all("script")[2]
@@ -136,29 +136,33 @@ print("   [*] Beginning loop... Number of menus: " + str(len(searched)))
 print("      [*] Menus: ")
 ### searched[0] # this is second list, containing menus
 nutrition_facts= {}
-for i in range(len(searched)):  # Loop over array (top-level)
-    menu_name = searched[i][0]  # This works
-    print("         [*] " + str(menu_name))
-    print("RERESRESRSE " + str(i) )
-    menu = searched[i][1]
-    # print(json.dumps(menu, indent=4))
-    for j in range(len(menu)):
-        sub_menu_category = menu[j][0]
-        print("            [*] "+ sub_menu_category)
-        category_items = menu[j][1]
-        for item_list in category_items:
-            # print(sub_menu[item_list])
-            # items_list = category_items[item_list]
-            # print(json.dumps(items_list, indent=4))
-            nutrition_facts["name"] =  item_list[0].replace('\\"', " inch ").replace('"', " inch ")
-            nutrition_facts["restaurant_name"] = restaurant_name.upper()
-            nutrition_facts["identifer"] = identifer.upper()
-            nutrition_facts["calories"] = item_list[2].replace("None", "null")
+with open(filename, "a") as output:
+    writer = csv.DictWriter(output, fieldnames=columns)
+    if not os.path.isfile(filename) or os.stat(filename).st_size == 0:
+        writer.writeheader()
+    for i in range(len(searched)):  # Loop over array (top-level)
+        menu_name = searched[i][0]  # This works
+        print("         [*] " + str(menu_name))
+        print("RERESRESRSE " + str(i) )
+        menu = searched[i][1]
+        # print(json.dumps(menu, indent=4))
+        for j in range(len(menu)):
+            sub_menu_category = menu[j][0]
+            print("            [*] "+ sub_menu_category)
+            category_items = menu[j][1]
+            for item_list in category_items:
+                # print(sub_menu[item_list])
+                # items_list = category_items[item_list]
+                # print(json.dumps(items_list, indent=4))
+                nutrition_facts["name"] =  item_list[0].replace('\\"', " inch ").replace('"', " inch ")
+                nutrition_facts["restaurant_name"] = restaurant_name.upper()
+                nutrition_facts["identifer"] = identifer.upper()
+                nutrition_facts["calories"] = item_list[2].replace("None", "null")
 
 
 
-        #
-        #
+            #
+            #
 
 
 # menu_parsed = json.loads(searched)
