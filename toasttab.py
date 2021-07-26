@@ -178,7 +178,7 @@ with open(filename, "a") as output:
             #
             #
 
-choice = input("   [!!!] Automatically (attmept) to load data? Y/N")
+choice = input("   [!!!] Automatically (attempt) to load data? Y/N")
 if choice.lower() == "y":
     dolt.write_file(dolt=db, table="menu_items", file_handle=open(filename, "r"), import_mode="create", commit=True, commit_message="Add data")
     dolt.push(remote="origin", set_upstream=True, refspec=branch_name)
