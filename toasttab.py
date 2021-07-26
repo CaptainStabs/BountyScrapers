@@ -5,6 +5,9 @@ from urllib.parse import urlparse
 import os
 import jmespath
 import re
+import doltcli as dolt
+import csv
+
 # https://www.toasttab.com/hearth-pizza-tavern/v3/
 webpage = "https://www.toasttab.com/okiboru/v3/"
 url = "https://ws.toasttab.com/consumer-app-bff/v1/graphql" #  API endpoint
@@ -33,14 +36,15 @@ short_url = web_path_split[1]
 print("   [*] Short URL: " + short_url)
 
 ### Dolt stuff
-print("    [*] Selecting Menus...")
+print("   [*] Dolt stuff: ")
+print("      [*] Selecting Menus...")
 db = dolt.Dolt("menus")
-print("    [*] Switching to Master...")
+print("      [*] Switching to Master...")
 db.checkout(branch="master")
-print("    [*] Pulling remote")
+print("      [*] Pulling remote")
 db.pull(remote="dolt-origin")
-branch_name = "add_" + web_path_split[1]
-print("    [*] Created and checked out branch " + branch_name)
+branch_name = "add_" + short_url
+print("      [*] Created and checked out branch " + branch_name)
 try:
     db.checkout(branch=branch_name, checkout_branch=True)
 except Exception as error:
@@ -48,6 +52,7 @@ except Exception as error:
     print("        " + str(error))
     db.checkout(branch=branch_name)
     pass
+
 
 print("   [*] Finding third script")
 scripts = soup.find_all("script")[2]
@@ -134,6 +139,9 @@ searched = expression.search(data)
 
 print("   [*] Beginning loop... Number of menus: " + str(len(searched)))
 print("      [*] Menus: ")
+
+filename = restaurant_name.replace(" ", "_").replace("/", "_") + ".csv"
+
 ### searched[0] # this is second list, containing menus
 nutrition_facts= {}
 with open(filename, "a") as output:
@@ -156,8 +164,11 @@ with open(filename, "a") as output:
                 # print(json.dumps(items_list, indent=4))
                 nutrition_facts["name"] =  item_list[0].replace('\\"', " inch ").replace('"', " inch ")
                 nutrition_facts["restaurant_name"] = restaurant_name.upper()
-                nutrition_facts["identifer"] = identifer.upper()
-                nutrition_facts["calories"] = item_list[2].replace("None", "null")
+                nutrition_facts["identifier"] = identifier.upper()
+                nutrition_facts["calories"] = str(item_list[2]).replace("None", "null")
+                nutrition_facts["price_usd"] = "{:.2f}".format(item_list[1])
+
+                writer.writerow(nutrition_facts)
 
 
 
