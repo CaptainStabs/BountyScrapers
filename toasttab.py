@@ -5,7 +5,7 @@ from urllib.parse import urlparse
 import os
 import jmespath
 # https://www.toasttab.com/hearth-pizza-tavern/v3/
-webpage = "https://www.toasttab.com/hearth-pizza-tavern/v3/"
+webpage = "https://www.toasttab.com/okiboru/v3/"
 url = "https://ws.toasttab.com/consumer-app-bff/v1/graphql" #  API endpoint
 
 # use python's requests module to fetch the webpage as plain html
@@ -98,9 +98,9 @@ menu_response = requests.request("POST", url, headers=headers, data=menu_payload
 
 
 # print(menu_response.text)
-menu_parsed = json.loads(menu_response.text)
-with open("test.json", "w") as output:
-    output.write(json.dumps(menu_parsed, indent=4))
+# menu_parsed = json.loads(menu_response.text)
+# with open("testokiboru.json", "w") as output:
+#     output.write(json.dumps(menu_parsed, indent=4))
 
 csv_headers = ["name", "restaurant_name", "identifier", "price_usd"]
 # menu_parsed = json.loads(menu_response.text)
@@ -114,16 +114,28 @@ searched = expression.search(data)
 #print(data)
 # print(json.dumps(searched, indent=4))
 
-for i in range(len(searched)):  # Array
-    array_child = searched[i]
-    for j in range(len(array_child)):  # Top level menu
-        sub_menus = array_child # [1][1][1][0]
-        print(json.dumps(sub_menus,indent=4))
-        # print(json.dumps(sub_menus, indent=4))
-        # for sub_menu in range(len(sub_menus)):  # Access specials menus
-        #     menu_name = sub_menus[0]
-        #     print(json.dumps(menu_name, indent=4))
-        #     # print(menu_name)
+print("   [*] Beginning loop... Number of menus: " + str(len(searched)))
+print("      [*] Menus: ")
+for i in range(len(searched)):  # Loop over menus (lists)
+    menu_name = searched[i][0]
+    print("         [*] " + str(menu_name))
+    menu = searched[i][1]
+    # print(json.dumps(menu, indent=4))
+    sub_menu_name = menu[0][0]
+    sub_menu = menu[0]
+    for item_list in range(len(sub_menu)):
+        # print(sub_menu[item_list])
+        items_list = sub_menu[item_list]
+        print(json.dumps(items_list, indent=4))
+        # for items in range(len(items_list[1])):
+        #     # print(items_list[0])
+        #     final_list = items_list[items]
+        #     print(final_list)
+        #     item_name = items_list[0]
+        #     # item_price = item_list[1]
+        #     # item_calories = item_list[2]
+        #     # print(item_name)
+
 
 
 # menu_parsed = json.loads(searched)
