@@ -14,9 +14,9 @@ from tabulate import tabulate
 
 # webpage = input("Enter URL: ")
 # https://www.toasttab.com/hearth-pizza-tavern/v3/
-# webpage = "https://www.toasttab.com/thbtowson/v3"
+webpage = "https://www.toasttab.com/thbtowson/v3"
 
-def toast_tab_scraper(webpage, skip_existing=False, pull_master=True):
+def toast_tab_scraper(webpage, skip_existing=False, pull_master=True, local_branches=True):
     will_skip = False
     url = "https://ws.toasttab.com/consumer-app-bff/v1/graphql" #  API endpoint
 
@@ -51,18 +51,41 @@ def toast_tab_scraper(webpage, skip_existing=False, pull_master=True):
     print("      [*] Pulling remote")
     if pull_master:
         db.pull(remote="dolt-origin")
-    branch_name = "add_" + short_url.replace("%20", "_")
+    branch_name = "add_" + short_url.replace("%20", "_").replace(" ", "_")
     print("      [*] Created and checked out branch " + branch_name)
-    try:
-        db.checkout(branch=branch_name, checkout_branch=True)
-    except Exception as error:
-        print("      [!] Branch probably already exists, but I can't tell due to non-existant exceptions")
-        print("        " + str(error))
-        db.checkout(branch=branch_name)
-        if skip_existing:
-            print("      [!] Skipping!")
+
+    dolt_url = "https://www.dolthub.com/graphql"
+    dolt_headers = {
+        'sec-ch-ua': '"Chromium";v="92", " Not A;Brand";v="99", "Google Chrome";v="92"',
+        'accept': '*/*',
+        'DNT': '1',
+        'sec-ch-ua-mobile': '?0',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36',
+        'content-type': 'application/json',
+        'Sec-Fetch-Site': 'same-origin',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Dest': 'empty',
+        'Cookie': '__hssc=234007937.7.1627339712817; __hssrc=1; __hstc=234007937.8c2dbc8618061048c739d393b08463d5.1622138431678.1627327973246.1627339712817.97; _ga=GA1.2.1181270506.1617050482; _gat_gtag_UA_130584753_2=1; _gid=GA1.2.2133862710.1627078097; amplitude_id_fef1e872c952688acd962d30aa545b9edolthub.com=eyJkZXZpY2VJZCI6IjAzMjc5ZDFkLWY4MzQtNDhjNS04MTMyLWQ1NTI2MzUwMDZiNlIiLCJ1c2VySWQiOm51bGwsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTYyNzMyNDU5ODc1NSwibGFzdEV2ZW50VGltZSI6MTYyNzMyNDY0NDY3MiwiZXZlbnRJZCI6NCwiaWRlbnRpZnlJZCI6MSwic2VxdWVuY2VOdW1iZXIiOjV9; hubspotutk=8c2dbc8618061048c739d393b08463d5; G_ENABLED_IDPS=google; __stripe_mid=4b66cabc-51a2-47a3-8c23-b35a4fcb222f48f55d; __stripe_sid=03c3c926-44c6-4f20-b32f-5b450897d93de0727d; dolthubToken=ldst.v1.6h4rmj56ot1sfhcf3htm9n8im3hb2gfckshkh1aiug0kn45t8j60'
+    }
+
+    if not local_branches:
+        dolt_payload =  json.dumps({"operationName":"BranchSelectorForRepo","variables":{"ownerName":"captainstabs","repoName":"menus"},"query":"query BranchSelectorForRepo($ownerName: String!, $repoName: String!, $pageToken: String) {\n  branchNames(ownerName: $ownerName, repoName: $repoName, pageToken: $pageToken) {\n    list {\n      ...BranchForBranchSelector\n      __typename\n    }\n    nextPageToken\n    __typename\n  }\n}\n\nfragment BranchForBranchSelector on Branch {\n  branchName\n  repoName\n  ownerName\n  __typename\n}\n"})
+        response = requests.request("POST", dolt_url, headers=dolt_headers, data=dolt_payload)
+        if branch_name in response.text:
             will_skip = True
-        pass
+            print("      [!] Found remote branch matching proposed branch, skipping!")
+    if not will_skip:
+        try:
+            db.checkout(branch=branch_name, checkout_branch=True)
+        except Exception as error:
+            print("      [!] Branch probably already exists, but I can't tell due to non-existant exceptions")
+            print("        " + str(error))
+            db.checkout(branch=branch_name)
+            if skip_existing:
+                print("      [!] Skipping!")
+                will_skip = True
+            pass
+
 
     if not will_skip and skip_existing:
             print("   [*] Finding third script")
@@ -156,7 +179,7 @@ def toast_tab_scraper(webpage, skip_existing=False, pull_master=True):
             ### searched[0] # this is second list, containing menus
             nutrition_facts= {}
             nutrition_list = []
-            with open(filename, "a") as output:
+            with open("./submitted/" + filename, "a") as output:
                 writer = csv.DictWriter(output, fieldnames=columns)
                 if not os.path.isfile(filename) or os.stat(filename).st_size == 0:
                     writer.writeheader()
@@ -202,8 +225,9 @@ def toast_tab_scraper(webpage, skip_existing=False, pull_master=True):
                     # dolt.write_file(dolt=db, table="menu_items", file_handle=open(filename, "r"), import_mode="create", do_continue=True)
                 db.push(remote="origin", set_upstream=True, refspec=branch_name)
 
-                branch_name2 = branch_name.replace("_"," ").replace("-", " ") + identifier
-                url = "https://www.dolthub.com/graphql"
+                ### Open a PR
+                branch_name2 = branch_name.replace("_"," ").replace("-", " ") + " " + identifier
+                # dolt_url = "https://www.dolthub.com/graphql"
                 payload = json.dumps({
                     "operationName": "CreatePullRequestWithForks",
                     "variables": {
@@ -220,24 +244,15 @@ def toast_tab_scraper(webpage, skip_existing=False, pull_master=True):
                     },
                     "query": "mutation CreatePullRequestWithForks($title: String!, $description: String!, $fromBranchName: String!, $toBranchName: String!, $fromBranchRepoName: String!, $fromBranchOwnerName: String!, $toBranchRepoName: String!, $toBranchOwnerName: String!, $parentRepoName: String!, $parentOwnerName: String!) {\n  createPullWithForks(\n    title: $title\n    description: $description\n    fromBranchName: $fromBranchName\n    toBranchName: $toBranchName\n    fromBranchOwnerName: $fromBranchOwnerName\n    fromBranchRepoName: $fromBranchRepoName\n    toBranchOwnerName: $toBranchOwnerName\n    toBranchRepoName: $toBranchRepoName\n    parentRepoName: $parentRepoName\n    parentOwnerName: $parentOwnerName\n  ) {\n    _id\n    pullId\n    __typename\n  }\n}\n"
                 })
-                headers = {
-                    'sec-ch-ua': '"Chromium";v="92", " Not A;Brand";v="99", "Google Chrome";v="92"',
-                    'accept': '*/*',
-                    'DNT': '1',
-                    'sec-ch-ua-mobile': '?0',
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36',
-                    'content-type': 'application/json',
-                    'Sec-Fetch-Site': 'same-origin',
-                    'Sec-Fetch-Mode': 'cors',
-                    'Sec-Fetch-Dest': 'empty',
-                    'Cookie': '__hssc=234007937.7.1627339712817; __hssrc=1; __hstc=234007937.8c2dbc8618061048c739d393b08463d5.1622138431678.1627327973246.1627339712817.97; _ga=GA1.2.1181270506.1617050482; _gat_gtag_UA_130584753_2=1; _gid=GA1.2.2133862710.1627078097; amplitude_id_fef1e872c952688acd962d30aa545b9edolthub.com=eyJkZXZpY2VJZCI6IjAzMjc5ZDFkLWY4MzQtNDhjNS04MTMyLWQ1NTI2MzUwMDZiNlIiLCJ1c2VySWQiOm51bGwsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTYyNzMyNDU5ODc1NSwibGFzdEV2ZW50VGltZSI6MTYyNzMyNDY0NDY3MiwiZXZlbnRJZCI6NCwiaWRlbnRpZnlJZCI6MSwic2VxdWVuY2VOdW1iZXIiOjV9; hubspotutk=8c2dbc8618061048c739d393b08463d5; G_ENABLED_IDPS=google; __stripe_mid=4b66cabc-51a2-47a3-8c23-b35a4fcb222f48f55d; __stripe_sid=03c3c926-44c6-4f20-b32f-5b450897d93de0727d; dolthubToken=ldst.v1.6h4rmj56ot1sfhcf3htm9n8im3hb2gfckshkh1aiug0kn45t8j60'
-                }
+
                 print("   [!] Opening PR")
-                response = requests.request("POST", url, headers=headers, data=payload)
+                response = requests.request("POST", dolt_url, headers=dolt_headers, data=payload)
                 print("      [*] Response: " + response)
                 # menu_parsed = json.loads(searched)
                 # print(json.dumps(menu_parsed, indent=4))
             except:
+                with open("fails.txt", "a") as f:
+                    f.write(branch_name)
                 print("    [!] No Bueno")
                 pass
-# toast_tab_scraper(webpage, skip_existing=True, pull_master=False)
+toast_tab_scraper(webpage, skip_existing=True, pull_master=False,  local_branches=False)
