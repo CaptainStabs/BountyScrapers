@@ -166,11 +166,12 @@ with open(filename, "a") as output:
                 # items_list = category_items[item_list]
                 # print(json.dumps(items_list, indent=4))
                 try:
-                    nutrition_facts["name"] =  item_list[0].replace('\\"', " inch ").replace('"', " inch ").upper()
+                    nutrition_facts["name"] =  item_list[0].replace('\\"', " inch ").replace('"', " inch ").replace("�", "'").upper()
                     nutrition_facts["restaurant_name"] = restaurant_name.upper()
                     nutrition_facts["identifier"] = identifier.upper()
                     nutrition_facts["calories"] = str(item_list[2]).replace("None", "")
                     nutrition_facts["price_usd"] = "{:.2f}".format(item_list[1])
+
 
                     writer.writerow(nutrition_facts)
                 except TypeError as exception:
@@ -185,8 +186,8 @@ with open(filename, "a") as output:
 
 choice = input("   [!!!] Automatically (attempt) to load data? Y/N: ")
 if choice.lower() == "y":
-    # dolt.write_file(dolt=db, table="menu_items", file_handle=open(filename, "r"), import_mode="create", commit=True, commit_message="Add data")
-    dolt.write_file(dolt=db, table="menu_items", file_handle=open(filename, "r"), import_mode="create")
-    # dolt.push(remote="origin", set_upstream=True, refspec=branch_name)
+    dolt.write_file(dolt=db, table="menu_items", file_handle=open(filename, "r"), import_mode="create", commit=True, commit_message="Add data", do_continue=True)
+    # dolt.write_file(dolt=db, table="menu_items", file_handle=open(filename, "r"), import_mode="create")
+    db.push(remote="origin", set_upstream=True, refspec=branch_name)
 # menu_parsed = json.loads(searched)
 # print(json.dumps(menu_parsed, indent=4))
