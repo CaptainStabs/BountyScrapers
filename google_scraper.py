@@ -19,7 +19,7 @@ print("   [*] Loop start")
 #                 pass
 
 
-for results in google.search(search_query, tld="com", lang="en", num=100, start=40, stop=None, pause=0.3):
+for results in google.search(search_query, tld="com", lang="en", num=100, start=0, stop=None, pause=0.3):
     # print("All result: " + results
     # print("   All result: " + results)
     print(results)
