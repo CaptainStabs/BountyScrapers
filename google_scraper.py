@@ -19,13 +19,13 @@ print("   [*] Loop start")
 #                 pass
 
 
-for results in google.search(search_query, tld="com", lang="en", num=10, start=0, stop=None, pause=0.3):
+for results in google.search(search_query, tld="com", lang="en", num=100, start=40, stop=None, pause=0.3):
     # print("All result: " + results
     # print("   All result: " + results)
     print(results)
     try:
         print("Scraping")
-        toast_tab_scraper(results, skip_existing=True, pull_master=False)
+        toast_tab_scraper(results, skip_existing=True, pull_master=False,  local_branches=False)
     except:
         # print(exception)
         pass
