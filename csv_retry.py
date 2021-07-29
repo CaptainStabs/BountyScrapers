@@ -85,6 +85,7 @@ def check_if_exists():
                     if index == 2:
                         branch_name1 = "add_" + row["restaurant_name"].replace(" ", "").lower()
                         branch_name2 = "add_" + row["restaurant_name"].replace(" ", "-").lower()
+                        break
 
                 print("      [*] Finding branch's name...")
                 try:
