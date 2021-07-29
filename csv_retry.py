@@ -107,46 +107,46 @@ def check_if_exists():
                         print("      [*] Checking if branch has a PR...")
                         if branch_name not in list_branches:
                             print("         [*] PR does not exist, attempting to write...")
-                                try:
-                                    print("            [*] Trying to write to db...")
-                                    dolt.write_file(dolt=db, table="menu_items", file_handle=open(root + file, "r"), import_mode="create", commit=True, commit_message="Add data", do_continue=True)
-                                        # dolt.write_file(dolt=db, table="menu_items", file_handle=open(filename, "r"), import_mode="create", do_continue=True)
-                                    print("            [*] Trying to push to remote")
-                                    db.push(remote="origin", set_upstream=True, refspec=branch_name)
+                            try:
+                                print("            [*] Trying to write to db...")
+                                dolt.write_file(dolt=db, table="menu_items", file_handle=open(root + file, "r"), import_mode="create", commit=True, commit_message="Add data", do_continue=True)
+                                    # dolt.write_file(dolt=db, table="menu_items", file_handle=open(filename, "r"), import_mode="create", do_continue=True)
+                                print("            [*] Trying to push to remote")
+                                db.push(remote="origin", set_upstream=True, refspec=branch_name)
 
-                                    print("            [*] Trying to create PR...")
-                                    pr_name = branch_name.replace("_"," ").replace("-", " ") + " " + identifier
-                                    # dolt_url = "https://www.dolthub.com/graphql"
-                                    payload = json.dumps({
-                                        "operationName": "CreatePullRequestWithForks",
-                                        "variables": {
-                                            "title": f"{pr_name}",
-                                            "description": "",
-                                            "fromBranchName": f"{branch_name}",
-                                            "toBranchName": "master",
-                                            "fromBranchOwnerName": "captainstabs",
-                                            "fromBranchRepoName": "menus",
-                                            "toBranchOwnerName": "dolthub",
-                                            "toBranchRepoName": "menus",
-                                            "parentOwnerName": "dolthub",
-                                            "parentRepoName": "menus"
-                                        },
-                                        "query": "mutation CreatePullRequestWithForks($title: String!, $description: String!, $fromBranchName: String!, $toBranchName: String!, $fromBranchRepoName: String!, $fromBranchOwnerName: String!, $toBranchRepoName: String!, $toBranchOwnerName: String!, $parentRepoName: String!, $parentOwnerName: String!) {\n  createPullWithForks(\n    title: $title\n    description: $description\n    fromBranchName: $fromBranchName\n    toBranchName: $toBranchName\n    fromBranchOwnerName: $fromBranchOwnerName\n    fromBranchRepoName: $fromBranchRepoName\n    toBranchOwnerName: $toBranchOwnerName\n    toBranchRepoName: $toBranchRepoName\n    parentRepoName: $parentRepoName\n    parentOwnerName: $parentOwnerName\n  ) {\n    _id\n    pullId\n    __typename\n  }\n}\n"
-                                    })
+                                print("            [*] Trying to create PR...")
+                                pr_name = branch_name.replace("_"," ").replace("-", " ") + " " + identifier
+                                # dolt_url = "https://www.dolthub.com/graphql"
+                                payload = json.dumps({
+                                    "operationName": "CreatePullRequestWithForks",
+                                    "variables": {
+                                        "title": f"{pr_name}",
+                                        "description": "",
+                                        "fromBranchName": f"{branch_name}",
+                                        "toBranchName": "master",
+                                        "fromBranchOwnerName": "captainstabs",
+                                        "fromBranchRepoName": "menus",
+                                        "toBranchOwnerName": "dolthub",
+                                        "toBranchRepoName": "menus",
+                                        "parentOwnerName": "dolthub",
+                                        "parentRepoName": "menus"
+                                    },
+                                    "query": "mutation CreatePullRequestWithForks($title: String!, $description: String!, $fromBranchName: String!, $toBranchName: String!, $fromBranchRepoName: String!, $fromBranchOwnerName: String!, $toBranchRepoName: String!, $toBranchOwnerName: String!, $parentRepoName: String!, $parentOwnerName: String!) {\n  createPullWithForks(\n    title: $title\n    description: $description\n    fromBranchName: $fromBranchName\n    toBranchName: $toBranchName\n    fromBranchOwnerName: $fromBranchOwnerName\n    fromBranchRepoName: $fromBranchRepoName\n    toBranchOwnerName: $toBranchOwnerName\n    toBranchRepoName: $toBranchRepoName\n    parentRepoName: $parentRepoName\n    parentOwnerName: $parentOwnerName\n  ) {\n    _id\n    pullId\n    __typename\n  }\n}\n"
+                                })
 
-                                    print("   [!] Opening PR")
-                                    response = requests.request("POST", dolt_url, headers=dolt_headers, data=payload)
-                                    if response.status_code == 200:
-                                        print("      [*] Success!")
-                                    else:
-                                        print("      [!] Couldn't open a PR")
-                                        with open("csv_fails.txt", "a") as output:
-                                            output.write(file + ", " + branch_name + ", PR failure" + "\n")
-                                    print("      [*] Response: " + response)
-                                except:
-                                    print("      [!] Something went wrong!")
+                                print("   [!] Opening PR")
+                                response = requests.request("POST", dolt_url, headers=dolt_headers, data=payload)
+                                if response.status_code == 200:
+                                    print("      [*] Success!")
+                                else:
+                                    print("      [!] Couldn't open a PR")
                                     with open("csv_fails.txt", "a") as output:
-                                        output.write(file + ", " + branch_name + ", other failure" + "\n")
+                                        output.write(file + ", " + branch_name + ", PR failure" + "\n")
+                                print("      [*] Response: " + response)
+                            except:
+                                print("      [!] Something went wrong!")
+                                with open("csv_fails.txt", "a") as output:
+                                    output.write(file + ", " + branch_name + ", other failure" + "\n")
 
 
 
