@@ -87,6 +87,7 @@ def check_if_exists():
                             restaurant_name = row["restaurant_name"]
                             branch_name1 = "add_" + row["restaurant_name"].replace(" ", "").lower()
                             branch_name2 = "add_" + row["restaurant_name"].replace(" ", "-").lower()
+                            branc_name3 = "add_" + row["restaurant_name"].replace(" ","-").rstrip(".")
                             break
 
                     print("      [*] Finding branch's name...")
@@ -101,11 +102,17 @@ def check_if_exists():
                             db.checkout(branch=branch_name2)
                             branch_name = branch_name2
                         except:
-                            print(f"         [!] That also didn't work. Rest Name: {restaurant_name}")
-                            branch_name3 = input("         [?] Type the branchname: ")
-                            db.checkout(branch=branch_name3)
-                            branch_name = branch_name3
+                            print("         [!] That didn't work, trying with: " + branch_name3)
                             pass
+                            try:
+                                db.checkout(branch=branch_name3)
+                                branch_name = branch_name3
+                            except:
+                                print(f"         [!] That also didn't work. Rest Name: {restaurant_name}")
+                                branch_name4 = input("         [?] Type the branchname: ")
+                                db.checkout(branch=branch_name4)
+                                branch_name = branch_name4
+                                pass
                     print("         [*] That worked! branchname: " + branch_name)
                     # response = requests.request("POST", url, headers=headers, data=payload)  # Don't need this anymore, used to check if the branch existed in  a PR
                     print("      [*] Checking if branch has a PR...")
