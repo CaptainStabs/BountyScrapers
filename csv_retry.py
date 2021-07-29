@@ -85,9 +85,9 @@ def check_if_exists():
                     for index, row in enumerate(read_csv):
                         if index == 2:
                             restaurant_name = row["restaurant_name"]
-                            branch_name1 = "add_" + row["restaurant_name"].replace(" ", "").lower()
-                            branch_name2 = "add_" + row["restaurant_name"].replace(" ", "-").lower()
-                            branch_name3 = "add_" + row["restaurant_name"].replace(" ","-").rstrip(".").lower()
+                            branch_name1 = "add_" + row["restaurant_name"].replace(" ", "").replace("'", "").lower()
+                            branch_name2 = "add_" + row["restaurant_name"].replace(" ", "-").replace("'", "").lower()
+                            branch_name3 = "add_" + row["restaurant_name"].replace(" ","-").replace("'", "").rstrip(".").lower()
                             break
 
                     print("      [*] Finding branch's name...")
