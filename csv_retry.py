@@ -139,6 +139,8 @@ def check_if_exists():
                         response = requests.request("POST", dolt_url, headers=dolt_headers, data=payload)
                         if response.status_code == 200:
                             print("      [*] Success!")
+                            os.rename(root + file, root + "verified_submitted/" + file)
+                            
                         else:
                             print("      [!] Couldn't open a PR")
                             with open("csv_fails.txt", "a") as output:
@@ -149,6 +151,9 @@ def check_if_exists():
                         with open("csv_fails.txt", "a") as output:
                             output.write(file + ", " + branch_name + ", other failure" + "\n")
 
+                else:  # If a pr already exists for that file
+                    print("      [*] There is already a PR for this file, moving it out" )
+                    os.rename(root + file, root + "verified_submitted/" + file)
 
 
         #
