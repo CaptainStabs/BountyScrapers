@@ -3,6 +3,9 @@ import os
 import json
 import doltcli as dolt
 import requests
+import googlesearch as google
+from urllib.parse import urlparse
+
 
 dir = ("./submited/")
 
@@ -71,7 +74,7 @@ def get_open_prs(payload, headers, url):
         # print(json.dumps(parsed, indent=4))
 
 def check_if_exists():
-    print("\n   [*] Starting loop")
+    print("   [*] Starting loop")
     with open("open_prs.txt", "r") as output:
         list_branches = output.readlines()
         # from_branches = from_branches.replace("[", "").replace("]", "")
@@ -90,7 +93,7 @@ def check_if_exists():
                             branch_name3 = "add_" + row["restaurant_name"].replace(" ","-").replace("'", "").replace("&", "").replace("--","-").rstrip(".").lower()
                             break
 
-                    print("      [*] Finding branch's name...")
+                    print("\n      [*] Finding branch's name...")
                     try:
                         print("         [*] Checking out branch: " + branch_name1)
                         db.checkout(branch=branch_name1)
@@ -102,6 +105,7 @@ def check_if_exists():
                             db.checkout(branch=branch_name2)
                             branch_name = branch_name2
                         except:
+                            success = False
                             print("         [!] That didn't work, trying with: " + branch_name3)
                             pass
                             try:
@@ -109,9 +113,29 @@ def check_if_exists():
                                 branch_name = branch_name3
                             except:
                                 print(f"         [!] That also didn't work. Rest Name: {restaurant_name}")
-                                branch_name4 = input("         [?] Type the branchname: ")
-                                db.checkout(branch=branch_name4)
-                                branch_name = branch_name4
+                                print("          [*] Last automated try... Searching google...")
+                                search_query = "toasttab " + restaurant_name
+                                for results in google.search(search_query, tld="com", lang="en", num=5, start=0, stop=5, pause=0.3):
+                                    # print(results)
+                                    if "toasttab" in results:
+                                        print("          [*] Might've found one! ")
+                                        parsed_url = urlparse(results)
+                                        url_path = parsed_url.path
+                                        potential_branch = url_path.split("/")[1]
+                                        print("            [*] Potenial branch: " + str(potential_branch))
+                                        try:
+                                            db.checkout(branch="add_" + potential_branch)
+                                            branch_name = potential_branch
+                                            success = True
+                                            break
+                                        except:
+                                            print(f"               [!] Wasn't {potential_branch}, trying again...")
+                                            pass
+
+                                if not success:
+                                    branch_name4 = input("         [?] Type the branchname: ")
+                                    db.checkout(branch=branch_name4)
+                                    branch_name = branch_name4
                                 pass
                     print("         [*] That worked! branchname: " + branch_name)
                     # response = requests.request("POST", url, headers=headers, data=payload)  # Don't need this anymore, used to check if the branch existed in  a PR
