@@ -47,7 +47,7 @@ def get_open_prs(payload, headers, url):
         print("looping rows")
         for row in pulls_list:
             from_branch_name.append(row["fromBranchName"])
-            print(row["fromBranchName"])
+            # print(row["fromBranchName"])
         if parsed["data"]["pulls"]["nextPageToken"]:  # Check if there is still a nextPageToken
             next_page = parsed["data"]["pulls"]["nextPageToken"]
 
@@ -66,12 +66,17 @@ def get_open_prs(payload, headers, url):
             "query": "query PullsForRepo($ownerName: String!, $repoName: String!, $pageToken: String, $filterByState: PullState, $query: String) {\n  pulls(\n    ownerName: $ownerName\n    repoName: $repoName\n    pageToken: $pageToken\n    filterByState: $filterByState\n    query: $query\n  ) {\n    ...PullListForPullList\n    __typename\n  }\n}\n\nfragment PullListForPullList on PullList {\n  list {\n    ...PullForPullList\n    __typename\n  }\n  nextPageToken\n  __typename\n}\n\nfragment PullForPullList on Pull {\n  _id\n  pullId\n  creatorName\n  title\n  fromBranchName\n  __typename\n}\n"
         })
     with open("open_prs.txt", "w") as output:
-        output.write(from_branch_name)
-    # print(from_branch_name)
+        output.write(str(from_branch_name))
+    print(from_branch_name)
         # print(json.dumps(parsed, indent=4))
 
 def check_if_exists():
     print("   [*] Starting loop")
+    with open("open_prs.txt", "r") as output:
+        list_branches = output.readlines()
+        # from_branches = from_branches.replace("[", "").replace("]", "")
+        # list_branches = from_branches.split(", ")
+        # print(from_branches)
     for root, dirs, files in os.walk(dir):
         for file in files:
             with open(root + file, 'r') as f:
@@ -81,29 +86,35 @@ def check_if_exists():
                         branch_name1 = "add_" + row["restaurant_name"].replace(" ", "").lower()
                         branch_name2 = "add_" + row["restaurant_name"].replace(" ", "-").lower()
 
+                        print("      [*] Finding branch's name...")
                         try:
-                            print("      [*] Checking out branch: " + branch_name1)
+                            print("         [*] Checking out branch: " + branch_name1)
                             db.checkout(branch=branch_name1)
                             branch_name = branch_name1
                         except:
-                            print("      [!] That didn't work, trying with: " + branch_name2)
+                            print("         [!] That didn't work, trying with: " + branch_name2)
                             pass
                             try:
                                 db.checkout(branch=branch_name2)
                                 branch_name = branch_name2
                             except:
-                                branch_name3 = input(         "[!] That also didn't work. Type the branchname: ")
+                                branch_name3 = input("         [!] That also didn't work. Type the branchname: ")
                                 db.checkout(branch=branch_name3)
                                 branch_name = branch_name3
                                 pass
-                        response = requests.request("POST", url, headers=headers, data=payload)
-
-                        if branch_name not in response.text:
+                        print("         [*] That worked! branchname: " + branch_name)
+                        # response = requests.request("POST", url, headers=headers, data=payload)  # Don't need this anymore, used to check if the branch existed in  a PR
+                        print("      [*] Checking if branch has a PR...")
+                        if branch_name not in list_branches:
+                            print("         [*] PR does not exist, attempting to write...")
                                 try:
+                                    print("            [*] Trying to write to db...")
                                     dolt.write_file(dolt=db, table="menu_items", file_handle=open(root + file, "r"), import_mode="create", commit=True, commit_message="Add data", do_continue=True)
                                         # dolt.write_file(dolt=db, table="menu_items", file_handle=open(filename, "r"), import_mode="create", do_continue=True)
+                                    print("            [*] Trying to push to remote")
                                     db.push(remote="origin", set_upstream=True, refspec=branch_name)
 
+                                    print("            [*] Trying to create PR...")
                                     pr_name = branch_name.replace("_"," ").replace("-", " ") + " " + identifier
                                     # dolt_url = "https://www.dolthub.com/graphql"
                                     payload = json.dumps({
@@ -142,3 +153,6 @@ def check_if_exists():
                 #
                 # print(read_csv)
                 # input()
+
+# get_open_prs(payload, headers, url)
+check_if_exists()
