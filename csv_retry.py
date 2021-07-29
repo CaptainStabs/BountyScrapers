@@ -71,7 +71,7 @@ def get_open_prs(payload, headers, url):
         # print(json.dumps(parsed, indent=4))
 
 def check_if_exists():
-    print("   [*] Starting loop")
+    print("\n   [*] Starting loop")
     with open("open_prs.txt", "r") as output:
         list_branches = output.readlines()
         # from_branches = from_branches.replace("[", "").replace("]", "")
@@ -84,6 +84,7 @@ def check_if_exists():
                     read_csv = csv.DictReader(f)
                     for index, row in enumerate(read_csv):
                         if index == 2:
+                            restaurant_name = row["restaurant_name"]
                             branch_name1 = "add_" + row["restaurant_name"].replace(" ", "").lower()
                             branch_name2 = "add_" + row["restaurant_name"].replace(" ", "-").lower()
                             break
@@ -100,14 +101,15 @@ def check_if_exists():
                             db.checkout(branch=branch_name2)
                             branch_name = branch_name2
                         except:
-                            branch_name3 = input("         [!] That also didn't work. Type the branchname: ")
+                            print(f"         [!] That also didn't work. Rest Name: {restaurant_name}")
+                            branch_name3 = input("         [?] Type the branchname: ")
                             db.checkout(branch=branch_name3)
                             branch_name = branch_name3
                             pass
                     print("         [*] That worked! branchname: " + branch_name)
                     # response = requests.request("POST", url, headers=headers, data=payload)  # Don't need this anymore, used to check if the branch existed in  a PR
                     print("      [*] Checking if branch has a PR...")
-                    if branch_name not in list_branches:
+                    if not any(branch_name in list_branch for list_branch in list_branches):
                         print("         [*] PR does not exist, attempting to write...")
                         try:
                             print("            [*] Trying to write to db...")
@@ -140,6 +142,7 @@ def check_if_exists():
                             response = requests.request("POST", dolt_url, headers=dolt_headers, data=payload)
                             if response.status_code == 200:
                                 print("      [*] Success!")
+                                f.close()
                                 os.rename(root + file, root + "verified_submitted/" + file)
 
                             else:
@@ -154,6 +157,7 @@ def check_if_exists():
 
                     else:  # If a pr already exists for that file
                         print("      [*] There is already a PR for this file, moving it out" )
+                        f.close()
                         os.rename(root + file, root + "verified_submitted/" + file)
 
 
