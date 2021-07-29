@@ -154,11 +154,13 @@ def check_if_exists():
 
                             else:
                                 print("      [!] Couldn't open a PR")
+                                print("      [!] That's not right. Response code: " + str(response.status_code))
                                 with open("csv_fails.txt", "a") as output:
                                     output.write(file + ", " + branch_name + ", PR failure" + "\n")
                             print("      [*] Response: " + response)
                         except:
                             print("      [!] Something went wrong!")
+                            print("      [!] That's not right. Response code: " + str(response.status_code))
                             with open("csv_fails.txt", "a") as output:
                                 output.write(file + ", " + branch_name + ", other failure" + "\n")
 
