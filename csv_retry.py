@@ -82,7 +82,7 @@ def check_if_exists():
         # list_branches = from_branches.split(", ")
         # print(from_branches)
     for root, dirs, files in os.walk(dir):
-        if "verified_submitted" not in root:
+        if "verified_submitted" or "not_submitted" not in root:
             for file in files:
                 with open(root + file, 'r') as f:
                     read_csv = csv.DictReader(f)
