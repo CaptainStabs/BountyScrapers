@@ -1,9 +1,17 @@
 {
-  "head": "refs/heads/master",
-  "staged": "qeu7bhcg3b9dn52bnfi9927vnfasjhnp",
-  "working": "qeu7bhcg3b9dn52bnfi9927vnfasjhnp",
+  "head": "refs/heads/add_milo-biscuit-1020-franklin-avenue",
+  "staged": "gk6gklbutsd5fjdirfumjg12u58he1e0",
+  "working": "gk6gklbutsd5fjdirfumjg12u58he1e0",
   "merge": null,
   "remotes": {
+    "dolt-origin": {
+      "name": "dolt-origin",
+      "url": "https://doltremoteapi.dolthub.com/dolthub/menus",
+      "fetch_specs": [
+        "refs/heads/*:refs/remotes/dolt-origin/*"
+      ],
+      "params": {}
+    },
     "origin": {
       "name": "origin",
       "url": "https://doltremoteapi.dolthub.com/captainstabs/menus",
@@ -14,6 +22,10 @@
     }
   },
   "branches": {
+    "add_1000-figs": {
+      "head": "refs/heads/add_1000-figs",
+      "remote": "origin"
+    },
     "add_Revival": {
       "head": "refs/heads/add_Revival",
       "remote": "origin"
@@ -26,12 +38,28 @@
       "head": "refs/heads/add_Smokeboxbbq",
       "remote": "origin"
     },
+    "add_Tiffanysfoodtruck": {
+      "head": "refs/heads/add_Tiffanysfoodtruck",
+      "remote": "origin"
+    },
+    "add_ahan-2262-winnebago-st": {
+      "head": "refs/heads/add_ahan-2262-winnebago-st",
+      "remote": "origin"
+    },
     "add_ajs23": {
       "head": "refs/heads/add_ajs23",
       "remote": "origin"
     },
+    "add_all-day-baby": {
+      "head": "refs/heads/add_all-day-baby",
+      "remote": "origin"
+    },
     "add_alvaradostreetbrewerygrill": {
       "head": "refs/heads/add_alvaradostreetbrewerygrill",
+      "remote": "origin"
+    },
+    "add_antiquetablelynn": {
+      "head": "refs/heads/add_antiquetablelynn",
       "remote": "origin"
     },
     "add_attleboro": {
@@ -42,6 +70,10 @@
       "head": "refs/heads/add_awfulsroanoke",
       "remote": "origin"
     },
+    "add_aztlantacos": {
+      "head": "refs/heads/add_aztlantacos",
+      "remote": "origin"
+    },
     "add_bamboo-teri-house-3391-atlantic-ave": {
       "head": "refs/heads/add_bamboo-teri-house-3391-atlantic-ave",
       "remote": "origin"
@@ -50,12 +82,32 @@
       "head": "refs/heads/add_banshee",
       "remote": "origin"
     },
+    "add_bardenayeagle": {
+      "head": "refs/heads/add_bardenayeagle",
+      "remote": "origin"
+    },
     "add_bavarian-bierhaus": {
       "head": "refs/heads/add_bavarian-bierhaus",
       "remote": "origin"
     },
+    "add_bawarchiashburn": {
+      "head": "refs/heads/add_bawarchiashburn",
+      "remote": "origin"
+    },
+    "add_bawarchirichardson": {
+      "head": "refs/heads/add_bawarchirichardson",
+      "remote": "origin"
+    },
     "add_bbskaty": {
       "head": "refs/heads/add_bbskaty",
+      "remote": "origin"
+    },
+    "add_beautiful_rind": {
+      "head": "refs/heads/add_beautiful_rind",
+      "remote": "origin"
+    },
+    "add_beerrun": {
+      "head": "refs/heads/add_beerrun",
       "remote": "origin"
     },
     "add_benreubensknishery": {
@@ -70,8 +122,16 @@
       "head": "refs/heads/add_bhop",
       "remote": "origin"
     },
+    "add_bitefoodcoffee": {
+      "head": "refs/heads/add_bitefoodcoffee",
+      "remote": "origin"
+    },
     "add_blakbarrelcoffeeco": {
       "head": "refs/heads/add_blakbarrelcoffeeco",
+      "remote": "origin"
+    },
+    "add_blended-culture": {
+      "head": "refs/heads/add_blended-culture",
       "remote": "origin"
     },
     "add_blox-af": {
@@ -114,6 +174,10 @@
       "head": "refs/heads/add_btsradford",
       "remote": "origin"
     },
+    "add_burgerimmiamilakes": {
+      "head": "refs/heads/add_burgerimmiamilakes",
+      "remote": "origin"
+    },
     "add_calientes": {
       "head": "refs/heads/add_calientes",
       "remote": "origin"
@@ -126,6 +190,10 @@
       "head": "refs/heads/add_carmiexpress",
       "remote": "origin"
     },
+    "add_carrburritoscarrboro": {
+      "head": "refs/heads/add_carrburritoscarrboro",
+      "remote": "origin"
+    },
     "add_chamaexpress": {
       "head": "refs/heads/add_chamaexpress",
       "remote": "origin"
@@ -134,12 +202,24 @@
       "head": "refs/heads/add_chamberred",
       "remote": "origin"
     },
+    "add_chicknroll": {
+      "head": "refs/heads/add_chicknroll",
+      "remote": "origin"
+    },
     "add_chopt": {
       "head": "refs/heads/add_chopt",
       "remote": "origin"
     },
+    "add_clearskylodge": {
+      "head": "refs/heads/add_clearskylodge",
+      "remote": "origin"
+    },
     "add_coffeehouse": {
       "head": "refs/heads/add_coffeehouse",
+      "remote": "origin"
+    },
+    "add_coffeerecords": {
+      "head": "refs/heads/add_coffeerecords",
       "remote": "origin"
     },
     "add_company-brewing": {
@@ -148,6 +228,10 @@
     },
     "add_craftedyakima": {
       "head": "refs/heads/add_craftedyakima",
+      "remote": "origin"
+    },
+    "add_daikaya": {
+      "head": "refs/heads/add_daikaya",
       "remote": "origin"
     },
     "add_dairydreamweb": {
@@ -170,12 +254,24 @@
       "head": "refs/heads/add_edge",
       "remote": "origin"
     },
+    "add_elzorrosnacks": {
+      "head": "refs/heads/add_elzorrosnacks",
+      "remote": "origin"
+    },
     "add_empire-tacos": {
       "head": "refs/heads/add_empire-tacos",
       "remote": "origin"
     },
+    "add_equator-coffees-fort-mason": {
+      "head": "refs/heads/add_equator-coffees-fort-mason",
+      "remote": "origin"
+    },
     "add_estadio": {
       "head": "refs/heads/add_estadio",
+      "remote": "origin"
+    },
+    "add_ezbachi": {
+      "head": "refs/heads/add_ezbachi",
       "remote": "origin"
     },
     "add_farmuptable": {
@@ -186,12 +282,24 @@
       "head": "refs/heads/add_fatbabys",
       "remote": "origin"
     },
+    "add_fernside": {
+      "head": "refs/heads/add_fernside",
+      "remote": "origin"
+    },
+    "add_fernside2": {
+      "head": "refs/heads/add_fernside2",
+      "remote": "origin"
+    },
     "add_flippin-pancakes": {
       "head": "refs/heads/add_flippin-pancakes",
       "remote": "origin"
     },
     "add_frozen-palm-tree-1965-highway-76-west": {
       "head": "refs/heads/add_frozen-palm-tree-1965-highway-76-west",
+      "remote": "origin"
+    },
+    "add_galit": {
+      "head": "refs/heads/add_galit",
       "remote": "origin"
     },
     "add_goodstrangers": {
@@ -206,12 +314,28 @@
       "head": "refs/heads/add_greenbrierpizzapub",
       "remote": "origin"
     },
+    "add_greenseed": {
+      "head": "refs/heads/add_greenseed",
+      "remote": "origin"
+    },
     "add_guacamole-taqueria": {
       "head": "refs/heads/add_guacamole-taqueria",
       "remote": "origin"
     },
     "add_harmonsbbq": {
       "head": "refs/heads/add_harmonsbbq",
+      "remote": "origin"
+    },
+    "add_heathers": {
+      "head": "refs/heads/add_heathers",
+      "remote": "origin"
+    },
+    "add_highgroundcafeandespressobar": {
+      "head": "refs/heads/add_highgroundcafeandespressobar",
+      "remote": "origin"
+    },
+    "add_highgroundcafeandespressobar2": {
+      "head": "refs/heads/add_highgroundcafeandespressobar2",
       "remote": "origin"
     },
     "add_hilltop-tavern": {
@@ -238,12 +362,24 @@
       "head": "refs/heads/add_ivyroadhouse",
       "remote": "origin"
     },
+    "add_justthai": {
+      "head": "refs/heads/add_justthai",
+      "remote": "origin"
+    },
+    "add_kalayamarket": {
+      "head": "refs/heads/add_kalayamarket",
+      "remote": "origin"
+    },
     "add_kamado-sushi-1400-shattuck-ave-store-1": {
       "head": "refs/heads/add_kamado-sushi-1400-shattuck-ave-store-1",
       "remote": "origin"
     },
     "add_kneads": {
       "head": "refs/heads/add_kneads",
+      "remote": "origin"
+    },
+    "add_kushcoconutgrove": {
+      "head": "refs/heads/add_kushcoconutgrove",
       "remote": "origin"
     },
     "add_lachavena": {
@@ -262,8 +398,20 @@
       "head": "refs/heads/add_liholiho-yacht-club-871-sutter-st",
       "remote": "origin"
     },
+    "add_lindemaries": {
+      "head": "refs/heads/add_lindemaries",
+      "remote": "origin"
+    },
     "add_lolaburger": {
       "head": "refs/heads/add_lolaburger",
+      "remote": "origin"
+    },
+    "add_lost-province": {
+      "head": "refs/heads/add_lost-province",
+      "remote": "origin"
+    },
+    "add_lostprovince": {
+      "head": "refs/heads/add_lostprovince",
       "remote": "origin"
     },
     "add_louisiana-fried-chicken-tarzana-19256-blvd": {
@@ -282,6 +430,10 @@
       "head": "refs/heads/add_mfuniversityoaks",
       "remote": "origin"
     },
+    "add_miabeer": {
+      "head": "refs/heads/add_miabeer",
+      "remote": "origin"
+    },
     "add_michoacana": {
       "head": "refs/heads/add_michoacana",
       "remote": "origin"
@@ -294,16 +446,44 @@
       "head": "refs/heads/add_milkdrunk",
       "remote": "origin"
     },
+    "add_milo-biscuit-1020-franklin-avenue": {
+      "head": "refs/heads/add_milo-biscuit-1020-franklin-avenue",
+      "remote": "origin"
+    },
     "add_mobcraft": {
       "head": "refs/heads/add_mobcraft",
+      "remote": "origin"
+    },
+    "add_mos-irish-pub-college-station": {
+      "head": "refs/heads/add_mos-irish-pub-college-station",
+      "remote": "origin"
+    },
+    "add_mos-irish-pub-college-station-1025-university-dr-ste-101": {
+      "head": "refs/heads/add_mos-irish-pub-college-station-1025-university-dr-ste-101",
       "remote": "origin"
     },
     "add_moshimoshisf": {
       "head": "refs/heads/add_moshimoshisf",
       "remote": "origin"
     },
+    "add_newnanajs": {
+      "head": "refs/heads/add_newnanajs",
+      "remote": "origin"
+    },
+    "add_no-quiero-cocinar-miami": {
+      "head": "refs/heads/add_no-quiero-cocinar-miami",
+      "remote": "origin"
+    },
+    "add_noblecoffee": {
+      "head": "refs/heads/add_noblecoffee",
+      "remote": "origin"
+    },
     "add_nori-sushi": {
       "head": "refs/heads/add_nori-sushi",
+      "remote": "origin"
+    },
+    "add_nqcmiami": {
+      "head": "refs/heads/add_nqcmiami",
       "remote": "origin"
     },
     "add_ollo": {
@@ -314,16 +494,44 @@
       "head": "refs/heads/add_orbitroom",
       "remote": "origin"
     },
+    "add_ovalandale": {
+      "head": "refs/heads/add_ovalandale",
+      "remote": "origin"
+    },
     "add_paikinkao": {
       "head": "refs/heads/add_paikinkao",
+      "remote": "origin"
+    },
+    "add_pamp": {
+      "head": "refs/heads/add_pamp",
       "remote": "origin"
     },
     "add_petoskey-brewing": {
       "head": "refs/heads/add_petoskey-brewing",
       "remote": "origin"
     },
+    "add_phocafebr": {
+      "head": "refs/heads/add_phocafebr",
+      "remote": "origin"
+    },
+    "add_pieceout": {
+      "head": "refs/heads/add_pieceout",
+      "remote": "origin"
+    },
+    "add_pieceout2": {
+      "head": "refs/heads/add_pieceout2",
+      "remote": "origin"
+    },
     "add_pizzaenvy": {
       "head": "refs/heads/add_pizzaenvy",
+      "remote": "origin"
+    },
+    "add_pizzanista": {
+      "head": "refs/heads/add_pizzanista",
+      "remote": "origin"
+    },
+    "add_pizzanista2": {
+      "head": "refs/heads/add_pizzanista2",
       "remote": "origin"
     },
     "add_playwashpint": {
@@ -332,6 +540,14 @@
     },
     "add_pocket-sushi": {
       "head": "refs/heads/add_pocket-sushi",
+      "remote": "origin"
+    },
+    "add_poolside-pies": {
+      "head": "refs/heads/add_poolside-pies",
+      "remote": "origin"
+    },
+    "add_poolside-pies2": {
+      "head": "refs/heads/add_poolside-pies2",
       "remote": "origin"
     },
     "add_pounders-bar-and-grill-parma-heights-6370-york-rd-lktfx": {
@@ -346,12 +562,28 @@
       "head": "refs/heads/add_rasa",
       "remote": "origin"
     },
+    "add_razza": {
+      "head": "refs/heads/add_razza",
+      "remote": "origin"
+    },
     "add_revival": {
       "head": "refs/heads/add_revival",
       "remote": "origin"
     },
     "add_rezza": {
       "head": "refs/heads/add_rezza",
+      "remote": "origin"
+    },
+    "add_roosters-springhurst": {
+      "head": "refs/heads/add_roosters-springhurst",
+      "remote": "origin"
+    },
+    "add_roosters-springhurst2": {
+      "head": "refs/heads/add_roosters-springhurst2",
+      "remote": "origin"
+    },
+    "add_rosalia": {
+      "head": "refs/heads/add_rosalia",
       "remote": "origin"
     },
     "add_route96cafe": {
@@ -370,6 +602,14 @@
       "head": "refs/heads/add_royals",
       "remote": "origin"
     },
+    "add_sandrassoulfusion": {
+      "head": "refs/heads/add_sandrassoulfusion",
+      "remote": "origin"
+    },
+    "add_sausalito-equator": {
+      "head": "refs/heads/add_sausalito-equator",
+      "remote": "origin"
+    },
     "add_seriospizzeria": {
       "head": "refs/heads/add_seriospizzeria",
       "remote": "origin"
@@ -378,16 +618,36 @@
       "head": "refs/heads/add_shearwaterfairfield",
       "remote": "origin"
     },
+    "add_shepards": {
+      "head": "refs/heads/add_shepards",
+      "remote": "origin"
+    },
     "add_shy-bird": {
       "head": "refs/heads/add_shy-bird",
+      "remote": "origin"
+    },
+    "add_slimandhuskyssacoak": {
+      "head": "refs/heads/add_slimandhuskyssacoak",
       "remote": "origin"
     },
     "add_smittyssmashburger": {
       "head": "refs/heads/add_smittyssmashburger",
       "remote": "origin"
     },
+    "add_socialbeastdc": {
+      "head": "refs/heads/add_socialbeastdc",
+      "remote": "origin"
+    },
+    "add_socialcoffeehouse": {
+      "head": "refs/heads/add_socialcoffeehouse",
+      "remote": "origin"
+    },
     "add_stacksbarandgrill": {
       "head": "refs/heads/add_stacksbarandgrill",
+      "remote": "origin"
+    },
+    "add_stephensdeli": {
+      "head": "refs/heads/add_stephensdeli",
       "remote": "origin"
     },
     "add_stoble": {
@@ -400,6 +660,10 @@
     },
     "add_taqueria-el-fundador": {
       "head": "refs/heads/add_taqueria-el-fundador",
+      "remote": "origin"
+    },
+    "add_terragr": {
+      "head": "refs/heads/add_terragr",
       "remote": "origin"
     },
     "add_the-ranch-rockville-in-8608-us-36": {
@@ -416,6 +680,10 @@
     },
     "add_theatomicplace": {
       "head": "refs/heads/add_theatomicplace",
+      "remote": "origin"
+    },
+    "add_thechickenrice": {
+      "head": "refs/heads/add_thechickenrice",
       "remote": "origin"
     },
     "add_thecrazypig": {
@@ -470,12 +738,20 @@
       "head": "refs/heads/add_vista-hermosa-mexican-restaurant-2147-s-california-ave",
       "remote": "origin"
     },
+    "add_washingtonajs": {
+      "head": "refs/heads/add_washingtonajs",
+      "remote": "origin"
+    },
     "add_wengers": {
       "head": "refs/heads/add_wengers",
       "remote": "origin"
     },
     "add_wickedbold": {
       "head": "refs/heads/add_wickedbold",
+      "remote": "origin"
+    },
+    "add_windmillcafeonthesquare": {
+      "head": "refs/heads/add_windmillcafeonthesquare",
       "remote": "origin"
     },
     "add_zuru": {
