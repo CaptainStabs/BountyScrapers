@@ -33,7 +33,8 @@ headers = {
     'content-type': 'application/json',
     'Sec-Fetch-Site': 'same-origin',
     'Sec-Fetch-Mode': 'cors',
-    'Sec-Fetch-Dest': 'empty'
+    'Sec-Fetch-Dest': 'empty',
+    'Cookie': '__hssc=234007937.7.1627339712817; __hssrc=1; __hstc=234007937.8c2dbc8618061048c739d393b08463d5.1622138431678.1627327973246.1627339712817.97; _ga=GA1.2.1181270506.1617050482; _gat_gtag_UA_130584753_2=1; _gid=GA1.2.2133862710.1627078097; amplitude_id_fef1e872c952688acd962d30aa545b9edolthub.com=eyJkZXZpY2VJZCI6IjAzMjc5ZDFkLWY4MzQtNDhjNS04MTMyLWQ1NTI2MzUwMDZiNlIiLCJ1c2VySWQiOm51bGwsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTYyNzMyNDU5ODc1NSwibGFzdEV2ZW50VGltZSI6MTYyNzMyNDY0NDY3MiwiZXZlbnRJZCI6NCwiaWRlbnRpZnlJZCI6MSwic2VxdWVuY2VOdW1iZXIiOjV9; hubspotutk=8c2dbc8618061048c739d393b08463d5; G_ENABLED_IDPS=google; __stripe_mid=4b66cabc-51a2-47a3-8c23-b35a4fcb222f48f55d; __stripe_sid=03c3c926-44c6-4f20-b32f-5b450897d93de0727d; dolthubToken=ldst.v1.6h4rmj56ot1sfhcf3htm9n8im3hb2gfckshkh1aiug0kn45t8j60'
 }
 
 def get_open_prs(payload, headers, url):
@@ -74,8 +75,9 @@ def get_open_prs(payload, headers, url):
     print(from_branch_name)
         # print(json.dumps(parsed, indent=4))
 
-def check_if_exists():
+def check_if_exists(headers):
     print("   [*] Starting loop")
+    dolt_url = "https://www.dolthub.com/graphql"
     with open("open_prs.txt", "r") as output:
         list_branches = output.readlines()
         # from_branches = from_branches.replace("[", "").replace("]", "")
@@ -88,11 +90,13 @@ def check_if_exists():
                     with open(root + file, 'r') as f:
                         read_csv = csv.DictReader(f)
                         for index, row in enumerate(read_csv):
+                            # print("      [*] Getting potential branch names from file")
                             if index == 2:
                                 restaurant_name = row["restaurant_name"]
                                 branch_name1 = "add_" + row["restaurant_name"].replace(" ", "").replace("'", "").replace("&", "").replace("%20", "_").lower()
                                 branch_name2 = "add_" + row["restaurant_name"].replace(" ", "-").replace("'", "").replace("&", "").replace("--", "-").replace("%20", "_").lower()
                                 branch_name3 = "add_" + row["restaurant_name"].replace(" ","-").replace("'", "").replace("&", "").replace("--","-").replace("%20","_").rstrip(".").lower()
+                                identifier = row["identifier"]
                                 break
 
                         print("\n      [*] Finding branch's name...")
@@ -102,18 +106,18 @@ def check_if_exists():
                             branch_name = branch_name1
                             success = True
                         except:
-                            print("         [!] That didn't work, trying with: " + branch_name2)
                             # success = False
                             pass
                             try:
+                                print("         [!] That didn't work, trying with: " + branch_name2)
                                 db.checkout(branch=branch_name2)
                                 branch_name = branch_name2
                                 success = True
                             except:
                                 # success = False
-                                print("         [!] That didn't work, trying with: " + branch_name3)
                                 pass
                                 try:
+                                    print("         [!] That didn't work, trying with: " + branch_name3)
                                     db.checkout(branch=branch_name3)
                                     branch_name = branch_name3
                                     success = True
@@ -179,7 +183,6 @@ def check_if_exists():
                                 try:
                                     print("            [*] Trying to create PR...")
                                     pr_name = branch_name.replace("_"," ").replace("-", " ") + " " + identifier
-                                    dolt_url = "https://www.dolthub.com/graphql"
                                     payload = json.dumps({
                                         "operationName": "CreatePullRequestWithForks",
                                         "variables": {
@@ -198,7 +201,7 @@ def check_if_exists():
                                     })
 
                                     print("   [!] Opening PR")
-                                    response = requests.request("POST", dolt_url, headers=dolt_headers, data=payload)
+                                    response = requests.request("POST", dolt_url, headers=headers, data=payload)
                                     if response.status_code == 200:
                                         print("      [*] Success!")
                                         f.close()
@@ -209,18 +212,20 @@ def check_if_exists():
                                         print("      [!] That's not right. Response code: " + str(response.status_code))
                                         with open("csv_fails.txt", "a") as output:
                                             output.write(file + ", " + branch_name + ", PR failure" + "\n")
-                                    print("      [*] Response: " + response)
-                                except:
+                                    print("      [*] Response: " + str(response))
+                                except Exception as e:
+                                    print(e)
                                     print("      [!] Something went wrong!")
-                                    print(response.text)
+                                    response = requests.request("POST", dolt_url, headers=headers, data=payload)
+                                    print(response.status_code)
                                     with open("csv_fails.txt", "a") as output:
                                         output.write(file + ", " + branch_name + ", other failure" + "\n")
                                     pass
 
                             else:  # If a pr already exists for that file
                                 print("      [*] There is already a PR for this file, moving it out" )
-                                f.close()
-                                os.rename(root + file, root + "verified_submitted/" + file)
+                                f.close()  # Close to prevent in use error
+                                os.rename(root + file, root + "verified_submitted/" + file)  # move the file
 
 
                     #
@@ -228,4 +233,4 @@ def check_if_exists():
                     # input()
 
 # get_open_prs(payload, headers, url)
-check_if_exists()
+check_if_exists(headers=headers)
