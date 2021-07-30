@@ -14,7 +14,7 @@ from tabulate import tabulate
 
 # webpage = input("Enter URL: ")
 # https://www.toasttab.com/hearth-pizza-tavern/v3/
-webpage = "https://www.toasttab.com/thbtowson/v3"
+# webpage = "https://www.toasttab.com/thbtowson/v3"
 
 def toast_tab_scraper(webpage, skip_existing=False, pull_master=True, local_branches=True):
     will_skip = False
@@ -179,7 +179,7 @@ def toast_tab_scraper(webpage, skip_existing=False, pull_master=True, local_bran
             ### searched[0] # this is second list, containing menus
             nutrition_facts= {}
             nutrition_list = []
-            with open("./submitted/" + filename, "a") as output:
+            with open("./submited/" + filename, "a") as output:
                 writer = csv.DictWriter(output, fieldnames=columns)
                 if not os.path.isfile(filename) or os.stat(filename).st_size == 0:
                     writer.writeheader()
@@ -252,7 +252,8 @@ def toast_tab_scraper(webpage, skip_existing=False, pull_master=True, local_bran
                 # print(json.dumps(menu_parsed, indent=4))
             except:
                 with open("fails.txt", "a") as f:
-                    f.write(branch_name)
+                    f.write(branch_name + ", " + webpage + "\n")
                 print("    [!] No Bueno")
                 pass
-toast_tab_scraper(webpage, skip_existing=True, pull_master=False,  local_branches=False)
+
+# toast_tab_scraper(webpage, skip_existing=True, pull_master=False,  local_branches=False)
