@@ -179,7 +179,7 @@ def check_if_exists():
                                 try:
                                     print("            [*] Trying to create PR...")
                                     pr_name = branch_name.replace("_"," ").replace("-", " ") + " " + identifier
-                                    # dolt_url = "https://www.dolthub.com/graphql"
+                                    dolt_url = "https://www.dolthub.com/graphql"
                                     payload = json.dumps({
                                         "operationName": "CreatePullRequestWithForks",
                                         "variables": {
