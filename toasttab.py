@@ -45,7 +45,7 @@ db = dolt.Dolt("menus")
 print("      [*] Switching to Master...")
 db.checkout(branch="master")
 print("      [*] Pulling remote")
-db.pull(remote="dolt-origin")
+# db.pull(remote="dolt-origin")
 branch_name = "add_" + short_url.replace("%20", "_")
 print("      [*] Created and checked out branch " + branch_name)
 try:
@@ -172,8 +172,12 @@ with open(filename, "a") as output:
                     nutrition_facts["calories"] = str(item_list[2]).replace("None", "")
                     nutrition_facts["price_usd"] = "{:.2f}".format(item_list[1])
 
-
-                    writer.writerow(nutrition_facts)
+                    try:
+                        writer.writerow(nutrition_facts)
+                    except UnicodeEncodeError:
+                        print("UnicodeEncodeError")
+                        print(nutrition_facts)
+                        pass
                 except TypeError as exception:
                     print(exception)
                     print("   [!!!!] UH OH")
