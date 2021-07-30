@@ -9,6 +9,7 @@ from urllib.parse import urlparse
 
 dir = ("./submited/")
 
+
 db = dolt.Dolt("menus")
 
 url = "https://www.dolthub.com/graphql"
@@ -146,9 +147,22 @@ def check_if_exists():
                             print("            [*] Trying to write to db...")
                             dolt.write_file(dolt=db, table="menu_items", file_handle=open(root + file, "r"), import_mode="create", commit=True, commit_message="Add data", do_continue=True)
                                 # dolt.write_file(dolt=db, table="menu_items", file_handle=open(filename, "r"), import_mode="create", do_continue=True)
-                            print("            [*] Trying to push to remote")
-                            db.push(remote="origin", set_upstream=True, refspec=branch_name)
+                        except:
+                                print("               [!] Write failure")
+                                with open("csv_fails.txt", "a") as output:
+                                    output.write(file + ", " + branch_name + ", write failure" + "\n")
+                                pass
+                        print("            [*] Trying to push to remote")
 
+                        try:
+                            db.push(remote="origin", set_upstream=True, refspec=branch_name)
+                        except:
+                            print("               [!] Push failed")
+                            with open("csv_fails.txt", "a") as output:
+                                output.write(file + ", " + branch_name + ", push failure" + "\n")
+                            pass
+
+                        try:
                             print("            [*] Trying to create PR...")
                             pr_name = branch_name.replace("_"," ").replace("-", " ") + " " + identifier
                             # dolt_url = "https://www.dolthub.com/graphql"
@@ -186,6 +200,7 @@ def check_if_exists():
                             print("      [!] Something went wrong!")
                             with open("csv_fails.txt", "a") as output:
                                 output.write(file + ", " + branch_name + ", other failure" + "\n")
+                            pass
 
                     else:  # If a pr already exists for that file
                         print("      [*] There is already a PR for this file, moving it out" )
