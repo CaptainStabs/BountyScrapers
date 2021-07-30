@@ -1,0 +1,337 @@
+{
+    "offset": 0,
+    "limit": 25,
+    "next": null,
+    "prev": null,
+    "total": 7,
+    "restaurants": [
+        {
+            "distance": 1.3251603577091706,
+            "id": "30964",
+            "address": {
+                "id": "45030829",
+                "address_string": "530 E. Benson Blvd.\nAnchorage AK 99503",
+                "formatted_address": "530 E. Benson Blvd., Anchorage AK 99503",
+                "place_formatted_address": "530 E. Benson Blvd., Anchorage, AK 99503",
+                "street_address1": "530 E. Benson Blvd.",
+                "street_address2": null,
+                "zip": "99503",
+                "state": "AK",
+                "city": "Anchorage",
+                "country": "USA",
+                "country_alpha2": "US",
+                "is_google_place": false,
+                "name": null,
+                "latitude": 61.1924133,
+                "longitude": -149.8741913,
+                "geo": "61.1924133,-149.8741913"
+            },
+            "contentful_status": "NOTFOUND",
+            "order_ahead": {
+                "is_pickup_ahead_available": true,
+                "is_delivery_ahead_available": false,
+                "is_curbside_ahead_available": false
+            },
+            "cuisines": [
+                "Italian",
+                "Pizza"
+            ],
+            "primary_cuisine": "Italian",
+            "phone": "9074330002",
+            "name": "Saverio's Pizzeria  - Anchorage",
+            "restaurant_company_id": "21393",
+            "short_name": "Saverio's Pizzeria",
+            "is_delivery_available": false,
+            "next_delivery_time": null,
+            "is_pickup_available": true,
+            "next_pickup_time": null,
+            "is_curbside_available": false,
+            "next_curbside_time": null
+        },
+        {
+            "distance": 2.185176602503256,
+            "id": "37360",
+            "address": {
+                "id": "63450532",
+                "address_string": "190 W Tudor Rd\nAnchorage AK 99503",
+                "formatted_address": "190 W Tudor Rd, Anchorage AK 99503",
+                "place_formatted_address": "190 W Tudor Rd, Anchorage, AK 99503",
+                "street_address1": "190 W Tudor Rd",
+                "street_address2": null,
+                "zip": "99503",
+                "state": "AK",
+                "city": "Anchorage",
+                "country": "USA",
+                "country_alpha2": "US",
+                "is_google_place": false,
+                "name": null,
+                "latitude": 61.1802521,
+                "longitude": -149.8852081,
+                "geo": "61.1802521,-149.8852081"
+            },
+            "contentful_status": "NOTFOUND",
+            "order_ahead": {
+                "is_pickup_ahead_available": true,
+                "is_delivery_ahead_available": false,
+                "is_curbside_ahead_available": true
+            },
+            "cuisines": [
+                "American (Traditional)"
+            ],
+            "primary_cuisine": null,
+            "phone": "9075638443",
+            "name": "Bear Paw Bar & Grill - Anchorage",
+            "restaurant_company_id": "25271",
+            "short_name": "Bear Paw Bar & Grill",
+            "is_delivery_available": false,
+            "next_delivery_time": "202107301200",
+            "is_pickup_available": false,
+            "next_pickup_time": "202107301200",
+            "is_curbside_available": false,
+            "next_curbside_time": "202107301200"
+        },
+        {
+            "distance": 3.759978428516996,
+            "id": "37408",
+            "address": {
+                "id": "63571426",
+                "address_string": "6307 Debarr Rd\nAnchorage AK 99504",
+                "formatted_address": "6307 Debarr Rd, Anchorage AK 99504",
+                "place_formatted_address": "6307 Debarr Rd, Anchorage, AK 99504",
+                "street_address1": "6307 Debarr Rd",
+                "street_address2": null,
+                "zip": "99504",
+                "state": "AK",
+                "city": "Anchorage",
+                "country": "USA",
+                "country_alpha2": "US",
+                "is_google_place": false,
+                "name": null,
+                "latitude": 61.2100487,
+                "longitude": -149.7631226,
+                "geo": "61.2100487,-149.7631226"
+            },
+            "contentful_status": "NOTFOUND",
+            "order_ahead": {
+                "is_pickup_ahead_available": true,
+                "is_delivery_ahead_available": false,
+                "is_curbside_ahead_available": true
+            },
+            "cuisines": [
+                "Mexican"
+            ],
+            "primary_cuisine": null,
+            "phone": "9073386109",
+            "name": "Hacienda Mexican Restaurant - Anchorage",
+            "restaurant_company_id": "25307",
+            "short_name": "Hacienda Mexican Restaurant",
+            "is_delivery_available": true,
+            "next_delivery_time": null,
+            "is_pickup_available": true,
+            "next_pickup_time": null,
+            "is_curbside_available": true,
+            "next_curbside_time": null
+        },
+        {
+            "distance": 4.124627414086461,
+            "id": "26910",
+            "address": {
+                "id": "39522777",
+                "address_string": "1041 E 76th Ave\nAnchorage AK 99518",
+                "formatted_address": "1041 E 76th Ave, Anchorage AK 99518",
+                "place_formatted_address": "1041 E 76th Ave, Anchorage, AK 99518",
+                "street_address1": "1041 E 76th Ave",
+                "street_address2": null,
+                "zip": "99518",
+                "state": "AK",
+                "city": "Anchorage",
+                "country": "USA",
+                "country_alpha2": "US",
+                "is_google_place": false,
+                "name": null,
+                "latitude": 61.1522408,
+                "longitude": -149.862381,
+                "geo": "61.1522408,-149.8623810"
+            },
+            "contentful_status": "NOTFOUND",
+            "order_ahead": {
+                "is_pickup_ahead_available": true,
+                "is_delivery_ahead_available": false,
+                "is_curbside_ahead_available": false
+            },
+            "cuisines": [
+                "Catering"
+            ],
+            "primary_cuisine": null,
+            "phone": "9076776888",
+            "name": "Main Event Grill - Anchorage",
+            "restaurant_company_id": "18736",
+            "short_name": "Main Event Grill",
+            "is_delivery_available": true,
+            "next_delivery_time": null,
+            "is_pickup_available": true,
+            "next_pickup_time": null,
+            "is_curbside_available": false,
+            "next_curbside_time": null
+        },
+        {
+            "distance": 4.803892584976929,
+            "id": "29346",
+            "address": {
+                "id": "42078216",
+                "address_string": "385 Muldoon Rd\nAnchorage AK 99504",
+                "formatted_address": "385 Muldoon Rd, Anchorage AK 99504",
+                "place_formatted_address": "385 Muldoon Rd, Anchorage, AK 99504",
+                "street_address1": "385 Muldoon Rd",
+                "street_address2": null,
+                "zip": "99504",
+                "state": "AK",
+                "city": "Anchorage",
+                "country": "USA",
+                "country_alpha2": "US",
+                "is_google_place": false,
+                "name": null,
+                "latitude": 61.2188683,
+                "longitude": -149.7324829,
+                "geo": "61.2188683,-149.7324829"
+            },
+            "contentful_status": "NOTFOUND",
+            "order_ahead": {
+                "is_pickup_ahead_available": true,
+                "is_delivery_ahead_available": false,
+                "is_curbside_ahead_available": false
+            },
+            "cuisines": [
+                "Mexican"
+            ],
+            "primary_cuisine": null,
+            "phone": "9073385393",
+            "name": "El Rodeo Mexican Restaurant - Anchorage",
+            "restaurant_company_id": "20369",
+            "short_name": "El Rodeo Mexican Restaurant",
+            "is_delivery_available": false,
+            "next_delivery_time": null,
+            "is_pickup_available": true,
+            "next_pickup_time": null,
+            "is_curbside_available": false,
+            "next_curbside_time": null
+        },
+        {
+            "distance": 5.109703461499712,
+            "id": "42340",
+            "address": {
+                "id": "86939183",
+                "address_string": "9191 Old Seward Hwy\nAnchorage AK 99515",
+                "formatted_address": "9191 Old Seward Hwy, Anchorage AK 99515",
+                "place_formatted_address": "9191 Old Seward Hwy, Anchorage, AK 99515",
+                "street_address1": "9191 Old Seward Hwy",
+                "street_address2": null,
+                "zip": "99515",
+                "state": "AK",
+                "city": "Anchorage",
+                "country": "USA",
+                "country_alpha2": "US",
+                "is_google_place": false,
+                "name": null,
+                "latitude": 61.1379089,
+                "longitude": -149.8624725,
+                "geo": "61.1379089,-149.8624725"
+            },
+            "contentful_status": "NOTFOUND",
+            "order_ahead": {
+                "is_pickup_ahead_available": true,
+                "is_delivery_ahead_available": false,
+                "is_curbside_ahead_available": false
+            },
+            "cuisines": [
+                "Asian Fusion"
+            ],
+            "primary_cuisine": null,
+            "phone": "9073752030",
+            "name": "Jeepney - Anchorage",
+            "restaurant_company_id": "28603",
+            "short_name": "Jeepney",
+            "is_delivery_available": true,
+            "next_delivery_time": null,
+            "is_pickup_available": true,
+            "next_pickup_time": null,
+            "is_curbside_available": false,
+            "next_curbside_time": null
+        },
+        {
+            "distance": 5.575416753019883,
+            "id": "39899",
+            "address": {
+                "id": "74581234",
+                "address_string": "9900 Old Seward Hwy #2\nAnchorage AK 99515",
+                "formatted_address": "9900 Old Seward Hwy #2, Anchorage AK 99515",
+                "place_formatted_address": "9900 Old Seward Hwy #2, Anchorage, AK 99515",
+                "street_address1": "9900 Old Seward Hwy #2",
+                "street_address2": null,
+                "zip": "99515",
+                "state": "AK",
+                "city": "Anchorage",
+                "country": "USA",
+                "country_alpha2": "US",
+                "is_google_place": false,
+                "name": null,
+                "latitude": 61.1310539,
+                "longitude": -149.8650055,
+                "geo": "61.1310539,-149.8650055"
+            },
+            "contentful_status": "NOTFOUND",
+            "order_ahead": {
+                "is_pickup_ahead_available": true,
+                "is_delivery_ahead_available": false,
+                "is_curbside_ahead_available": true
+            },
+            "cuisines": [
+                "Deli"
+            ],
+            "primary_cuisine": null,
+            "phone": "9073365704",
+            "name": "L'Aroma Bakery & Deli Southside - Anchorage",
+            "restaurant_company_id": "26948",
+            "short_name": "L'Aroma Bakery & Deli",
+            "is_delivery_available": false,
+            "next_delivery_time": null,
+            "is_pickup_available": true,
+            "next_pickup_time": null,
+            "is_curbside_available": true,
+            "next_curbside_time": null
+        }
+    ],
+    "aggregations": {
+        "cuisines": [
+            {
+                "key": "Mexican",
+                "doc_count": 2
+            },
+            {
+                "key": "American (Traditional)",
+                "doc_count": 1
+            },
+            {
+                "key": "Asian Fusion",
+                "doc_count": 1
+            },
+            {
+                "key": "Catering",
+                "doc_count": 1
+            },
+            {
+                "key": "Deli",
+                "doc_count": 1
+            },
+            {
+                "key": "Italian",
+                "doc_count": 1
+            },
+            {
+                "key": "Pizza",
+                "doc_count": 1
+            }
+        ]
+    },
+    "version": "3.0"
+}
