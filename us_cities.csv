@@ -1,14 +1,4 @@
 ID,STATE_CODE,STATE_NAME,CITY,COUNTY,LATITUDE,LONGITUDE
-1,AK,Alaska,Adak,"Aleutians West",55.999722,-161.207778
-2,AK,Alaska,Akiachak,Bethel,60.891854,-161.39233
-3,AK,Alaska,Akiak,Bethel,60.890632,-161.199325
-4,AK,Alaska,Akutan,"Aleutians East",54.143012,-165.785368
-5,AK,Alaska,Alakanuk,"Kusilvak",62.746967,-164.60228
-6,AK,Alaska,Aleknagik,Dillingham,59.269688,-158.619882
-7,AK,Alaska,Allakaket,"Yukon Koyukuk",66.543197,-152.712155
-8,AK,Alaska,Ambler,"Northwest Arctic",67.46951,-156.455652
-9,AK,Alaska,"Anaktuvuk Pass","North Slope",68.11878,-151.679005
-10,AK,Alaska,"Anchor Point","Kenai Peninsula",59.788818,-151.732933
 11,AK,Alaska,Anchorage,Anchorage,61.211571,-149.876077
 12,AK,Alaska,Anderson,Denali,64.300693,-149.1718
 13,AK,Alaska,Angoon,"Skagway Hoonah Angoon",57.569832,-134.371052
