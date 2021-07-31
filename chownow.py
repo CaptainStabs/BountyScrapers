@@ -165,7 +165,7 @@ with open("us_cities.csv", "r") as location_file:
                                         nutrition_facts["name"] = items["name"].replace('\\"', " inch ").replace('"', " inch ").upper()
                                         pass
                                     nutrition_facts["restaurant_name"] = restaurant_name.upper()
-                                    nutrition_facts["identifier"] = identifier.upper()
+                                    nutrition_facts["identifier"] = "CHOWNOW, " + identifier.upper()
                                     try:
                                         nutrition_facts["price_usd"] =  "{:.2f}".format(items["price"])
                                     except KeyError as e:
