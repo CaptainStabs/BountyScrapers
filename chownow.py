@@ -124,9 +124,9 @@ with open("us_cities.csv", "r") as location_file:
                     # with open("first_query.txt", "a") as f:
                     #     f.write(json.dumps(parsed_response, indent=4))
                     #     input()
-                filename = "add_" + restaurant_name.replace(" ", "_").replace("'","").lower() + ".csv"
-                branch_name = "add_" + restaurant_name.replace(" ", "-").replace("'","").replace("\n","").replace("&","and").replace("--","-").lower()
-
+                # filename = "add_" + restaurant_name.replace(" ", "_").replace("'","").replace("\n","").replace("&","and").replace("--","-").replace("_|_", "").replace(".", "-").replace("?","").lower() + ".csv"
+                branch_name = "add_" + restaurant_name.replace(" ", "-").replace("'","").replace("\n","").replace("&","and").replace("--","-").replace("|", "").replace(".", "-").replace("?","").replace("(", "").replace(")","").replace('"', "").replace("!", "").lower()
+                filename = branch_name + ".csv"
                 # print(json.dumps(menu_parsed, indent=4))
 
 
@@ -139,7 +139,7 @@ with open("us_cities.csv", "r") as location_file:
                 #     print("        " + str(error))
                 #     db.checkout(branch=branch_name)
                 # print("      [*] Opening file")
-                file_path = "./submited/" + filename
+                file_path = "./submited/" + filename.replace("/", "-").replace("_|_", "")
                 with open(file_path, "a") as output:
                     writer = csv.DictWriter(output, fieldnames=columns)
                     if not os.path.isfile(file_path) or os.stat(file_path).st_size == 0:
