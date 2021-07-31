@@ -121,6 +121,7 @@ def check_if_exists(headers):
                                 # branch_name3 = "add_" + row["restaurant_name"].replace(" ","-").replace("'", "").replace("&", "").replace("--","-").replace("%20","_").rstrip(".").lower()
                                 identifier = row["identifier"]
                                 branch_name = "add_" + re.sub("[^0-9a-zA-Z]+", "-", restaurant_name).lower()
+                                break
 
                         print("\n      [*] Finding branch's name...")
                         print("         [*] Checking out branch: " + branch_name)
