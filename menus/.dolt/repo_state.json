@@ -1,7 +1,7 @@
 {
-  "head": "refs/heads/add_milo-biscuit-1020-franklin-avenue",
-  "staged": "gk6gklbutsd5fjdirfumjg12u58he1e0",
-  "working": "gk6gklbutsd5fjdirfumjg12u58he1e0",
+  "head": "refs/heads/add_cuca-s-mexican-food",
+  "staged": "jgnuf8bklq7k327iujnpbope4p2fcae3",
+  "working": "jgnuf8bklq7k327iujnpbope4p2fcae3",
   "merge": null,
   "remotes": {
     "dolt-origin": {
@@ -22,8 +22,64 @@
     }
   },
   "branches": {
+    "add_-bites": {
+      "head": "refs/heads/add_-bites",
+      "remote": "origin"
+    },
+    "add_-grits": {
+      "head": "refs/heads/add_-grits",
+      "remote": "origin"
+    },
     "add_1000-figs": {
       "head": "refs/heads/add_1000-figs",
+      "remote": "origin"
+    },
+    "add_1812-pizza-company": {
+      "head": "refs/heads/add_1812-pizza-company",
+      "remote": "origin"
+    },
+    "add_2-krzy-grill": {
+      "head": "refs/heads/add_2-krzy-grill",
+      "remote": "origin"
+    },
+    "add_360-degrees-gourmet-burritos": {
+      "head": "refs/heads/add_360-degrees-gourmet-burritos",
+      "remote": "origin"
+    },
+    "add_3rd-street-coffee": {
+      "head": "refs/heads/add_3rd-street-coffee",
+      "remote": "origin"
+    },
+    "add_4-paws-coffee-co-": {
+      "head": "refs/heads/add_4-paws-coffee-co-",
+      "remote": "origin"
+    },
+    "add_54-mint-forno-italiano": {
+      "head": "refs/heads/add_54-mint-forno-italiano",
+      "remote": "origin"
+    },
+    "add_54-mint-ristorante-italiano": {
+      "head": "refs/heads/add_54-mint-ristorante-italiano",
+      "remote": "origin"
+    },
+    "add_55-thai-kitchen": {
+      "head": "refs/heads/add_55-thai-kitchen",
+      "remote": "origin"
+    },
+    "add_5anddiner": {
+      "head": "refs/heads/add_5anddiner",
+      "remote": "origin"
+    },
+    "add_5anddiner--surprise": {
+      "head": "refs/heads/add_5anddiner--surprise",
+      "remote": "origin"
+    },
+    "add_5anddiner-northern": {
+      "head": "refs/heads/add_5anddiner-northern",
+      "remote": "origin"
+    },
+    "add_8-mile-store": {
+      "head": "refs/heads/add_8-mile-store",
       "remote": "origin"
     },
     "add_Revival": {
@@ -42,52 +98,500 @@
       "head": "refs/heads/add_Tiffanysfoodtruck",
       "remote": "origin"
     },
+    "add_a-1-pizza-and-wings": {
+      "head": "refs/heads/add_a-1-pizza-and-wings",
+      "remote": "origin"
+    },
+    "add_a-part-cafe": {
+      "head": "refs/heads/add_a-part-cafe",
+      "remote": "origin"
+    },
+    "add_a-w-lins-asian-cuisine": {
+      "head": "refs/heads/add_a-w-lins-asian-cuisine",
+      "remote": "origin"
+    },
+    "add_a-w-restaurant": {
+      "head": "refs/heads/add_a-w-restaurant",
+      "remote": "origin"
+    },
+    "add_aandw-restaurant": {
+      "head": "refs/heads/add_aandw-restaurant",
+      "remote": "origin"
+    },
+    "add_abe-s-pizza": {
+      "head": "refs/heads/add_abe-s-pizza",
+      "remote": "origin"
+    },
+    "add_ace-wasabi-s-rock-n-roll-sushi": {
+      "head": "refs/heads/add_ace-wasabi-s-rock-n-roll-sushi",
+      "remote": "origin"
+    },
+    "add_ace-wasabis-rock-n-roll-sushi": {
+      "head": "refs/heads/add_ace-wasabis-rock-n-roll-sushi",
+      "remote": "origin"
+    },
+    "add_achilles": {
+      "head": "refs/heads/add_achilles",
+      "remote": "origin"
+    },
+    "add_acme-burger": {
+      "head": "refs/heads/add_acme-burger",
+      "remote": "origin"
+    },
+    "add_agouras-famous-deli": {
+      "head": "refs/heads/add_agouras-famous-deli",
+      "remote": "origin"
+    },
     "add_ahan-2262-winnebago-st": {
       "head": "refs/heads/add_ahan-2262-winnebago-st",
+      "remote": "origin"
+    },
+    "add_aharon-coffee-and-roasting-co-": {
+      "head": "refs/heads/add_aharon-coffee-and-roasting-co-",
+      "remote": "origin"
+    },
+    "add_ahba": {
+      "head": "refs/heads/add_ahba",
+      "remote": "origin"
+    },
+    "add_ajanta-indian-cuisine": {
+      "head": "refs/heads/add_ajanta-indian-cuisine",
+      "remote": "origin"
+    },
+    "add_aji-limo-peruvian": {
+      "head": "refs/heads/add_aji-limo-peruvian",
+      "remote": "origin"
+    },
+    "add_ajito": {
+      "head": "refs/heads/add_ajito",
+      "remote": "origin"
+    },
+    "add_ajo-als-mexican-cafe": {
+      "head": "refs/heads/add_ajo-als-mexican-cafe",
+      "remote": "origin"
+    },
+    "add_ajs-sandwiches": {
+      "head": "refs/heads/add_ajs-sandwiches",
       "remote": "origin"
     },
     "add_ajs23": {
       "head": "refs/heads/add_ajs23",
       "remote": "origin"
     },
+    "add_akai-hana-sushi-and-grill": {
+      "head": "refs/heads/add_akai-hana-sushi-and-grill",
+      "remote": "origin"
+    },
+    "add_alabama-bliss": {
+      "head": "refs/heads/add_alabama-bliss",
+      "remote": "origin"
+    },
+    "add_alabama-grill": {
+      "head": "refs/heads/add_alabama-grill",
+      "remote": "origin"
+    },
+    "add_alameda-health-system-fairmont-hospital": {
+      "head": "refs/heads/add_alameda-health-system-fairmont-hospital",
+      "remote": "origin"
+    },
+    "add_alamo-square-seafood-grill": {
+      "head": "refs/heads/add_alamo-square-seafood-grill",
+      "remote": "origin"
+    },
+    "add_alanas-cafe": {
+      "head": "refs/heads/add_alanas-cafe",
+      "remote": "origin"
+    },
+    "add_albatross": {
+      "head": "refs/heads/add_albatross",
+      "remote": "origin"
+    },
+    "add_aldos-pizza-pies--downtown": {
+      "head": "refs/heads/add_aldos-pizza-pies--downtown",
+      "remote": "origin"
+    },
+    "add_ali-baba-s-kitchen": {
+      "head": "refs/heads/add_ali-baba-s-kitchen",
+      "remote": "origin"
+    },
+    "add_ali-babas-kitchen": {
+      "head": "refs/heads/add_ali-babas-kitchen",
+      "remote": "origin"
+    },
+    "add_aliacci-pizza-and-pasta": {
+      "head": "refs/heads/add_aliacci-pizza-and-pasta",
+      "remote": "origin"
+    },
+    "add_alkobar-quick-stop-and-deli": {
+      "head": "refs/heads/add_alkobar-quick-stop-and-deli",
+      "remote": "origin"
+    },
+    "add_alkobar-quick-stop-deli": {
+      "head": "refs/heads/add_alkobar-quick-stop-deli",
+      "remote": "origin"
+    },
     "add_all-day-baby": {
       "head": "refs/heads/add_all-day-baby",
+      "remote": "origin"
+    },
+    "add_all-star-drafts-sports-bar-grill": {
+      "head": "refs/heads/add_all-star-drafts-sports-bar-grill",
+      "remote": "origin"
+    },
+    "add_alondra-s-hot-wings": {
+      "head": "refs/heads/add_alondra-s-hot-wings",
       "remote": "origin"
     },
     "add_alvaradostreetbrewerygrill": {
       "head": "refs/heads/add_alvaradostreetbrewerygrill",
       "remote": "origin"
     },
+    "add_amakara-japanese-restaurant": {
+      "head": "refs/heads/add_amakara-japanese-restaurant",
+      "remote": "origin"
+    },
+    "add_amapola-deli-and-market": {
+      "head": "refs/heads/add_amapola-deli-and-market",
+      "remote": "origin"
+    },
+    "add_amapola-deli-market": {
+      "head": "refs/heads/add_amapola-deli-market",
+      "remote": "origin"
+    },
+    "add_amazing-siam": {
+      "head": "refs/heads/add_amazing-siam",
+      "remote": "origin"
+    },
+    "add_ameci-madera": {
+      "head": "refs/heads/add_ameci-madera",
+      "remote": "origin"
+    },
+    "add_ameci-pizza-and-pasta": {
+      "head": "refs/heads/add_ameci-pizza-and-pasta",
+      "remote": "origin"
+    },
+    "add_ameci-pizza-and-pasta-northridge/porter-ranch-at-rinaldi-and-tampa": {
+      "head": "refs/heads/add_ameci-pizza-and-pasta-northridge/porter-ranch-at-rinaldi-and-tampa",
+      "remote": "origin"
+    },
+    "add_ameci-pizza-kitchen": {
+      "head": "refs/heads/add_ameci-pizza-kitchen",
+      "remote": "origin"
+    },
+    "add_ameci-pizza-kitchen--brentwood/-discovery-bay/oakley": {
+      "head": "refs/heads/add_ameci-pizza-kitchen--brentwood/-discovery-bay/oakley",
+      "remote": "origin"
+    },
+    "add_ameci-pizza-kitchen-brentwood-discovery-bay-oakley": {
+      "head": "refs/heads/add_ameci-pizza-kitchen-brentwood-discovery-bay-oakley",
+      "remote": "origin"
+    },
+    "add_ameci-pizza-pasta": {
+      "head": "refs/heads/add_ameci-pizza-pasta",
+      "remote": "origin"
+    },
+    "add_ameci-pizza-pasta-northridge-porter-ranch-at-rinaldi-and-tampa-": {
+      "head": "refs/heads/add_ameci-pizza-pasta-northridge-porter-ranch-at-rinaldi-and-tampa-",
+      "remote": "origin"
+    },
+    "add_ameci-s-pizza": {
+      "head": "refs/heads/add_ameci-s-pizza",
+      "remote": "origin"
+    },
+    "add_amecis-pizza": {
+      "head": "refs/heads/add_amecis-pizza",
+      "remote": "origin"
+    },
+    "add_american-heroes-and-brew": {
+      "head": "refs/heads/add_american-heroes-and-brew",
+      "remote": "origin"
+    },
+    "add_americana-restaurant": {
+      "head": "refs/heads/add_americana-restaurant",
+      "remote": "origin"
+    },
+    "add_amici-pizza": {
+      "head": "refs/heads/add_amici-pizza",
+      "remote": "origin"
+    },
+    "add_amor-y-tacos": {
+      "head": "refs/heads/add_amor-y-tacos",
+      "remote": "origin"
+    },
+    "add_an-chi-vietnamese-cuisine": {
+      "head": "refs/heads/add_an-chi-vietnamese-cuisine",
+      "remote": "origin"
+    },
+    "add_and-grits": {
+      "head": "refs/heads/add_and-grits",
+      "remote": "origin"
+    },
+    "add_andy-nguyen-vegetarian": {
+      "head": "refs/heads/add_andy-nguyen-vegetarian",
+      "remote": "origin"
+    },
+    "add_angel-fish": {
+      "head": "refs/heads/add_angel-fish",
+      "remote": "origin"
+    },
+    "add_angel-thai-cuisine": {
+      "head": "refs/heads/add_angel-thai-cuisine",
+      "remote": "origin"
+    },
+    "add_angelicas-entertainment-llc": {
+      "head": "refs/heads/add_angelicas-entertainment-llc",
+      "remote": "origin"
+    },
+    "add_angkor-chef": {
+      "head": "refs/heads/add_angkor-chef",
+      "remote": "origin"
+    },
+    "add_anita-s-fine-mexican": {
+      "head": "refs/heads/add_anita-s-fine-mexican",
+      "remote": "origin"
+    },
+    "add_anitas-fine-mexican": {
+      "head": "refs/heads/add_anitas-fine-mexican",
+      "remote": "origin"
+    },
+    "add_annachikadai": {
+      "head": "refs/heads/add_annachikadai",
+      "remote": "origin"
+    },
     "add_antiquetablelynn": {
       "head": "refs/heads/add_antiquetablelynn",
+      "remote": "origin"
+    },
+    "add_apple-fritter-eatery": {
+      "head": "refs/heads/add_apple-fritter-eatery",
+      "remote": "origin"
+    },
+    "add_apple-spice-junction": {
+      "head": "refs/heads/add_apple-spice-junction",
+      "remote": "origin"
+    },
+    "add_aquaterra": {
+      "head": "refs/heads/add_aquaterra",
+      "remote": "origin"
+    },
+    "add_aqui-cal-mex": {
+      "head": "refs/heads/add_aqui-cal-mex",
+      "remote": "origin"
+    },
+    "add_arashi-sushi-house": {
+      "head": "refs/heads/add_arashi-sushi-house",
+      "remote": "origin"
+    },
+    "add_arawan-thai-cuisine": {
+      "head": "refs/heads/add_arawan-thai-cuisine",
+      "remote": "origin"
+    },
+    "add_arizona-bbq-company": {
+      "head": "refs/heads/add_arizona-bbq-company",
+      "remote": "origin"
+    },
+    "add_aroma-thai": {
+      "head": "refs/heads/add_aroma-thai",
+      "remote": "origin"
+    },
+    "add_aromas-grill": {
+      "head": "refs/heads/add_aromas-grill",
+      "remote": "origin"
+    },
+    "add_arthur-s-family-restaurant": {
+      "head": "refs/heads/add_arthur-s-family-restaurant",
+      "remote": "origin"
+    },
+    "add_artisan-wood-fired-kitchen": {
+      "head": "refs/heads/add_artisan-wood-fired-kitchen",
+      "remote": "origin"
+    },
+    "add_arya-steakhouse": {
+      "head": "refs/heads/add_arya-steakhouse",
+      "remote": "origin"
+    },
+    "add_asahi-japanese-restaurant-sushi-bar": {
+      "head": "refs/heads/add_asahi-japanese-restaurant-sushi-bar",
+      "remote": "origin"
+    },
+    "add_asakuma": {
+      "head": "refs/heads/add_asakuma",
       "remote": "origin"
     },
     "add_attleboro": {
       "head": "refs/heads/add_attleboro",
       "remote": "origin"
     },
+    "add_autumn-court": {
+      "head": "refs/heads/add_autumn-court",
+      "remote": "origin"
+    },
+    "add_avila-s-el-ranchito-foothill-ranch": {
+      "head": "refs/heads/add_avila-s-el-ranchito-foothill-ranch",
+      "remote": "origin"
+    },
+    "add_avila-s-el-ranchito-lake-forest": {
+      "head": "refs/heads/add_avila-s-el-ranchito-lake-forest",
+      "remote": "origin"
+    },
+    "add_avilas-el-ranchito--lake-forest": {
+      "head": "refs/heads/add_avilas-el-ranchito--lake-forest",
+      "remote": "origin"
+    },
     "add_awfulsroanoke": {
       "head": "refs/heads/add_awfulsroanoke",
+      "remote": "origin"
+    },
+    "add_ay-caramba-real-mexican-food": {
+      "head": "refs/heads/add_ay-caramba-real-mexican-food",
+      "remote": "origin"
+    },
+    "add_azteca-grill-mexican-restaurant": {
+      "head": "refs/heads/add_azteca-grill-mexican-restaurant",
+      "remote": "origin"
+    },
+    "add_azteca-market-and-taqueria": {
+      "head": "refs/heads/add_azteca-market-and-taqueria",
+      "remote": "origin"
+    },
+    "add_azteca-market-taqueria": {
+      "head": "refs/heads/add_azteca-market-taqueria",
       "remote": "origin"
     },
     "add_aztlantacos": {
       "head": "refs/heads/add_aztlantacos",
       "remote": "origin"
     },
+    "add_azul-tequila": {
+      "head": "refs/heads/add_azul-tequila",
+      "remote": "origin"
+    },
+    "add_b-man-s-teriyaki-burgers": {
+      "head": "refs/heads/add_b-man-s-teriyaki-burgers",
+      "remote": "origin"
+    },
+    "add_b-mans-teriyaki-and-burgers": {
+      "head": "refs/heads/add_b-mans-teriyaki-and-burgers",
+      "remote": "origin"
+    },
+    "add_b-star": {
+      "head": "refs/heads/add_b-star",
+      "remote": "origin"
+    },
+    "add_baba-pizza-and-subs": {
+      "head": "refs/heads/add_baba-pizza-and-subs",
+      "remote": "origin"
+    },
+    "add_bachi-yaki-paramount": {
+      "head": "refs/heads/add_bachi-yaki-paramount",
+      "remote": "origin"
+    },
+    "add_back-home-in-lahaina": {
+      "head": "refs/heads/add_back-home-in-lahaina",
+      "remote": "origin"
+    },
+    "add_bad-to-the-bone-bbq": {
+      "head": "refs/heads/add_bad-to-the-bone-bbq",
+      "remote": "origin"
+    },
+    "add_baia": {
+      "head": "refs/heads/add_baia",
+      "remote": "origin"
+    },
+    "add_baja-taqueria": {
+      "head": "refs/heads/add_baja-taqueria",
+      "remote": "origin"
+    },
+    "add_ballast-point-tasting-room-and-kitchen": {
+      "head": "refs/heads/add_ballast-point-tasting-room-and-kitchen",
+      "remote": "origin"
+    },
+    "add_bamboo-cuisine": {
+      "head": "refs/heads/add_bamboo-cuisine",
+      "remote": "origin"
+    },
     "add_bamboo-teri-house-3391-atlantic-ave": {
       "head": "refs/heads/add_bamboo-teri-house-3391-atlantic-ave",
+      "remote": "origin"
+    },
+    "add_banana-blossom": {
+      "head": "refs/heads/add_banana-blossom",
+      "remote": "origin"
+    },
+    "add_bananaleaf-indian-cuisine": {
+      "head": "refs/heads/add_bananaleaf-indian-cuisine",
+      "remote": "origin"
+    },
+    "add_bandits-grill-and-bar": {
+      "head": "refs/heads/add_bandits-grill-and-bar",
+      "remote": "origin"
+    },
+    "add_bandits-grill-bar": {
+      "head": "refs/heads/add_bandits-grill-bar",
+      "remote": "origin"
+    },
+    "add_bangkok-street-food": {
+      "head": "refs/heads/add_bangkok-street-food",
+      "remote": "origin"
+    },
+    "add_bangkok-thai-restaurant-california": {
+      "head": "refs/heads/add_bangkok-thai-restaurant-california",
       "remote": "origin"
     },
     "add_banshee": {
       "head": "refs/heads/add_banshee",
       "remote": "origin"
     },
+    "add_bap": {
+      "head": "refs/heads/add_bap",
+      "remote": "origin"
+    },
+    "add_bap-": {
+      "head": "refs/heads/add_bap-",
+      "remote": "origin"
+    },
     "add_bardenayeagle": {
       "head": "refs/heads/add_bardenayeagle",
       "remote": "origin"
     },
+    "add_bardog-tavern": {
+      "head": "refs/heads/add_bardog-tavern",
+      "remote": "origin"
+    },
+    "add_bare-bowls": {
+      "head": "refs/heads/add_bare-bowls",
+      "remote": "origin"
+    },
+    "add_barracuda-japanese-restaurant": {
+      "head": "refs/heads/add_barracuda-japanese-restaurant",
+      "remote": "origin"
+    },
+    "add_barrio-philly": {
+      "head": "refs/heads/add_barrio-philly",
+      "remote": "origin"
+    },
+    "add_basil-and-mint-vietnamese-cafe": {
+      "head": "refs/heads/add_basil-and-mint-vietnamese-cafe",
+      "remote": "origin"
+    },
+    "add_basil-mint-vietnamese-cafe": {
+      "head": "refs/heads/add_basil-mint-vietnamese-cafe",
+      "remote": "origin"
+    },
+    "add_basil-seasonal-dining": {
+      "head": "refs/heads/add_basil-seasonal-dining",
+      "remote": "origin"
+    },
+    "add_baskin-robbins": {
+      "head": "refs/heads/add_baskin-robbins",
+      "remote": "origin"
+    },
     "add_bavarian-bierhaus": {
       "head": "refs/heads/add_bavarian-bierhaus",
+      "remote": "origin"
+    },
+    "add_bawarchi-indian-cuisine": {
+      "head": "refs/heads/add_bawarchi-indian-cuisine",
       "remote": "origin"
     },
     "add_bawarchiashburn": {
@@ -102,12 +606,80 @@
       "head": "refs/heads/add_bbskaty",
       "remote": "origin"
     },
+    "add_bcd-tofu-house--artesia": {
+      "head": "refs/heads/add_bcd-tofu-house--artesia",
+      "remote": "origin"
+    },
+    "add_bcd-tofu-house--fullerton": {
+      "head": "refs/heads/add_bcd-tofu-house--fullerton",
+      "remote": "origin"
+    },
+    "add_bcd-tofu-house--torrance": {
+      "head": "refs/heads/add_bcd-tofu-house--torrance",
+      "remote": "origin"
+    },
+    "add_bcd-tofu-house-fullerton": {
+      "head": "refs/heads/add_bcd-tofu-house-fullerton",
+      "remote": "origin"
+    },
+    "add_bcd-tofu-house-rowland-heights": {
+      "head": "refs/heads/add_bcd-tofu-house-rowland-heights",
+      "remote": "origin"
+    },
+    "add_bcd-tofu-house-torrance": {
+      "head": "refs/heads/add_bcd-tofu-house-torrance",
+      "remote": "origin"
+    },
+    "add_beach-pit-bbq": {
+      "head": "refs/heads/add_beach-pit-bbq",
+      "remote": "origin"
+    },
+    "add_bear-paw-bar-and-grill": {
+      "head": "refs/heads/add_bear-paw-bar-and-grill",
+      "remote": "origin"
+    },
+    "add_bear-republic-brewing-company": {
+      "head": "refs/heads/add_bear-republic-brewing-company",
+      "remote": "origin"
+    },
     "add_beautiful_rind": {
       "head": "refs/heads/add_beautiful_rind",
       "remote": "origin"
     },
     "add_beerrun": {
       "head": "refs/heads/add_beerrun",
+      "remote": "origin"
+    },
+    "add_beeside-balcony": {
+      "head": "refs/heads/add_beeside-balcony",
+      "remote": "origin"
+    },
+    "add_beijing-chinese-restaurant": {
+      "head": "refs/heads/add_beijing-chinese-restaurant",
+      "remote": "origin"
+    },
+    "add_bella-vita": {
+      "head": "refs/heads/add_bella-vita",
+      "remote": "origin"
+    },
+    "add_belly-goat-burgers": {
+      "head": "refs/heads/add_belly-goat-burgers",
+      "remote": "origin"
+    },
+    "add_ben-tre": {
+      "head": "refs/heads/add_ben-tre",
+      "remote": "origin"
+    },
+    "add_benihibachi": {
+      "head": "refs/heads/add_benihibachi",
+      "remote": "origin"
+    },
+    "add_benihibachi-japanese-grill": {
+      "head": "refs/heads/add_benihibachi-japanese-grill",
+      "remote": "origin"
+    },
+    "add_benjies": {
+      "head": "refs/heads/add_benjies",
       "remote": "origin"
     },
     "add_benreubensknishery": {
@@ -118,28 +690,184 @@
       "head": "refs/heads/add_berryknollbakery",
       "remote": "origin"
     },
+    "add_berties-hot-chicken": {
+      "head": "refs/heads/add_berties-hot-chicken",
+      "remote": "origin"
+    },
+    "add_best-pizza-and-brew": {
+      "head": "refs/heads/add_best-pizza-and-brew",
+      "remote": "origin"
+    },
+    "add_beverly-hills-market-and-deli": {
+      "head": "refs/heads/add_beverly-hills-market-and-deli",
+      "remote": "origin"
+    },
+    "add_beverly-hills-thai-kosher": {
+      "head": "refs/heads/add_beverly-hills-thai-kosher",
+      "remote": "origin"
+    },
+    "add_beyond-the-glory": {
+      "head": "refs/heads/add_beyond-the-glory",
+      "remote": "origin"
+    },
+    "add_bhanu-indian-cuisine-and-market": {
+      "head": "refs/heads/add_bhanu-indian-cuisine-and-market",
+      "remote": "origin"
+    },
     "add_bhop": {
       "head": "refs/heads/add_bhop",
+      "remote": "origin"
+    },
+    "add_big-basin-burger-bar": {
+      "head": "refs/heads/add_big-basin-burger-bar",
+      "remote": "origin"
+    },
+    "add_big-e-cafe": {
+      "head": "refs/heads/add_big-e-cafe",
+      "remote": "origin"
+    },
+    "add_big-fish-little-fish": {
+      "head": "refs/heads/add_big-fish-little-fish",
+      "remote": "origin"
+    },
+    "add_big-momma-s-1-bbq": {
+      "head": "refs/heads/add_big-momma-s-1-bbq",
+      "remote": "origin"
+    },
+    "add_big-slice-pizza": {
+      "head": "refs/heads/add_big-slice-pizza",
+      "remote": "origin"
+    },
+    "add_bill-e-s-fairhope": {
+      "head": "refs/heads/add_bill-e-s-fairhope",
+      "remote": "origin"
+    },
+    "add_bird-n-bun": {
+      "head": "refs/heads/add_bird-n-bun",
+      "remote": "origin"
+    },
+    "add_bird-n-bun-san-diego": {
+      "head": "refs/heads/add_bird-n-bun-san-diego",
+      "remote": "origin"
+    },
+    "add_biryani-house": {
+      "head": "refs/heads/add_biryani-house",
+      "remote": "origin"
+    },
+    "add_biryani-pot": {
+      "head": "refs/heads/add_biryani-pot",
       "remote": "origin"
     },
     "add_bitefoodcoffee": {
       "head": "refs/heads/add_bitefoodcoffee",
       "remote": "origin"
     },
+    "add_black-heart-coffee-co-": {
+      "head": "refs/heads/add_black-heart-coffee-co-",
+      "remote": "origin"
+    },
+    "add_black-long-beach": {
+      "head": "refs/heads/add_black-long-beach",
+      "remote": "origin"
+    },
+    "add_blackwood-restaurant": {
+      "head": "refs/heads/add_blackwood-restaurant",
+      "remote": "origin"
+    },
     "add_blakbarrelcoffeeco": {
       "head": "refs/heads/add_blakbarrelcoffeeco",
+      "remote": "origin"
+    },
+    "add_blazin-bagelz": {
+      "head": "refs/heads/add_blazin-bagelz",
       "remote": "origin"
     },
     "add_blended-culture": {
       "head": "refs/heads/add_blended-culture",
       "remote": "origin"
     },
+    "add_bliss-bistro": {
+      "head": "refs/heads/add_bliss-bistro",
+      "remote": "origin"
+    },
     "add_blox-af": {
       "head": "refs/heads/add_blox-af",
       "remote": "origin"
     },
+    "add_blue-32-sports-grill": {
+      "head": "refs/heads/add_blue-32-sports-grill",
+      "remote": "origin"
+    },
+    "add_blue-32-sports-grill-arizona-avenue": {
+      "head": "refs/heads/add_blue-32-sports-grill-arizona-avenue",
+      "remote": "origin"
+    },
+    "add_blue-32-sports-grill-williams-field": {
+      "head": "refs/heads/add_blue-32-sports-grill-williams-field",
+      "remote": "origin"
+    },
+    "add_blue-burro": {
+      "head": "refs/heads/add_blue-burro",
+      "remote": "origin"
+    },
+    "add_blue-ocean-robata-sushi-bar": {
+      "head": "refs/heads/add_blue-ocean-robata-sushi-bar",
+      "remote": "origin"
+    },
+    "add_blue-orchid-thai-bistro": {
+      "head": "refs/heads/add_blue-orchid-thai-bistro",
+      "remote": "origin"
+    },
+    "add_blue-table": {
+      "head": "refs/heads/add_blue-table",
+      "remote": "origin"
+    },
     "add_bluebikeburrito": {
       "head": "refs/heads/add_bluebikeburrito",
+      "remote": "origin"
+    },
+    "add_bluff-city-coffee": {
+      "head": "refs/heads/add_bluff-city-coffee",
+      "remote": "origin"
+    },
+    "add_blufish": {
+      "head": "refs/heads/add_blufish",
+      "remote": "origin"
+    },
+    "add_board-brew": {
+      "head": "refs/heads/add_board-brew",
+      "remote": "origin"
+    },
+    "add_boardwalk-grill": {
+      "head": "refs/heads/add_boardwalk-grill",
+      "remote": "origin"
+    },
+    "add_bob-s-steak-chop-house-la-costa": {
+      "head": "refs/heads/add_bob-s-steak-chop-house-la-costa",
+      "remote": "origin"
+    },
+    "add_boca-pizzeria": {
+      "head": "refs/heads/add_boca-pizzeria",
+      "remote": "origin"
+    },
+    "add_bodega-brothers": {
+      "head": "refs/heads/add_bodega-brothers",
+      "remote": "origin"
+    },
+    "add_bodega-wine-bar": {
+      "head": "refs/heads/add_bodega-wine-bar",
+      "remote": "origin"
+    },
+    "add_bombay-bar-grill": {
+      "head": "refs/heads/add_bombay-bar-grill",
+      "remote": "origin"
+    },
+    "add_bombay-chaat-house": {
+      "head": "refs/heads/add_bombay-chaat-house",
+      "remote": "origin"
+    },
+    "add_bombay-tandoori-banquet": {
+      "head": "refs/heads/add_bombay-tandoori-banquet",
       "remote": "origin"
     },
     "add_bonifacio": {
@@ -154,44 +882,412 @@
       "head": "refs/heads/add_boonies",
       "remote": "origin"
     },
+    "add_bootlegger-plates-pours": {
+      "head": "refs/heads/add_bootlegger-plates-pours",
+      "remote": "origin"
+    },
+    "add_bossa-nova-inc": {
+      "head": "refs/heads/add_bossa-nova-inc",
+      "remote": "origin"
+    },
     "add_bostwick_plainfield": {
       "head": "refs/heads/add_bostwick_plainfield",
+      "remote": "origin"
+    },
+    "add_bourbon-street-bar-grill": {
+      "head": "refs/heads/add_bourbon-street-bar-grill",
+      "remote": "origin"
+    },
+    "add_bow-arrow": {
+      "head": "refs/heads/add_bow-arrow",
       "remote": "origin"
     },
     "add_boxbar": {
       "head": "refs/heads/add_boxbar",
       "remote": "origin"
     },
+    "add_branch-street-deli": {
+      "head": "refs/heads/add_branch-street-deli",
+      "remote": "origin"
+    },
+    "add_bray-gourmet": {
+      "head": "refs/heads/add_bray-gourmet",
+      "remote": "origin"
+    },
+    "add_brewsters-beer-garden": {
+      "head": "refs/heads/add_brewsters-beer-garden",
+      "remote": "origin"
+    },
+    "add_briar-rose-bakery-deli": {
+      "head": "refs/heads/add_briar-rose-bakery-deli",
+      "remote": "origin"
+    },
+    "add_brick-and-spoon": {
+      "head": "refs/heads/add_brick-and-spoon",
+      "remote": "origin"
+    },
+    "add_brickhouse-pizza": {
+      "head": "refs/heads/add_brickhouse-pizza",
+      "remote": "origin"
+    },
+    "add_bricktop-s": {
+      "head": "refs/heads/add_bricktop-s",
+      "remote": "origin"
+    },
     "add_bridge-restaurant": {
       "head": "refs/heads/add_bridge-restaurant",
+      "remote": "origin"
+    },
+    "add_brigantine": {
+      "head": "refs/heads/add_brigantine",
+      "remote": "origin"
+    },
+    "add_brio-tuscany-grill": {
+      "head": "refs/heads/add_brio-tuscany-grill",
+      "remote": "origin"
+    },
+    "add_brixx-wood-fired-pizza": {
+      "head": "refs/heads/add_brixx-wood-fired-pizza",
+      "remote": "origin"
+    },
+    "add_broadway-masala": {
+      "head": "refs/heads/add_broadway-masala",
+      "remote": "origin"
+    },
+    "add_broadway-pizzeria-south": {
+      "head": "refs/heads/add_broadway-pizzeria-south",
+      "remote": "origin"
+    },
+    "add_broderick-pop-up": {
+      "head": "refs/heads/add_broderick-pop-up",
+      "remote": "origin"
+    },
+    "add_broderick-roadhouse-midtown": {
+      "head": "refs/heads/add_broderick-roadhouse-midtown",
+      "remote": "origin"
+    },
+    "add_broiler-express": {
+      "head": "refs/heads/add_broiler-express",
+      "remote": "origin"
+    },
+    "add_broiler-express-san-carlos": {
+      "head": "refs/heads/add_broiler-express-san-carlos",
       "remote": "origin"
     },
     "add_brooklyn-noosh-988-atlantic-ave": {
       "head": "refs/heads/add_brooklyn-noosh-988-atlantic-ave",
       "remote": "origin"
     },
+    "add_brooklyn-v-s-pizza": {
+      "head": "refs/heads/add_brooklyn-v-s-pizza",
+      "remote": "origin"
+    },
+    "add_brothers-chicken-rotisserie": {
+      "head": "refs/heads/add_brothers-chicken-rotisserie",
+      "remote": "origin"
+    },
+    "add_bruno-s-italian-kitchen": {
+      "head": "refs/heads/add_bruno-s-italian-kitchen",
+      "remote": "origin"
+    },
     "add_btsradford": {
       "head": "refs/heads/add_btsradford",
+      "remote": "origin"
+    },
+    "add_buckboards-barbeque-and-brew": {
+      "head": "refs/heads/add_buckboards-barbeque-and-brew",
+      "remote": "origin"
+    },
+    "add_buenos-aires-grill": {
+      "head": "refs/heads/add_buenos-aires-grill",
+      "remote": "origin"
+    },
+    "add_buonarroti-ristorante": {
+      "head": "refs/heads/add_buonarroti-ristorante",
+      "remote": "origin"
+    },
+    "add_burger-cream": {
+      "head": "refs/heads/add_burger-cream",
+      "remote": "origin"
+    },
+    "add_burger-me-inc": {
+      "head": "refs/heads/add_burger-me-inc",
+      "remote": "origin"
+    },
+    "add_burger-parlor": {
+      "head": "refs/heads/add_burger-parlor",
+      "remote": "origin"
+    },
+    "add_burgerim-eucalyptus-ave": {
+      "head": "refs/heads/add_burgerim-eucalyptus-ave",
       "remote": "origin"
     },
     "add_burgerimmiamilakes": {
       "head": "refs/heads/add_burgerimmiamilakes",
       "remote": "origin"
     },
+    "add_burma-ruby": {
+      "head": "refs/heads/add_burma-ruby",
+      "remote": "origin"
+    },
+    "add_burnin-mouth": {
+      "head": "refs/heads/add_burnin-mouth",
+      "remote": "origin"
+    },
+    "add_burntzilla": {
+      "head": "refs/heads/add_burntzilla",
+      "remote": "origin"
+    },
+    "add_burrito-bandito": {
+      "head": "refs/heads/add_burrito-bandito",
+      "remote": "origin"
+    },
+    "add_burrito-bandito-airport-rd": {
+      "head": "refs/heads/add_burrito-bandito-airport-rd",
+      "remote": "origin"
+    },
+    "add_burrito-bandito-hartnell": {
+      "head": "refs/heads/add_burrito-bandito-hartnell",
+      "remote": "origin"
+    },
+    "add_cafe-126": {
+      "head": "refs/heads/add_cafe-126",
+      "remote": "origin"
+    },
+    "add_cafe-andreini": {
+      "head": "refs/heads/add_cafe-andreini",
+      "remote": "origin"
+    },
+    "add_cafe-borrone": {
+      "head": "refs/heads/add_cafe-borrone",
+      "remote": "origin"
+    },
+    "add_cafe-bravo-glendale": {
+      "head": "refs/heads/add_cafe-bravo-glendale",
+      "remote": "origin"
+    },
+    "add_cafe-de-leche": {
+      "head": "refs/heads/add_cafe-de-leche",
+      "remote": "origin"
+    },
+    "add_cafe-de-olla": {
+      "head": "refs/heads/add_cafe-de-olla",
+      "remote": "origin"
+    },
+    "add_cafe-dulce": {
+      "head": "refs/heads/add_cafe-dulce",
+      "remote": "origin"
+    },
+    "add_cafe-jose": {
+      "head": "refs/heads/add_cafe-jose",
+      "remote": "origin"
+    },
+    "add_cafe-mint": {
+      "head": "refs/heads/add_cafe-mint",
+      "remote": "origin"
+    },
+    "add_cafe-organix": {
+      "head": "refs/heads/add_cafe-organix",
+      "remote": "origin"
+    },
+    "add_cafe-rosalena": {
+      "head": "refs/heads/add_cafe-rosalena",
+      "remote": "origin"
+    },
+    "add_cafe-sevilla-spanish-restaurant-tapas-bar": {
+      "head": "refs/heads/add_cafe-sevilla-spanish-restaurant-tapas-bar",
+      "remote": "origin"
+    },
+    "add_cafe-usa": {
+      "head": "refs/heads/add_cafe-usa",
+      "remote": "origin"
+    },
+    "add_cafe-vida-at-bay-club-courtside": {
+      "head": "refs/heads/add_cafe-vida-at-bay-club-courtside",
+      "remote": "origin"
+    },
+    "add_caffe-central": {
+      "head": "refs/heads/add_caffe-central",
+      "remote": "origin"
+    },
+    "add_caffe-della-valle": {
+      "head": "refs/heads/add_caffe-della-valle",
+      "remote": "origin"
+    },
+    "add_caffe-roma": {
+      "head": "refs/heads/add_caffe-roma",
+      "remote": "origin"
+    },
+    "add_cajun": {
+      "head": "refs/heads/add_cajun",
+      "remote": "origin"
+    },
+    "add_cajun-sf": {
+      "head": "refs/heads/add_cajun-sf",
+      "remote": "origin"
+    },
+    "add_calf-chick-bakery-cafe": {
+      "head": "refs/heads/add_calf-chick-bakery-cafe",
+      "remote": "origin"
+    },
+    "add_cali-alley": {
+      "head": "refs/heads/add_cali-alley",
+      "remote": "origin"
+    },
+    "add_calico-county-restaurant": {
+      "head": "refs/heads/add_calico-county-restaurant",
+      "remote": "origin"
+    },
     "add_calientes": {
       "head": "refs/heads/add_calientes",
+      "remote": "origin"
+    },
+    "add_califas-greens": {
+      "head": "refs/heads/add_califas-greens",
+      "remote": "origin"
+    },
+    "add_california-dreaming": {
+      "head": "refs/heads/add_california-dreaming",
+      "remote": "origin"
+    },
+    "add_california-organics": {
+      "head": "refs/heads/add_california-organics",
+      "remote": "origin"
+    },
+    "add_california-pita": {
+      "head": "refs/heads/add_california-pita",
+      "remote": "origin"
+    },
+    "add_california-sushi-and-teriyaki": {
+      "head": "refs/heads/add_california-sushi-and-teriyaki",
+      "remote": "origin"
+    },
+    "add_campo-italian-bistro-bar": {
+      "head": "refs/heads/add_campo-italian-bistro-bar",
       "remote": "origin"
     },
     "add_can-bar": {
       "head": "refs/heads/add_can-bar",
       "remote": "origin"
     },
+    "add_cana-cuban-parlor-cafe": {
+      "head": "refs/heads/add_cana-cuban-parlor-cafe",
+      "remote": "origin"
+    },
+    "add_canada-steak-burger-chula-vista": {
+      "head": "refs/heads/add_canada-steak-burger-chula-vista",
+      "remote": "origin"
+    },
+    "add_capeside-fish-company": {
+      "head": "refs/heads/add_capeside-fish-company",
+      "remote": "origin"
+    },
+    "add_captains-coffee-roasting-company": {
+      "head": "refs/heads/add_captains-coffee-roasting-company",
+      "remote": "origin"
+    },
+    "add_carlos-o-brien-s-mexican-restaurant": {
+      "head": "refs/heads/add_carlos-o-brien-s-mexican-restaurant",
+      "remote": "origin"
+    },
+    "add_carmelita-s-mexican": {
+      "head": "refs/heads/add_carmelita-s-mexican",
+      "remote": "origin"
+    },
     "add_carmiexpress": {
       "head": "refs/heads/add_carmiexpress",
       "remote": "origin"
     },
+    "add_carne-asada-grills": {
+      "head": "refs/heads/add_carne-asada-grills",
+      "remote": "origin"
+    },
+    "add_carnivore-sandwhich-san-diego": {
+      "head": "refs/heads/add_carnivore-sandwhich-san-diego",
+      "remote": "origin"
+    },
+    "add_carpaccios-restaurant": {
+      "head": "refs/heads/add_carpaccios-restaurant",
+      "remote": "origin"
+    },
     "add_carrburritoscarrboro": {
       "head": "refs/heads/add_carrburritoscarrboro",
+      "remote": "origin"
+    },
+    "add_casa-azteca": {
+      "head": "refs/heads/add_casa-azteca",
+      "remote": "origin"
+    },
+    "add_casa-del-rey-mexican-restaurant-cantina": {
+      "head": "refs/heads/add_casa-del-rey-mexican-restaurant-cantina",
+      "remote": "origin"
+    },
+    "add_casa-fiesta": {
+      "head": "refs/heads/add_casa-fiesta",
+      "remote": "origin"
+    },
+    "add_casa-garcia": {
+      "head": "refs/heads/add_casa-garcia",
+      "remote": "origin"
+    },
+    "add_casa-orozco": {
+      "head": "refs/heads/add_casa-orozco",
+      "remote": "origin"
+    },
+    "add_casa-pasilla-mexican-kitchen": {
+      "head": "refs/heads/add_casa-pasilla-mexican-kitchen",
+      "remote": "origin"
+    },
+    "add_casa-santiago": {
+      "head": "refs/heads/add_casa-santiago",
+      "remote": "origin"
+    },
+    "add_catalano-s-pizza": {
+      "head": "refs/heads/add_catalano-s-pizza",
+      "remote": "origin"
+    },
+    "add_cataldo-s-pizzeria": {
+      "head": "refs/heads/add_cataldo-s-pizzeria",
+      "remote": "origin"
+    },
+    "add_catch": {
+      "head": "refs/heads/add_catch",
+      "remote": "origin"
+    },
+    "add_cattlemens-steakhouse": {
+      "head": "refs/heads/add_cattlemens-steakhouse",
+      "remote": "origin"
+    },
+    "add_celestino-s-ny-pizza": {
+      "head": "refs/heads/add_celestino-s-ny-pizza",
+      "remote": "origin"
+    },
+    "add_celestino-s-pizza": {
+      "head": "refs/heads/add_celestino-s-pizza",
+      "remote": "origin"
+    },
+    "add_centanni": {
+      "head": "refs/heads/add_centanni",
+      "remote": "origin"
+    },
+    "add_central-station-bar-and-grill": {
+      "head": "refs/heads/add_central-station-bar-and-grill",
+      "remote": "origin"
+    },
+    "add_cerrone-s-brick-oven-pizza": {
+      "head": "refs/heads/add_cerrone-s-brick-oven-pizza",
+      "remote": "origin"
+    },
+    "add_cessys-tacoshop": {
+      "head": "refs/heads/add_cessys-tacoshop",
+      "remote": "origin"
+    },
+    "add_cha-cha-s-latin-kitchen-brea": {
+      "head": "refs/heads/add_cha-cha-s-latin-kitchen-brea",
+      "remote": "origin"
+    },
+    "add_cha-cha-s-latin-kitchen-irvine": {
+      "head": "refs/heads/add_cha-cha-s-latin-kitchen-irvine",
       "remote": "origin"
     },
     "add_chamaexpress": {
@@ -202,16 +1298,172 @@
       "head": "refs/heads/add_chamberred",
       "remote": "origin"
     },
+    "add_champion-grill-buffet": {
+      "head": "refs/heads/add_champion-grill-buffet",
+      "remote": "origin"
+    },
+    "add_champy-s-fried-chicken": {
+      "head": "refs/heads/add_champy-s-fried-chicken",
+      "remote": "origin"
+    },
+    "add_chando-s-cantina": {
+      "head": "refs/heads/add_chando-s-cantina",
+      "remote": "origin"
+    },
+    "add_chando-s-tacos": {
+      "head": "refs/heads/add_chando-s-tacos",
+      "remote": "origin"
+    },
+    "add_chando-s-tacos-citrus-heights": {
+      "head": "refs/heads/add_chando-s-tacos-citrus-heights",
+      "remote": "origin"
+    },
+    "add_char-restaurant": {
+      "head": "refs/heads/add_char-restaurant",
+      "remote": "origin"
+    },
+    "add_charbar7": {
+      "head": "refs/heads/add_charbar7",
+      "remote": "origin"
+    },
+    "add_charles-vergos-rendezvous": {
+      "head": "refs/heads/add_charles-vergos-rendezvous",
+      "remote": "origin"
+    },
+    "add_chase-s-diner": {
+      "head": "refs/heads/add_chase-s-diner",
+      "remote": "origin"
+    },
+    "add_chavez-supermarket-taqueria": {
+      "head": "refs/heads/add_chavez-supermarket-taqueria",
+      "remote": "origin"
+    },
+    "add_chef-panda": {
+      "head": "refs/heads/add_chef-panda",
+      "remote": "origin"
+    },
+    "add_chepe-s-mexican-grill": {
+      "head": "refs/heads/add_chepe-s-mexican-grill",
+      "remote": "origin"
+    },
+    "add_chez-christina": {
+      "head": "refs/heads/add_chez-christina",
+      "remote": "origin"
+    },
+    "add_chi-s-chinese-cuisine": {
+      "head": "refs/heads/add_chi-s-chinese-cuisine",
+      "remote": "origin"
+    },
+    "add_chicago-hamburger-company": {
+      "head": "refs/heads/add_chicago-hamburger-company",
+      "remote": "origin"
+    },
+    "add_chicken-shack": {
+      "head": "refs/heads/add_chicken-shack",
+      "remote": "origin"
+    },
     "add_chicknroll": {
       "head": "refs/heads/add_chicknroll",
+      "remote": "origin"
+    },
+    "add_chiki-chiki-wings-and-sports": {
+      "head": "refs/heads/add_chiki-chiki-wings-and-sports",
+      "remote": "origin"
+    },
+    "add_china-cook": {
+      "head": "refs/heads/add_china-cook",
+      "remote": "origin"
+    },
+    "add_china-gourmet": {
+      "head": "refs/heads/add_china-gourmet",
+      "remote": "origin"
+    },
+    "add_china-west-express": {
+      "head": "refs/heads/add_china-west-express",
+      "remote": "origin"
+    },
+    "add_chino-mex": {
+      "head": "refs/heads/add_chino-mex",
+      "remote": "origin"
+    },
+    "add_chiquita-s-mexican-restaurant": {
+      "head": "refs/heads/add_chiquita-s-mexican-restaurant",
       "remote": "origin"
     },
     "add_chopt": {
       "head": "refs/heads/add_chopt",
       "remote": "origin"
     },
+    "add_chubbfathers": {
+      "head": "refs/heads/add_chubbfathers",
+      "remote": "origin"
+    },
+    "add_chubby-noodle-marina": {
+      "head": "refs/heads/add_chubby-noodle-marina",
+      "remote": "origin"
+    },
+    "add_churn-urban-creamery": {
+      "head": "refs/heads/add_churn-urban-creamery",
+      "remote": "origin"
+    },
+    "add_chuy-s-mb": {
+      "head": "refs/heads/add_chuy-s-mb",
+      "remote": "origin"
+    },
+    "add_cielito-lindo-mexican-grill": {
+      "head": "refs/heads/add_cielito-lindo-mexican-grill",
+      "remote": "origin"
+    },
+    "add_circle-s-saloon": {
+      "head": "refs/heads/add_circle-s-saloon",
+      "remote": "origin"
+    },
+    "add_ciro-s-pizza-cafe": {
+      "head": "refs/heads/add_ciro-s-pizza-cafe",
+      "remote": "origin"
+    },
+    "add_citrus-kitchen": {
+      "head": "refs/heads/add_citrus-kitchen",
+      "remote": "origin"
+    },
+    "add_city-wok": {
+      "head": "refs/heads/add_city-wok",
+      "remote": "origin"
+    },
+    "add_cj-s-pizza-bar-and-grill": {
+      "head": "refs/heads/add_cj-s-pizza-bar-and-grill",
+      "remote": "origin"
+    },
     "add_clearskylodge": {
       "head": "refs/heads/add_clearskylodge",
+      "remote": "origin"
+    },
+    "add_clementine-s": {
+      "head": "refs/heads/add_clementine-s",
+      "remote": "origin"
+    },
+    "add_coastal-kitchen": {
+      "head": "refs/heads/add_coastal-kitchen",
+      "remote": "origin"
+    },
+    "add_cochon-volant-bbq": {
+      "head": "refs/heads/add_cochon-volant-bbq",
+      "remote": "origin"
+    },
+    "add_coco-breeze": {
+      "head": "refs/heads/add_coco-breeze",
+      "remote": "origin"
+    },
+    "add_coco-kitchen-usa": {
+      "head": "refs/heads/add_coco-kitchen-usa",
+      "remote": "origin"
+    },
+    "add_coco-palm-restaurant": {
+      "head": "refs/heads/add_coco-palm-restaurant",
+      "remote": "origin"
+    },
+    "add_coconut-crab": {
+      "head": "refs/heads/add_coconut-crab",
       "remote": "origin"
     },
     "add_coffeehouse": {
@@ -222,12 +1474,148 @@
       "head": "refs/heads/add_coffeerecords",
       "remote": "origin"
     },
+    "add_comfort-la": {
+      "head": "refs/heads/add_comfort-la",
+      "remote": "origin"
+    },
+    "add_comoncy": {
+      "head": "refs/heads/add_comoncy",
+      "remote": "origin"
+    },
     "add_company-brewing": {
       "head": "refs/heads/add_company-brewing",
       "remote": "origin"
     },
+    "add_conrad-s-mexican-grill": {
+      "head": "refs/heads/add_conrad-s-mexican-grill",
+      "remote": "origin"
+    },
+    "add_cook-s-tortas": {
+      "head": "refs/heads/add_cook-s-tortas",
+      "remote": "origin"
+    },
+    "add_cooter-brown-s-rib-shack": {
+      "head": "refs/heads/add_cooter-brown-s-rib-shack",
+      "remote": "origin"
+    },
+    "add_corazon-modern-kitchen": {
+      "head": "refs/heads/add_corazon-modern-kitchen",
+      "remote": "origin"
+    },
+    "add_corbin-s-q": {
+      "head": "refs/heads/add_corbin-s-q",
+      "remote": "origin"
+    },
+    "add_corks-hops": {
+      "head": "refs/heads/add_corks-hops",
+      "remote": "origin"
+    },
+    "add_corky-s-kitchen-and-bakery": {
+      "head": "refs/heads/add_corky-s-kitchen-and-bakery",
+      "remote": "origin"
+    },
+    "add_cortina-s-italian-market": {
+      "head": "refs/heads/add_cortina-s-italian-market",
+      "remote": "origin"
+    },
+    "add_cortina-s-orange": {
+      "head": "refs/heads/add_cortina-s-orange",
+      "remote": "origin"
+    },
+    "add_country-deli-restaurant": {
+      "head": "refs/heads/add_country-deli-restaurant",
+      "remote": "origin"
+    },
+    "add_country-harvest-restaurant": {
+      "head": "refs/heads/add_country-harvest-restaurant",
+      "remote": "origin"
+    },
+    "add_country-kitchen-restaurant": {
+      "head": "refs/heads/add_country-kitchen-restaurant",
+      "remote": "origin"
+    },
+    "add_country-waffles": {
+      "head": "refs/heads/add_country-waffles",
+      "remote": "origin"
+    },
+    "add_coup-de-thai": {
+      "head": "refs/heads/add_coup-de-thai",
+      "remote": "origin"
+    },
+    "add_coyote-cafe": {
+      "head": "refs/heads/add_coyote-cafe",
+      "remote": "origin"
+    },
+    "add_crab-house": {
+      "head": "refs/heads/add_crab-house",
+      "remote": "origin"
+    },
     "add_craftedyakima": {
       "head": "refs/heads/add_craftedyakima",
+      "remote": "origin"
+    },
+    "add_crave": {
+      "head": "refs/heads/add_crave",
+      "remote": "origin"
+    },
+    "add_crazy-fish-grill": {
+      "head": "refs/heads/add_crazy-fish-grill",
+      "remote": "origin"
+    },
+    "add_crazy-fish-grill-redondo-beach": {
+      "head": "refs/heads/add_crazy-fish-grill-redondo-beach",
+      "remote": "origin"
+    },
+    "add_crazy-fish-grill-san-pedro": {
+      "head": "refs/heads/add_crazy-fish-grill-san-pedro",
+      "remote": "origin"
+    },
+    "add_crazy-george-taqueria": {
+      "head": "refs/heads/add_crazy-george-taqueria",
+      "remote": "origin"
+    },
+    "add_creamistry": {
+      "head": "refs/heads/add_creamistry",
+      "remote": "origin"
+    },
+    "add_crepeville-midtown": {
+      "head": "refs/heads/add_crepeville-midtown",
+      "remote": "origin"
+    },
+    "add_crepissima": {
+      "head": "refs/heads/add_crepissima",
+      "remote": "origin"
+    },
+    "add_croft-alley": {
+      "head": "refs/heads/add_croft-alley",
+      "remote": "origin"
+    },
+    "add_crogan-s-montclair": {
+      "head": "refs/heads/add_crogan-s-montclair",
+      "remote": "origin"
+    },
+    "add_cronies-sports-grill": {
+      "head": "refs/heads/add_cronies-sports-grill",
+      "remote": "origin"
+    },
+    "add_croqueta-burger": {
+      "head": "refs/heads/add_croqueta-burger",
+      "remote": "origin"
+    },
+    "add_crouching-tiger-restaurant": {
+      "head": "refs/heads/add_crouching-tiger-restaurant",
+      "remote": "origin"
+    },
+    "add_crouse-s-flat-top-grill": {
+      "head": "refs/heads/add_crouse-s-flat-top-grill",
+      "remote": "origin"
+    },
+    "add_crust-simply-italian": {
+      "head": "refs/heads/add_crust-simply-italian",
+      "remote": "origin"
+    },
+    "add_cuca-s-mexican-food": {
+      "head": "refs/heads/add_cuca-s-mexican-food",
       "remote": "origin"
     },
     "add_daikaya": {
@@ -608,6 +1996,10 @@
     },
     "add_sausalito-equator": {
       "head": "refs/heads/add_sausalito-equator",
+      "remote": "origin"
+    },
+    "add_saverios-pizzeria": {
+      "head": "refs/heads/add_saverios-pizzeria",
       "remote": "origin"
     },
     "add_seriospizzeria": {
