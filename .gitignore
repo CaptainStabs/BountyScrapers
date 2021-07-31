@@ -11,6 +11,9 @@ __pycache__/
 menus/.dolt/noms/
 menus/.dolt/temptf/
 
+# Secrets
+_cookie.py
+
 # Distribution / packaging
 .Python
 build/
