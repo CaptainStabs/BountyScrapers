@@ -1,7 +1,7 @@
 {
-  "head": "refs/heads/add_cuca-s-mexican-food",
-  "staged": "jgnuf8bklq7k327iujnpbope4p2fcae3",
-  "working": "jgnuf8bklq7k327iujnpbope4p2fcae3",
+  "head": "refs/heads/add_cuisine-co",
+  "staged": "cil7b46v3c7hrk4s5u8vbh76l14j27kn",
+  "working": "cil7b46v3c7hrk4s5u8vbh76l14j27kn",
   "merge": null,
   "remotes": {
     "dolt-origin": {
@@ -1616,6 +1616,10 @@
     },
     "add_cuca-s-mexican-food": {
       "head": "refs/heads/add_cuca-s-mexican-food",
+      "remote": "origin"
+    },
+    "add_cuisine-co": {
+      "head": "refs/heads/add_cuisine-co",
       "remote": "origin"
     },
     "add_daikaya": {
