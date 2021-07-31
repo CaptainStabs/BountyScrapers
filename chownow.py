@@ -4,6 +4,7 @@ import json
 import doltcli as dolt
 import os
 import time
+import re
 
 
 # db = dolt.Dolt("menus")
@@ -125,7 +126,7 @@ with open("us_cities.csv", "r") as location_file:
                     #     f.write(json.dumps(parsed_response, indent=4))
                     #     input()
                 # filename = "add_" + restaurant_name.replace(" ", "_").replace("'","").replace("\n","").replace("&","and").replace("--","-").replace("_|_", "").replace(".", "-").replace("?","").lower() + ".csv"
-                branch_name = "add_" + restaurant_name.replace(" ", "-").replace("'","").replace("\n","").replace("&","and").replace("--","-").replace("|", "").replace(".", "-").replace("?","").replace("(", "").replace(")","").replace('"', "").replace("!", "").lower()
+                branch_name = "add_" + re.sub("[^0-9a-zA-Z]+", "-", restaurant_name).lower()
                 filename = branch_name + ".csv"
                 # print(json.dumps(menu_parsed, indent=4))
 
