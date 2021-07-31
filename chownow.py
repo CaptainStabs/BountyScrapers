@@ -274,8 +274,9 @@ with open("us_cities.csv", "r") as location_file:
             if last:
                 """Reset for next location"""
                 first = True
+                time.sleep(0.1)
                 continue  # End iterating over restaurant_dict
-                time.sleep(2)
+
 
                 # print(json.dumps(parsed_response["restaurants"], indent=4))
                     # break
