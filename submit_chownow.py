@@ -111,9 +111,9 @@ def check_if_exists(headers):
                         read_csv = csv.DictReader(f)
                         print(file)
 
+                        print("      [*] Getting potential branch names from file")
                         for index, row in enumerate(read_csv):
-                            print("      [*] Getting potential branch names from file")
-                            print(index)
+                            # print(index)
                             if index == 1:  # Skip the csv header
                                 restaurant_name = row["restaurant_name"]
                                 # branch_name1 = "add_" + row["restaurant_name"].replace(" ", "").replace("'", "").replace("&", "").replace("%20", "_").lower()
