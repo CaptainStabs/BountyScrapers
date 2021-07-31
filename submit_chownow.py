@@ -5,7 +5,7 @@ import doltcli as dolt
 import requests
 import googlesearch as google
 from urllib.parse import urlparse
-from cookie import dolt_cookie
+from _cookie import dolt_cookie
 import re
 
 
