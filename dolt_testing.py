@@ -258,4 +258,4 @@ def get_diff(headers, running_total=0, retry_count=4, stats=False):
 
 # get_open_prs(payload, headers, url)
 # remove_pulls(43644, 46122)
-get_diff(headers, running_total=9421, retry_count=20, stats=True)
+get_diff(headers, running_total=55153, retry_count=20, stats=True)
