@@ -146,8 +146,8 @@ def remove_pulls(start_id, end_id):
     print("   [*] Finished")
 
 # Get the diff from dolthub
-def get_diff(headers, stats=False):
-    running_total = 8019
+def get_diff(headers, running_total=0, stats=False):
+    # running_total = 8019
 
     print("   [*] Extracting Pull IDs")
     with open("pull_ids.txt", "r") as output:
