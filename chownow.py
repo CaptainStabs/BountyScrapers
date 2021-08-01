@@ -197,7 +197,7 @@ with open("us_cities.csv", "r") as location_file:
                                 try:
                                     try:
                                         print("      [*] There is a size! Size: " + str(items["size"]).upper())
-                                        nutrition_facts["name"] = items["name"].replace('\\"', " inch ").replace('"', " inch ").upper() + " - " + str(items["size"]).upper()
+                                        nutrition_facts["name"] = items["name"].replace('\\"', " inch ").replace('"', " inch ").upper() + " - " + str(items["size"]).replace('\\"', " inch ").replace('"', " inch ").upper()
 
                                     except KeyError as error:  # Means that the API is dumb and inconsisitent
                                         print("      [!] ERROR with size: " + str(error))
