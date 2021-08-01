@@ -106,6 +106,7 @@ def check_if_exists(headers):
     for root, dirs, files in os.walk(dir):
         if "verified_submitted" or "not_submitted" not in root:  # These are the "safe" folders
             for file in files:
+                db.checkout(branch="master")
                 if ".csv" in file:                               # We only want the CSVs
                     with open(root + file, 'r') as f:
                         read_csv = csv.DictReader(f)
@@ -120,7 +121,7 @@ def check_if_exists(headers):
                                 # branch_name2 = "add_" + row["restaurant_name"].replace(" ", "-").replace("'", "").replace("&", "").replace("--", "-").replace("%20", "_").lower()
                                 # branch_name3 = "add_" + row["restaurant_name"].replace(" ","-").replace("'", "").replace("&", "").replace("--","-").replace("%20","_").rstrip(".").lower()
                                 identifier = row["identifier"]
-                                branch_name = "add_" + re.sub("[^0-9a-zA-Z]+", "-", restaurant_name).lower()
+                                branch_name = "add_" + re.sub("[^0-9a-zA-Z]+", "-", restaurant_name) + "-2".lower()
                                 break
 
                         print("\n      [*] Finding branch's name...")
