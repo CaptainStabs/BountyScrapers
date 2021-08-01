@@ -127,7 +127,7 @@ def remove_pulls(start_id, end_id):
         # Iterate over lines
         for pull_ids in pull_ids_list:
             # Probably not needed, but better safe than sorry.
-            pull_id = re.sub("[^0-9a-zA-Z]+", "", pull_ids)
+            pull_id = re.sub("[^0-9]+", "", pull_ids)
 
             if int(pull_id) not in range(start_id, end_id):
                 new_pull_id_list.append(int(pull_id))
@@ -157,7 +157,7 @@ def get_diff(headers, running_total=0, stats=False):
 
     print("   [*] Beginning Loop")
     for pull_ids in pull_ids_list:  # I'm aware that this is bad
-        pull_ID = re.sub("[^0-9a-zA-Z]+", "", str(pull_ids))
+        pull_ID = re.sub("[^0-9]+", "", str(pull_ids))
         print("      [*] Pull ID: " + str(pull_ID))
         # print(type(pull_ID))
         # print(type(pull_ids))
@@ -258,4 +258,4 @@ def get_diff(headers, running_total=0, stats=False):
 
 # get_open_prs(payload, headers, url)
 # remove_pulls(43644, 46122)
-get_diff(headers, running_total=8019 stats=True)
+get_diff(headers, running_total=6164, stats=True)
