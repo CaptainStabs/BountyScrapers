@@ -118,6 +118,7 @@ def remove_pulls(start_id, end_id):
         pull_ids_str = str(pull_ids_input).replace("[", "").replace("]", "")
         pull_ids_list = pull_ids_str.split(", ")
         # print(from_branches)
+        input.close()
 
     new_pull_id_list = []
     with open("new_pull_ids.txt", "w") as output:
@@ -142,7 +143,7 @@ def remove_pulls(start_id, end_id):
 
 # Get the diff from dolthub
 def get_diff(headers, stats=False):
-    running_total = 5912
+    running_total = 8019
 
     print("   [*] Extracting Pull IDs")
     with open("pull_ids.txt", "r") as output:
@@ -195,7 +196,7 @@ def get_diff(headers, stats=False):
                 if fail_count > 4:
                     print("      [!] Still not working, giving up....")
                     break
-                time.sleep("1")
+                time.sleep(2)
                 pass
 
         diff_payload = json.dumps(
@@ -238,13 +239,13 @@ def get_diff(headers, stats=False):
 
                 except TypeError:
                     print("      [*] Whoops, trying again.")
-                    print(diff_response.text)
+                    # print(diff_response.text)
                     success = False
                     fail_count += 1
                     if fail_count > 4:
                         print("      [!] Still not working, giving up...\n")
                         break
-                    time.sleep(1)
+                    time.sleep(2)
                     pass
         # This will run if the first query failed
         else:
@@ -252,5 +253,5 @@ def get_diff(headers, stats=False):
 
 
 # get_open_prs(payload, headers, url)
-# remove_pulls(43644, 46122)
-get_diff(headers, stats=True)
+remove_pulls(43644, 46122)
+# get_diff(headers, stats=True)
