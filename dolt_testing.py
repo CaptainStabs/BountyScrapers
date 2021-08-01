@@ -134,12 +134,12 @@ def remove_pulls(start_id, end_id):
 
         removed_diff = len(pull_ids_list) - len(new_pull_id_list)
         print("      [*] Removed " + str(removed_diff) + " PRs")
+        for pull_ids in new_pull_id_list:
+            output.write(str(pull_ids) + "\n")
         print("      [*] Removing old pull id file")
         os.remove("pull_ids.txt")
         print("      [*] Renaming to pull_ids.txt")
         os.rename("new_pull_ids.txt", "pull_ids.txt")
-        for pull_ids in new_pull_id_list:
-            output.write(str(pull_ids) + "\n")
         print("   [*] Finished")
 
 # Get the diff from dolthub
