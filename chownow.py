@@ -173,7 +173,7 @@ with open("us_cities.csv", "r") as location_file:
 
                 # Write results to file
                 file_path = "./submited/" + filename.replace("/", "-").replace("_|_", "")
-                with open(file_path, "a") as output:
+                with open(file_path, "a", encoding="utf-8") as output:
                     writer = csv.DictWriter(output, fieldnames=columns)
 
                     # Check if the file exists, or if the file is empty

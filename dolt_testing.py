@@ -146,7 +146,7 @@ def remove_pulls(start_id, end_id):
     print("   [*] Finished")
 
 # Get the diff from dolthub
-def get_diff(headers, running_total=0, stats=False):
+def get_diff(headers, running_total=0, retry_count=4, stats=False):
     # running_total = 8019
 
     print("   [*] Extracting Pull IDs")
@@ -197,7 +197,7 @@ def get_diff(headers, running_total=0, stats=False):
                 print("      [*] Failed to decode (PullDiffForTableList)")
                 success1 = False
                 fail_count += 1
-                if fail_count > 4:
+                if fail_count > retry_count:
                     print("      [!] Still not working, giving up....")
                     break
                 time.sleep(2)
@@ -246,7 +246,7 @@ def get_diff(headers, running_total=0, stats=False):
                     # print(diff_response.text)
                     success = False
                     fail_count += 1
-                    if fail_count > 4:
+                    if fail_count > retry_count:
                         print("      [!] Still not working, giving up...\n")
                         break
                     time.sleep(2)
@@ -258,4 +258,4 @@ def get_diff(headers, running_total=0, stats=False):
 
 # get_open_prs(payload, headers, url)
 # remove_pulls(43644, 46122)
-get_diff(headers, running_total=8966, stats=True)
+get_diff(headers, running_total=9421, retry_count=20, stats=True)
