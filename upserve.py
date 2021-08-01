@@ -2,7 +2,7 @@ import requests
 import urllib.urlparse
 import json
 
-headers = json.dumps(headers = {
+headers = {
     'sec-ch-ua': '"Chromium";v="92", " Not A;Brand";v="99", "Google Chrome";v="92"',
     'DNT': '1',
     'sec-ch-ua-mobile': '?0',
@@ -11,7 +11,7 @@ headers = json.dumps(headers = {
     'Sec-Fetch-Site': 'cross-site',
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Dest': 'empty'
-})
+}
 
 def upserve_scraper(webpage, headers):
     url = "https://d2evh2mef3r450.cloudfront.net/"
