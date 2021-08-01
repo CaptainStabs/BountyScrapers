@@ -56,7 +56,8 @@ def time_dif(stats, string, start, end):
 
 
 # Get the open pull requests from dolthub.
-def get_open_prs(payload, headers, url):
+# mode newline or list
+def get_open_prs(payload, headers, url, mode="newline"):
     # Prepare the variables
     is_nextpagetoken = True
     pull_id = []
@@ -105,9 +106,16 @@ def get_open_prs(payload, headers, url):
             }
         )
     ###  Once there is no nextPageToken, this will write
-    with open("pull_ids.txt", "w") as output:
-        output.write(str(pull_id))
-    print(pull_id)
+    if "newline" in mode.lower():
+        with open("pull_ids.txt", "a") as output:
+            for pull_ids in pull_id:
+                output.write(str(pull_ids) + "\n")
+
+    elif "list" in mode.lower():
+        with open("pull_ids.txt", "w") as output:
+
+            output.write(str(pull_id))
+        # print(pull_id)
 
 # Remove pull_ids from pull_ids.txt if in provided range.
 def remove_pulls(start_id, end_id):
@@ -252,6 +260,7 @@ def get_diff(headers, stats=False):
             continue
 
 
+mode = "newline"
 # get_open_prs(payload, headers, url)
-remove_pulls(43644, 46122)
+remove_pulls(43644, 46122, mode=mode)
 # get_diff(headers, stats=True)
