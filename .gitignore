@@ -11,6 +11,10 @@ __pycache__/
 menus/.dolt/noms/
 menus/.dolt/temptf/
 
+# Raw data
+/submited/*.csv
+/submited/verified_submitted/*.csv
+
 # Secrets
 _cookie.py
 
