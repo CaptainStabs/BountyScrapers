@@ -142,7 +142,7 @@ def remove_pulls(start_id, end_id):
 
 # Get the diff from dolthub
 def get_diff(headers, stats=False):
-    running_total = 0
+    running_total = 5912
 
     print("   [*] Extracting Pull IDs")
     with open("pull_ids.txt", "r") as output:
@@ -179,7 +179,7 @@ def get_diff(headers, stats=False):
                 commit_response = requests.request("POST", url, headers=headers, data=commit_payload)
                 commit_end = function_timer(stats)
                 print("         [*] Finished ^")
-                time_dif(stats, "PullDiffForTableList request time", commit_start, commit_end)
+                time_dif(stats, "         [?] PullDiffForTableList request time", commit_start, commit_end)
 
                 # print(commit_response.text)
                 commit_json = json.loads(commit_response.text)
@@ -189,12 +189,13 @@ def get_diff(headers, stats=False):
                 success1 = True
 
             except json.decoder.JSONDecodeError:
-                print("      [*] Failed to decode")
+                print("      [*] Failed to decode (PullDiffForTableList)")
                 success1 = False
                 fail_count += 1
-                if fail_count > 2:
+                if fail_count > 4:
                     print("      [!] Still not working, giving up....")
                     break
+                time.sleep("1")
                 pass
 
         diff_payload = json.dumps(
@@ -221,12 +222,10 @@ def get_diff(headers, stats=False):
                 try:
                     print("      [*] Getting DiffSummary")
                     diff_start = function_timer(stats)
-                    diff_response = requests.request(
-                        "POST", url, headers=headers, data=diff_payload
-                    )
+                    diff_response = requests.request("POST", url, headers=headers, data=diff_payload)
                     diff_end = function_timer(stats)
-                    time_dif(stats, "DiffSUmmary response time", diff_start, diff_end)
-                    print(diff_response.text)
+                    time_dif(stats, "         [?] DiffSUmmary response time", diff_start, diff_end)
+                    # print(diff_response.text)
 
                     diff_parsed = json.loads(diff_response.text)
                     diff_data = diff_parsed["data"]["diffSummaryAsync"]["diffSummary"]
@@ -239,12 +238,15 @@ def get_diff(headers, stats=False):
 
                 except TypeError:
                     print("      [*] Whoops, trying again.")
+                    print(diff_response.text)
                     success = False
                     fail_count += 1
-                    if fail_count > 2:
+                    if fail_count > 4:
                         print("      [!] Still not working, giving up...\n")
                         break
+                    time.sleep(1)
                     pass
+        # This will run if the first query failed
         else:
             continue
 
