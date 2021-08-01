@@ -121,6 +121,9 @@ def remove_pulls(start_id, end_id):
 
     new_pull_id_list = []
     with open("new_pull_ids.txt", "a", encoding="utf-8") as output:
+        # Add 1 so that we end the range on the correct number
+        end_id = end_id + 1
+
         # Iterate over lines
         for pull_ids in pull_ids_list:
             # Probably not needed, but better safe than sorry.
@@ -253,6 +256,6 @@ def get_diff(headers, stats=False):
             continue
 
 
-get_open_prs(payload, headers, url)
-# remove_pulls(43644, 46122)
+# get_open_prs(payload, headers, url)
+remove_pulls(43644, 46122)
 # get_diff(headers, stats=True)
