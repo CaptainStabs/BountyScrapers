@@ -106,32 +106,24 @@ def get_open_prs(payload, headers, url, mode="newline"):
             }
         )
     ###  Once there is no nextPageToken, this will write
-    if "newline" in mode.lower():
-        with open("pull_ids.txt", "a") as output:
-            for pull_ids in pull_id:
-                output.write(str(pull_ids) + "\n")
-
-    elif "list" in mode.lower():
-        with open("pull_ids.txt", "w") as output:
-
-            output.write(str(pull_id))
-        # print(pull_id)
+    with open("pull_ids.txt", "a") as output:
+        for pull_ids in pull_id:
+            output.write(str(pull_ids) + "\n")
+    # print(pull_id)
 
 # Remove pull_ids from pull_ids.txt if in provided range.
 def remove_pulls(start_id, end_id):
     print(f"   [*] Removing pulls in the range {start_id}-{end_id}")
     with open("pull_ids.txt", "r") as input:
-        pull_ids_input = input.readlines()
-        # Not sure why I can't iterate over this normally
-        pull_ids_str = str(pull_ids_input).replace("[", "").replace("]", "")
-        pull_ids_list = pull_ids_str.split(", ")
+        pull_ids_list = input.readlines()
         # print(from_branches)
         input.close()
 
     new_pull_id_list = []
-    with open("new_pull_ids.txt", "w") as output:
-        # Not sure why i have to iterate like this
+    with open("new_pull_ids.txt", "a", encoding="utf-8") as output:
+        # Iterate over lines
         for pull_ids in pull_ids_list:
+            # Probably not needed, but better safe than sorry.
             pull_id = re.sub("[^0-9a-zA-Z]+", "", pull_ids)
 
             if int(pull_id) not in range(start_id, end_id):
@@ -146,7 +138,8 @@ def remove_pulls(start_id, end_id):
         os.remove("pull_ids.txt")
         print("      [*] Renaming to pull_ids.txt")
         os.rename("new_pull_ids.txt", "pull_ids.txt")
-        output.write(str(new_pull_id_list))
+        for pull_ids in new_pull_id_list:
+            output.write(str(pull_ids) + "\n")
         print("   [*] Finished")
 
 # Get the diff from dolthub
@@ -260,7 +253,6 @@ def get_diff(headers, stats=False):
             continue
 
 
-mode = "newline"
-# get_open_prs(payload, headers, url)
-remove_pulls(43644, 46122, mode=mode)
+get_open_prs(payload, headers, url)
+# remove_pulls(43644, 46122)
 # get_diff(headers, stats=True)
