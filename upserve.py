@@ -50,7 +50,7 @@ def upserve_scraper(webpage, headers, payload):
             else:
                 menu_success = False
                 menu_fails += 1
-                print(menu_response.text)
+                # print(menu_response.text)
                 time.sleep(1)
             if menu_fails > 8:
                 menu_success = False
