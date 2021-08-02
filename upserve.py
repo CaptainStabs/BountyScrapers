@@ -4,6 +4,7 @@ import csv
 import json
 import re
 import os
+import time
 
 
 headers = {
@@ -33,60 +34,97 @@ def upserve_scraper(webpage, headers, payload):
     restaurant_name = web_path.split('/')[2].replace("-"," ").upper()
     print("   [*] Going to scrape: " + str(restaurant_name).lower())
 
-    print("   [*] Extracting data...")
-    menu_url = url + web_path + "/menu.json"
-    menu_response = requests.request("GET", menu_url, headers=headers, data=payload)
-    menus_json = json.loads(menu_response.text)
-
-    print("      [*] Extracting location data....")
-    location_url = f"{url}/s/{web_path_split[2]}/online_ordering.json"
-    location_response = requests.request("GET", location_url, headers=headers)
-    location_json = json.loads(location_response.text)
-
-    print("         [*] Extracting location...")
-    location_address = location_json["address"]
-    location_city = location_address["city"].upper()
-    location_state = location_address["state"]
-
-    print("      [*] Getting Menu")
-    menu = menus_json["menu"]
-    menu_items = menu["items"]
-
-    nutrition_facts = {}
-
-    print("      [*] Creating branch name")
-    branch_name = "add_" + re.sub("[^0-9a-zA-Z]+", "-", restaurant_name).lower()  # Strip out nono-alphanumeric characters
-    filename = branch_name + ".csv"
     file_path = "./submited/" + filename.replace("/", "-").replace("_|_", "")
+    if not os.path.isfile(file_path) or os.stat(file_path).st_size == 0:
+        menu_success = False
+        menu_fails = 0
 
-    banned_words = ["HOODIE", "GIFT CARD", "GIFTCARD", "DELIVERY FEE", "GIFT CERTIFICATE", "BANDANA", "TSHIRT"]
-    columns = ["name", "restaurant_name", "identifier", "calories", "price_usd"]
+        while not menu_success:
+            print("   [*] Extracting data...")
+            menu_url = url + web_path + "/menu.json"
+            menu_response = requests.request("GET", menu_url, headers=headers, data=payload)
 
-    print("   [*] Opening file: " + str(file_path))
-    with open(file_path, "a", encoding="utf-8") as output:
-        writer = csv.DictWriter(output, fieldnames=columns)
+            if menu_response.status_code == 200:
+                menus_json = json.loads(menu_response.text)
+                menu_success = True
+            else:
+                menu_success = False
+                menu_fails += 1
+                print(menu_response.text)
+                time.sleep(1)
+            if menu_fails > 8:
+                menu_success = False
+                print("      [!] Giving up. URL: " + str(menu_url))
+                break
 
-        # Check if the file exists, or if the file is empty
-        # If it's empty, we need to add the header
-        if not os.path.isfile(file_path) or os.stat(file_path).st_size == 0:
-            writer.writeheader()
-            file_is_new = True
+        if menu_success:
+            location_success = False
+            location_fails = 0
 
-        else:
-            print("      [*] File is not new")
-            file_is_new = False
+            while not location_success:
+                print("      [*] Extracting location data....")
+                location_url = f"{url}/s/{web_path_split[2]}/online_ordering.json"
+                location_response = requests.request("GET", location_url, headers=headers)
 
-        if file_is_new:
-            print("      [*] File is new")
-            for item in menu_items:
-                if not any(banned_word in item["name"].strip().upper() for banned_word in banned_words):
-                    nutrition_facts["name"] = item["name"].strip().replace('\\"', " inch ").replace('"', " inch ").upper()
-                    nutrition_facts["restaurant_name"] = restaurant_name.upper()
-                    nutrition_facts["identifier"] = f"{location_city}, {location_state}"
-                    nutrition_facts["price_usd"] = "{:.2f}".format(float(item["price"]))
-                    # print(json.dumps(nutrition_facts, indent=4))
-                    writer.writerow(nutrition_facts)
+                if location_response.status_code == 200:
+                    location_json = json.loads(location_response.text)
+                    location_success = True
                 else:
-                    print("         [*] Avoiding: " + str(item["name"]))
+                    location_success = False
+                    location_fails += 1
+                    time.sleep(0.7)
+                if location_fails > 8:
+                    location_success = False
+                    print("      [!] Giving up. URL: " + str(location_url))
+
+
+            if location_success:
+                print("         [*] Extracting location...")
+                location_address = location_json["address"]
+                location_city = location_address["city"].upper()
+                location_state = location_address["state"]
+
+                print("      [*] Getting Menu")
+                menu = menus_json["menu"]
+                menu_items = menu["items"]
+
+                nutrition_facts = {}
+
+                print("      [*] Creating branch name")
+                branch_name = "add_" + re.sub("[^0-9a-zA-Z]+", "-", restaurant_name).lower()  # Strip out nono-alphanumeric characters
+                filename = branch_name + ".csv"
+                file_path = "./submited/" + filename.replace("/", "-").replace("_|_", "")
+
+                banned_words = ["HOODIE", "GIFT CARD", "GIFTCARD", "DELIVERY FEE", "GIFT CERTIFICATE", "BANDANA", "TSHIRT", "BODY WASH",
+            "LOTION", ]
+                columns = ["name", "restaurant_name", "identifier", "calories", "price_usd"]
+
+                print("   [*] Opening file: " + str(file_path))
+                with open(file_path, "a", encoding="utf-8") as output:
+                    writer = csv.DictWriter(output, fieldnames=columns)
+
+                    # Check if the file exists, or if the file is empty
+                    # If it's empty, we need to add the header
+                    if not os.path.isfile(file_path) or os.stat(file_path).st_size == 0:
+                        writer.writeheader()
+                        file_is_new = True
+
+                    else:
+                        print("      [*] File is not new")
+                        file_is_new = False
+
+                    if file_is_new:
+                        print("      [*] File is new")
+                        for item in menu_items:
+                            if not any(banned_word in item["name"].strip().upper() for banned_word in banned_words):
+                                nutrition_facts["name"] = item["name"].strip().replace('\\"', " inch ").replace('"', " inch ").upper()
+                                nutrition_facts["restaurant_name"] = restaurant_name.upper()
+                                nutrition_facts["identifier"] = f"{location_city}, {location_state}"
+                                nutrition_facts["price_usd"] = "{:.2f}".format(float(item["price"]))
+                                # print(json.dumps(nutrition_facts, indent=4))
+                                writer.writerow(nutrition_facts)
+                            else:
+                                print("         [*] Avoiding: " + str(item["name"]))
+    time.sleep(0.9)
 
 upserve_scraper("https://app.upserve.com/s/simply-gourmet-lake-placid", headers=headers, payload=payload)
