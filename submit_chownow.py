@@ -7,7 +7,7 @@ import googlesearch as google
 from urllib.parse import urlparse
 from _cookie import dolt_cookie
 import re
-
+from utils.interrupt_handler import GracefulInterruptHandler
 
 dir = ("./submited/")  # Where the save directory should be
 full_auto = True  # Default False
@@ -102,144 +102,153 @@ def check_if_exists(headers):
         # from_branches = from_branches.replace("[", "").replace("]", "")
         # list_branches = from_branches.split(", ")
         # print(from_branches)
+    with GracefulInterruptHandler() as h:
+        for root, dirs, files in os.walk(dir):
+            if "verified_submitted" or "not_submitted" not in root:  # These are the "safe" folders
+                for file in files:
+                    if h.interrupted:
+                        print("   [!] Interrupted, exiting.")
+                        break
 
-    for root, dirs, files in os.walk(dir):
-        if "verified_submitted" or "not_submitted" not in root:  # These are the "safe" folders
-            for file in files:
-                db.checkout(branch="master")
-                if ".csv" in file:                               # We only want the CSVs
-                    with open(root + file, 'r') as f:
-                        read_csv = csv.DictReader(f)
-                        print(file)
+                    db.checkout(branch="master")
+                    if ".csv" in file:                               # We only want the CSVs
+                        with open(root + file, 'r') as f:
+                            read_csv = csv.DictReader(f)
+                            print("\n" + file)
 
-                        print("      [*] Getting potential branch names from file")
-                        for index, row in enumerate(read_csv):
-                            # print(index)
-                            if index == 1:  # Skip the csv header
-                                restaurant_name = row["restaurant_name"]
-                                # branch_name1 = "add_" + row["restaurant_name"].replace(" ", "").replace("'", "").replace("&", "").replace("%20", "_").lower()
-                                # branch_name2 = "add_" + row["restaurant_name"].replace(" ", "-").replace("'", "").replace("&", "").replace("--", "-").replace("%20", "_").lower()
-                                # branch_name3 = "add_" + row["restaurant_name"].replace(" ","-").replace("'", "").replace("&", "").replace("--","-").replace("%20","_").rstrip(".").lower()
-                                identifier = row["identifier"]
-                                branch_name = "add_" + re.sub("[^0-9a-zA-Z]+", "-", restaurant_name) + "-2".lower()
-                                break
+                            print("      [*] Getting potential branch names from file")
+                            for index, row in enumerate(read_csv):
+                                # print(index)
+                                if index == 1:  # Skip the csv header
+                                    restaurant_name = row["restaurant_name"]
+                                    # branch_name1 = "add_" + row["restaurant_name"].replace(" ", "").replace("'", "").replace("&", "").replace("%20", "_").lower()
+                                    # branch_name2 = "add_" + row["restaurant_name"].replace(" ", "-").replace("'", "").replace("&", "").replace("--", "-").replace("%20", "_").lower()
+                                    # branch_name3 = "add_" + row["restaurant_name"].replace(" ","-").replace("'", "").replace("&", "").replace("--","-").replace("%20","_").rstrip(".").lower()
+                                    identifier = row["identifier"]
+                                    branch_name = "add_" + re.sub("[^0-9a-zA-Z]+", "-", restaurant_name) + "-2".lower()
+                                    break
 
-                        print("\n      [*] Finding branch's name...")
-                        print("         [*] Checking out branch: " + branch_name)
-                        try:
-                            db.checkout(branch=branch_name, checkout_branch=True)
+                            print("\n      [*] Finding branch's name...")
+                            print("         [*] Checking out branch: " + branch_name)
+                            try:
+                                db.checkout(branch=branch_name, checkout_branch=True)
+                                # success = True
 
-                        except Exception as error:
-                            print("      [!] Branch probably already exists, but I can't tell due to non-existant exceptions")
-                            print("        " + str(error))
-                            db.checkout(branch=branch_name)
-                        # db.checkout(branch=branch_name)
-                        # branch_name = branch_name1
-                        success = True
+                            except Exception as error:
+                                print("      [!] Branch probably already exists, but I can't tell due to non-existant exceptions")
+                                print("        " + str(error))
+                                db.checkout(branch=branch_name)
+                                # success = False
+                            # db.checkout(branch=branch_name)
+                            # branch_name = branch_name1
+                            success = True
 
-                        if success:  # No point in wasting time on broken files
-                            print("         [*] That worked! branchname: " + branch_name)
-                            # response = requests.request("POST", url, headers=headers, data=payload)  # Don't need this anymore, used to check if the branch existed in  a PR
+                            if success:  # No point in wasting time on broken files
+                                print("         [*] That worked! branchname: " + branch_name)
+                                # response = requests.request("POST", url, headers=headers, data=payload)  # Don't need this anymore, used to check if the branch existed in  a PR
 
-                            print("      [*] Checking if branch has a PR...")
-                            if not any(branch_name in list_branch for list_branch in list_branches):
-                                print("         [*] PR does not exist, attempting to write...")
-                                try:
-                                    print("            [*] Trying to write to db...")
-                                    dolt.write_file(dolt=db, table="menu_items", file_handle=open(root + file, "r"), import_mode="create", commit=True, commit_message="Add data", do_continue=True)
-                                        # dolt.write_file(dolt=db, table="menu_items", file_handle=open(filename, "r"), import_mode="create", do_continue=True)
-                                except:
-                                        print("               [!] Write failure")
-                                        with open("csv_fails.txt", "a") as output:  # Log the failure
-                                            output.write(file + ", " + branch_name + ", write failure" + "\n")
+                                print("      [*] Checking if branch has a PR...")
+                                if not any(branch_name in list_branch for list_branch in list_branches):
+                                    print("         [*] PR does not exist, attempting to write...")
+                                    try:
+                                        print("            [*] Trying to write to db...")
+                                        dolt.write_file(dolt=db, table="menu_items", file_handle=open(root + file, "r"), import_mode="create", commit=True, commit_message="Add data", do_continue=True)
+                                            # dolt.write_file(dolt=db, table="menu_items", file_handle=open(filename, "r"), import_mode="create", do_continue=True)
+                                    except:
+                                            print("               [!] Write failure")
+                                            with open("csv_fails.txt", "a") as output:  # Log the failure
+                                                output.write(file + ", " + branch_name + ", write failure" + "\n")
+                                            pass
+
+
+                                    """Being the early stages that dolt is in, these are primarily workarounds.
+                                    Due to the (mostly) autonomous nature of this script, I don't want any errors interefering with it's progress.
+                                    """
+                                    print("            [*] Trying to push to remote")
+                                    try:
+                                        db.push(remote="origin", set_upstream=True, refspec=branch_name)
+
+                                    except:
+                                        print("               [!] Push failed")
+                                        with open("csv_fails.txt", "a") as output:  # Log the failure for manual review
+                                            output.write(file + ", " + branch_name + ", push failure" + "\n")
+                                        pass
+
+                                    try:
+                                        print("            [*] Trying to create PR...")
+                                        pr_name = branch_name.replace("_"," ").replace("-", " ") + " " + identifier
+                                        payload = json.dumps({
+                                            "operationName": "CreatePullRequestWithForks",
+                                            "variables": {
+                                                "title": f"{pr_name.lower()}",
+                                                "description": "",
+                                                "fromBranchName": f"{branch_name}",
+                                                "toBranchName": "master",
+                                                "fromBranchOwnerName": "captainstabs",
+                                                "fromBranchRepoName": "menus",
+                                                "toBranchOwnerName": "dolthub",
+                                                "toBranchRepoName": "menus",
+                                                "parentOwnerName": "dolthub",
+                                                "parentRepoName": "menus"
+                                            },
+                                            "query": "mutation CreatePullRequestWithForks($title: String!, $description: String!, $fromBranchName: String!, $toBranchName: String!, $fromBranchRepoName: String!, $fromBranchOwnerName: String!, $toBranchRepoName: String!, $toBranchOwnerName: String!, $parentRepoName: String!, $parentOwnerName: String!) {\n  createPullWithForks(\n    title: $title\n    description: $description\n    fromBranchName: $fromBranchName\n    toBranchName: $toBranchName\n    fromBranchOwnerName: $fromBranchOwnerName\n    fromBranchRepoName: $fromBranchRepoName\n    toBranchOwnerName: $toBranchOwnerName\n    toBranchRepoName: $toBranchRepoName\n    parentRepoName: $parentRepoName\n    parentOwnerName: $parentOwnerName\n  ) {\n    _id\n    pullId\n    __typename\n  }\n}\n"
+                                        })
+
+                                        print("   [!] Opening PR")
+                                        response = requests.request("POST", dolt_url, headers=headers, data=payload)
+
+                                        if response.status_code == 200:  # Check if dolt returns OK
+                                            print("      [*] Success!")
+                                            print("         [?] " + str(response.text))
+                                            f.close()  # Close to prevent InUse error
+
+                                            try:
+                                                os.rename(root + file, root + "verified_submitted/" + file)  # Move the file to the submitted folder
+
+                                            except FileExistsError:
+                                                print("Removed")
+                                                with open("removed.txt", "a") as f:
+                                                    f.write(file + "\n")
+                                                os.remove(root + file)
+                                                pass
+
+                                        else:
+                                            print("      [!] Couldn't open a PR")
+                                            print("      [!] That's not right. Response code: " + str(response.status_code))
+                                            print(response.text)
+                                            with open("csv_fails.txt", "a") as output:
+                                                output.write(file + ", " + branch_name + ", PR failure" + "\n")
+
+                                        print("      [*] Response: " + str(response))
+
+                                    except Exception as e:
+                                        print("      [!] Something went wrong!")
+                                        print("      [!] Error: " + str(e))
+
+                                        response = requests.request("POST", dolt_url, headers=headers, data=payload)
+                                        print(response.status_code)
+
+                                        with open("csv_fails.txt", "a") as output:
+                                            output.write(file + ", " + branch_name + ", other failure" + "\n")
+                                        pass
+
+                                else:  # If a pr already exists for that file
+                                    print("      [*] There is already a PR for this file, moving it out" )
+                                    f.close()  # Close to prevent in use error
+                                    try:
+                                        print("      [*] Moving file...")
+                                        os.rename(root + file, root + "verified_submitted/" + file)  # move the file
+                                    except FileExistsError:
+                                        print("      [!] File already exists! Removing current one.")
+                                        with open("removed.txt", "a") as f:
+                                            f.write(file + ", pr existed\n")
+                                        os.remove(root + file)
                                         pass
 
 
-                                """Being the early stages that dolt is in, these are primarily workarounds.
-                                Due to the (mostly) autonomous nature of this script, I don't want any errors interefering with it's progress.
-                                """
-                                print("            [*] Trying to push to remote")
-                                try:
-                                    db.push(remote="origin", set_upstream=True, refspec=branch_name)
+                        #
+                        # print(read_csv)
+                        # input()
 
-                                except:
-                                    print("               [!] Push failed")
-                                    with open("csv_fails.txt", "a") as output:  # Log the failure for manual review
-                                        output.write(file + ", " + branch_name + ", push failure" + "\n")
-                                    pass
-
-                                try:
-                                    print("            [*] Trying to create PR...")
-                                    pr_name = branch_name.replace("_"," ").replace("-", " ") + " " + identifier
-                                    payload = json.dumps({
-                                        "operationName": "CreatePullRequestWithForks",
-                                        "variables": {
-                                            "title": f"{pr_name}",
-                                            "description": "",
-                                            "fromBranchName": f"{branch_name}",
-                                            "toBranchName": "master",
-                                            "fromBranchOwnerName": "captainstabs",
-                                            "fromBranchRepoName": "menus",
-                                            "toBranchOwnerName": "dolthub",
-                                            "toBranchRepoName": "menus",
-                                            "parentOwnerName": "dolthub",
-                                            "parentRepoName": "menus"
-                                        },
-                                        "query": "mutation CreatePullRequestWithForks($title: String!, $description: String!, $fromBranchName: String!, $toBranchName: String!, $fromBranchRepoName: String!, $fromBranchOwnerName: String!, $toBranchRepoName: String!, $toBranchOwnerName: String!, $parentRepoName: String!, $parentOwnerName: String!) {\n  createPullWithForks(\n    title: $title\n    description: $description\n    fromBranchName: $fromBranchName\n    toBranchName: $toBranchName\n    fromBranchOwnerName: $fromBranchOwnerName\n    fromBranchRepoName: $fromBranchRepoName\n    toBranchOwnerName: $toBranchOwnerName\n    toBranchRepoName: $toBranchRepoName\n    parentRepoName: $parentRepoName\n    parentOwnerName: $parentOwnerName\n  ) {\n    _id\n    pullId\n    __typename\n  }\n}\n"
-                                    })
-
-                                    print("   [!] Opening PR")
-                                    response = requests.request("POST", dolt_url, headers=headers, data=payload)
-
-                                    if response.status_code == 200:  # Check if dolt returns OK
-                                        print("      [*] Success!")
-                                        f.close()  # Close to prevent InUse error
-
-                                        try:
-                                            os.rename(root + file, root + "verified_submitted/" + file)  # Move the file to the submitted folder
-
-                                        except FileExistsError:
-                                            print("Removed")
-                                            with open("removed.txt", "a") as f:
-                                                f.write(file + "\n")
-                                            os.remove(root + file)
-                                            pass
-
-                                    else:
-                                        print("      [!] Couldn't open a PR")
-                                        print("      [!] That's not right. Response code: " + str(response.status_code))
-                                        with open("csv_fails.txt", "a") as output:
-                                            output.write(file + ", " + branch_name + ", PR failure" + "\n")
-
-                                    print("      [*] Response: " + str(response))
-
-                                except Exception as e:
-                                    print("      [!] Something went wrong!")
-                                    print("      [!] Error: " + str(e))
-
-                                    response = requests.request("POST", dolt_url, headers=headers, data=payload)
-                                    print(response.status_code)
-
-                                    with open("csv_fails.txt", "a") as output:
-                                        output.write(file + ", " + branch_name + ", other failure" + "\n")
-                                    pass
-
-                            else:  # If a pr already exists for that file
-                                print("      [*] There is already a PR for this file, moving it out" )
-                                f.close()  # Close to prevent in use error
-                                try:
-                                    os.rename(root + file, root + "verified_submitted/" + file)  # move the file
-                                except FileExistsError:
-                                    print("Removed")
-                                    with open("removed.txt", "a") as f:
-                                        f.write(file + "\n")
-                                    os.remove(root + file)
-                                    pass
-
-
-                    #
-                    # print(read_csv)
-                    # input()
-
-# get_open_prs(payload, headers, url)
+get_open_prs(payload, headers, url)
 check_if_exists(headers=headers)
