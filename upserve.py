@@ -34,8 +34,8 @@ def upserve_scraper(webpage, headers, payload):
     restaurant_name = web_path.split('/')[2].replace("-"," ").upper()
     print("   [*] Going to scrape: " + str(restaurant_name).lower())
 
-    file_path = "./submited/" + filename.replace("/", "-").replace("_|_", "")
-    if not os.path.isfile(file_path) or os.stat(file_path).st_size == 0:
+    file_path1 = "./submited/" + restaurant_name.replace("/", "-").replace("_|_", "") + ".csv"
+    if not os.path.isfile(file_path1) or os.stat(file_path1).st_size == 0:
         menu_success = False
         menu_fails = 0
 
