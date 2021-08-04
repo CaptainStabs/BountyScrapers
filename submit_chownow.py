@@ -7,6 +7,7 @@ import googlesearch as google
 from urllib.parse import urlparse
 from _cookie import dolt_cookie
 import re
+import time
 from utils.interrupt_handler import GracefulInterruptHandler
 
 dir = ("./submited/")  # Where the save directory should be
@@ -42,6 +43,17 @@ headers = {
     'Sec-Fetch-Dest': 'empty',
     'Cookie': f'{dolt_cookie}'
 }
+
+# This function is used for gathering time stats.
+def function_timer(stats):
+    if stats != False:
+        return time.perf_counter()
+
+
+# This function simply calculates and prints the difference between the end and start times.
+def time_dif(stats, string, start, end):
+    if stats != False:
+        print(f"{string}: {end - start} seconds")
 
 '''
 Get the open pull requests from dolt, and save them in `open_prs.txt` to be read
@@ -117,6 +129,7 @@ def check_if_exists(headers):
                             print("\n" + file)
 
                             print("      [*] Getting potential branch names from file")
+                            length = 0
                             for index, row in enumerate(read_csv):
                                 # print(index)
                                 if index == 1:  # Skip the csv header
@@ -126,7 +139,8 @@ def check_if_exists(headers):
                                     # branch_name3 = "add_" + row["restaurant_name"].replace(" ","-").replace("'", "").replace("&", "").replace("--","-").replace("%20","_").rstrip(".").lower()
                                     identifier = row["identifier"]
                                     branch_name = "add_" + re.sub("[^0-9a-zA-Z]+", "-", restaurant_name) + "-2".lower()
-                                    break
+                                    # break
+                                length += 1
 
                             print("\n      [*] Finding branch's name...")
                             print("         [*] Checking out branch: " + branch_name)
@@ -152,9 +166,15 @@ def check_if_exists(headers):
                                     print("         [*] PR does not exist, attempting to write...")
                                     try:
                                         print("            [*] Trying to write to db...")
-                                        dolt.write_file(dolt=db, table="menu_items", file_handle=open(root + file, "r"), import_mode="create", commit=True, commit_message="Add data", do_continue=True)
+                                        stats = True
+                                        write_start = function_timer(stats)
+                                        dolt.write_file(dolt=db, table="menu_items", file_handle=open(root + file, "r"), import_mode="create", commit=True, commit_message="Add data", do_continue=True, do_gc=False)
+                                        write_end = function_timer(stats)
+                                        time_dif(stats, "         [?] Write time", write_start, write_end)
+                                        print("          [?] File Length: " + str(length))
                                             # dolt.write_file(dolt=db, table="menu_items", file_handle=open(filename, "r"), import_mode="create", do_continue=True)
-                                    except:
+                                    except Exception as error:
+                                            print(error)
                                             print("               [!] Write failure")
                                             with open("csv_fails.txt", "a") as output:  # Log the failure
                                                 output.write(file + ", " + branch_name + ", write failure" + "\n")
