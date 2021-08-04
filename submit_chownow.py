@@ -250,5 +250,5 @@ def check_if_exists(headers):
                         # print(read_csv)
                         # input()
 
-get_open_prs(payload, headers, url)
+# get_open_prs(payload, headers, url)
 check_if_exists(headers=headers)
