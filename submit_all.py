@@ -131,35 +131,35 @@ def check_if_exists(headers):
                                         pass
 
 
-                                """Being the early stages that dolt is in, these are primarily workarounds.
-                                Due to the (mostly) autonomous nature of this script, I don't want any errors interefering with it's progress.
-                                """
-                                print("            [*] Trying to push to remote")
-                                try:
-                                    db.push(remote="origin", set_upstream=True, refspec=branch_name)
-                                    success2 = True
-
-                                except Exception as error:
-                                    print("         [!] " + str(error))
-                                    print("               [!] Push failed")
-                                    with open("csv_fails.txt", "a") as output:  # Log the failure for manual review
-                                        output.write(file + ", " + file + ", push failure" + "\n")
-                                    sucess2 = False
-                                    pass
-
-                                if success2:  # If a pr already exists for that file
-                                    print("      [*] Finished push, moving" )
-                                    f.close()  # Close to prevent in use error
-
-                                    try:
-                                        print("      [*] Moving file...")
-                                        os.rename(root + file, root + "verified_submitted/" + file)  # move the file
-                                    except FileExistsError:
-                                        print("      [!] File already exists! Removing current one.")
-                                        with open("removed.txt", "a") as f:
-                                            f.write(file + ", pr existed, file existed\n")
-                                        os.remove(root + file)
-                                        pass
+                                # """Being the early stages that dolt is in, these are primarily workarounds.
+                                # Due to the (mostly) autonomous nature of this script, I don't want any errors interefering with it's progress.
+                                # """
+                                # print("            [*] Trying to push to remote")
+                                # try:
+                                #     db.push(remote="origin", set_upstream=True, refspec=branch_name)
+                                #     success2 = True
+                                #
+                                # except Exception as error:
+                                #     print("         [!] " + str(error))
+                                #     print("               [!] Push failed")
+                                #     with open("csv_fails.txt", "a") as output:  # Log the failure for manual review
+                                #         output.write(file + ", " + file + ", push failure" + "\n")
+                                #     sucess2 = False
+                                #     pass
+                                #
+                                # if success2:  # If a pr already exists for that file
+                                #     print("      [*] Finished push, moving" )
+                                #     f.close()  # Close to prevent in use error
+                                #
+                                #     try:
+                                #         print("      [*] Moving file...")
+                                #         os.rename(root + file, root + "verified_submitted/" + file)  # move the file
+                                #     except FileExistsError:
+                                #         print("      [!] File already exists! Removing current one.")
+                                #         with open("removed.txt", "a") as f:
+                                #             f.write(file + ", pr existed, file existed\n")
+                                #         os.remove(root + file)
+                                #         pass
 
 
                         #
