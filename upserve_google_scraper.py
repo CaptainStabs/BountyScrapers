@@ -3,11 +3,12 @@ from upserve import upserve_scraper
 from utils.interrupt_handler import GracefulInterruptHandler
 import json
 from _cookie import dolt_cookie
+import time
 
 search_query = 'allinanchor:  "/s/" site:app.upserve.com'
 ignored_domains = ["google"]
 remove_words = ["?mode=create"]
-
+payload = {}
 headers = {
     'sec-ch-ua': '"Chromium";v="92", " Not A;Brand";v="99", "Google Chrome";v="92"',
     'DNT':  '1',
@@ -22,7 +23,7 @@ headers = {
 user_agent = google.get_random_user_agent()
 print(user_agent)
 
-print("   [*] Loop start")
+print("\n   [*] Loop start")
 with GracefulInterruptHandler() as h:
     for results in google.search(search_query, lang="en", num=10, start=0, stop=None, pause=5, user_agent=user_agent):
         if h.interrupted:
@@ -33,6 +34,7 @@ with GracefulInterruptHandler() as h:
         print("\n" + str(results))
         print("Scraping")
         upserve_scraper(results, headers, payload)
+        time.sleep(1)
         # try:
         #     print("Scraping")
         #     upserve_scraper(results, headers, payload)
