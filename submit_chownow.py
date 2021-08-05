@@ -198,7 +198,7 @@ def check_if_exists(headers):
                                         print("   [!] Opening PR")
                                         response = requests.request("POST", dolt_url, headers=headers, data=payload)
 
-                                        if response.status_code == 200:  # Check if dolt returns OK
+                                        if response.status_code == 200 and "error" not in response.text:  # Check if dolt returns OK
                                             print("      [*] Success!")
                                             print("         [?] " + str(response.text))
                                             f.close()  # Close to prevent InUse error
@@ -242,7 +242,7 @@ def check_if_exists(headers):
                                     except FileExistsError:
                                         print("      [!] File already exists! Removing current one.")
                                         with open("removed.txt", "a") as f:
-                                            f.write(file + ", pr existed\n")
+                                            f.write(file + ", pr existed, file existed\n")
                                         os.remove(root + file)
                                         pass
 
