@@ -1,7 +1,7 @@
 {
-  "head": "refs/heads/add_CORDAVINO-S-ITALIAN-KITCHEN-2",
-  "staged": "qeu7bhcg3b9dn52bnfi9927vnfasjhnp",
-  "working": "qeu7bhcg3b9dn52bnfi9927vnfasjhnp",
+  "head": "refs/heads/last_bounty",
+  "staged": "6gf6l1neaoj2l8ocd291ouji1cfovcn7",
+  "working": "6gf6l1neaoj2l8ocd291ouji1cfovcn7",
   "merge": null,
   "remotes": {
     "origin": {
@@ -42,6 +42,18 @@
       "head": "refs/heads/add_12-HOURS-2",
       "remote": "origin"
     },
+    "add_12TH-AVENUE-CAFE-2": {
+      "head": "refs/heads/add_12TH-AVENUE-CAFE-2",
+      "remote": "origin"
+    },
+    "add_13-BONES-RIBS-STEAKS-SEAFOOD-2": {
+      "head": "refs/heads/add_13-BONES-RIBS-STEAKS-SEAFOOD-2",
+      "remote": "origin"
+    },
+    "add_13TH-AVE-PUB-AND-EATERY-2": {
+      "head": "refs/heads/add_13TH-AVE-PUB-AND-EATERY-2",
+      "remote": "origin"
+    },
     "add_14-GLOBAL-2": {
       "head": "refs/heads/add_14-GLOBAL-2",
       "remote": "origin"
@@ -78,6 +90,14 @@
       "head": "refs/heads/add_1928-CUBAN-BISTRO-2",
       "remote": "origin"
     },
+    "add_1ST-GOAL-2": {
+      "head": "refs/heads/add_1ST-GOAL-2",
+      "remote": "origin"
+    },
+    "add_1ST-OF-THAI-2": {
+      "head": "refs/heads/add_1ST-OF-THAI-2",
+      "remote": "origin"
+    },
     "add_2-FAT-GUYS-AMERICAN-GRILL-2": {
       "head": "refs/heads/add_2-FAT-GUYS-AMERICAN-GRILL-2",
       "remote": "origin"
@@ -88,6 +108,22 @@
     },
     "add_24-HOT-CHICKEN-WAFFLE-BAR-2": {
       "head": "refs/heads/add_24-HOT-CHICKEN-WAFFLE-BAR-2",
+      "remote": "origin"
+    },
+    "add_24-TAPS-BURGERS-AND-BREWS-2": {
+      "head": "refs/heads/add_24-TAPS-BURGERS-AND-BREWS-2",
+      "remote": "origin"
+    },
+    "add_2520-TAVERN-2": {
+      "head": "refs/heads/add_2520-TAVERN-2",
+      "remote": "origin"
+    },
+    "add_2941-STREET-FOOD-2": {
+      "head": "refs/heads/add_2941-STREET-FOOD-2",
+      "remote": "origin"
+    },
+    "add_3-14-PIZZA-2": {
+      "head": "refs/heads/add_3-14-PIZZA-2",
       "remote": "origin"
     },
     "add_3-6-9-CHINESE-RESTAURANT-2": {
@@ -104,6 +140,18 @@
     },
     "add_3-FOOLS-2": {
       "head": "refs/heads/add_3-FOOLS-2",
+      "remote": "origin"
+    },
+    "add_3-HERMANOS-MEXICAN-GRILL-2": {
+      "head": "refs/heads/add_3-HERMANOS-MEXICAN-GRILL-2",
+      "remote": "origin"
+    },
+    "add_3-HOGS-BBQ-2": {
+      "head": "refs/heads/add_3-HOGS-BBQ-2",
+      "remote": "origin"
+    },
+    "add_3-MARGARITAS-2": {
+      "head": "refs/heads/add_3-MARGARITAS-2",
       "remote": "origin"
     },
     "add_3-ROOTS-MEXICAN-COCINA-2": {
@@ -126,6 +174,18 @@
       "head": "refs/heads/add_4-PAWS-COFFEE-CO--2",
       "remote": "origin"
     },
+    "add_42-FRY-2": {
+      "head": "refs/heads/add_42-FRY-2",
+      "remote": "origin"
+    },
+    "add_42ND-STREET-OYSTER-BAR-2": {
+      "head": "refs/heads/add_42ND-STREET-OYSTER-BAR-2",
+      "remote": "origin"
+    },
+    "add_45TH-STOP-N-SHOP-2": {
+      "head": "refs/heads/add_45TH-STOP-N-SHOP-2",
+      "remote": "origin"
+    },
     "add_49ER-2": {
       "head": "refs/heads/add_49ER-2",
       "remote": "origin"
@@ -134,8 +194,32 @@
       "head": "refs/heads/add_4TH-STREET-BAR-GRILL-2",
       "remote": "origin"
     },
+    "add_5-8-CLUB-MINNEAPOLIS-2": {
+      "head": "refs/heads/add_5-8-CLUB-MINNEAPOLIS-2",
+      "remote": "origin"
+    },
+    "add_5-8-GRILL-BAR-2": {
+      "head": "refs/heads/add_5-8-GRILL-BAR-2",
+      "remote": "origin"
+    },
+    "add_5-8-GRILL-TAP-2": {
+      "head": "refs/heads/add_5-8-GRILL-TAP-2",
+      "remote": "origin"
+    },
+    "add_5-8-TAVERN-GRILL-2": {
+      "head": "refs/heads/add_5-8-TAVERN-GRILL-2",
+      "remote": "origin"
+    },
     "add_5-LOAVES-2": {
       "head": "refs/heads/add_5-LOAVES-2",
+      "remote": "origin"
+    },
+    "add_5-NORTH-BREWING-COMPANY-2": {
+      "head": "refs/heads/add_5-NORTH-BREWING-COMPANY-2",
+      "remote": "origin"
+    },
+    "add_5-SPICE-CHINA-GRILL-2": {
+      "head": "refs/heads/add_5-SPICE-CHINA-GRILL-2",
       "remote": "origin"
     },
     "add_501-LOCAL-2": {
@@ -182,16 +266,40 @@
       "head": "refs/heads/add_58HUNDRED-2",
       "remote": "origin"
     },
+    "add_67-BILTMORE-DOWNTOWN-EATERY-CATERING-2": {
+      "head": "refs/heads/add_67-BILTMORE-DOWNTOWN-EATERY-CATERING-2",
+      "remote": "origin"
+    },
+    "add_68-INDIAN-BISTRO-2": {
+      "head": "refs/heads/add_68-INDIAN-BISTRO-2",
+      "remote": "origin"
+    },
     "add_753-SOUTH-2": {
       "head": "refs/heads/add_753-SOUTH-2",
+      "remote": "origin"
+    },
+    "add_77-GROUNDS-COFFEE-2": {
+      "head": "refs/heads/add_77-GROUNDS-COFFEE-2",
       "remote": "origin"
     },
     "add_815-CAJUN-2": {
       "head": "refs/heads/add_815-CAJUN-2",
       "remote": "origin"
     },
+    "add_8900-BAR-BISTRO-2": {
+      "head": "refs/heads/add_8900-BAR-BISTRO-2",
+      "remote": "origin"
+    },
+    "add_8OZ-BURGER-CO--2": {
+      "head": "refs/heads/add_8OZ-BURGER-CO--2",
+      "remote": "origin"
+    },
     "add_9-BEANS-AND-A-BURRITO-TWIN-FALLS-2": {
       "head": "refs/heads/add_9-BEANS-AND-A-BURRITO-TWIN-FALLS-2",
+      "remote": "origin"
+    },
+    "add_900-DEGREES-NEAPOLITAN-PIZZERIA-2": {
+      "head": "refs/heads/add_900-DEGREES-NEAPOLITAN-PIZZERIA-2",
       "remote": "origin"
     },
     "add_A-B-BURGERS-NORTH-SHORE-2": {
@@ -226,6 +334,10 @@
       "head": "refs/heads/add_A-PART-CAFE-2",
       "remote": "origin"
     },
+    "add_A-PLACE-TO-WALK-TO-2": {
+      "head": "refs/heads/add_A-PLACE-TO-WALK-TO-2",
+      "remote": "origin"
+    },
     "add_A-S-CHICKEN-SANDOS-WINGS-2": {
       "head": "refs/heads/add_A-S-CHICKEN-SANDOS-WINGS-2",
       "remote": "origin"
@@ -242,6 +354,10 @@
       "head": "refs/heads/add_A-TOWN-WINGS-THARPE-ST-TALLAHASSEE-2",
       "remote": "origin"
     },
+    "add_A-W-ALGOMA-2": {
+      "head": "refs/heads/add_A-W-ALGOMA-2",
+      "remote": "origin"
+    },
     "add_A-W-BURGERS-CHICKEN-FLOATS-2": {
       "head": "refs/heads/add_A-W-BURGERS-CHICKEN-FLOATS-2",
       "remote": "origin"
@@ -250,12 +366,32 @@
       "head": "refs/heads/add_A-W-RESTAURANT-2",
       "remote": "origin"
     },
+    "add_A-W-RESTAURANT-BEAVERTON-2": {
+      "head": "refs/heads/add_A-W-RESTAURANT-BEAVERTON-2",
+      "remote": "origin"
+    },
     "add_A-W-RESTAURANT-EATON-2": {
       "head": "refs/heads/add_A-W-RESTAURANT-EATON-2",
       "remote": "origin"
     },
+    "add_A-W-RESTAURANT-FARIBAULT-2": {
+      "head": "refs/heads/add_A-W-RESTAURANT-FARIBAULT-2",
+      "remote": "origin"
+    },
+    "add_A-W-RESTAURANT-RIPON-2": {
+      "head": "refs/heads/add_A-W-RESTAURANT-RIPON-2",
+      "remote": "origin"
+    },
+    "add_AA-SUSHI-KIRKLAND-2": {
+      "head": "refs/heads/add_AA-SUSHI-KIRKLAND-2",
+      "remote": "origin"
+    },
     "add_AAHA-INDIAN-CUISINE-2": {
       "head": "refs/heads/add_AAHA-INDIAN-CUISINE-2",
+      "remote": "origin"
+    },
+    "add_ABBAYS-2": {
+      "head": "refs/heads/add_ABBAYS-2",
       "remote": "origin"
     },
     "add_ABBOT-S-PIZZA-CO--2": {
@@ -266,6 +402,10 @@
       "head": "refs/heads/add_ABE-S-PIZZA-2",
       "remote": "origin"
     },
+    "add_ABELLA-PIZZERIA-2": {
+      "head": "refs/heads/add_ABELLA-PIZZERIA-2",
+      "remote": "origin"
+    },
     "add_ABHIRUCHI-2": {
       "head": "refs/heads/add_ABHIRUCHI-2",
       "remote": "origin"
@@ -274,8 +414,56 @@
       "head": "refs/heads/add_ABINGTON-ALE-HOUSE-2",
       "remote": "origin"
     },
+    "add_ABNER-S-FAMOUS-CHICKEN-2": {
+      "head": "refs/heads/add_ABNER-S-FAMOUS-CHICKEN-2",
+      "remote": "origin"
+    },
+    "add_ABOVE-GROUND-2": {
+      "head": "refs/heads/add_ABOVE-GROUND-2",
+      "remote": "origin"
+    },
     "add_ABSOLUTE-NOODLE-SUSHI-BAR-2": {
       "head": "refs/heads/add_ABSOLUTE-NOODLE-SUSHI-BAR-2",
+      "remote": "origin"
+    },
+    "add_AC-T-2": {
+      "head": "refs/heads/add_AC-T-2",
+      "remote": "origin"
+    },
+    "add_AC-T-BOONSBORO-2": {
+      "head": "refs/heads/add_AC-T-BOONSBORO-2",
+      "remote": "origin"
+    },
+    "add_AC-T-FALLING-WATERS-2": {
+      "head": "refs/heads/add_AC-T-FALLING-WATERS-2",
+      "remote": "origin"
+    },
+    "add_AC-T-GARLAND-GROH-BLVD-2": {
+      "head": "refs/heads/add_AC-T-GARLAND-GROH-BLVD-2",
+      "remote": "origin"
+    },
+    "add_AC-T-HANCOCK-2": {
+      "head": "refs/heads/add_AC-T-HANCOCK-2",
+      "remote": "origin"
+    },
+    "add_AC-T-LAPPANS-CROSSROADS-FAIRPLAY-2": {
+      "head": "refs/heads/add_AC-T-LAPPANS-CROSSROADS-FAIRPLAY-2",
+      "remote": "origin"
+    },
+    "add_AC-T-S-POTOMAC-PREMIUM-OUTLET-2": {
+      "head": "refs/heads/add_AC-T-S-POTOMAC-PREMIUM-OUTLET-2",
+      "remote": "origin"
+    },
+    "add_AC-T-SMITHSBURG-2": {
+      "head": "refs/heads/add_AC-T-SMITHSBURG-2",
+      "remote": "origin"
+    },
+    "add_AC-T-TRAVEL-CENTER-2": {
+      "head": "refs/heads/add_AC-T-TRAVEL-CENTER-2",
+      "remote": "origin"
+    },
+    "add_ACAPULCO-2": {
+      "head": "refs/heads/add_ACAPULCO-2",
       "remote": "origin"
     },
     "add_ACAPULCO-MEXICAN-GRILL-2": {
@@ -306,6 +494,26 @@
       "head": "refs/heads/add_ACEE-S-MARKET-DELI-2",
       "remote": "origin"
     },
+    "add_ACEITUNO-S-MEXICAN-FOOD-2": {
+      "head": "refs/heads/add_ACEITUNO-S-MEXICAN-FOOD-2",
+      "remote": "origin"
+    },
+    "add_ACEITUNO-S-MEXICAN-FOOD-KIRKLAND-2": {
+      "head": "refs/heads/add_ACEITUNO-S-MEXICAN-FOOD-KIRKLAND-2",
+      "remote": "origin"
+    },
+    "add_ACEITUNO-S-MEXICAN-FOOD-ORTING-2": {
+      "head": "refs/heads/add_ACEITUNO-S-MEXICAN-FOOD-ORTING-2",
+      "remote": "origin"
+    },
+    "add_ACEITUNO-S-MEXICAN-FOOD-SPANAWAY-2": {
+      "head": "refs/heads/add_ACEITUNO-S-MEXICAN-FOOD-SPANAWAY-2",
+      "remote": "origin"
+    },
+    "add_ACEITUNOS-MEXICAN-FOOD-2": {
+      "head": "refs/heads/add_ACEITUNOS-MEXICAN-FOOD-2",
+      "remote": "origin"
+    },
     "add_ACHILITO-S-TAQUERIA-2": {
       "head": "refs/heads/add_ACHILITO-S-TAQUERIA-2",
       "remote": "origin"
@@ -330,16 +538,40 @@
       "head": "refs/heads/add_ACQUOLINA-TRATTORIA-PIZZERIA-2",
       "remote": "origin"
     },
+    "add_ACROPOLIS-PIZZA-PASTA-2": {
+      "head": "refs/heads/add_ACROPOLIS-PIZZA-PASTA-2",
+      "remote": "origin"
+    },
     "add_ACUARIO-2": {
       "head": "refs/heads/add_ACUARIO-2",
+      "remote": "origin"
+    },
+    "add_ADAM-S-RIBS-2": {
+      "head": "refs/heads/add_ADAM-S-RIBS-2",
+      "remote": "origin"
+    },
+    "add_ADAPT-KITCHEN-AND-JUICE-BAR-2": {
+      "head": "refs/heads/add_ADAPT-KITCHEN-AND-JUICE-BAR-2",
       "remote": "origin"
     },
     "add_ADAS-KITCHEN-AND-COFFEE-2": {
       "head": "refs/heads/add_ADAS-KITCHEN-AND-COFFEE-2",
       "remote": "origin"
     },
+    "add_ADEN-PIZZA-2": {
+      "head": "refs/heads/add_ADEN-PIZZA-2",
+      "remote": "origin"
+    },
+    "add_ADMIRAL-D-S-2": {
+      "head": "refs/heads/add_ADMIRAL-D-S-2",
+      "remote": "origin"
+    },
     "add_ADRIFT-BURGER-BAR-2": {
       "head": "refs/heads/add_ADRIFT-BURGER-BAR-2",
+      "remote": "origin"
+    },
+    "add_ADVENTURES-RESTAURANT-2": {
+      "head": "refs/heads/add_ADVENTURES-RESTAURANT-2",
       "remote": "origin"
     },
     "add_AERO-ALE-HOUSE-LOVES-PARK-2": {
@@ -358,6 +590,10 @@
       "head": "refs/heads/add_AGAVES-MEXICAN-GRILL-2",
       "remote": "origin"
     },
+    "add_AGOSTINO-S-PIZZA-PASTA-2": {
+      "head": "refs/heads/add_AGOSTINO-S-PIZZA-PASTA-2",
+      "remote": "origin"
+    },
     "add_AGOURA-S-FAMOUS-DELI-2": {
       "head": "refs/heads/add_AGOURA-S-FAMOUS-DELI-2",
       "remote": "origin"
@@ -372,6 +608,10 @@
     },
     "add_AIXOIS-2": {
       "head": "refs/heads/add_AIXOIS-2",
+      "remote": "origin"
+    },
+    "add_AJ-BOMBERS-2": {
+      "head": "refs/heads/add_AJ-BOMBERS-2",
       "remote": "origin"
     },
     "add_AJ-S-AMERICAN-GRILL-2": {
@@ -426,6 +666,18 @@
       "head": "refs/heads/add_AKAI-HANA-2",
       "remote": "origin"
     },
+    "add_AKIRA-RAMEN-IZAKAYA-2": {
+      "head": "refs/heads/add_AKIRA-RAMEN-IZAKAYA-2",
+      "remote": "origin"
+    },
+    "add_AKIRA-RAMEN-IZAKAYI-2": {
+      "head": "refs/heads/add_AKIRA-RAMEN-IZAKAYI-2",
+      "remote": "origin"
+    },
+    "add_AKITA-SUSHI-2": {
+      "head": "refs/heads/add_AKITA-SUSHI-2",
+      "remote": "origin"
+    },
     "add_AL-S-STEAKHOUSE-2": {
       "head": "refs/heads/add_AL-S-STEAKHOUSE-2",
       "remote": "origin"
@@ -442,6 +694,14 @@
       "head": "refs/heads/add_ALANA-S-CAFE-2",
       "remote": "origin"
     },
+    "add_ALARY-S-2": {
+      "head": "refs/heads/add_ALARY-S-2",
+      "remote": "origin"
+    },
+    "add_ALBASHA-SUBS-2": {
+      "head": "refs/heads/add_ALBASHA-SUBS-2",
+      "remote": "origin"
+    },
     "add_ALBATROSS-2": {
       "head": "refs/heads/add_ALBATROSS-2",
       "remote": "origin"
@@ -450,12 +710,24 @@
       "head": "refs/heads/add_ALBERTO-S-CANTINA-2",
       "remote": "origin"
     },
+    "add_ALEX-S-GRILL-AND-ICE-CREAM-2": {
+      "head": "refs/heads/add_ALEX-S-GRILL-AND-ICE-CREAM-2",
+      "remote": "origin"
+    },
+    "add_ALEX-S-PIZZA-2": {
+      "head": "refs/heads/add_ALEX-S-PIZZA-2",
+      "remote": "origin"
+    },
     "add_ALFIES-RESTAURANT-2": {
       "head": "refs/heads/add_ALFIES-RESTAURANT-2",
       "remote": "origin"
     },
     "add_ALFONZOS-PIZZERIA-2": {
       "head": "refs/heads/add_ALFONZOS-PIZZERIA-2",
+      "remote": "origin"
+    },
+    "add_ALFY-S-2": {
+      "head": "refs/heads/add_ALFY-S-2",
       "remote": "origin"
     },
     "add_ALI-BABA-S-KITCHEN-2": {
@@ -486,8 +758,20 @@
       "head": "refs/heads/add_ALL-ABOUT-BURGER-2",
       "remote": "origin"
     },
+    "add_ALL-AMERICAN-PUB-2": {
+      "head": "refs/heads/add_ALL-AMERICAN-PUB-2",
+      "remote": "origin"
+    },
     "add_ALL-STAR-DRAFTS-SPORTS-BAR-GRILL-2": {
       "head": "refs/heads/add_ALL-STAR-DRAFTS-SPORTS-BAR-GRILL-2",
+      "remote": "origin"
+    },
+    "add_ALLEYCAT-S-GOURMET-SANDWICHES-2": {
+      "head": "refs/heads/add_ALLEYCAT-S-GOURMET-SANDWICHES-2",
+      "remote": "origin"
+    },
+    "add_ALMA-MEXICANA-2": {
+      "head": "refs/heads/add_ALMA-MEXICANA-2",
       "remote": "origin"
     },
     "add_ALOHA-AINA-JUICE-CAFE-2": {
@@ -510,6 +794,10 @@
       "head": "refs/heads/add_ALPINE-BAKERY-2",
       "remote": "origin"
     },
+    "add_ALTMAN-S-GROCERY-BARN-GRILL-2": {
+      "head": "refs/heads/add_ALTMAN-S-GROCERY-BARN-GRILL-2",
+      "remote": "origin"
+    },
     "add_AMAKARA-JAPANESE-RESTAURANT-2": {
       "head": "refs/heads/add_AMAKARA-JAPANESE-RESTAURANT-2",
       "remote": "origin"
@@ -520,6 +808,10 @@
     },
     "add_AMAPOLA-DELI-MARKET-2": {
       "head": "refs/heads/add_AMAPOLA-DELI-MARKET-2",
+      "remote": "origin"
+    },
+    "add_AMAR-PIZZA-2": {
+      "head": "refs/heads/add_AMAR-PIZZA-2",
       "remote": "origin"
     },
     "add_AMATO-S-AT-NOURIA-2": {
@@ -586,6 +878,10 @@
       "head": "refs/heads/add_AMELIA-TAVERN-2",
       "remote": "origin"
     },
+    "add_AMERICA-S-BEST-WINGS-2": {
+      "head": "refs/heads/add_AMERICA-S-BEST-WINGS-2",
+      "remote": "origin"
+    },
     "add_AMERICAN-GRILL-2": {
       "head": "refs/heads/add_AMERICAN-GRILL-2",
       "remote": "origin"
@@ -610,8 +906,20 @@
       "head": "refs/heads/add_AMERICANA-RESTAURANT-2",
       "remote": "origin"
     },
+    "add_AMERICAS-BEST-WINGS-WHEATON-2": {
+      "head": "refs/heads/add_AMERICAS-BEST-WINGS-WHEATON-2",
+      "remote": "origin"
+    },
+    "add_AMERIGO-ITALIAN-RESTAURANT-2": {
+      "head": "refs/heads/add_AMERIGO-ITALIAN-RESTAURANT-2",
+      "remote": "origin"
+    },
     "add_AMERIKANOS-GRILLE-2": {
       "head": "refs/heads/add_AMERIKANOS-GRILLE-2",
+      "remote": "origin"
+    },
+    "add_AMICI-MIEI-RISTORANTE-2": {
+      "head": "refs/heads/add_AMICI-MIEI-RISTORANTE-2",
       "remote": "origin"
     },
     "add_AMIGO-MEXICAN-RESTAURANT-2": {
@@ -624,6 +932,10 @@
     },
     "add_AMIGOS-MEXICAN-RESTAURANT-2": {
       "head": "refs/heads/add_AMIGOS-MEXICAN-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_AMIGOS-RESTAURANT-CANTINA-2": {
+      "head": "refs/heads/add_AMIGOS-RESTAURANT-CANTINA-2",
       "remote": "origin"
     },
     "add_AMITABUL-2": {
@@ -640,6 +952,10 @@
     },
     "add_AMOR-Y-TACOS-2": {
       "head": "refs/heads/add_AMOR-Y-TACOS-2",
+      "remote": "origin"
+    },
+    "add_AMORE-ON-THE-MARSH-2": {
+      "head": "refs/heads/add_AMORE-ON-THE-MARSH-2",
       "remote": "origin"
     },
     "add_AMORE-PIZZA-2": {
@@ -666,6 +982,14 @@
       "head": "refs/heads/add_AND-WAFFLES-2",
       "remote": "origin"
     },
+    "add_ANDALE-MEXICAN-GRILL-CANTINA-2": {
+      "head": "refs/heads/add_ANDALE-MEXICAN-GRILL-CANTINA-2",
+      "remote": "origin"
+    },
+    "add_ANDI-S-COFFEE-AND-BAKERY-2": {
+      "head": "refs/heads/add_ANDI-S-COFFEE-AND-BAKERY-2",
+      "remote": "origin"
+    },
     "add_ANDIAMO-WOOD-FIRED-PIZZA-2": {
       "head": "refs/heads/add_ANDIAMO-WOOD-FIRED-PIZZA-2",
       "remote": "origin"
@@ -686,6 +1010,10 @@
       "head": "refs/heads/add_ANEJO-MEXICAN-BISTRO-2",
       "remote": "origin"
     },
+    "add_ANETS-KATCH-2": {
+      "head": "refs/heads/add_ANETS-KATCH-2",
+      "remote": "origin"
+    },
     "add_ANFORA-WINE-PATIO-FT-CARNIVORE-2": {
       "head": "refs/heads/add_ANFORA-WINE-PATIO-FT-CARNIVORE-2",
       "remote": "origin"
@@ -702,12 +1030,20 @@
       "head": "refs/heads/add_ANGELICAS-ENTERTAINMENT-LLC-2",
       "remote": "origin"
     },
+    "add_ANGELINA-EUROPEAN-CAFE-2": {
+      "head": "refs/heads/add_ANGELINA-EUROPEAN-CAFE-2",
+      "remote": "origin"
+    },
     "add_ANGELINA-S-PIZZA-2": {
       "head": "refs/heads/add_ANGELINA-S-PIZZA-2",
       "remote": "origin"
     },
     "add_ANGELINAS-SPAGHETTI-HOUSE-2": {
       "head": "refs/heads/add_ANGELINAS-SPAGHETTI-HOUSE-2",
+      "remote": "origin"
+    },
+    "add_ANGELO-S-PIZZA-2": {
+      "head": "refs/heads/add_ANGELO-S-PIZZA-2",
       "remote": "origin"
     },
     "add_ANGKOR-CHEF-2": {
@@ -722,8 +1058,20 @@
       "head": "refs/heads/add_ANITA-S-FINE-MEXICAN-2",
       "remote": "origin"
     },
+    "add_ANJAPPAR-INDIAN-RESTAURANT-2": {
+      "head": "refs/heads/add_ANJAPPAR-INDIAN-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_ANJAPPAR-INDIAN-RESTAURANT-SEATTLE-2": {
+      "head": "refs/heads/add_ANJAPPAR-INDIAN-RESTAURANT-SEATTLE-2",
+      "remote": "origin"
+    },
     "add_ANKAR-S-HOAGIES-2": {
       "head": "refs/heads/add_ANKAR-S-HOAGIES-2",
+      "remote": "origin"
+    },
+    "add_ANMOL-RESTAURANT-2": {
+      "head": "refs/heads/add_ANMOL-RESTAURANT-2",
       "remote": "origin"
     },
     "add_ANMOL-SA-KITCHEN-2": {
@@ -802,8 +1150,20 @@
       "head": "refs/heads/add_AODAKE-SUSHI-AND-STEAK-HOUSE-2",
       "remote": "origin"
     },
+    "add_APOLLO-FLAME-BISTRO-BREVARD-RD-2": {
+      "head": "refs/heads/add_APOLLO-FLAME-BISTRO-BREVARD-RD-2",
+      "remote": "origin"
+    },
+    "add_APPALACHIAN-JAVA-INC--2": {
+      "head": "refs/heads/add_APPALACHIAN-JAVA-INC--2",
+      "remote": "origin"
+    },
     "add_APPETIT-BISTRO-2": {
       "head": "refs/heads/add_APPETIT-BISTRO-2",
+      "remote": "origin"
+    },
+    "add_APPLE-CITY-BBQ-2": {
+      "head": "refs/heads/add_APPLE-CITY-BBQ-2",
       "remote": "origin"
     },
     "add_APPLE-FRITTER-EATERY-2": {
@@ -830,12 +1190,20 @@
       "head": "refs/heads/add_AQUI-CAL-MEX-2",
       "remote": "origin"
     },
+    "add_ARASHI-RAMEN-2": {
+      "head": "refs/heads/add_ARASHI-RAMEN-2",
+      "remote": "origin"
+    },
     "add_ARASHI-SUSHI-HOUSE-2": {
       "head": "refs/heads/add_ARASHI-SUSHI-HOUSE-2",
       "remote": "origin"
     },
     "add_ARAWAN-THAI-CUISINE-2": {
       "head": "refs/heads/add_ARAWAN-THAI-CUISINE-2",
+      "remote": "origin"
+    },
+    "add_ARCADIA-FAMILY-RESTAURANT-PIZZERIA-2": {
+      "head": "refs/heads/add_ARCADIA-FAMILY-RESTAURANT-PIZZERIA-2",
       "remote": "origin"
     },
     "add_ARCOS-RESTAURANTE-MEXICANO-2": {
@@ -846,16 +1214,32 @@
       "head": "refs/heads/add_AREPA-MIA-2",
       "remote": "origin"
     },
+    "add_ARIS-BEST-STEAK-HOUSE-2": {
+      "head": "refs/heads/add_ARIS-BEST-STEAK-HOUSE-2",
+      "remote": "origin"
+    },
     "add_ARISTOCRAT-PUB-RESTAURANT-2": {
       "head": "refs/heads/add_ARISTOCRAT-PUB-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_ARMADILLO-GRILL-2": {
+      "head": "refs/heads/add_ARMADILLO-GRILL-2",
       "remote": "origin"
     },
     "add_ARMANDO-S-TACOS-2": {
       "head": "refs/heads/add_ARMANDO-S-TACOS-2",
       "remote": "origin"
     },
+    "add_ARMY-CITY-STEAK-GYRO-2": {
+      "head": "refs/heads/add_ARMY-CITY-STEAK-GYRO-2",
+      "remote": "origin"
+    },
     "add_ARNI-S-RESTAURANT-2": {
       "head": "refs/heads/add_ARNI-S-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_ARNIE-S-RESTAURANTS-2": {
+      "head": "refs/heads/add_ARNIE-S-RESTAURANTS-2",
       "remote": "origin"
     },
     "add_AROMA-COFFEE-TEA-2": {
@@ -878,6 +1262,10 @@
       "head": "refs/heads/add_ART-S-DELI-2",
       "remote": "origin"
     },
+    "add_ARTFUL-GOURMET-BISTRO-2": {
+      "head": "refs/heads/add_ARTFUL-GOURMET-BISTRO-2",
+      "remote": "origin"
+    },
     "add_ARTHUR-S-FAMILY-RESTAURANT-2": {
       "head": "refs/heads/add_ARTHUR-S-FAMILY-RESTAURANT-2",
       "remote": "origin"
@@ -892,6 +1280,14 @@
     },
     "add_ARYA-STEAKHOUSE-2": {
       "head": "refs/heads/add_ARYA-STEAKHOUSE-2",
+      "remote": "origin"
+    },
+    "add_ASADO-2": {
+      "head": "refs/heads/add_ASADO-2",
+      "remote": "origin"
+    },
+    "add_ASADOR-DEL-SUR-2": {
+      "head": "refs/heads/add_ASADOR-DEL-SUR-2",
       "remote": "origin"
     },
     "add_ASAHI-JAPANESE-RESTAURANT-SUSHI-BAR-2": {
@@ -910,20 +1306,56 @@
       "head": "refs/heads/add_ASIA-NINE-BAR-LOUNGE-2",
       "remote": "origin"
     },
+    "add_ASIA-NINE-II-2": {
+      "head": "refs/heads/add_ASIA-NINE-II-2",
+      "remote": "origin"
+    },
     "add_ASIA-SEAFOOD-BUFFET-2": {
       "head": "refs/heads/add_ASIA-SEAFOOD-BUFFET-2",
+      "remote": "origin"
+    },
+    "add_ASIAN-1-BELLINGHAM-2": {
+      "head": "refs/heads/add_ASIAN-1-BELLINGHAM-2",
+      "remote": "origin"
+    },
+    "add_ASIAN-1-BURLINGTON-2": {
+      "head": "refs/heads/add_ASIAN-1-BURLINGTON-2",
+      "remote": "origin"
+    },
+    "add_ASIAN-DUCK-2": {
+      "head": "refs/heads/add_ASIAN-DUCK-2",
+      "remote": "origin"
+    },
+    "add_ASIAN-FUSION-KITCHEN-2": {
+      "head": "refs/heads/add_ASIAN-FUSION-KITCHEN-2",
+      "remote": "origin"
+    },
+    "add_ASIAN-TASTE-2": {
+      "head": "refs/heads/add_ASIAN-TASTE-2",
       "remote": "origin"
     },
     "add_ASIANA-CAFE-2": {
       "head": "refs/heads/add_ASIANA-CAFE-2",
       "remote": "origin"
     },
+    "add_ASPEN-RESTAURANT-2": {
+      "head": "refs/heads/add_ASPEN-RESTAURANT-2",
+      "remote": "origin"
+    },
     "add_ASSAGGIO-BISTRO-2": {
       "head": "refs/heads/add_ASSAGGIO-BISTRO-2",
       "remote": "origin"
     },
+    "add_ASSAGGIO-S-PIZZERIA-2": {
+      "head": "refs/heads/add_ASSAGGIO-S-PIZZERIA-2",
+      "remote": "origin"
+    },
     "add_ATCHANA-S-HOMEGROWN-THAI-2": {
       "head": "refs/heads/add_ATCHANA-S-HOMEGROWN-THAI-2",
+      "remote": "origin"
+    },
+    "add_ATHENA-GREEK-TAVERNA-2": {
+      "head": "refs/heads/add_ATHENA-GREEK-TAVERNA-2",
       "remote": "origin"
     },
     "add_ATHENIAN-GRILL-2": {
@@ -942,8 +1374,16 @@
       "head": "refs/heads/add_ATLANTIC-BEACH-2",
       "remote": "origin"
     },
+    "add_ATLAS-BBQ-2": {
+      "head": "refs/heads/add_ATLAS-BBQ-2",
+      "remote": "origin"
+    },
     "add_AU-LAC-2": {
       "head": "refs/heads/add_AU-LAC-2",
+      "remote": "origin"
+    },
+    "add_AUBURN-HOUSE-OF-PIZZA-2": {
+      "head": "refs/heads/add_AUBURN-HOUSE-OF-PIZZA-2",
       "remote": "origin"
     },
     "add_AUDREY-JANE-S-PIZZA-GARAGE-2": {
@@ -954,8 +1394,16 @@
       "head": "refs/heads/add_AUGGIE-S-WINGS-AUGGIE-S-HOT-DOGGIES-2",
       "remote": "origin"
     },
+    "add_AUNTEA-BOBA-2": {
+      "head": "refs/heads/add_AUNTEA-BOBA-2",
+      "remote": "origin"
+    },
     "add_AUNTIE-VEE-S-KITCHEN-2": {
       "head": "refs/heads/add_AUNTIE-VEE-S-KITCHEN-2",
+      "remote": "origin"
+    },
+    "add_AURELIA-S-2": {
+      "head": "refs/heads/add_AURELIA-S-2",
       "remote": "origin"
     },
     "add_AURUM-FOOD-WINE-BRECKENRIDGE-2": {
@@ -994,16 +1442,44 @@
       "head": "refs/heads/add_AVANTI-RESTAURANT-2",
       "remote": "origin"
     },
+    "add_AVANTI-TRATTORIA-2": {
+      "head": "refs/heads/add_AVANTI-TRATTORIA-2",
+      "remote": "origin"
+    },
+    "add_AVERSANO-S-2": {
+      "head": "refs/heads/add_AVERSANO-S-2",
+      "remote": "origin"
+    },
     "add_AVERSANO-S-TAKEOUT-CATERING-2": {
       "head": "refs/heads/add_AVERSANO-S-TAKEOUT-CATERING-2",
+      "remote": "origin"
+    },
+    "add_AVERSBORO-RESTAURANT-SPORTS-BAR-2": {
+      "head": "refs/heads/add_AVERSBORO-RESTAURANT-SPORTS-BAR-2",
       "remote": "origin"
     },
     "add_AVGO-BREAKFAST-AND-LUNCH-2": {
       "head": "refs/heads/add_AVGO-BREAKFAST-AND-LUNCH-2",
       "remote": "origin"
     },
+    "add_AVIATOR-BREWING-TAPHOUSE-2": {
+      "head": "refs/heads/add_AVIATOR-BREWING-TAPHOUSE-2",
+      "remote": "origin"
+    },
+    "add_AVIATOR-PIZZERIA-BEERSHOP-2": {
+      "head": "refs/heads/add_AVIATOR-PIZZERIA-BEERSHOP-2",
+      "remote": "origin"
+    },
+    "add_AVIATOR-SMOKEHOUSE-2": {
+      "head": "refs/heads/add_AVIATOR-SMOKEHOUSE-2",
+      "remote": "origin"
+    },
     "add_AVILA-S-EL-RANCHITO-FOOTHILL-RANCH-2": {
       "head": "refs/heads/add_AVILA-S-EL-RANCHITO-FOOTHILL-RANCH-2",
+      "remote": "origin"
+    },
+    "add_AVILA-S-EL-RANCHITO-LAKE-FOREST-2": {
+      "head": "refs/heads/add_AVILA-S-EL-RANCHITO-LAKE-FOREST-2",
       "remote": "origin"
     },
     "add_AVIVA-BY-KAMEEL-2": {
@@ -1018,8 +1494,20 @@
       "head": "refs/heads/add_AY-CARAMBA-REAL-MEXICAN-FOOD-2",
       "remote": "origin"
     },
+    "add_AYE-TORO-FIRE-GRILL-CANTINA-2": {
+      "head": "refs/heads/add_AYE-TORO-FIRE-GRILL-CANTINA-2",
+      "remote": "origin"
+    },
+    "add_AYE-TORO-MEXICAN-RESTAURANT-2": {
+      "head": "refs/heads/add_AYE-TORO-MEXICAN-RESTAURANT-2",
+      "remote": "origin"
+    },
     "add_AYUTTAYA-THAI-CUISINE-2": {
       "head": "refs/heads/add_AYUTTAYA-THAI-CUISINE-2",
+      "remote": "origin"
+    },
+    "add_AZTECA-FAMILY-MEXICAN-RESTAURANT-2": {
+      "head": "refs/heads/add_AZTECA-FAMILY-MEXICAN-RESTAURANT-2",
       "remote": "origin"
     },
     "add_AZTECA-GRILL-MEXICAN-RESTAURANT-2": {
@@ -1038,8 +1526,16 @@
       "head": "refs/heads/add_AZTECA-RESTAURANT-2",
       "remote": "origin"
     },
+    "add_AZUL-RESTAURANT-LOUNGE-2": {
+      "head": "refs/heads/add_AZUL-RESTAURANT-LOUNGE-2",
+      "remote": "origin"
+    },
     "add_AZUL-TEQUILA-2": {
       "head": "refs/heads/add_AZUL-TEQUILA-2",
+      "remote": "origin"
+    },
+    "add_B-A-D-WINGZ-NORTH-LOOP-2": {
+      "head": "refs/heads/add_B-A-D-WINGZ-NORTH-LOOP-2",
       "remote": "origin"
     },
     "add_B-B-GROCERY-AND-DELI-2": {
@@ -1098,6 +1594,10 @@
       "head": "refs/heads/add_BACKCOUNTRY-PIZZA-TAP-HOUSE-2",
       "remote": "origin"
     },
+    "add_BACKYARD-BISTRO-2": {
+      "head": "refs/heads/add_BACKYARD-BISTRO-2",
+      "remote": "origin"
+    },
     "add_BACKYARD-BOWLS-2": {
       "head": "refs/heads/add_BACKYARD-BOWLS-2",
       "remote": "origin"
@@ -1146,8 +1646,40 @@
       "head": "refs/heads/add_BAGELMAN-2",
       "remote": "origin"
     },
+    "add_BAGELS-2": {
+      "head": "refs/heads/add_BAGELS-2",
+      "remote": "origin"
+    },
+    "add_BAGELS-BEYOND-2": {
+      "head": "refs/heads/add_BAGELS-BEYOND-2",
+      "remote": "origin"
+    },
+    "add_BAGELS-JOE-2": {
+      "head": "refs/heads/add_BAGELS-JOE-2",
+      "remote": "origin"
+    },
+    "add_BAGELS-JOE-THE-FOUNDRY-2": {
+      "head": "refs/heads/add_BAGELS-JOE-THE-FOUNDRY-2",
+      "remote": "origin"
+    },
+    "add_BAI-TONG-THAI-RESTAURANT-2": {
+      "head": "refs/heads/add_BAI-TONG-THAI-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_BAI-TONG-THAI-STREET-CAFE-2": {
+      "head": "refs/heads/add_BAI-TONG-THAI-STREET-CAFE-2",
+      "remote": "origin"
+    },
     "add_BAIA-2": {
       "head": "refs/heads/add_BAIA-2",
+      "remote": "origin"
+    },
+    "add_BAILEYS-57-2": {
+      "head": "refs/heads/add_BAILEYS-57-2",
+      "remote": "origin"
+    },
+    "add_BAILEYS-BREAKFAST-LUNCH-2": {
+      "head": "refs/heads/add_BAILEYS-BREAKFAST-LUNCH-2",
       "remote": "origin"
     },
     "add_BAJA-JOE-S-2": {
@@ -1178,6 +1710,18 @@
       "head": "refs/heads/add_BALLAST-POINT-TASTING-ROOM-AND-KITCHEN-2",
       "remote": "origin"
     },
+    "add_BALTIMORE-SEAFOOD-2": {
+      "head": "refs/heads/add_BALTIMORE-SEAFOOD-2",
+      "remote": "origin"
+    },
+    "add_BAMBOO-2": {
+      "head": "refs/heads/add_BAMBOO-2",
+      "remote": "origin"
+    },
+    "add_BAMBOO-7-ASIAN-CUISINE-2": {
+      "head": "refs/heads/add_BAMBOO-7-ASIAN-CUISINE-2",
+      "remote": "origin"
+    },
     "add_BAMBOO-CUISINE-2": {
       "head": "refs/heads/add_BAMBOO-CUISINE-2",
       "remote": "origin"
@@ -1186,8 +1730,16 @@
       "head": "refs/heads/add_BAMBOO-DEDHAM-2",
       "remote": "origin"
     },
+    "add_BAMBOO-EXPRESS-2": {
+      "head": "refs/heads/add_BAMBOO-EXPRESS-2",
+      "remote": "origin"
+    },
     "add_BAMBOO-THAI-RESTAURANT-2": {
       "head": "refs/heads/add_BAMBOO-THAI-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_BAN-SOM-TUM-ISSAAN-THAI-2": {
+      "head": "refs/heads/add_BAN-SOM-TUM-ISSAAN-THAI-2",
       "remote": "origin"
     },
     "add_BANAN-BOWLS-2": {
@@ -1202,6 +1754,14 @@
       "head": "refs/heads/add_BANG-UP-TO-THE-ELEPHANT--2",
       "remote": "origin"
     },
+    "add_BANGKOK-96-STREET-FOOD-2": {
+      "head": "refs/heads/add_BANGKOK-96-STREET-FOOD-2",
+      "remote": "origin"
+    },
+    "add_BANGKOK-ALLEY-2": {
+      "head": "refs/heads/add_BANGKOK-ALLEY-2",
+      "remote": "origin"
+    },
     "add_BANGKOK-BISTRO-2": {
       "head": "refs/heads/add_BANGKOK-BISTRO-2",
       "remote": "origin"
@@ -1212,6 +1772,10 @@
     },
     "add_BANGKOK-HAPPY-BOWL-THAI-BISTRO-AND-SUSHI-BAR-KAUAI-2": {
       "head": "refs/heads/add_BANGKOK-HAPPY-BOWL-THAI-BISTRO-AND-SUSHI-BAR-KAUAI-2",
+      "remote": "origin"
+    },
+    "add_BANGKOK-KITCHEN-2": {
+      "head": "refs/heads/add_BANGKOK-KITCHEN-2",
       "remote": "origin"
     },
     "add_BANGKOK-PINTO-2": {
@@ -1230,8 +1794,16 @@
       "head": "refs/heads/add_BANGKOK-STREET-FOOD-2",
       "remote": "origin"
     },
+    "add_BANGKOK-THAI-DELI-RESTAURANT-2": {
+      "head": "refs/heads/add_BANGKOK-THAI-DELI-RESTAURANT-2",
+      "remote": "origin"
+    },
     "add_BANGKOK-THAI-RESTAURANT-CALIFORNIA-2": {
       "head": "refs/heads/add_BANGKOK-THAI-RESTAURANT-CALIFORNIA-2",
+      "remote": "origin"
+    },
+    "add_BANH-MI-BROTHERS-CHARLOTTE-2": {
+      "head": "refs/heads/add_BANH-MI-BROTHERS-CHARLOTTE-2",
       "remote": "origin"
     },
     "add_BANNERS-BAR-AND-GRILL-2": {
@@ -1242,8 +1814,16 @@
       "head": "refs/heads/add_BAP--2",
       "remote": "origin"
     },
+    "add_BAPP-2": {
+      "head": "refs/heads/add_BAPP-2",
+      "remote": "origin"
+    },
     "add_BAPU-G-S-GOURMET-KEBABS-AND-SANDWICHES-2": {
       "head": "refs/heads/add_BAPU-G-S-GOURMET-KEBABS-AND-SANDWICHES-2",
+      "remote": "origin"
+    },
+    "add_BAR-7-GRILL-2": {
+      "head": "refs/heads/add_BAR-7-GRILL-2",
       "remote": "origin"
     },
     "add_BAR-KOKO-PERSIAN-RESTAURANT-2": {
@@ -1258,12 +1838,20 @@
       "head": "refs/heads/add_BARBECUE-KITCHEN-2",
       "remote": "origin"
     },
+    "add_BARE-BONES-GRILL-2": {
+      "head": "refs/heads/add_BARE-BONES-GRILL-2",
+      "remote": "origin"
+    },
     "add_BARE-BOWLS-2": {
       "head": "refs/heads/add_BARE-BOWLS-2",
       "remote": "origin"
     },
     "add_BARISTO-CAFE-BAR-2": {
       "head": "refs/heads/add_BARISTO-CAFE-BAR-2",
+      "remote": "origin"
+    },
+    "add_BARKER-S-BAR-GRILL-2": {
+      "head": "refs/heads/add_BARKER-S-BAR-GRILL-2",
       "remote": "origin"
     },
     "add_BARLEYCORN-S-DOWNTOWN-DELI-2": {
@@ -1282,8 +1870,16 @@
       "head": "refs/heads/add_BARRACUDA-JAPANESE-RESTAURANT-2",
       "remote": "origin"
     },
+    "add_BARRIO-EDINA-2": {
+      "head": "refs/heads/add_BARRIO-EDINA-2",
+      "remote": "origin"
+    },
     "add_BARRIO-LATINO-2": {
       "head": "refs/heads/add_BARRIO-LATINO-2",
+      "remote": "origin"
+    },
+    "add_BARRIO-LOWERTOWN-2": {
+      "head": "refs/heads/add_BARRIO-LOWERTOWN-2",
       "remote": "origin"
     },
     "add_BARRIO-PHILLY-2": {
@@ -1296,6 +1892,10 @@
     },
     "add_BARROJA-2": {
       "head": "refs/heads/add_BARROJA-2",
+      "remote": "origin"
+    },
+    "add_BASALT-2": {
+      "head": "refs/heads/add_BASALT-2",
       "remote": "origin"
     },
     "add_BASH-S-2": {
@@ -1326,8 +1926,24 @@
       "head": "refs/heads/add_BASKIN-ROBBINS-2",
       "remote": "origin"
     },
+    "add_BASNIGHTS-LONE-CEDAR-CAFE-2": {
+      "head": "refs/heads/add_BASNIGHTS-LONE-CEDAR-CAFE-2",
+      "remote": "origin"
+    },
+    "add_BASSETT-STREET-BRUNCH-CLUB-2": {
+      "head": "refs/heads/add_BASSETT-STREET-BRUNCH-CLUB-2",
+      "remote": "origin"
+    },
+    "add_BASTA-2": {
+      "head": "refs/heads/add_BASTA-2",
+      "remote": "origin"
+    },
     "add_BASU-VIETNAMESE-COFFEE-BAR-EATERY-2": {
       "head": "refs/heads/add_BASU-VIETNAMESE-COFFEE-BAR-EATERY-2",
+      "remote": "origin"
+    },
+    "add_BAVARIAN-BISTRO-AND-BAR-2": {
+      "head": "refs/heads/add_BAVARIAN-BISTRO-AND-BAR-2",
       "remote": "origin"
     },
     "add_BAWARCHI-INDIAN-CUISINE-2": {
@@ -1336,6 +1952,10 @@
     },
     "add_BAY-BREEZE-2": {
       "head": "refs/heads/add_BAY-BREEZE-2",
+      "remote": "origin"
+    },
+    "add_BAY-CITY-BILL-S-BAR-GRILL-2": {
+      "head": "refs/heads/add_BAY-CITY-BILL-S-BAR-GRILL-2",
       "remote": "origin"
     },
     "add_BAY-STREET-SEAFOOD-2": {
@@ -1350,6 +1970,10 @@
       "head": "refs/heads/add_BAYVIEW-PIZZA-AND-GRILL-FORT-LAUDERDALE-2",
       "remote": "origin"
     },
+    "add_BB-PAPI-S-TACOS-2": {
+      "head": "refs/heads/add_BB-PAPI-S-TACOS-2",
+      "remote": "origin"
+    },
     "add_BB-S-LAWNSIDE-BBQ-2": {
       "head": "refs/heads/add_BB-S-LAWNSIDE-BBQ-2",
       "remote": "origin"
@@ -1360,6 +1984,10 @@
     },
     "add_BBQ-CRAFT-COMPANY-2": {
       "head": "refs/heads/add_BBQ-CRAFT-COMPANY-2",
+      "remote": "origin"
+    },
+    "add_BBQ2U-2": {
+      "head": "refs/heads/add_BBQ2U-2",
       "remote": "origin"
     },
     "add_BCD-TOFU-HOUSE-ARTESIA-2": {
@@ -1386,8 +2014,24 @@
       "head": "refs/heads/add_BCD-TOFU-HOUSE-TORRANCE-2",
       "remote": "origin"
     },
+    "add_BE-EM-ASIAN-KITCHEN-2": {
+      "head": "refs/heads/add_BE-EM-ASIAN-KITCHEN-2",
+      "remote": "origin"
+    },
+    "add_BE-WELL-JUICE-BAR-2": {
+      "head": "refs/heads/add_BE-WELL-JUICE-BAR-2",
+      "remote": "origin"
+    },
+    "add_BEACH-CLUB-2": {
+      "head": "refs/heads/add_BEACH-CLUB-2",
+      "remote": "origin"
+    },
     "add_BEACH-PIT-BBQ-2": {
       "head": "refs/heads/add_BEACH-PIT-BBQ-2",
+      "remote": "origin"
+    },
+    "add_BEACH-PLEASE-DRINK-COMPANY-2": {
+      "head": "refs/heads/add_BEACH-PLEASE-DRINK-COMPANY-2",
       "remote": "origin"
     },
     "add_BEACHES-WEHO-2": {
@@ -1410,6 +2054,14 @@
       "head": "refs/heads/add_BEACON-FALLS-PIZZA-PALACE-2",
       "remote": "origin"
     },
+    "add_BEAGLE-BAGEL-CAFE-2": {
+      "head": "refs/heads/add_BEAGLE-BAGEL-CAFE-2",
+      "remote": "origin"
+    },
+    "add_BEANA-S-KITCHEN-2": {
+      "head": "refs/heads/add_BEANA-S-KITCHEN-2",
+      "remote": "origin"
+    },
     "add_BEAR-REPUBLIC-BREWING-COMPANY-2": {
       "head": "refs/heads/add_BEAR-REPUBLIC-BREWING-COMPANY-2",
       "remote": "origin"
@@ -1426,12 +2078,20 @@
       "head": "refs/heads/add_BEAU-JO-S-2",
       "remote": "origin"
     },
+    "add_BECKYS-2": {
+      "head": "refs/heads/add_BECKYS-2",
+      "remote": "origin"
+    },
     "add_BEEPS-FAST-FOOD-2": {
       "head": "refs/heads/add_BEEPS-FAST-FOOD-2",
       "remote": "origin"
     },
     "add_BEESIDE-BALCONY-2": {
       "head": "refs/heads/add_BEESIDE-BALCONY-2",
+      "remote": "origin"
+    },
+    "add_BEGYLE-BREWING-CO-CHICAGO-2": {
+      "head": "refs/heads/add_BEGYLE-BREWING-CO-CHICAGO-2",
       "remote": "origin"
     },
     "add_BEI-JIN-RESTAURANT-2": {
@@ -1466,8 +2126,20 @@
       "head": "refs/heads/add_BELLA-NAPOLI-2",
       "remote": "origin"
     },
+    "add_BELLA-NAPOLI-ITALIAN-RESTAURANT-2": {
+      "head": "refs/heads/add_BELLA-NAPOLI-ITALIAN-RESTAURANT-2",
+      "remote": "origin"
+    },
     "add_BELLA-NONNA-RESTAURANT-PIZZERIA-2": {
       "head": "refs/heads/add_BELLA-NONNA-RESTAURANT-PIZZERIA-2",
+      "remote": "origin"
+    },
+    "add_BELLA-S-2": {
+      "head": "refs/heads/add_BELLA-S-2",
+      "remote": "origin"
+    },
+    "add_BELLA-S-ITALIAN-RESTAURANT-2": {
+      "head": "refs/heads/add_BELLA-S-ITALIAN-RESTAURANT-2",
       "remote": "origin"
     },
     "add_BELLA-S-PIZZA-VILLA-2": {
@@ -1480,6 +2152,10 @@
     },
     "add_BELLA-VITA-2": {
       "head": "refs/heads/add_BELLA-VITA-2",
+      "remote": "origin"
+    },
+    "add_BELLDEN-CAFE-2": {
+      "head": "refs/heads/add_BELLDEN-CAFE-2",
       "remote": "origin"
     },
     "add_BELLE-FOODS-PIZZA-2": {
@@ -1514,8 +2190,16 @@
       "head": "refs/heads/add_BEN-TRE-2",
       "remote": "origin"
     },
+    "add_BENE-S-2": {
+      "head": "refs/heads/add_BENE-S-2",
+      "remote": "origin"
+    },
     "add_BENEDICTS-FAMILY-RESTAURANT-2": {
       "head": "refs/heads/add_BENEDICTS-FAMILY-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_BENI-EXQUISITE-EATS-2": {
+      "head": "refs/heads/add_BENI-EXQUISITE-EATS-2",
       "remote": "origin"
     },
     "add_BENI-S-CUBANO-2": {
@@ -1524,6 +2208,10 @@
     },
     "add_BENIHIBACHI-2": {
       "head": "refs/heads/add_BENIHIBACHI-2",
+      "remote": "origin"
+    },
+    "add_BENITO-S-PIZZA-2": {
+      "head": "refs/heads/add_BENITO-S-PIZZA-2",
       "remote": "origin"
     },
     "add_BENJARONG-2": {
@@ -1538,6 +2226,10 @@
       "head": "refs/heads/add_BENNIE-S-PIZZA-PUB-2",
       "remote": "origin"
     },
+    "add_BENT-BURGER-SEATTLE-2": {
+      "head": "refs/heads/add_BENT-BURGER-SEATTLE-2",
+      "remote": "origin"
+    },
     "add_BENTON-LA-FIESTA-MEXICAN-RESTAURANT-2": {
       "head": "refs/heads/add_BENTON-LA-FIESTA-MEXICAN-RESTAURANT-2",
       "remote": "origin"
@@ -1550,6 +2242,18 @@
       "head": "refs/heads/add_BERNARDI-S-2",
       "remote": "origin"
     },
+    "add_BERNARDI-S-II-2": {
+      "head": "refs/heads/add_BERNARDI-S-II-2",
+      "remote": "origin"
+    },
+    "add_BERRI-BOWLFUL-2": {
+      "head": "refs/heads/add_BERRI-BOWLFUL-2",
+      "remote": "origin"
+    },
+    "add_BERRY-FIELDS-CAFE-2": {
+      "head": "refs/heads/add_BERRY-FIELDS-CAFE-2",
+      "remote": "origin"
+    },
     "add_BERT-S-CHUCKWAGON-COLLINSVILLE-2": {
       "head": "refs/heads/add_BERT-S-CHUCKWAGON-COLLINSVILLE-2",
       "remote": "origin"
@@ -1558,8 +2262,24 @@
       "head": "refs/heads/add_BERTIES-HOT-CHICKEN-2",
       "remote": "origin"
     },
+    "add_BESSERY-S-BUTCHER-SHOPPE-2": {
+      "head": "refs/heads/add_BESSERY-S-BUTCHER-SHOPPE-2",
+      "remote": "origin"
+    },
+    "add_BEST-BUNS-2": {
+      "head": "refs/heads/add_BEST-BUNS-2",
+      "remote": "origin"
+    },
+    "add_BEST-OF-INDIA-2": {
+      "head": "refs/heads/add_BEST-OF-INDIA-2",
+      "remote": "origin"
+    },
     "add_BEST-PIZZA-AND-BREW-2": {
       "head": "refs/heads/add_BEST-PIZZA-AND-BREW-2",
+      "remote": "origin"
+    },
+    "add_BEST-PIZZA-EVER-2": {
+      "head": "refs/heads/add_BEST-PIZZA-EVER-2",
       "remote": "origin"
     },
     "add_BEST-REGARDS-BAKERY-CAFE-2": {
@@ -1572,6 +2292,10 @@
     },
     "add_BETTER-THAN-ICE-CREAM-CAFE-2": {
       "head": "refs/heads/add_BETTER-THAN-ICE-CREAM-CAFE-2",
+      "remote": "origin"
+    },
+    "add_BETTOLA-2": {
+      "head": "refs/heads/add_BETTOLA-2",
       "remote": "origin"
     },
     "add_BETTY-BOMBERS-2": {
@@ -1618,6 +2342,10 @@
       "head": "refs/heads/add_BIG-APPLE-PIZZA-OF-LAKE-PARK-INC-2",
       "remote": "origin"
     },
+    "add_BIG-APPLE-PIZZERIA-NEW-BERN-MALL-2": {
+      "head": "refs/heads/add_BIG-APPLE-PIZZERIA-NEW-BERN-MALL-2",
+      "remote": "origin"
+    },
     "add_BIG-BASIN-BURGER-BAR-2": {
       "head": "refs/heads/add_BIG-BASIN-BURGER-BAR-2",
       "remote": "origin"
@@ -1634,8 +2362,16 @@
       "head": "refs/heads/add_BIG-BOY-COOKIES-2",
       "remote": "origin"
     },
+    "add_BIG-BURGER-SPOT-2": {
+      "head": "refs/heads/add_BIG-BURGER-SPOT-2",
+      "remote": "origin"
+    },
     "add_BIG-CHIC-UPTOWN-2": {
       "head": "refs/heads/add_BIG-CHIC-UPTOWN-2",
+      "remote": "origin"
+    },
+    "add_BIG-CHIEF-ROADHOUSE-2": {
+      "head": "refs/heads/add_BIG-CHIEF-ROADHOUSE-2",
       "remote": "origin"
     },
     "add_BIG-CITY-PIZZA-2": {
@@ -1730,6 +2466,22 @@
       "head": "refs/heads/add_BIG-SLICE-PIZZA-2",
       "remote": "origin"
     },
+    "add_BIG-SOUTH-KITCHEN-2": {
+      "head": "refs/heads/add_BIG-SOUTH-KITCHEN-2",
+      "remote": "origin"
+    },
+    "add_BIG-TINY-S-BBQ-2": {
+      "head": "refs/heads/add_BIG-TINY-S-BBQ-2",
+      "remote": "origin"
+    },
+    "add_BIG-WRAPS-MORE-2": {
+      "head": "refs/heads/add_BIG-WRAPS-MORE-2",
+      "remote": "origin"
+    },
+    "add_BIGG-BURGER-2": {
+      "head": "refs/heads/add_BIGG-BURGER-2",
+      "remote": "origin"
+    },
     "add_BILL-GIANINO-S-RESTAURANT-2": {
       "head": "refs/heads/add_BILL-GIANINO-S-RESTAURANT-2",
       "remote": "origin"
@@ -1742,8 +2494,16 @@
       "head": "refs/heads/add_BILLY-O-NEAL-S-PUB-EATERY-2",
       "remote": "origin"
     },
+    "add_BIM-BAM-BURGERS-2": {
+      "head": "refs/heads/add_BIM-BAM-BURGERS-2",
+      "remote": "origin"
+    },
     "add_BINGO-BURGER-2": {
       "head": "refs/heads/add_BINGO-BURGER-2",
+      "remote": "origin"
+    },
+    "add_BIRCH-DOOR-CAFE-2": {
+      "head": "refs/heads/add_BIRCH-DOOR-CAFE-2",
       "remote": "origin"
     },
     "add_BIRCH-HILL-TAVERN-2": {
@@ -1782,6 +2542,10 @@
       "head": "refs/heads/add_BIRRA1983-2",
       "remote": "origin"
     },
+    "add_BIRYANI-BOWL-2": {
+      "head": "refs/heads/add_BIRYANI-BOWL-2",
+      "remote": "origin"
+    },
     "add_BIRYANI-HOUSE-2": {
       "head": "refs/heads/add_BIRYANI-HOUSE-2",
       "remote": "origin"
@@ -1790,8 +2554,20 @@
       "head": "refs/heads/add_BIRYANI-KABABS-2",
       "remote": "origin"
     },
+    "add_BIRYANI-MAXX-INDIAN-CUISINE-2": {
+      "head": "refs/heads/add_BIRYANI-MAXX-INDIAN-CUISINE-2",
+      "remote": "origin"
+    },
     "add_BISCUIT-HOGS-2": {
       "head": "refs/heads/add_BISCUIT-HOGS-2",
+      "remote": "origin"
+    },
+    "add_BISCUIT-KING-2": {
+      "head": "refs/heads/add_BISCUIT-KING-2",
+      "remote": "origin"
+    },
+    "add_BISHOPS-STEAKHOUSE-THE-BREAKFAST-CLUB-DINER-2": {
+      "head": "refs/heads/add_BISHOPS-STEAKHOUSE-THE-BREAKFAST-CLUB-DINER-2",
       "remote": "origin"
     },
     "add_BISTRO-143-2": {
@@ -1810,12 +2586,24 @@
       "head": "refs/heads/add_BITES-ON-BRAMPTON-2",
       "remote": "origin"
     },
+    "add_BITTERROOT-BBQ-2": {
+      "head": "refs/heads/add_BITTERROOT-BBQ-2",
+      "remote": "origin"
+    },
     "add_BIZZARRO-S-PIZZERIA-PASTA-HOUSE-2": {
       "head": "refs/heads/add_BIZZARRO-S-PIZZERIA-PASTA-HOUSE-2",
       "remote": "origin"
     },
+    "add_BLACK-BEAR-LODGE-SALOON-2": {
+      "head": "refs/heads/add_BLACK-BEAR-LODGE-SALOON-2",
+      "remote": "origin"
+    },
     "add_BLACK-BREW-COFFEE-HOUSE-BISTRO-2": {
       "head": "refs/heads/add_BLACK-BREW-COFFEE-HOUSE-BISTRO-2",
+      "remote": "origin"
+    },
+    "add_BLACK-COFFEE-AND-WAFFLE-BAR-2": {
+      "head": "refs/heads/add_BLACK-COFFEE-AND-WAFFLE-BAR-2",
       "remote": "origin"
     },
     "add_BLACK-EYED-PEA-2": {
@@ -1824,6 +2612,10 @@
     },
     "add_BLACK-HEART-COFFEE-CO--2": {
       "head": "refs/heads/add_BLACK-HEART-COFFEE-CO--2",
+      "remote": "origin"
+    },
+    "add_BLACK-JACK-S-PUB-AND-GRILL-2": {
+      "head": "refs/heads/add_BLACK-JACK-S-PUB-AND-GRILL-2",
       "remote": "origin"
     },
     "add_BLACK-LONG-BEACH-2": {
@@ -1842,8 +2634,20 @@
       "head": "refs/heads/add_BLACK-SALT-RESTAURANT-2",
       "remote": "origin"
     },
+    "add_BLACK-SHEEP-BURRITO-AND-BREWS-2": {
+      "head": "refs/heads/add_BLACK-SHEEP-BURRITO-AND-BREWS-2",
+      "remote": "origin"
+    },
+    "add_BLACK-SHEEP-BURRITO-BREWS-2": {
+      "head": "refs/heads/add_BLACK-SHEEP-BURRITO-BREWS-2",
+      "remote": "origin"
+    },
     "add_BLACK-SHEEP-COFFEE-BAA-2": {
       "head": "refs/heads/add_BLACK-SHEEP-COFFEE-BAA-2",
+      "remote": "origin"
+    },
+    "add_BLACK-TRUMPET-BISTRO-PORTSMOUTH-2": {
+      "head": "refs/heads/add_BLACK-TRUMPET-BISTRO-PORTSMOUTH-2",
       "remote": "origin"
     },
     "add_BLACK-WHITE-GRILLE-2": {
@@ -1880,6 +2684,10 @@
     },
     "add_BLEU-HOUSE-2": {
       "head": "refs/heads/add_BLEU-HOUSE-2",
+      "remote": "origin"
+    },
+    "add_BLEU-RESTAURANT-BAR-2": {
+      "head": "refs/heads/add_BLEU-RESTAURANT-BAR-2",
       "remote": "origin"
     },
     "add_BLIND-BOX-BBQ-NFM-2": {
@@ -1942,6 +2750,10 @@
       "head": "refs/heads/add_BLUE-HEN-WINGS-2",
       "remote": "origin"
     },
+    "add_BLUE-ISLAND-SUSHI-2": {
+      "head": "refs/heads/add_BLUE-ISLAND-SUSHI-2",
+      "remote": "origin"
+    },
     "add_BLUE-KOI-SUSHI-2": {
       "head": "refs/heads/add_BLUE-KOI-SUSHI-2",
       "remote": "origin"
@@ -1966,12 +2778,32 @@
       "head": "refs/heads/add_BLUE-ORLEANS-SEAFOOD-RESTAURANT-2",
       "remote": "origin"
     },
+    "add_BLUE-PIT-BBQ-WHISKEY-BAR-2": {
+      "head": "refs/heads/add_BLUE-PIT-BBQ-WHISKEY-BAR-2",
+      "remote": "origin"
+    },
     "add_BLUE-POINTE-OYSTER-BAR-SEAFOOD-GRILL-2": {
       "head": "refs/heads/add_BLUE-POINTE-OYSTER-BAR-SEAFOOD-GRILL-2",
       "remote": "origin"
     },
+    "add_BLUE-RIDGE-GRILL-2": {
+      "head": "refs/heads/add_BLUE-RIDGE-GRILL-2",
+      "remote": "origin"
+    },
+    "add_BLUE-ROCK-PIZZA-TAP-2": {
+      "head": "refs/heads/add_BLUE-ROCK-PIZZA-TAP-2",
+      "remote": "origin"
+    },
     "add_BLUE-SPRUCE-BREWING-COMPANY-2": {
       "head": "refs/heads/add_BLUE-SPRUCE-BREWING-COMPANY-2",
+      "remote": "origin"
+    },
+    "add_BLUE-SURF-2": {
+      "head": "refs/heads/add_BLUE-SURF-2",
+      "remote": "origin"
+    },
+    "add_BLUE-SURF-CAFE-2": {
+      "head": "refs/heads/add_BLUE-SURF-CAFE-2",
       "remote": "origin"
     },
     "add_BLUE-TABLE-2": {
@@ -1990,12 +2822,32 @@
       "head": "refs/heads/add_BLUPOINT-OYSTER-HOUSE-2",
       "remote": "origin"
     },
+    "add_BLUWATER-BISTRO-2": {
+      "head": "refs/heads/add_BLUWATER-BISTRO-2",
+      "remote": "origin"
+    },
+    "add_BLVD-BAR-GRILLE-2": {
+      "head": "refs/heads/add_BLVD-BAR-GRILLE-2",
+      "remote": "origin"
+    },
+    "add_BLVD-KITCHEN-BAR-2": {
+      "head": "refs/heads/add_BLVD-KITCHEN-BAR-2",
+      "remote": "origin"
+    },
     "add_BNATURAL-KITCHEN-2": {
       "head": "refs/heads/add_BNATURAL-KITCHEN-2",
       "remote": "origin"
     },
     "add_BOARD-BREW-2": {
       "head": "refs/heads/add_BOARD-BREW-2",
+      "remote": "origin"
+    },
+    "add_BOARDWALK-BAR-GRILL-2": {
+      "head": "refs/heads/add_BOARDWALK-BAR-GRILL-2",
+      "remote": "origin"
+    },
+    "add_BOARDWALK-BILLY-S-RAW-BAR-AND-RIBS-2": {
+      "head": "refs/heads/add_BOARDWALK-BILLY-S-RAW-BAR-AND-RIBS-2",
       "remote": "origin"
     },
     "add_BOARDWALK-GRILL-2": {
@@ -2006,8 +2858,20 @@
       "head": "refs/heads/add_BOB-CHINN-S-CRAB-HOUSE-2",
       "remote": "origin"
     },
+    "add_BOB-EDITH-S-DINER-2": {
+      "head": "refs/heads/add_BOB-EDITH-S-DINER-2",
+      "remote": "origin"
+    },
     "add_BOB-S-STEAK-CHOP-HOUSE-LA-COSTA-2": {
       "head": "refs/heads/add_BOB-S-STEAK-CHOP-HOUSE-LA-COSTA-2",
+      "remote": "origin"
+    },
+    "add_BOBA-BEANZ-BILOXI-2": {
+      "head": "refs/heads/add_BOBA-BEANZ-BILOXI-2",
+      "remote": "origin"
+    },
+    "add_BOBAFINITEA-2": {
+      "head": "refs/heads/add_BOBAFINITEA-2",
       "remote": "origin"
     },
     "add_BOBBY-BYRNE-S-RESTAURANT-PUB-2": {
@@ -2020,6 +2884,10 @@
     },
     "add_BOBS-OF-MANKATO-2": {
       "head": "refs/heads/add_BOBS-OF-MANKATO-2",
+      "remote": "origin"
+    },
+    "add_BOCA-BOTANA-S-TAPAS-BAR-2": {
+      "head": "refs/heads/add_BOCA-BOTANA-S-TAPAS-BAR-2",
       "remote": "origin"
     },
     "add_BOCA-PIZZERIA-2": {
@@ -2042,8 +2910,20 @@
       "head": "refs/heads/add_BODY-ENERGY-CLUB-2",
       "remote": "origin"
     },
+    "add_BOK-WINGS-2": {
+      "head": "refs/heads/add_BOK-WINGS-2",
+      "remote": "origin"
+    },
+    "add_BOKANINAS-PACIFIC-FUSION-2": {
+      "head": "refs/heads/add_BOKANINAS-PACIFIC-FUSION-2",
+      "remote": "origin"
+    },
     "add_BOLLYWOOD-CAFE-2": {
       "head": "refs/heads/add_BOLLYWOOD-CAFE-2",
+      "remote": "origin"
+    },
+    "add_BOLLYWOOD-THEATER-2": {
+      "head": "refs/heads/add_BOLLYWOOD-THEATER-2",
       "remote": "origin"
     },
     "add_BOMBAY-BAR-GRILL-2": {
@@ -2070,8 +2950,16 @@
       "head": "refs/heads/add_BONCHON-STAPLETON-2",
       "remote": "origin"
     },
+    "add_BONE-AND-BROTH-2": {
+      "head": "refs/heads/add_BONE-AND-BROTH-2",
+      "remote": "origin"
+    },
     "add_BONEYARD-BBQ-2": {
       "head": "refs/heads/add_BONEYARD-BBQ-2",
+      "remote": "origin"
+    },
+    "add_BONFIRE-BARBECUE-2": {
+      "head": "refs/heads/add_BONFIRE-BARBECUE-2",
       "remote": "origin"
     },
     "add_BONNIE-CAFE-2": {
@@ -2086,6 +2974,14 @@
       "head": "refs/heads/add_BONNIE-LEE-S-FRIED-CHICKEN-KISSIMMEE-2",
       "remote": "origin"
     },
+    "add_BOOEYMONGER-FRIENDSHIP-HEIGHTS-2": {
+      "head": "refs/heads/add_BOOEYMONGER-FRIENDSHIP-HEIGHTS-2",
+      "remote": "origin"
+    },
+    "add_BOOJA-KOREAN-AND-JAPANESE-RESTAURANT-HTTPS-WWW-YELP-COM-BIZ-BOOJA-KOREAN-AND-JAPANESE-RESTUARANT-2": {
+      "head": "refs/heads/add_BOOJA-KOREAN-AND-JAPANESE-RESTAURANT-HTTPS-WWW-YELP-COM-BIZ-BOOJA-KOREAN-AND-JAPANESE-RESTUARANT-2",
+      "remote": "origin"
+    },
     "add_BOOKMAKERS-BAR-GRILL-2": {
       "head": "refs/heads/add_BOOKMAKERS-BAR-GRILL-2",
       "remote": "origin"
@@ -2096,6 +2992,10 @@
     },
     "add_BOOMBOZZ-PIZZA-WATCH-BAR-2": {
       "head": "refs/heads/add_BOOMBOZZ-PIZZA-WATCH-BAR-2",
+      "remote": "origin"
+    },
+    "add_BOOMER-S-DRIVE-IN-2": {
+      "head": "refs/heads/add_BOOMER-S-DRIVE-IN-2",
       "remote": "origin"
     },
     "add_BOOST-BOWLS-2": {
@@ -2158,6 +3058,18 @@
       "head": "refs/heads/add_BOULDER-TAP-HOUSE-2",
       "remote": "origin"
     },
+    "add_BOULE-CHAIN-2": {
+      "head": "refs/heads/add_BOULE-CHAIN-2",
+      "remote": "origin"
+    },
+    "add_BOULEVARD-SPORTS-LOUNGE-CHICAGO-2": {
+      "head": "refs/heads/add_BOULEVARD-SPORTS-LOUNGE-CHICAGO-2",
+      "remote": "origin"
+    },
+    "add_BOURBON-BUTCHER-KITCHEN-BAR-2": {
+      "head": "refs/heads/add_BOURBON-BUTCHER-KITCHEN-BAR-2",
+      "remote": "origin"
+    },
     "add_BOURBON-GRILL-2": {
       "head": "refs/heads/add_BOURBON-GRILL-2",
       "remote": "origin"
@@ -2170,12 +3082,28 @@
       "head": "refs/heads/add_BOURBON-STREET-PIZZA-2",
       "remote": "origin"
     },
+    "add_BOW-STREET-MARKET-2": {
+      "head": "refs/heads/add_BOW-STREET-MARKET-2",
+      "remote": "origin"
+    },
     "add_BOWL-HUB-NEWTON-2": {
       "head": "refs/heads/add_BOWL-HUB-NEWTON-2",
       "remote": "origin"
     },
+    "add_BOX-CAR-ATLANTA-2": {
+      "head": "refs/heads/add_BOX-CAR-ATLANTA-2",
+      "remote": "origin"
+    },
+    "add_BOXCAR-HIPPIE-2": {
+      "head": "refs/heads/add_BOXCAR-HIPPIE-2",
+      "remote": "origin"
+    },
     "add_BQ-WINGS-2": {
       "head": "refs/heads/add_BQ-WINGS-2",
+      "remote": "origin"
+    },
+    "add_BRACKET-ROOM-2": {
+      "head": "refs/heads/add_BRACKET-ROOM-2",
       "remote": "origin"
     },
     "add_BRADLEY-AND-WALL-2": {
@@ -2186,8 +3114,28 @@
       "head": "refs/heads/add_BRAINTREE-CHATEAU-2",
       "remote": "origin"
     },
+    "add_BRANDING-IRON-2": {
+      "head": "refs/heads/add_BRANDING-IRON-2",
+      "remote": "origin"
+    },
+    "add_BRASILIA-CHURRASCO-STEAKHOUSE-2": {
+      "head": "refs/heads/add_BRASILIA-CHURRASCO-STEAKHOUSE-2",
+      "remote": "origin"
+    },
+    "add_BRASS-RAIL-SPORTS-BAR-GRILL-2": {
+      "head": "refs/heads/add_BRASS-RAIL-SPORTS-BAR-GRILL-2",
+      "remote": "origin"
+    },
+    "add_BRAVO-BURRITOS-2": {
+      "head": "refs/heads/add_BRAVO-BURRITOS-2",
+      "remote": "origin"
+    },
     "add_BRAVO-NY-PIZZA-2": {
       "head": "refs/heads/add_BRAVO-NY-PIZZA-2",
+      "remote": "origin"
+    },
+    "add_BRAVO-S-MEXICAN-GRILL-2": {
+      "head": "refs/heads/add_BRAVO-S-MEXICAN-GRILL-2",
       "remote": "origin"
     },
     "add_BRAVOS-PIZZA-2": {
@@ -2196,6 +3144,14 @@
     },
     "add_BREAD-AND-BUTTER-BAKERY-2": {
       "head": "refs/heads/add_BREAD-AND-BUTTER-BAKERY-2",
+      "remote": "origin"
+    },
+    "add_BREAD-CORNER-BAKERY-CAFE-2": {
+      "head": "refs/heads/add_BREAD-CORNER-BAKERY-CAFE-2",
+      "remote": "origin"
+    },
+    "add_BREADLINE-CAFE-2": {
+      "head": "refs/heads/add_BREADLINE-CAFE-2",
       "remote": "origin"
     },
     "add_BREAKFAST-STATION-11-2": {
@@ -2250,6 +3206,10 @@
       "head": "refs/heads/add_BREAKFAST-STATION-HQ-2",
       "remote": "origin"
     },
+    "add_BREAKWATER-SEAFOODS-2": {
+      "head": "refs/heads/add_BREAKWATER-SEAFOODS-2",
+      "remote": "origin"
+    },
     "add_BREW-AND-FOAM-COFFEE-HOUSE-NORTH-SHORE-2": {
       "head": "refs/heads/add_BREW-AND-FOAM-COFFEE-HOUSE-NORTH-SHORE-2",
       "remote": "origin"
@@ -2286,6 +3246,14 @@
       "head": "refs/heads/add_BRIAR-COMMON-BREWERY-EATERY-2",
       "remote": "origin"
     },
+    "add_BRICK-3-PIZZA-2": {
+      "head": "refs/heads/add_BRICK-3-PIZZA-2",
+      "remote": "origin"
+    },
+    "add_BRICK-BOURBON-2": {
+      "head": "refs/heads/add_BRICK-BOURBON-2",
+      "remote": "origin"
+    },
     "add_BRICK-CITY-EATERY-2": {
       "head": "refs/heads/add_BRICK-CITY-EATERY-2",
       "remote": "origin"
@@ -2298,8 +3266,24 @@
       "head": "refs/heads/add_BRICK-HOUSE-GRILL-2",
       "remote": "origin"
     },
+    "add_BRICK-OVEN-PIZZERIA-2": {
+      "head": "refs/heads/add_BRICK-OVEN-PIZZERIA-2",
+      "remote": "origin"
+    },
     "add_BRICKHOUSE-PIZZA-2": {
       "head": "refs/heads/add_BRICKHOUSE-PIZZA-2",
+      "remote": "origin"
+    },
+    "add_BRICKHOUSE-RESTAURANT-BAR-2": {
+      "head": "refs/heads/add_BRICKHOUSE-RESTAURANT-BAR-2",
+      "remote": "origin"
+    },
+    "add_BRICKHOUSE-TAVERN-2": {
+      "head": "refs/heads/add_BRICKHOUSE-TAVERN-2",
+      "remote": "origin"
+    },
+    "add_BRICKTOP-S-2": {
+      "head": "refs/heads/add_BRICKTOP-S-2",
       "remote": "origin"
     },
     "add_BRICKTOP-S-NAPLES-2": {
@@ -2310,6 +3294,10 @@
       "head": "refs/heads/add_BRICKTOP-S-PALM-BEACH-2",
       "remote": "origin"
     },
+    "add_BRIDGES-BAR-AND-GRILL-2": {
+      "head": "refs/heads/add_BRIDGES-BAR-AND-GRILL-2",
+      "remote": "origin"
+    },
     "add_BRIGANTINE-2": {
       "head": "refs/heads/add_BRIGANTINE-2",
       "remote": "origin"
@@ -2318,12 +3306,80 @@
       "head": "refs/heads/add_BRIGHAM-CIRCLE-CHINESE-FOOD-2",
       "remote": "origin"
     },
+    "add_BRIGHT-STAR-GRILL-2": {
+      "head": "refs/heads/add_BRIGHT-STAR-GRILL-2",
+      "remote": "origin"
+    },
+    "add_BRIM-CAFE-AND-CATERING-2": {
+      "head": "refs/heads/add_BRIM-CAFE-AND-CATERING-2",
+      "remote": "origin"
+    },
+    "add_BRINDISI-S-PUB-2": {
+      "head": "refs/heads/add_BRINDISI-S-PUB-2",
+      "remote": "origin"
+    },
     "add_BRIO-TUSCANY-GRILL-2": {
       "head": "refs/heads/add_BRIO-TUSCANY-GRILL-2",
       "remote": "origin"
     },
+    "add_BRITO-S-BURRITO-2": {
+      "head": "refs/heads/add_BRITO-S-BURRITO-2",
+      "remote": "origin"
+    },
+    "add_BRIXX-PIZZA-BIRKDALE-2": {
+      "head": "refs/heads/add_BRIXX-PIZZA-BIRKDALE-2",
+      "remote": "origin"
+    },
+    "add_BRIXX-PIZZA-BRIER-CREEK-2": {
+      "head": "refs/heads/add_BRIXX-PIZZA-BRIER-CREEK-2",
+      "remote": "origin"
+    },
+    "add_BRIXX-PIZZA-CHAPEL-HILL-2": {
+      "head": "refs/heads/add_BRIXX-PIZZA-CHAPEL-HILL-2",
+      "remote": "origin"
+    },
+    "add_BRIXX-PIZZA-PARKSIDE-2": {
+      "head": "refs/heads/add_BRIXX-PIZZA-PARKSIDE-2",
+      "remote": "origin"
+    },
+    "add_BRIXX-PIZZA-REA-ROAD-2": {
+      "head": "refs/heads/add_BRIXX-PIZZA-REA-ROAD-2",
+      "remote": "origin"
+    },
+    "add_BRIXX-PIZZA-WOODBRIDGE-2": {
+      "head": "refs/heads/add_BRIXX-PIZZA-WOODBRIDGE-2",
+      "remote": "origin"
+    },
+    "add_BRIXX-WOOD-FIRED-PIZZA-2": {
+      "head": "refs/heads/add_BRIXX-WOOD-FIRED-PIZZA-2",
+      "remote": "origin"
+    },
+    "add_BRIXX-WOOD-FIRED-PIZZA-BRADFORD-2": {
+      "head": "refs/heads/add_BRIXX-WOOD-FIRED-PIZZA-BRADFORD-2",
+      "remote": "origin"
+    },
+    "add_BRIXX-WOOD-FIRED-PIZZA-BURLINGTON-2": {
+      "head": "refs/heads/add_BRIXX-WOOD-FIRED-PIZZA-BURLINGTON-2",
+      "remote": "origin"
+    },
+    "add_BRIXX-WOOD-FIRED-PIZZA-GREENSBORO-2": {
+      "head": "refs/heads/add_BRIXX-WOOD-FIRED-PIZZA-GREENSBORO-2",
+      "remote": "origin"
+    },
+    "add_BRIXX-WOOD-FIRED-PIZZA-WILMINGTON-2": {
+      "head": "refs/heads/add_BRIXX-WOOD-FIRED-PIZZA-WILMINGTON-2",
+      "remote": "origin"
+    },
+    "add_BRIXX-WOOD-FIRED-PIZZA-WINSTON-SALEM-2": {
+      "head": "refs/heads/add_BRIXX-WOOD-FIRED-PIZZA-WINSTON-SALEM-2",
+      "remote": "origin"
+    },
     "add_BRK-PIZZA-2": {
       "head": "refs/heads/add_BRK-PIZZA-2",
+      "remote": "origin"
+    },
+    "add_BROAD-ST-BURGER-CO--2": {
+      "head": "refs/heads/add_BROAD-ST-BURGER-CO--2",
       "remote": "origin"
     },
     "add_BROAD-STREET-BULLIES-GRILL-2": {
@@ -2370,6 +3426,14 @@
       "head": "refs/heads/add_BRONX-BAGEL-DELI-2",
       "remote": "origin"
     },
+    "add_BROOKLAND-PINT-2": {
+      "head": "refs/heads/add_BROOKLAND-PINT-2",
+      "remote": "origin"
+    },
+    "add_BROOKLYN-BOYS-2": {
+      "head": "refs/heads/add_BROOKLYN-BOYS-2",
+      "remote": "origin"
+    },
     "add_BROOKLYN-JOE-S-PIZZA-2": {
       "head": "refs/heads/add_BROOKLYN-JOE-S-PIZZA-2",
       "remote": "origin"
@@ -2378,8 +3442,24 @@
       "head": "refs/heads/add_BROOKLYN-NEW-YORK-PIZZERIA-2",
       "remote": "origin"
     },
+    "add_BROOKLYN-PIZZA-PARLOR-2": {
+      "head": "refs/heads/add_BROOKLYN-PIZZA-PARLOR-2",
+      "remote": "origin"
+    },
+    "add_BROOKLYN-SOUTH-PIZZERIA-2": {
+      "head": "refs/heads/add_BROOKLYN-SOUTH-PIZZERIA-2",
+      "remote": "origin"
+    },
     "add_BROOKSIDER-SPORTSBAR-GRILL-2": {
       "head": "refs/heads/add_BROOKSIDER-SPORTSBAR-GRILL-2",
+      "remote": "origin"
+    },
+    "add_BROTHERS-BAR-AND-GRILL-2": {
+      "head": "refs/heads/add_BROTHERS-BAR-AND-GRILL-2",
+      "remote": "origin"
+    },
+    "add_BROTHERS-BUS-BISTRO-2": {
+      "head": "refs/heads/add_BROTHERS-BUS-BISTRO-2",
       "remote": "origin"
     },
     "add_BROTHERS-CHICKEN-ROTISSERIE-2": {
@@ -2402,6 +3482,10 @@
       "head": "refs/heads/add_BROWN-DOG-PIZZA-2",
       "remote": "origin"
     },
+    "add_BROWN-RICE-KOREAN-GRILL-2": {
+      "head": "refs/heads/add_BROWN-RICE-KOREAN-GRILL-2",
+      "remote": "origin"
+    },
     "add_BRQ-2": {
       "head": "refs/heads/add_BRQ-2",
       "remote": "origin"
@@ -2410,12 +3494,28 @@
       "head": "refs/heads/add_BRU-S-WIFFLE-2",
       "remote": "origin"
     },
+    "add_BRUNO-S-FAMILY-RESTAURANT-BAR-2": {
+      "head": "refs/heads/add_BRUNO-S-FAMILY-RESTAURANT-BAR-2",
+      "remote": "origin"
+    },
     "add_BRUNO-S-ITALIAN-KITCHEN-2": {
       "head": "refs/heads/add_BRUNO-S-ITALIAN-KITCHEN-2",
       "remote": "origin"
     },
     "add_BRUNO-S-PIZZA-2": {
       "head": "refs/heads/add_BRUNO-S-PIZZA-2",
+      "remote": "origin"
+    },
+    "add_BRUNSON-S-PUB-2": {
+      "head": "refs/heads/add_BRUNSON-S-PUB-2",
+      "remote": "origin"
+    },
+    "add_BT-THAI-RESTAURANT-2": {
+      "head": "refs/heads/add_BT-THAI-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_BTB-BURRITO-2": {
+      "head": "refs/heads/add_BTB-BURRITO-2",
       "remote": "origin"
     },
     "add_BUA-HANA-2": {
@@ -2434,12 +3534,28 @@
       "head": "refs/heads/add_BUBBA-Q-S-2",
       "remote": "origin"
     },
+    "add_BUBBLE-MAINEIA-2": {
+      "head": "refs/heads/add_BUBBLE-MAINEIA-2",
+      "remote": "origin"
+    },
+    "add_BUCK-S-AMERICAN-CAFE-2": {
+      "head": "refs/heads/add_BUCK-S-AMERICAN-CAFE-2",
+      "remote": "origin"
+    },
     "add_BUCKBOARDS-BARBEQUE-AND-BREW-2": {
       "head": "refs/heads/add_BUCKBOARDS-BARBEQUE-AND-BREW-2",
       "remote": "origin"
     },
     "add_BUCKIN-BURRITO-2": {
       "head": "refs/heads/add_BUCKIN-BURRITO-2",
+      "remote": "origin"
+    },
+    "add_BUCKLEY-S-QUEEN-ANNE-2": {
+      "head": "refs/heads/add_BUCKLEY-S-QUEEN-ANNE-2",
+      "remote": "origin"
+    },
+    "add_BUDD-BAY-CAFE-2": {
+      "head": "refs/heads/add_BUDD-BAY-CAFE-2",
       "remote": "origin"
     },
     "add_BUDDY-S-BAR-B-Q-2": {
@@ -2458,6 +3574,14 @@
       "head": "refs/heads/add_BUFFALO-BOB-S-FAMILY-RESTAURANT-2",
       "remote": "origin"
     },
+    "add_BUFFALO-BROTHERS-2": {
+      "head": "refs/heads/add_BUFFALO-BROTHERS-2",
+      "remote": "origin"
+    },
+    "add_BUFFALO-BROTHERS-INC-2": {
+      "head": "refs/heads/add_BUFFALO-BROTHERS-INC-2",
+      "remote": "origin"
+    },
     "add_BUFFALO-CHIPS-RESTAURANT-2": {
       "head": "refs/heads/add_BUFFALO-CHIPS-RESTAURANT-2",
       "remote": "origin"
@@ -2474,8 +3598,20 @@
       "head": "refs/heads/add_BUFFET-CITY-CAJUN-SEAFOOD-BOIL-2",
       "remote": "origin"
     },
+    "add_BUKHARA-INDIAN-BISTRO-2": {
+      "head": "refs/heads/add_BUKHARA-INDIAN-BISTRO-2",
+      "remote": "origin"
+    },
+    "add_BUL-BOX-2": {
+      "head": "refs/heads/add_BUL-BOX-2",
+      "remote": "origin"
+    },
     "add_BULL-BUSH-BREWERY-2": {
       "head": "refs/heads/add_BULL-BUSH-BREWERY-2",
+      "remote": "origin"
+    },
+    "add_BULLDOG-SALOON-2": {
+      "head": "refs/heads/add_BULLDOG-SALOON-2",
       "remote": "origin"
     },
     "add_BULLFROG-BAGELS-2": {
@@ -2488,6 +3624,18 @@
     },
     "add_BULLPEN-RIB-HOUSE-2": {
       "head": "refs/heads/add_BULLPEN-RIB-HOUSE-2",
+      "remote": "origin"
+    },
+    "add_BUNNY-S-BAR-AND-GRILL-NE-2": {
+      "head": "refs/heads/add_BUNNY-S-BAR-AND-GRILL-NE-2",
+      "remote": "origin"
+    },
+    "add_BUNNY-S-BAR-GRILL-ST-LOUIS-PARK-2": {
+      "head": "refs/heads/add_BUNNY-S-BAR-GRILL-ST-LOUIS-PARK-2",
+      "remote": "origin"
+    },
+    "add_BUNS-2": {
+      "head": "refs/heads/add_BUNS-2",
       "remote": "origin"
     },
     "add_BUONARROTI-RISTORANTE-2": {
@@ -2506,12 +3654,24 @@
       "head": "refs/heads/add_BURBOWL-DOWNTOWN-MIAMI-2",
       "remote": "origin"
     },
+    "add_BURGER-BAR-2": {
+      "head": "refs/heads/add_BURGER-BAR-2",
+      "remote": "origin"
+    },
     "add_BURGER-BUCKETS-2": {
       "head": "refs/heads/add_BURGER-BUCKETS-2",
       "remote": "origin"
     },
+    "add_BURGER-CORNER-2": {
+      "head": "refs/heads/add_BURGER-CORNER-2",
+      "remote": "origin"
+    },
     "add_BURGER-CREAM-2": {
       "head": "refs/heads/add_BURGER-CREAM-2",
+      "remote": "origin"
+    },
+    "add_BURGER-DIVE-2": {
+      "head": "refs/heads/add_BURGER-DIVE-2",
       "remote": "origin"
     },
     "add_BURGER-ME-INC-2": {
@@ -2530,12 +3690,20 @@
       "head": "refs/heads/add_BURGER-TEN-2",
       "remote": "origin"
     },
+    "add_BURGERBARN-2": {
+      "head": "refs/heads/add_BURGERBARN-2",
+      "remote": "origin"
+    },
     "add_BURGERIM-2": {
       "head": "refs/heads/add_BURGERIM-2",
       "remote": "origin"
     },
     "add_BURGERIM-EUCALYPTUS-AVE-2": {
       "head": "refs/heads/add_BURGERIM-EUCALYPTUS-AVE-2",
+      "remote": "origin"
+    },
+    "add_BURGERS-AND-BOTTLES-2": {
+      "head": "refs/heads/add_BURGERS-AND-BOTTLES-2",
       "remote": "origin"
     },
     "add_BURGERS-AND-BREW-2": {
@@ -2560,6 +3728,10 @@
     },
     "add_BURNIN-MOUTH-2": {
       "head": "refs/heads/add_BURNIN-MOUTH-2",
+      "remote": "origin"
+    },
+    "add_BURNS-ST-BISTRO-2": {
+      "head": "refs/heads/add_BURNS-ST-BISTRO-2",
       "remote": "origin"
     },
     "add_BURNT-END-BBQ-2": {
@@ -2594,6 +3766,10 @@
       "head": "refs/heads/add_BURRITO-BISTRO-HYANNIS-2",
       "remote": "origin"
     },
+    "add_BURRITO-BROS--2": {
+      "head": "refs/heads/add_BURRITO-BROS--2",
+      "remote": "origin"
+    },
     "add_BURRITO-ENVY-TEQUILA-BAR-2": {
       "head": "refs/heads/add_BURRITO-ENVY-TEQUILA-BAR-2",
       "remote": "origin"
@@ -2606,12 +3782,28 @@
       "head": "refs/heads/add_BURRITO-KING-MEXICAN-GRILL-2",
       "remote": "origin"
     },
+    "add_BURRITO-MUNDO-2": {
+      "head": "refs/heads/add_BURRITO-MUNDO-2",
+      "remote": "origin"
+    },
+    "add_BURRITO-SHAK-2": {
+      "head": "refs/heads/add_BURRITO-SHAK-2",
+      "remote": "origin"
+    },
+    "add_BURRITO-XPRESS-2": {
+      "head": "refs/heads/add_BURRITO-XPRESS-2",
+      "remote": "origin"
+    },
     "add_BURRITOS-MI-TIERRA-2": {
       "head": "refs/heads/add_BURRITOS-MI-TIERRA-2",
       "remote": "origin"
     },
     "add_BUSABA-2": {
       "head": "refs/heads/add_BUSABA-2",
+      "remote": "origin"
+    },
+    "add_BUSTERS-ON-28TH-2": {
+      "head": "refs/heads/add_BUSTERS-ON-28TH-2",
       "remote": "origin"
     },
     "add_BUSTERS-SPORTS-TAVERN-2": {
@@ -2630,12 +3822,24 @@
       "head": "refs/heads/add_BUTTER-ME-UP-2",
       "remote": "origin"
     },
+    "add_BUTTER-N-JAM-2": {
+      "head": "refs/heads/add_BUTTER-N-JAM-2",
+      "remote": "origin"
+    },
     "add_BUTTER-S-BURGERS-2": {
       "head": "refs/heads/add_BUTTER-S-BURGERS-2",
       "remote": "origin"
     },
     "add_BUTTON-ROCK-BAKERY-KENNY-LOU-S-DELI-2": {
       "head": "refs/heads/add_BUTTON-ROCK-BAKERY-KENNY-LOU-S-DELI-2",
+      "remote": "origin"
+    },
+    "add_BUZZ-INN-STEAKHOUSE-2": {
+      "head": "refs/heads/add_BUZZ-INN-STEAKHOUSE-2",
+      "remote": "origin"
+    },
+    "add_BY-THE-DOCKS-2": {
+      "head": "refs/heads/add_BY-THE-DOCKS-2",
       "remote": "origin"
     },
     "add_BYBLOS-2": {
@@ -2646,12 +3850,20 @@
       "head": "refs/heads/add_BYBLOS-EXPRESS-GREEK-LEBANESE-2",
       "remote": "origin"
     },
+    "add_BYERS-MARKET-2": {
+      "head": "refs/heads/add_BYERS-MARKET-2",
+      "remote": "origin"
+    },
     "add_BYRD-S-ROYAL-DELI-2": {
       "head": "refs/heads/add_BYRD-S-ROYAL-DELI-2",
       "remote": "origin"
     },
     "add_C-G-LUNCHBOX-2": {
       "head": "refs/heads/add_C-G-LUNCHBOX-2",
+      "remote": "origin"
+    },
+    "add_C-J-MUGG-S-BAR-GRILL-2": {
+      "head": "refs/heads/add_C-J-MUGG-S-BAR-GRILL-2",
       "remote": "origin"
     },
     "add_C-O-CUCINA-2": {
@@ -2672,6 +3884,14 @@
     },
     "add_CABANA-S-BELT-HWY-2": {
       "head": "refs/heads/add_CABANA-S-BELT-HWY-2",
+      "remote": "origin"
+    },
+    "add_CABIN-61-2": {
+      "head": "refs/heads/add_CABIN-61-2",
+      "remote": "origin"
+    },
+    "add_CABO-S-MEXICAN-CUISINE-CANTINA-2": {
+      "head": "refs/heads/add_CABO-S-MEXICAN-CUISINE-CANTINA-2",
       "remote": "origin"
     },
     "add_CABOS-GRILL-2": {
@@ -2710,6 +3930,22 @@
       "head": "refs/heads/add_CAFE-ALFRESCO-2",
       "remote": "origin"
     },
+    "add_CAFE-AZTECA-2": {
+      "head": "refs/heads/add_CAFE-AZTECA-2",
+      "remote": "origin"
+    },
+    "add_CAFE-BANH-MI-2": {
+      "head": "refs/heads/add_CAFE-BANH-MI-2",
+      "remote": "origin"
+    },
+    "add_CAFE-BERLIN-2": {
+      "head": "refs/heads/add_CAFE-BERLIN-2",
+      "remote": "origin"
+    },
+    "add_CAFE-BOLLYWOOD-2": {
+      "head": "refs/heads/add_CAFE-BOLLYWOOD-2",
+      "remote": "origin"
+    },
     "add_CAFE-BORRONE-2": {
       "head": "refs/heads/add_CAFE-BORRONE-2",
       "remote": "origin"
@@ -2746,6 +3982,10 @@
       "head": "refs/heads/add_CAFE-FIORE-2",
       "remote": "origin"
     },
+    "add_CAFE-GENEVIEVE-2": {
+      "head": "refs/heads/add_CAFE-GENEVIEVE-2",
+      "remote": "origin"
+    },
     "add_CAFE-GRATITUDE-KC-2": {
       "head": "refs/heads/add_CAFE-GRATITUDE-KC-2",
       "remote": "origin"
@@ -2754,8 +3994,24 @@
       "head": "refs/heads/add_CAFE-HEAVENLY-2",
       "remote": "origin"
     },
+    "add_CAFE-LA-FLEUR-2": {
+      "head": "refs/heads/add_CAFE-LA-FLEUR-2",
+      "remote": "origin"
+    },
+    "add_CAFE-LATTE-2": {
+      "head": "refs/heads/add_CAFE-LATTE-2",
+      "remote": "origin"
+    },
     "add_CAFE-LILY-2": {
       "head": "refs/heads/add_CAFE-LILY-2",
+      "remote": "origin"
+    },
+    "add_CAFE-MELI-2": {
+      "head": "refs/heads/add_CAFE-MELI-2",
+      "remote": "origin"
+    },
+    "add_CAFE-MERIDIAN-2": {
+      "head": "refs/heads/add_CAFE-MERIDIAN-2",
       "remote": "origin"
     },
     "add_CAFE-MINT-2": {
@@ -2810,6 +4066,10 @@
       "head": "refs/heads/add_CAFE-TELEGRAPH-SMOKE-SHACK-2",
       "remote": "origin"
     },
+    "add_CAFE-VELOCE-2": {
+      "head": "refs/heads/add_CAFE-VELOCE-2",
+      "remote": "origin"
+    },
     "add_CAFE-VICO-OCEAN-2": {
       "head": "refs/heads/add_CAFE-VICO-OCEAN-2",
       "remote": "origin"
@@ -2834,12 +4094,32 @@
       "head": "refs/heads/add_CAFFE-ROMA-2",
       "remote": "origin"
     },
+    "add_CAGNEY-S-KITCHEN-2": {
+      "head": "refs/heads/add_CAGNEY-S-KITCHEN-2",
+      "remote": "origin"
+    },
+    "add_CAGNEY-S-KITCHEN-MIDWAY-OLD-U-S-52-2": {
+      "head": "refs/heads/add_CAGNEY-S-KITCHEN-MIDWAY-OLD-U-S-52-2",
+      "remote": "origin"
+    },
+    "add_CAGNEY-S-KITCHEN-WALLBURG-2": {
+      "head": "refs/heads/add_CAGNEY-S-KITCHEN-WALLBURG-2",
+      "remote": "origin"
+    },
     "add_CAITLIN-S-RESTAURANT-2": {
       "head": "refs/heads/add_CAITLIN-S-RESTAURANT-2",
       "remote": "origin"
     },
     "add_CAJUN-2": {
       "head": "refs/heads/add_CAJUN-2",
+      "remote": "origin"
+    },
+    "add_CAJUN-CRAB-HOUSE-2": {
+      "head": "refs/heads/add_CAJUN-CRAB-HOUSE-2",
+      "remote": "origin"
+    },
+    "add_CAJUN-KITCHEN-2": {
+      "head": "refs/heads/add_CAJUN-KITCHEN-2",
       "remote": "origin"
     },
     "add_CAJUN-SF-2": {
@@ -2850,8 +4130,20 @@
       "head": "refs/heads/add_CALA-S-RESTAURANT-2",
       "remote": "origin"
     },
+    "add_CALABRIA-VILLAGE-2": {
+      "head": "refs/heads/add_CALABRIA-VILLAGE-2",
+      "remote": "origin"
+    },
     "add_CALAVE-2": {
       "head": "refs/heads/add_CALAVE-2",
+      "remote": "origin"
+    },
+    "add_CALEB-S-BREAKFAST-AND-LUNCH-2": {
+      "head": "refs/heads/add_CALEB-S-BREAKFAST-AND-LUNCH-2",
+      "remote": "origin"
+    },
+    "add_CALEXICO-2": {
+      "head": "refs/heads/add_CALEXICO-2",
       "remote": "origin"
     },
     "add_CALF-CHICK-BAKERY-CAFE-2": {
@@ -2860,6 +4152,18 @@
     },
     "add_CALI-ALLEY-2": {
       "head": "refs/heads/add_CALI-ALLEY-2",
+      "remote": "origin"
+    },
+    "add_CALI-TACOS-2": {
+      "head": "refs/heads/add_CALI-TACOS-2",
+      "remote": "origin"
+    },
+    "add_CALICO-RESTAURANT-BAR-2": {
+      "head": "refs/heads/add_CALICO-RESTAURANT-BAR-2",
+      "remote": "origin"
+    },
+    "add_CALIENTE-KITCHEN-AND-BAR-WOODINVILLE-2": {
+      "head": "refs/heads/add_CALIENTE-KITCHEN-AND-BAR-WOODINVILLE-2",
       "remote": "origin"
     },
     "add_CALIFAS-GREENS-2": {
@@ -2894,6 +4198,10 @@
       "head": "refs/heads/add_CALLAHAN-S-WEST-SMOKIN-GRILL-BAR-2",
       "remote": "origin"
     },
+    "add_CAM-S-BAR-EATERY-2": {
+      "head": "refs/heads/add_CAM-S-BAR-EATERY-2",
+      "remote": "origin"
+    },
     "add_CAMBALACHE-GRILL-2": {
       "head": "refs/heads/add_CAMBALACHE-GRILL-2",
       "remote": "origin"
@@ -2926,6 +4234,14 @@
       "head": "refs/heads/add_CANADA-STEAK-BURGER-CHULA-VISTA-2",
       "remote": "origin"
     },
+    "add_CANCUN-GRILL-2": {
+      "head": "refs/heads/add_CANCUN-GRILL-2",
+      "remote": "origin"
+    },
+    "add_CANCUN-MEXICAN-GRILL-2": {
+      "head": "refs/heads/add_CANCUN-MEXICAN-GRILL-2",
+      "remote": "origin"
+    },
     "add_CANCUN-MEXICAN-GRILL-AND-BAR-2": {
       "head": "refs/heads/add_CANCUN-MEXICAN-GRILL-AND-BAR-2",
       "remote": "origin"
@@ -2938,8 +4254,24 @@
       "head": "refs/heads/add_CANTARITOS-RESTAURANT-BAR-2",
       "remote": "origin"
     },
+    "add_CANTINA-1511-2": {
+      "head": "refs/heads/add_CANTINA-1511-2",
+      "remote": "origin"
+    },
+    "add_CANTINA-1511-TORINGDON-2": {
+      "head": "refs/heads/add_CANTINA-1511-TORINGDON-2",
+      "remote": "origin"
+    },
+    "add_CANTINA-73-MEXICAN-RESTAURANT-2": {
+      "head": "refs/heads/add_CANTINA-73-MEXICAN-RESTAURANT-2",
+      "remote": "origin"
+    },
     "add_CANTINA-AT-DL-2": {
       "head": "refs/heads/add_CANTINA-AT-DL-2",
+      "remote": "origin"
+    },
+    "add_CANTINA-DEL-RIO-MEXICAN-RESTAURANT-WARWICK-2": {
+      "head": "refs/heads/add_CANTINA-DEL-RIO-MEXICAN-RESTAURANT-WARWICK-2",
       "remote": "origin"
     },
     "add_CANVAS-CAFE-BAKERY-2": {
@@ -2962,6 +4294,22 @@
       "head": "refs/heads/add_CAPPO-S-2",
       "remote": "origin"
     },
+    "add_CAPRI-S-2": {
+      "head": "refs/heads/add_CAPRI-S-2",
+      "remote": "origin"
+    },
+    "add_CAPRI-S-PIZZERIA-2": {
+      "head": "refs/heads/add_CAPRI-S-PIZZERIA-2",
+      "remote": "origin"
+    },
+    "add_CAPRIANO-S-ITALIAN-CUISINE-2": {
+      "head": "refs/heads/add_CAPRIANO-S-ITALIAN-CUISINE-2",
+      "remote": "origin"
+    },
+    "add_CAPTAIN-CRAB-2": {
+      "head": "refs/heads/add_CAPTAIN-CRAB-2",
+      "remote": "origin"
+    },
     "add_CAPTAIN-CRAB-SEAFOOD-AND-SUSHI-2": {
       "head": "refs/heads/add_CAPTAIN-CRAB-SEAFOOD-AND-SUSHI-2",
       "remote": "origin"
@@ -2970,16 +4318,40 @@
       "head": "refs/heads/add_CAPTAIN-FROSTY-S-2",
       "remote": "origin"
     },
+    "add_CAPTAIN-JOE-S-2": {
+      "head": "refs/heads/add_CAPTAIN-JOE-S-2",
+      "remote": "origin"
+    },
+    "add_CAPTAIN-S-GALLEY-SEAFOOD-2": {
+      "head": "refs/heads/add_CAPTAIN-S-GALLEY-SEAFOOD-2",
+      "remote": "origin"
+    },
+    "add_CAPTAIN-TOM-S-SEAFOOD-2": {
+      "head": "refs/heads/add_CAPTAIN-TOM-S-SEAFOOD-2",
+      "remote": "origin"
+    },
     "add_CAPTAINS-BBQ-2": {
       "head": "refs/heads/add_CAPTAINS-BBQ-2",
+      "remote": "origin"
+    },
+    "add_CAPTAINS-GALLEY-SEAFOOD-2": {
+      "head": "refs/heads/add_CAPTAINS-GALLEY-SEAFOOD-2",
       "remote": "origin"
     },
     "add_CARBONE-S-KITCHEN-2": {
       "head": "refs/heads/add_CARBONE-S-KITCHEN-2",
       "remote": "origin"
     },
+    "add_CARBONE-S-PIZZERIA-BURNSVILLE-2": {
+      "head": "refs/heads/add_CARBONE-S-PIZZERIA-BURNSVILLE-2",
+      "remote": "origin"
+    },
     "add_CARBONE-S-PRIME-2": {
       "head": "refs/heads/add_CARBONE-S-PRIME-2",
+      "remote": "origin"
+    },
+    "add_CARBONES-FARIBAULT-2": {
+      "head": "refs/heads/add_CARBONES-FARIBAULT-2",
       "remote": "origin"
     },
     "add_CARBONES-MARKET-2": {
@@ -2990,8 +4362,24 @@
       "head": "refs/heads/add_CARIBBEAN-FUSION-HAUS-2",
       "remote": "origin"
     },
+    "add_CARIBBEAN-HUT-2": {
+      "head": "refs/heads/add_CARIBBEAN-HUT-2",
+      "remote": "origin"
+    },
     "add_CARIBE-BLUE-RESTAURANT-2": {
       "head": "refs/heads/add_CARIBE-BLUE-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_CARILLON-KITCHEN-2": {
+      "head": "refs/heads/add_CARILLON-KITCHEN-2",
+      "remote": "origin"
+    },
+    "add_CARINI-S-EXPRESS-ITALIAN-FOOD-2": {
+      "head": "refs/heads/add_CARINI-S-EXPRESS-ITALIAN-FOOD-2",
+      "remote": "origin"
+    },
+    "add_CARIOCA-BOWLS-2": {
+      "head": "refs/heads/add_CARIOCA-BOWLS-2",
       "remote": "origin"
     },
     "add_CARM-GIA-METROPOLITAN-2": {
@@ -3008,6 +4396,14 @@
     },
     "add_CARMELITA-S-MEXICAN-RESTAURANT-2": {
       "head": "refs/heads/add_CARMELITA-S-MEXICAN-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_CARMEN-S-ITALIAN-ICE-2": {
+      "head": "refs/heads/add_CARMEN-S-ITALIAN-ICE-2",
+      "remote": "origin"
+    },
+    "add_CARMENS-ITALIAN-ICE-2": {
+      "head": "refs/heads/add_CARMENS-ITALIAN-ICE-2",
       "remote": "origin"
     },
     "add_CARMINE-S-LA-TRATTORIA-2": {
@@ -3046,6 +4442,10 @@
       "head": "refs/heads/add_CARUSOS-PIZZA-2",
       "remote": "origin"
     },
+    "add_CARY-CRAB-HOUSE-2": {
+      "head": "refs/heads/add_CARY-CRAB-HOUSE-2",
+      "remote": "origin"
+    },
     "add_CASA-AMIGOS-AUTHENTIC-MEXICAN-RESTAURANT-2": {
       "head": "refs/heads/add_CASA-AMIGOS-AUTHENTIC-MEXICAN-RESTAURANT-2",
       "remote": "origin"
@@ -3062,6 +4462,14 @@
       "head": "refs/heads/add_CASA-BLANCA-MEXICAN-RESTAURANT-2",
       "remote": "origin"
     },
+    "add_CASA-COLIMA-MEXICAN-RESTAURANT-2": {
+      "head": "refs/heads/add_CASA-COLIMA-MEXICAN-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_CASA-DE-ORO-2": {
+      "head": "refs/heads/add_CASA-DE-ORO-2",
+      "remote": "origin"
+    },
     "add_CASA-DEL-MAR-2": {
       "head": "refs/heads/add_CASA-DEL-MAR-2",
       "remote": "origin"
@@ -3070,8 +4478,16 @@
       "head": "refs/heads/add_CASA-DEL-REY-MEXICAN-RESTAURANT-CANTINA-2",
       "remote": "origin"
     },
+    "add_CASA-DELI-SAVAGE-2": {
+      "head": "refs/heads/add_CASA-DELI-SAVAGE-2",
+      "remote": "origin"
+    },
     "add_CASA-DILEO-2": {
       "head": "refs/heads/add_CASA-DILEO-2",
+      "remote": "origin"
+    },
+    "add_CASA-EL-MIRADOR-2": {
+      "head": "refs/heads/add_CASA-EL-MIRADOR-2",
       "remote": "origin"
     },
     "add_CASA-GARCIA-2": {
@@ -3094,6 +4510,10 @@
       "head": "refs/heads/add_CASA-MIA-MEXICAN-KITCHEN-2",
       "remote": "origin"
     },
+    "add_CASA-OAXACA-2": {
+      "head": "refs/heads/add_CASA-OAXACA-2",
+      "remote": "origin"
+    },
     "add_CASA-OROZCO-2": {
       "head": "refs/heads/add_CASA-OROZCO-2",
       "remote": "origin"
@@ -3106,12 +4526,40 @@
       "head": "refs/heads/add_CASA-PIZZA-2",
       "remote": "origin"
     },
+    "add_CASA-RIO-2": {
+      "head": "refs/heads/add_CASA-RIO-2",
+      "remote": "origin"
+    },
+    "add_CASA-ROJAS-MEXICAN-RESTAURANT-2": {
+      "head": "refs/heads/add_CASA-ROJAS-MEXICAN-RESTAURANT-2",
+      "remote": "origin"
+    },
     "add_CASA-ROMERO-2": {
       "head": "refs/heads/add_CASA-ROMERO-2",
       "remote": "origin"
     },
+    "add_CASA-VIEJA-2": {
+      "head": "refs/heads/add_CASA-VIEJA-2",
+      "remote": "origin"
+    },
     "add_CASAPULLA-S-SUBS-REHOBOTH-BEACH-2": {
       "head": "refs/heads/add_CASAPULLA-S-SUBS-REHOBOTH-BEACH-2",
+      "remote": "origin"
+    },
+    "add_CASCONE-S-NORTH-KANSAS-CITY-2": {
+      "head": "refs/heads/add_CASCONE-S-NORTH-KANSAS-CITY-2",
+      "remote": "origin"
+    },
+    "add_CASTAWAYS-F-B-2": {
+      "head": "refs/heads/add_CASTAWAYS-F-B-2",
+      "remote": "origin"
+    },
+    "add_CASTELLO-PIZZA-AND-PASTA-2": {
+      "head": "refs/heads/add_CASTELLO-PIZZA-AND-PASTA-2",
+      "remote": "origin"
+    },
+    "add_CASTILLA-RESTAURANT-AND-TAPAS-BAR-2": {
+      "head": "refs/heads/add_CASTILLA-RESTAURANT-AND-TAPAS-BAR-2",
       "remote": "origin"
     },
     "add_CATALANO-S-PIZZA-2": {
@@ -3130,12 +4578,32 @@
       "head": "refs/heads/add_CATCH-TWENTY-THREE-2",
       "remote": "origin"
     },
+    "add_CATERDC-SUSHI-PARTY-PLATTERS-2": {
+      "head": "refs/heads/add_CATERDC-SUSHI-PARTY-PLATTERS-2",
+      "remote": "origin"
+    },
     "add_CATFISH-COUNTRY-2": {
       "head": "refs/heads/add_CATFISH-COUNTRY-2",
       "remote": "origin"
     },
     "add_CATHERINE-ROONEY-S-IRISH-PUB-RESTAURANT-2": {
       "head": "refs/heads/add_CATHERINE-ROONEY-S-IRISH-PUB-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_CATHOUSE-PIZZA-2": {
+      "head": "refs/heads/add_CATHOUSE-PIZZA-2",
+      "remote": "origin"
+    },
+    "add_CATHY-S-KITCHEN-2": {
+      "head": "refs/heads/add_CATHY-S-KITCHEN-2",
+      "remote": "origin"
+    },
+    "add_CATKIN-CAFE-OLGA-2": {
+      "head": "refs/heads/add_CATKIN-CAFE-OLGA-2",
+      "remote": "origin"
+    },
+    "add_CATRINAS-CERVEZA-GRILL-2": {
+      "head": "refs/heads/add_CATRINAS-CERVEZA-GRILL-2",
       "remote": "origin"
     },
     "add_CATTLEMENS-STEAKHOUSE-2": {
@@ -3146,6 +4614,10 @@
       "head": "refs/heads/add_CAYDEN-S-COUNTRY-KITCHEN-2",
       "remote": "origin"
     },
+    "add_CAYDENS-COUNTRY-KITCHEN-2": {
+      "head": "refs/heads/add_CAYDENS-COUNTRY-KITCHEN-2",
+      "remote": "origin"
+    },
     "add_CB-S-PIZZA-GRILL-2": {
       "head": "refs/heads/add_CB-S-PIZZA-GRILL-2",
       "remote": "origin"
@@ -3154,12 +4626,20 @@
       "head": "refs/heads/add_CECIL-WHITTAKER-S-PIZZERIA-2",
       "remote": "origin"
     },
+    "add_CECILIA-S-KITCHEN-2": {
+      "head": "refs/heads/add_CECILIA-S-KITCHEN-2",
+      "remote": "origin"
+    },
     "add_CECILS-TEXAS-STYLE-BBQ-2": {
       "head": "refs/heads/add_CECILS-TEXAS-STYLE-BBQ-2",
       "remote": "origin"
     },
     "add_CEDAR-CREEK-PUB-2": {
       "head": "refs/heads/add_CEDAR-CREEK-PUB-2",
+      "remote": "origin"
+    },
+    "add_CEDAR-KNOLL-ALEXANDRIA-2": {
+      "head": "refs/heads/add_CEDAR-KNOLL-ALEXANDRIA-2",
       "remote": "origin"
     },
     "add_CEDARS-MEDITERRANEAN-KITCHEN-2": {
@@ -3198,8 +4678,16 @@
       "head": "refs/heads/add_CENTRAL-PARK-FOOD-STATION-2",
       "remote": "origin"
     },
+    "add_CENTRAL-PIZZA-2": {
+      "head": "refs/heads/add_CENTRAL-PIZZA-2",
+      "remote": "origin"
+    },
     "add_CENTRAL-STATION-BAR-AND-GRILL-2": {
       "head": "refs/heads/add_CENTRAL-STATION-BAR-AND-GRILL-2",
+      "remote": "origin"
+    },
+    "add_CENTRO-MEXICAN-RESTAURANT-2": {
+      "head": "refs/heads/add_CENTRO-MEXICAN-RESTAURANT-2",
       "remote": "origin"
     },
     "add_CERNOS-BAR-AND-GRILL-2": {
@@ -3216,6 +4704,10 @@
     },
     "add_CEVICHE-PALACE-LLC-2": {
       "head": "refs/heads/add_CEVICHE-PALACE-LLC-2",
+      "remote": "origin"
+    },
+    "add_CEVICHE-S-2": {
+      "head": "refs/heads/add_CEVICHE-S-2",
       "remote": "origin"
     },
     "add_CFCF-COFFEE-2": {
@@ -3236,6 +4728,10 @@
     },
     "add_CHA-CHA-S-LATIN-KITCHEN-IRVINE-2": {
       "head": "refs/heads/add_CHA-CHA-S-LATIN-KITCHEN-IRVINE-2",
+      "remote": "origin"
+    },
+    "add_CHAI-S-ASIAN-BISTRO-2": {
+      "head": "refs/heads/add_CHAI-S-ASIAN-BISTRO-2",
       "remote": "origin"
     },
     "add_CHAI-SHAI-2": {
@@ -3298,8 +4794,20 @@
       "head": "refs/heads/add_CHAPARRAL-MEXICAN-GRILL-2",
       "remote": "origin"
     },
+    "add_CHAPTICO-MARKET-AND-DELI-2": {
+      "head": "refs/heads/add_CHAPTICO-MARKET-AND-DELI-2",
+      "remote": "origin"
+    },
+    "add_CHARBAR7-2": {
+      "head": "refs/heads/add_CHARBAR7-2",
+      "remote": "origin"
+    },
     "add_CHARCO-BROILER-2": {
       "head": "refs/heads/add_CHARCO-BROILER-2",
+      "remote": "origin"
+    },
+    "add_CHARCOAL-GRILL-2": {
+      "head": "refs/heads/add_CHARCOAL-GRILL-2",
       "remote": "origin"
     },
     "add_CHARLEY-S-2": {
@@ -3312,6 +4820,18 @@
     },
     "add_CHARLIE-JAKE-S-2": {
       "head": "refs/heads/add_CHARLIE-JAKE-S-2",
+      "remote": "origin"
+    },
+    "add_CHARLIE-S-ON-THE-LAKE-2": {
+      "head": "refs/heads/add_CHARLIE-S-ON-THE-LAKE-2",
+      "remote": "origin"
+    },
+    "add_CHARMING-ELEPHANT-2": {
+      "head": "refs/heads/add_CHARMING-ELEPHANT-2",
+      "remote": "origin"
+    },
+    "add_CHARTREUSE-KITCHEN-AND-COCKTAILS-DETROIT-2": {
+      "head": "refs/heads/add_CHARTREUSE-KITCHEN-AND-COCKTAILS-DETROIT-2",
       "remote": "origin"
     },
     "add_CHASERS-SPORTS-BAR-GRILL-2": {
@@ -3330,6 +4850,14 @@
       "head": "refs/heads/add_CHAVEZ-SUPERMARKET-TAQUERIA-2",
       "remote": "origin"
     },
+    "add_CHAWLA-INDIAN-CUISINE-2": {
+      "head": "refs/heads/add_CHAWLA-INDIAN-CUISINE-2",
+      "remote": "origin"
+    },
+    "add_CHECKERED-PIG-BBQ-RIBS-2": {
+      "head": "refs/heads/add_CHECKERED-PIG-BBQ-RIBS-2",
+      "remote": "origin"
+    },
     "add_CHECKERS-OLD-MUNCHEN-GERMAN-RESTAURANT-2": {
       "head": "refs/heads/add_CHECKERS-OLD-MUNCHEN-GERMAN-RESTAURANT-2",
       "remote": "origin"
@@ -3344,6 +4872,14 @@
     },
     "add_CHEF-ROLF-S-NEW-FLORIDA-KITCHEN-2": {
       "head": "refs/heads/add_CHEF-ROLF-S-NEW-FLORIDA-KITCHEN-2",
+      "remote": "origin"
+    },
+    "add_CHEFFIE-S-CAFE-2": {
+      "head": "refs/heads/add_CHEFFIE-S-CAFE-2",
+      "remote": "origin"
+    },
+    "add_CHEN-FU-2": {
+      "head": "refs/heads/add_CHEN-FU-2",
       "remote": "origin"
     },
     "add_CHENGDU-HOUSE-2": {
@@ -3368,6 +4904,14 @@
     },
     "add_CHEVYS-FRESH-MEX-RESTAURANTS-2": {
       "head": "refs/heads/add_CHEVYS-FRESH-MEX-RESTAURANTS-2",
+      "remote": "origin"
+    },
+    "add_CHEX-GRILL-WINGS-2": {
+      "head": "refs/heads/add_CHEX-GRILL-WINGS-2",
+      "remote": "origin"
+    },
+    "add_CHEZ-BOJJI-2": {
+      "head": "refs/heads/add_CHEZ-BOJJI-2",
       "remote": "origin"
     },
     "add_CHEZ-CHRISTINA-2": {
@@ -3418,8 +4962,16 @@
       "head": "refs/heads/add_CHICK-N-FACTORY-2",
       "remote": "origin"
     },
+    "add_CHICKEN-BOX-CAFE-2": {
+      "head": "refs/heads/add_CHICKEN-BOX-CAFE-2",
+      "remote": "origin"
+    },
     "add_CHICKEN-BRISKET-2": {
       "head": "refs/heads/add_CHICKEN-BRISKET-2",
+      "remote": "origin"
+    },
+    "add_CHICKEN-BUCKET-2": {
+      "head": "refs/heads/add_CHICKEN-BUCKET-2",
       "remote": "origin"
     },
     "add_CHICKEN-KOUP-2": {
@@ -3430,12 +4982,20 @@
       "head": "refs/heads/add_CHICKEN-SHACK-2",
       "remote": "origin"
     },
+    "add_CHIDO-S-TEX-MEX-GRILL-2": {
+      "head": "refs/heads/add_CHIDO-S-TEX-MEX-GRILL-2",
+      "remote": "origin"
+    },
     "add_CHIKAGO-PIZZERIA-MEXICAN-CUISINE-2": {
       "head": "refs/heads/add_CHIKAGO-PIZZERIA-MEXICAN-CUISINE-2",
       "remote": "origin"
     },
     "add_CHIKI-CHIKI-WINGS-AND-SPORTS-2": {
       "head": "refs/heads/add_CHIKI-CHIKI-WINGS-AND-SPORTS-2",
+      "remote": "origin"
+    },
+    "add_CHILANGO-RESTAURANT-2": {
+      "head": "refs/heads/add_CHILANGO-RESTAURANT-2",
       "remote": "origin"
     },
     "add_CHILANGOS-2": {
@@ -3446,12 +5006,24 @@
       "head": "refs/heads/add_CHILI-LIME-2",
       "remote": "origin"
     },
+    "add_CHILI-THAI-RESTAURANT-2": {
+      "head": "refs/heads/add_CHILI-THAI-RESTAURANT-2",
+      "remote": "origin"
+    },
     "add_CHINA-1-2": {
       "head": "refs/heads/add_CHINA-1-2",
       "remote": "origin"
     },
+    "add_CHINA-10-2": {
+      "head": "refs/heads/add_CHINA-10-2",
+      "remote": "origin"
+    },
     "add_CHINA-BLOSSOM-2": {
       "head": "refs/heads/add_CHINA-BLOSSOM-2",
+      "remote": "origin"
+    },
+    "add_CHINA-CAFE-2": {
+      "head": "refs/heads/add_CHINA-CAFE-2",
       "remote": "origin"
     },
     "add_CHINA-COOK-2": {
@@ -3462,12 +5034,20 @@
       "head": "refs/heads/add_CHINA-CUISINE-2",
       "remote": "origin"
     },
+    "add_CHINA-EXPRESS-2": {
+      "head": "refs/heads/add_CHINA-EXPRESS-2",
+      "remote": "origin"
+    },
     "add_CHINA-GOURMET-SUSHI-LOUNGE-2": {
       "head": "refs/heads/add_CHINA-GOURMET-SUSHI-LOUNGE-2",
       "remote": "origin"
     },
     "add_CHINA-KING-2": {
       "head": "refs/heads/add_CHINA-KING-2",
+      "remote": "origin"
+    },
+    "add_CHINA-PALACE-2": {
+      "head": "refs/heads/add_CHINA-PALACE-2",
       "remote": "origin"
     },
     "add_CHINA-STAR-2": {
@@ -3482,6 +5062,10 @@
       "head": "refs/heads/add_CHINESE-TO-GO-2",
       "remote": "origin"
     },
+    "add_CHIP-DREW-S-FILLING-STATION-2": {
+      "head": "refs/heads/add_CHIP-DREW-S-FILLING-STATION-2",
+      "remote": "origin"
+    },
     "add_CHIQUITA-S-MEXICAN-RESTAURANT-2": {
       "head": "refs/heads/add_CHIQUITA-S-MEXICAN-RESTAURANT-2",
       "remote": "origin"
@@ -3492,6 +5076,18 @@
     },
     "add_CHIX-RESTAURANT-2": {
       "head": "refs/heads/add_CHIX-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_CHK-A-BOOM-2": {
+      "head": "refs/heads/add_CHK-A-BOOM-2",
+      "remote": "origin"
+    },
+    "add_CHOCMO-CHOCOLATIER-AND-CAFE-2": {
+      "head": "refs/heads/add_CHOCMO-CHOCOLATIER-AND-CAFE-2",
+      "remote": "origin"
+    },
+    "add_CHONTONG-THAI-CUISINE-2": {
+      "head": "refs/heads/add_CHONTONG-THAI-CUISINE-2",
       "remote": "origin"
     },
     "add_CHOONG-MAN-CHICKEN-2": {
@@ -3510,6 +5106,14 @@
       "head": "refs/heads/add_CHOOSE-AND-MIX-KOREAN-FOOD-HIBACHI-EXPRESS-2",
       "remote": "origin"
     },
+    "add_CHOP-HOUSE-ANN-ARBOR-2": {
+      "head": "refs/heads/add_CHOP-HOUSE-ANN-ARBOR-2",
+      "remote": "origin"
+    },
+    "add_CHOP-HOUSE-CHARLESTON-2": {
+      "head": "refs/heads/add_CHOP-HOUSE-CHARLESTON-2",
+      "remote": "origin"
+    },
     "add_CHOP-HOUSE-ON-WICKER-2": {
       "head": "refs/heads/add_CHOP-HOUSE-ON-WICKER-2",
       "remote": "origin"
@@ -3522,12 +5126,40 @@
       "head": "refs/heads/add_CHOPHOUSE-NEW-ORLEANS-2",
       "remote": "origin"
     },
+    "add_CHOPPED-OLIVE-MODERN-MEDITERRANEAN-2": {
+      "head": "refs/heads/add_CHOPPED-OLIVE-MODERN-MEDITERRANEAN-2",
+      "remote": "origin"
+    },
+    "add_CHOPSTIX-GOURMET-2": {
+      "head": "refs/heads/add_CHOPSTIX-GOURMET-2",
+      "remote": "origin"
+    },
+    "add_CHOPSTIXS-RESTAURANT-2": {
+      "head": "refs/heads/add_CHOPSTIXS-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_CHOW-2": {
+      "head": "refs/heads/add_CHOW-2",
+      "remote": "origin"
+    },
+    "add_CHOW-FUSION-2": {
+      "head": "refs/heads/add_CHOW-FUSION-2",
+      "remote": "origin"
+    },
     "add_CHRIS-PIZZA-BOX-2": {
       "head": "refs/heads/add_CHRIS-PIZZA-BOX-2",
       "remote": "origin"
     },
     "add_CHRISTINA-WAN-S-MANDARIN-HOUSE-2": {
       "head": "refs/heads/add_CHRISTINA-WAN-S-MANDARIN-HOUSE-2",
+      "remote": "origin"
+    },
+    "add_CHRISTO-S-ON-ALKI-2": {
+      "head": "refs/heads/add_CHRISTO-S-ON-ALKI-2",
+      "remote": "origin"
+    },
+    "add_CHU-S-EXPRESS-2": {
+      "head": "refs/heads/add_CHU-S-EXPRESS-2",
       "remote": "origin"
     },
     "add_CHUBBY-NOODLE-MARINA-2": {
@@ -3554,6 +5186,10 @@
       "head": "refs/heads/add_CHURN-URBAN-CREAMERY-2",
       "remote": "origin"
     },
+    "add_CHUTNEYS-2": {
+      "head": "refs/heads/add_CHUTNEYS-2",
+      "remote": "origin"
+    },
     "add_CHUX-2": {
       "head": "refs/heads/add_CHUX-2",
       "remote": "origin"
@@ -3566,12 +5202,40 @@
       "head": "refs/heads/add_CHUZOS-PLACE-2",
       "remote": "origin"
     },
+    "add_CIAO--2": {
+      "head": "refs/heads/add_CIAO--2",
+      "remote": "origin"
+    },
+    "add_CIAO-MAMBO-2": {
+      "head": "refs/heads/add_CIAO-MAMBO-2",
+      "remote": "origin"
+    },
+    "add_CIBO-TRATTORIA-2": {
+      "head": "refs/heads/add_CIBO-TRATTORIA-2",
+      "remote": "origin"
+    },
     "add_CIELITO-LINDO-MEXICAN-GRILL-2": {
       "head": "refs/heads/add_CIELITO-LINDO-MEXICAN-GRILL-2",
       "remote": "origin"
     },
+    "add_CIELITO-LINDO-MEXICAN-RESTAURANT-2": {
+      "head": "refs/heads/add_CIELITO-LINDO-MEXICAN-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_CIELO-COCINA-MEXICANA-2": {
+      "head": "refs/heads/add_CIELO-COCINA-MEXICANA-2",
+      "remote": "origin"
+    },
     "add_CIELO-MEXICAN-RESTAURANT-2": {
       "head": "refs/heads/add_CIELO-MEXICAN-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_CIELO-ROJO-2": {
+      "head": "refs/heads/add_CIELO-ROJO-2",
+      "remote": "origin"
+    },
+    "add_CILANTRO-RESTAURANTE-TAQUERIA-2": {
+      "head": "refs/heads/add_CILANTRO-RESTAURANTE-TAQUERIA-2",
       "remote": "origin"
     },
     "add_CILANTRO-S-2": {
@@ -3594,8 +5258,20 @@
       "head": "refs/heads/add_CINDY-B-GOODS-LLC-2",
       "remote": "origin"
     },
+    "add_CINNAHOLIC-CONCORD-NC-2": {
+      "head": "refs/heads/add_CINNAHOLIC-CONCORD-NC-2",
+      "remote": "origin"
+    },
+    "add_CINNAMON-KITCHEN-2": {
+      "head": "refs/heads/add_CINNAMON-KITCHEN-2",
+      "remote": "origin"
+    },
     "add_CIRCA-2": {
       "head": "refs/heads/add_CIRCA-2",
+      "remote": "origin"
+    },
+    "add_CIRO-AND-SALS-2": {
+      "head": "refs/heads/add_CIRO-AND-SALS-2",
       "remote": "origin"
     },
     "add_CIRO-S-PIZZA-CAFE-2": {
@@ -3646,8 +5322,16 @@
       "head": "refs/heads/add_CITY-WOK-2",
       "remote": "origin"
     },
+    "add_CIVETTA-2": {
+      "head": "refs/heads/add_CIVETTA-2",
+      "remote": "origin"
+    },
     "add_CIVIL-COFFEE-2": {
       "head": "refs/heads/add_CIVIL-COFFEE-2",
+      "remote": "origin"
+    },
+    "add_CJ-S-OLDE-TOWNE-RESTAURANT-2": {
+      "head": "refs/heads/add_CJ-S-OLDE-TOWNE-RESTAURANT-2",
       "remote": "origin"
     },
     "add_CJ-S-PIZZA-BAR-AND-GRILL-2": {
@@ -3674,8 +5358,48 @@
       "head": "refs/heads/add_CLEMENTINE-S-2",
       "remote": "origin"
     },
+    "add_CLEMENTO-S-PIZZERIA-BREW-2": {
+      "head": "refs/heads/add_CLEMENTO-S-PIZZERIA-BREW-2",
+      "remote": "origin"
+    },
+    "add_CLEMMONS-KITCHEN-2": {
+      "head": "refs/heads/add_CLEMMONS-KITCHEN-2",
+      "remote": "origin"
+    },
+    "add_CLEOPATRA-S-RESTAURANT-2": {
+      "head": "refs/heads/add_CLEOPATRA-S-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_CLIVE-S-ROADHOUSE-BLAINE-2": {
+      "head": "refs/heads/add_CLIVE-S-ROADHOUSE-BLAINE-2",
+      "remote": "origin"
+    },
+    "add_CLIVE-S-ROADHOUSE-BURNSVILLE-2": {
+      "head": "refs/heads/add_CLIVE-S-ROADHOUSE-BURNSVILLE-2",
+      "remote": "origin"
+    },
+    "add_CLIVE-S-ROADHOUSE-CHAMPLIN-2": {
+      "head": "refs/heads/add_CLIVE-S-ROADHOUSE-CHAMPLIN-2",
+      "remote": "origin"
+    },
+    "add_CLIVE-S-ROADHOUSE-ROGERS-2": {
+      "head": "refs/heads/add_CLIVE-S-ROADHOUSE-ROGERS-2",
+      "remote": "origin"
+    },
+    "add_CLOUDS-BREWING-DURHAM-2": {
+      "head": "refs/heads/add_CLOUDS-BREWING-DURHAM-2",
+      "remote": "origin"
+    },
+    "add_CLOUDS-BREWING-RALEIGH-2": {
+      "head": "refs/heads/add_CLOUDS-BREWING-RALEIGH-2",
+      "remote": "origin"
+    },
     "add_CLUTCH-CALI-MEX-BBQ-2": {
       "head": "refs/heads/add_CLUTCH-CALI-MEX-BBQ-2",
+      "remote": "origin"
+    },
+    "add_CO-CHARLOTTE-WAVERLY-2": {
+      "head": "refs/heads/add_CO-CHARLOTTE-WAVERLY-2",
       "remote": "origin"
     },
     "add_CO-SAVANNAH-2": {
@@ -3686,8 +5410,28 @@
       "head": "refs/heads/add_COALHOUSE-PIZZA-2",
       "remote": "origin"
     },
+    "add_COALITION-50TH-AND-FRANCE-2": {
+      "head": "refs/heads/add_COALITION-50TH-AND-FRANCE-2",
+      "remote": "origin"
+    },
+    "add_COALITION-RESTAURANT-2": {
+      "head": "refs/heads/add_COALITION-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_COASTAL-FLATS-2": {
+      "head": "refs/heads/add_COASTAL-FLATS-2",
+      "remote": "origin"
+    },
     "add_COASTAL-KITCHEN-2": {
       "head": "refs/heads/add_COASTAL-KITCHEN-2",
+      "remote": "origin"
+    },
+    "add_COASTAL-WING-CO-2": {
+      "head": "refs/heads/add_COASTAL-WING-CO-2",
+      "remote": "origin"
+    },
+    "add_COASTERS-PUB-N-GRILL-2": {
+      "head": "refs/heads/add_COASTERS-PUB-N-GRILL-2",
       "remote": "origin"
     },
     "add_COAT-CHECK-COFFEE-2": {
@@ -3746,12 +5490,44 @@
       "head": "refs/heads/add_COCONUT-S-FISH-CAFE-2",
       "remote": "origin"
     },
+    "add_COCULA-MEXICAN-RESTAURANT-2": {
+      "head": "refs/heads/add_COCULA-MEXICAN-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_CODY-S-IRISH-PUB-AND-GRILLE-2": {
+      "head": "refs/heads/add_CODY-S-IRISH-PUB-AND-GRILLE-2",
+      "remote": "origin"
+    },
+    "add_CODY-S-RESTAURANT-2": {
+      "head": "refs/heads/add_CODY-S-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_COFFEE-FUSION-BUBBLE-TEA-CAFE-2": {
+      "head": "refs/heads/add_COFFEE-FUSION-BUBBLE-TEA-CAFE-2",
+      "remote": "origin"
+    },
+    "add_COHO-CAFE-2": {
+      "head": "refs/heads/add_COHO-CAFE-2",
+      "remote": "origin"
+    },
     "add_COLD-STONE-CREAMERY-2": {
       "head": "refs/heads/add_COLD-STONE-CREAMERY-2",
       "remote": "origin"
     },
+    "add_COLETTI-S-PIZZA-FACTORY-2": {
+      "head": "refs/heads/add_COLETTI-S-PIZZA-FACTORY-2",
+      "remote": "origin"
+    },
+    "add_COLLEENS-KITCHEN-AUSTIN-2": {
+      "head": "refs/heads/add_COLLEENS-KITCHEN-AUSTIN-2",
+      "remote": "origin"
+    },
     "add_COLLETTA-2": {
       "head": "refs/heads/add_COLLETTA-2",
+      "remote": "origin"
+    },
+    "add_COLLIERVILLE-COMMISSARY-2": {
+      "head": "refs/heads/add_COLLIERVILLE-COMMISSARY-2",
       "remote": "origin"
     },
     "add_COLLINS-BOWLING-CENTERS-INC--2": {
@@ -3762,6 +5538,14 @@
       "head": "refs/heads/add_COLORADOUGH-PIZZA-2",
       "remote": "origin"
     },
+    "add_COLOSSAL-CAFE-2": {
+      "head": "refs/heads/add_COLOSSAL-CAFE-2",
+      "remote": "origin"
+    },
+    "add_COMET-PING-PONG-2": {
+      "head": "refs/heads/add_COMET-PING-PONG-2",
+      "remote": "origin"
+    },
     "add_COMFORT-LA-2": {
       "head": "refs/heads/add_COMFORT-LA-2",
       "remote": "origin"
@@ -3770,12 +5554,32 @@
       "head": "refs/heads/add_COMMON-GROUND-2",
       "remote": "origin"
     },
+    "add_COMMON-MARKET-7TH-ST-CAFE-2": {
+      "head": "refs/heads/add_COMMON-MARKET-7TH-ST-CAFE-2",
+      "remote": "origin"
+    },
     "add_COMMONWEALTH-BBQ-2": {
       "head": "refs/heads/add_COMMONWEALTH-BBQ-2",
       "remote": "origin"
     },
+    "add_COMMONWEALTH-INDIAN-2": {
+      "head": "refs/heads/add_COMMONWEALTH-INDIAN-2",
+      "remote": "origin"
+    },
+    "add_COMO-S-BLOOMFIELD-HILLS-2": {
+      "head": "refs/heads/add_COMO-S-BLOOMFIELD-HILLS-2",
+      "remote": "origin"
+    },
+    "add_COMO-S-RESTAURANT-2": {
+      "head": "refs/heads/add_COMO-S-RESTAURANT-2",
+      "remote": "origin"
+    },
     "add_COMPANY-SUPPLY-ROTISSERIE-2": {
       "head": "refs/heads/add_COMPANY-SUPPLY-ROTISSERIE-2",
+      "remote": "origin"
+    },
+    "add_CONCERT-HALL-AND-BARREL-TAVERN-2": {
+      "head": "refs/heads/add_CONCERT-HALL-AND-BARREL-TAVERN-2",
       "remote": "origin"
     },
     "add_CONDESA-RESTAURANTE-TEQUILA-BAR-2": {
@@ -3788,6 +5592,10 @@
     },
     "add_CONNIE-S-FAMILY-RESTAURANT-2": {
       "head": "refs/heads/add_CONNIE-S-FAMILY-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_CONOR-O-NEILL-S-2": {
+      "head": "refs/heads/add_CONOR-O-NEILL-S-2",
       "remote": "origin"
     },
     "add_CONRAD-S-MEXICAN-GRILL-2": {
@@ -3814,6 +5622,18 @@
       "head": "refs/heads/add_COOKIT-2",
       "remote": "origin"
     },
+    "add_COOL-STUFF-DRIVE-INN-2": {
+      "head": "refs/heads/add_COOL-STUFF-DRIVE-INN-2",
+      "remote": "origin"
+    },
+    "add_COPPERWOOD-TAVERN-ASHBURN--2": {
+      "head": "refs/heads/add_COPPERWOOD-TAVERN-ASHBURN--2",
+      "remote": "origin"
+    },
+    "add_COPPOLA-S-PIZZERIA-ITALIAN-2": {
+      "head": "refs/heads/add_COPPOLA-S-PIZZERIA-ITALIAN-2",
+      "remote": "origin"
+    },
     "add_CORAL-TREE-CAFE-2": {
       "head": "refs/heads/add_CORAL-TREE-CAFE-2",
       "remote": "origin"
@@ -3824,6 +5644,450 @@
     },
     "add_CORBIN-S-Q-2": {
       "head": "refs/heads/add_CORBIN-S-Q-2",
+      "remote": "origin"
+    },
+    "add_CORDAVINO-S-ITALIAN-KITCHEN-2": {
+      "head": "refs/heads/add_CORDAVINO-S-ITALIAN-KITCHEN-2",
+      "remote": "origin"
+    },
+    "add_CORIANDER-2": {
+      "head": "refs/heads/add_CORIANDER-2",
+      "remote": "origin"
+    },
+    "add_CORKY-S-KITCHEN-AND-BAKERY-2": {
+      "head": "refs/heads/add_CORKY-S-KITCHEN-AND-BAKERY-2",
+      "remote": "origin"
+    },
+    "add_CORNER-KITCHEN-2": {
+      "head": "refs/heads/add_CORNER-KITCHEN-2",
+      "remote": "origin"
+    },
+    "add_CORNER-SLICE-2": {
+      "head": "refs/heads/add_CORNER-SLICE-2",
+      "remote": "origin"
+    },
+    "add_CORNER-TAVERN-HAPEVILLE-2": {
+      "head": "refs/heads/add_CORNER-TAVERN-HAPEVILLE-2",
+      "remote": "origin"
+    },
+    "add_CORNERSTONE-ARTISANAL-PIZZA-CRAFT-BEERS-2": {
+      "head": "refs/heads/add_CORNERSTONE-ARTISANAL-PIZZA-CRAFT-BEERS-2",
+      "remote": "origin"
+    },
+    "add_CORNERSTONE-WEST-END-2": {
+      "head": "refs/heads/add_CORNERSTONE-WEST-END-2",
+      "remote": "origin"
+    },
+    "add_CORNICIONES-2": {
+      "head": "refs/heads/add_CORNICIONES-2",
+      "remote": "origin"
+    },
+    "add_CORTINA-S-ITALIAN-MARKET-2": {
+      "head": "refs/heads/add_CORTINA-S-ITALIAN-MARKET-2",
+      "remote": "origin"
+    },
+    "add_CORTINA-S-ORANGE-2": {
+      "head": "refs/heads/add_CORTINA-S-ORANGE-2",
+      "remote": "origin"
+    },
+    "add_COSMIC-PIZZA-2": {
+      "head": "refs/heads/add_COSMIC-PIZZA-2",
+      "remote": "origin"
+    },
+    "add_COSMOS-PIZZERIA-2": {
+      "head": "refs/heads/add_COSMOS-PIZZERIA-2",
+      "remote": "origin"
+    },
+    "add_COSSETTA-2": {
+      "head": "refs/heads/add_COSSETTA-2",
+      "remote": "origin"
+    },
+    "add_COSTANERA-PERUVIAN-CUISINE-2": {
+      "head": "refs/heads/add_COSTANERA-PERUVIAN-CUISINE-2",
+      "remote": "origin"
+    },
+    "add_COSTAS-INN-RESTAURANT-2": {
+      "head": "refs/heads/add_COSTAS-INN-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_COU-YON-S-BBQ-PORT-ALLEN-CATERING-ONLY--2": {
+      "head": "refs/heads/add_COU-YON-S-BBQ-PORT-ALLEN-CATERING-ONLY--2",
+      "remote": "origin"
+    },
+    "add_COUNTER-CULTURE-2": {
+      "head": "refs/heads/add_COUNTER-CULTURE-2",
+      "remote": "origin"
+    },
+    "add_COUNTRY-CABIN-STEAK-HOUSE-2": {
+      "head": "refs/heads/add_COUNTRY-CABIN-STEAK-HOUSE-2",
+      "remote": "origin"
+    },
+    "add_COUNTRY-DELI-RESTAURANT-2": {
+      "head": "refs/heads/add_COUNTRY-DELI-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_COUNTRY-HARVEST-RESTAURANT-2": {
+      "head": "refs/heads/add_COUNTRY-HARVEST-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_COUNTRY-KITCHEN-2": {
+      "head": "refs/heads/add_COUNTRY-KITCHEN-2",
+      "remote": "origin"
+    },
+    "add_COUNTRY-KITCHEN-RESTAURANT-2": {
+      "head": "refs/heads/add_COUNTRY-KITCHEN-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_COUNTRY-MART-2": {
+      "head": "refs/heads/add_COUNTRY-MART-2",
+      "remote": "origin"
+    },
+    "add_COUNTRYSIDE-BBQ-2": {
+      "head": "refs/heads/add_COUNTRYSIDE-BBQ-2",
+      "remote": "origin"
+    },
+    "add_COUNTRYSIDE-CAFE-2": {
+      "head": "refs/heads/add_COUNTRYSIDE-CAFE-2",
+      "remote": "origin"
+    },
+    "add_COUNTYLINE-TAVERN-2": {
+      "head": "refs/heads/add_COUNTYLINE-TAVERN-2",
+      "remote": "origin"
+    },
+    "add_COUP-DE-THAI-2": {
+      "head": "refs/heads/add_COUP-DE-THAI-2",
+      "remote": "origin"
+    },
+    "add_COURT-STREET-PUB-2": {
+      "head": "refs/heads/add_COURT-STREET-PUB-2",
+      "remote": "origin"
+    },
+    "add_COURTHOUSE-PUB-2": {
+      "head": "refs/heads/add_COURTHOUSE-PUB-2",
+      "remote": "origin"
+    },
+    "add_COUTURE-CAKERY-2": {
+      "head": "refs/heads/add_COUTURE-CAKERY-2",
+      "remote": "origin"
+    },
+    "add_COUYON-S-BBQ-BURBANK-BLUEBONNET-FOOD-TRUCK-2": {
+      "head": "refs/heads/add_COUYON-S-BBQ-BURBANK-BLUEBONNET-FOOD-TRUCK-2",
+      "remote": "origin"
+    },
+    "add_COUYON-S-BBQ-PERKINS-ACADIAN-FOOD-TRUCK-2": {
+      "head": "refs/heads/add_COUYON-S-BBQ-PERKINS-ACADIAN-FOOD-TRUCK-2",
+      "remote": "origin"
+    },
+    "add_COUYON-S-BBQ-PORT-ALLEN-2": {
+      "head": "refs/heads/add_COUYON-S-BBQ-PORT-ALLEN-2",
+      "remote": "origin"
+    },
+    "add_COV-2": {
+      "head": "refs/heads/add_COV-2",
+      "remote": "origin"
+    },
+    "add_COWBOY-JACK-S-2": {
+      "head": "refs/heads/add_COWBOY-JACK-S-2",
+      "remote": "origin"
+    },
+    "add_COWBOY-JACKS-2": {
+      "head": "refs/heads/add_COWBOY-JACKS-2",
+      "remote": "origin"
+    },
+    "add_COYOTE-CAFE-2": {
+      "head": "refs/heads/add_COYOTE-CAFE-2",
+      "remote": "origin"
+    },
+    "add_COZY-CORNER-RESTAURANT-PANCAKE-HOUSE-2": {
+      "head": "refs/heads/add_COZY-CORNER-RESTAURANT-PANCAKE-HOUSE-2",
+      "remote": "origin"
+    },
+    "add_CRAB-AVENUE-2": {
+      "head": "refs/heads/add_CRAB-AVENUE-2",
+      "remote": "origin"
+    },
+    "add_CRAB-DU-JOUR-2": {
+      "head": "refs/heads/add_CRAB-DU-JOUR-2",
+      "remote": "origin"
+    },
+    "add_CRAB-DU-JOUR-XPRESS-2": {
+      "head": "refs/heads/add_CRAB-DU-JOUR-XPRESS-2",
+      "remote": "origin"
+    },
+    "add_CRAB-DU-JOUR-XPRESS-HYDE-PARK-2": {
+      "head": "refs/heads/add_CRAB-DU-JOUR-XPRESS-HYDE-PARK-2",
+      "remote": "origin"
+    },
+    "add_CRAB-HOUSE-2": {
+      "head": "refs/heads/add_CRAB-HOUSE-2",
+      "remote": "origin"
+    },
+    "add_CRAB-KING-CAJUN-BOIL-BAR-2": {
+      "head": "refs/heads/add_CRAB-KING-CAJUN-BOIL-BAR-2",
+      "remote": "origin"
+    },
+    "add_CRACKIN-CRAWFISH-2": {
+      "head": "refs/heads/add_CRACKIN-CRAWFISH-2",
+      "remote": "origin"
+    },
+    "add_CRAFT-COMMON-2": {
+      "head": "refs/heads/add_CRAFT-COMMON-2",
+      "remote": "origin"
+    },
+    "add_CRAFTY-CRAB-2": {
+      "head": "refs/heads/add_CRAFTY-CRAB-2",
+      "remote": "origin"
+    },
+    "add_CRANELLI-S-ITALIAN-RESTAURANT-2": {
+      "head": "refs/heads/add_CRANELLI-S-ITALIAN-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_CRAVE-2": {
+      "head": "refs/heads/add_CRAVE-2",
+      "remote": "origin"
+    },
+    "add_CRAVE-KABOB-2": {
+      "head": "refs/heads/add_CRAVE-KABOB-2",
+      "remote": "origin"
+    },
+    "add_CRAVE-POKE-2": {
+      "head": "refs/heads/add_CRAVE-POKE-2",
+      "remote": "origin"
+    },
+    "add_CRAVIN-CHICKEN-2": {
+      "head": "refs/heads/add_CRAVIN-CHICKEN-2",
+      "remote": "origin"
+    },
+    "add_CRAVINGS-CAFE-KINGSTON-2": {
+      "head": "refs/heads/add_CRAVINGS-CAFE-KINGSTON-2",
+      "remote": "origin"
+    },
+    "add_CRAVINGS-FL-2": {
+      "head": "refs/heads/add_CRAVINGS-FL-2",
+      "remote": "origin"
+    },
+    "add_CRAVINGS-WINE-BAR-AND-GRILLE-2": {
+      "head": "refs/heads/add_CRAVINGS-WINE-BAR-AND-GRILLE-2",
+      "remote": "origin"
+    },
+    "add_CRAWDADDY-S-ON-GREENFIELD-2": {
+      "head": "refs/heads/add_CRAWDADDY-S-ON-GREENFIELD-2",
+      "remote": "origin"
+    },
+    "add_CRAZY-CAJUN-2": {
+      "head": "refs/heads/add_CRAZY-CAJUN-2",
+      "remote": "origin"
+    },
+    "add_CRAZY-FISH-GRILL-2": {
+      "head": "refs/heads/add_CRAZY-FISH-GRILL-2",
+      "remote": "origin"
+    },
+    "add_CRAZY-FISH-GRILL-REDONDO-BEACH-2": {
+      "head": "refs/heads/add_CRAZY-FISH-GRILL-REDONDO-BEACH-2",
+      "remote": "origin"
+    },
+    "add_CRAZY-FISH-GRILL-SAN-PEDRO-2": {
+      "head": "refs/heads/add_CRAZY-FISH-GRILL-SAN-PEDRO-2",
+      "remote": "origin"
+    },
+    "add_CRAZY-GEORGE-TAQUERIA-2": {
+      "head": "refs/heads/add_CRAZY-GEORGE-TAQUERIA-2",
+      "remote": "origin"
+    },
+    "add_CRAZY-POUR-2": {
+      "head": "refs/heads/add_CRAZY-POUR-2",
+      "remote": "origin"
+    },
+    "add_CRAZY-SEAFOOD-2": {
+      "head": "refs/heads/add_CRAZY-SEAFOOD-2",
+      "remote": "origin"
+    },
+    "add_CREEKSIDE-CAFE-2": {
+      "head": "refs/heads/add_CREEKSIDE-CAFE-2",
+      "remote": "origin"
+    },
+    "add_CREEKSIDE-ON-65-2": {
+      "head": "refs/heads/add_CREEKSIDE-ON-65-2",
+      "remote": "origin"
+    },
+    "add_CREOLE-GARDEN-2": {
+      "head": "refs/heads/add_CREOLE-GARDEN-2",
+      "remote": "origin"
+    },
+    "add_CREPES-GRAPES-CAFE-2": {
+      "head": "refs/heads/add_CREPES-GRAPES-CAFE-2",
+      "remote": "origin"
+    },
+    "add_CREPEVILLE-MIDTOWN-2": {
+      "head": "refs/heads/add_CREPEVILLE-MIDTOWN-2",
+      "remote": "origin"
+    },
+    "add_CREPISSIMA-2": {
+      "head": "refs/heads/add_CREPISSIMA-2",
+      "remote": "origin"
+    },
+    "add_CRESCENT-MOON-HOME-OF-THE-FOOTBALL-PIZZA-2": {
+      "head": "refs/heads/add_CRESCENT-MOON-HOME-OF-THE-FOOTBALL-PIZZA-2",
+      "remote": "origin"
+    },
+    "add_CRISP-LATTA-ARCADE-2": {
+      "head": "refs/heads/add_CRISP-LATTA-ARCADE-2",
+      "remote": "origin"
+    },
+    "add_CRISP-TOO-EXPRESS-2": {
+      "head": "refs/heads/add_CRISP-TOO-EXPRESS-2",
+      "remote": "origin"
+    },
+    "add_CRISPY-BANH-MI-2": {
+      "head": "refs/heads/add_CRISPY-BANH-MI-2",
+      "remote": "origin"
+    },
+    "add_CRISTO-S-BISTRO-2": {
+      "head": "refs/heads/add_CRISTO-S-BISTRO-2",
+      "remote": "origin"
+    },
+    "add_CROFT-ALLEY-2": {
+      "head": "refs/heads/add_CROFT-ALLEY-2",
+      "remote": "origin"
+    },
+    "add_CROGAN-S-MONTCLAIR-2": {
+      "head": "refs/heads/add_CROGAN-S-MONTCLAIR-2",
+      "remote": "origin"
+    },
+    "add_CRONIES-SPORTS-GRILL-2": {
+      "head": "refs/heads/add_CRONIES-SPORTS-GRILL-2",
+      "remote": "origin"
+    },
+    "add_CROQUETA-BURGER-2": {
+      "head": "refs/heads/add_CROQUETA-BURGER-2",
+      "remote": "origin"
+    },
+    "add_CROSSROADS-GRILL-BURGERS-2": {
+      "head": "refs/heads/add_CROSSROADS-GRILL-BURGERS-2",
+      "remote": "origin"
+    },
+    "add_CROSSTOWN-GRILLE-2": {
+      "head": "refs/heads/add_CROSSTOWN-GRILLE-2",
+      "remote": "origin"
+    },
+    "add_CROSSWIND-GRILLE-AT-ROYAL-ST-PATRICK-S-GOLF-LINKS-2": {
+      "head": "refs/heads/add_CROSSWIND-GRILLE-AT-ROYAL-ST-PATRICK-S-GOLF-LINKS-2",
+      "remote": "origin"
+    },
+    "add_CROUCHING-TIGER-RESTAURANT-2": {
+      "head": "refs/heads/add_CROUCHING-TIGER-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_CROUSE-S-FLAT-TOP-GRILL-2": {
+      "head": "refs/heads/add_CROUSE-S-FLAT-TOP-GRILL-2",
+      "remote": "origin"
+    },
+    "add_CRUST-CRAFT-2": {
+      "head": "refs/heads/add_CRUST-CRAFT-2",
+      "remote": "origin"
+    },
+    "add_CRUST-PIZZA-COMPANY-2": {
+      "head": "refs/heads/add_CRUST-PIZZA-COMPANY-2",
+      "remote": "origin"
+    },
+    "add_CRUTCH-BISCUIT-2": {
+      "head": "refs/heads/add_CRUTCH-BISCUIT-2",
+      "remote": "origin"
+    },
+    "add_CS-NEW-YORK-PIZZA-2": {
+      "head": "refs/heads/add_CS-NEW-YORK-PIZZA-2",
+      "remote": "origin"
+    },
+    "add_CUBANOS-RESTAURANT-2": {
+      "head": "refs/heads/add_CUBANOS-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_CUBANS-SANDWICHES-ON-THE-RUN-CASSELBERRY-2": {
+      "head": "refs/heads/add_CUBANS-SANDWICHES-ON-THE-RUN-CASSELBERRY-2",
+      "remote": "origin"
+    },
+    "add_CUCA-S-MEXICAN-FOOD-2": {
+      "head": "refs/heads/add_CUCA-S-MEXICAN-FOOD-2",
+      "remote": "origin"
+    },
+    "add_CUCINA-DI-FAMIGLIA-2": {
+      "head": "refs/heads/add_CUCINA-DI-FAMIGLIA-2",
+      "remote": "origin"
+    },
+    "add_CUCINA-PARADISO-2": {
+      "head": "refs/heads/add_CUCINA-PARADISO-2",
+      "remote": "origin"
+    },
+    "add_CUCINELLA-S-BRICK-OVEN-PIZZERIA-OVIEDO-FL-2": {
+      "head": "refs/heads/add_CUCINELLA-S-BRICK-OVEN-PIZZERIA-OVIEDO-FL-2",
+      "remote": "origin"
+    },
+    "add_CUCINELLA-S-PIZZERIA-ITALIAN-ICE-2": {
+      "head": "refs/heads/add_CUCINELLA-S-PIZZERIA-ITALIAN-ICE-2",
+      "remote": "origin"
+    },
+    "add_CUCKOO-S-CHICKEN-HOUSE-2": {
+      "head": "refs/heads/add_CUCKOO-S-CHICKEN-HOUSE-2",
+      "remote": "origin"
+    },
+    "add_CUCO-S-MEXICAN-RESTAURANT-2": {
+      "head": "refs/heads/add_CUCO-S-MEXICAN-RESTAURANT-2",
+      "remote": "origin"
+    },
+    "add_CUE-BARBECUE-2": {
+      "head": "refs/heads/add_CUE-BARBECUE-2",
+      "remote": "origin"
+    },
+    "add_CUEVAS-TACOS-2": {
+      "head": "refs/heads/add_CUEVAS-TACOS-2",
+      "remote": "origin"
+    },
+    "add_CUISINE-CO-2": {
+      "head": "refs/heads/add_CUISINE-CO-2",
+      "remote": "origin"
+    },
+    "add_CULICHI-TOWN-2": {
+      "head": "refs/heads/add_CULICHI-TOWN-2",
+      "remote": "origin"
+    },
+    "add_CULTIVA-COFFEE-2": {
+      "head": "refs/heads/add_CULTIVA-COFFEE-2",
+      "remote": "origin"
+    },
+    "add_CULTIVA-EAST-CAMPUS-2": {
+      "head": "refs/heads/add_CULTIVA-EAST-CAMPUS-2",
+      "remote": "origin"
+    },
+    "add_CULTIVARE-GREENS-GRAINS-2": {
+      "head": "refs/heads/add_CULTIVARE-GREENS-GRAINS-2",
+      "remote": "origin"
+    },
+    "add_CUMMING-2": {
+      "head": "refs/heads/add_CUMMING-2",
+      "remote": "origin"
+    },
+    "add_CUPINI-S-OF-KANSAS-CITY-2": {
+      "head": "refs/heads/add_CUPINI-S-OF-KANSAS-CITY-2",
+      "remote": "origin"
+    },
+    "add_CURRENT-KITCHEN-COCKTAILS-2": {
+      "head": "refs/heads/add_CURRENT-KITCHEN-COCKTAILS-2",
+      "remote": "origin"
+    },
+    "add_CURRENT-RESTAURANT-SWIRL-WINE-BAR-2": {
+      "head": "refs/heads/add_CURRENT-RESTAURANT-SWIRL-WINE-BAR-2",
+      "remote": "origin"
+    },
+    "add_CURRY-HURRY-2": {
+      "head": "refs/heads/add_CURRY-HURRY-2",
+      "remote": "origin"
+    },
+    "add_CURRY-INDIA-BISTRO-2": {
+      "head": "refs/heads/add_CURRY-INDIA-BISTRO-2",
+      "remote": "origin"
+    },
+    "last_bounty": {
+      "head": "refs/heads/last_bounty",
       "remote": "origin"
     }
   }
