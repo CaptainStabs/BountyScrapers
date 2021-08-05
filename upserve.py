@@ -34,8 +34,12 @@ def upserve_scraper(webpage, headers, payload):
     restaurant_name = web_path.split('/')[2].replace("-"," ").upper()
     print("   [*] Going to scrape: " + str(restaurant_name).lower())
 
-    file_path1 = "./submited/" + restaurant_name.replace("/", "-").replace("_|_", "") + ".csv"
+    file_name1 = "add_" + re.sub("[^0-9a-zA-Z]+", "-", restaurant_name).lower()
+    # I probably should compensate for the files being moved to `./submited/verified_submitted/`
+    file_path1 = "./submited/" + file_name1.replace("/", "-").replace("_|_", "") + ".csv"
+    
     if not os.path.isfile(file_path1) or os.stat(file_path1).st_size == 0:
+        print("   [*] Data for restaurant not scraped!")
         menu_success = False
         menu_fails = 0
 
@@ -96,7 +100,7 @@ def upserve_scraper(webpage, headers, payload):
                 file_path = "./submited/" + filename.replace("/", "-").replace("_|_", "")
 
                 banned_words = ["HOODIE", "GIFT CARD", "GIFTCARD", "DELIVERY FEE", "GIFT CERTIFICATE", "BANDANA", "TSHIRT", "BODY WASH",
-            "LOTION", ]
+            "LOTION", "DISH TOWEL"]
                 columns = ["name", "restaurant_name", "identifier", "calories", "price_usd"]
 
                 print("   [*] Opening file: " + str(file_path))
@@ -125,6 +129,9 @@ def upserve_scraper(webpage, headers, payload):
                                 writer.writerow(nutrition_facts)
                             else:
                                 print("         [*] Avoiding: " + str(item["name"]))
+
+    else:
+        print("   [*] Already scraped")
     time.sleep(0.9)
 
 upserve_scraper("https://app.upserve.com/s/simply-gourmet-lake-placid", headers=headers, payload=payload)
