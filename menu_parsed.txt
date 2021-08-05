@@ -1,9 +1,0 @@
-{
-    "errors": [
-        {
-            "code": "404",
-            "message": "Requested object not found",
-            "reason": "API logic validation"
-        }
-    ]
-}
