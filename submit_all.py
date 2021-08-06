@@ -121,14 +121,37 @@ def check_if_exists(headers):
 
                                 try:
                                     print("            [*] Trying to write to db...")
-                                    dolt.write_file(dolt=db, table="menu_items", file_handle=open(root + file, "r"), import_mode="create", commit=True, commit_message="Add data", do_continue=True, do_gc=False)
+                                    filename = file.replace("_"," ").lower()
+                                    dolt.write_file(dolt=db, table="menu_items", file_handle=open(root + file, "r"), import_mode="create", commit=True, commit_message=f"Add {filename}", do_continue=True, do_gc=False)
+                                    success2 = True
                                         # dolt.write_file(dolt=db, table="menu_items", file_handle=open(filename, "r"), import_mode="create", do_continue=True)
                                 except Exception as error:
                                         print(error)
                                         print("               [!] Write failure")
-                                        with open("csv_fails.txt", "a") as output:  # Log the failure
-                                            output.write(file + ", " + file + ", write failure" + "\n")
+                                        if "dolt add" in str(error):
+                                            print("         [!] Data was already added to database, skipping.")
+                                            success2 = True
+                                        else:
+                                            success2 = False
+                                            print("          [!] Other error, idk")
+                                            with open("csv_fails.txt", "a") as output:  # Log the failure
+                                                output.write(file + ", " + file + ", write failure" + "\n")
                                         pass
+
+                                if success2:
+                                    print("      [*] Finished push, moving" )
+                                    f.close()  # Close to prevent in use error
+
+                                    try:
+                                        print("      [*] Moving file...")
+                                        os.rename(root + file, root + "verified_submitted/" + file)  # move the file
+                                    except FileExistsError:
+                                        print("      [!] File already exists! Removing current one.")
+                                        with open("removed.txt", "a") as f:
+                                            f.write(file + ", pr existed, file existed\n")
+                                        os.remove(root + file)
+                                        pass
+
 
 
                                 # """Being the early stages that dolt is in, these are primarily workarounds.
