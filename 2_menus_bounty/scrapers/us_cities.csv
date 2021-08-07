@@ -1,0 +1,1988 @@
+ID,STATE_CODE,STATE_NAME,CITY,COUNTY,LATITUDE,LONGITUDE
+27894,WA,Washington,Issaquah,King,47.550911,-122.033517
+27895,WA,Washington,Joyce,Clallam,48.136667,-123.732778
+27896,WA,Washington,Kahlotus,Franklin,46.643333,-118.555833
+27897,WA,Washington,Kalama,Cowlitz,46.011229,-122.816588
+27898,WA,Washington,Kapowsin,Pierce,46.985833,-122.224444
+27899,WA,Washington,Keller,Ferry,48.023594,-118.654731
+27900,WA,Washington,Kelso,Cowlitz,46.148491,-122.886994
+27901,WA,Washington,Kenmore,King,47.7575,-122.242778
+27902,WA,Washington,Kennewick,Benton,46.210913,-119.167951
+27903,WA,Washington,Kent,King,47.3695,-122.1949
+27904,WA,Washington,"Kettle Falls",Stevens,48.636375,-118.054801
+27905,WA,Washington,Keyport,Kitsap,47.702222,-122.619722
+27906,WA,Washington,Kingston,Kitsap,47.810844,-122.525503
+27907,WA,Washington,Kirkland,King,47.678597,-122.189442
+27908,WA,Washington,Kittitas,Kittitas,46.983333,-120.415833
+27909,WA,Washington,Klickitat,Klickitat,45.751534,-121.229231
+27910,WA,Washington,"La Center",Clark,45.880587,-122.623972
+27911,WA,Washington,"La Conner",Skagit,48.409306,-122.53134
+27912,WA,Washington,"La Grande",Pierce,46.834444,-122.3175
+27913,WA,Washington,"La Push",Clallam,47.908889,-124.635278
+27914,WA,Washington,Lacey,Thurston,47.023967,-122.782665
+27915,WA,Washington,Lacrosse,Whitman,46.771684,-117.770277
+27916,WA,Washington,"Lake Stevens",Snohomish,48.017103,-122.067153
+27917,WA,Washington,Lakebay,Pierce,47.247366,-122.74273
+27918,WA,Washington,Lakewood,Pierce,47.122905,-122.529326
+27919,WA,Washington,Lamona,Lincoln,47.359444,-118.481389
+27920,WA,Washington,Lamont,Whitman,47.17304,-117.830239
+27921,WA,Washington,Langley,Island,48.018672,-122.452992
+27922,WA,Washington,Latah,Spokane,47.303815,-117.16884
+27923,WA,Washington,Laurier,Ferry,48.998889,-118.223056
+27924,WA,Washington,Leavenworth,Chelan,47.6438,-120.674792
+27925,WA,Washington,Lebam,Pacific,46.559167,-123.547778
+27926,WA,Washington,"Liberty Lake",Spokane,47.651672,-117.083808
+27927,WA,Washington,Lilliwaup,Mason,47.512773,-123.063119
+27928,WA,Washington,Lincoln,Lincoln,47.78204,-118.481012
+27929,WA,Washington,Lind,Adams,46.955954,-118.706057
+27930,WA,Washington,Littlerock,Thurston,46.901944,-123.016667
+27931,WA,Washington,"Long Beach",Pacific,46.377369,-124.047041
+27932,WA,Washington,Longbranch,Pierce,47.200737,-122.756126
+27933,WA,Washington,Longmire,Pierce,46.75,-121.811389
+27934,WA,Washington,Longview,Cowlitz,46.151354,-122.963421
+27935,WA,Washington,Loomis,Okanogan,48.869627,-119.642675
+27936,WA,Washington,"Loon Lake",Stevens,48.078393,-117.632496
+27937,WA,Washington,"Lopez Island","San Juan",48.520804,-122.967434
+27938,WA,Washington,"Lummi Island",Whatcom,48.712765,-122.682285
+27939,WA,Washington,Lyle,Klickitat,45.74495,-121.250112
+27940,WA,Washington,Lyman,Skagit,48.525744,-122.016183
+27941,WA,Washington,Lynden,Whatcom,48.937225,-122.459153
+27942,WA,Washington,Lynnwood,Snohomish,47.811825,-122.287789
+27943,WA,Washington,Mabton,Yakima,46.212082,-120.015141
+27944,WA,Washington,Malaga,Chelan,47.355306,-120.208562
+27945,WA,Washington,Malden,Whitman,47.228889,-117.471667
+27946,WA,Washington,Malo,Ferry,48.81862,-118.623712
+27947,WA,Washington,Malone,"Grays Harbor",46.960556,-123.325556
+27948,WA,Washington,Malott,Okanogan,48.282778,-119.705556
+27949,WA,Washington,Manchester,Kitsap,47.556111,-122.543611
+27950,WA,Washington,Mansfield,Douglas,47.902136,-119.405315
+27951,WA,Washington,Manson,Chelan,47.895764,-120.148963
+27952,WA,Washington,"Maple Falls",Whatcom,48.924444,-122.075833
+27953,WA,Washington,"Maple Valley",King,47.384526,-122.057413
+27954,WA,Washington,Marblemount,Skagit,48.527778,-121.448333
+27955,WA,Washington,Marcus,Stevens,48.663333,-118.067222
+27956,WA,Washington,Marlin,Grant,47.320929,-119.090897
+27957,WA,Washington,Marshall,Spokane,47.565,-117.498333
+27958,WA,Washington,Marysville,Snohomish,48.065639,-122.156168
+27959,WA,Washington,Matlock,Mason,47.177545,-123.337638
+27960,WA,Washington,Mattawa,Grant,46.679444,-119.916111
+27961,WA,Washington,Mazama,Okanogan,48.597728,-120.38796
+27962,WA,Washington,"Mcchord Afb",Pierce,47.128611,-122.523056
+27963,WA,Washington,Mccleary,"Grays Harbor",47.053987,-123.273301
+27964,WA,Washington,Mckenna,Pierce,46.936111,-122.554444
+27965,WA,Washington,Mead,Spokane,47.793268,-117.311716
+27966,WA,Washington,"Medical Lake",Spokane,47.583696,-117.679351
+27967,WA,Washington,Medina,King,47.621111,-122.226389
+27968,WA,Washington,Menlo,Pacific,46.621667,-123.645833
+27969,WA,Washington,"Mercer Island",King,47.563149,-122.226562
+27970,WA,Washington,Mesa,Franklin,46.578223,-119.137324
+27971,WA,Washington,Metaline,"Pend Oreille",48.850556,-117.389722
+27972,WA,Washington,"Metaline Falls","Pend Oreille",48.859747,-117.36332
+27973,WA,Washington,Methow,Okanogan,48.09001,-120.0059
+27974,WA,Washington,Mica,Spokane,47.553814,-117.163711
+27975,WA,Washington,"Mill Creek",Snohomish,47.860278,-122.203056
+27976,WA,Washington,Milton,Pierce,47.24827,-122.315514
+27977,WA,Washington,Mineral,Lewis,46.709635,-122.186056
+27978,WA,Washington,Moclips,"Grays Harbor",47.222619,-124.20438
+27979,WA,Washington,Mohler,Lincoln,47.481111,-118.253333
+27980,WA,Washington,Monitor,Chelan,47.486944,-120.416944
+27981,WA,Washington,Monroe,Snohomish,47.85853,-121.947376
+27982,WA,Washington,Montesano,"Grays Harbor",47.09013,-123.500584
+27983,WA,Washington,Morton,Lewis,46.558056,-122.249573
+27984,WA,Washington,"Moses Lake",Grant,47.137363,-119.289149
+27985,WA,Washington,Mossyrock,Lewis,46.513136,-122.478935
+27986,WA,Washington,"Mount Vernon",Skagit,48.416427,-122.326548
+27987,WA,Washington,"Mountlake Terrace",Snohomish,47.793061,-122.304036
+27988,WA,Washington,Moxee,Yakima,46.554205,-120.368463
+27989,WA,Washington,Mukilteo,Snohomish,47.919896,-122.301906
+27990,WA,Washington,Naches,Yakima,46.735335,-120.826699
+27991,WA,Washington,Nahcotta,Pacific,46.498611,-124.032222
+27992,WA,Washington,Napavine,Lewis,46.574722,-122.906944
+27993,WA,Washington,Naselle,Pacific,46.352758,-123.804381
+27994,WA,Washington,"Neah Bay",Clallam,48.368333,-124.623611
+27995,WA,Washington,Neilton,"Grays Harbor",47.413056,-123.879167
+27996,WA,Washington,Nespelem,Okanogan,48.167222,-118.973611
+27997,WA,Washington,"Newman Lake",Spokane,47.727371,-117.064041
+27998,WA,Washington,Newport,"Pend Oreille",48.169465,-117.150784
+27999,WA,Washington,"Nine Mile Falls",Spokane,47.801945,-117.589359
+28000,WA,Washington,Nooksack,Whatcom,48.927778,-122.320278
+28001,WA,Washington,Nordland,Jefferson,48.04321,-122.692553
+28002,WA,Washington,"North Bend",King,47.475546,-121.757142
+28003,WA,Washington,"North Bonneville",Skamania,45.6375,-121.975
+28004,WA,Washington,"North Lakewood",Snohomish,48.151944,-122.2075
+28005,WA,Washington,Northport,Stevens,48.924663,-117.793052
+28006,WA,Washington,"Oak Harbor",Island,48.315096,-122.637439
+28007,WA,Washington,Oakesdale,Whitman,47.080556,-117.280326
+28008,WA,Washington,Oakville,"Grays Harbor",46.843366,-123.249329
+28009,WA,Washington,"Ocean Park",Pacific,46.502867,-124.043582
+28010,WA,Washington,"Ocean Shores","Grays Harbor",46.982905,-124.15323
+28011,WA,Washington,Odessa,Lincoln,47.339491,-118.698316
+28012,WA,Washington,Okanogan,Okanogan,48.351328,-119.604563
+28013,WA,Washington,Olalla,Kitsap,47.424088,-122.574512
+28014,WA,Washington,Olga,"San Juan",48.655526,-122.836224
+28015,WA,Washington,Olympia,Thurston,47.012906,-122.876311
+28016,WA,Washington,Omak,Okanogan,48.414347,-119.527156
+28017,WA,Washington,Onalaska,Lewis,46.573016,-122.707503
+28018,WA,Washington,Orcas,"San Juan",48.598056,-122.943333
+28019,WA,Washington,Orient,Ferry,48.866111,-118.201667
+28020,WA,Washington,Orondo,Douglas,47.696928,-120.172143
+28021,WA,Washington,Oroville,Okanogan,48.939681,-119.403236
+28022,WA,Washington,Orting,Pierce,47.082206,-122.185978
+28023,WA,Washington,Othello,Adams,46.792518,-119.316405
+28024,WA,Washington,"Otis Orchards",Spokane,47.70273,-117.11209
+28025,WA,Washington,Outlook,Yakima,46.352497,-120.097005
+28026,WA,Washington,Oysterville,Pacific,46.549167,-124.026944
+28027,WA,Washington,Pacific,King,47.266605,-122.243481
+28028,WA,Washington,"Pacific Beach","Grays Harbor",47.198144,-124.158833
+28029,WA,Washington,Packwood,Lewis,46.650038,-121.655254
+28030,WA,Washington,Palisades,Douglas,47.469367,-119.802264
+28031,WA,Washington,Palouse,Whitman,46.907555,-117.085475
+28032,WA,Washington,"Paradise Inn",Pierce,46.718333,-121.670556
+28033,WA,Washington,Parker,Yakima,46.501111,-120.464167
+28034,WA,Washington,Pasco,Franklin,46.249183,-119.104387
+28035,WA,Washington,Pateros,Okanogan,48.059147,-119.913322
+28036,WA,Washington,Paterson,Benton,45.991139,-119.755873
+28037,WA,Washington,"Pe Ell",Lewis,46.56558,-123.285244
+28038,WA,Washington,Peshastin,Chelan,47.581294,-120.613928
+28039,WA,Washington,Plymouth,Benton,46.038184,-119.502998
+28040,WA,Washington,"Point Roberts",Whatcom,48.987876,-123.055474
+28041,WA,Washington,Pomeroy,Garfield,46.469838,-117.599282
+28042,WA,Washington,"Port Angeles",Clallam,48.106489,-123.438442
+28043,WA,Washington,"Port Gamble",Kitsap,47.854444,-122.5825
+28044,WA,Washington,"Port Hadlock",Jefferson,48.034531,-122.768151
+28045,WA,Washington,"Port Ludlow",Jefferson,47.922192,-122.689615
+28046,WA,Washington,"Port Orchard",Kitsap,47.504838,-122.615276
+28047,WA,Washington,"Port Townsend",Jefferson,48.104012,-122.794457
+28048,WA,Washington,Poulsbo,Kitsap,47.742278,-122.627721
+28049,WA,Washington,Prescott,"Walla Walla",46.353879,-118.409663
+28050,WA,Washington,Preston,King,47.523889,-121.925833
+28051,WA,Washington,Prosser,Benton,46.223183,-119.771014
+28052,WA,Washington,Pullman,Whitman,46.735247,-117.172936
+28053,WA,Washington,Puyallup,Pierce,47.199123,-122.315097
+28054,WA,Washington,Quilcene,Jefferson,47.832429,-122.858304
+28055,WA,Washington,Quinault,"Grays Harbor",47.448505,-123.803744
+28056,WA,Washington,Quincy,Grant,47.197574,-119.845922
+28057,WA,Washington,Rainier,Thurston,46.882942,-122.679468
+28058,WA,Washington,Randle,Lewis,46.549195,-121.855533
+28059,WA,Washington,Ravensdale,King,47.415476,-121.987897
+28060,WA,Washington,Raymond,Pacific,46.671046,-123.692889
+28061,WA,Washington,Reardan,Lincoln,47.705407,-117.866264
+28062,WA,Washington,Redmond,King,47.671796,-122.123242
+28063,WA,Washington,Redondo,King,47.348611,-122.322222
+28064,WA,Washington,Renton,King,47.464759,-122.207484
+28065,WA,Washington,Republic,Ferry,48.670366,-118.699942
+28066,WA,Washington,Retsil,Kitsap,47.546111,-122.61
+28067,WA,Washington,Rice,Stevens,48.406169,-118.124865
+28068,WA,Washington,Richland,Benton,46.283265,-119.289201
+28069,WA,Washington,Ridgefield,Clark,45.784634,-122.693354
+28070,WA,Washington,Ritzville,Adams,47.131528,-118.395812
+28071,WA,Washington,Riverside,Okanogan,48.487567,-119.580316
+28072,WA,Washington,Rochester,Thurston,46.819295,-123.040634
+28073,WA,Washington,"Rock Island",Douglas,47.370558,-120.137794
+28074,WA,Washington,Rockford,Spokane,47.452804,-117.131842
+28075,WA,Washington,Rockport,Skagit,48.470388,-121.555352
+28076,WA,Washington,Rollingbay,Kitsap,47.664722,-122.508889
+28077,WA,Washington,Ronald,Kittitas,47.235278,-121.022222
+28078,WA,Washington,Roosevelt,Klickitat,45.82962,-120.356611
+28079,WA,Washington,Rosalia,Whitman,47.221777,-117.41468
+28080,WA,Washington,Rosburg,Wahkiakum,46.307076,-123.657105
+28081,WA,Washington,Roslyn,Kittitas,47.223611,-120.991944
+28082,WA,Washington,Roy,Pierce,46.956048,-122.448271
+28083,WA,Washington,"Royal City",Grant,46.91557,-119.581473
+28084,WA,Washington,Ryderwood,Cowlitz,46.375176,-123.043134
+28085,WA,Washington,"Saint John",Whitman,47.075539,-117.573002
+28086,WA,Washington,Salkum,Lewis,46.515059,-122.645364
+28087,WA,Washington,Sammamish,King,47.6244,-122.0423
+28088,WA,Washington,Satsop,"Grays Harbor",47.003333,-123.482222
+28089,WA,Washington,Seabeck,Kitsap,47.625497,-122.822685
+28090,WA,Washington,Seahurst,King,47.469444,-122.360833
+28091,WA,Washington,Seattle,King,47.611435,-122.330456
+28092,WA,Washington,Seaview,Pacific,46.334722,-124.053333
+28093,WA,Washington,"Sedro Woolley",Skagit,48.527405,-122.232943
+28094,WA,Washington,Sekiu,Clallam,48.303166,-124.468467
+28095,WA,Washington,Selah,Yakima,46.67671,-120.540813
+28096,WA,Washington,Sequim,Clallam,48.088136,-123.119814
+28097,WA,Washington,"Shaw Island","San Juan",48.584444,-122.927778
+28098,WA,Washington,Shelton,Mason,47.20863,-123.072862
+28099,WA,Washington,Silvana,Snohomish,48.2025,-122.2525
+28100,WA,Washington,"Silver Creek",Lewis,46.549077,-122.475716
+28101,WA,Washington,Silverdale,Kitsap,47.692017,-122.716106
+28102,WA,Washington,Silverlake,Cowlitz,46.316322,-122.764886
+28103,WA,Washington,Skamokawa,Wahkiakum,46.295186,-123.43316
+28104,WA,Washington,Skykomish,King,47.692158,-121.371297
+28105,WA,Washington,Snohomish,Snohomish,47.895381,-122.071562
+28106,WA,Washington,Snoqualmie,King,47.529286,-121.822533
+28107,WA,Washington,"Snoqualmie Pass",Kittitas,47.409722,-121.405833
+28108,WA,Washington,"Soap Lake",Grant,47.383034,-119.485962
+28109,WA,Washington,"South Bend",Pacific,46.6544,-123.820315
+28110,WA,Washington,"South Cle Elum",Kittitas,47.185833,-120.947778
+28111,WA,Washington,"South Colby",Kitsap,47.522222,-122.536111
+28112,WA,Washington,"South Prairie",Pierce,47.139444,-122.096944
+28113,WA,Washington,Southworth,Kitsap,47.512222,-122.500556
+28114,WA,Washington,Spanaway,Pierce,47.073218,-122.394336
+28115,WA,Washington,Spangle,Spokane,47.4338,-117.382696
+28116,WA,Washington,Spokane,Spokane,47.666485,-117.436527
+28117,WA,Washington,Sprague,Lincoln,47.324725,-117.989684
+28118,WA,Washington,Springdale,Stevens,47.992737,-117.873273
+28119,WA,Washington,Stanwood,Snohomish,48.201067,-122.377978
+28120,WA,Washington,Starbuck,Columbia,46.519722,-118.127778
+28121,WA,Washington,Startup,Snohomish,47.868056,-121.739167
+28122,WA,Washington,Stehekin,Chelan,48.298034,-120.755185
+28123,WA,Washington,Steilacoom,Pierce,47.170369,-122.588837
+28124,WA,Washington,Steptoe,Whitman,47.006111,-117.355
+28125,WA,Washington,Stevenson,Skamania,45.688173,-121.909346
+28126,WA,Washington,Stratford,Grant,47.427222,-119.281944
+28127,WA,Washington,Sultan,Snohomish,47.858942,-121.736869
+28128,WA,Washington,Sumas,Whatcom,48.970763,-122.207425
+28129,WA,Washington,Sumner,Pierce,47.203333,-122.239167
+28130,WA,Washington,Sunnyside,Yakima,46.321273,-120.012631
+28131,WA,Washington,Suquamish,Kitsap,47.734303,-122.557295
+28132,WA,Washington,Tacoma,Pierce,47.2764,-122.7583
+28133,WA,Washington,Taholah,"Grays Harbor",47.340711,-124.2827
+28134,WA,Washington,Tahuya,Mason,47.435618,-122.921126
+28135,WA,Washington,Tekoa,Whitman,47.227081,-117.081919
+28136,WA,Washington,Tenino,Thurston,46.864119,-122.849269
+28137,WA,Washington,Thornton,Whitman,47.12525,-117.386416
+28138,WA,Washington,Thorp,Kittitas,47.017785,-120.678557
+28139,WA,Washington,Tieton,Yakima,46.706331,-120.747275
+28140,WA,Washington,Tokeland,Pacific,46.746874,-124.046008
+28141,WA,Washington,Toledo,Lewis,46.439552,-122.826559
+28142,WA,Washington,Tonasket,Okanogan,48.71944,-119.394252
+28143,WA,Washington,Toppenish,Yakima,46.375123,-120.330534
+28144,WA,Washington,Touchet,"Walla Walla",46.04851,-118.655411
+28145,WA,Washington,Toutle,Cowlitz,46.295605,-122.647696
+28146,WA,Washington,Tracyton,Kitsap,47.609167,-122.653889
+28147,WA,Washington,"Trout Lake",Klickitat,45.982789,-121.516272
+28148,WA,Washington,Tumtum,Stevens,47.898173,-117.698996
+28149,WA,Washington,Tumwater,Thurston,46.9542,-123.025
+28150,WA,Washington,Twisp,Okanogan,48.363231,-120.135035
+28151,WA,Washington,Underwood,Skamania,45.740872,-121.597408
+28152,WA,Washington,Union,Mason,47.351305,-123.034364
+28153,WA,Washington,Uniontown,Whitman,46.525818,-117.090756
+28154,WA,Washington,"University Place",Pierce,47.205395,-122.533562
+28155,WA,Washington,Usk,"Pend Oreille",48.295969,-117.318947
+28156,WA,Washington,Vader,Lewis,46.398505,-122.958493
+28157,WA,Washington,Valley,Stevens,48.135114,-117.760967
+28158,WA,Washington,Valleyford,Spokane,47.529176,-117.268601
+28159,WA,Washington,Vancouver,Clark,45.64183,-122.68014
+28160,WA,Washington,Vantage,Kittitas,46.996667,-120.546667
+28161,WA,Washington,Vashon,King,47.425949,-122.464415
+28162,WA,Washington,Vaughn,Pierce,47.330921,-122.773598
+28163,WA,Washington,Veradale,Spokane,47.642103,-117.197706
+28164,WA,Washington,Wahkiacus,Klickitat,45.815567,-121.148586
+28165,WA,Washington,Waitsburg,"Walla Walla",46.269092,-118.144734
+28166,WA,Washington,Waldron,"San Juan",48.687778,-123.035556
+28167,WA,Washington,"Walla Walla","Walla Walla",46.061373,-118.331544
+28168,WA,Washington,Wallula,"Walla Walla",46.085556,-118.904167
+28169,WA,Washington,Wapato,Yakima,46.45066,-120.426484
+28170,WA,Washington,Warden,Grant,46.97697,-119.053932
+28171,WA,Washington,Washougal,Clark,45.595921,-122.310396
+28172,WA,Washington,Washtucna,Adams,46.820912,-118.286203
+28173,WA,Washington,Waterville,Douglas,47.62951,-119.988743
+28174,WA,Washington,Wauconda,Okanogan,48.822449,-118.946947
+28175,WA,Washington,Wauna,Pierce,47.379167,-122.641389
+28176,WA,Washington,Waverly,Spokane,47.335393,-117.233108
+28177,WA,Washington,Wellpinit,Stevens,47.86974,-117.985646
+28178,WA,Washington,Wenatchee,Chelan,47.425269,-120.327345
+28179,WA,Washington,"West Richland",Benton,46.304444,-119.360278
+28180,WA,Washington,Westport,"Grays Harbor",46.883619,-124.106055
+28181,WA,Washington,"White Salmon",Klickitat,45.755142,-121.479459
+28182,WA,Washington,"White Swan",Yakima,46.371558,-120.745317
+28183,WA,Washington,Wilbur,Lincoln,47.741012,-118.706271
+28184,WA,Washington,Wilkeson,Pierce,47.105556,-122.044444
+28185,WA,Washington,"Wilson Creek",Grant,47.423333,-119.119722
+28186,WA,Washington,Winlock,Lewis,46.494014,-122.915806
+28187,WA,Washington,Winthrop,Okanogan,48.475607,-120.180468
+28188,WA,Washington,Wishram,Klickitat,45.6575,-120.965556
+28189,WA,Washington,Woodinville,King,47.768384,-122.127087
+28190,WA,Washington,Woodland,Cowlitz,45.921859,-122.71256
+28191,WA,Washington,Yacolt,Clark,45.862247,-122.427545
+28192,WA,Washington,Yakima,Yakima,46.606991,-120.477336
+28193,WA,Washington,Yelm,Thurston,46.920589,-122.588049
+28194,WA,Washington,Zillah,Yakima,46.415777,-120.266161
+28195,WI,Wisconsin,Abbotsford,Clark,44.964057,-90.299438
+28196,WI,Wisconsin,Abrams,Oconto,44.78693,-88.057101
+28197,WI,Wisconsin,Adams,Adams,43.896688,-89.821869
+28198,WI,Wisconsin,Adell,Sheboygan,43.615071,-88.025394
+28199,WI,Wisconsin,Afton,Rock,42.603889,-89.071111
+28200,WI,Wisconsin,Albany,Green,42.715535,-89.435695
+28201,WI,Wisconsin,Algoma,Kewaunee,44.610051,-87.457792
+28202,WI,Wisconsin,Allenton,Washington,43.468065,-88.353901
+28203,WI,Wisconsin,Alma,Buffalo,44.429437,-91.807931
+28204,WI,Wisconsin,"Alma Center",Jackson,44.445218,-90.935602
+28205,WI,Wisconsin,Almena,Barron,45.419507,-92.002691
+28206,WI,Wisconsin,Almond,Portage,44.289832,-89.358364
+28207,WI,Wisconsin,Altoona,"Eau Claire",44.802142,-91.43825
+28208,WI,Wisconsin,Amberg,Marinette,45.498878,-87.964256
+28209,WI,Wisconsin,Amery,Polk,45.325238,-92.361527
+28210,WI,Wisconsin,Amherst,Portage,44.423052,-89.303482
+28211,WI,Wisconsin,"Amherst Junction",Portage,44.506458,-89.303754
+28212,WI,Wisconsin,Aniwa,Marathon,45.01039,-89.268254
+28213,WI,Wisconsin,Antigo,Langlade,45.131362,-89.141871
+28214,WI,Wisconsin,Appleton,Outagamie,44.277325,-88.397649
+28215,WI,Wisconsin,Arcadia,Trempealeau,44.253937,-91.480453
+28216,WI,Wisconsin,Arena,Iowa,43.152111,-89.938614
+28217,WI,Wisconsin,Argonne,Forest,45.658309,-88.888566
+28218,WI,Wisconsin,Argyle,Lafayette,42.695532,-89.859834
+28219,WI,Wisconsin,Arkansaw,Pepin,44.626659,-92.056646
+28220,WI,Wisconsin,Arkdale,Adams,44.052886,-89.896215
+28221,WI,Wisconsin,Arlington,Columbia,43.326868,-89.363082
+28222,WI,Wisconsin,"Armstrong Creek",Forest,45.67261,-88.490847
+28223,WI,Wisconsin,Arpin,Wood,44.54194,-90.037049
+28224,WI,Wisconsin,Ashippun,Dodge,43.211944,-88.516111
+28225,WI,Wisconsin,Ashland,Ashland,46.577948,-90.876712
+28226,WI,Wisconsin,Athelstane,Marinette,45.422819,-88.175282
+28227,WI,Wisconsin,Athens,Marathon,45.032037,-90.062612
+28228,WI,Wisconsin,Auburndale,Wood,44.637836,-90.013577
+28229,WI,Wisconsin,Augusta,"Eau Claire",44.694737,-91.123154
+28230,WI,Wisconsin,Avalon,Rock,42.65979,-88.837142
+28231,WI,Wisconsin,Avoca,Iowa,43.157137,-90.288859
+28232,WI,Wisconsin,Babcock,Wood,44.303064,-90.098574
+28233,WI,Wisconsin,Bagley,Grant,42.920734,-91.068502
+28234,WI,Wisconsin,"Baileys Harbor",Door,45.056549,-87.167626
+28235,WI,Wisconsin,Baldwin,"Saint Croix",44.9657,-92.365498
+28236,WI,Wisconsin,"Balsam Lake",Polk,45.458845,-92.414954
+28237,WI,Wisconsin,Bancroft,Portage,44.30648,-89.530438
+28238,WI,Wisconsin,Bangor,"La Crosse",43.868697,-90.980888
+28239,WI,Wisconsin,Baraboo,Sauk,43.482531,-89.746168
+28240,WI,Wisconsin,Barneveld,Iowa,43.015797,-89.904229
+28241,WI,Wisconsin,Barron,Barron,45.400535,-91.84996
+28242,WI,Wisconsin,Barronett,Barron,45.618995,-92.019595
+28243,WI,Wisconsin,Bassett,Kenosha,42.540556,-88.227778
+28244,WI,Wisconsin,"Bay City",Pierce,44.6166,-92.446889
+28245,WI,Wisconsin,Bayfield,Bayfield,46.835359,-90.821681
+28246,WI,Wisconsin,"Bear Creek",Outagamie,44.5348,-88.740375
+28247,WI,Wisconsin,"Beaver Dam",Dodge,43.461574,-88.840681
+28248,WI,Wisconsin,Beetown,Grant,42.795,-90.885278
+28249,WI,Wisconsin,Beldenville,Pierce,44.7721,-92.437202
+28250,WI,Wisconsin,Belgium,Ozaukee,43.499465,-87.850908
+28251,WI,Wisconsin,Belleville,Dane,42.866906,-89.53773
+28252,WI,Wisconsin,Belmont,Lafayette,42.730784,-90.335881
+28253,WI,Wisconsin,Beloit,Rock,42.522871,-89.039897
+28254,WI,Wisconsin,"Benet Lake",Kenosha,42.498056,-88.081667
+28255,WI,Wisconsin,Benoit,Bayfield,46.501944,-91.076667
+28256,WI,Wisconsin,Benton,Lafayette,42.534901,-90.338045
+28257,WI,Wisconsin,Berlin,"Green Lake",43.976936,-88.949009
+28258,WI,Wisconsin,"Big Bend",Waukesha,42.888463,-88.212182
+28259,WI,Wisconsin,"Big Falls",Waupaca,44.615556,-89.016111
+28260,WI,Wisconsin,Birchwood,Washburn,45.640296,-91.577564
+28261,WI,Wisconsin,Birnamwood,Shawano,44.926896,-89.212433
+28262,WI,Wisconsin,"Black Creek",Outagamie,44.485595,-88.444776
+28263,WI,Wisconsin,"Black Earth",Dane,43.132213,-89.738974
+28264,WI,Wisconsin,"Black River Falls",Jackson,44.292101,-90.847952
+28265,WI,Wisconsin,Blair,Trempealeau,44.296843,-91.223501
+28266,WI,Wisconsin,Blanchardville,Lafayette,42.806186,-89.855511
+28267,WI,Wisconsin,Blenker,Wood,44.613333,-89.915
+28268,WI,Wisconsin,Bloomer,Chippewa,45.102477,-91.489974
+28269,WI,Wisconsin,Bloomington,Grant,42.872598,-90.909905
+28270,WI,Wisconsin,"Blue Mounds",Dane,43.004964,-89.834455
+28271,WI,Wisconsin,"Blue River",Grant,43.236567,-90.587312
+28272,WI,Wisconsin,Bonduel,Shawano,44.73794,-88.439026
+28273,WI,Wisconsin,Boscobel,Grant,43.139327,-90.706101
+28274,WI,Wisconsin,"Boulder Junction",Vilas,46.111183,-89.632454
+28275,WI,Wisconsin,Bowler,Shawano,44.933667,-88.976071
+28276,WI,Wisconsin,Boyceville,Dunn,45.064238,-92.024803
+28277,WI,Wisconsin,Boyd,Chippewa,44.943737,-91.029355
+28278,WI,Wisconsin,Brandon,"Fond Du Lac",43.72579,-88.784099
+28279,WI,Wisconsin,Brantwood,Price,45.551413,-90.115952
+28280,WI,Wisconsin,Briggsville,Marquette,43.675865,-89.580259
+28281,WI,Wisconsin,Brill,Barron,45.602778,-91.671944
+28282,WI,Wisconsin,Brillion,Calumet,44.17792,-88.083337
+28283,WI,Wisconsin,Bristol,Kenosha,42.532525,-88.047779
+28284,WI,Wisconsin,Brodhead,Green,42.611074,-89.371409
+28285,WI,Wisconsin,Brokaw,Marathon,45.027222,-89.653056
+28286,WI,Wisconsin,Brookfield,Waukesha,43.062173,-88.098
+28287,WI,Wisconsin,Brooklyn,Green,42.842327,-89.381814
+28288,WI,Wisconsin,Brownsville,Dodge,43.610934,-88.509729
+28289,WI,Wisconsin,Browntown,Green,42.557872,-89.78158
+28290,WI,Wisconsin,Bruce,Rusk,45.447923,-91.290622
+28291,WI,Wisconsin,Brule,Douglas,46.576318,-91.553862
+28292,WI,Wisconsin,Brussels,Door,44.747558,-87.62252
+28293,WI,Wisconsin,Bryant,Langlade,45.202962,-88.998325
+28294,WI,Wisconsin,Burlington,Racine,42.666034,-88.274886
+28295,WI,Wisconsin,Burnett,Dodge,43.511609,-88.717606
+28296,WI,Wisconsin,Butler,Waukesha,43.105405,-88.071043
+28297,WI,Wisconsin,"Butte Des Morts",Winnebago,44.099444,-88.653889
+28298,WI,Wisconsin,Butternut,Ashland,46.018358,-90.482114
+28299,WI,Wisconsin,Cable,Bayfield,46.217155,-91.224438
+28300,WI,Wisconsin,Cadott,Chippewa,44.963014,-91.169884
+28301,WI,Wisconsin,Caledonia,Racine,42.829473,-87.92278
+28302,WI,Wisconsin,Cambria,Columbia,43.57239,-89.115614
+28303,WI,Wisconsin,Cambridge,Dane,42.99176,-89.020901
+28304,WI,Wisconsin,Cameron,Barron,45.403836,-91.730992
+28305,WI,Wisconsin,"Camp Douglas",Juneau,43.936705,-90.268861
+28306,WI,Wisconsin,"Camp Lake",Kenosha,42.534722,-88.143611
+28307,WI,Wisconsin,Campbellsport,"Fond Du Lac",43.604183,-88.272855
+28308,WI,Wisconsin,Caroline,Shawano,44.727574,-88.888749
+28309,WI,Wisconsin,Cascade,Sheboygan,43.659106,-88.094658
+28310,WI,Wisconsin,Casco,Kewaunee,44.58328,-87.623122
+28311,WI,Wisconsin,Cashton,Monroe,43.745649,-90.761197
+28312,WI,Wisconsin,Cassville,Grant,42.728791,-90.960751
+28313,WI,Wisconsin,Cataract,Monroe,44.087778,-90.842222
+28314,WI,Wisconsin,Catawba,Price,45.508123,-90.514564
+28315,WI,Wisconsin,Cazenovia,Richland,43.498715,-90.279572
+28316,WI,Wisconsin,Cecil,Shawano,44.811027,-88.418253
+28317,WI,Wisconsin,"Cedar Grove",Sheboygan,43.575076,-87.840108
+28318,WI,Wisconsin,Cedarburg,Ozaukee,43.303413,-88.002867
+28319,WI,Wisconsin,Centuria,Polk,45.448369,-92.547741
+28320,WI,Wisconsin,Chaseburg,Vernon,43.679372,-91.079934
+28321,WI,Wisconsin,Chetek,Barron,45.317046,-91.654154
+28322,WI,Wisconsin,Chili,Clark,44.630135,-90.359952
+28323,WI,Wisconsin,Chilton,Calumet,44.024242,-88.182689
+28324,WI,Wisconsin,"Chippewa Falls",Chippewa,44.932202,-91.384376
+28325,WI,Wisconsin,"Clam Lake",Ashland,46.245675,-90.884107
+28326,WI,Wisconsin,Clayton,Polk,45.306297,-92.139462
+28327,WI,Wisconsin,"Clear Lake",Polk,45.236481,-92.27488
+28328,WI,Wisconsin,Cleveland,Manitowoc,43.921732,-87.767314
+28329,WI,Wisconsin,Clinton,Rock,42.553481,-88.870477
+28330,WI,Wisconsin,Clintonville,Waupaca,44.636442,-88.742999
+28331,WI,Wisconsin,Clyman,Dodge,43.311389,-88.72
+28332,WI,Wisconsin,Cobb,Iowa,42.966009,-90.332408
+28333,WI,Wisconsin,Cochrane,Buffalo,44.251591,-91.858677
+28334,WI,Wisconsin,Colby,Clark,44.911651,-90.314432
+28335,WI,Wisconsin,Coleman,Marinette,45.072157,-88.058667
+28336,WI,Wisconsin,Colfax,Dunn,44.999326,-91.735737
+28337,WI,Wisconsin,Colgate,Washington,43.199767,-88.240614
+28338,WI,Wisconsin,Collins,Manitowoc,44.085556,-87.982778
+28339,WI,Wisconsin,Coloma,Waushara,44.027462,-89.494332
+28340,WI,Wisconsin,Columbus,Columbia,43.331494,-89.027089
+28341,WI,Wisconsin,"Combined Locks",Outagamie,44.266581,-88.313271
+28342,WI,Wisconsin,Comstock,Barron,45.491114,-92.085961
+28343,WI,Wisconsin,Conover,Vilas,46.043968,-89.238919
+28344,WI,Wisconsin,Conrath,Rusk,45.353281,-91.062132
+28345,WI,Wisconsin,"Coon Valley",Vernon,43.721783,-91.014338
+28346,WI,Wisconsin,Cornell,Chippewa,45.16191,-91.173252
+28347,WI,Wisconsin,Cornucopia,Bayfield,46.837171,-91.097421
+28348,WI,Wisconsin,"Cottage Grove",Dane,43.078405,-89.201692
+28349,WI,Wisconsin,Couderay,Sawyer,45.809664,-91.327825
+28350,WI,Wisconsin,Crandon,Forest,45.541553,-88.911619
+28351,WI,Wisconsin,Crivitz,Marinette,45.254053,-88.061265
+28352,WI,Wisconsin,"Cross Plains",Dane,43.113214,-89.639665
+28353,WI,Wisconsin,"Cuba City",Grant,42.599073,-90.474907
+28354,WI,Wisconsin,Cudahy,Milwaukee,42.948976,-87.861983
+28355,WI,Wisconsin,Cumberland,Barron,45.5403,-92.029709
+28356,WI,Wisconsin,Curtiss,Clark,44.960186,-90.459223
+28357,WI,Wisconsin,Cushing,Polk,45.560359,-92.624136
+28358,WI,Wisconsin,Custer,Portage,44.56622,-89.415275
+28359,WI,Wisconsin,Dale,Outagamie,44.273056,-88.678333
+28360,WI,Wisconsin,Dallas,Barron,45.254883,-91.836844
+28361,WI,Wisconsin,Dalton,"Green Lake",43.67178,-89.191768
+28362,WI,Wisconsin,Danbury,Burnett,46.029681,-92.265995
+28363,WI,Wisconsin,Dane,Dane,43.242414,-89.51174
+28364,WI,Wisconsin,Darien,Walworth,42.6435,-88.714217
+28365,WI,Wisconsin,Darlington,Lafayette,42.687816,-90.110648
+28366,WI,Wisconsin,"De Forest",Dane,43.235748,-89.329652
+28367,WI,Wisconsin,"De Pere",Brown,44.438779,-88.080613
+28368,WI,Wisconsin,"De Soto",Vernon,43.494707,-91.193015
+28369,WI,Wisconsin,"Deer Park","Saint Croix",45.169046,-92.358464
+28370,WI,Wisconsin,Deerbrook,Langlade,45.236791,-89.187257
+28371,WI,Wisconsin,Deerfield,Dane,43.057106,-89.086199
+28372,WI,Wisconsin,Delafield,Waukesha,43.050019,-88.397248
+28373,WI,Wisconsin,Delavan,Walworth,42.622715,-88.627717
+28374,WI,Wisconsin,Dellwood,Adams,43.970556,-89.816667
+28375,WI,Wisconsin,Denmark,Brown,44.359392,-87.827036
+28376,WI,Wisconsin,Dickeyville,Grant,42.627222,-90.591944
+28377,WI,Wisconsin,Dodge,Trempealeau,44.12886,-91.524341
+28378,WI,Wisconsin,Dodgeville,Iowa,42.969779,-90.140433
+28379,WI,Wisconsin,Dorchester,Clark,45.004192,-90.359648
+28380,WI,Wisconsin,Dousman,Waukesha,42.98506,-88.456754
+28381,WI,Wisconsin,Downing,Dunn,45.103032,-92.113384
+28382,WI,Wisconsin,Downsville,Dunn,44.774722,-91.931944
+28383,WI,Wisconsin,Doylestown,Columbia,43.427778,-89.15
+28384,WI,Wisconsin,Dresser,Polk,45.354585,-92.5623
+28385,WI,Wisconsin,Drummond,Bayfield,46.311896,-91.285569
+28386,WI,Wisconsin,Dunbar,Marinette,45.600944,-88.106669
+28387,WI,Wisconsin,Durand,Pepin,44.630042,-91.929476
+28388,WI,Wisconsin,Eagle,Waukesha,42.880942,-88.46742
+28389,WI,Wisconsin,"Eagle River",Vilas,45.916084,-89.253058
+28390,WI,Wisconsin,"East Ellsworth",Pierce,44.734167,-92.467778
+28391,WI,Wisconsin,"East Troy",Walworth,42.803531,-88.409215
+28392,WI,Wisconsin,Eastman,Crawford,43.19592,-91.01927
+28393,WI,Wisconsin,"Eau Claire","Eau Claire",44.783972,-91.487686
+28394,WI,Wisconsin,"Eau Galle",Dunn,44.721433,-92.040816
+28395,WI,Wisconsin,Eden,"Fond Du Lac",43.695878,-88.326607
+28396,WI,Wisconsin,Edgar,Marathon,44.903831,-89.998029
+28397,WI,Wisconsin,Edgerton,Rock,42.838605,-89.064157
+28398,WI,Wisconsin,Edgewater,Sawyer,45.742222,-91.475
+28399,WI,Wisconsin,Edmund,Iowa,42.9675,-90.264444
+28400,WI,Wisconsin,"Egg Harbor",Door,45.010039,-87.280521
+28401,WI,Wisconsin,Eland,Marathon,44.830888,-89.246117
+28402,WI,Wisconsin,Elcho,Langlade,45.440906,-89.15157
+28403,WI,Wisconsin,Elderon,Marathon,44.783889,-89.244722
+28404,WI,Wisconsin,Eldorado,"Fond Du Lac",43.841471,-88.638827
+28405,WI,Wisconsin,Eleva,Trempealeau,44.598493,-91.48037
+28406,WI,Wisconsin,"Elk Mound",Dunn,44.866973,-91.675229
+28407,WI,Wisconsin,"Elkhart Lake",Sheboygan,43.843553,-87.97667
+28408,WI,Wisconsin,Elkhorn,Walworth,42.700928,-88.546209
+28409,WI,Wisconsin,"Ellison Bay",Door,45.257206,-87.051209
+28410,WI,Wisconsin,Ellsworth,Pierce,44.730191,-92.489038
+28411,WI,Wisconsin,"Elm Grove",Waukesha,43.047943,-88.085374
+28412,WI,Wisconsin,Elmwood,Pierce,44.756088,-92.202195
+28413,WI,Wisconsin,Elroy,Juneau,43.751616,-90.288857
+28414,WI,Wisconsin,Elton,Langlade,45.156216,-88.883743
+28415,WI,Wisconsin,Embarrass,Waupaca,44.665556,-88.707222
+28416,WI,Wisconsin,Endeavor,Marquette,43.696305,-89.461699
+28417,WI,Wisconsin,Ephraim,Door,45.156389,-87.168056
+28418,WI,Wisconsin,Ettrick,Trempealeau,44.172428,-91.263546
+28419,WI,Wisconsin,Eureka,Winnebago,44.004444,-88.841667
+28420,WI,Wisconsin,Evansville,Rock,42.773216,-89.287712
+28421,WI,Wisconsin,Exeland,Sawyer,45.675298,-91.223819
+28422,WI,Wisconsin,Fairchild,"Eau Claire",44.596253,-90.990568
+28423,WI,Wisconsin,Fairwater,"Fond Du Lac",43.743889,-88.866944
+28424,WI,Wisconsin,"Fall Creek","Eau Claire",44.768385,-91.285631
+28425,WI,Wisconsin,"Fall River",Columbia,43.400838,-89.062513
+28426,WI,Wisconsin,Fence,Florence,45.759652,-88.364873
+28427,WI,Wisconsin,Fennimore,Grant,42.988558,-90.655009
+28428,WI,Wisconsin,Ferryville,Crawford,43.395857,-91.044578
+28429,WI,Wisconsin,Fifield,Price,45.862148,-90.4246
+28430,WI,Wisconsin,"Fish Creek",Door,45.11554,-87.206432
+28431,WI,Wisconsin,Florence,Florence,45.902724,-88.228921
+28432,WI,Wisconsin,"Fond Du Lac","Fond Du Lac",43.770446,-88.429149
+28433,WI,Wisconsin,Fontana,Walworth,42.542928,-88.568424
+28434,WI,Wisconsin,Footville,Rock,42.670833,-89.208889
+28435,WI,Wisconsin,"Forest Junction",Calumet,44.20613,-88.151716
+28436,WI,Wisconsin,Forestville,Door,44.696863,-87.492832
+28437,WI,Wisconsin,"Fort Atkinson",Jefferson,42.922902,-88.846689
+28438,WI,Wisconsin,"Fountain City",Buffalo,44.136436,-91.677861
+28439,WI,Wisconsin,"Fox Lake",Dodge,43.581507,-88.904081
+28440,WI,Wisconsin,Foxboro,Douglas,46.487511,-92.149254
+28441,WI,Wisconsin,"Francis Creek",Manitowoc,44.199964,-87.720007
+28442,WI,Wisconsin,Franklin,Milwaukee,42.901728,-88.008582
+28443,WI,Wisconsin,Franksville,Racine,42.785892,-87.987273
+28444,WI,Wisconsin,Frederic,Polk,45.665314,-92.426482
+28445,WI,Wisconsin,Fredonia,Ozaukee,43.484319,-87.982243
+28446,WI,Wisconsin,Freedom,Outagamie,44.386389,-88.288611
+28447,WI,Wisconsin,Fremont,Waupaca,44.237884,-88.844852
+28448,WI,Wisconsin,Friendship,Adams,43.989629,-89.814875
+28449,WI,Wisconsin,Friesland,Columbia,43.588611,-89.067222
+28450,WI,Wisconsin,Galesville,Trempealeau,44.088848,-91.358789
+28451,WI,Wisconsin,Galloway,Marathon,44.827222,-89.169444
+28452,WI,Wisconsin,"Gays Mills",Crawford,43.293639,-90.867636
+28453,WI,Wisconsin,"Genesee Depot",Waukesha,42.966667,-88.371111
+28454,WI,Wisconsin,Genoa,Vernon,43.605134,-91.134999
+28455,WI,Wisconsin,"Genoa City",Walworth,42.532276,-88.348456
+28456,WI,Wisconsin,Germantown,Washington,43.218871,-88.116508
+28457,WI,Wisconsin,Gile,Iron,46.428333,-90.225
+28458,WI,Wisconsin,Gillett,Oconto,44.901753,-88.324221
+28459,WI,Wisconsin,Gilman,Taylor,45.18906,-90.825672
+28460,WI,Wisconsin,Gilmanton,Buffalo,44.470833,-91.675833
+28461,WI,Wisconsin,Gleason,Lincoln,45.338428,-89.475264
+28462,WI,Wisconsin,"Glen Flora",Rusk,45.488807,-90.855183
+28463,WI,Wisconsin,"Glen Haven",Grant,42.820372,-91.000451
+28464,WI,Wisconsin,Glenbeulah,Sheboygan,43.766611,-88.104886
+28465,WI,Wisconsin,"Glenwood City","Saint Croix",45.062339,-92.181588
+28466,WI,Wisconsin,Glidden,Ashland,46.133668,-90.588856
+28467,WI,Wisconsin,Goodman,Marinette,45.646895,-88.362901
+28468,WI,Wisconsin,Gordon,Douglas,46.233603,-91.803301
+28469,WI,Wisconsin,Gotham,Richland,43.223333,-90.291389
+28470,WI,Wisconsin,Grafton,Ozaukee,43.323146,-87.952087
+28471,WI,Wisconsin,"Grand Marsh",Adams,43.856789,-89.655663
+28472,WI,Wisconsin,"Grand View",Bayfield,46.357682,-91.107465
+28473,WI,Wisconsin,Granton,Clark,44.560558,-90.448383
+28474,WI,Wisconsin,Grantsburg,Burnett,45.761312,-92.662685
+28475,WI,Wisconsin,Gratiot,Lafayette,42.575852,-90.024344
+28476,WI,Wisconsin,"Green Bay",Brown,44.485313,-88.016868
+28477,WI,Wisconsin,"Green Lake","Green Lake",43.844383,-88.96847
+28478,WI,Wisconsin,"Green Valley",Shawano,44.795556,-88.270278
+28479,WI,Wisconsin,Greenbush,Sheboygan,43.776667,-88.083889
+28480,WI,Wisconsin,Greendale,Milwaukee,42.937293,-87.994277
+28481,WI,Wisconsin,Greenleaf,Brown,44.29373,-88.027519
+28482,WI,Wisconsin,Greenville,Outagamie,44.299747,-88.569579
+28483,WI,Wisconsin,Greenwood,Clark,44.740373,-90.622913
+28484,WI,Wisconsin,Gresham,Shawano,44.852963,-88.78873
+28485,WI,Wisconsin,"Hager City",Pierce,44.626969,-92.550146
+28486,WI,Wisconsin,"Hales Corners",Milwaukee,42.941034,-88.0503
+28487,WI,Wisconsin,Hammond,"Saint Croix",44.967004,-92.447215
+28488,WI,Wisconsin,Hancock,Waushara,44.129743,-89.534448
+28489,WI,Wisconsin,Hannibal,Taylor,45.2525,-90.788889
+28490,WI,Wisconsin,Hanover,Rock,42.638611,-89.161944
+28491,WI,Wisconsin,Harshaw,Oneida,45.676244,-89.650346
+28492,WI,Wisconsin,Hartford,Washington,43.315749,-88.370727
+28493,WI,Wisconsin,Hartland,Waukesha,43.117153,-88.344572
+28494,WI,Wisconsin,Hatley,Marathon,44.825638,-89.377728
+28495,WI,Wisconsin,Haugen,Barron,45.608889,-91.774722
+28496,WI,Wisconsin,Hawkins,Rusk,45.524129,-90.711373
+28497,WI,Wisconsin,Hawthorne,Douglas,46.503056,-91.860556
+28498,WI,Wisconsin,Hayward,Sawyer,46.001404,-91.397659
+28499,WI,Wisconsin,"Hazel Green",Grant,42.535913,-90.511782
+28500,WI,Wisconsin,Hazelhurst,Oneida,45.77446,-89.747836
+28501,WI,Wisconsin,"Heafford Junction",Lincoln,45.547222,-89.715278
+28502,WI,Wisconsin,Helenville,Jefferson,43.01007,-88.726887
+28503,WI,Wisconsin,Herbster,Bayfield,46.82128,-91.233193
+28504,WI,Wisconsin,Hertel,Burnett,45.807561,-92.140419
+28505,WI,Wisconsin,Hewitt,Wood,44.643651,-90.103054
+28506,WI,Wisconsin,"High Bridge",Ashland,46.379613,-90.73826
+28507,WI,Wisconsin,Highland,Iowa,43.052368,-90.36501
+28508,WI,Wisconsin,Hilbert,Calumet,44.127129,-88.206961
+28509,WI,Wisconsin,Hillpoint,Sauk,43.395129,-90.158792
+28510,WI,Wisconsin,Hillsboro,Vernon,43.635009,-90.370595
+28511,WI,Wisconsin,Hingham,Sheboygan,43.638889,-87.914167
+28512,WI,Wisconsin,Hixton,Jackson,44.397778,-91.039086
+28513,WI,Wisconsin,Holcombe,Chippewa,45.251263,-91.132955
+28514,WI,Wisconsin,Hollandale,Iowa,42.877321,-89.912973
+28515,WI,Wisconsin,Holmen,"La Crosse",43.976125,-91.2497
+28516,WI,Wisconsin,"Honey Creek",Walworth,42.748333,-88.307778
+28517,WI,Wisconsin,Horicon,Dodge,43.446859,-88.631049
+28518,WI,Wisconsin,Hortonville,Outagamie,44.327306,-88.62813
+28519,WI,Wisconsin,Houlton,"Saint Croix",45.070123,-92.760803
+28520,WI,Wisconsin,Hubertus,Washington,43.234269,-88.231147
+28521,WI,Wisconsin,Hudson,"Saint Croix",44.984187,-92.727062
+28522,WI,Wisconsin,Humbird,Clark,44.536676,-90.888257
+28523,WI,Wisconsin,Hurley,Iron,46.44482,-90.1975
+28524,WI,Wisconsin,Hustisford,Dodge,43.345,-88.601667
+28525,WI,Wisconsin,Hustler,Juneau,43.9225,-90.271389
+28526,WI,Wisconsin,Independence,Trempealeau,44.395926,-91.453511
+28527,WI,Wisconsin,Iola,Waupaca,44.532183,-89.137311
+28528,WI,Wisconsin,Irma,Lincoln,45.348483,-89.661138
+28529,WI,Wisconsin,"Iron Belt",Iron,46.395545,-90.324528
+28530,WI,Wisconsin,"Iron Ridge",Dodge,43.393415,-88.544072
+28531,WI,Wisconsin,"Iron River",Bayfield,46.578984,-91.421056
+28532,WI,Wisconsin,Ixonia,Jefferson,43.170667,-88.580567
+28533,WI,Wisconsin,Jackson,Washington,43.325243,-88.162592
+28534,WI,Wisconsin,Janesville,Rock,42.691542,-89.033124
+28535,WI,Wisconsin,Jefferson,Jefferson,43.000557,-88.807765
+28536,WI,Wisconsin,"Jim Falls",Chippewa,45.064439,-91.264909
+28537,WI,Wisconsin,"Johnson Creek",Jefferson,43.075051,-88.783602
+28538,WI,Wisconsin,Juda,Green,42.567874,-89.502608
+28539,WI,Wisconsin,"Jump River",Taylor,45.166667,-90.8075
+28540,WI,Wisconsin,"Junction City",Portage,44.59634,-89.743758
+28541,WI,Wisconsin,Juneau,Dodge,43.379199,-88.684517
+28542,WI,Wisconsin,Kansasville,Racine,42.701246,-88.118037
+28543,WI,Wisconsin,Kaukauna,Outagamie,44.29561,-88.271692
+28544,WI,Wisconsin,Kellnersville,Manitowoc,44.22493,-87.803596
+28545,WI,Wisconsin,Kendall,Monroe,43.81614,-90.410691
+28546,WI,Wisconsin,Kennan,Price,45.53497,-90.590987
+28547,WI,Wisconsin,Kenosha,Kenosha,42.605228,-87.829945
+28548,WI,Wisconsin,Keshena,Menominee,44.914635,-88.635686
+28549,WI,Wisconsin,Kewaskum,Washington,43.521446,-88.19253
+28550,WI,Wisconsin,Kewaunee,Kewaunee,44.440143,-87.559442
+28551,WI,Wisconsin,Kiel,Manitowoc,43.934105,-87.995644
+28552,WI,Wisconsin,Kieler,Grant,42.581389,-90.6025
+28553,WI,Wisconsin,Kimberly,Outagamie,44.27008,-88.338374
+28554,WI,Wisconsin,King,Waupaca,44.267332,-89.113739
+28555,WI,Wisconsin,Kingston,"Green Lake",43.69236,-89.131997
+28556,WI,Wisconsin,Knapp,Dunn,44.954495,-92.075201
+28557,WI,Wisconsin,Kohler,Sheboygan,43.738096,-87.78673
+28558,WI,Wisconsin,Krakow,Shawano,44.763457,-88.25933
+28559,WI,Wisconsin,"La Crosse","La Crosse",43.798938,-91.217494
+28560,WI,Wisconsin,"La Farge",Vernon,43.616955,-90.648257
+28561,WI,Wisconsin,"La Pointe",Ashland,46.846675,-90.603622
+28562,WI,Wisconsin,"La Valle",Sauk,43.569874,-90.127966
+28563,WI,Wisconsin,"Lac Du Flambeau",Vilas,45.97175,-89.890078
+28564,WI,Wisconsin,Ladysmith,Rusk,45.471941,-91.108804
+28565,WI,Wisconsin,"Lake Delton",Sauk,43.601111,-89.793611
+28566,WI,Wisconsin,"Lake Geneva",Walworth,42.588111,-88.455379
+28567,WI,Wisconsin,"Lake Mills",Jefferson,43.081576,-88.913335
+28568,WI,Wisconsin,"Lake Nebagamon",Douglas,46.502347,-91.740243
+28569,WI,Wisconsin,"Lake Tomahawk",Oneida,45.803455,-89.585609
+28570,WI,Wisconsin,Lakewood,Oconto,45.316285,-88.503189
+28571,WI,Wisconsin,Lancaster,Grant,42.844469,-90.710906
+28572,WI,Wisconsin,"Land O Lakes",Vilas,46.156305,-89.321787
+28573,WI,Wisconsin,Lannon,Waukesha,43.149651,-88.163863
+28574,WI,Wisconsin,Laona,Forest,45.553416,-88.671525
+28575,WI,Wisconsin,Larsen,Winnebago,44.198421,-88.696305
+28576,WI,Wisconsin,Lebanon,Dodge,43.255278,-88.626667
+28577,WI,Wisconsin,Lena,Oconto,44.940494,-88.054308
+28578,WI,Wisconsin,Leopolis,Shawano,44.781188,-88.872223
+28579,WI,Wisconsin,"Lime Ridge",Sauk,43.467778,-90.154722
+28580,WI,Wisconsin,Linden,Iowa,42.918419,-90.279726
+28581,WI,Wisconsin,"Little Chute",Outagamie,44.284248,-88.311989
+28582,WI,Wisconsin,"Little Suamico",Oconto,44.67751,-88.027245
+28583,WI,Wisconsin,Livingston,Grant,42.904432,-90.441986
+28584,WI,Wisconsin,Lodi,Columbia,43.326964,-89.555421
+28585,WI,Wisconsin,Loganville,Sauk,43.405046,-90.033688
+28586,WI,Wisconsin,Lomira,Dodge,43.588489,-88.441309
+28587,WI,Wisconsin,"Lone Rock",Richland,43.220773,-90.235229
+28588,WI,Wisconsin,"Long Lake",Florence,45.921841,-88.695308
+28589,WI,Wisconsin,Lowell,Dodge,43.342018,-88.787263
+28590,WI,Wisconsin,Loyal,Clark,44.727243,-90.492238
+28591,WI,Wisconsin,Lublin,Taylor,45.073933,-90.733678
+28592,WI,Wisconsin,Luck,Polk,45.556799,-92.416391
+28593,WI,Wisconsin,Luxemburg,Kewaunee,44.550612,-87.715606
+28594,WI,Wisconsin,"Lyndon Station",Juneau,43.689875,-89.891543
+28595,WI,Wisconsin,Lynxville,Crawford,43.246389,-91.056111
+28596,WI,Wisconsin,Lyons,Walworth,42.651111,-88.358333
+28597,WI,Wisconsin,Madison,Dane,43.073,-89.3817
+28598,WI,Wisconsin,"Maiden Rock",Pierce,44.608599,-92.278212
+28599,WI,Wisconsin,Malone,"Fond Du Lac",43.869002,-88.307289
+28600,WI,Wisconsin,Manawa,Waupaca,44.470148,-88.916444
+28601,WI,Wisconsin,"Manitowish Waters",Vilas,46.123909,-89.830767
+28602,WI,Wisconsin,Manitowoc,Manitowoc,44.097122,-87.682303
+28603,WI,Wisconsin,Maple,Douglas,46.620591,-91.702015
+28604,WI,Wisconsin,Maplewood,Door,44.7475,-87.479167
+28605,WI,Wisconsin,Marathon,Marathon,44.965664,-89.829948
+28606,WI,Wisconsin,Marengo,Ashland,46.407112,-90.839991
+28607,WI,Wisconsin,Maribel,Manitowoc,44.285151,-87.805482
+28608,WI,Wisconsin,Marinette,Marinette,45.087403,-87.669684
+28609,WI,Wisconsin,Marion,Waupaca,44.679414,-88.876706
+28610,WI,Wisconsin,Markesan,"Green Lake",43.714015,-89.006971
+28611,WI,Wisconsin,Marquette,"Green Lake",43.745886,-89.139654
+28612,WI,Wisconsin,Marshall,Dane,43.163639,-89.075331
+28613,WI,Wisconsin,Marshfield,Wood,44.6688,-90.1716
+28614,WI,Wisconsin,Mason,Bayfield,46.457285,-91.057511
+28615,WI,Wisconsin,Mather,Juneau,44.147706,-90.295264
+28616,WI,Wisconsin,Mattoon,Shawano,45.004167,-89.041944
+28617,WI,Wisconsin,Mauston,Juneau,43.793383,-90.064085
+28618,WI,Wisconsin,Mayville,Dodge,43.504496,-88.545084
+28619,WI,Wisconsin,Mazomanie,Dane,43.184746,-89.763616
+28620,WI,Wisconsin,"Mc Farland",Dane,43.010651,-89.294773
+28621,WI,Wisconsin,"Mc Naughton",Oneida,45.723333,-89.482778
+28622,WI,Wisconsin,Medford,Taylor,45.151185,-90.350306
+28623,WI,Wisconsin,Mellen,Ashland,46.300659,-90.655233
+28624,WI,Wisconsin,Melrose,Jackson,44.138156,-91.044463
+28625,WI,Wisconsin,Menasha,Winnebago,44.211164,-88.417536
+28626,WI,Wisconsin,"Menomonee Falls",Waukesha,43.160174,-88.112774
+28627,WI,Wisconsin,Menomonie,Dunn,44.87182,-91.92651
+28628,WI,Wisconsin,Mequon,Ozaukee,43.236389,-87.984444
+28629,WI,Wisconsin,Mercer,Iron,46.169594,-90.067914
+28630,WI,Wisconsin,Merrill,Lincoln,45.180924,-89.690696
+28631,WI,Wisconsin,Merrillan,Jackson,44.436938,-90.810496
+28632,WI,Wisconsin,Merrimac,Sauk,43.385527,-89.632254
+28633,WI,Wisconsin,Merton,Waukesha,43.146667,-88.306667
+28634,WI,Wisconsin,Middleton,Dane,43.105196,-89.507258
+28635,WI,Wisconsin,Mikana,Barron,45.591944,-91.601111
+28636,WI,Wisconsin,Milladore,Wood,44.604416,-89.887532
+28637,WI,Wisconsin,Millston,Jackson,44.193056,-90.6475
+28638,WI,Wisconsin,Milltown,Polk,45.527082,-92.501739
+28639,WI,Wisconsin,Milton,Rock,42.779087,-88.953087
+28640,WI,Wisconsin,Milwaukee,Milwaukee,43.0343,-87.9151
+28641,WI,Wisconsin,Mindoro,"La Crosse",44.02873,-91.064181
+28642,WI,Wisconsin,"Mineral Point",Iowa,42.854696,-90.164556
+28643,WI,Wisconsin,Minocqua,Oneida,45.871909,-89.757954
+28644,WI,Wisconsin,Minong,Washburn,46.10445,-91.850628
+28645,WI,Wisconsin,Mishicot,Manitowoc,44.260942,-87.644703
+28646,WI,Wisconsin,Mondovi,Buffalo,44.609853,-91.669576
+28647,WI,Wisconsin,Monroe,Green,42.599076,-89.6403
+28648,WI,Wisconsin,Montello,Marquette,43.768984,-89.358641
+28649,WI,Wisconsin,Montfort,Grant,42.975745,-90.44473
+28650,WI,Wisconsin,Monticello,Green,42.741482,-89.608069
+28651,WI,Wisconsin,Montreal,Iron,46.425736,-90.244195
+28652,WI,Wisconsin,Morrisonville,Dane,43.277222,-89.359444
+28653,WI,Wisconsin,Mosinee,Marathon,44.799736,-89.684491
+28654,WI,Wisconsin,"Mount Calvary","Fond Du Lac",43.814211,-88.239922
+28655,WI,Wisconsin,"Mount Hope",Grant,42.968862,-90.86648
+28656,WI,Wisconsin,"Mount Horeb",Dane,43.002022,-89.741448
+28657,WI,Wisconsin,"Mount Sterling",Crawford,43.315278,-90.928611
+28658,WI,Wisconsin,Mountain,Oconto,45.199127,-88.45828
+28659,WI,Wisconsin,Mukwonago,Waukesha,42.882054,-88.345116
+28660,WI,Wisconsin,Muscoda,Grant,43.207375,-90.456998
+28661,WI,Wisconsin,Muskego,Waukesha,42.904651,-88.121411
+28662,WI,Wisconsin,Nashotah,Waukesha,43.111791,-88.408913
+28663,WI,Wisconsin,Necedah,Juneau,44.034481,-90.059976
+28664,WI,Wisconsin,Neenah,Winnebago,44.181094,-88.479201
+28665,WI,Wisconsin,Neillsville,Clark,44.549429,-90.611197
+28666,WI,Wisconsin,Nekoosa,Wood,44.281979,-89.881394
+28667,WI,Wisconsin,Nelson,Buffalo,44.42947,-92.000742
+28668,WI,Wisconsin,Nelsonville,Portage,44.495,-89.309722
+28669,WI,Wisconsin,Neopit,Menominee,44.987323,-88.861116
+28670,WI,Wisconsin,Neosho,Dodge,43.297841,-88.520482
+28671,WI,Wisconsin,Neshkoro,Marquette,43.898943,-89.233572
+28672,WI,Wisconsin,"New Auburn",Chippewa,45.23562,-91.519747
+28673,WI,Wisconsin,"New Berlin",Waukesha,42.97397,-88.155274
+28674,WI,Wisconsin,"New Franken",Brown,44.559193,-87.823482
+28675,WI,Wisconsin,"New Glarus",Green,42.814344,-89.643666
+28676,WI,Wisconsin,"New Holstein",Calumet,43.944639,-88.091083
+28677,WI,Wisconsin,"New Lisbon",Juneau,43.88775,-90.152407
+28678,WI,Wisconsin,"New London",Waupaca,44.392847,-88.755428
+28679,WI,Wisconsin,"New Munster",Kenosha,42.579444,-88.227778
+28680,WI,Wisconsin,"New Richmond","Saint Croix",45.159819,-92.551333
+28681,WI,Wisconsin,Newburg,Washington,43.431667,-88.046389
+28682,WI,Wisconsin,Newton,Manitowoc,43.983621,-87.784764
+28683,WI,Wisconsin,Niagara,Marinette,45.765343,-88.030927
+28684,WI,Wisconsin,Nichols,Outagamie,44.563056,-88.463333
+28685,WI,Wisconsin,"North Freedom",Sauk,43.410562,-89.849019
+28686,WI,Wisconsin,"North Lake",Waukesha,43.156111,-88.370556
+28687,WI,Wisconsin,"North Prairie",Waukesha,42.938501,-88.394988
+28688,WI,Wisconsin,Norwalk,Monroe,43.812823,-90.680134
+28689,WI,Wisconsin,"Oak Creek",Milwaukee,42.88916,-87.902661
+28690,WI,Wisconsin,Oakdale,Monroe,43.959722,-90.381667
+28691,WI,Wisconsin,Oakfield,"Fond Du Lac",43.686371,-88.556919
+28692,WI,Wisconsin,Oconomowoc,Waukesha,43.109497,-88.486229
+28693,WI,Wisconsin,Oconto,Oconto,44.891359,-87.891728
+28694,WI,Wisconsin,"Oconto Falls",Oconto,44.875499,-88.155528
+28695,WI,Wisconsin,Odanah,Ashland,46.608333,-90.696667
+28696,WI,Wisconsin,Ogdensburg,Waupaca,44.467803,-89.011851
+28697,WI,Wisconsin,Ogema,Price,45.439187,-90.256513
+28698,WI,Wisconsin,Ojibwa,Sawyer,45.785351,-91.110922
+28699,WI,Wisconsin,Okauchee,Waukesha,43.113011,-88.432287
+28700,WI,Wisconsin,Omro,Winnebago,44.035678,-88.751933
+28701,WI,Wisconsin,Onalaska,"La Crosse",43.897392,-91.231419
+28702,WI,Wisconsin,Oneida,Brown,44.516641,-88.185851
+28703,WI,Wisconsin,Ontario,Vernon,43.717197,-90.620534
+28704,WI,Wisconsin,Oostburg,Sheboygan,43.622939,-87.796955
+28705,WI,Wisconsin,Oregon,Dane,42.929485,-89.387002
+28706,WI,Wisconsin,Orfordville,Rock,42.627766,-89.253292
+28707,WI,Wisconsin,Osceola,Polk,45.321757,-92.697108
+28708,WI,Wisconsin,Oshkosh,Winnebago,44.021962,-88.543635
+28709,WI,Wisconsin,Osseo,Trempealeau,44.559923,-91.219148
+28710,WI,Wisconsin,Owen,Clark,44.957817,-90.5469
+28711,WI,Wisconsin,Oxford,Marquette,43.779914,-89.563175
+28712,WI,Wisconsin,Packwaukee,Marquette,43.763333,-89.458333
+28713,WI,Wisconsin,Palmyra,Jefferson,42.879263,-88.590255
+28714,WI,Wisconsin,Pardeeville,Columbia,43.533975,-89.326514
+28715,WI,Wisconsin,"Park Falls",Price,45.936345,-90.424648
+28716,WI,Wisconsin,"Patch Grove",Grant,42.940278,-90.971944
+28717,WI,Wisconsin,Pearson,Langlade,45.388119,-89.075824
+28718,WI,Wisconsin,"Pelican Lake",Oneida,45.504886,-89.181707
+28719,WI,Wisconsin,"Pell Lake",Walworth,42.538056,-88.350833
+28720,WI,Wisconsin,Pembine,Marinette,45.607398,-87.970363
+28721,WI,Wisconsin,Pepin,Pepin,44.458687,-92.139353
+28722,WI,Wisconsin,Peshtigo,Marinette,45.045778,-87.729795
+28723,WI,Wisconsin,Pewaukee,Waukesha,43.078777,-88.272922
+28724,WI,Wisconsin,Phelps,Vilas,46.064481,-89.081547
+28725,WI,Wisconsin,Phillips,Price,45.697463,-90.404131
+28726,WI,Wisconsin,Phlox,Langlade,45.051111,-89.014167
+28727,WI,Wisconsin,Pickerel,Langlade,45.356658,-88.91365
+28728,WI,Wisconsin,Pickett,Winnebago,43.900917,-88.713457
+28729,WI,Wisconsin,"Pigeon Falls",Trempealeau,44.426389,-91.210278
+28730,WI,Wisconsin,"Pine River",Waushara,44.160393,-89.040415
+28731,WI,Wisconsin,Pittsville,Wood,44.43747,-90.189174
+28732,WI,Wisconsin,Plain,Sauk,43.292693,-90.055825
+28733,WI,Wisconsin,Plainfield,Waushara,44.209079,-89.455896
+28734,WI,Wisconsin,Platteville,Grant,42.73932,-90.485406
+28735,WI,Wisconsin,"Pleasant Prairie",Kenosha,42.5277,-87.8857
+28736,WI,Wisconsin,Plover,Portage,44.450673,-89.542805
+28737,WI,Wisconsin,"Plum City",Pierce,44.635979,-92.183725
+28738,WI,Wisconsin,Plymouth,Sheboygan,43.75258,-87.977906
+28739,WI,Wisconsin,Poplar,Douglas,46.57708,-91.825345
+28740,WI,Wisconsin,"Port Edwards",Wood,44.349705,-89.865246
+28741,WI,Wisconsin,"Port Washington",Ozaukee,43.395463,-87.879659
+28742,WI,Wisconsin,"Port Wing",Bayfield,46.76204,-91.392016
+28743,WI,Wisconsin,Portage,Columbia,43.550145,-89.47139
+28744,WI,Wisconsin,Porterfield,Marinette,45.193399,-87.806243
+28745,WI,Wisconsin,Potosi,Grant,42.6884,-90.700153
+28746,WI,Wisconsin,Potter,Calumet,44.120556,-88.099167
+28747,WI,Wisconsin,Pound,Marinette,45.127317,-88.139621
+28748,WI,Wisconsin,"Powers Lake",Kenosha,42.553611,-88.294444
+28749,WI,Wisconsin,"Poy Sippi",Waushara,44.110069,-88.926835
+28750,WI,Wisconsin,Poynette,Columbia,43.401342,-89.418857
+28751,WI,Wisconsin,"Prairie Du Chien",Crawford,43.042649,-91.119305
+28752,WI,Wisconsin,"Prairie Du Sac",Sauk,43.295631,-89.745233
+28753,WI,Wisconsin,"Prairie Farm",Barron,45.246183,-91.974205
+28754,WI,Wisconsin,Prentice,Price,45.548201,-90.294217
+28755,WI,Wisconsin,Prescott,Pierce,44.747648,-92.753528
+28756,WI,Wisconsin,"Presque Isle",Vilas,46.221735,-89.772795
+28757,WI,Wisconsin,Princeton,"Green Lake",43.843827,-89.124913
+28758,WI,Wisconsin,Pulaski,Brown,44.66112,-88.263447
+28759,WI,Wisconsin,Racine,"",42.6868,-87.8378
+28760,WI,Wisconsin,Racine,Racine,42.726,-87.7825
+28761,WI,Wisconsin,Radisson,Sawyer,45.773359,-91.22615
+28762,WI,Wisconsin,Randolph,Columbia,43.539167,-89.006667
+28763,WI,Wisconsin,Randolph,Dodge,43.539696,-89.002992
+28764,WI,Wisconsin,"Random Lake",Sheboygan,43.567206,-87.981553
+28765,WI,Wisconsin,Readfield,Waupaca,44.2725,-88.769722
+28766,WI,Wisconsin,Readstown,Vernon,43.450791,-90.757872
+28767,WI,Wisconsin,Redgranite,Waushara,44.04381,-89.098125
+28768,WI,Wisconsin,Reedsburg,Sauk,43.5325,-90.0025
+28769,WI,Wisconsin,Reedsville,Manitowoc,44.157566,-87.966028
+28770,WI,Wisconsin,Reeseville,Dodge,43.301278,-88.857117
+28771,WI,Wisconsin,Rewey,Iowa,42.859393,-90.380361
+28772,WI,Wisconsin,Rhinelander,Oneida,45.646718,-89.409285
+28773,WI,Wisconsin,"Rib Lake",Taylor,45.298376,-90.176322
+28774,WI,Wisconsin,"Rice Lake",Barron,45.510466,-91.733544
+28775,WI,Wisconsin,Richfield,Washington,43.273925,-88.215467
+28776,WI,Wisconsin,"Richland Center",Richland,43.362714,-90.391378
+28777,WI,Wisconsin,Ridgeland,Dunn,45.186773,-91.879024
+28778,WI,Wisconsin,Ridgeway,Iowa,43.007654,-89.988946
+28779,WI,Wisconsin,Ringle,Marathon,44.92383,-89.432845
+28780,WI,Wisconsin,Rio,Columbia,43.423053,-89.235362
+28781,WI,Wisconsin,Ripon,"Fond Du Lac",43.845402,-88.842433
+28782,WI,Wisconsin,"River Falls",Pierce,44.85501,-92.631275
+28783,WI,Wisconsin,Roberts,"Saint Croix",44.987356,-92.559773
+28784,WI,Wisconsin,Rochester,Racine,42.741389,-88.224167
+28785,WI,Wisconsin,"Rock Falls",Dunn,44.718611,-91.689722
+28786,WI,Wisconsin,"Rock Springs",Sauk,43.468098,-89.921834
+28787,WI,Wisconsin,Rockland,"La Crosse",43.938159,-90.948846
+28788,WI,Wisconsin,Rosendale,"Fond Du Lac",43.788903,-88.641704
+28789,WI,Wisconsin,Rosholt,Portage,44.662224,-89.335637
+28790,WI,Wisconsin,Rothschild,Marathon,44.88429,-89.619262
+28791,WI,Wisconsin,Rubicon,Dodge,43.312144,-88.452793
+28792,WI,Wisconsin,Rudolph,Wood,44.474061,-89.800252
+28793,WI,Wisconsin,"Saint Cloud","Fond Du Lac",43.807431,-88.184482
+28794,WI,Wisconsin,"Saint Croix Falls",Polk,45.413215,-92.638371
+28795,WI,Wisconsin,"Saint Germain",Vilas,45.918315,-89.486556
+28796,WI,Wisconsin,"Saint Nazianz",Manitowoc,44.006425,-87.922906
+28797,WI,Wisconsin,Salem,Kenosha,42.570922,-88.128731
+28798,WI,Wisconsin,"Sand Creek",Dunn,45.170513,-91.701446
+28799,WI,Wisconsin,Sarona,Washburn,45.708532,-91.762103
+28800,WI,Wisconsin,"Sauk City",Sauk,43.268558,-89.741777
+28801,WI,Wisconsin,Saukville,Ozaukee,43.391265,-87.956765
+28802,WI,Wisconsin,Saxeville,Waushara,44.176111,-89.114444
+28803,WI,Wisconsin,Saxon,Iron,46.495855,-90.438273
+28804,WI,Wisconsin,Sayner,Vilas,45.986664,-89.519437
+28805,WI,Wisconsin,Scandinavia,Waupaca,44.460436,-89.165042
+28806,WI,Wisconsin,Schofield,Marathon,44.906407,-89.581789
+28807,WI,Wisconsin,Seneca,Crawford,43.265,-90.958333
+28808,WI,Wisconsin,Sextonville,Richland,43.278333,-90.290833
+28809,WI,Wisconsin,Seymour,Outagamie,44.509096,-88.317243
+28810,WI,Wisconsin,Sharon,Walworth,42.519367,-88.726522
+28811,WI,Wisconsin,Shawano,Shawano,44.785133,-88.603599
+28812,WI,Wisconsin,Sheboygan,Sheboygan,43.740981,-87.724667
+28813,WI,Wisconsin,"Sheboygan Falls",Sheboygan,43.726598,-87.824228
+28814,WI,Wisconsin,Sheldon,Rusk,45.318171,-90.914148
+28815,WI,Wisconsin,"Shell Lake",Washburn,45.753598,-91.960606
+28816,WI,Wisconsin,Sherwood,Calumet,44.173611,-88.259722
+28817,WI,Wisconsin,Shiocton,Outagamie,44.497202,-88.556236
+28818,WI,Wisconsin,Shullsburg,Lafayette,42.57856,-90.226619
+28819,WI,Wisconsin,"Silver Lake",Kenosha,42.546111,-88.165556
+28820,WI,Wisconsin,Sinsinawa,Grant,42.523611,-90.539167
+28821,WI,Wisconsin,Siren,Burnett,45.78214,-92.389151
+28822,WI,Wisconsin,"Sister Bay",Door,45.187544,-87.113865
+28823,WI,Wisconsin,Slinger,Washington,43.332211,-88.282377
+28824,WI,Wisconsin,Sobieski,Oconto,44.710495,-88.107605
+28825,WI,Wisconsin,"Soldiers Grove",Crawford,43.391857,-90.766293
+28826,WI,Wisconsin,"Solon Springs",Douglas,46.388821,-91.770154
+28827,WI,Wisconsin,Somers,Kenosha,42.640278,-87.910278
+28828,WI,Wisconsin,Somerset,"Saint Croix",45.133064,-92.686466
+28829,WI,Wisconsin,"South Milwaukee",Milwaukee,42.910468,-87.864626
+28830,WI,Wisconsin,"South Range",Douglas,46.588659,-91.945805
+28831,WI,Wisconsin,"South Wayne",Lafayette,42.582199,-89.888844
+28832,WI,Wisconsin,Sparta,Monroe,43.954045,-90.814566
+28833,WI,Wisconsin,Spencer,Marathon,44.739148,-90.311406
+28834,WI,Wisconsin,Spooner,Washburn,45.850468,-91.91555
+28835,WI,Wisconsin,"Spring Green",Sauk,43.18835,-90.067608
+28836,WI,Wisconsin,"Spring Valley",Pierce,44.835569,-92.290599
+28837,WI,Wisconsin,Springbrook,Washburn,45.960384,-91.677734
+28838,WI,Wisconsin,Springfield,Walworth,42.641667,-88.411944
+28839,WI,Wisconsin,Stanley,Chippewa,44.968872,-90.938935
+28840,WI,Wisconsin,"Star Lake",Vilas,46.038333,-89.472222
+28841,WI,Wisconsin,"Star Prairie",Polk,45.2013,-92.551353
+28842,WI,Wisconsin,Stetsonville,Taylor,45.07923,-90.282931
+28843,WI,Wisconsin,Steuben,Crawford,43.195464,-90.860878
+28844,WI,Wisconsin,"Stevens Point",Portage,44.521221,-89.558764
+28845,WI,Wisconsin,Stitzer,Grant,42.92142,-90.607924
+28846,WI,Wisconsin,Stockbridge,Calumet,44.071667,-88.298889
+28847,WI,Wisconsin,Stockholm,Pepin,44.500441,-92.228429
+28848,WI,Wisconsin,Stoddard,Vernon,43.691227,-91.19188
+28849,WI,Wisconsin,"Stone Lake",Sawyer,45.833733,-91.509291
+28850,WI,Wisconsin,Stoughton,Dane,42.929007,-89.223989
+28851,WI,Wisconsin,Stratford,Marathon,44.789878,-90.058317
+28852,WI,Wisconsin,Strum,Trempealeau,44.567356,-91.383271
+28853,WI,Wisconsin,"Sturgeon Bay",Door,44.84384,-87.375311
+28854,WI,Wisconsin,Sturtevant,Racine,42.69673,-87.903082
+28855,WI,Wisconsin,Suamico,Brown,44.631944,-88.039167
+28856,WI,Wisconsin,Sullivan,Jefferson,42.99825,-88.602569
+28857,WI,Wisconsin,"Summit Lake",Langlade,45.320414,-89.180743
+28858,WI,Wisconsin,"Sun Prairie",Dane,43.186901,-89.222662
+28859,WI,Wisconsin,Superior,Douglas,46.701552,-92.091174
+28860,WI,Wisconsin,Suring,Oconto,45.018551,-88.362767
+28861,WI,Wisconsin,Sussex,Waukesha,43.144059,-88.227064
+28862,WI,Wisconsin,Taylor,Jackson,44.289855,-91.112752
+28863,WI,Wisconsin,Theresa,Dodge,43.504477,-88.447766
+28864,WI,Wisconsin,Thiensville,Ozaukee,43.225145,-87.959357
+28865,WI,Wisconsin,Thorp,Clark,44.957319,-90.802861
+28866,WI,Wisconsin,"Three Lakes",Oneida,45.804633,-89.132792
+28867,WI,Wisconsin,Tigerton,Shawano,44.729938,-89.056893
+28868,WI,Wisconsin,Tilleda,Shawano,44.811812,-88.907498
+28869,WI,Wisconsin,"Tisch Mills",Manitowoc,44.327222,-87.623611
+28870,WI,Wisconsin,Tomah,Monroe,43.994833,-90.491704
+28871,WI,Wisconsin,Tomahawk,Lincoln,45.496308,-89.727269
+28872,WI,Wisconsin,Tony,Rusk,45.474082,-90.986938
+28873,WI,Wisconsin,Townsend,Oconto,45.314819,-88.610743
+28874,WI,Wisconsin,Trego,Washburn,45.951556,-91.858051
+28875,WI,Wisconsin,Trempealeau,Trempealeau,44.021843,-91.4282
+28876,WI,Wisconsin,Trevor,Kenosha,42.520112,-88.13869
+28877,WI,Wisconsin,Tripoli,Oneida,45.581387,-89.985218
+28878,WI,Wisconsin,"Tunnel City",Monroe,44.007222,-90.565556
+28879,WI,Wisconsin,"Turtle Lake",Barron,45.421349,-92.178142
+28880,WI,Wisconsin,"Twin Lakes",Kenosha,42.523173,-88.257318
+28881,WI,Wisconsin,"Two Rivers",Manitowoc,44.166008,-87.585504
+28882,WI,Wisconsin,"Union Center",Juneau,43.685278,-90.266667
+28883,WI,Wisconsin,"Union Grove",Racine,42.689643,-88.039004
+28884,WI,Wisconsin,Unity,Marathon,44.822676,-90.322074
+28885,WI,Wisconsin,Upson,Iron,46.376124,-90.405135
+28886,WI,Wisconsin,Valders,Manitowoc,44.041977,-87.881183
+28887,WI,Wisconsin,"Van Dyne","Fond Du Lac",43.873399,-88.510008
+28888,WI,Wisconsin,Verona,Dane,42.999913,-89.552247
+28889,WI,Wisconsin,Vesper,Wood,44.467656,-89.982553
+28890,WI,Wisconsin,Viola,Richland,43.504758,-90.655416
+28891,WI,Wisconsin,Viroqua,Vernon,43.54419,-90.893865
+28892,WI,Wisconsin,Wabeno,Forest,45.433172,-88.662456
+28893,WI,Wisconsin,Waldo,Sheboygan,43.657087,-87.97217
+28894,WI,Wisconsin,Wales,Waukesha,43.008787,-88.378742
+28895,WI,Wisconsin,Walworth,Walworth,42.535005,-88.602738
+28896,WI,Wisconsin,Warrens,Monroe,44.15697,-90.496692
+28897,WI,Wisconsin,Wascott,Douglas,46.1725,-91.798056
+28898,WI,Wisconsin,Washburn,Bayfield,46.680595,-90.909516
+28899,WI,Wisconsin,"Washington Island",Door,45.374042,-86.913664
+28900,WI,Wisconsin,Waterford,Racine,42.796882,-88.19335
+28901,WI,Wisconsin,Waterloo,Jefferson,43.183171,-88.983835
+28902,WI,Wisconsin,Watertown,Dodge,43.194722,-88.728889
+28903,WI,Wisconsin,Watertown,Jefferson,43.192971,-88.71851
+28904,WI,Wisconsin,Waukau,Winnebago,43.989167,-88.771667
+28905,WI,Wisconsin,Waukesha,Waukesha,42.999304,-88.219559
+28906,WI,Wisconsin,Waunakee,Dane,43.181828,-89.45317
+28907,WI,Wisconsin,Waupaca,Waupaca,44.348101,-89.110143
+28908,WI,Wisconsin,Waupun,Dodge,43.632441,-88.737253
+28909,WI,Wisconsin,Wausau,Marathon,44.963433,-89.633955
+28910,WI,Wisconsin,Wausaukee,Marinette,45.349507,-87.909877
+28911,WI,Wisconsin,Wautoma,Waushara,44.065576,-89.266551
+28912,WI,Wisconsin,Wauzeka,Crawford,43.114264,-90.923885
+28913,WI,Wisconsin,Webster,Burnett,45.874001,-92.322722
+28914,WI,Wisconsin,"West Bend",Washington,43.425278,-88.183333
+28915,WI,Wisconsin,"West Salem","La Crosse",43.906253,-91.089311
+28916,WI,Wisconsin,Westboro,Taylor,45.344539,-90.307194
+28917,WI,Wisconsin,Westby,Vernon,43.663123,-90.87403
+28918,WI,Wisconsin,Westfield,Marquette,43.896788,-89.502015
+28919,WI,Wisconsin,Weyauwega,Waupaca,44.320973,-88.941047
+28920,WI,Wisconsin,Weyerhaeuser,Rusk,45.426347,-91.428944
+28921,WI,Wisconsin,Wheeler,Dunn,45.071856,-91.887055
+28922,WI,Wisconsin,"White Lake",Langlade,45.171465,-88.755489
+28923,WI,Wisconsin,Whitehall,Trempealeau,44.382683,-91.302953
+28924,WI,Wisconsin,Whitelaw,Manitowoc,44.157269,-87.826698
+28925,WI,Wisconsin,Whitewater,Walworth,42.827174,-88.742864
+28926,WI,Wisconsin,"Wild Rose",Waushara,44.183433,-89.195252
+28927,WI,Wisconsin,Willard,Clark,44.727378,-90.749897
+28928,WI,Wisconsin,"Williams Bay",Walworth,42.576678,-88.543089
+28929,WI,Wisconsin,Wilmot,Kenosha,42.512778,-88.181944
+28930,WI,Wisconsin,Wilson,"Saint Croix",44.94658,-92.196538
+28931,WI,Wisconsin,Wilton,Monroe,43.832209,-90.516185
+28932,WI,Wisconsin,Windsor,Dane,43.214121,-89.341469
+28933,WI,Wisconsin,Winnebago,Winnebago,44.075833,-88.525
+28934,WI,Wisconsin,Winneconne,Winnebago,44.118704,-88.721384
+28935,WI,Wisconsin,Winter,Sawyer,45.841419,-90.949591
+28936,WI,Wisconsin,"Wisconsin Dells",Columbia,43.650789,-89.76652
+28937,WI,Wisconsin,"Wisconsin Rapids",Wood,44.375803,-89.806229
+28938,WI,Wisconsin,Withee,Clark,44.975726,-90.604862
+28939,WI,Wisconsin,Wittenberg,Shawano,44.823247,-89.166479
+28940,WI,Wisconsin,Wonewoc,Juneau,43.62848,-90.239357
+28941,WI,Wisconsin,Woodford,Lafayette,42.648611,-89.8625
+28942,WI,Wisconsin,Woodland,Dodge,43.370278,-88.518611
+28943,WI,Wisconsin,Woodman,Grant,43.057697,-90.824539
+28944,WI,Wisconsin,Woodruff,Oneida,45.918583,-89.69545
+28945,WI,Wisconsin,Woodville,"Saint Croix",44.940806,-92.284803
+28946,WI,Wisconsin,Woodworth,Kenosha,42.558056,-88.001111
+28947,WI,Wisconsin,Wrightstown,Brown,44.338377,-88.121769
+28948,WI,Wisconsin,Wyocena,Columbia,43.495833,-89.308333
+28949,WI,Wisconsin,Zachow,Shawano,44.740278,-88.444722
+28950,WI,Wisconsin,Zenda,Walworth,42.511944,-88.481667
+28951,WV,"West Virginia",Accoville,Logan,37.768611,-81.837222
+28952,WV,"West Virginia",Adrian,Upshur,38.913422,-80.288663
+28953,WV,"West Virginia",Advent,Jackson,38.623595,-81.572063
+28954,WV,"West Virginia",Albright,Preston,39.570116,-79.635811
+28955,WV,"West Virginia",Alderson,Monroe,37.730148,-80.671306
+28956,WV,"West Virginia",Alkol,Lincoln,38.160884,-81.983972
+28957,WV,"West Virginia","Allen Junction",Wyoming,37.589167,-81.350833
+28958,WV,"West Virginia",Alloy,Fayette,38.1375,-81.274444
+28959,WV,"West Virginia",Alma,Tyler,39.429757,-80.817157
+28960,WV,"West Virginia","Alum Bridge",Lewis,39.042474,-80.688196
+28961,WV,"West Virginia","Alum Creek",Kanawha,38.285814,-81.786258
+28962,WV,"West Virginia",Amherstdale,Logan,37.795586,-81.758912
+28963,WV,"West Virginia",Amigo,Wyoming,37.59211,-81.349145
+28964,WV,"West Virginia",Amma,Roane,38.545518,-81.253182
+28965,WV,"West Virginia",Anawalt,Mcdowell,37.335833,-81.436667
+28966,WV,"West Virginia",Anmoore,Harrison,39.256667,-80.2925
+28967,WV,"West Virginia",Ansted,Fayette,38.13686,-81.095487
+28968,WV,"West Virginia","Apple Grove",Mason,38.713066,-82.172556
+28969,WV,"West Virginia",Arbovale,Pocahontas,38.454575,-79.793403
+28970,WV,"West Virginia",Arnett,Raleigh,37.850214,-81.435484
+28971,WV,"West Virginia",Arnoldsburg,Calhoun,38.822704,-81.155135
+28972,WV,"West Virginia",Arthurdale,Preston,39.495,-79.815278
+28973,WV,"West Virginia",Artie,Raleigh,37.918139,-81.378772
+28974,WV,"West Virginia",Asbury,Greenbrier,37.848766,-80.565319
+28975,WV,"West Virginia",Ashford,Boone,38.182291,-81.711324
+28976,WV,"West Virginia",Ashton,Mason,38.657102,-82.108907
+28977,WV,"West Virginia",Athens,Mercer,37.432298,-80.997362
+28978,WV,"West Virginia",Auburn,Ritchie,39.086382,-80.883656
+28979,WV,"West Virginia",Augusta,Hampshire,39.299821,-78.593089
+28980,WV,"West Virginia",Aurora,Preston,39.304719,-79.571088
+28981,WV,"West Virginia",Avondale,Mcdowell,37.4125,-81.784444
+28982,WV,"West Virginia",Baisden,Mingo,37.571492,-81.932758
+28983,WV,"West Virginia",Baker,Hardy,39.065588,-78.774826
+28984,WV,"West Virginia",Bakerton,Jefferson,39.362778,-77.763333
+28985,WV,"West Virginia",Ballard,Monroe,37.49803,-80.76139
+28986,WV,"West Virginia",Bancroft,Putnam,38.509444,-81.84
+28987,WV,"West Virginia",Barboursville,Cabell,38.389272,-82.295973
+28988,WV,"West Virginia",Barrackville,Marion,39.503611,-80.166944
+28989,WV,"West Virginia",Bartley,Mcdowell,37.340556,-81.737778
+28990,WV,"West Virginia",Bartow,Pocahontas,38.551266,-79.795242
+28991,WV,"West Virginia",Baxter,Marion,39.536056,-80.141691
+28992,WV,"West Virginia",Bayard,Grant,39.254167,-79.398056
+28993,WV,"West Virginia",Beaver,Raleigh,37.751581,-81.073104
+28994,WV,"West Virginia",Beckley,Raleigh,37.793214,-81.206084
+28995,WV,"West Virginia","Beech Bottom",Brooke,40.226389,-80.651667
+28996,WV,"West Virginia",Beeson,Mercer,37.490894,-81.206215
+28997,WV,"West Virginia",Belington,Barbour,39.024439,-79.949508
+28998,WV,"West Virginia",Belle,Kanawha,38.225381,-81.505812
+28999,WV,"West Virginia",Belleville,Wood,39.131417,-81.692316
+29000,WV,"West Virginia",Belmont,Pleasants,39.367927,-81.27881
+29001,WV,"West Virginia",Belva,Nicholas,38.249105,-81.156572
+29002,WV,"West Virginia",Benwood,Marshall,40.013299,-80.71603
+29003,WV,"West Virginia",Berea,Ritchie,39.130452,-80.922322
+29004,WV,"West Virginia",Bergoo,Webster,38.486389,-80.300833
+29005,WV,"West Virginia","Berkeley Springs",Morgan,39.58736,-78.219217
+29006,WV,"West Virginia",Berwind,Mcdowell,37.2475,-81.641111
+29007,WV,"West Virginia",Bethany,Brooke,40.202,-80.55463
+29008,WV,"West Virginia",Beverly,Randolph,38.828021,-79.865121
+29009,WV,"West Virginia",Bickmore,Clay,38.365947,-81.106838
+29010,WV,"West Virginia","Big Bend",Calhoun,38.971941,-81.13603
+29011,WV,"West Virginia","Big Creek",Logan,38.004555,-82.016056
+29012,WV,"West Virginia","Big Run",Wetzel,39.59414,-80.583717
+29013,WV,"West Virginia","Big Sandy",Mcdowell,37.464167,-81.698333
+29014,WV,"West Virginia","Big Springs",Calhoun,38.996306,-81.069813
+29015,WV,"West Virginia",Bim,Boone,37.893437,-81.688047
+29016,WV,"West Virginia","Birch River",Nicholas,38.491424,-80.745873
+29017,WV,"West Virginia",Blacksville,Monongalia,39.695821,-80.232646
+29018,WV,"West Virginia",Blair,Logan,37.878333,-81.828056
+29019,WV,"West Virginia",Bloomery,Hampshire,39.328606,-78.381561
+29020,WV,"West Virginia",Bloomingrose,Boone,38.141189,-81.636737
+29021,WV,"West Virginia",Blount,Kanawha,38.312116,-81.405194
+29022,WV,"West Virginia","Blue Creek",Kanawha,38.450556,-81.4575
+29023,WV,"West Virginia","Blue Jay","",37.736944,-81.138056
+29024,WV,"West Virginia",Bluefield,Mercer,37.279788,-81.229023
+29025,WV,"West Virginia","Bob White",Boone,37.958711,-81.720884
+29026,WV,"West Virginia",Bolt,Raleigh,37.767303,-81.415612
+29027,WV,"West Virginia",Bomont,Clay,38.407295,-81.21999
+29028,WV,"West Virginia",Boomer,Fayette,38.150556,-81.2875
+29029,WV,"West Virginia",Borderland,Mingo,37.713889,-82.309167
+29030,WV,"West Virginia",Bowden,Tucker,38.934863,-79.619347
+29031,WV,"West Virginia",Bradley,Raleigh,37.865278,-81.194167
+29032,WV,"West Virginia",Bradshaw,Mcdowell,37.35,-81.801667
+29033,WV,"West Virginia",Bramwell,Mercer,37.332114,-81.32556
+29034,WV,"West Virginia",Branchland,Lincoln,38.269444,-82.268367
+29035,WV,"West Virginia",Brandywine,Pendleton,38.635701,-79.209629
+29036,WV,"West Virginia",Breeden,Mingo,37.919751,-82.254748
+29037,WV,"West Virginia",Brenton,Wyoming,37.584362,-81.649502
+29038,WV,"West Virginia",Bretz,Preston,39.542222,-79.800833
+29039,WV,"West Virginia",Bridgeport,Harrison,39.29537,-80.242692
+29040,WV,"West Virginia",Brohard,Wirt,39.033756,-81.177528
+29041,WV,"West Virginia","Bruceton Mills",Preston,39.645394,-79.615941
+29042,WV,"West Virginia",Bruno,Logan,37.690556,-81.869167
+29043,WV,"West Virginia",Buckeye,Pocahontas,38.181506,-80.139342
+29044,WV,"West Virginia",Buckhannon,Upshur,38.98407,-80.217824
+29045,WV,"West Virginia",Bud,Wyoming,37.5375,-81.379444
+29046,WV,"West Virginia",Buffalo,Putnam,38.60924,-81.949971
+29047,WV,"West Virginia","Bunker Hill",Berkeley,39.327554,-78.048718
+29048,WV,"West Virginia",Burlington,Mineral,39.388709,-78.912278
+29049,WV,"West Virginia",Burnsville,Braxton,38.850391,-80.658989
+29050,WV,"West Virginia",Burton,Wetzel,39.667984,-80.405931
+29051,WV,"West Virginia","Cabin Creek",Kanawha,38.185795,-81.515258
+29052,WV,"West Virginia",Cabins,Grant,38.951199,-79.278332
+29053,WV,"West Virginia",Cairo,Ritchie,39.23249,-81.155427
+29054,WV,"West Virginia",Caldwell,Greenbrier,37.773488,-80.377298
+29055,WV,"West Virginia",Calvin,Nicholas,38.327679,-80.70163
+29056,WV,"West Virginia",Camden,Lewis,39.089268,-80.591531
+29057,WV,"West Virginia","Camden On Gauley",Webster,38.379246,-80.591408
+29058,WV,"West Virginia",Cameron,Marshall,39.82272,-80.566876
+29059,WV,"West Virginia","Camp Creek",Mercer,37.484053,-81.111073
+29060,WV,"West Virginia",Cannelton,Fayette,38.194167,-81.296111
+29061,WV,"West Virginia",Canvas,Nicholas,38.262445,-80.744637
+29062,WV,"West Virginia","Capon Bridge",Hampshire,39.280198,-78.464413
+29063,WV,"West Virginia","Capon Springs",Hampshire,39.136111,-78.484722
+29064,WV,"West Virginia",Carolina,Marion,39.480278,-80.273611
+29065,WV,"West Virginia",Cass,Pocahontas,38.433659,-79.885278
+29066,WV,"West Virginia",Cassville,Monongalia,39.665556,-80.063889
+29067,WV,"West Virginia","Cedar Grove",Kanawha,38.213286,-81.406711
+29068,WV,"West Virginia",Cedarville,Gilmer,38.839711,-80.840342
+29069,WV,"West Virginia","Center Point",Doddridge,39.412472,-80.635227
+29070,WV,"West Virginia",Ceredo,Wayne,38.396389,-82.558889
+29071,WV,"West Virginia",Chapmanville,Logan,37.938535,-82.051241
+29072,WV,"West Virginia","Charles Town",Jefferson,39.277085,-77.856254
+29073,WV,"West Virginia",Charleston,Kanawha,38.349,-81.630606
+29074,WV,"West Virginia","Charlton Heights",Fayette,38.123611,-81.234167
+29075,WV,"West Virginia",Charmco,Greenbrier,37.98948,-80.707745
+29076,WV,"West Virginia",Chattaroy,Mingo,37.703333,-82.281111
+29077,WV,"West Virginia",Chauncey,Logan,37.766111,-81.987778
+29078,WV,"West Virginia",Chester,Hancock,40.598109,-80.558439
+29079,WV,"West Virginia",Chloe,Calhoun,38.671201,-81.090126
+29080,WV,"West Virginia",Circleville,Pendleton,38.623039,-79.53672
+29081,WV,"West Virginia",Clarksburg,Harrison,39.278422,-80.348683
+29082,WV,"West Virginia",Clay,Clay,38.476354,-81.069588
+29083,WV,"West Virginia","Clear Creek",Raleigh,37.89158,-81.320866
+29084,WV,"West Virginia","Clear Fork",Wyoming,37.646301,-81.689268
+29085,WV,"West Virginia",Clendenin,Kanawha,38.477687,-81.356039
+29086,WV,"West Virginia",Cleveland,Upshur,38.839225,-80.342849
+29087,WV,"West Virginia",Clothier,Logan,37.79333,-81.988142
+29088,WV,"West Virginia","Coal City",Raleigh,37.666111,-81.184444
+29089,WV,"West Virginia","Coal Mountain",Wyoming,37.688486,-81.707862
+29090,WV,"West Virginia",Coalton,Randolph,38.91438,-79.976724
+29091,WV,"West Virginia",Coalwood,"",37.387222,-81.652778
+29092,WV,"West Virginia",Colcord,Raleigh,37.949166,-81.443699
+29093,WV,"West Virginia",Colfax,Marion,39.434722,-80.131944
+29094,WV,"West Virginia",Colliers,Brooke,40.348391,-80.549341
+29095,WV,"West Virginia",Comfort,Boone,38.137191,-81.596177
+29096,WV,"West Virginia","Cool Ridge",Raleigh,37.65735,-81.10528
+29097,WV,"West Virginia",Copen,Braxton,38.830556,-80.728481
+29098,WV,"West Virginia",Cora,Logan,37.834167,-82.026667
+29099,WV,"West Virginia",Corinne,Wyoming,37.572778,-81.356667
+29100,WV,"West Virginia",Costa,Boone,38.164693,-81.708015
+29101,WV,"West Virginia",Cottageville,Jackson,38.863285,-81.818609
+29102,WV,"West Virginia",Covel,Wyoming,37.490833,-81.322778
+29103,WV,"West Virginia",Cowen,Webster,38.413273,-80.535807
+29104,WV,"West Virginia","Coxs Mills",Gilmer,39.002102,-80.874592
+29105,WV,"West Virginia","Crab Orchard",Raleigh,37.720515,-81.249098
+29106,WV,"West Virginia",Craigsville,Nicholas,38.325389,-80.64438
+29107,WV,"West Virginia",Crawford,Lewis,38.840065,-80.400749
+29108,WV,"West Virginia",Crawley,Greenbrier,37.939676,-80.6309
+29109,WV,"West Virginia",Creston,Wirt,38.937805,-81.236905
+29110,WV,"West Virginia",Crum,Wayne,37.938879,-82.462359
+29111,WV,"West Virginia",Cucumber,Mcdowell,37.277778,-81.626944
+29112,WV,"West Virginia",Culloden,Cabell,38.419831,-82.068963
+29113,WV,"West Virginia",Cyclone,Wyoming,37.74466,-81.650458
+29114,WV,"West Virginia",Dailey,Randolph,38.798611,-79.896389
+29115,WV,"West Virginia",Dallas,Marshall,39.978343,-80.550804
+29116,WV,"West Virginia",Danese,Fayette,37.903615,-80.947114
+29117,WV,"West Virginia",Daniels,Raleigh,37.732247,-81.139108
+29118,WV,"West Virginia",Danville,Boone,38.03356,-81.854227
+29119,WV,"West Virginia",Davin,Logan,37.726499,-81.805706
+29120,WV,"West Virginia",Davis,Tucker,39.088227,-79.456278
+29121,WV,"West Virginia",Davisville,Wood,39.212635,-81.479863
+29122,WV,"West Virginia",Davy,Mcdowell,37.468339,-81.667889
+29123,WV,"West Virginia",Dawes,Kanawha,38.142778,-81.452222
+29124,WV,"West Virginia","Deep Water",Fayette,38.126667,-81.263889
+29125,WV,"West Virginia",Delbarton,Mingo,37.703833,-82.131922
+29126,WV,"West Virginia",Dellslow,Monongalia,39.606944,-79.892222
+29127,WV,"West Virginia",Delray,Hampshire,39.179564,-78.639427
+29128,WV,"West Virginia",Diana,Webster,38.575471,-80.431962
+29129,WV,"West Virginia",Dille,Clay,38.474704,-80.853784
+29130,WV,"West Virginia",Dingess,Mingo,37.870336,-82.195108
+29131,WV,"West Virginia",Dixie,Nicholas,38.26631,-81.186249
+29132,WV,"West Virginia",Dorothy,Raleigh,37.96219,-81.496842
+29133,WV,"West Virginia",Dothan,Fayette,37.967222,-81.222222
+29134,WV,"West Virginia",Drennen,Nicholas,38.258729,-81.008868
+29135,WV,"West Virginia","Dry Creek",Raleigh,37.860686,-81.481398
+29136,WV,"West Virginia",Drybranch,Kanawha,38.18,-81.466944
+29137,WV,"West Virginia",Dryfork,Randolph,38.957616,-79.453403
+29138,WV,"West Virginia",Duck,Clay,38.564652,-80.976416
+29139,WV,"West Virginia",Dunbar,Kanawha,38.368271,-81.742467
+29140,WV,"West Virginia",Dunlow,Wayne,38.02829,-82.38266
+29141,WV,"West Virginia",Dunmore,Pocahontas,38.363605,-79.855557
+29142,WV,"West Virginia",Durbin,Pocahontas,38.616313,-79.793464
+29143,WV,"West Virginia","East Bank",Kanawha,38.218056,-81.443056
+29144,WV,"West Virginia","East Lynn",Wayne,38.199474,-82.327931
+29145,WV,"West Virginia",Eccles,Raleigh,37.783056,-81.266111
+29146,WV,"West Virginia",Eckman,Mcdowell,37.404444,-81.464444
+29147,WV,"West Virginia",Edgarton,Mingo,37.580278,-82.104722
+29148,WV,"West Virginia",Edmond,Fayette,38.054441,-81.032634
+29149,WV,"West Virginia",Eglon,Preston,39.292514,-79.510919
+29150,WV,"West Virginia",Elbert,Mcdowell,37.318056,-81.544167
+29151,WV,"West Virginia",Eleanor,Putnam,38.536667,-81.931667
+29152,WV,"West Virginia",Elizabeth,Wirt,39.056618,-81.398889
+29153,WV,"West Virginia","Elk Garden",Mineral,39.363088,-79.153871
+29154,WV,"West Virginia",Elkhorn,Mcdowell,37.385556,-81.411111
+29155,WV,"West Virginia",Elkins,Randolph,38.925304,-79.847115
+29156,WV,"West Virginia",Elkview,Kanawha,38.432317,-81.481739
+29157,WV,"West Virginia",Ellamore,Randolph,38.933966,-80.092611
+29158,WV,"West Virginia",Ellenboro,Ritchie,39.282364,-81.060382
+29159,WV,"West Virginia",Elton,Summers,37.846825,-80.825207
+29160,WV,"West Virginia",Enterprise,Harrison,39.425998,-80.316704
+29161,WV,"West Virginia",Erbacon,Webster,38.541864,-80.574232
+29162,WV,"West Virginia",Eskdale,Kanawha,38.106944,-81.449167
+29163,WV,"West Virginia",Ethel,Logan,37.866389,-81.9125
+29164,WV,"West Virginia",Evans,Jackson,38.811281,-81.790858
+29165,WV,"West Virginia",Exchange,Braxton,38.806866,-80.768123
+29166,WV,"West Virginia",Fairdale,Raleigh,37.786578,-81.401758
+29167,WV,"West Virginia",Fairlea,Greenbrier,37.780556,-80.457222
+29168,WV,"West Virginia",Fairmont,Marion,39.472677,-80.146041
+29169,WV,"West Virginia",Fairview,Marion,39.610335,-80.252918
+29170,WV,"West Virginia","Falling Rock",Kanawha,38.475579,-81.380874
+29171,WV,"West Virginia","Falling Waters",Berkeley,39.586473,-77.885152
+29172,WV,"West Virginia",Fanrock,Wyoming,37.562721,-81.623631
+29173,WV,"West Virginia",Farmington,Marion,39.50287,-80.256643
+29174,WV,"West Virginia",Fayetteville,Fayette,38.062774,-81.080969
+29175,WV,"West Virginia",Fenwick,Nicholas,38.244657,-80.634972
+29176,WV,"West Virginia",Fisher,Hardy,39.04796,-78.988756
+29177,WV,"West Virginia","Flat Top",Mercer,37.550028,-81.127976
+29178,WV,"West Virginia",Flatwoods,Braxton,38.724475,-80.638478
+29179,WV,"West Virginia",Flemington,Taylor,39.271069,-80.128179
+29180,WV,"West Virginia",Follansbee,Brooke,40.329552,-80.584954
+29181,WV,"West Virginia",Folsom,Wetzel,39.469345,-80.525806
+29182,WV,"West Virginia","Forest Hill",Summers,37.56005,-80.814923
+29183,WV,"West Virginia","Fort Ashby",Mineral,39.497045,-78.774296
+29184,WV,"West Virginia","Fort Gay",Wayne,38.133496,-82.554124
+29185,WV,"West Virginia",Foster,Boone,38.090819,-81.765876
+29186,WV,"West Virginia","Four States",Marion,39.479722,-80.31
+29187,WV,"West Virginia",Frametown,Braxton,38.636828,-80.877416
+29188,WV,"West Virginia",Frankford,Greenbrier,37.90361,-80.364692
+29189,WV,"West Virginia",Franklin,Pendleton,38.639985,-79.353776
+29190,WV,"West Virginia","Fraziers Bottom",Putnam,38.551678,-82.011068
+29191,WV,"West Virginia",Freeman,Mercer,37.33,-81.308056
+29192,WV,"West Virginia","French Creek",Upshur,38.851145,-80.274339
+29193,WV,"West Virginia",Frenchton,Upshur,38.872778,-80.356667
+29194,WV,"West Virginia",Friendly,Tyler,39.502444,-81.034544
+29195,WV,"West Virginia",Gallagher,Kanawha,38.189406,-81.386231
+29196,WV,"West Virginia","Gallipolis Ferry",Mason,38.765028,-82.153496
+29197,WV,"West Virginia",Galloway,Barbour,39.231667,-80.122222
+29198,WV,"West Virginia",Gandeeville,Roane,38.703382,-81.424329
+29199,WV,"West Virginia","Gap Mills",Monroe,37.527978,-80.390497
+29200,WV,"West Virginia",Gary,Mcdowell,37.363611,-81.550278
+29201,WV,"West Virginia",Gassaway,Braxton,38.686193,-80.786339
+29202,WV,"West Virginia","Gauley Bridge",Fayette,38.168899,-81.19596
+29203,WV,"West Virginia",Gay,Jackson,38.797842,-81.570301
+29204,WV,"West Virginia",Genoa,Wayne,38.088908,-82.46692
+29205,WV,"West Virginia",Gerrardstown,Berkeley,39.378039,-78.114119
+29206,WV,"West Virginia",Ghent,Raleigh,37.62079,-81.101921
+29207,WV,"West Virginia",Gilbert,Mingo,37.594153,-81.866468
+29208,WV,"West Virginia",Gilboa,Nicholas,38.298304,-80.952232
+29209,WV,"West Virginia",Given,Jackson,38.713046,-81.682542
+29210,WV,"West Virginia",Glady,Randolph,38.866925,-79.734202
+29211,WV,"West Virginia",Glasgow,Kanawha,38.215278,-81.424722
+29212,WV,"West Virginia",Glen,Clay,38.368989,-81.223401
+29213,WV,"West Virginia","Glen Dale",Marshall,39.959732,-80.732263
+29214,WV,"West Virginia","Glen Daniel",Raleigh,37.754698,-81.403294
+29215,WV,"West Virginia","Glen Easton",Marshall,39.853121,-80.666069
+29216,WV,"West Virginia","Glen Ferris",Fayette,38.153056,-81.215
+29217,WV,"West Virginia","Glen Fork",Wyoming,37.644691,-81.540209
+29218,WV,"West Virginia","Glen Jean",Fayette,37.926389,-81.150278
+29219,WV,"West Virginia","Glen Rogers",Wyoming,37.721685,-81.428989
+29220,WV,"West Virginia","Glen White",Raleigh,37.730278,-81.28
+29221,WV,"West Virginia",Glengary,Berkeley,39.383889,-78.155833
+29222,WV,"West Virginia",Glenville,Gilmer,38.933619,-80.82783
+29223,WV,"West Virginia",Glenwood,Mason,38.544936,-82.143431
+29224,WV,"West Virginia",Gordon,Boone,37.978191,-81.67132
+29225,WV,"West Virginia",Gormania,Grant,39.271499,-79.340136
+29226,WV,"West Virginia",Grafton,Taylor,39.341386,-80.028509
+29227,WV,"West Virginia","Grant Town",Marion,39.558056,-80.181944
+29228,WV,"West Virginia",Grantsville,Calhoun,38.932436,-81.076294
+29229,WV,"West Virginia",Granville,Monongalia,39.645833,-79.9875
+29230,WV,"West Virginia","Grassy Meadows",Greenbrier,37.842757,-80.73024
+29231,WV,"West Virginia","Great Cacapon",Morgan,39.583557,-78.33312
+29232,WV,"West Virginia","Green Bank",Pocahontas,38.409664,-79.801535
+29233,WV,"West Virginia","Green Spring",Hampshire,39.502931,-78.627191
+29234,WV,"West Virginia","Green Sulphur Springs",Summers,37.808553,-80.839922
+29235,WV,"West Virginia",Greenville,Monroe,37.521184,-80.676128
+29236,WV,"West Virginia",Griffithsville,Lincoln,38.246985,-81.982028
+29237,WV,"West Virginia",Gypsy,Harrison,39.368611,-80.318056
+29238,WV,"West Virginia","Hacker Valley",Webster,38.679583,-80.402345
+29239,WV,"West Virginia",Halltown,Jefferson,39.313889,-77.798056
+29240,WV,"West Virginia",Hambleton,Tucker,39.116836,-79.641565
+29241,WV,"West Virginia",Hamlin,Lincoln,38.289556,-82.104695
+29242,WV,"West Virginia",Handley,Kanawha,38.186944,-81.365556
+29243,WV,"West Virginia",Hanover,Wyoming,37.563029,-81.813617
+29244,WV,"West Virginia",Hansford,Kanawha,38.127158,-81.395026
+29245,WV,"West Virginia",Harman,Randolph,38.923369,-79.524599
+29246,WV,"West Virginia",Harper,Raleigh,37.798611,-81.261667
+29247,WV,"West Virginia","Harpers Ferry",Jefferson,39.315283,-77.769449
+29248,WV,"West Virginia",Harrisville,Ritchie,39.199608,-81.045967
+29249,WV,"West Virginia",Hartford,Mason,38.986111,-81.992222
+29250,WV,"West Virginia",Harts,Lincoln,38.008878,-82.155358
+29251,WV,"West Virginia",Haywood,Harrison,39.381111,-80.336111
+29252,WV,"West Virginia",Heaters,Braxton,38.755807,-80.642884
+29253,WV,"West Virginia",Hedgesville,Berkeley,39.547034,-78.056016
+29254,WV,"West Virginia",Helen,Raleigh,37.634722,-81.314167
+29255,WV,"West Virginia",Helvetia,Randolph,38.771258,-80.138167
+29256,WV,"West Virginia",Hemphill,Mcdowell,37.444722,-81.595556
+29257,WV,"West Virginia",Henderson,Mason,38.826512,-82.136381
+29258,WV,"West Virginia",Hendricks,Tucker,39.074814,-79.630302
+29259,WV,"West Virginia",Henlawson,Logan,37.902222,-81.988333
+29260,WV,"West Virginia",Hensley,Mcdowell,37.473889,-81.7
+29261,WV,"West Virginia",Hepzibah,Harrison,39.3325,-80.335556
+29262,WV,"West Virginia",Herndon,Wyoming,37.526431,-81.346777
+29263,WV,"West Virginia",Hernshaw,Kanawha,38.194212,-81.612986
+29264,WV,"West Virginia",Hewett,Boone,37.958097,-81.850919
+29265,WV,"West Virginia",Hiawatha,Mercer,37.44,-81.244167
+29266,WV,"West Virginia",Hico,Fayette,38.109373,-80.963763
+29267,WV,"West Virginia","High View",Hampshire,39.222497,-78.442548
+29268,WV,"West Virginia",Hillsboro,Pocahontas,38.125942,-80.244578
+29269,WV,"West Virginia",Hilltop,Fayette,37.942778,-81.151111
+29270,WV,"West Virginia",Hinton,Summers,37.663983,-80.867779
+29271,WV,"West Virginia",Holden,Logan,37.824167,-82.059722
+29272,WV,"West Virginia",Hometown,Putnam,38.532778,-81.861389
+29273,WV,"West Virginia",Horner,Lewis,38.972628,-80.365576
+29274,WV,"West Virginia",Hugheston,Kanawha,38.209444,-81.372778
+29275,WV,"West Virginia",Hundred,Wetzel,39.691744,-80.474552
+29276,WV,"West Virginia",Huntington,Cabell,38.409726,-82.442348
+29277,WV,"West Virginia",Huntington,Wayne,38.384943,-82.503646
+29278,WV,"West Virginia",Hurricane,Putnam,38.425741,-81.994329
+29279,WV,"West Virginia",Huttonsville,Randolph,38.678433,-79.977544
+29280,WV,"West Virginia",Iaeger,Mcdowell,37.449878,-81.811992
+29281,WV,"West Virginia",Idamay,Marion,39.496944,-80.257222
+29282,WV,"West Virginia","Ikes Fork",Wyoming,37.521944,-81.804444
+29283,WV,"West Virginia",Independence,Preston,39.446372,-79.882161
+29284,WV,"West Virginia",Indore,Clay,38.339672,-81.157495
+29285,WV,"West Virginia",Institute,Kanawha,38.383611,-81.765556
+29286,WV,"West Virginia",Inwood,Berkeley,39.370093,-78.024189
+29287,WV,"West Virginia",Ireland,Lewis,38.767689,-80.477002
+29288,WV,"West Virginia",Isaban,Mcdowell,37.53,-81.888333
+29289,WV,"West Virginia",Itmann,Wyoming,37.573333,-81.418333
+29290,WV,"West Virginia",Ivydale,Clay,38.530476,-81.033506
+29291,WV,"West Virginia",Jacksonburg,Wetzel,39.541553,-80.643697
+29292,WV,"West Virginia","Jane Lew",Lewis,39.109989,-80.431059
+29293,WV,"West Virginia",Jeffrey,Boone,37.957023,-81.800305
+29294,WV,"West Virginia",Jenkinjones,Mcdowell,37.293333,-81.423333
+29295,WV,"West Virginia",Jesse,Wyoming,37.660844,-81.562831
+29296,WV,"West Virginia",Jolo,Mcdowell,37.332431,-81.831602
+29297,WV,"West Virginia",Josephine,Raleigh,37.622135,-81.217584
+29298,WV,"West Virginia",Julian,Boone,38.126437,-81.864185
+29299,WV,"West Virginia","Jumping Branch",Summers,37.639732,-80.995717
+29300,WV,"West Virginia",Junior,Barbour,38.978611,-79.949722
+29301,WV,"West Virginia",Justice,Mingo,37.588611,-81.835556
+29302,WV,"West Virginia","Kanawha Falls",Fayette,38.107932,-81.162753
+29303,WV,"West Virginia","Kanawha Head",Upshur,38.76183,-80.372734
+29304,WV,"West Virginia",Kearneysville,Jefferson,39.321994,-77.958762
+29305,WV,"West Virginia",Kegley,Mercer,37.408384,-81.140117
+29306,WV,"West Virginia",Kellysville,Mercer,37.344722,-80.928056
+29307,WV,"West Virginia",Kenna,Jackson,38.623894,-81.651717
+29308,WV,"West Virginia",Kenova,Wayne,38.386031,-82.573649
+29309,WV,"West Virginia",Kerens,Randolph,39.029854,-79.775427
+29310,WV,"West Virginia",Kermit,Mingo,37.864246,-82.374065
+29311,WV,"West Virginia","Keslers Cross Lanes",Nicholas,38.225762,-80.933365
+29312,WV,"West Virginia",Keyser,Mineral,39.430406,-78.988667
+29313,WV,"West Virginia",Kiahsville,Wayne,38.077744,-82.256206
+29314,WV,"West Virginia",Kimball,Mcdowell,37.425556,-81.506944
+29315,WV,"West Virginia",Kimberly,Fayette,38.124928,-81.321721
+29316,WV,"West Virginia",Kincaid,Fayette,38.032065,-81.26897
+29317,WV,"West Virginia",Kingmont,Marion,39.446944,-80.176111
+29318,WV,"West Virginia",Kingwood,Preston,39.481912,-79.70629
+29319,WV,"West Virginia",Kistler,Logan,37.756111,-81.860278
+29320,WV,"West Virginia",Kopperston,Wyoming,37.748333,-81.569722
+29321,WV,"West Virginia",Kyle,Mcdowell,37.408056,-81.425833
+29322,WV,"West Virginia",Lahmansville,Grant,39.164225,-79.043319
+29323,WV,"West Virginia",Lake,Logan,37.946191,-81.951152
+29324,WV,"West Virginia",Lanark,Raleigh,37.8275,-81.146389
+29325,WV,"West Virginia",Lansing,Fayette,38.110793,-81.02772
+29326,WV,"West Virginia",Lashmeet,Mercer,37.441997,-81.213845
+29327,WV,"West Virginia",Lavalette,Wayne,38.33046,-82.428707
+29328,WV,"West Virginia",Layland,Fayette,37.865779,-80.992449
+29329,WV,"West Virginia","Le Roy",Jackson,38.957552,-81.57245
+29330,WV,"West Virginia","Left Hand",Roane,38.606288,-81.246675
+29331,WV,"West Virginia",Leivasy,Nicholas,38.135019,-80.717213
+29332,WV,"West Virginia",Lenore,Mingo,37.799436,-82.269336
+29333,WV,"West Virginia",Leon,Mason,38.753046,-81.909244
+29334,WV,"West Virginia",Lerona,Mercer,37.492498,-80.979574
+29335,WV,"West Virginia",Lesage,Cabell,38.477028,-82.295667
+29336,WV,"West Virginia",Leslie,Greenbrier,38.044444,-80.723056
+29337,WV,"West Virginia",Lester,Raleigh,37.726522,-81.309542
+29338,WV,"West Virginia",Letart,Mason,38.931079,-81.975129
+29339,WV,"West Virginia",Levels,Hampshire,39.497637,-78.55078
+29340,WV,"West Virginia",Lewisburg,Greenbrier,37.808253,-80.440669
+29341,WV,"West Virginia",Liberty,Putnam,38.619978,-81.767813
+29342,WV,"West Virginia",Lindside,Monroe,37.481651,-80.62028
+29343,WV,"West Virginia",Linn,Gilmer,38.957294,-80.730046
+29344,WV,"West Virginia","Little Birch",Braxton,38.581046,-80.706293
+29345,WV,"West Virginia",Littleton,Wetzel,39.659205,-80.569478
+29346,WV,"West Virginia",Lizemores,Clay,38.336609,-81.163255
+29347,WV,"West Virginia",Lochgelly,Fayette,38.010556,-81.145278
+29348,WV,"West Virginia",Logan,Logan,37.847488,-82.002092
+29349,WV,"West Virginia",London,Kanawha,38.194444,-81.368889
+29350,WV,"West Virginia",Lookout,Fayette,38.052822,-80.92006
+29351,WV,"West Virginia",Looneyville,Roane,38.664113,-81.28219
+29352,WV,"West Virginia",Lorado,Logan,37.801111,-81.744444
+29353,WV,"West Virginia",Lorentz,Upshur,39.01,-80.301667
+29354,WV,"West Virginia","Lost City",Hardy,38.895361,-78.822684
+29355,WV,"West Virginia","Lost Creek",Harrison,39.172528,-80.377674
+29356,WV,"West Virginia",Lumberport,Harrison,39.378108,-80.367635
+29357,WV,"West Virginia",Lyburn,Logan,37.774266,-81.929291
+29358,WV,"West Virginia",Lynco,Wyoming,37.698056,-81.677222
+29359,WV,"West Virginia",Maben,Wyoming,37.654294,-81.391371
+29360,WV,"West Virginia",Mabie,Randolph,38.822158,-80.013061
+29361,WV,"West Virginia",Mabscott,Raleigh,37.770833,-81.208611
+29362,WV,"West Virginia","Mac Arthur",Raleigh,37.751667,-81.218333
+29363,WV,"West Virginia",Macfarlan,Ritchie,39.08058,-81.177627
+29364,WV,"West Virginia",Madison,Boone,38.044426,-81.793757
+29365,WV,"West Virginia",Maidsville,Monongalia,39.709308,-80.083193
+29366,WV,"West Virginia",Mallory,Logan,37.730556,-81.838056
+29367,WV,"West Virginia",Mammoth,Kanawha,38.258319,-81.350893
+29368,WV,"West Virginia",Man,Logan,37.729525,-81.865228
+29369,WV,"West Virginia",Mannington,Marion,39.522031,-80.355243
+29370,WV,"West Virginia",Marianna,Wyoming,37.611425,-81.576052
+29371,WV,"West Virginia",Marlinton,Pocahontas,38.229303,-80.060884
+29372,WV,"West Virginia",Martinsburg,Berkeley,39.459959,-77.958915
+29373,WV,"West Virginia",Mason,Mason,39.006442,-82.028215
+29374,WV,"West Virginia",Masontown,Preston,39.576413,-79.800993
+29375,WV,"West Virginia",Matewan,Mingo,37.649539,-82.145694
+29376,WV,"West Virginia",Matheny,Wyoming,37.661956,-81.595711
+29377,WV,"West Virginia",Mathias,Hardy,38.874443,-78.881413
+29378,WV,"West Virginia",Matoaka,Mercer,37.441778,-81.268017
+29379,WV,"West Virginia",Maxwelton,Greenbrier,37.900465,-80.427492
+29380,WV,"West Virginia",Maybeury,Mcdowell,37.368333,-81.366667
+29381,WV,"West Virginia",Maysel,Clay,38.493924,-81.122653
+29382,WV,"West Virginia",Maysville,Grant,39.071174,-79.1937
+29383,WV,"West Virginia","Mc Graws",Wyoming,37.676389,-81.440556
+29384,WV,"West Virginia",Mcmechen,Marshall,39.987793,-80.73082
+29385,WV,"West Virginia","Meadow Bridge",Fayette,37.878048,-80.852144
+29386,WV,"West Virginia","Meadow Creek",Summers,37.804824,-80.91742
+29387,WV,"West Virginia",Meadowbrook,Harrison,39.335367,-80.325668
+29388,WV,"West Virginia",Metz,Marion,39.607762,-80.416815
+29389,WV,"West Virginia",Miami,Kanawha,38.152222,-81.448056
+29390,WV,"West Virginia",Middlebourne,Tyler,39.50537,-80.886067
+29391,WV,"West Virginia",Midkiff,Lincoln,38.143908,-82.154227
+29392,WV,"West Virginia",Midway,Raleigh,37.717778,-81.219167
+29393,WV,"West Virginia",Milam,Hardy,38.812526,-79.072936
+29394,WV,"West Virginia","Mill Creek",Randolph,38.732493,-79.978569
+29395,WV,"West Virginia",Millstone,Calhoun,38.86029,-81.086352
+29396,WV,"West Virginia",Millville,Jefferson,39.293889,-77.786111
+29397,WV,"West Virginia",Millwood,Jackson,38.896206,-81.824832
+29398,WV,"West Virginia",Milton,Cabell,38.413981,-82.145784
+29399,WV,"West Virginia",Minden,Fayette,37.975833,-81.119722
+29400,WV,"West Virginia","Mineral Wells",Wood,39.21,-81.5305
+29401,WV,"West Virginia",Moatsville,Barbour,39.212271,-79.921574
+29402,WV,"West Virginia",Mohawk,Mcdowell,37.487926,-81.914174
+29403,WV,"West Virginia","Montana Mines",Marion,39.518611,-80.108611
+29404,WV,"West Virginia",Montcalm,Mercer,37.351667,-81.251667
+29405,WV,"West Virginia",Monterville,Randolph,38.551707,-80.122391
+29406,WV,"West Virginia",Montgomery,Fayette,38.141232,-81.281354
+29407,WV,"West Virginia",Montrose,Randolph,39.096357,-79.789577
+29408,WV,"West Virginia",Moorefield,Hardy,39.056812,-78.97793
+29409,WV,"West Virginia",Morgantown,Monongalia,39.6368,-80.018
+29410,WV,"West Virginia",Moundsville,Marshall,39.914819,-80.730971
+29411,WV,"West Virginia","Mount Alto",Mason,38.863937,-81.878374
+29412,WV,"West Virginia","Mount Carbon",Fayette,38.160097,-81.333373
+29413,WV,"West Virginia","Mount Clare",Harrison,39.210708,-80.289948
+29414,WV,"West Virginia","Mount Gay",Logan,37.841389,-82.008889
+29415,WV,"West Virginia","Mount Hope",Fayette,37.911048,-81.170419
+29416,WV,"West Virginia","Mount Lookout",Nicholas,38.182109,-80.91077
+29417,WV,"West Virginia","Mount Nebo",Nicholas,38.197064,-80.820204
+29418,WV,"West Virginia","Mount Olive",Fayette,38.237778,-81.233611
+29419,WV,"West Virginia","Mount Storm",Grant,39.265224,-79.225454
+29420,WV,"West Virginia","Mount Zion",Calhoun,38.877455,-81.119473
+29421,WV,"West Virginia",Mullens,Wyoming,37.584172,-81.389015
+29422,WV,"West Virginia",Munday,Calhoun,39.021423,-81.204048
+29423,WV,"West Virginia",Myra,Lincoln,38.21978,-82.135097
+29424,WV,"West Virginia",Nallen,Fayette,38.10829,-80.885777
+29425,WV,"West Virginia",Naoma,Raleigh,37.915381,-81.521372
+29426,WV,"West Virginia",Napier,Braxton,38.77462,-80.584104
+29427,WV,"West Virginia",Naugatuck,Mingo,37.789722,-82.349167
+29428,WV,"West Virginia",Nebo,Clay,38.627069,-81.025657
+29429,WV,"West Virginia",Nellis,Boone,38.152066,-81.739905
+29430,WV,"West Virginia",Nemours,Mercer,37.301389,-81.304444
+29431,WV,"West Virginia",Neola,"",37.965833,-80.130278
+29432,WV,"West Virginia",Nettie,Nicholas,38.209042,-80.695271
+29433,WV,"West Virginia","New Creek",Mineral,39.361155,-79.045212
+29434,WV,"West Virginia","New Cumberland",Hancock,40.522777,-80.590108
+29435,WV,"West Virginia","New Haven",Mason,38.985,-81.973333
+29436,WV,"West Virginia","New Manchester",Hancock,40.531389,-80.580278
+29437,WV,"West Virginia","New Martinsville",Wetzel,39.658798,-80.856541
+29438,WV,"West Virginia","New Milton",Doddridge,39.189917,-80.707617
+29439,WV,"West Virginia","New Richmond",Wyoming,37.57,-81.488889
+29440,WV,"West Virginia",Newburg,Preston,39.402722,-79.828036
+29441,WV,"West Virginia",Newell,Hancock,40.613971,-80.601126
+29442,WV,"West Virginia",Newhall,Mcdowell,37.263611,-81.618889
+29443,WV,"West Virginia",Newton,Roane,38.605219,-81.167579
+29444,WV,"West Virginia",Newtown,Mingo,37.627778,-82.085833
+29445,WV,"West Virginia",Nimitz,Summers,37.628584,-80.94462
+29446,WV,"West Virginia",Nitro,Kanawha,38.419323,-81.829311
+29447,WV,"West Virginia",Normantown,Gilmer,38.880173,-80.941936
+29448,WV,"West Virginia","North Matewan",Mingo,37.626389,-82.148333
+29449,WV,"West Virginia","North Spring",Wyoming,37.517954,-81.797276
+29450,WV,"West Virginia",Northfork,Mcdowell,37.395262,-81.415839
+29451,WV,"West Virginia",Norton,Randolph,38.931667,-79.965833
+29452,WV,"West Virginia",Oakvale,Mercer,37.334167,-80.962778
+29453,WV,"West Virginia",Oceana,Wyoming,37.703874,-81.621564
+29454,WV,"West Virginia",Odd,Raleigh,37.592997,-81.187183
+29455,WV,"West Virginia","Old Fields",Hardy,39.150245,-78.950944
+29456,WV,"West Virginia",Omar,Logan,37.722368,-82.004931
+29457,WV,"West Virginia",Ona,Cabell,38.452851,-82.218093
+29458,WV,"West Virginia",Onego,Pendleton,38.801718,-79.450702
+29459,WV,"West Virginia",Orgas,Boone,38.073646,-81.57383
+29460,WV,"West Virginia",Orlando,Lewis,38.885349,-80.560122
+29461,WV,"West Virginia",Orma,Calhoun,38.735979,-81.09614
+29462,WV,"West Virginia",Osage,Monongalia,39.656667,-80.011667
+29463,WV,"West Virginia",Ottawa,Boone,37.958611,-81.816667
+29464,WV,"West Virginia","Paden City",Wetzel,39.604408,-80.926482
+29465,WV,"West Virginia",Page,Fayette,38.052778,-81.27
+29466,WV,"West Virginia",Pageton,Mcdowell,37.349167,-81.465556
+29467,WV,"West Virginia",Palestine,Wirt,38.974141,-81.42803
+29468,WV,"West Virginia",Panther,Mcdowell,37.483333,-81.896111
+29469,WV,"West Virginia",Parkersburg,Wood,39.264433,-81.535412
+29470,WV,"West Virginia",Parsons,Tucker,39.105857,-79.673448
+29471,WV,"West Virginia","Paw Paw",Morgan,39.492297,-78.458573
+29472,WV,"West Virginia",Pax,Fayette,37.909722,-81.264444
+29473,WV,"West Virginia",Paynesville,Mcdowell,37.365273,-81.68449
+29474,WV,"West Virginia","Peach Creek",Logan,37.874444,-81.985
+29475,WV,"West Virginia","Pecks Mill",Logan,37.929784,-81.965382
+29476,WV,"West Virginia","Pence Springs",Summers,37.676694,-80.709234
+29477,WV,"West Virginia",Pennsboro,Ritchie,39.292064,-80.958482
+29478,WV,"West Virginia",Pentress,Monongalia,39.710278,-80.160556
+29479,WV,"West Virginia",Petersburg,Grant,38.976602,-79.130701
+29480,WV,"West Virginia",Peterstown,Monroe,37.414709,-80.768605
+29481,WV,"West Virginia",Petroleum,Ritchie,39.174139,-81.240607
+29482,WV,"West Virginia",Peytona,Boone,38.124952,-81.701836
+29483,WV,"West Virginia",Philippi,Barbour,39.150789,-80.038531
+29484,WV,"West Virginia",Pickens,Randolph,38.684242,-80.209784
+29485,WV,"West Virginia",Piedmont,Mineral,39.479901,-79.048862
+29486,WV,"West Virginia",Pinch,Kanawha,38.408611,-81.481944
+29487,WV,"West Virginia","Pine Grove",Wetzel,39.565069,-80.677213
+29488,WV,"West Virginia",Pineville,Wyoming,37.584022,-81.533642
+29489,WV,"West Virginia","Piney View",Raleigh,37.836111,-81.135
+29490,WV,"West Virginia",Pipestem,Summers,37.530345,-80.946345
+29491,WV,"West Virginia",Poca,Putnam,38.488297,-81.80511
+29492,WV,"West Virginia","Point Pleasant",Mason,38.863249,-82.113247
+29493,WV,"West Virginia",Points,Hampshire,39.457208,-78.564148
+29494,WV,"West Virginia","Pond Gap",Kanawha,38.290434,-81.28658
+29495,WV,"West Virginia",Pool,Nicholas,38.146004,-80.885907
+29496,WV,"West Virginia","Porters Falls",Wetzel,39.579722,-80.776389
+29497,WV,"West Virginia",Powellton,Fayette,38.099172,-81.317923
+29498,WV,"West Virginia",Pratt,Kanawha,38.21,-81.384167
+29499,WV,"West Virginia",Premier,Mcdowell,37.422222,-81.643889
+29500,WV,"West Virginia",Prichard,Wayne,38.230009,-82.575297
+29501,WV,"West Virginia",Prince,Fayette,37.858889,-81.053889
+29502,WV,"West Virginia",Princeton,Mercer,37.366817,-81.086386
+29503,WV,"West Virginia",Princewick,Raleigh,37.643456,-81.231022
+29504,WV,"West Virginia",Procious,Clay,38.472167,-81.226286
+29505,WV,"West Virginia",Proctor,Marshall,39.720683,-80.761779
+29506,WV,"West Virginia",Prosperity,Raleigh,37.836389,-81.201944
+29507,WV,"West Virginia",Pullman,Ritchie,39.190013,-80.934685
+29508,WV,"West Virginia",Purgitsville,Hampshire,39.268065,-78.905951
+29509,WV,"West Virginia",Pursglove,Monongalia,39.699543,-80.061798
+29510,WV,"West Virginia",Quinwood,Greenbrier,38.051937,-80.717286
+29511,WV,"West Virginia",Rachel,Marion,39.52254,-80.295694
+29512,WV,"West Virginia",Racine,Boone,38.149524,-81.655742
+29513,WV,"West Virginia",Ragland,Mingo,37.7025,-82.1275
+29514,WV,"West Virginia",Rainelle,Greenbrier,37.966112,-80.782064
+29515,WV,"West Virginia",Raleigh,Raleigh,37.756667,-81.174444
+29516,WV,"West Virginia",Ranger,Lincoln,38.155608,-82.19078
+29517,WV,"West Virginia",Ranson,Jefferson,39.299531,-77.860572
+29518,WV,"West Virginia",Ravencliff,Wyoming,37.697961,-81.496736
+29519,WV,"West Virginia",Ravenswood,Jackson,38.94675,-81.752377
+29520,WV,"West Virginia",Rawl,Mingo,37.649722,-82.219722
+29521,WV,"West Virginia",Raysal,Mcdowell,37.343056,-81.7825
+29522,WV,"West Virginia",Reader,Wetzel,39.583595,-80.751583
+29523,WV,"West Virginia","Red Creek",Tucker,39.019628,-79.53009
+29524,WV,"West Virginia","Red House",Putnam,38.546298,-81.904474
+29525,WV,"West Virginia","Red Jacket",Mingo,37.648333,-82.140278
+29526,WV,"West Virginia",Redstar,Fayette,37.984874,-81.134425
+29527,WV,"West Virginia",Reedsville,Preston,39.51823,-79.810061
+29528,WV,"West Virginia",Reedy,Roane,38.837119,-81.419785
+29529,WV,"West Virginia",Renick,Greenbrier,37.992168,-80.365294
+29530,WV,"West Virginia",Reynoldsville,Harrison,39.288333,-80.435
+29531,WV,"West Virginia",Rhodell,Raleigh,37.628587,-81.294753
+29532,WV,"West Virginia",Richwood,Nicholas,38.222988,-80.544481
+29533,WV,"West Virginia",Ridgeley,Mineral,39.581796,-78.792006
+29534,WV,"West Virginia",Ridgeview,Boone,38.148576,-81.772548
+29535,WV,"West Virginia",Ridgeway,Berkeley,39.297222,-78.071944
+29536,WV,"West Virginia",Rio,Hampshire,39.180663,-78.693548
+29537,WV,"West Virginia",Ripley,Jackson,38.809042,-81.701987
+29538,WV,"West Virginia",Rippon,Jefferson,39.216667,-77.905
+29539,WV,"West Virginia",Riverton,Pendleton,38.697871,-79.465531
+29540,WV,"West Virginia",Rivesville,Marion,39.556839,-80.141744
+29541,WV,"West Virginia",Robson,Fayette,38.097263,-81.248758
+29542,WV,"West Virginia",Rock,Mercer,37.38889,-81.218766
+29543,WV,"West Virginia","Rock Cave",Upshur,38.781128,-80.316276
+29544,WV,"West Virginia","Rock Creek",Raleigh,37.836673,-81.483674
+29545,WV,"West Virginia","Rock View",Wyoming,37.617778,-81.539167
+29546,WV,"West Virginia",Rockport,Wood,39.079774,-81.571333
+29547,WV,"West Virginia",Roderfield,Mcdowell,37.450278,-81.705833
+29548,WV,"West Virginia",Romney,Hampshire,39.342369,-78.748075
+29549,WV,"West Virginia",Ronceverte,Greenbrier,37.741758,-80.462583
+29550,WV,"West Virginia",Rosedale,Gilmer,38.770103,-80.906127
+29551,WV,"West Virginia",Rosemont,Taylor,39.268611,-80.163056
+29552,WV,"West Virginia",Rowlesburg,Preston,39.221575,-79.642977
+29553,WV,"West Virginia",Rupert,Greenbrier,37.963882,-80.689971
+29554,WV,"West Virginia",Sabine,Wyoming,37.678611,-81.501667
+29555,WV,"West Virginia","Saint Albans",Kanawha,38.37743,-81.830463
+29556,WV,"West Virginia","Saint Marys",Pleasants,39.38597,-81.172499
+29557,WV,"West Virginia",Salem,Harrison,39.294761,-80.589792
+29558,WV,"West Virginia","Salt Rock",Cabell,38.326542,-82.247041
+29559,WV,"West Virginia","Sand Fork",Gilmer,38.895,-80.730556
+29560,WV,"West Virginia",Sandstone,Summers,37.759879,-80.871564
+29561,WV,"West Virginia",Sandyville,Jackson,38.909282,-81.654315
+29562,WV,"West Virginia","Sarah Ann",Logan,37.711111,-81.9875
+29563,WV,"West Virginia",Saulsville,Wyoming,37.655573,-81.457706
+29564,WV,"West Virginia",Saxon,Boone,37.786108,-81.432279
+29565,WV,"West Virginia",Scarbro,Fayette,37.947073,-81.245731
+29566,WV,"West Virginia","Scott Depot",Putnam,38.450063,-81.900481
+29567,WV,"West Virginia",Secondcreek,Monroe,37.660246,-80.418079
+29568,WV,"West Virginia",Selbyville,Upshur,38.719393,-80.312955
+29569,WV,"West Virginia","Seneca Rocks",Pendleton,38.829615,-79.386577
+29570,WV,"West Virginia",Seth,Boone,38.097057,-81.639258
+29571,WV,"West Virginia","Shady Spring",Raleigh,37.697802,-81.1023
+29572,WV,"West Virginia",Shanks,Hampshire,39.284859,-78.699531
+29573,WV,"West Virginia",Sharples,Logan,37.920278,-81.829444
+29574,WV,"West Virginia","Shenandoah Junction",Jefferson,39.371084,-77.88924
+29575,WV,"West Virginia",Shepherdstown,Jefferson,39.431124,-77.815819
+29576,WV,"West Virginia",Shinnston,Harrison,39.388809,-80.283399
+29577,WV,"West Virginia",Shirley,Tyler,39.398056,-80.765278
+29578,WV,"West Virginia",Shoals,Wayne,38.326944,-82.475278
+29579,WV,"West Virginia",Shock,Gilmer,38.757527,-80.968663
+29580,WV,"West Virginia","Short Creek",Brooke,40.185556,-80.674722
+29581,WV,"West Virginia",Simon,Wyoming,37.619708,-81.758566
+29582,WV,"West Virginia",Simpson,Taylor,39.266667,-80.093611
+29583,WV,"West Virginia","Sinks Grove",Monroe,37.662078,-80.516905
+29584,WV,"West Virginia",Sistersville,Tyler,39.558365,-80.981828
+29585,WV,"West Virginia",Skelton,Raleigh,37.810556,-81.1875
+29586,WV,"West Virginia","Slab Fork",Raleigh,37.679605,-81.227928
+29587,WV,"West Virginia",Slanesville,Hampshire,39.402631,-78.505971
+29588,WV,"West Virginia",Slatyfork,Pocahontas,38.381207,-80.040353
+29589,WV,"West Virginia",Smithburg,Doddridge,39.288333,-80.731667
+29590,WV,"West Virginia",Smithers,Fayette,38.181111,-81.307222
+29591,WV,"West Virginia",Smithfield,Wetzel,39.5134,-80.558245
+29592,WV,"West Virginia",Smithville,Ritchie,39.067078,-81.061953
+29593,WV,"West Virginia",Smoot,Greenbrier,37.877166,-80.668038
+29594,WV,"West Virginia",Snowshoe,Pocahontas,38.397222,-80.141667
+29595,WV,"West Virginia",Sod,Lincoln,38.262967,-81.86814
+29596,WV,"West Virginia",Sophia,Raleigh,37.7075,-81.250833
+29597,WV,"West Virginia",Southside,Mason,38.711994,-81.996596
+29598,WV,"West Virginia",Spanishburg,Mercer,37.46314,-81.106941
+29599,WV,"West Virginia",Spelter,Harrison,39.345,-80.318056
+29600,WV,"West Virginia",Spencer,Roane,38.789696,-81.33026
+29601,WV,"West Virginia",Sprague,Raleigh,37.793,-81.1841
+29602,WV,"West Virginia","Spring Dale",Fayette,37.86947,-80.814996
+29603,WV,"West Virginia",Springfield,Hampshire,39.462996,-78.695019
+29604,WV,"West Virginia",Spurlockville,Lincoln,38.077015,-81.991778
+29605,WV,"West Virginia",Squire,Mcdowell,37.237019,-81.580478
+29606,WV,"West Virginia",Stanaford,Raleigh,37.815833,-81.1525
+29607,WV,"West Virginia",Stephenson,Wyoming,37.579847,-81.333914
+29608,WV,"West Virginia",Stollings,Logan,37.841944,-81.933333
+29609,WV,"West Virginia","Sugar Grove",Pendleton,38.52011,-79.290329
+29610,WV,"West Virginia",Sumerco,Lincoln,38.205292,-81.894317
+29611,WV,"West Virginia",Summersville,Nicholas,38.30089,-80.835278
+29612,WV,"West Virginia","Summit Point",Jefferson,39.233753,-77.958552
+29613,WV,"West Virginia",Surveyor,Raleigh,37.748,-81.33919
+29614,WV,"West Virginia",Sutton,Braxton,38.673855,-80.681072
+29615,WV,"West Virginia",Swiss,Nicholas,38.279058,-81.080703
+29616,WV,"West Virginia",Switchback,Mcdowell,37.371111,-81.385833
+29617,WV,"West Virginia",Switzer,Logan,37.793056,-81.987778
+29618,WV,"West Virginia",Sylvester,Boone,38.009075,-81.549151
+29619,WV,"West Virginia",Tad,Kanawha,38.333333,-81.494444
+29620,WV,"West Virginia",Talcott,Summers,37.649079,-80.746143
+29621,WV,"West Virginia",Tallmansville,Upshur,38.856405,-80.15799
+29622,WV,"West Virginia",Teays,Putnam,38.441667,-81.953056
+29623,WV,"West Virginia","Terra Alta",Preston,39.441575,-79.557234
+29624,WV,"West Virginia",Thomas,Tucker,39.150517,-79.503
+29625,WV,"West Virginia",Thornton,Taylor,39.332879,-79.909645
+29626,WV,"West Virginia",Thorpe,Mcdowell,37.368611,-81.516667
+29627,WV,"West Virginia",Thurmond,Fayette,37.955437,-81.071428
+29628,WV,"West Virginia",Tioga,Nicholas,38.375989,-80.661663
+29629,WV,"West Virginia",Tornado,Kanawha,38.335697,-81.847555
+29630,WV,"West Virginia",Triadelphia,Ohio,40.069945,-80.59529
+29631,WV,"West Virginia",Troy,Gilmer,39.083881,-80.754921
+29632,WV,"West Virginia",Tunnelton,Preston,39.362502,-79.747818
+29633,WV,"West Virginia","Turtle Creek",Boone,38.042715,-81.853499
+29634,WV,"West Virginia",Twilight,Boone,37.921015,-81.635204
+29635,WV,"West Virginia",Uneeda,Boone,38.035556,-81.780833
+29636,WV,"West Virginia",Union,Monroe,37.580175,-80.524767
+29637,WV,"West Virginia","Upper Tract",Pendleton,38.794952,-79.258589
+29638,WV,"West Virginia",Upperglade,Webster,38.418528,-80.496464
+29639,WV,"West Virginia","Valley Bend",Randolph,38.784903,-79.916037
+29640,WV,"West Virginia","Valley Grove",Ohio,40.094649,-80.555059
+29641,WV,"West Virginia","Valley Head",Randolph,38.536637,-80.044911
+29642,WV,"West Virginia",Van,Boone,37.971152,-81.702175
+29643,WV,"West Virginia",Varney,Mingo,37.669167,-82.122222
+29644,WV,"West Virginia",Verdunville,Logan,37.844444,-82.055278
+29645,WV,"West Virginia",Verner,Mingo,37.64554,-81.864801
+29646,WV,"West Virginia",Victor,Fayette,38.140194,-81.032223
+29647,WV,"West Virginia",Vienna,Wood,39.325089,-81.541143
+29648,WV,"West Virginia",Volga,Barbour,39.068445,-80.143209
+29649,WV,"West Virginia",Waiteville,Monroe,37.464514,-80.463447
+29650,WV,"West Virginia",Walker,Wood,39.182082,-81.386577
+29651,WV,"West Virginia",Walkersville,Lewis,38.850738,-80.480221
+29652,WV,"West Virginia",Wallace,Harrison,39.411667,-80.486468
+29653,WV,"West Virginia",Wallback,Clay,38.57254,-81.093535
+29654,WV,"West Virginia",Walton,Roane,38.602264,-81.395757
+29655,WV,"West Virginia",Wana,Monongalia,39.702072,-80.305106
+29656,WV,"West Virginia",War,Mcdowell,37.337778,-81.715278
+29657,WV,"West Virginia",Wardensville,Hardy,39.056238,-78.617457
+29658,WV,"West Virginia",Warriormine,Mcdowell,37.292778,-81.697222
+29659,WV,"West Virginia",Washington,Wood,39.233911,-81.640719
+29660,WV,"West Virginia",Waverly,Wood,39.315681,-81.381938
+29661,WV,"West Virginia",Wayne,Wayne,38.225814,-82.433926
+29662,WV,"West Virginia",Wayside,Monroe,37.593657,-80.745806
+29663,WV,"West Virginia","Webster Springs",Webster,38.476362,-80.399798
+29664,WV,"West Virginia",Weirton,Hancock,40.413673,-80.568307
+29665,WV,"West Virginia",Welch,Mcdowell,37.400032,-81.534412
+29666,WV,"West Virginia",Wellsburg,Brooke,40.254792,-80.596061
+29667,WV,"West Virginia","West Columbia",Mason,38.926169,-82.090529
+29668,WV,"West Virginia","West Hamlin",Lincoln,38.288571,-82.184348
+29669,WV,"West Virginia","West Liberty",Ohio,40.169722,-80.593889
+29670,WV,"West Virginia","West Milford",Harrison,39.203906,-80.363049
+29671,WV,"West Virginia","West Union",Doddridge,39.276185,-80.791057
+29672,WV,"West Virginia",Weston,Lewis,39.041104,-80.473656
+29673,WV,"West Virginia",Wharncliffe,Mingo,37.545161,-81.956604
+29674,WV,"West Virginia",Wharton,Boone,37.887222,-81.670278
+29675,WV,"West Virginia",Wheeling,Ohio,40.072736,-80.685126
+29676,WV,"West Virginia","White Oak",Raleigh,37.68008,-81.058875
+29677,WV,"West Virginia","White Sulphur Springs",Greenbrier,37.814618,-80.27464
+29678,WV,"West Virginia",Whitesville,Boone,37.978677,-81.534013
+29679,WV,"West Virginia",Whitman,Logan,37.813333,-82.024722
+29680,WV,"West Virginia",Whitmer,Randolph,38.808289,-79.557752
+29681,WV,"West Virginia",Widen,Clay,38.466111,-80.8575
+29682,WV,"West Virginia",Wilcoe,Mcdowell,37.381111,-81.564167
+29683,WV,"West Virginia","Wiley Ford",Mineral,39.613308,-78.774992
+29684,WV,"West Virginia",Wileyville,"",39.662593,-80.647251
+29685,WV,"West Virginia",Wilkinson,Logan,37.827778,-81.997778
+29686,WV,"West Virginia",Williamsburg,Greenbrier,37.94421,-80.517321
+29687,WV,"West Virginia",Williamson,Mingo,37.690248,-82.264163
+29688,WV,"West Virginia",Williamstown,Wood,39.38243,-81.456608
+29689,WV,"West Virginia",Wilsonburg,Harrison,39.2925,-80.3963
+29690,WV,"West Virginia",Wilsondale,Wayne,37.951598,-82.381358
+29691,WV,"West Virginia","Windsor Heights",Brooke,40.191111,-80.665556
+29692,WV,"West Virginia",Winfield,Putnam,38.507178,-81.889965
+29693,WV,"West Virginia",Winifrede,Kanawha,38.185245,-81.558747
+29694,WV,"West Virginia",Winona,Fayette,38.046389,-80.9925
+29695,WV,"West Virginia",Wolfcreek,Monroe,37.618788,-80.611254
+29696,WV,"West Virginia",Wolfe,Mercer,37.307222,-81.328889
+29697,WV,"West Virginia",Woodville,Boone,38.157027,-81.911281
+29698,WV,"West Virginia",Worthington,Marion,39.452213,-80.290468
+29699,WV,"West Virginia",Wyatt,Harrison,39.435,-80.353611
+29700,WV,"West Virginia",Wyco,Wyoming,37.598889,-81.343056
+29701,WV,"West Virginia",Wyoming,Wyoming,37.582222,-81.601944
+29702,WV,"West Virginia",Yawkey,Lincoln,38.219252,-81.956828
+29703,WV,"West Virginia","Yellow Spring",Hampshire,39.183038,-78.494998
+29704,WV,"West Virginia",Yolyn,Logan,37.866513,-81.872699
+29705,WY,Wyoming,Afton,Lincoln,42.712829,-110.941976
+29706,WY,Wyoming,Aladdin,Crook,44.747331,-104.19314
+29707,WY,Wyoming,Albin,Laramie,41.434237,-104.150542
+29708,WY,Wyoming,Alcova,Natrona,42.568383,-106.610199
+29709,WY,Wyoming,Alpine,Lincoln,43.175278,-111.033889
+29710,WY,Wyoming,Alta,Teton,43.753889,-111.036111
+29711,WY,Wyoming,Alva,Crook,44.694722,-104.440833
+29712,WY,Wyoming,Arapahoe,Fremont,42.967936,-108.494134
+29713,WY,Wyoming,Arminto,Natrona,43.120883,-107.343611
+29714,WY,Wyoming,Arvada,Sheridan,44.689876,-106.109191
+29715,WY,Wyoming,Auburn,Lincoln,42.805114,-110.994415
+29716,WY,Wyoming,Baggs,Carbon,41.031191,-107.668733
+29717,WY,Wyoming,Bairoil,Sweetwater,42.232721,-107.563288
+29718,WY,Wyoming,Banner,Sheridan,44.590804,-106.87331
+29719,WY,Wyoming,Basin,"Big Horn",44.378765,-108.043787
+29720,WY,Wyoming,Bedford,Lincoln,42.932336,-110.95556
+29721,WY,Wyoming,Beulah,Crook,44.573575,-104.153095
+29722,WY,Wyoming,"Big Horn",Sheridan,44.683333,-106.991667
+29723,WY,Wyoming,"Big Piney",Sublette,42.552059,-110.132954
+29724,WY,Wyoming,Bondurant,Sublette,43.223798,-110.335287
+29725,WY,Wyoming,Bosler,Albany,41.562721,-105.819708
+29726,WY,Wyoming,Boulder,Sublette,42.688146,-109.540105
+29727,WY,Wyoming,Buffalo,Johnson,44.34847,-106.70726
+29728,WY,Wyoming,Buford,Albany,41.142115,-105.469697
+29729,WY,Wyoming,Burlington,"Big Horn",44.444218,-108.432669
+29730,WY,Wyoming,Burns,Laramie,41.200297,-104.315521
+29731,WY,Wyoming,Byron,"Big Horn",44.796389,-108.505833
+29732,WY,Wyoming,Carpenter,Laramie,41.042819,-104.276514
+29733,WY,Wyoming,Casper,Natrona,42.845763,-106.316571
+29734,WY,Wyoming,Centennial,Albany,41.339149,-105.99451
+29735,WY,Wyoming,Cheyenne,Laramie,41.143719,-104.796234
+29736,WY,Wyoming,Chugwater,Platte,41.748668,-104.817916
+29737,WY,Wyoming,Clearmont,Sheridan,44.66101,-106.458071
+29738,WY,Wyoming,Cody,Park,44.523135,-109.075611
+29739,WY,Wyoming,Cokeville,Lincoln,42.057983,-110.916419
+29740,WY,Wyoming,Cora,Sublette,43.139921,-109.915351
+29741,WY,Wyoming,Cowley,"Big Horn",44.883333,-108.468889
+29742,WY,Wyoming,Crowheart,Fremont,43.371569,-109.296043
+29743,WY,Wyoming,Daniel,Sublette,42.917629,-110.133624
+29744,WY,Wyoming,Dayton,Sheridan,44.877958,-107.302605
+29745,WY,Wyoming,Deaver,"Big Horn",44.925695,-108.597948
+29746,WY,Wyoming,"Devils Tower",Crook,44.617067,-104.793638
+29747,WY,Wyoming,Diamondville,Lincoln,41.779444,-110.537778
+29748,WY,Wyoming,Dixon,Carbon,41.044631,-107.560354
+29749,WY,Wyoming,Douglas,Converse,42.762558,-105.385484
+29750,WY,Wyoming,Dubois,Fremont,43.545136,-109.649175
+29751,WY,Wyoming,Edgerton,Natrona,43.413056,-106.248889
+29752,WY,Wyoming,"Elk Mountain",Carbon,41.6875,-106.412778
+29753,WY,Wyoming,Emblem,"Big Horn",44.505833,-108.391111
+29754,WY,Wyoming,Encampment,Carbon,41.205353,-106.780285
+29755,WY,Wyoming,Etna,Lincoln,43.138606,-111.015996
+29756,WY,Wyoming,Evanston,Uinta,41.260947,-110.963067
+29757,WY,Wyoming,Evansville,Natrona,42.861384,-106.263886
+29758,WY,Wyoming,Fairview,Lincoln,42.688611,-110.981667
+29759,WY,Wyoming,Farson,Sweetwater,42.050833,-109.436389
+29760,WY,Wyoming,"Fort Bridger",Uinta,41.28282,-110.347428
+29761,WY,Wyoming,"Fort Laramie",Goshen,42.213314,-104.522595
+29762,WY,Wyoming,"Fort Washakie",Fremont,43.004761,-108.896445
+29763,WY,Wyoming,"Four Corners",Weston,44.100747,-104.122897
+29764,WY,Wyoming,Frannie,Park,44.969722,-108.620278
+29765,WY,Wyoming,Freedom,Lincoln,43.017167,-111.029178
+29766,WY,Wyoming,Frontier,Lincoln,41.814167,-110.536389
+29767,WY,Wyoming,"Ft Warren Afb",Laramie,41.1511,-104.861
+29768,WY,Wyoming,Garrett,Albany,42.142015,-105.550534
+29769,WY,Wyoming,Gillette,Campbell,44.282009,-105.497442
+29770,WY,Wyoming,Glendo,Platte,42.500352,-105.000013
+29771,WY,Wyoming,Glenrock,Converse,42.867495,-105.857911
+29772,WY,Wyoming,Granger,Sweetwater,41.593611,-109.968056
+29773,WY,Wyoming,"Granite Canon",Laramie,41.005278,-105.249167
+29774,WY,Wyoming,"Green River",Sweetwater,41.51959,-109.471445
+29775,WY,Wyoming,Greybull,"Big Horn",44.491881,-108.079503
+29776,WY,Wyoming,Grover,Lincoln,42.796472,-110.924392
+29777,WY,Wyoming,Guernsey,Platte,42.265513,-104.751164
+29778,WY,Wyoming,Hanna,Carbon,41.87264,-106.528283
+29779,WY,Wyoming,Hartville,Platte,42.33339,-104.729564
+29780,WY,Wyoming,"Hawk Springs",Goshen,41.741481,-104.329498
+29781,WY,Wyoming,Hiland,Natrona,42.8375,-106.387222
+29782,WY,Wyoming,Hillsdale,Laramie,41.212778,-104.476944
+29783,WY,Wyoming,"Horse Creek",Laramie,41.415,-105.181667
+29784,WY,Wyoming,Hudson,Fremont,42.906111,-108.582778
+29785,WY,Wyoming,Hulett,Crook,44.735222,-104.617367
+29786,WY,Wyoming,Huntley,Goshen,41.932778,-104.145556
+29787,WY,Wyoming,Hyattville,"Big Horn",44.250693,-107.605318
+29788,WY,Wyoming,Jackson,Teton,43.460734,-110.766277
+29789,WY,Wyoming,"Jay Em",Goshen,42.357399,-104.311437
+29790,WY,Wyoming,"Jeffrey City",Fremont,42.540201,-107.872422
+29791,WY,Wyoming,Jelm,Albany,41.145723,-105.925727
+29792,WY,Wyoming,Kaycee,Johnson,43.723625,-106.56323
+29793,WY,Wyoming,Kelly,Teton,43.609361,-110.544186
+29794,WY,Wyoming,Kemmerer,Lincoln,41.788661,-110.52834
+29795,WY,Wyoming,Kinnear,Fremont,43.131777,-108.615428
+29796,WY,Wyoming,Kirby,"Hot Springs",43.804444,-108.180833
+29797,WY,Wyoming,"La Barge",Lincoln,42.24734,-110.210865
+29798,WY,Wyoming,Lagrange,Goshen,41.642311,-104.19738
+29799,WY,Wyoming,"Lance Creek",Niobrara,43.231636,-104.544958
+29800,WY,Wyoming,Lander,Fremont,42.859678,-108.738288
+29801,WY,Wyoming,Laramie,Albany,41.312907,-105.581146
+29802,WY,Wyoming,Leiter,Sheridan,44.718056,-106.268611
+29803,WY,Wyoming,Linch,Johnson,43.606389,-106.195556
+29804,WY,Wyoming,Lingle,Goshen,42.134624,-104.331992
+29805,WY,Wyoming,"Little America",Sweetwater,41.543611,-109.858333
+29806,WY,Wyoming,Lonetree,Uinta,41.049144,-110.172862
+29807,WY,Wyoming,"Lost Springs",Converse,42.729835,-104.920901
+29808,WY,Wyoming,Lovell,"Big Horn",44.833637,-108.414107
+29809,WY,Wyoming,Lusk,Niobrara,42.765953,-104.465076
+29810,WY,Wyoming,Lyman,Uinta,41.329136,-110.292629
+29811,WY,Wyoming,Lysite,Fremont,43.328417,-107.648781
+29812,WY,Wyoming,Manderson,"Big Horn",44.311931,-107.953423
+29813,WY,Wyoming,Manville,Niobrara,42.779167,-104.617222
+29814,WY,Wyoming,"Mc Kinnon",Sweetwater,41.040898,-109.874536
+29815,WY,Wyoming,"Medicine Bow",Carbon,41.903002,-106.201228
+29816,WY,Wyoming,Meeteetse,Park,44.196202,-108.950045
+29817,WY,Wyoming,Meriden,Laramie,41.54236,-104.286606
+29818,WY,Wyoming,Midwest,Natrona,43.410829,-106.266818
+29819,WY,Wyoming,Mills,Natrona,42.840556,-106.365278
+29820,WY,Wyoming,Moorcroft,Crook,44.299932,-104.905904
+29821,WY,Wyoming,Moose,Teton,43.771201,-110.857493
+29822,WY,Wyoming,Moran,Teton,43.881635,-110.329429
+29823,WY,Wyoming,"Mountain View",Uinta,41.268889,-110.339167
+29824,WY,Wyoming,Natrona,Natrona,43.029722,-106.808611
+29825,WY,Wyoming,Newcastle,Weston,43.851098,-104.226205
+29826,WY,Wyoming,Opal,Lincoln,41.769167,-110.325278
+29827,WY,Wyoming,Osage,Weston,43.998982,-104.4226
+29828,WY,Wyoming,Otto,"Big Horn",44.405644,-108.304673
+29829,WY,Wyoming,Parkman,Sheridan,44.964965,-107.325393
+29830,WY,Wyoming,Pavillion,Fremont,43.198515,-108.604394
+29831,WY,Wyoming,"Pine Bluffs",Laramie,41.178799,-104.066591
+29832,WY,Wyoming,Pinedale,Sublette,42.854331,-109.856088
+29833,WY,Wyoming,"Point Of Rocks",Sweetwater,41.680278,-108.785
+29834,WY,Wyoming,"Powder River",Natrona,43.032222,-106.986667
+29835,WY,Wyoming,Powell,Park,44.756077,-108.777322
+29836,WY,Wyoming,Ralston,Park,44.716111,-108.863889
+29837,WY,Wyoming,Ranchester,Sheridan,44.904789,-107.159833
+29838,WY,Wyoming,Rawlins,Carbon,41.795131,-107.234883
+29839,WY,Wyoming,Recluse,Campbell,44.786149,-105.776005
+29840,WY,Wyoming,Reliance,Sweetwater,41.669167,-109.196389
+29841,WY,Wyoming,Riverton,Fremont,43.045786,-108.411335
+29842,WY,Wyoming,Robertson,Uinta,41.185278,-110.4125
+29843,WY,Wyoming,"Rock River",Albany,41.746073,-105.974629
+29844,WY,Wyoming,"Rock Springs",Sweetwater,41.605957,-109.230047
+29845,WY,Wyoming,Rozet,Campbell,44.305825,-105.245875
+29846,WY,Wyoming,Saddlestring,Johnson,44.348333,-106.698333
+29847,WY,Wyoming,"Saint Stephens",Fremont,42.983889,-108.415833
+29848,WY,Wyoming,Saratoga,Carbon,41.446293,-106.797538
+29849,WY,Wyoming,Savery,Carbon,41.039485,-107.42338
+29850,WY,Wyoming,Shawnee,Converse,42.839464,-105.032447
+29851,WY,Wyoming,Shell,"Big Horn",44.563649,-107.824333
+29852,WY,Wyoming,Sheridan,Sheridan,44.78486,-106.964795
+29853,WY,Wyoming,"Shirley Basin",Carbon,42.222778,-106.521944
+29854,WY,Wyoming,Shoshoni,Fremont,43.245707,-108.100667
+29855,WY,Wyoming,Sinclair,Carbon,41.779741,-107.109083
+29856,WY,Wyoming,Smoot,Lincoln,42.619238,-110.922351
+29857,WY,Wyoming,Story,Sheridan,44.607169,-107.049229
+29858,WY,Wyoming,Sundance,Crook,44.405755,-104.383696
+29859,WY,Wyoming,Superior,Sweetwater,41.769444,-108.975833
+29860,WY,Wyoming,"Ten Sleep",Washakie,43.997848,-107.415305
+29861,WY,Wyoming,"Teton Village",Teton,43.588056,-110.827222
+29862,WY,Wyoming,Thayne,Lincoln,42.933026,-111.011354
+29863,WY,Wyoming,Thermopolis,"Hot Springs",43.662152,-108.231297
+29864,WY,Wyoming,"Tie Siding",Albany,41.052785,-105.446222
+29865,WY,Wyoming,Torrington,Goshen,42.062377,-104.191662
+29866,WY,Wyoming,Upton,Weston,44.089271,-104.635159
+29867,WY,Wyoming,"Van Tassell",Niobrara,42.830004,-104.315073
+29868,WY,Wyoming,Veteran,Goshen,41.982091,-104.370899
+29869,WY,Wyoming,Walcott,Carbon,41.761111,-106.844444
+29870,WY,Wyoming,Wamsutter,Sweetwater,41.658278,-108.151674
+29871,WY,Wyoming,Wapiti,Park,44.47967,-109.432629
+29872,WY,Wyoming,Weston,Campbell,44.835689,-105.373236
+29873,WY,Wyoming,Wheatland,Platte,42.049467,-104.967852
+29874,WY,Wyoming,Wilson,Teton,43.49922,-110.874199
+29875,WY,Wyoming,Wolf,Sheridan,44.768228,-107.303429
+29876,WY,Wyoming,Worland,Washakie,44.013796,-107.95626
+29877,WY,Wyoming,Wright,Campbell,43.829349,-105.532327
+29878,WY,Wyoming,Wyarno,Sheridan,44.813333,-106.773333
+29879,WY,Wyoming,"Yellowstone National Park",Park,44.853913,-110.674366
+29880,WY,Wyoming,Yoder,Goshen,41.912018,-104.353507
