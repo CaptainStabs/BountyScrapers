@@ -8,7 +8,7 @@ import sys
 from utils.interrupt_handler import GracefulInterruptHandler
 from _secrets import notify_url
 
-full_auto = False
+full_auto = True
 
 ignored_domains = [
     "facebook",
@@ -32,7 +32,11 @@ ignored_domains = [
     "high-schools",
     "publiccharters",
     "publicschoolreview",
-    "elementaryschools"
+    "elementaryschools",
+    "greatschools",
+    "thearcofil",
+    "usnews",
+    "guardianangelstaffing"
 ]
 
 
@@ -63,7 +67,8 @@ with GracefulInterruptHandler() as h:
                     print("      [!] Interrupted, exiting")
                     break
 
-                if not row["website"]:
+                # check_null = row["website"]
+                if pd.isnull(row["website"]):
                     try:
                         school_name = row["name"]
                         no_error = True
@@ -76,6 +81,7 @@ with GracefulInterruptHandler() as h:
                     no_error = False
                     print("            [*] Website already exists, skipping.")
                     print("               [?] Website: " + str(row["website"]))
+                    print(row["website"])
 
                 found = False
                 num_tries = 0
@@ -83,9 +89,10 @@ with GracefulInterruptHandler() as h:
                 if no_error:
                     while not found:
                         print("         [*] Starting search loop...")
+                        query = school_name + " " + row["state"]
                         try:
                             for results in google.search(
-                                school_name,
+                                query,
                                 tld="com",
                                 lang="en",
                                 num=10,
@@ -93,7 +100,9 @@ with GracefulInterruptHandler() as h:
                                 stop=None,
                                 pause=2.0,
                             ):
-                                if any(ignored_domains in results for ignored_domain in ignored_domains):
+
+                                # print(type(results))
+                                if any(ignored_domain in results for ignored_domain in ignored_domains):
                                         print(f"            [*] Haven't found it yet. URL: {url}")
                                         found = False
                                         if num_tries == 10:
@@ -114,18 +123,20 @@ with GracefulInterruptHandler() as h:
                             response = requests.post(
                                 notify_url, data=message_data
                             )
+                            found = False
                             break
 
                     # Outside while loop
-                    if not full_auto:
-                        user_choice = input(f"   [!] Does this url look correct? y/n URL: {results}")
+                    if found:
+                        if not full_auto:
+                            user_choice = input(f"   [!] Does this url look correct?\n     Name: {school_name}\n     State: {row['state']}\n     City: {row['city']}\n     URL: {results}\n     y/n: ")
 
-                        if user_choice.lower() == "y":
+                            if user_choice.lower() == "y":
+                                write_to_file(results, row, file_out)
+
+                            elif user_choice.lower() == "n":
+                                print("   [*] Skipping")
+                                continue
+
+                        else:
                             write_to_file(results, row, file_out)
-
-                        elif user_choice.lower() == "n":
-                            print("   [*] Skipping")
-                            continue
-
-                    else:
-                        write_to_file(results, row, file_out)
