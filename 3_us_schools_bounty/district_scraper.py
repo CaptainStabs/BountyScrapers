@@ -25,7 +25,7 @@ headers = {
 
 print("   [*] Opening Source File...")
 with GracefulInterruptHandler() as h:
-    with open("HIFLD_Schools.csv","r", encoding="utf-8") as input_source:
+    with open("districts_HIFLD_Schools.csv","r", encoding="utf-8") as input_source:
         df = pd.read_csv(input_source)
         df_columns = list(df.columns)
         data_columns = ",".join(map(str, df_columns))

@@ -53,7 +53,7 @@ def write_to_file(results, row, file_in):
 print("   [*] Opening Source File...")
 
 with GracefulInterruptHandler() as h:
-    with open("HIFLD_Schools.csv", "r", encoding="utf-8") as input_source:
+    with open("websites_HIFLD_Schools.csv", "r", encoding="utf-8") as input_source:
         print("      [*] Reading csv")
         df = pd.read_csv(input_source)
         df_columns = list(df.columns)
