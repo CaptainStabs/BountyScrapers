@@ -6,6 +6,7 @@ import time
 import sys
 from utils.interrupt_handler import GracefulInterruptHandler
 from bs4 import BeautifulSoup
+import traceback
 from _secrets import notify_url
 
 columns = ["name", "city", "state", "district"]
@@ -50,10 +51,15 @@ with GracefulInterruptHandler() as h:
                     pass
 
                 if no_error:
-                    search_query = f"https://nces.ed.gov/ccd/districtsearch/district_list.asp?Search=1&details=1&InstName=&DistrictID={district_id}"
-                    response = requests.request("GET", search_query, headers=headers)
-                    html_page = response.text
-
+                    try:
+                        search_query = f"https://nces.ed.gov/ccd/districtsearch/district_list.asp?Search=1&details=1&InstName=&DistrictID={district_id}"
+                        response = requests.request("GET", search_query, headers=headers)
+                        html_page = response.text
+                    except TimeoutError as e:
+                        traceback.print_exc()
+                        time.sleep(1)
+                        message_data = f"Your district scrpaer crashed. Error: \n{str(e)}"
+                        response = requests.post(notify_url, data=message_data)
                     soup = BeautifulSoup(html_page, "html.parser")
 
                     for link in soup.findAll("a"):
