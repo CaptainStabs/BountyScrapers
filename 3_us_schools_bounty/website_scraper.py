@@ -37,7 +37,8 @@ ignored_domains = [
     "greatschools",
     "thearcofil",
     "usnews",
-    "guardianangelstaffing"
+    "guardianangelstaffing",
+    "wikipedia"
 ]
 
 
@@ -119,6 +120,7 @@ with GracefulInterruptHandler() as h:
 
 
                         except Exception as e:
+                            import requests
                             traceback.print_exc()
                             print("\n\n")
                             print(e)
