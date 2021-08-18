@@ -6,6 +6,7 @@ import csv
 import time
 import sys
 from utils.interrupt_handler import GracefulInterruptHandler
+import traceback
 from _secrets import notify_url
 
 full_auto = True
@@ -97,13 +98,13 @@ with GracefulInterruptHandler() as h:
                                 lang="en",
                                 num=10,
                                 start=0,
-                                stop=None,
+                                stop=10,
                                 pause=2.0,
                             ):
 
                                 # print(type(results))
                                 if any(ignored_domain in results for ignored_domain in ignored_domains):
-                                        print(f"            [*] Haven't found it yet. URL: {url}")
+                                        print(f"            [*] Haven't found it yet. URL: {results}")
                                         found = False
                                         if num_tries == 10:
                                             print("         [*] Couldn't find it.")
@@ -112,18 +113,20 @@ with GracefulInterruptHandler() as h:
                                             num_tries += 1
                                             continue
                                 else:
-                                    print(f"         [*] Found it! URL: {results}")
+                                    print(f"         [*] Found it! URL: {results}\n                    Name: {school_name}\n                    City: {row['city']}")
                                     found = True
                                     break
 
 
                         except Exception as e:
+                            traceback.print_exc()
+                            print("\n\n")
                             print(e)
-                            message_data = "Your code crashed. Error: \n" + str(e)
-                            response = requests.post(
-                                notify_url, data=message_data
-                            )
+
+                            message_data = f"Your code crashed. Error: \n{str(e)}"
+                            response = requests.post(notify_url, data=message_data)
                             found = False
+                            sys.exit()
                             break
 
                     # Outside while loop
