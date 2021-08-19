@@ -47,7 +47,9 @@ ignored_domains = [
     "niche",
     "patch",
     "point2homes",
-    "zillow"
+    "zillow",
+    "ancestors.familysearch",
+    "timeanddate"
 ]
 
 
@@ -59,7 +61,7 @@ def write_to_file(results, row, file_in):
 
     file_in.write(f"{row_list}\n")
     print("   [*] Done writing! Sleeping...")
-    time.sleep(0.5)
+    time.sleep(0.1)
 
 print("   [*] Opening Source File...")
 
@@ -99,6 +101,7 @@ with GracefulInterruptHandler() as h:
                 num_tries = 0
 
                 if no_error:
+                    user_agent = google.get_random_user_agent()
                     while not found:
                         print("         [*] Starting search loop...")
                         query = school_name + " " + str(row["state"])
@@ -111,7 +114,8 @@ with GracefulInterruptHandler() as h:
                                 num=10,
                                 start=0,
                                 stop=10,
-                                pause=0.9,
+                                pause=0.5,
+                                user_agent=user_agent
                             ):
 
                                 # print(type(results))
