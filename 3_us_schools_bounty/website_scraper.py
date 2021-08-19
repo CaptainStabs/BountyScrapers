@@ -45,7 +45,9 @@ ignored_domains = [
     "nces.ed.gov",
     "schooldigger",
     "niche",
-    "patch"
+    "patch",
+    "point2homes",
+    "zillow"
 ]
 
 
