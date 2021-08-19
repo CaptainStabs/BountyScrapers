@@ -99,7 +99,7 @@ with GracefulInterruptHandler() as h:
                 if no_error:
                     while not found:
                         print("         [*] Starting search loop...")
-                        query = school_name + " " + row["state"]
+                        query = school_name + " " + str(row["state"])
                         print("            [?] " + query)
                         try:
                             for results in google.search(
