@@ -19,62 +19,75 @@ def step_one():
 
                 district_input = row["district"]
                 # Yes, this is terrible code, but I'm lazy
+                changed = False
+                if "DISTRICT" not in district_input:
+                    if " DIST" in district_input:
+                        print("DIST: " + str(district_input))
+                        district = district_input.replace("DIST", "DISTRICT")
+                        print("   [*] DIST: " + str(district))
+                        changed = True
+
                 if " ISD" in district_input:
                     print("ISD: " + str(district_input))
                     district = district_input.replace("ISD", "INDEPENDENT SCHOOL DISTRICT")
                     print("   [*] ISD: " + str(district))
+                    changed = True
 
-                elif " SSD" in district_input:
+                if " SSD" in district_input:
                     print("SSD: " + str(district_input))
                     district = district_input.replace("SSD", "SPECIAL SCHOOL DISTRICT")
                     print("   [*] SSD: " + str(district))
+                    changed = True
 
-                elif "PBLC SCHS" in district_input:
+                if "PBLC SCHS" in district_input:
                     print("PBLC SCHS: " + str(district_input))
                     district = district_input.replace("PBLC SCHS", "PUBLIC SCHOOLS")
                     print("   [*] PBLC SCHS: " + str(district))
+                    changed = True
 
-                elif " PCS" in district_input:
+                if " PCS" in district_input:
                     print("PCS: " + str(district_input))
                     district = district_input.replace("PCS", "PUBLIC CHARTER SCHOOLS")
                     print("   [*] PCS: " + str(district))
+                    changed = True
 
-                elif " DIST" in district_input:
-                    print("DIST: " + str(district_input))
-                    district = district_input.replace("DIST", "DISTRICT")
-                    print("   [*] DIST: " + str(district))
-
-                elif " COOP" in district_input:
+                if " COOP" in district_input:
                     print("COOP: " + str(district_input))
                     district = district_input.replace("COOP", "COOPERATIVE")
                     print("   [*] COOP: " + str(district))
+                    changed = True
 
-                elif " COOP." in district_input:
+                if " COOP." in district_input:
                     print("COOP. : " + str(district_input))
                     district = district_input.replace("COOP.", "COOPERATIVE")
                     print("   [*] COOP.: " + str(district))
+                    changed = True
 
-                elif "SPEC ED" in district_input:
+                if "SPEC ED" in district_input:
                     print("SPEC ED: " + str(district_input))
                     district = district_input.replace("SPEC ED", "SPECIAL EDUCATION")
                     print("   [*] SPEC ED: " + str(district))
+                    changed = True
 
-                elif "CISD" in district_input:
+                if "CISD" in district_input:
                     print("CISD: " + str(district_input))
                     district = district_input.replace("CISD", "CONSOLIDATED INDEPENDENT SCHOOL DISTRICT")
                     print("   [*] CISD: " + str(district))
+                    changed = True
 
-                elif " CUSD" in district_input:
+                if " CUSD" in district_input:
                     print("CUSD: " + str(district_input))
                     district = district_input.replace("CUSD", "CONSOLIDATED UNIT SCHOOL DISTRICT")
                     print("   [*] CUSD: " + str(district))
+                    changed = True
 
-                elif "CORP" in district_input:
+                if "CORP" in district_input:
                     print("CORP: " + str(district_input))
                     district  = district_input.replace("CORP", "CORPORATION")
                     print("   [*] CORP: " + str(district))
+                    changed = True
 
-                else:
+                if not changed:
                     district = district_input
 
 
@@ -101,3 +114,19 @@ def step_two():
                 district_input = row["district"]
                 if "DISTRICTRICT" in district_input:
                     district = district_input.replace("DISTRICTRICT", "DISTRICT")
+
+                elif "DISTRICTRICT" in district_input:
+                    district = district_input.replace("DISTRICTRICT", "DISTRICT")
+                    
+                else:
+                    district = district_input.upper()
+
+                school_info = {}
+                school_info["name"] = row["name"].upper()
+                school_info["city"] = row["city"].upper()
+                school_info["state"] = row["state"].upper()
+                school_info["district"] = district_input.upper()
+                writer.writerow(school_info)
+
+# step_one()
+step_two()
