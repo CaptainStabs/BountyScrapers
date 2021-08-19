@@ -41,7 +41,11 @@ ignored_domains = [
     "wikipedia",
     "mapquest",
     "maps.google",
-    "countyoffice"
+    "countyoffice",
+    "nces.ed.gov",
+    "schooldigger",
+    "niche",
+    "patch"
 ]
 
 
@@ -105,7 +109,7 @@ with GracefulInterruptHandler() as h:
                                 num=10,
                                 start=0,
                                 stop=10,
-                                pause=2.0,
+                                pause=0.9,
                             ):
 
                                 # print(type(results))
