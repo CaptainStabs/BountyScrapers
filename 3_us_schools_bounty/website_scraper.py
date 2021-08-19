@@ -120,13 +120,15 @@ with GracefulInterruptHandler() as h:
 
 
                         except Exception as e:
-                            import requests
+                            import urllib3
                             traceback.print_exc()
                             print("\n\n")
                             print(e)
 
                             message_data = f"Your code crashed. Error: \n{str(e)}"
-                            response = requests.post(notify_url, data=message_data)
+                            http = urllib3.PoolManager()
+                            response = http.request('POST', notify_url, body=message_data)
+                            print(response.read())
                             found = False
                             sys.exit()
                             break
