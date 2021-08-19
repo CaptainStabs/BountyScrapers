@@ -77,3 +77,5 @@ with GracefulInterruptHandler() as h:
                         school_info["state"] = row["state"].upper()
                         school_info["district"] = district.upper()
                         writer.writerow(school_info)
+
+                        time.sleep(0.5)
