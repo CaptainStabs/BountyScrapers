@@ -65,7 +65,7 @@ with GracefulInterruptHandler() as h:
         data_columns = ",".join(map(str, df_columns))
 
         print("         [*] Opening output file...")
-        with open("websites_added.csv", "a", encoding="utf-8") as file_out:
+        with open("websites_added_short.csv", "a", encoding="utf-8") as file_out:
             print("            [*] Starting loop")
             for index, row in df.iterrows():
                 if h.interrupted:
@@ -89,6 +89,7 @@ with GracefulInterruptHandler() as h:
                     print(row["website"])
 
                 found = False
+                errored = False
                 num_tries = 0
 
                 if no_error:
@@ -112,6 +113,18 @@ with GracefulInterruptHandler() as h:
                                         print(f"            [*] Haven't found it yet. URL: {results}")
                                         found = False
                                         num_tries += 1
+                                        print(num_tries)
+
+                                        if num_tries > 10:
+                                            print("         [*] Couldn't find it.")
+                                            # with open("fails.csv", "a", encoding="utf-8") as fails:
+                                            #     fails.write(str(row) + str("\n"))
+                                            errored = True
+                                            found = True
+                                            break
+
+
+
                                         continue
 
                                 else:
@@ -119,9 +132,8 @@ with GracefulInterruptHandler() as h:
                                     found = True
                                     break
 
-                                if num_tries > 10:
-                                    print("         [*] Couldn't find it.")
-                                    break
+
+
 
 
                         except Exception as e:
@@ -139,7 +151,8 @@ with GracefulInterruptHandler() as h:
                             break
 
                     # Outside while loop
-                    if found:
+                    if found and not errored:
+                        print("      [*] Writing")
                         if not full_auto:
                             user_choice = input(f"   [!] Does this url look correct?\n     Name: {school_name}\n     State: {row['state']}\n     City: {row['city']}\n     URL: {results}\n     y/n: ")
 
