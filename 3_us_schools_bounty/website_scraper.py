@@ -38,7 +38,10 @@ ignored_domains = [
     "thearcofil",
     "usnews",
     "guardianangelstaffing",
-    "wikipedia"
+    "wikipedia",
+    "mapquest",
+    "maps.google",
+    "countyoffice"
 ]
 
 
@@ -55,7 +58,7 @@ def write_to_file(results, row, file_in):
 print("   [*] Opening Source File...")
 
 with GracefulInterruptHandler() as h:
-    with open("websites_HIFLD_Schools.csv", "r", encoding="utf-8") as input_source:
+    with open("websites_smaller_HIFLD_Schools.csv", "r", encoding="utf-8") as input_source:
         print("      [*] Reading csv")
         df = pd.read_csv(input_source)
         df_columns = list(df.columns)
@@ -92,6 +95,7 @@ with GracefulInterruptHandler() as h:
                     while not found:
                         print("         [*] Starting search loop...")
                         query = school_name + " " + row["state"]
+                        print("            [?] " + query)
                         try:
                             for results in google.search(
                                 query,
@@ -107,15 +111,17 @@ with GracefulInterruptHandler() as h:
                                 if any(ignored_domain in results for ignored_domain in ignored_domains):
                                         print(f"            [*] Haven't found it yet. URL: {results}")
                                         found = False
-                                        if num_tries == 10:
-                                            print("         [*] Couldn't find it.")
-                                            break
                                         else:
                                             num_tries += 1
                                             continue
+
                                 else:
-                                    print(f"         [*] Found it! URL: {results}\n                    Name: {school_name}\n                    City: {row['city']}")
+                                    print(f"         [*] Found it! URL: {results}\n                    Name: {school_name}\n                    City: {row['city']}\n                    State: {row['state']}\n")
                                     found = True
+                                    break
+
+                                if num_tries > 10:
+                                    print("         [*] Couldn't find it.")
                                     break
 
 
