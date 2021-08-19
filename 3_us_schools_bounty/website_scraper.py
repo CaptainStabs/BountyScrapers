@@ -111,9 +111,8 @@ with GracefulInterruptHandler() as h:
                                 if any(ignored_domain in results for ignored_domain in ignored_domains):
                                         print(f"            [*] Haven't found it yet. URL: {results}")
                                         found = False
-                                        else:
-                                            num_tries += 1
-                                            continue
+                                        num_tries += 1
+                                        continue
 
                                 else:
                                     print(f"         [*] Found it! URL: {results}\n                    Name: {school_name}\n                    City: {row['city']}\n                    State: {row['state']}\n")
