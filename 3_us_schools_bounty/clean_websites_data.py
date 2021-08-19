@@ -30,6 +30,15 @@ with open("websites_added.csv", "r", encoding="utf-8") as input_source:
 
                     writer.writerow(output_dict)
 
+                elif "mapquest" not in row["website"]:
+                    output_dict = {}
+                    output_dict["name"] = row["name"]
+                    output_dict["city"] = row["city"]
+                    output_dict["state"] = row["state"]
+                    output_dict["website"] = row["website"]
+
+                    writer.writerow(output_dict)
+
                 else:
                     output_dict = {}
                     output_dict["name"] = row["name"]
