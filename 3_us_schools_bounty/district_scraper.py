@@ -71,9 +71,9 @@ with GracefulInterruptHandler() as h:
                         district = link.string
                         print(f"         [*] District Name: {district}")
 
-                    school_info = {}
-                    school_info["name"] = row["name"].upper()
-                    school_info["city"] = row["city"].upper()
-                    school_info["state"] = row["state"].upper()
-                    school_info["district"] = district.upper()
-                    writer.writerow(school_info)
+                        school_info = {}
+                        school_info["name"] = row["name"].upper()
+                        school_info["city"] = row["city"].upper()
+                        school_info["state"] = row["state"].upper()
+                        school_info["district"] = district.upper()
+                        writer.writerow(school_info)
