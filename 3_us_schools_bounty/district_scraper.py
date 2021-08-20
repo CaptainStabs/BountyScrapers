@@ -61,6 +61,8 @@ with GracefulInterruptHandler() as h:
                         time.sleep(1)
                         message_data = f"Your district scrpaer crashed. Error: \n{str(e)}"
                         response = requests.post(notify_url, data=message_data)
+                        pass
+                        
                     soup = BeautifulSoup(html_page, "html.parser")
 
                     for link in soup.findAll("a"):
