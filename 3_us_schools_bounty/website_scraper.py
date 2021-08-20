@@ -116,7 +116,7 @@ with GracefulInterruptHandler() as h:
                                 num=10,
                                 start=0,
                                 stop=10,
-                                pause=0.5,
+                                pause=1.5,
                             ):
 
                                 # print(type(results))
