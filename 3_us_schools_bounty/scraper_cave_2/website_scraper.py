@@ -116,7 +116,7 @@ with GracefulInterruptHandler() as h:
                                 num=10,
                                 start=0,
                                 stop=10,
-                                pause=2,
+                                pause=1.3,
                             ):
 
                                 # print(type(results))
@@ -160,7 +160,7 @@ with GracefulInterruptHandler() as h:
                             found = False
                             # sys.exit()
                             pass
-                            time.sleep(3)
+                            time.sleep(5)
                             cwd = os.getcwd()
                             os.remove(os.path.join(cwd, ".google-cookie"))
                             # break

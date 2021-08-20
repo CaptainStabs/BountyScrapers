@@ -8,6 +8,7 @@ import sys
 from utils.interrupt_handler import GracefulInterruptHandler
 import traceback
 from _secrets import notify_url
+from tqdm import tqdm
 
 full_auto = True
 
@@ -49,7 +50,9 @@ ignored_domains = [
     "point2homes",
     "zillow",
     "ancestors.familysearch",
-    "timeanddate"
+    "timeanddate",
+    "neighborhoodscout",
+    "trulia"
 ]
 
 
@@ -75,7 +78,7 @@ with GracefulInterruptHandler() as h:
         print("         [*] Opening output file...")
         with open("websites_added_short.csv", "a", encoding="utf-8") as file_out:
             print("            [*] Starting loop")
-            for index, row in df.iterrows():
+            for index, row in tqdm(df.iterrows()):
                 if h.interrupted:
                     print("      [!] Interrupted, exiting")
                     break
@@ -101,9 +104,8 @@ with GracefulInterruptHandler() as h:
                 num_tries = 0
 
                 if no_error:
-                    user_agent = google.get_random_user_agent()
                     while not found:
-                        print("         [*] Starting search loop...")
+                        print("\n         [*] Starting search loop...")
                         query = school_name + " " + str(row["state"])
                         print("            [?] " + query)
                         try:
@@ -115,7 +117,6 @@ with GracefulInterruptHandler() as h:
                                 start=0,
                                 stop=10,
                                 pause=0.5,
-                                user_agent=user_agent
                             ):
 
                                 # print(type(results))
@@ -125,7 +126,7 @@ with GracefulInterruptHandler() as h:
                                         num_tries += 1
                                         print(num_tries)
 
-                                        if num_tries > 10:
+                                        if num_tries > 5:
                                             print("         [*] Couldn't find it.")
                                             # with open("fails.csv", "a", encoding="utf-8") as fails:
                                             #     fails.write(str(row) + str("\n"))
@@ -157,8 +158,12 @@ with GracefulInterruptHandler() as h:
                             response = http.request('POST', notify_url, body=message_data)
                             print(response.read())
                             found = False
-                            sys.exit()
-                            break
+                            # sys.exit()
+                            pass
+                            time.sleep(3)
+                            cwd = os.getcwd()
+                            os.remove(os.path.join(cwd, ".google-cookie"))
+                            # break
 
                     # Outside while loop
                     if found and not errored:

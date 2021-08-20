@@ -8,6 +8,7 @@ from utils.interrupt_handler import GracefulInterruptHandler
 from bs4 import BeautifulSoup
 import traceback
 from _secrets import notify_url
+from tqdm import tqdm
 
 columns = ["name", "city", "state", "district"]
 
@@ -37,7 +38,7 @@ with GracefulInterruptHandler() as h:
             if os.stat("districts_added.csv").st_size == 0:
                 writer.writeheader()
 
-            for index, row in df.iterrows():
+            for index, row in tqdm(df.iterrows()):
                 if h.interrupted:
                     print("      [!] Interrupted, exiting")
                     break
