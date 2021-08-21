@@ -117,7 +117,7 @@ def step_two():
 
                 elif "DISTRICTRICT" in district_input:
                     district = district_input.replace("DISTRICTRICT", "DISTRICT")
-                    
+
                 else:
                     district = district_input.upper()
 
@@ -128,5 +128,5 @@ def step_two():
                 school_info["district"] = district_input.upper()
                 writer.writerow(school_info)
 
-# step_one()
-step_two()
+step_one()
+# step_two()
