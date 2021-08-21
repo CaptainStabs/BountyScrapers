@@ -52,7 +52,45 @@ ignored_domains = [
     "ancestors.familysearch",
     "timeanddate",
     "neighborhoodscout",
-    "trulia"
+    "trulia",
+    "ancestry",
+    "wikitravel",
+    "wikiwand",
+    "handwiki",
+    "commons.wikimedia",
+    "wric",
+    "wifr",
+    "paec803",
+    "mcsd11",
+    "wnep",
+    "whas11",
+    "whsv",
+    "wymt",
+    "hcusd2",
+    "waze",
+    "wwrc"
+    "nola",
+    "southbendtribune",
+    "bdtonline",
+    "newsadvance",
+    "indystar",
+    "uoflnews",
+    "loudountimes",
+    "indianapublicradio",
+    "observer-reporter",
+    "qcsd",
+    "militarytownadvisor",
+    "areavibes",
+    "dailyherald",
+    "newsandsentinel",
+    "kolotv",
+    "thecounty.news",
+    "grandforksherald",
+    "providencejournal",
+    "abcnews4",
+    "chicagotribune",
+    "bizjournals",
+    "theinteriorjournal"
 ]
 
 
@@ -69,7 +107,7 @@ def write_to_file(results, row, file_in):
 print("   [*] Opening Source File...")
 
 with GracefulInterruptHandler() as h:
-    with open("websites_smaller_HIFLD_Schools.csv", "r", encoding="utf-8") as input_source:
+    with open("dirty_websites.csv", "r", encoding="utf-8") as input_source:
         print("      [*] Reading csv")
         df = pd.read_csv(input_source)
         df_columns = list(df.columns)
