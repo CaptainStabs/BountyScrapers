@@ -1,49 +1,13 @@
 import csv
 import os
 import pandas as pd
+from _ignored_domains import ignored_domains
+from tqdm import tqdm
 
 columns = ["name", "city", "state", "website"]
 
-ignored_domains = [
-    "facebook",
-    "twitter",
-    "linkedin",
-    "instagram",
-    "youtube",
-    "tiktok",
-    "pinterest",
-    "reddit",
-    "wicz",
-    "krtv",
-    "foxnews",
-    "wsbtv",
-    "cnbc",
-    "cbs",
-    "nytimes",
-    "yelp",
-    "sacbee",
-    "ed-data",
-    "high-schools",
-    "publiccharters",
-    "publicschoolreview",
-    "elementaryschools",
-    "greatschools",
-    "thearcofil",
-    "usnews",
-    "guardianangelstaffing",
-    "wikipedia",
-    "mapquest",
-    "maps.google",
-    "countyoffice",
-    "nces.ed.gov",
-    "schooldigger",
-    "niche",
-    "patch",
-    "point2homes",
-    "zillow"
-]
 
-with open("websites_added_short.csv", "r", encoding="utf-8") as input_source:
+with open("schools.csv", "r", encoding="utf-8") as input_source:
     df = pd.read_csv(input_source)
     df_columns = list(df.columns)
     data_columns = ",".join(map(str, df_columns))
@@ -58,10 +22,9 @@ with open("websites_added_short.csv", "r", encoding="utf-8") as input_source:
             if os.stat("dirty_websites.csv").st_size == 0:
                 writer2.writeheader()
 
-
-            for index, row in df.iterrows():
-                if any(ignored_domain in row["website"] for ignored_domain in ignored_domains):
-                    print("dirty")
+            for index, row in tqdm(df.iterrows()):
+                if any(ignored_domain in str(row["website"]) for ignored_domain in ignored_domains):
+                    # print("dirty")
                     output_dict = {}
                     output_dict["name"] = row["name"]
                     output_dict["city"] = row["city"]
