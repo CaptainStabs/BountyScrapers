@@ -1,0 +1,605 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//Dtd XHTML 1.0 Transitional//EN" "http://www.w3.org/tr/xhtml1/Dtd/xhtml1-transitional.dtd">
+<html>
+
+<head>
+<title>Search for Public Schools - Search Results</title>
+
+<link rel="stylesheet" type="text/css" href="/css/locatorstyles.css">
+
+
+<SCRIPT language='JavaScript'>
+	
+	window.name = "NCESExcelTarget";
+
+	function AboutDataPopup()
+	{
+		window.open('/ccd/commonfiles/aboutdata.asp','AboutDataPopup','width=380,height=390, screenX=0,screenY=0,top=0,left=0,scrollbars=yes,resizable=no');
+	}
+
+	function HelpPopup(pagetype)
+	{
+		window.open('help.asp?page=' + pagetype,'HelpPopup','width=380,height=390, screenX=0,screenY=0,top=0,left=0,scrollbars=yes,resizable=no');
+	}
+	
+</SCRIPT>
+
+
+
+</head>
+
+<body topmargin="3" bgcolor="#ffffff">
+
+
+<div class="headContents">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/IESfavicon_32px.png">
+<link rel="icon" type="image/png" sizes="128x128" href="/images/favicons/IESfavicon_128px.png">
+<link rel="icon" type="image/png" sizes="152x152" href="/images/favicons/IESfavicon_152px.png">
+<link rel="icon" type="image/png" sizes="167x167" href="/images/favicons/IESfavicon_167px.png">
+<link rel="icon" type="image/png" sizes="180x180" href="/images/favicons/IESfavicon_180px.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/favicons/IESfavicon_192px.png">
+<link rel="icon" type="image/png" sizes="196x196" href="/images/favicons/IESfavicon_196px.png">
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+<link href="/css/IES_Core_0004.css" rel="stylesheet" type="text/css" />
+<link href="/css/IES_Mobile_0004.css" rel="stylesheet" type="text/css" />
+</div>
+<script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+var $$i = jQuery.noConflict(true);
+//]]>
+</script>
+<script type="text/javascript" src="/js/hfsNav.js?v=02"></script>
+<script type="text/javascript" src="/js/nav_0005.js"></script>
+<script type="text/javascript" src="/js/importBlogPosts.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+<div class="nces">
+	<a name="top"></a>
+	<div style="display:none"><a href="#content" title="Skip Navigation">Skip Navigation</a></div>
+	<div class="header_container">
+		<div class="header">
+			
+			<div class="clearfix header_nav">
+			
+				<div class="bc">
+					<a href="//ies.ed.gov" >IES</a>
+					<span class="carrot">&nbsp;<img src="/images/icons/iesNewDots.png" alt=" " />&nbsp;</span>
+					<a href="/" class="top_nav">
+						<div class="l ctr">NCES</div>
+						<span class="long_name">National Center for<br /> Education Statistics</span>
+						<div class="l menuIcon"><img src="/images/icons/menuIcon.png" alt="Menu" /></div>
+					</a>
+				</div>
+				
+				<div class="clearfix main_nav">
+					<div class="clearfix ies_cnav nces_nav_c">
+						<ul class="sub_cats">
+							<li class="sub_c_nav"><a href="/surveys">Surveys &amp; Programs</a>
+								<ul>
+                                <li><a href="/annuals/">Annual Reports</a>
+										<ul class="clearfix">
+											<li class="left_col">
+												<a href="/programs/coe/" title="Condition of Education">Condition of Education</a>
+                                                <a href="/programs/digest/" title="Digest of Education Statistics">Digest of Education Statistics</a>
+                                                <a href="/programs/pes/" title="Projections of Education Statistics">Projections of Education Statistics</a>
+                                                <a href="/surveys/annualreports/topical-studies">Topical Studies</a>
+                                            </li>
+										</ul>
+									</li>
+									<li><a href="/surveys/SurveyGroups.asp?group=4">National Assessments</a>
+										<ul class="clearfix">
+											<li class="left_col">
+												<a href="/nationsreportcard" title="National Assessment of Educational Progress (NAEP)">National Assessment of Educational Progress (NAEP)</a>
+												<a href="/surveys/piaac/current_results.asp" title="Program for the International Assessment of Adult Competencies (PIAAC)">Program for the International Assessment of Adult Competencies (PIAAC)</a>
+											</li>
+										</ul>
+									</li>
+									
+									<li><a href="/surveys/international/" title="International">International Assessments</a>
+										<ul class="clearfix">
+											<li class="left_col">
+												<a href="/surveys/international/" title="International Activities Program (IAP)">International Activities Program (IAP)</a>
+											</li>
+										</ul>
+									</li>
+									<li><a href="/surveys/SurveyGroups.asp?group=3">Early Childhood</a>
+										<ul class="clearfix">
+											<li class="left_col">
+												<a href="/ecls/" title="Early Childhood Longitudinal Study (ECLS)">Early Childhood Longitudinal Study (ECLS)</a>
+												<a href="/nhes/" title="National Household Education Survey (NHES)">National Household Education Survey (NHES)</a>
+											</li>
+										</ul>
+									</li>
+									<li><a href="/surveys/SurveyGroups.asp?group=1">Elementary/ Secondary</a>
+										<ul class="clearfix">
+											<li class="left_col">
+												<a href="/ccd/" title="Common Core of Data (CCD)">Common Core of Data (CCD)</a>
+												<a href="/surveys/slsp/" title="Secondary Longitudinal Studies Program">Secondary Longitudinal Studies Program</a>
+												<a href="/programs/edge/" title="Education Demographic and Geographic Estimates (EDGE)">Education Demographic and Geographic Estimates (EDGE)</a>
+												<a href="/surveys/ntps/" title="National Teacher and Principal Survey (NTPS)">National Teacher and Principal Survey (NTPS)</a>
+												<a href="/surveys/SurveyGroups.asp?group=1" title="more Elementary/Secondary">more...</a>
+											</li>
+										</ul>
+									</li>
+									<li><a href="/surveys/SurveyGroups.asp?group=5" title="Library">Library</a>
+										<ul class="clearfix">
+											<li class="left_col">
+												<a href="/surveys/libraries/" title="Library Statistics Program">Library Statistics Program</a>
+											</li>
+										</ul>
+									</li>
+									<li><a href="/surveys/SurveyGroups.asp?group=2" title="Postsecondary">Postsecondary</a>
+										<ul class="clearfix">
+											<li class="left_col">
+												<a href="/surveys/b&amp;b/" title="Baccalaureate and Beyond (B&amp;B)">Baccalaureate and Beyond (B&amp;B)</a>
+												<a href="/surveys/ctes/" title="Career/Technical Education Statistics (CTES)">Career/Technical Education Statistics (CTES)</a>
+												<a href="/ipeds/" title="Integrated Postsecondary Education Data System (IPEDS)">Integrated Postsecondary Education Data System (IPEDS)</a>
+												<a href="/surveys/npsas/" title="National Postsecondary Student Aid Study (NPSAS)">National Postsecondary Student Aid Study (NPSAS)</a>
+												<a href="/surveys/SurveyGroups.asp?group=2" title="more Postsecondary">more...</a>
+											</li>
+										</ul>
+									</li>
+
+									<li><a href="/surveys/SurveyGroups.asp?group=8" title="Data Systems, Use, &amp; Privacy">Data Systems, Use, &amp; Privacy</a>                               
+										<ul class="clearfix">
+											<li class="left_col">
+												<a href="/programs/ceds/" title="Common Education Data Standards (CEDS)">Common Education Data Standards (CEDS)</a>
+												<a href="/forum/" title="National Forum on Education Statistics">National Forum on Education Statistics</a>
+												<a href="/programs/SLDS/" title="Statewide Longitudinal Data Systems Grant Program - (SLDS)">Statewide Longitudinal Data Systems Grant Program - (SLDS)</a>
+												<a href="/surveys/SurveyGroups.asp?group=8" title="more Data Systems, Use, &amp; Privacy">more...</a>
+											</li>
+										</ul>
+									</li>
+									<li><a href="/surveys/SurveyGroups.asp?group=7" title="Resources">Resources</a>
+										<ul class="clearfix">
+											<li class="left_col">
+												<a href="/training/datauser/" title="Distance Learning Dataset Training">Distance Learning Dataset Training</a>
+												<a href="/npec/" title="National Postsecondary Education Cooperative (NPEC)">National Postsecondary Education Cooperative (NPEC)</a>
+												<a href="/statprog/" title="Statistical Standards Program">Statistical Standards Program</a>
+												<a href="/surveys/SurveyGroups.asp?group=7" title="more Resources">more...</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="sub_c_nav"><a href="/datatools">Data &amp; Tools</a>
+								<ul>
+									<!--<li><a href="#">Subject</a>
+										<ul class="clearfix">
+											<li class="left_col">
+												<a href="#">Assessments</a>
+												<a href="#">K-12 Students</a>
+												<a href="#">K-12 Teachers and Faculty</a>
+												<a href="#">K-12 Schools</a>
+												<a href="#">College Students</a>
+												<a href="#">College Faculty</a>
+												<a href="#">College Institutions</a>
+												<a href="#">Mapping</a>
+											</li>
+										</ul>
+									</li>-->
+									<li><a href="/datatools/index.asp?DataToolSectionID=1">Downloads Microdata/Raw Data</a>
+										<ul class="clearfix">	
+											<li class="left_col">	
+												<a href="/edat/" title="EDAT">EDAT</a>	
+												<a href="/ipeds/deltacostproject/" title="Delta Cost Project">Delta Cost Project</a>	
+												<a href="/ipeds/datacenter/" title="IPEDS Data Center">IPEDS Data Center</a>	
+												<a href="/pubsearch/licenses.asp" title="How to apply for Restricted Use License">How to apply for Restricted Use License</a>	
+											</li>
+										</ul>
+									</li>
+									<li><a href="/datatools/index.asp?DataToolSectionID=2">Online Analysis</a>
+										<ul class="clearfix">	
+											<li class="left_col">	
+                                                <a href="/programs/edge/Demographic/ACS" title="ASC-ED Tables">ASC-ED Tables</a>
+                                                <a href="/datalab/" title="Data Lab">Data Lab</a>	
+												<a href="/ccd/elsi/" title="Elementary Secondary Information System">Elementary Secondary Information System</a>
+												<a href="/surveys/international/ide/" title="International Data Explorer">International Data Explorer</a>	
+												<a href="/ipeds/datacenter/" title="IPEDS Data Center">IPEDS Data Center</a>
+												<a href="/nationsreportcard/naepdata/" title="NAEP Data Explorer">NAEP Data Explorer</a>	
+											</li>
+										</ul>
+									</li>
+									<li><a href="/datatools/index.asp?DataToolSectionID=3">School and College Search</a>
+										<ul class="clearfix">	
+											<li class="left_col">	
+                                                <a href="/programs/edge/acsdashboard" title="ACS Dashboard">ACS Dashboard</a>
+                                                <a href="/collegenavigator/" title="College Navigator">College Navigator</a>
+                                                <a href="/surveys/pss/privateschoolsearch/" title="Private Schools">Private Schools</a>
+												<a href="/ccd/districtsearch/" title="Public School Districts">Public School Districts</a>
+												<a href="/ccd/schoolsearch/" title="CCD School Search">Public Schools</a>
+												<a href="/globallocator/" title="Search for Schools and Colleges">Search for Schools and Colleges</a>
+												
+											</li>
+										</ul>
+									</li>
+									<li><a href="/datatools/index.asp?DataToolSectionID=4">Comparison Tools</a>
+										<ul class="clearfix">
+											<li class="left_col">
+												<a href="https://www.nationsreportcard.gov/profiles/stateprofile/" title="NAEP State Profiles">NAEP State Profiles (nationsreportcard.gov)</a>	
+												<a href="/edfin/search/search_intro.asp" title="Public School District Finance Peer Search">Public School District Finance Peer Search</a>	
+												<a href="/edfin/index.asp" title="Education Finance Statistics Center">Education Finance Statistics Center</a>
+												<a href="/ipeds/datacenter/" title="IPEDS Data Center">IPEDS Data Center</a>	
+											</li>
+										</ul>
+									</li>
+									<li><a href="/datatools/index.asp?DataToolSectionID=5">Questionnaire Tools</a>
+										<ul class="clearfix">
+											<li class="left_col">
+												<a href="/nationsreportcard/itmrlsx/" title="NAEP Question Tool">NAEP Question Tool</a>
+												<a href="/NAAL/sample_items.asp" title="NAAL Questions Tool">NAAL Questions Tool</a>
+											</li>
+										</ul>
+									</li>
+									<li><a href="/datatools/index.asp?DataToolSectionID=6">Geographic Tools</a>
+										<ul class="clearfix">	
+											<li class="left_col">	
+                                                <a href="/programs/edge/acsdashboard" title="ACS-ED Dashboard">ACS-ED Dashboard</a>
+                                                <a href="/programs/maped/ACSMaps" title="ACS-ED Maps">ACS-ED Maps</a>
+                                                <a href="/ipeds/CollegeMap/" title="CollegeMap">CollegeMap</a>
+                                                <a href="/programs/maped/LocaleLookup" title="Locale Lookup">Locale Lookup</a>
+												<a href="/programs/maped" title="MapEd">MapEd</a>
+                                                <a href="/programs/mapED/SafeMap" title="SAFEMap">SAFEMap</a>
+                                                <a href="/ccd/schoolmap" title="School and District Navigator">School and District Navigator</a>
+											</li>
+										</ul>
+									</li>
+									<li><a href="/datatools/index.asp?DataToolSectionID=7">Other Tools</a>
+										<ul class="clearfix">	
+											<li class="left_col">	
+												<a href="/bibliography/" title="Bibliography">Bibliography</a>
+												<a href="//datainventory.ed.gov" title="Bibliography">ED Data Inventory</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="/fastfacts/" class="nces_facts">Fast Facts</a>
+								<ul class="clearfix">
+									<li class="left_col">
+										<a href="/fastfacts/index.asp?faq=FFOption1#faqFFOption1" title="Assessments">Assessments</a>
+										<a href="/fastfacts/index.asp?faq=FFOption2#faqFFOption2" title="Early Childhood">Early Childhood</a>
+										<a href="/fastfacts/index.asp?faq=FFOption3#faqFFOption3" title="Elementary and Secondary">Elementary and Secondary</a>
+										<a href="/fastfacts/index.asp?faq=FFOption4#faqFFOption4" title="Library">Library</a>
+										<a href="/fastfacts/index.asp?faq=FFOption5#faqFFOption5" title="Postsecondary and Beyond">Postsecondary and Beyond</a>
+										<a href="/fastfacts/index.asp?faq=FFOption6#faqFFOption6" title="Resources">Resources</a>
+									</li>
+								</ul>
+							</li>
+							<!--<li><a href="#" class="nces_sch_search">School Search</a>
+								<ul class="clearfix">
+									<li class="left_col">
+										<a href="/globallocator/" title="Search for Schools and Colleges">Search for Schools and Colleges</a>
+										<a href="/collegenavigator/" title="College Navigator">College Navigator</a>
+
+										<a href="/datatools" title="Other Search Tools">Other Search Tools</a>
+										<a href="/ccd/schoolsearch/" title="Public Schools">Public Schools</a>
+										<a href="/ccd/districtsearch/" title="Public School Districts">Public School Districts</a>
+										<a href="/surveys/pss/privateschoolsearch/" title="Private Schools">Private Schools</a>
+									</li>
+								</ul>
+							</li>-->
+							<li><a href="/whatsnew/" class="nces_news">News &amp; Events</a>
+								<ul class="clearfix">
+									<li class="left_col">
+										<a href="/blogs/nces/" title="NCES Blog">NCES Blog</a>
+										<a href="/whatsnew/" title="What's New at NCES">What's New at NCES</a>
+										<a href="//ies.ed.gov/whatsnew/conferences/?cid=2" title="Conferences/Training">Conferences/Training</a>
+										<a href="//ies.ed.gov/newsflash/?url=http%3A%2F%2Fnces%2Eed%2Egov&amp;site=National+Center+for+Education+Statistics" title="NewsFlash">NewsFlash</a>
+										<a href="/whatsnew/Solicitations.asp" title="Funding Opportunities">Funding Opportunities</a>
+										<a href="/whatsnew/NCESNews.asp" title="Press Releases">Press Releases</a>
+										<a href="/whatsnew/statchat/index.asp" title="StatChat">StatChat</a>
+									</li>
+								</ul>
+							</li>
+							<li><a href="/pubsearch/">Publications &amp; Products</a>
+								<ul class="clearfix">
+									<li class="left_col">
+										<a href="/pubsearch/" title="Search Publications and Products">Search Publications and Products</a>
+										<a href="/annuals/" title="Publications">Annual Reports</a>
+										<a href="/pubsearch/licenses.asp" title="Restricted-use Data Licenses">Restricted-use Data Licenses</a>
+										<br />
+										<a href="/pubsearch/index.asp?searchcat2=pubslast90&amp;HasSearched=1" title="Recent Publications">Recent Publications</a>
+										<a href="/pubsearch/Subindx.asp" title="By Subject Index A-Z">By Subject Index A-Z</a>
+										<a href="/pubsearch/surveylist.asp" title="By Survey &amp; Program Areas">By Survey &amp; Program Areas</a>
+										<a href="/pubsearch/index.asp?searchcat2=pubslast6month&amp;HasSearched=1" title="Data Products Last 6 Months">Data Products Last 6 Months</a>
+									</li>
+									<!--
+									<li class="right_col">						
+										<a href="/pubsearch/pubsinfo.asp?pubid=2012026"><img src="/images/hfs/f/ay_small.gif" alt="America's Youth: Transitions to Adulthood"></a><br><a href="/pubsearch/pubsinfo.asp?pubid=2012026">
+									 America's Youth:<br>Transitions to Adulthood
+										</a>
+									</li> -->
+								</ul>
+							</li>
+							<li><a href="#" class="nces_about">About Us</a>
+								<ul class="clearfix">
+									<li class="left_col">
+										<a href="/about/" title="About NCES">About NCES</a>
+										<a href="/whatsnew/commissioner/index.asp" title="Commissioner">Commissioner</a>
+										<a href="/help/webmail/" title="Contact NCES">Contact NCES</a>
+										<a href="/ncestaff/stafflist.asp" title="Staff">Staff</a>
+										<a href="/help" title="Help">Help</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<div class="common_main_nav">
+							<div class="common_links">
+								<a href="/help/webmail/">Contact</a><br />
+								<a href="/datatools/">Tools</a><br />
+								<a href="http://www.ed.gov/">ED.gov</a><br />
+								<a href="//ies.ed.gov/newsflash/#nces">Newsflash</a>
+							</div>
+							<div class="social_links">
+								<a href="/blogs/nces/">NCES Blog</a><br />
+								<a href="https://twitter.com/EdNCES"><img src="/images/icons/twitterNav.png"  alt="Twitter logo" /></a> <a href="https://twitter.com/EdNCES">Twitter</a><br />
+								<a href="https://www.facebook.com/EdNCES/"><img src="/images/icons/facebookNav.png"  alt="Facebook logo" /></a> <a href="https://www.facebook.com/EdNCES/">Facebook</a>
+							</div>							
+							<div class="social_links">
+								<a href="/nceskids/" class="kidszone"><img src="/images/icons/NCESkidszone.gif" alt="KidsZone logo" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="site_search">
+					<a href="#" class="mob_search"><img src="/images/icons/searchIcon.png" alt="Search IES" /></a>
+					<form onsubmit="return hfsIsSearchValid(this);" method="get" action="/search/search_redirect.asp" name="HeaderSearch"><label for="HFSSearchBox" style="display:none;">Search box</label><input type="text" value="Search" id="HFSSearchBox" name="Search"><input type="hidden" value="NCES" name="website"><input type="submit" value="Go" class="submitBtn search-link" /></form>
+				</div>			
+			</div>
+		</div>
+	</div>
+<div class="sfsContent" style="width: 570px;">
+
+<map name="SchoolMap1">
+<area href="index.asp" shape="rect" coords="0, 0, 260, 45">
+<area href="/ccd/" shape="rect" coords="447, 1, 583, 31" Alt="CCD Home">
+</map>
+
+
+<TABLE border="0" cellspacing="0" cellpadding="0" width="590">
+<TR>
+<TD><img border="0" src="/ccd/commonfiles/images/searchforschools.gif" width="590" height="50" ALT="Search for Public Schools" usemap="#SchoolMap1"></TD>
+</TR>
+<tr><td bgcolor="#134F8A" colspan="2" style="color:#fff;padding:5px;font-size:1.2em"><strong>NOTE</strong>:  The inclusion or exclusion of a school in this locator does NOT constitute an endorsement of the school and should NOT be used in any way to infer the accreditation status of the school.</td></tr>
+</TABLE>
+
+
+<TABLE border="0" cellspacing="0" cellpadding="0" width="590">
+
+<TR>
+<TD bgcolor="#134F8A" align="center">
+	<table border="0" width="100%" cellspacing="0" cellpadding="0">
+	<tr>
+	<td valign="middle" width="10%" nowrap><strong><font color="#FFFFFF" size="3">&nbsp;Search Results</strong></font></td>
+	<td valign="middle" width="10%" nowrap><font size="2" color="#FFFFFF">&nbsp;&nbsp;(records: <font color='#EDFFE8'><strong>1</strong></font>)</font></TD>
+	<td valign="top" width="80%" align="right" nowrap><font size="2" color="#FFFFFF"><strong>
+		<a class="ignoredclass1" href="index.asp?Search=1&InstName=ALDEN-HEBRON+HIGH+SCHOOL&City=HEBRON&County=MCHENRY">Modify Search</a>&nbsp;&nbsp;
+		
+		<a class="ignoredclass1" href="JavaScript:AboutDataPopup();">Data Notes/Grant IDs</a>&nbsp;&nbsp;
+		<a class="ignoredclass1" href="JavaScript:HelpPopup('page2');">Help</a>&nbsp;&nbsp;</strong></font></td>
+	</tr>
+	</table>
+</TD>
+</TR>
+</table>
+
+
+	<TABLE border="0" width="590" cellspacing="0" cellpadding="0">
+	<TR>
+	<TD bgcolor="#80BB71" align="center">
+	
+		<table border="0" width="99%" cellpadding="0" cellspacing="3">
+		<tr>
+		<td width="4%"><font size="1" color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;</font></td>
+		<td width="47%"><strong><font size="2" color="#FFFFFF">School Name</font></strong></td>
+		<td width="13%"><font size="2" color="#FFFFFF"><strong>Phone</strong></font></td>
+		<td width="13%"><font size="2" color="#FFFFFF"><strong>County*</strong></font></td>
+		<td width="9%" align="center"><strong><font color="#FFFFFF" size="2">Students*</font></strong></td>
+		<td width="9%" align="center"><strong><font color="#FFFFFF" size="2">&nbsp;Grades</font></strong>
+		</td>
+		</tr>
+		</table>
+	
+	</TD>
+	</TR>
+<TR>
+<TD bgcolor="#EDFFE8" align="center">
+<table border="0" width="99%" cellpadding="0" cellspacing="3">
+<tr>
+<td width="4%" align="left"><font size="1" color="#80BB71">1.</font></td><td width="47%"><font face="Times" size="2"><a href="school_detail.asp?Search=1&InstName=ALDEN-HEBRON+HIGH+SCHOOL&City=HEBRON&County=MCHENRY&ID=170330000017"><strong>Alden-Hebron High School</strong></a><br><font size="1">9604 Illinois St,&nbsp;Hebron,&nbsp;IL&nbsp;60034</font></font></td><td width="13%" valign="top"><font size="1">(815)648-2442</font></td><td width="13%" valign="top"><font size="1">Mchenry County</font></td><td width="9%" valign="top" align="right"><font size="1">95</font></td><td width="9%" valign="top" align="right"><font size="1">9-12</font></td>
+</tr>
+</table>
+</TD>
+</TR>
+
+
+<TR>
+<TD bgcolor="#134F8A" align="center"><img border="0" src="/ccd/commonfiles/images/spacer.gif" width="10" height="3"></TD>
+</TR>
+
+<TR>
+<TD bgcolor="#134F8A" align="center">
+<TABLE width='100%' border=0 cellspacing=0 cellpadding=0><TR><TD width='33%'></TD><TD width='67%' align='right'><font color='#FFFFFF' size='2'><strong></TR></TABLE>
+</TD>
+</TR>
+
+
+<TR>
+<TD align="center"><img border="0" src="/ccd/commonfiles/images/pagebottom.gif" width="590" height="15"></TD>
+</TR>
+
+<TR>
+<TD align="center"><font size=2>Source: CCD Public school data 2019-2020, 2020-2021 school years</font></TD>
+</TR>
+<TR>
+<TD align="center"><div style="padding:2px 4px 6px 16px;margin:0;text-align:left;font-size:10pt">Notes:
+<ul style="margin:2px 8px 0 0;padding-left:16px"><li class='noteAsterisk'>* denotes a column with data from 2019-2020</li><li>[ &dagger; ] indicates that the data are not applicable. For example, the enrollment and staff characteristics for schools that opened in the 2020-2021 school year will not be available until the full 2020-2021 file is released.</li><li>[ &ndash; ] indicates that the data are missing.</li><li>[ &Dagger; ] indicates that the data do not meet NCES data quality standards.</li><li>The directory information on school name, address, and phone number are preliminary data from initial submissions of school level data for 2020-2021.</li><li>Data provided on student membership and staffing are from the official school level data for 2019-2020.</li>
+</ul>
+</div>
+</TD>
+</TR>
+
+</TABLE>
+
+
+
+<br />
+
+
+
+
+<style type="text/css">
+<!--
+	A.SimSearch:visited, A.SimSearch:active, A.SimSearch:link {text-decoration: underline; color: blue;}
+	A.SimSearch:hover {text-decoration: underline; color: red;}
+-->
+</STYLE>
+
+<table align="center" border="1" width="404" bordercolor="#3A7D9E" bgcolor="#E1F0F7" cellspacing="0" cellpadding="0">
+<tr>
+<td width="100%" bgcolor="#3A7D9E"><b><font size="2" color="#FFFFFF" face="arial">Similar Search</font></b></td>
+</tr>
+<tr>
+<td width="100%" align="center">
+	<table border="0" width="96%">
+	<tr>
+	<td width="100%" align="center"><font size="2" face="arial">Based on your geographic search for Public Schools,<BR>you can also search for...</font></td>
+	</tr>
+	<tr>
+	<td width="100%" align="center">
+		<table border="0" cellspacing="0" cellpadding="0">
+		<tr>
+		
+		<td align='center'><font size='2' face='arial'><B><a href='/ccd/districtsearch/district_list.asp?Search=1&City=HEBRON&County=MCHENRY' class='SimSearch'>Public School Districts</a></font></td>
+<td align='center'><font size='2' face='arial'>&nbsp;&nbsp;|&nbsp;&nbsp;</font></td>
+<td align='center'><font size='2' face='arial'><B><a href='/surveys/pss/privateschoolsearch/school_list.asp?Search=1&City=HEBRON&County=MCHENRY' class='SimSearch'>Private Schools</a></font></td>
+<td align='center'><font size='2' face='arial'>&nbsp;&nbsp;|&nbsp;&nbsp;</font></td>
+<td align='center'><font size='2' face='arial'><B><a href='/surveys/libraries/librarysearch/library_list.asp?Search=1&City=HEBRON&County=MCHENRY' class='SimSearch'>Public Libraries</a></font></td>
+
+
+		</tr>
+		</table>
+	</td>
+	</tr>
+	</table>
+</td>
+</tr>
+</table>
+
+
+
+			<style>
+			<!--
+				A.excelclass:visited {text-decoration: underline; color: blue;}
+				A.excelclass:active {text-decoration: underline; color: blue;}
+				A.excelclass:link {text-decoration: underline; color: blue;}
+				A.excelclass:hover {text-decoration: underline; color: red;}
+			-->
+			</style>
+
+			<SCRIPT language="JavaScript">
+
+				window.name = "NCESExcelTarget6B94D6B0"
+
+				function GetExcelFile()
+				{
+					window.open('','NewExcelWindow','width=230,height=250, screenX=0,screenY=0,top=0,left=0,scrollbars=no,resizable=no');
+					document.ExcelForm.submit();
+				}
+
+			</SCRIPT>
+
+<FORM NAME='ExcelForm' ACTION='/includes/excelcreator/excelcreator.asp' METHOD='POST' TARGET='NewExcelWindow'><INPUT NAME='download' TYPE='hidden' value='loading2'><INPUT NAME='filename' TYPE='hidden' value="6B94D6B0"><INPUT NAME='title' TYPE='hidden' value="CCD public school data 2019-2020, 2020-2021 school years"><INPUT NAME='dsn' TYPE='hidden' value="ENCRYPT:D7DE62D5::1A:1:94:62:7D:31:59:C0:D4::17047ADF:ENCRYPT"><INPUT NAME='sql' TYPE='hidden' value="ENCRYPT:D3BFCF69::3:8:7F:71:61:80:1A:FD:53:76:28:2A:EF:AA:8B:1A:AD:79:E9:9D:91:65:F6:96:6C:A8:C4:A4:D0:F5:87:71:31:CB:4:2A:78:F0:E3:4E:2A:88:27:66:12:78:4B:C4:E6:14:9D:8:F4:6A:37:EF:83:AC:E2:20:9:7A:98:38:AE:B8:2E:A9:B2:75:E1:20:8B:F0:C7:B4:7B:6:95:1C:E9:58:93:6C:C4:67:78:6F:9F:5A:5F:90:EA:23:C9:8A:5B:EC:F6:94:D0:53:52:8D:D:EF:3C:32:BD:30:EB:C9:AD:37:9A:76:8E:8A:D1:B7:9:3D:E8:E5:7D:8:64:4C:50:8A:74:8:5C:27:E2:78:6D:1C:31:22:E5:D8:57:0:E:74:AF:4:80:F9:7E:2E:A1:3E:7A:5F:C9:8E:82:48:30:AB:A8:BB:CD:5:16:6C:9C:F3:88:12:87:AF:29:D7:57:D0:DC:D6:B0:2:9B:D2:66:23:31:86:9:36:46:CA:CA:D2:3A:3B:F:C0:C1:75:52:50:93:A7:15:31:A3:7B:59:D1:E6:7F:98:C:81:A:27:E8:4E:32:36:0:C2:1D:98:71:2D:8C:38:57:6C:DA:A6:50:2E:D0:13:EF:89:77:C3:84:99:CC:C1:23:30:3C:AA:8:DD:A:55:62:C2:7E:F1:4E:C7:63:6B:CC:8:F7:75:EB:FF:7C:2B:22:15:CF:E6:1B:1F:C4:63:C2:F:6:AB:87:C2:AF:78:D8:B9:AC:93:4A:D8:43:2C:A5:E3:15:21:73:C4:D3:83:47:B5:E:90:51:43:49:BD:C4:E:EF:96:FD:92:4F:72:E5:65:6D:59:1D:52:D6:7B:5B:2A:AF:38:AB:CC:2C:10:36:3E:18:EC:D6:67:81:9B:21:A6:42:48:12:39:E8:F9:A0:BB:CC:A7:58:18:DF:87:6A:11:F4:22:73:70:95:4D:9A:5A:3F:AD:CF:B1:75:E7:D2:F0:9A:98:C:97:91:20:9D:ED:6B:58:CA:53:94:E2:EF:45:A7:E5:79:89:38:EE:CD:F7:1C:77:92:20:87:D8:F:F9:DB:54:25:C5:8E:F3:51:7B:2A:1C:23:F5:5A:8E:62:90:F3:69:2A:94:C6:1B:A4:5E:61:C2:A5:C:AC:10:20:7D:83:D8:F2:BA:79:4F:56:3C:B0:E9:A8:94:D9:67:9D:7B:46:D:B3:40:C7:B1:87:8:76:AF:EB:26:96:37:37:E3:77:6:BA:D8:50:81:9A:F1:7A:95:8F:62:E8:A1:84:65:AB:2C:2B:6E:D3:20:33:76:A7:86:C9:C4:F7:32:F9:19:6F:AA:F3:7F:D:28:AF:21:24:37:2A:64:33:2D:F1:43:16:DB:D8:A3:1D:B6:6E:7C:86:16:8:CC:DD:B7:C:30:C0:DC:51:FA:46:61:1D:E5:5:D0:11:F:2F:36:5:7F:B9:8:77:F7:20:2E:48:EF:25:39:8C:CE:A2:4C:6B:17:28:1F:AE:F2:78:1D:EB:DA:8F:CC:D8:BA:7B:9F:70:5D:BE:9:4C:D6:C6:5:16:19:9A:ED:17:9C:6A:BB:90:38:DA:F5:A6:4:A6:5D:9B:6D:C3:3A:41:6B:16:3C:7D:7:1:DC:B:C9:18:3A:19:5A:87:10:AB:37:62:74:7E:ED:BE:AF:B0:62:A4:86:F9:0:4A:83:E1:ED:B1:AB:B6:DF:B1:CA:DA:3F:8E:7B:A7:4E:D2:B6:B1:A:3F:76:63:81:2C:AD:49:BF:B2:5C:D6:3C:3E:42:55:D7:92:68:91:96:F2:42:78:D8:D5:A9:C4:A:49:58:D8:55:6D:DB:F0:1E:79:EC:1D:E3:44:14:B0:AC:7A:6D:16:E:88:33:21:3D:6D:FC:3B:EA:F6:F:8C:3A:4B:98:62:49:C0:5:5C:41:E3:CC:4C:9E:B4:29:47:1B:23:C:24:DA:BF:8F:55:90:B0:C4:D6:E0:C5:B3:B1:42:5E:1F:9E:5:BB:D8:1F:B1:4:61:35:2E:9A:F8:AD:6A:3F:38:3E:FD:1C:58:9E:C6:EB:DD:71:71:4F:E1:13:B5:4E:99:69:92:B9:A4:D:1D:7F:28:6E:6B:B7:94:DE:C4:DC:3A:1F:89:97:AD:26:8F:D3:21:89:3A:41:D2:C5:40:D3:A5:79:AE:EE:10:F3:C0:C7:5A:FB:8B:B4:D8:CB:52:34:F9:CC:36:4E:62:BA:84:2D:31:B9:77:E1:FD:67:61:2C:D2:ED:6B:21:BD:6C:21:B1:50:66:F4:1C:3A:F0:DD:F1:BA:A:DE:53:5E:29:22:8D:14:6D:C3:8C:8D:69:59:81:B1:3C:4B:EE:65:5D:12:F:D7:AF:3E:E2:12:D2:6D:A8:3:7D:81:EA:FF:65:EA:D4:BE:24:5D:BC:38:AE:A6:30:CB:64:9:80:B5:CF:6B:6C:A4:F8:54:97:A8:65:2D:D9:E7:90:2:EA:97:48:65:B5:C0:89:EC:EC:63:C1:EF:91:C7:AF:50:7:EA:DF:AA:EF:4B:8E:89:F7:B7:E0:2C:E6:7:DE:F5:BE:D7:E3:4:A4:63:75:E:17:3A:4E:63:25:21:D6:B9:FB:86:70:B:9E:42:4A:9B:5C:C7:5A:2D:55:36:63:3F:2A:66:55:D1:D1:E6:14:28:A1:D3:2:34:0:58:AD:8:CB:30:EB:7F:80:94:89:73:E2:75:7A:FB:25:B0:F0:15:50:5:BA:8A:F9:46:90:CD:4E:F7:4:62:BD:15:56:1E:0:55:E5:79:6:C9:97:AA:F3:F1:1C:2B:B6:9B:9B:11:12:79:B7:81:1:BA:2C:DE:33:F7:19:22:CF:F8:2F:9C:26:B0:E2:D:56:35:E:C:9D:9:92:3F:77:24:1B:49:C9:D9:E8:DA:D9:EB:A8:12:32:B2:F5:FD:37:6:33:12:C8:FF:D0:66:B4:8:D9:34:12:EA:EB:43:E2:7D:A5:F8:83:C2:19:33:C7:6C:21:C0:33:AC:A5:20:21:F0:B3:19:FB:3B:10:42:1C:A:C8:93:CB:B7:80:D7:9B:6D:31:21:18:70:C:F5:85:8F:44:F9:B8:2C:8B:53:B:63:CF:FF:BE:C4:3A:8B:8D:4A:6:1F:A8:50:3E:FA:FD:C4:17:34:63:E3:24:73:1E:52:48:F8:D2:B8:AF:72:72:94:4B:DB:B7:F0:D0:0:1C:3F:7B:77:4D:4D:D:83:EE:68:9D:D3:EC:91:BA:51:43:51:E:AB:3:A3:3A:39:55:54:A8:71:ED:29:90:29:DC:2:98:13:6A:A1:43:1E:7:25:B1:AA:AE:BB:64:5C:D1:F9:4A:F4:8C:3:92:E4:92:70:CE:91:3D:B5:70:21:2A:58:63:5B:20:58:53:DB:24:12:9A:F8:D0:D8:A9:57:F4:B6:D5:8C:6E:71:2C:33:EB:91:1:9D:95:D4:71:A3:2E:7D:65:3D:E1:23:18:5E:5E:B9:45:FE:D4:4C:50:CF:54:2B:8B:4F:56:4D:24:12:FF:AE:D0:A3:28:39:BD:5A:94:22:AD:41:2A:42:D6:89:39:EE:D1:2D:4D:6A:F3:FF:7E:F7:A5:6F:F:18:B1:A:90:39:4C:1C:E7:3:A:A4:9F:88:82:BE:89:59:2A:42:CA:7:D:94:A:D0:D6:E5:38:55:70:66:17:E:A9:C5:3B:1:8:F3:33:CB:9E:3B:F6:3:B7:8C:C3:A8:CA:53:36:34:2:53:7:21:9C:DA:F6:83:EE:1E:E3:A2:1B:D1:19:53:73:7F:31:B5:91:48:F5:AF:6D:AD:93:B:C7:98:5C:EA:C4:2B:E7:21:81:4F:EB:43:AA:A6:2:9D:8B:42:B1:10:49:FD:CF:36:E5:FA:27:CC:C0:3A:D1:D6:8D:6:F3:D1:FA:89:8D:87:6B:7A:57:2C:AC:3C:AA:D2:D3:C1:60:61:E1:54:C3:A3:44:F4:E1:3C:F6:B3:B3:F9:5D:94:AC:8:F8:9D:47:38:1B:1:6D:BC:25:4E:E7:75:93:EE:4B:A5:CB:38:AE:DD:BB:67:96:9D:42:7:67:AF:A2:88:6:B9:30:89:67:A5:D5:E6:7E:9C:92:19:6D:29:FE:79:5D:BD:94:E7:3E:F8:AF:35:B5:4D:F6:41:C7:9B:32:20:11:53:3C:84:25:6D:F8:70:F9:9C:54:DE:17:B:40:14:0:88:E9:78:38:55:E8:3A:2:C4:13:DB:44:69:7E:3B:C0:BE:C7:F8:A9:E0:B4:EB:3F:3C:8:47:CE:6:A5:64:8B:55:A0:A4:5F:75:1A:21:A1:21:B8:35:89:B8:C7:E:C:93:B8:6D:6C:C9:ED:AA:96:78:51:DC:61:F9:9A:62:6A:E5:88:87:1C:90:16:DA:2A:DB:EA:B3:F9:5:D5:EE:A6:98:84:4D:54:3C:EE:C6:6D:E2:87:F1:FD:B7:C7:1E:20:2D:57:FB:CA:43:64:6F:C2:5D:43:4A:AA:80:FE:85:21:86:37:95:59:4A:A1:DB:3B:66:64:9A:11:B4:53:9E:86:BC:70:51:CE:D4:AA:D3:FB:D0:77:57:37:11:45:8C:32:62:9A:72:F8:7A:6:29:FC:46:94:26:64:D1:6:F8:AD:8D:4B:78:71:4A:21:8D:4B:F9:B4:87:D2:CC:F8:A7:53:5F:B4:2A:BA:B0:AB:77:CB:47:A4:38:9F:8D:C:CA:9D:C9:B0:37:AB:28:33:9D:FD:ED:10:38:C2:F3:C0:30:48:D3:6F:7B:3B:34:32:B6:71:E5:C8:E:F9:65:D9:DA:BD:77:56:73:6A:79:8C:ED:E3:13:9D:2D:66:1C:12:EA:4E:53:28:C6:81:AC:B5:EA:8A:64:FA:72:63:12:4C:B:DD:48:91:77:99:E3:F8:84:B6:83:3C:D:9F:D7:8D:34:69:CA:CA:52:37:73:83:F1:BA:2D:9C:D9:A4:62:2:D4:C9:B8:1D:E4:D4:EB:C9:E:6D:CB:8D:47:CF:71:BA:FE:9B:32:26:E2:A:51:1F:5A:C5:1:97:CD:39:F9:69:1A:2B:86:4C:DC:8:F2:E3:97:98:71:7A:99:AA:F5:2C:99:F9:F7:3C:F7:C1:4A:DB:E6:10:5B:8D:AB:D7:9B:12:95:E:C3:52:E8:2B:D1:84:66:B6:25:E7:D:96:DB:3D:AE:F2:29:77:D9:B:76:F1:73:82:E0:E:DC:F2:7A:10:BA:98:52:8F:0:8C:D2:3C:AE:99:90:2A:B4:E5:76:CE:51:B2:65:54:B3:94:92:F7:E1:6E:2E:5F:8D:BA:9C:F:FC:4:47:F3:AD:FD:1B:66:BA:4A:F6:79:A3:48:C5:71:11:B5:4F:16:B9:77:65:21:BF:46:7E:20:A:C4:D7:E7:A1:E3:D4:2A:5C:FE:96:3D:C7:DF:6E:4D:44:89:51:5E:3D:56:48:F:90:8F:6A:3F:8F:5C:8:13:BA:FA:0:C4:6E:8A:B:6E:9C:53:EE:6B:43:5C:B7:51:49:9E:C6:53:AD:54:D1:C2:76:FD:54:A1:A5:A1:9B:F0:46:28:C2:93:56:B8:AE:94:93:E8:C:A5:22:D5:97:E4:F5:7D:2D:7D:BA:32:7E:6:2B:7C:97:E2:8E:36:AC:26:86:51:46:74:E5:E:A4:32:27:20:8B:1C:DC:6F:99:F0:76:34:99:F9:5C:FA:6:32:62:63:D5:C2:F8:E5:E2:C4:59:CB:C8:42:53:A6:D9:61:5D:49:46:5:23:16:B4:E6:76:7C:DC:6D:65:5E:E4:AE:48:D5:EF:24:B5:F6:F0:3F:6A:FE:ED:BF:CD:F2:BE:DF:FF:88:7:A:22:93:D4:E5:1A:C9:A6:FE:7A:20:95:E3:C6:98:99:60:F9:15:CF:4D:FF:57:75:E:88:C6:DB:F5:22:93:3:66:87:46:4B:AB:9F:CD:83:B:F4:9C:3A:4B:B9:94:16:6E:9D:CA:94:70:EF:FE:3D:FF:48:19:56:C4:60:D:7A:37:5F:C1:E8:31:A4:7C:AD:F:1:C3:CC:0:93:13:98:6:70:9D:87:69:B2:BF:5F:8C:76:D9:F8:DE:69:F1:CF:8C:B2:2F:1B:E1:59:78:C7:A:44:A5:71:32:64:72:77:C1:E5:3A:FE:95:DD:3C:2D:52:38:65:6E:FD:BD:90:24:3:53:6D:30:48:B6:F6:48:3C:3D:F9:20:DB:86:B2:60:42:22:24:9B:4E:5B:BF:A4:13:58:A4:9A:86:72:6B::A008F4BF:ENCRYPT"><INPUT NAME='description' TYPE='hidden' value="NCES is not responsible for the manner in which this data is presented. This data is provided as an extra service to the user. To download full CCD datasets, please go to the CCD home page. &lt;strong&gt;http://nces.ed.gov/ccd&lt;/strong&gt;"><INPUT NAME='searchedby' TYPE='hidden' value="<strong>NOTES:</strong><ul><li class='noteAsterisk'>* denotes a column with data from 2019-2020</li><li>[ &dagger; ] indicates that the data are not applicable. For example, the enrollment and staff characteristics for schools that opened in the 2020-2021 school year will not be available until the full 2020-2021 file is released.</li><li>[ &ndash; ] indicates that the data are missing.</li><li>[ &Dagger; ] indicates that the data do not meet NCES data quality standards.</li><li>The directory information on school name, address, and phone number are preliminary data from initial submissions of school level data for 2020-2021.</li><li>Data provided on student membership and staffing are from the official school level data for 2019-2020.</li></ul><strong>SEARCH CRITERIA:</strong> School Name: &#34;alden hebron high school&#34;&nbsp;-&nbsp;City: &#34;hebron&#34;&nbsp;-&nbsp;County: &#34;mchenry&#34;"></FORM><TABLE style='margin-top: 8px;' align='center' border=1 bordercolor='#888888' cellpadding=0 cellspacing=0><TR><TD bgcolor='#888888'><FONT size=2 color='#ffffff' face='arial'><B>Download This Data</B></FONT></TD></TR><TR><TD bgcolor='#F1F1F1'><TABLE border=0 width=400 cellpadding=0 cellspacing=4><TR><TD valign='top' align='right'><FONT size=2 face=arial>&nbsp;<A HREF="JavaScript:GetExcelFile();"><IMG SRC='/includes/excelcreator/images/excel_file.gif' border=0 alt='Click Here to Download Excel File'></A></FONT></TD><TD valign='top'><FONT SIZE=2 face=arial><A HREF="JavaScript:GetExcelFile();" class="excelclass">Download<BR>Excel File</A></FONT></TD><TD><img border='0' src='/includes/excelcreator/images/spacer.gif' width='4' height='3'></TD><TD><FONT size=2 color='#000000' face='arial'>Your data file will be created based on the selection criteria you have entered.</FONT></TD></TR><TR><TD colspan=4><IMG border='0' src='/includes/excelcreator/images/spacer.gif' width='7' height='3'></TD></TR><TR><TD colspan=4><FONT size=2 color='#000000' face='arial'>Depending on the amount of data needed to create the file, this may take a few minutes. The option will also be available to download the Excel file as a compressed Zip file.</FONT></TD></TR></TABLE></TD></TR></TABLE>
+
+<br /><br />
+
+</div>
+</div>
+<div class="footer_container nces">
+	<div class="footer">
+		<div class="clearfix footer_top">
+			<div class="bc">
+				<a href="//ies.ed.gov/" class="ies_nav">IES</a>
+				<span class="carrot">&nbsp;<img src="/images/icons/iesNewDots.png" alt=" " />&nbsp;</span>
+				<a href="/" class="nces_nav">
+					<div class="l">NCES</div>
+					<span class="long_name">National Center for<br /> Education Statistics</span>
+				</a>
+			</div>
+		</div>
+		<div class="clearfix footer_nav">
+			<div class="clearfix left_s">
+			<span class="section">Explore the Institute of Education Sciences</span>
+				<div class="left_s">
+					<ul>
+						<li><a href="//ies.ed.gov/" class="center_title">IES</a></li>
+						<li><a href="//ies.ed.gov/">Home</a></li>
+						<li><a href="//ies.ed.gov/aboutus/">About</a></li>
+						<li><a href="//ies.ed.gov/pubsearch/">Publications</a></li>
+						<li><a href="//ies.ed.gov/data.asp">Data</a></li>
+						<li><a href="//ies.ed.gov/funding/">Funding</a></li>
+						<li><a href="//ies.ed.gov/events.asp">News</a></li>
+					</ul>				
+					
+				</div>
+				<div class="right_s">
+					<ul>
+						<li><span class="center_title">IES Centers</span></li>
+						<li><a href="//ies.ed.gov/ncee/">NCEE</a></li>
+						<li><a href="//ies.ed.gov/ncer/">NCER</a></li>
+						<li><a href="/">NCES</a>
+							<ul>
+								<li><a href="/">Home</a></li>
+								<li><a href="/about/">About</a></li>
+								<li><a href="/surveys/">Programs</a></li>
+								<li><a href="/pubsearch/">Publications</a></li>
+								<li><a href="/datatools/">Data</a></li>
+								<li><a href="/training/datauser/">Data Training</a></li>
+								<li><a href="/globallocator/">School Search</a></li>
+								<li><a href="/whatsnew/">News</a></li>
+								<li><a href="/nceskids/">Kids' Zone</a></li>
+							</ul>                    
+						</li>
+						<li><a href="//ies.ed.gov/ncser/">NCSER</a></li>
+				</div>
+			</div>
+			<div class="clearfix right_s">
+				<div class="left_s">
+					<ul>
+						<li><span class="section">IES Policies and Standards</span></li>
+						<li><a href="//datainventory.ed.gov">ED Data Inventory</a></li>
+						<li><a href="//ies.ed.gov/aboutus/diversity.asp">IES Diversity Statement</a></li>	
+						<li><a href="/statprog/2012/">NCES Statistical Standards</a></li>
+						<li><a href="//ies.ed.gov/director/sro/">Peer Review Process</a></li>
+						<li><a href="//ies.ed.gov/help/privacy.asp">Privacy and Security Policies</a></li>
+						<li><a href="//ies.ed.gov/funding/researchaccess.asp">Public Access Policy</a></li>
+					</ul>     
+					
+					<ul>
+						<li>&nbsp;</li>
+						<li><a href="/help/webmail/" class="section">Contact Us</a></li>
+						<li>&nbsp;</li>
+						<li><a href="http://www.ed.gov/"><strong>U.S. Department of Education</strong></a></li>
+					</ul>    
+				</div>
+				<div class="right_s">
+					<ul>
+						<li><span class="section">Additional Resources</span></li>
+						<li><a href="//eric.ed.gov/">ERIC</a></li>
+						<li><a href="/help/sitemap.asp">Sitemap</a></li>
+						<li><a href="/help/ieschart.asp">Organizational Chart</a></li>
+					</ul>  
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script id="_fed_an_ua_tag" language="javascript" type="text/javascript" src="/js/Universal-Federated-Analytics-Min.js?pua=UA-55622235-1&amp;agency=ED&amp;subagency=NCES&exts=sps,sas,do,dct"></script>
+</body>
+</html>
