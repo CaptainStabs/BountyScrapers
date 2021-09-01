@@ -7,7 +7,7 @@ from tqdm import tqdm
 columns = ["name", "city", "state", "website"]
 
 
-with open("schools.csv", "r", encoding="utf-8") as input_source:
+with open("schools2.csv", "r", encoding="utf-8") as input_source:
     df = pd.read_csv(input_source)
     df_columns = list(df.columns)
     data_columns = ",".join(map(str, df_columns))
@@ -23,14 +23,24 @@ with open("schools.csv", "r", encoding="utf-8") as input_source:
                 writer2.writeheader()
 
             for index, row in tqdm(df.iterrows()):
-                if any(ignored_domain in str(row["website"]) for ignored_domain in ignored_domains):
-                    # print("dirty")
-                    output_dict = {}
-                    output_dict["name"] = row["name"]
-                    output_dict["city"] = row["city"]
-                    output_dict["state"] = row["state"]
-                    output_dict["website"] = ""
-                    writer2.writerow(output_dict)
+                for ignored_domain in ignored_domains:
+                    if ignored_domain in str(row["website"]):
+                        website = str(row["website"])
+                        print(f"\nignored_domain: {ignored_domain}\n      website: {website}")
+                        output_dict = {}
+                        output_dict["name"] = row["name"]
+                        output_dict["city"] = row["city"]
+                        output_dict["state"] = row["state"]
+                        output_dict["website"] = ""
+                        writer2.writerow(output_dict)
+                # if any(ignored_domain in str(row["website"]) for ignored_domain in ignored_domains):
+                #     # print("dirty")
+                #     output_dict = {}
+                #     output_dict["name"] = row["name"]
+                #     output_dict["city"] = row["city"]
+                #     output_dict["state"] = row["state"]
+                #     output_dict["website"] = ""
+                #     writer2.writerow(output_dict)
 
                 else:
                     # print("clean")
