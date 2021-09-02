@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
+from selenium_stealth import stealth
 import pandas as pd
 from doltpy.cli.write import write_pandas
 from tqdm import tqdm
@@ -23,9 +24,20 @@ class WebDriver:
         self.PATH = "C:\\chromedriver_win32\\chromedriver.exe"
         self.options = Options()
         self.options.binary_location = binary_path
+        self.options.add_argument("start-maximized")
+        self.options.add_experimental_option("excludeSwitches", ["enable-automation"])
+        self.options.add_experimental_option('useAutomationExtension', False)
+
         # self.options.add_argument("--headless")
         self.driver = webdriver.Chrome(self.PATH, options=self.options)
-
+        stealth(driver,
+            languages=["en-US", "en"],
+            vendor="Google Inc.",
+            platform="Win32",
+            webgl_vendor="Intel Inc.",
+            renderer="Intel Iris OpenGL Engine",
+            fix_hairline=True,
+        )
         # self.location_data["location"] = "NA"
 
     def get_location_data(self):
