@@ -5,11 +5,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
-
 import pandas as pd
 from doltpy.cli.write import write_pandas
 from tqdm import tqdm
 import time
+import usaddress
+import csv
+import os
+from random import randrange
 from _secrets import binary_path
 
 class WebDriver:
@@ -23,37 +26,56 @@ class WebDriver:
         # self.options.add_argument("--headless")
         self.driver = webdriver.Chrome(self.PATH, options=self.options)
 
-        # self.location_data["rating"] = "NA"
-        # self.location_data["reviews_count"] = "NA"
-        self.location_data["location"] = "NA"
-        # self.location_data["contact"] = "NA"
-        # self.location_data["website"] = "NA"
-        # self.location_data["Time"] = {"Monday":"NA", "Tuesday":"NA", "Wednesday":"NA", "Thursday":"NA", "Friday":"NA", "Saturday":"NA", "Sunday":"NA"}
-        # self.location_data["Reviews"] = []
-        # self.location_data["Popular Times"] = {"Monday":[], "Tuesday":[], "Wednesday":[], "Thursday":[], "Friday":[], "Saturday":[], "Sunday":[]}
+        # self.location_data["location"] = "NA"
 
     def get_location_data(self):
-
+        global found_address
         try:
             # avg_rating = self.driver.find_element_by_class_name("section-star-display")
             # total_reviews = self.driver.find_element_by_class_name("section-rating-term")
-            # try:
-            #     element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, 'pane')))
-            #     print(element)
-            # except Exception as e1:
-            #     print("Webdriverwait error: " + str(e1))
-            found = False
+            try:
+                element = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.ID, 'pane')))
+                print(element)
+            except Exception as e1:
+                print("Webdriverwait error: " + str(e1))
 
-            while not found:
+            found = False
+            times_looped = 0
+            while not found and times_looped < 1000:
                 try:
                     address = self.driver.find_element(By.XPATH,'/html/body/jsl/div[3]/div[10]/div[8]/div/div[1]/div/div/div[7]/div[1]/button/div[1]/div[2]/div[1]')
+                    print(times_looped)
                     found = True
                 except Exception as e2:
-                    print("Address find_element error: " + str(e2))
+                    # print("Address find_element error: " + str(e2))
                     found = False
+                    times_looped += 1
+
+            if not address.text:
+                found = False
+                times_looped = 0
+                while not found and times_looped < 1000:
+                    try:
+                        address = self.driver.find_element(By.XPATH,'/html/body/jsl/div[3]/div[10]/div[8]/div/div[1]/div/div/div[7]/div[1]/button/div[1]/div[2]/div[1]')
+                        print(times_looped)
+                        found = True
+                    except Exception as e2:
+                        # print("Address find_element error: " + str(e2))
+                        found = False
+                        times_looped += 1
+
+                if not address.text:
+                    print("Not found address")
+                    found_address = False
+                else:
+                    print("Found address")
+                    found_address = True
+            else:
+                found_address = True
 
             # phone_number = self.driver.find_element_by_css_selector("[data-tooltip='Copy phone number']")
             website = self.driver.find_element_by_css_selector("[data-item-id='authority']")
+
         except Exception as e:
             print("First block: " + str(e))
             pass
@@ -67,80 +89,101 @@ class WebDriver:
             print("Second block: " + str(E))
             pass
 
+    def scrape(self, url):
+        print("Scraping")
+        input_source = "schools.csv"
+        df = pd.read_csv(input_source)
+        df_columns = list(df.columns)
+        data_columns = ",".join(map(str, df_columns))
+        columns = ["name","city","state","address","zip"]
 
-    def get_reviews_data(self):
-        try:
-            review_names = self.driver.find_elements_by_class_name("section-review-title")
-            review_text = self.driver.find_elements_by_class_name("section-review-review-content")
-            review_dates = self.driver.find_elements_by_css_selector("[class='section-review-publish-date']")
-            review_stars = self.driver.find_elements_by_css_selector("[class='section-review-stars']")
+        with open("address_updated.csv", "a") as output_file:
+            writer = csv.DictWriter(output_file, fieldnames=columns)
+            if os.stat("address_updated.csv").st_size == 0:
+                writer.writeheader()
 
-            review_stars_final = []
+            for index, row in tqdm(df.iterrows()):
+                print("Iterating")
+                school_info = {}
+                school_name = row["name"]
+                school_city = row["city"]
+                school_state = row["state"]
+                search_query = f"{school_name}, {school_city}, {school_state}"
+                print("\nSearch query: " + str(search_query))
 
-            for i in review_stars:
-                review_stars_final.append(i.get_attribute("aria-label"))
 
-            review_names_list = [a.text for a in review_names]
-            review_text_list = [a.text for a in review_text]
-            review_dates_list = [a.text for a in review_dates]
-            review_stars_list = [a for a in review_stars_final]
+                try:
+                    self.driver.get(url)
+                except Exception as e:
+                    print("Scrape error 1: " + str(e))
+                    self.driver.quit()
+                    pass
+                # time.sleep(10)
 
-            for (a,b,c,d) in zip(review_names_list, review_text_list, review_dates_list, review_stars_list):
-                self.location_data["Reviews"].append({"name":a, "review":b, "date":c, "rating":d})
+                searchbox = self.driver.find_element(By.ID,"searchboxinput")
+                searchbox.send_keys(search_query)
+                searchbox.send_keys(Keys.ENTER)
+                # self.click_open_close_time()
+                self.get_location_data()
 
-        except Exception as e:
-            pass
+                # time.sleep(2)
+                if found_address:
+                    print(self.location_data)
+                    # return(self.location_data)
 
-    def scrape(self, url, search_query):
-        for index, row in tqdm(df.iterrows()):
-            school_name = row["name"]
-            school_city = row["city"]
-            school_state = row["state"]
-            search_query = f"{school_name}, {school_city}, {school_state}"
-            print("\nSearch query: " + str(search_query))
-            x = WebDriver()
-            location_data = x.scrape(url, search_query)
-            print(location_data)
-            time.sleep(3)
-        try:
-            self.driver.get(url)
-        except Exception as e:
-            print("Scrape error 1: " + str(e))
-            self.driver.quit()
-            pass
-        # time.sleep(10)
+                    address_string = self.location_data["location"]
+                    address_list = address_string.split(", ")
+                    # ['1807 Martin Luther King Jr Way', 'Oakland', 'CA 94612']
 
-        searchbox = self.driver.find_element(By.ID,"searchboxinput")
-        searchbox.send_keys(search_query)
-        searchbox.send_keys(Keys.ENTER)
-        # self.click_open_close_time()
-        self.get_location_data()
-        # self.get_popular_times()
-        # if(self.click_all_reviews_button()==False):
-        #     continue
-        time.sleep(5)
-        # self.expand_all_reviews()
-        # self.get_reviews_data()
-        # self.driver.quit()
+                    parsed_address = usaddress.tag(address_string)
+                    # ([('AddressNumber', '1807'), ('StreetName', 'Martin Luther King Jr'), ('StreetNamePostType', 'Way'), ('PlaceName', 'Oakland'), ('StateName', 'CA'), ('ZipCode', '94612')]), 'Street Address')
 
-        return(self.location_data)
+                    street_address = str(address_list[0]).upper()
+                    print("Street Address: " + str(street_address))
+                    print(address_list)
+                    print("parsed_address: " + str(parsed_address))
+                    print("Key selection: " + str(parsed_address[0]["AddressNumber"]))
+                    parsed_city = str(parsed_address[0]["PlaceName"]).upper()
+                    parsed_state = str(parsed_address[0]["StateName"]).upper()
+                    parsed_zip = str(parsed_address[0]["ZipCode"])
+                    print(parsed_city)
+                    print(parsed_state)
 
-input_source = "schools.csv"
-df = pd.read_csv(input_source)
-df_columns = list(df.columns)
-data_columns = ",".join(map(str, df_columns))
+                    if parsed_city == str(school_city) and parsed_state == str(school_state):
+                        print("Updating Address")
+                        school_info["name"] = row["name"]
+                        school_info["city"] = row["city"]
+                        school_info["state"] = row["state"]
+                        school_info["address"] = street_address
+                        school_info["zip"] = parsed_zip
+                        writer.writerow(school_info)
+
+                        time.sleep(randrange(10))
+                else:
+                    with open("fails.txt", "a") as f:
+                        f.write(f"{school_name}, {school_city}, {school_state}\n")
+                    continue
+
+
+
+
+
+
+
 url = "https://www.google.com/maps/"
 
+x = WebDriver()
+x.scrape(url)
 
-for index, row in tqdm(df.iterrows()):
-    school_name = row["name"]
-    school_city = row["city"]
-    school_state = row["state"]
-    search_query = f"{school_name}, {school_city}, {school_state}"
-    print("\nSearch query: " + str(search_query))
-    x = WebDriver()
-    location_data = x.scrape(url, search_query)
-    print(location_data)
-    time.sleep(3)
-
-write_pandas(dolt, "schools")
+# for index, row in tqdm(df.iterrows()):
+#     school_name = row["name"]
+#     school_city = row["city"]
+#     school_state = row["state"]
+#     search_query = f"{school_name}, {school_city}, {school_state}"
+#     print("\nSearch query: " + str(search_query))
+#     x = WebDriver()
+#     location_data = x.scrape(url, search_query)
+#     print(location_data)
+#     time.sleep(3)
+#
+# write_pandas(dolt, "schools")
