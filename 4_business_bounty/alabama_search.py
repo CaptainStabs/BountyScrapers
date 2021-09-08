@@ -12,7 +12,7 @@ with open("alabama.csv", "a") as output_file:
 
     if os.stat("alabama.csv").st_size == 0:
         writer.writeheader()
-    for corp in tqdm(range(4646, 945999)):
+    for corp in tqdm(range(4753, 945999)):
         business_info = {}
         corp_padded = str(corp).zfill(6)
 
@@ -66,41 +66,51 @@ with open("alabama.csv", "a") as output_file:
             rows = soup.find("table").find_all("tr")
             i = 0
             for row in rows:
+                # do_save = False
+
                 rows_data = row.find_all("td", class_="aiSosDetailValue")
                 for row_data in rows_data:
                     # print(row_data)
                     # if row_data.has_attr("aiSosDetailValue"):
-                    # print(i)
+                    print(i)
                     if i == 1:
                         business_type_string = str(row_data.get_text()).upper()
                         print("      [*] Bussiness type: " + business_type_string)
                         if "COOPERATIVE" in business_type_string:
                             business_info["business_types"] = "COOP"
-                            print("      [?] Translated type: COOP")
+                            print("      [?] Translated type 1: COOP")
 
                         if "COOP " in business_type_string:
                             business_info["business_types"] = "COOP"
-                            print("      [?] Translated type: COOP")
+                            print("      [?] Translated type 2: COOP")
 
                         if "CORP " in business_type_string:
                             business_info["business_types"] = "CORPORATION"
-                            print("      [?] Translated type: CORPORATION")
+                            print("      [?] Translated type 1: CORPORATION")
 
                         if "CORPORATION" in business_type_string:
                             business_info["business_types"] = "CORPORATION"
-                            print("      [?] Translated type: CORPORATION")
+                            print("      [?] Translated type 2: CORPORATION")
 
                         if "DBA" in business_type_string:
                             business_info["business_types"] = "DBA"
                             print("      [?] Translated type: DBA")
 
-                        if "LIMITED LIABILITY COMPANY" or "LLC" in business_type_string:
+                        if "LIMITED LIABILITY COMPANY" in business_type_string:
                             business_info["business_types"] = "LLC"
-                            print("      [?] Translated type: LLC")
+                            print("      [?] Translated type 1: LLC")
 
-                        if "NON-PROFIT" or "NONPROFIT" in business_type_string:
+                        if "LLC" in business_type_string:
+                            business_info["business_types"] = "LLC"
+                            print("      [?] Translated type 2: LLC")
+
+                        if "NON-PROFIT" in business_type_string:
                             business_info["business_types"] = "NONPROFIT"
-                            print("      [?] Translated type: NONPROFIT")
+                            print("      [?] Translated type 1: NON-PROFIT")
+
+                        if "NONPROFIT" in business_type_string:
+                            business_info["business_types"] = "NONPROFIT"
+                            print("      [?] Translated type 2: NONPROFIT")
 
                         if "PARTNERSHIP" in business_type_string:
                             business_info["business_types"] = "PARTNERSHIP"
@@ -118,10 +128,12 @@ with open("alabama.csv", "a") as output_file:
                         address_string = str(row_data.get_text()).upper()
                         try:
                             parsed_address = usaddress.tag(address_string)
+                            print("      [?] Adderss string: " + address_string)
                             parse_success = True
 
                         except usaddress.RepeatedLabelError as e:
                             print(e)
+                            print("       [?] Address string failed: " + address_string)
                             parse_success = False
                             pass
 
@@ -151,13 +163,21 @@ with open("alabama.csv", "a") as output_file:
                         else:
                             print("      [*] Exists: " + str(row_data.get_text()).upper())
                             do_save = True
-                    if i <= 4:
+                    if i < 5:
+                        print("increment i ")
                         i += 1
                     else:
                         if do_save:
                             print("      [*] Saving")
                             writer.writerow(business_info)
-                        break
+                            do_save = False
+                            break
+                            break
+                        else:
+                            print("       [*] Not saving")
+                            break
+                            break
+                            
 
 
 
