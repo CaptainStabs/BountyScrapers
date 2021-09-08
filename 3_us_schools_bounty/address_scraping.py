@@ -80,7 +80,7 @@ class WebDriver:
                         found = False
                         times_looped += 1
 
-                if not address.text:
+                if address.text is None:
                     print("   [?] Not found address")
                     self.found_address = False
                 else:
@@ -124,7 +124,7 @@ class WebDriver:
                 total += 1
             print(total)
 
-        with open("address_updated.csv", "a") as output_file:
+        with open("address_updated.csv", "a", encoding="utf-8") as output_file:
             writer = csv.DictWriter(output_file, fieldnames=columns)
             if os.stat("address_updated.csv").st_size == 0:
                 writer.writeheader()
