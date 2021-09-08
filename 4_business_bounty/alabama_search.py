@@ -80,7 +80,7 @@ with open("alabama.csv", "a") as output_file:
 
                         if "COOP " in business_type_string:
                             business_info["business_types"] = "COOP"
-                                print("      [?] Translated type: COOP")
+                            print("      [?] Translated type: COOP")
 
                         if "CORP " in business_type_string:
                             business_info["business_types"] = "CORPORATION"
