@@ -12,7 +12,7 @@ with open("alabama.csv", "a") as output_file:
 
     if os.stat("alabama.csv").st_size == 0:
         writer.writeheader()
-    for corp in tqdm(range(4753, 945999)):
+    for corp in tqdm(range(6593, 945999)):
         business_info = {}
         corp_padded = str(corp).zfill(6)
 
@@ -163,7 +163,7 @@ with open("alabama.csv", "a") as output_file:
                         else:
                             print("      [*] Exists: " + str(row_data.get_text()).upper())
                             do_save = True
-                    if i < 5:
+                    if i <= 4:
                         print("increment i ")
                         i += 1
                     else:
@@ -177,7 +177,7 @@ with open("alabama.csv", "a") as output_file:
                             print("       [*] Not saving")
                             break
                             break
-                            
+
 
 
 
