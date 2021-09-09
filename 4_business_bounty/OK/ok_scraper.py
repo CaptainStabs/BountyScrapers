@@ -19,6 +19,7 @@ headers = {
   'Sec-Fetch-Dest': 'document'
 }
 columns = ["name", "business_type", "state_registered","street_registered","city_registered","zip5_registered", "corp_id"]
+
 # for corp_id in tqdm(range(175, 9999999999)):
 corp_id = 3512384626
 url = f"https://www.sos.ok.gov/corp/corpInformation.aspx?id={corp_id}"
