@@ -18,7 +18,7 @@ headers = {
   'Sec-Fetch-User': '?1',
   'Sec-Fetch-Dest': 'document'
 }
-for id in tqdm(range(0, 9999999999)):
+for id in tqdm(range(175, 9999999999)):
     url = f"https://www.sos.ok.gov/corp/corpInformation.aspx?id={id}"
     response = requests.request("GET", url, headers=headers, data=payload)
     parser = fromstring(response.text)
