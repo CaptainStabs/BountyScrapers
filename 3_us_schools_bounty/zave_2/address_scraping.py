@@ -43,20 +43,35 @@ class WebDriver:
 
         self.found_address = False
 
-    def get_location_data(self):
-        # global found_address
+def get_location_data(self):
+    # global found_address
+    try:
+        # avg_rating = self.driver.find_element_by_class_name("section-star-display")
+        # total_reviews = self.driver.find_element_by_class_name("section-rating-term")
         try:
-            # avg_rating = self.driver.find_element_by_class_name("section-star-display")
-            # total_reviews = self.driver.find_element_by_class_name("section-rating-term")
-            try:
-                element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, 'pane')))
-                # print(element)
-            except Exception as e1:
-                print("   [!] Webdriverwait error: " + str(e1))
+            element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, 'pane')))
+            # print(element)
+        except Exception as e1:
+            print("   [!] Webdriverwait error: " + str(e1))
 
+        found = False
+        times_looped = 0
+        time.sleep(1.5)
+        while not found and times_looped < 3000:
+            try:
+                address = self.driver.find_element(By.XPATH,'/html/body/div[3]/div[9]/div[8]/div/div[1]/div/div/div[7]/div[1]/button/div[1]/div[2]/div[1]')
+                print("   [*] times_looped: " + str(times_looped))
+                found = True
+            except Exception as e2:
+                # print("Address find_element error: " + str(e2))
+                found = False
+                times_looped += 1
+
+        if address.text is None:
+            print("Not address.text: " + str(address.text))
             found = False
             times_looped = 0
-            time.sleep(1.5)
+            time.sleep(5)
             while not found and times_looped < 3000:
                 try:
                     address = self.driver.find_element(By.XPATH,'/html/body/div[3]/div[9]/div[8]/div/div[1]/div/div/div[7]/div[1]/button/div[1]/div[2]/div[1]')
@@ -68,48 +83,33 @@ class WebDriver:
                     times_looped += 1
 
             if address.text is None:
-                print("Not address.text: " + str(address.text))
-                found = False
-                times_looped = 0
-                time.sleep(5)
-                while not found and times_looped < 3000:
-                    try:
-                        address = self.driver.find_element(By.XPATH,'/html/body/div[3]/div[9]/div[8]/div/div[1]/div/div/div[7]/div[1]/button/div[1]/div[2]/div[1]')
-                        print("   [*] times_looped: " + str(times_looped))
-                        found = True
-                    except Exception as e2:
-                        # print("Address find_element error: " + str(e2))
-                        found = False
-                        times_looped += 1
-
-                if address.text is None:
-                    print("   [?] Not found address")
-                    self.found_address = False
-                else:
-                    print("   [?] Found address")
-                    print("      [*] Address: " + str(address.text))
-                    self.found_address = True
+                print("   [?] Not found address")
+                self.found_address = False
             else:
-                print("      [*] Found Address")
+                print("   [?] Found address")
                 print("      [*] Address: " + str(address.text))
                 self.found_address = True
+        else:
+            print("      [*] Found Address")
+            print("      [*] Address: " + str(address.text))
+            self.found_address = True
 
-            # phone_number = self.driver.find_element_by_css_selector("[data-tooltip='Copy phone number']")
-            website = self.driver.find_element_by_css_selector("[data-item-id='authority']")
+        # phone_number = self.driver.find_element_by_css_selector("[data-tooltip='Copy phone number']")
+        # website = self.driver.find_element_by_css_selector("[data-item-id='authority']")
 
-        except Exception as e:
-            print("   [!] First block: " + str(e))
-            self.found_address = False
-            pass
-        try:
-            # self.location_data["rating"] = avg_rating.text
-            # self.location_data["reviews_count"] = total_reviews.text[1:-1]
-            self.location_data["location"] = address.text
-            # self.location_data["contact"] = phone_number.text
-            self.location_data["website"] = website.text
-        except Exception as E:
-            print("   [!]Second block: " + str(E))
-            pass
+    except Exception as e:
+        print("   [!] First block: " + str(e))
+        self.found_address = False
+        pass
+    try:
+        # self.location_data["rating"] = avg_rating.text
+        # self.location_data["reviews_count"] = total_reviews.text[1:-1]
+        self.location_data["location"] = address.text
+        # self.location_data["contact"] = phone_number.text
+        # self.location_data["website"] = website.text
+    except Exception as E:
+        print("   [!]Second block: " + str(E))
+        pass
 
     def scrape(self, url):
         print("Scraping")
