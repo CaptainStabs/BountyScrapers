@@ -160,7 +160,9 @@ class WebDriver:
 
                     searchbox = self.driver.find_element(By.ID,"maps_sb")
                     searchbox.send_keys(search_query)
-                    searchbox.send_keys(Keys.ENTER)
+                    # searchbox.send_keys(Keys.ENTER)
+                    search_result = self.driver.find_element(By.ID,"TaskBarSearch-as-0")
+                    search_result.click()
                     # self.click_open_close_time()
                     self.get_location_data()
 
