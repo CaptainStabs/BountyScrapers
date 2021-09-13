@@ -15,6 +15,9 @@ import csv
 import os
 from random import randrange
 from _secrets import binary_path
+#import heartrate
+#heartrate.trace(browser=True)
+
 
 class WebDriver:
 
@@ -55,9 +58,10 @@ class WebDriver:
 
             found = False
             times_looped = 0
-            while not found and times_looped < 1000:
+            time.sleep(1.5)
+            while not found and times_looped < 3000:
                 try:
-                    address = self.driver.find_element(By.XPATH,'/html/body/jsl/div[3]/div[10]/div[8]/div/div[1]/div/div/div[7]/div[1]/button/div[1]/div[2]/div[1]')
+                    address = self.driver.find_element(By.XPATH,'/html/body/div[3]/div[9]/div[8]/div/div[1]/div/div/div[7]/div[1]/button/div[1]/div[2]/div[1]')
                     print("   [*] times_looped: " + str(times_looped))
                     found = True
                 except Exception as e2:
@@ -72,7 +76,7 @@ class WebDriver:
                 time.sleep(5)
                 while not found and times_looped < 3000:
                     try:
-                        address = self.driver.find_element(By.XPATH,'/html/body/jsl/div[3]/div[10]/div[8]/div/div[1]/div/div/div[7]/div[1]/button/div[1]/div[2]/div[1]')
+                        address = self.driver.find_element(By.XPATH,'/html/body/div[3]/div[9]/div[8]/div/div[1]/div/div/div[7]/div[1]/button/div[1]/div[2]/div[1]')
                         print("   [*] times_looped: " + str(times_looped))
                         found = True
                     except Exception as e2:
@@ -93,7 +97,7 @@ class WebDriver:
                 self.found_address = True
 
             # phone_number = self.driver.find_element_by_css_selector("[data-tooltip='Copy phone number']")
-            website = self.driver.find_element_by_css_selector("[data-item-id='authority']")
+            # website = self.driver.find_element_by_css_selector("[data-item-id='authority']")
 
         except Exception as e:
             print("   [!] First block: " + str(e))
@@ -104,10 +108,11 @@ class WebDriver:
             # self.location_data["reviews_count"] = total_reviews.text[1:-1]
             self.location_data["location"] = address.text
             # self.location_data["contact"] = phone_number.text
-            self.location_data["website"] = website.text
+            # self.location_data["website"] = website.text
         except Exception as E:
             print("   [!]Second block: " + str(E))
             pass
+
 
     def scrape(self, url):
         print("Scraping")
@@ -116,7 +121,7 @@ class WebDriver:
         df_columns = list(df.columns)
         data_columns = ",".join(map(str, df_columns))
         columns = ["name","city","state","address","zip"]
-        with open("schools.csv", "r", encoding="utf-8") as f:
+        with open(input_source, "r", encoding="utf-8") as f:
             total = 0
             lines = f.readlines()
             print(len(lines))
@@ -172,6 +177,7 @@ class WebDriver:
                             print(e)
                             new_address = address_string
                             with open("fails2.txt", "a") as output:
+                                old_address = row["address"]
                                 output.write(f"{school_name}, {school_city}, {school_state}, {old_address}, {new_address}\n")
                                 parse_success = False
 
@@ -194,6 +200,8 @@ class WebDriver:
                                 parse_success = True
                             except KeyError:
                                 print("key error")
+                                print("address_string: " + str(address_string))
+                                print(parsed_address)
                                 with open("non-us.csv", "a") as output:
                                     old_address = row["address"]
                                     output.write(f"{school_name}, {school_city}, {school_state}, {old_address}\n")
