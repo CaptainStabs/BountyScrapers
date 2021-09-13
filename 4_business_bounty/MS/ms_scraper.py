@@ -49,176 +49,196 @@ def get_ids(business_id):
     # print(json.dumps(response_json, indent=4))
     d_json = json.loads(response_json["d"])
     # print(d_json["Table"][0]["FilingId"])
-    filing_id = d_json["Table"][0]["FilingId"]
+    try:
+        filing_id = d_json["Table"][0]["FilingId"]
+
+    except TypeError:
+        print("TypeError: " + str(d_json))
+        filing_id = "Failed"
     return filing_id
 
 # Get the info page
 def get_info(filing_id, writer):
-    business_info = {}
-    url = f"https://corp.sos.ms.gov/corp/portal/c/page/corpbusinessidsearch/~/ViewXSLTFileByName.aspx?providerName=MSBSD_CorporationBusinessDetails&FilingId={filing_id}"
-    response = requests.request("GET", url, headers=get_user_agent())
+    if filing_id != "Failed":
+        business_info = {}
+        url = f"https://corp.sos.ms.gov/corp/portal/c/page/corpbusinessidsearch/~/ViewXSLTFileByName.aspx?providerName=MSBSD_CorporationBusinessDetails&FilingId={filing_id}"
+        response = requests.request("GET", url, headers=get_user_agent())
 
-    parser = fromstring(response.text)
+        parser = fromstring(response.text)
 
-    business_status = str(parser.xpath('//*[@id="printDiv2"]/table[1]/tr[3]/td[2]/text()')[0]).upper().replace("  ", " ").strip()
-    if business_status == "GOOD STANDING":
-        print("   [*] Status: Good Standing")
-        name = str(parser.xpath('//*[@id="printDiv2"]/div[2]/table/tr[2]/td[1]/text()')[0]).upper().replace("  ", " ").strip()
-        print("   [*] Name: " + name)
-        business_type_string = str(parser.xpath('//*[@id="printDiv2"]/table[1]/tr[1]/td[2]/text()')[0]).upper().replace("  ", " ").strip()
-        print("   [*] Business Type String: " + business_type_string)
+        business_status = str(parser.xpath('//*[@id="printDiv2"]/table[1]/tr[3]/td[2]/text()')[0]).upper().replace("  ", " ").strip()
+        if business_status == "GOOD STANDING":
+            print("   [*] Status: Good Standing")
+            name = str(parser.xpath('//*[@id="printDiv2"]/div[2]/table/tr[2]/td[1]/text()')[0]).upper().replace("  ", " ").strip()
+            print("   [*] Name: " + name)
+            business_type_string = str(parser.xpath('//*[@id="printDiv2"]/table[1]/tr[1]/td[2]/text()')[0]).upper().replace("  ", " ").strip()
+            print("   [*] Business Type String: " + business_type_string)
 
-        if "COOPERATIVE" in business_type_string:
-            business_info["business_type"] = "COOP"
-            print("      [?] Translated type 1: COOP")
+            if "COOPERATIVE" in business_type_string:
+                business_info["business_type"] = "COOP"
+                print("      [?] Translated type 1: COOP")
 
-        if "COOP " in business_type_string:
-            business_info["business_type"] = "COOP"
-            print("      [?] Translated type 2: COOP")
-        if "CORP" in business_type_string:
-            business_info["business_type"] = "CORPORATION"
-            print("      [?] Translated type 1: CORPORATION")
+            if "COOP " in business_type_string:
+                business_info["business_type"] = "COOP"
+                print("      [?] Translated type 2: COOP")
+            if "CORP" in business_type_string:
+                business_info["business_type"] = "CORPORATION"
+                print("      [?] Translated type 1: CORPORATION")
 
-        if "CORP " in business_type_string:
-            business_info["business_type"] = "CORPORATION"
-            print("      [?] Translated type 2: CORPORATION")
+            if "CORP " in business_type_string:
+                business_info["business_type"] = "CORPORATION"
+                print("      [?] Translated type 2: CORPORATION")
 
-        if "CORPORATION" in business_type_string:
-            business_info["business_type"] = "CORPORATION"
-            print("      [?] Translated type 3: CORPORATION")
+            if "CORPORATION" in business_type_string:
+                business_info["business_type"] = "CORPORATION"
+                print("      [?] Translated type 3: CORPORATION")
 
-        if "DBA" in business_type_string:
-            business_info["business_type"] = "DBA"
-            print("      [?] Translated type: DBA")
+            if "DBA" in business_type_string:
+                business_info["business_type"] = "DBA"
+                print("      [?] Translated type: DBA")
 
-        if "LIMITED LIABILITY COMPANY" in business_type_string:
-            business_info["business_type"] = "LLC"
-            print("      [?] Translated type 1: LLC")
+            if "LIMITED LIABILITY COMPANY" in business_type_string:
+                business_info["business_type"] = "LLC"
+                print("      [?] Translated type 1: LLC")
 
-        if "LLC" in business_type_string:
-            business_info["business_type"] = "LLC"
-            print("      [?] Translated type 2: LLC")
+            if "LLC" in business_type_string:
+                business_info["business_type"] = "LLC"
+                print("      [?] Translated type 2: LLC")
 
-        if "L.L.C." in business_type_string:
-            business_info["business_type"] = "LLC"
-            print("      [?] Translated type 3: LLC")
+            if "L.L.C." in business_type_string:
+                business_info["business_type"] = "LLC"
+                print("      [?] Translated type 3: LLC")
 
-        if "L.L.C" in business_type_string:
-            business_info["business_type"] = "LLC"
-            print("      [?] Translated type 4: LLC")
+            if "L.L.C" in business_type_string:
+                business_info["business_type"] = "LLC"
+                print("      [?] Translated type 4: LLC")
 
-        if "NON-PROFIT" in business_type_string:
-            business_info["business_type"] = "NONPROFIT"
-            print("      [?] Translated type 1: NON-PROFIT")
+            if "NON-PROFIT" in business_type_string:
+                business_info["business_type"] = "NONPROFIT"
+                print("      [?] Translated type 1: NON-PROFIT")
 
-        if "NONPROFIT" in business_type_string:
-            business_info["business_type"] = "NONPROFIT"
-            print("      [?] Translated type 2: NONPROFIT")
+            if "NONPROFIT" in business_type_string:
+                business_info["business_type"] = "NONPROFIT"
+                print("      [?] Translated type 2: NONPROFIT")
 
-        if "PARTNERSHIP" in business_type_string:
-            business_info["business_type"] = "PARTNERSHIP"
-            print("      [?] Translated type: PARTNERSHIP")
+            if "PARTNERSHIP" in business_type_string:
+                business_info["business_type"] = "PARTNERSHIP"
+                print("      [?] Translated type: PARTNERSHIP")
 
-        if "SOLE PROPRIETORSHIP" in business_type_string:
-            business_info["business_type"] = "SOLE PROPRIETORSHIP"
-            print("      [?] Translated type: SOLE PROPRIETORSHIP")
+            if "SOLE PROPRIETORSHIP" in business_type_string:
+                business_info["business_type"] = "SOLE PROPRIETORSHIP"
+                print("      [?] Translated type: SOLE PROPRIETORSHIP")
 
-        if "TRUST" in business_type_string:
-            business_info["business_type"] = "TRUST"
-            print("      [?] Translated type: TRUST")
+            if "TRUST" in business_type_string:
+                business_info["business_type"] = "TRUST"
+                print("      [?] Translated type: TRUST")
 
-        if "INC " in business_type_string:
-            business_info["business_type"] = "CORPORATION"
-            print("      [?] Translated type 1: INC")
+            if "INC " in business_type_string:
+                business_info["business_type"] = "CORPORATION"
+                print("      [?] Translated type 1: INC")
 
-        if "INC" in business_type_string:
-            business_info["business_type"] = "CORPORATION"
-            print("      [?] Translated type 2: INC")
+            if "INC" in business_type_string:
+                business_info["business_type"] = "CORPORATION"
+                print("      [?] Translated type 2: INC")
 
-        if "INCORPORATED" in business_type_string:
-            business_info["business_type"] = "CORPORATION"
-            print("      [?] Translated type 3: INC")
+            if "INCORPORATED" in business_type_string:
+                business_info["business_type"] = "CORPORATION"
+                print("      [?] Translated type 3: INC")
 
-        # if "LIMITED" in business_type_string:
-        #     business_info["business_type"] = "LTD"
-        #     print("      [?] Translaetd type1: LTD")
+            # if "LIMITED" in business_type_string:
+            #     business_info["business_type"] = "LTD"
+            #     print("      [?] Translaetd type1: LTD")
 
-        if "LTD" in business_type_string:
-            business_info["business_type"] = "LTD"
-            print("      [?] Translaetd type 2: LTD")
+            if "LTD" in business_type_string:
+                business_info["business_type"] = "LTD"
+                print("      [?] Translaetd type 2: LTD")
 
-        if "L.T.D" in business_type_string:
-            business_info["business_type"] = "LTD"
-            print("      [?] Translaetd type 3: LTD")
+            if "L.T.D" in business_type_string:
+                business_info["business_type"] = "LTD"
+                print("      [?] Translaetd type 3: LTD")
 
-        filing_number = str(parser.xpath('//*[@id="printDiv2"]/table[1]/tr[2]/td[2]/text()')[0]).strip()
-        address_string = str(parser.xpath('//*[@id="printDiv2"]/table[1]/tr[6]/td[2]/text()')).upper().replace("  ", " ").strip().replace("\\XA0\\R\\N", "").replace("\\XA0", "")
-        # if address_string != "[]":
-        #     is_address = True
-        #     address_list = address_string.strip("['']").split(",")
-        #     state_zip = address_list[-1]
-        #     print(address_list)
-        #     print(state_zip)
-        #     temp = re.compile("([a-zA-Z]+)([0-9]+)")
-        #     res = temp.match(state_zip).groups()
-        #     print(res)
-        # else:
-        #     is_address = False
+            filing_number = str(parser.xpath('//*[@id="printDiv2"]/table[1]/tr[2]/td[2]/text()')[0]).strip()
+            address_string = str(parser.xpath('//*[@id="printDiv2"]/table[1]/tr[6]/td[2]/text()')).upper().replace("  ", " ").strip().replace("\\XA0\\R\\N", "").replace("\\XA0", "")
+            # if address_string != "[]":
+            #     is_address = True
+            #     address_list = address_string.strip("['']").split(",")
+            #     state_zip = address_list[-1]
+            #     print(address_list)
+            #     print(state_zip)
+            #     temp = re.compile("([a-zA-Z]+)([0-9]+)")
+            #     res = temp.match(state_zip).groups()
+            #     print(res)
+            # else:
+            #     is_address = False
 
-        try:
-            street_address = str(parser.xpath('//*[@id="printDiv2"]/table[1]/tr[6]/td[2]/text()[1]')[0]).upper().replace("  ", " ").strip()
-        except IndexError:
-            street_address = str(parser.xpath('//*[@id="printDiv2"]/table[1]/tr[6]/td[2]/text()[1]')).upper().replace("  ", " ").strip()
-        city_state_zip = str(parser.xpath('//*[@id="printDiv2"]/table[1]/tr[6]/td[2]/text()[2]')).upper().replace("  ", " ").strip().replace("\\XA0\\R\\N", "").replace("\\XA0", "").strip("[]").join(",")
-
-
-        if address_string != "NO PRINCIPAL OFFICE ADDRESS FOUND":
-            business_info["street_physical"] = street_address
-            # try:
-            #     print("   [*] Address " + address_string)
-            #     parsed_address = usaddress.tag(city_state_zip)
-            #     parse_success = True
-            #
-            # except usaddress.RepeatedLabelError as e:
-            #     print(e)
-            #     parse_success = False
-            #
-            # if parse_success:
-            #     # street_registered = f'{parsed_address[0]["AddressNumber"]} {parsed_address[0]["StreetName"]} {parsed_address[0]["StreetNamePostType"]}'
-            #     street_registered = city_state_zip
-            #     print(parsed_address)
-            #     business_info["street_physical"] = street_registered
-            #
-            #     try:
-            #         business_info["city_physical"] = parsed_address[0]["PlaceName"]
-            #         business_info["zip5_physical"] = parsed_address[0]["ZipCode"]
-            #         parse_success = True
-            #
-            #     except KeyError:
-            #         pass
+            try:
+                street_address = str(parser.xpath('//*[@id="printDiv2"]/table[1]/tr[6]/td[2]/text()[1]')[0]).upper().replace("  ", " ").strip()
+            except IndexError:
+                street_address = str(parser.xpath('//*[@id="printDiv2"]/table[1]/tr[6]/td[2]/text()[1]')).upper().replace("  ", " ").strip()
+            city_state_zip = str(parser.xpath('//*[@id="printDiv2"]/table[1]/tr[6]/td[2]/text()[2]')).upper().replace("  ", " ").strip().replace("\\XA0\\R\\N", "").replace("\\XA0", "").strip("[]").join(",")
 
 
+            if address_string != "NO PRINCIPAL OFFICE ADDRESS FOUND":
+                business_info["street_physical"] = street_address.strip("[]")
+                # try:
+                #     print("   [*] Address " + address_string)
+                #     parsed_address = usaddress.tag(city_state_zip)
+                #     parse_success = True
+                #
+                # except usaddress.RepeatedLabelError as e:
+                #     print(e)
+                #     parse_success = False
+                #
+                # if parse_success:
+                #     # street_registered = f'{parsed_address[0]["AddressNumber"]} {parsed_address[0]["StreetName"]} {parsed_address[0]["StreetNamePostType"]}'
+                #     street_registered = city_state_zip
+                #     print(parsed_address)
+                #     business_info["street_physical"] = street_registered
+                #
+                #     try:
+                #         business_info["city_physical"] = parsed_address[0]["PlaceName"]
+                #         business_info["zip5_physical"] = parsed_address[0]["ZipCode"]
+                #         parse_success = True
+                #
+                #     except KeyError:
+                #         pass
 
-        business_info["name"] = name
-        business_info["filing_number"] = filing_number
-        business_info["corp_id"] = business_id
 
-        try:
-            incorporation_state = str(parser.xpath('//*[@id="printDiv2"]/table[1]/tr[5]/td[2]/text()')[0]).upper().replace("  ", " ").strip()
-            business_info["state_registered"] = incorporation_state
-            success = True
 
-        except KeyError:
-            print(f"   [!!!] KeyError! State: '{incorporation_state}' is not in dictionary!")
-            success = False
-            pass
+            business_info["name"] = name
+            business_info["filing_number"] = filing_number
+            business_info["corp_id"] = business_id
 
-        if success:
-            writer.writerow(business_info)
+            try:
+                incorporation_state = str(parser.xpath('//*[@id="printDiv2"]/table[1]/tr[5]/td[2]/text()')[0]).upper().replace("  ", " ").strip()
+                business_info["state_registered"] = incorporation_state
+                success = True
+
+            except KeyError:
+                print(f"   [!!!] KeyError! State: '{incorporation_state}' is not in dictionary!")
+                success = False
+                pass
+
+            if success:
+                writer.writerow(business_info)
+        else:
+            print("   [*] Status: " + business_status)
     else:
-        print("   [*] Status: " + business_status)
+        print("   [!] Bad ID, skipping!")
+
+
 
 filename = "mississippi.csv"
+df = pd.read_csv(filename)
+df_columns = list(df.columns)
+data_columns = ",".join(map(str, df_columns))
+
+# Get the last row from df
+last_row = df.tail(1)
+# Access the corp_id
+last_id = last_row["corp_id"].values[0]
+last_id += 1
+
 columns = ["name", "business_type", "state_registered","street_physical","city_physical","zip5_physical", "filing_number", "corp_id"]
 with open(filename, "a", encoding="utf-8") as output_file:
     writer = csv.DictWriter(output_file, fieldnames=columns)
@@ -227,5 +247,6 @@ with open(filename, "a", encoding="utf-8") as output_file:
         writer.writeheader()
 
     # business_id = 1073778
-    for business_id in tqdm(range(1000001, 1047088)):
+    for business_id in tqdm(range(last_id, 1047088)):
+        print("   [*] Current id: " + str(business_id))
         get_info(get_ids(business_id), writer)
