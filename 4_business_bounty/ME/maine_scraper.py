@@ -37,14 +37,26 @@ def get_user_agent():
 
 
 columns = ["name", "business_type", "state_registered", "filing_number", "corp_id"]
-filename = "main.csv"
+
+filename = "maine.csv"
+
+df = pd.read_csv(filename)
+df_columns = list(df.columns)
+data_columns = ",".join(map(str, df_columns))
+
+# Get the last row from df
+last_row = df.tail(1)
+# Access the corp_id
+last_id = last_row["corp_id"].values[0]
+last_id += 1
+
 with open(filename, "a", encoding="utf-8") as output_file:
     writer = csv.DictWriter(output_file, fieldnames=columns)
 
     if os.stat(filename).st_size == 0:
         writer.writeheader()
 
-    for corp_id in range(19900000, 19992588):
+    for corp_id in range(last_id, 19992588):
         # corp_id = 19992000
         business_info = {}
         url = f"https://icrs.informe.org/nei-sos-icrs/ICRS?CorpSumm={corp_id}+D"
@@ -55,7 +67,9 @@ with open(filename, "a", encoding="utf-8") as output_file:
         with open("t.html", "w") as output:
             output.write(response.text)
 
+        print(parser.xpath('/html/body/center/table/tr[3]/td/table/tr[5]/td[4]/text()'))
         business_status = str(parser.xpath('/html/body/center/table/tr[3]/td/table/tr[5]/td[4]/text()')[0]).upper().strip().replace("  ", " ")
+
         if business_status == "GOOD STANDING":
             print("   [*] Good Standing: " + business_status)
             do_save = True
