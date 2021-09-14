@@ -49,10 +49,10 @@ with open(filename, "w", encoding="utf-8") as output_file:
     response = requests.request("GET", url, headers=headers, data=payload)
 
     # Parse the html with lxml.html's fromstring
-    # print(response.text)
+    # print(response.text
     parser = fromstring(response.text)
 
-    print(str(parser.xpath('//*[@id="results"]/tr[2]/td/font/u/text()')))
+    print(parser.xpath('/html/body/div[2]/div/div[2]/div/table[2]/tbody/tr[2]/td[2]/font'))
     print(str(parser.xpath('//*[@id="results"]/table[2]/tr[2]/td[1]/font/text()')))
     print(str(parser.xpath('//*[@id="mainContent"]/table[2]/tr[16]/text()')))
     print(str(parser.xpath('//*[@id="mainContent"]/table[2]/tr[7]/td[2]/font/text()')))
