@@ -45,12 +45,14 @@ with open(filename, "w", encoding="utf-8") as output_file:
     # Convert the int to a left-padded str compatible with website
     detail_padded = str(detail_id).zfill(6)
     # Put detail_id into url
-    url = f"https://www.sos.arkansas.gov/corps/search_corps.php?DETAIL={detail_padded}"
-    response = requests.request("GET", url, headers=headers, data=payload)
+    # url = f"https://www.sos.arkansas.gov/corps/search_corps.php?DETAIL={detail_padded}"
+    # response = requests.request("GET", url, headers=headers, data=payload)
 
     # Parse the html with lxml.html's fromstring
     # print(response.text
-    parser = fromstring(response.text)
+    with open("test5.html", "r") as html_file:
+        read_html = html_file.readlines()
+    parser = fromstring(html_file)
 
     print(parser.xpath('/html/body/div[2]/div/div[2]/div/table[2]/tbody/tr[2]/td[2]/font'))
     print(str(parser.xpath('//*[@id="results"]/table[2]/tr[2]/td[1]/font/text()')))
