@@ -40,20 +40,24 @@ with open(filename, "w", encoding="utf-8") as output_file:
     if os.stat(filename).st_size == 0:
         writer.writeheader()
 
-    for detail_id in tqdm(range(0, 607920)):
-        # Convert the int to a left-padded str compatible with website
-        detail_padded = str(detail_id).zfill(6)
+    # for detail_id in tqdm(range(1, 607920)):
+    detail_id = 340105
+    # Convert the int to a left-padded str compatible with website
+    detail_padded = str(detail_id).zfill(6)
+    # Put detail_id into url
+    url = f"https://www.sos.arkansas.gov/corps/search_corps.php?DETAIL={detail_padded}"
+    response = requests.request("GET", url, headers=headers, data=payload)
 
-        # Put detail_id into url
-        url = f"https://www.sos.arkansas.gov/corps/search_corps.php?DETAIL={detail_padded}"
-        response = requests.request("GET", url, headers=headers, data=payload)
+    # Parse the html with lxml.html's fromstring
+    # print(response.text)
+    parser = fromstring(response.text)
 
-        # Parse the html with lxml.html's fromstring
-        parser = fromstring(response.text)
-
-        print(parser.xpath('//*[@id="mainContent"]/table[2]/tbody/tr[7]/td[2]/font/text()'))
-        break
-        # Initilalize dict
-        # business_info = {}
-        #
-        # if str(parser.xpath('//*[@id="mainContent"]/table[2]/tbody/tr[7]/td[2]/font/text()')).upper().strip
+    print(str(parser.xpath('//*[@id="results"]/tr[2]/td/font/u/text()')))
+    print(str(parser.xpath('//*[@id="results"]/table[2]/tr[2]/td[1]/font/text()')))
+    print(str(parser.xpath('//*[@id="mainContent"]/table[2]/tr[16]/text()')))
+    print(str(parser.xpath('//*[@id="mainContent"]/table[2]/tr[7]/td[2]/font/text()')))
+    # break
+    # Initilalize dict
+    # business_info = {}
+    #
+    # if str(parser.xpath('//*[@id="mainContent"]/table[2]/tbody/tr[7]/td[2]/font/text()')).upper().strip
