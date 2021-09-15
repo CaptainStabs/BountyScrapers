@@ -10,6 +10,7 @@ import pandas as pd
 import json
 import random
 import re
+import time
 
 # Get random user agent
 def get_user_agent():
@@ -42,8 +43,17 @@ def get_ids(business_id):
 
     payload = {"BusinessId":f"{business_id}"}
     payload = str(payload).replace("'", '"')
+    request_tries = 0
+    while not request_success or request_tries > 10:
+        try:
+            response = requests.request("POST", url, headers=get_user_agent(), data=payload)
+            request_success = True
+        except requests.exceptions.ConnectionError:
+            time.sleep(5)
+            response = requests.request("POST", url, headers=get_user_agent(), data=payload)
+            request_success = False
+            request_tries += 1
 
-    response = requests.request("POST", url, headers=get_user_agent(), data=payload)
 
     response_json = json.loads(response.text)
     # print(json.dumps(response_json, indent=4))
