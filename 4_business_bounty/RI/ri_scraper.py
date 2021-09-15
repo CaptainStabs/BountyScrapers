@@ -79,6 +79,7 @@ with open(file_name, "a", encoding="utf8") as output_file:
             do_save = False
 
         else:
+            print("  [*] Still Exists: " + inactive_date_label)
             do_save = True
 
 
