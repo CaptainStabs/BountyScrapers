@@ -75,7 +75,7 @@ with open(file_name, "a", encoding="utf8") as output_file:
             except requests.exceptions.ConnectionError:
                 print("  [!] Connection Closed! Retrying in 5...")
                 time.sleep(5)
-                response = requests.request("GET", url, headers=get_user_agent(), data=payload)
+                # response = requests.request("GET", url, headers=get_user_agent(), data=payload)
                 request_success = False
                 request_tries += 1
 
