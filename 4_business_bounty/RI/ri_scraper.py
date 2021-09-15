@@ -7,6 +7,7 @@ import os
 import random
 import pandas as pd
 import usaddress
+import time
 
 def get_user_agent():
     user_agents = [

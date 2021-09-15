@@ -50,7 +50,7 @@ def get_ids(business_id):
             response = requests.request("POST", url, headers=get_user_agent(), data=payload)
             request_success = True
         except requests.exceptions.ConnectionError:
-            Print("  [!] Connection Closed! Retrying in 5...")
+            print("  [!] Connection Closed! Retrying in 5...")
             time.sleep(5)
             response = requests.request("POST", url, headers=get_user_agent(), data=payload)
             request_success = False
@@ -74,7 +74,22 @@ def get_info(filing_id, writer):
     if filing_id != "Failed":
         business_info = {}
         url = f"https://corp.sos.ms.gov/corp/portal/c/page/corpbusinessidsearch/~/ViewXSLTFileByName.aspx?providerName=MSBSD_CorporationBusinessDetails&FilingId={filing_id}"
-        response = requests.request("GET", url, headers=get_user_agent())
+
+        request_tries = 0
+        request_success = False
+        while not request_success or request_tries > 10:
+            try:
+                response = requests.request("GET", url, headers=get_user_agent())
+                request_success = True
+            except requests.exceptions.ConnectionError:
+                print("  [!] Connection Closed! Retrying in 5...")
+                time.sleep(5)
+                response = requests.request("GET", url, headers=get_user_agent())
+                request_success = False
+                request_tries += 1
+
+        if request_tries > 10:
+            sys.exit()
 
         try:
             parser = fromstring(response.text)

@@ -6,6 +6,7 @@ import csv
 import os
 import random
 import pandas as pd
+import time
 
 
 
@@ -64,7 +65,20 @@ with open(file_name, "a", encoding="utf8") as output_file:
         business_info = {}
         print(corp_id)
         url = f"https://www.sos.ok.gov/corp/corpInformation.aspx?id={corp_id}"
-        response = requests.request("GET", url, headers=get_user_agent(), data=payload)
+
+        request_success = False
+        request_tries = 0
+        while not request_success or request_tries > 10:
+            try:
+                response = requests.request("GET", url, headers=get_user_agent(), data=payload)
+                request_success = True
+            except requests.exceptions.ConnectionError:
+                print("  [!] Connection Closed! Retrying in 5...")
+                time.sleep(5)
+                response = requests.request("GET", url, headers=get_user_agent(), data=payload)
+                request_success = False
+                request_tries += 1
+
         parser = fromstring(response.text)
 
         status = parser.xpath('//*[@id="printDiv"]/dl[1]/dd[3]/text()')
