@@ -51,11 +51,11 @@ class WebDriver:
         try:
             # avg_rating = self.driver.find_element_by_class_name("section-star-display")
             # total_reviews = self.driver.find_element_by_class_name("section-rating-term")
-            try:
-                element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, 'inner-container')))
-                # print(element)
-            except Exception as e1:
-                print("   [!] Webdriverwait error: " + str(e1))
+            # try:
+            #     element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, 'inner-container')))
+            #     # print(element)
+            # except Exception as e1:
+            #     print("   [!] Webdriverwait error: " + str(e1))
 
             found = False
             times_looped = 0
@@ -74,7 +74,7 @@ class WebDriver:
                 print("Not address.text: " + str(address.text))
                 found = False
                 times_looped = 0
-                time.sleep(5)
+                time.sleep(1)
                 while not found and times_looped < 3000:
                     try:
                         address = self.driver.find_element(By.XPATH,'//*[@id="IconItem_1"]/div')
@@ -162,7 +162,15 @@ class WebDriver:
                     searchbox = self.driver.find_element(By.ID,"maps_sb")
                     searchbox.send_keys(search_query)
                     # searchbox.send_keys(Keys.ENTER)
-                    search_result = self.driver.find_element(By.ID,"TaskBarSearch-as-0")
+
+                    try:
+                        element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="TaskBarSearch-as-0"]')))
+                    except Exception as e1:
+                        print(e1)
+                        pass
+
+                    search_result = self.driver.find_element(By.XPATH, '//*[@id="TaskBarSearch-as-0"]')
+                    print(search_result.text)
                     search_result.click()
                     # self.click_open_close_time()
                     self.get_location_data()
