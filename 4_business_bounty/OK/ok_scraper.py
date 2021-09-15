@@ -59,7 +59,7 @@ with open(file_name, "a", encoding="utf8") as output_file:
     if os.stat(file_name).st_size == 0:
         writer.writeheader()
 
-    for corp_id in tqdm(range(last_id, 5000000000)):
+    for corp_id in tqdm(range(last_id, 1900246779)):
     # corp_id = 3512384626
         business_info = {}
         print(corp_id)
@@ -71,7 +71,7 @@ with open(file_name, "a", encoding="utf8") as output_file:
 
 
         if "EXISTENCE" in str(status[0]).strip().upper():
-            print("\n   [*]" + str(status[0]).strip())
+            print("\n   [*] Exists: " + str(status[0]).strip())
 
             name = str(parser.xpath('//*[@id="printDiv"]/h3/text()')[0]).strip().upper().replace("  ", " ")
             business_type_string = str(parser.xpath('//*[@id="printDiv"]/dl[1]/dd[4]/text()')[0]).strip().upper().replace("  ", " ")
@@ -205,4 +205,4 @@ with open(file_name, "a", encoding="utf8") as output_file:
             # print(response.text)
 
         else:
-            print("\n" + str(status[0]).strip().upper())
+            print("\n Not Exists: " + str(status[0]).strip().upper())
