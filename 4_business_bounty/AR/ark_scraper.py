@@ -6,6 +6,7 @@ from lxml.html import fromstring
 from tqdm import tqdm
 import pandas as pd
 import usaddress
+import time
 import json
 
 
@@ -49,7 +50,24 @@ with open(filename, "w", encoding="utf-8") as output_file:
         # Put detail_id into url
         url = f"https://www.sos.arkansas.gov/corps/search_corps.php?DETAIL={detail_padded}"
         print("   [*] Corp ID: " + str(detail_id))
-        r = requests.request("GET", url, headers=headers, data=payload)
+
+        request_tries = 0
+        request_success = False
+        while not request_success or request_tries > 10:
+            try:
+                r = requests.request("GET", url, headers=headers, data=payload)
+                request_success = True
+            except requests.exceptions.ConnectionError:
+                print("  [!] Connection Closed! Retrying in 5...")
+                time.sleep(5)
+                r = requests.request("GET", url, headers=headers, data=payload)
+                request_success = False
+                request_tries += 1
+
+        if request_tries > 10:
+            sys.exit()
+
+
 
         doc = fromstring(r.content)
         table = doc.xpath('.//table[@align="center"]')[0]
