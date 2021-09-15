@@ -44,11 +44,13 @@ def get_ids(business_id):
     payload = {"BusinessId":f"{business_id}"}
     payload = str(payload).replace("'", '"')
     request_tries = 0
+    request_success = False
     while not request_success or request_tries > 10:
         try:
             response = requests.request("POST", url, headers=get_user_agent(), data=payload)
             request_success = True
         except requests.exceptions.ConnectionError:
+            Print("  [!] Connection Closed! Retrying in 5...")
             time.sleep(5)
             response = requests.request("POST", url, headers=get_user_agent(), data=payload)
             request_success = False
