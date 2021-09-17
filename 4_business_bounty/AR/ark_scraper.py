@@ -71,48 +71,47 @@ with open(filename, "w", encoding="utf-8") as output_file:
 
         doc = fromstring(r.content)
         table = doc.xpath('.//table[@align="center"]')[0]
-
-        fields = table.xpath('.//td[@valign="top"]/font/text()')
+        fields = ["name", "ignored_name", "filing_number", "business_type", "ignored_act", "status", "principal_address", "reg_agent", "agent_address", "date_filed", "officers", "foreign_name", "foreign_address", "state_of_origin"]
         values = table.xpath('.//td[@width="375"]/font/text()')
         data = dict(zip(fields, values))
         print(json.dumps(data, indent=4))
 
-        business_status = str(data["Status"]).upper().strip().replace("  ", " ")
+        business_status = str(data["status"]).upper().strip().replace("  ", " ")
         if business_status == "GOOD STANDING":
-            print("   [*] Good Standing: " + str(data["Status"]))
+            print("   [*] Good Standing: " + str(data["status"]))
             do_save = True
         elif "REVOKED" in business_status:
-            print("   [*] Revoked: " + str(data["Status"]))
+            print("   [*] Revoked: " + str(data["status"]))
             do_save = False
         elif "DISSOLVED" in business_status:
-            print("   [*] Dissolved: " + str(data["Status"]))
+            print("   [*] Dissolved: " + str(data["status"]))
             do_save = False
         elif "WITHDRAWN" in business_status:
-            print("   [*] WITHDRAWN: " + str(data["Status"]))
+            print("   [*] WITHDRAWN: " + str(data["status"]))
             do_save = False
         else:
-            print("   [*] Unknown status: " + str(data["Status"]))
+            print("   [*] Unknown status: " + str(data["status"]))
             do_save = False
 
 
-        if str(data["Corporation Name"]).upper().strip().replace("  ", " ") == "N/A":
+        if str(data["name"]).upper().strip().replace("  ", " ") == "N/A":
             print("   [!] Name is N/A! Not saving..")
             do_save = False
-        elif str(data["State of Origin"]).upper().strip().replace("  ", " ") == "N/A":
-            print("   [!] State of Origin is N/A! Not saving..")
+        elif str(data["state_of_origin"]).upper().strip().replace("  ", " ") == "N/A":
+            print("   [!] state_of_origin is N/A! Not saving..")
             do_save = False
 
 
         if do_save:
             business_info = {}
             # columns = ["state_physical", "street_physical", "city_physical","zip5_physical", "filing_number", "corp_id"]
-            name = str(data["Corporation Name"]).upper().strip()
+            name = str(data["name"]).upper().strip()
             print("   [*] Name: " + name)
             name = str(" ".join(name.split()))
             print("      [*] Cleaned Name: " + name)
             business_info["name"] = name
-            if len(str(data["State of Origin"]).upper().strip().replace("  ", " ")) == 2:
-                business_info["state_registered"] = str(data["State of Origin"]).upper().strip().replace("  ", " ")
+            if len(str(data["state_of_origin"]).upper().strip().replace("  ", " ")) == 2:
+                business_info["state_registered"] = str(data["state_of_origin"]).upper().strip().replace("  ", " ")
             else:
                 business_info["state_registered"] = ""
 
@@ -120,8 +119,8 @@ with open(filename, "w", encoding="utf-8") as output_file:
             business_info["corp_id"] = detail_id
 
             try:
-                print("   [*] Address: " + str(data["Principal Address"]).upper().strip().replace("  "," "))
-                address_string = str(data["Principal Address"]).upper().strip().replace("  ", " ")
+                print("   [*] Address: " + str(data["principal_address"]).upper().strip().replace("  "," "))
+                address_string = str(data["principal_address"]).upper().strip().replace("  ", " ")
                 address_string = str(" ".join(address_string.split()))
                 print("      [*] Cleaned Address: " + address_string)
                 parsed_address = usaddress.tag(address_string)
@@ -148,7 +147,7 @@ with open(filename, "w", encoding="utf-8") as output_file:
                         print(e)
                         pass
 
-            business_type_string = str(data["Filing Type"]).upper().strip().replace("  ", " ")
+            business_type_string = str(data["business_type"]).upper().strip().replace("  ", " ")
             print("   [*] Business Type: " + business_type_string)
             if "COOPERATIVE" in business_type_string:
                 business_info["business_type"] = "COOP"
@@ -240,7 +239,7 @@ with open(filename, "w", encoding="utf-8") as output_file:
                 if not business_info["business_type"]:
                     print("   [*] Business Type is NULL, NOT saving: " + str(business_info["business_type"]))
                 elif not business_info["state_registered"]:
-                    print("   [*] State Registered is NULL, NOT saving: " + str(data["State of Origin"]).upper().strip().replace("  ", " "))
+                    print("   [*] State Registered is NULL, NOT saving: " + str(data["state_of_origin"]).upper().strip().replace("  ", " "))
 
 
 
