@@ -19,13 +19,30 @@ headers = {
   'Sec-Fetch-Dest': 'document'
 }
 
-def find_min(configs):
-    start_id = configs["start_id"]
-    end_id = configs["end_id"]
-    scraper_number = configs["scraper_number"]
-    for id in tqdm(range(0, 1500000000)):
+def find_min(lists):
+    start_id = lists[0]
+    end_id = lists[1]
+    scraper_number = lists[2]
+
+    for id in tqdm(range(start_id, 1500000000)):
         url = f"https://www.sos.ok.gov/corp/corpInformation.aspx?id={id}"
-        response = requests.request("GET", url, headers=headers, data=payload)
+        has_responded = False
+        retry_count = 0
+        while has_responded == False or retry_count == 10:
+            try:
+                response = requests.request("GET", url, headers=headers, data=payload)
+                has_responded = True
+
+            except:
+                has_responded = False
+                retry_count += 1
+
+        if retry_count == 10:
+            with open(f"min.txt", "a") as fail_document:
+                fail_document.write(f"Scraper {scraper_number} last_number: {id}\n")
+            break
+
+
         parser = fromstring(response.text)
         if "RECORD NOT FOUND" in str(parser.xpath('//*[@id="printDiv"]/dl[1]/dd[3]/text()')[0]).upper():
             continue
