@@ -205,7 +205,7 @@ with open(filename, "a", encoding="utf-8") as output_file:
 
                     except KeyError as e:
                         print(e)
-                        
+
                 except KeyError as e:
                     print(e)
                     try:
@@ -221,7 +221,7 @@ with open(filename, "a", encoding="utf-8") as output_file:
             # Get registered address
             try:
                 address_string = str(data["agent_address"])
-                print("      [*] Registered Address: " + address_string)
+                print("      [*] Registered/Agent Address: " + address_string)
                 parsed_address = usaddress.tag(address_string)
                 parse_success = True
 
@@ -341,22 +341,27 @@ with open(filename, "a", encoding="utf-8") as output_file:
                 business_info["business_type"] = "LTD"
                 print("      [?] Translaetd type 3: LTD")
 
-            if business_info["business_type"] and business_info["state_registered"]:
-                print("   [*] Business Type is not NULL, SAVING")
-                writer.writerow(business_info)
-            else:
-                if not business_info["business_type"]:
-                    print(
-                        "   [*] Business Type is NULL, NOT saving: "
-                        + str(business_info["business_type"])
-                    )
-                elif not business_info["state_registered"]:
-                    print(
-                        "   [*] State Registered is NULL, NOT saving: "
-                        + str(data["state_of_origin"])
-                        .upper()
-                        .strip()
-                        .replace("  ", " ")
-                    )
+            try:
+                if business_info["business_type"] and business_info["state_registered"]:
+                    print("   [*] Business Type is not NULL, SAVING")
+                    writer.writerow(business_info)
+                else:
+                    if not business_info["business_type"]:
+                        print(
+                            "   [*] Business Type is NULL, NOT saving: "
+                            + str(business_info["business_type"])
+                        )
+                    elif not business_info["state_registered"]:
+                        print(
+                            "   [*] State Registered is NULL, NOT saving: "
+                            + str(data["state_of_origin"])
+                            .upper()
+                            .strip()
+                            .replace("  ", " ")
+                        )
+            except KeyError as e:
+                print(e)
+                
+
 
         # print(data)
