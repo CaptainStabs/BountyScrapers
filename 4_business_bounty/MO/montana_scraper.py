@@ -48,7 +48,7 @@ with open(file_name, "a", encoding="utf8") as output_file:
     if os.stat(file_name).st_size == 0:
         writer.writeheader()
 
-    for search_value in tqdm(range(769, 999999)):
+    for search_value in tqdm(range(2030, 999999)):
         business_info = {}
         business_info["corp_id"] = str(search_value).zfill(6) # I don't want "A"/letter in it as it's used to start loops
         padded_search_value = "A" + str(search_value).zfill(6)
