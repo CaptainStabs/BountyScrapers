@@ -52,7 +52,7 @@ last_row = df.tail(1)
 last_id = last_row["corp_id"].values[0]
 last_id += 1
 
-# last_id = 1900007095
+last_id = 1900195640
 
 with open(file_name, "a", encoding="utf8") as output_file:
     writer = csv.DictWriter(output_file, fieldnames=columns)
@@ -63,7 +63,7 @@ with open(file_name, "a", encoding="utf8") as output_file:
     for corp_id in tqdm(range(last_id, 1900246779)):
     # corp_id = 3512384626
         business_info = {}
-        print(corp_id)
+        print("\n corp_id: " + str(corp_id))
         url = f"https://www.sos.ok.gov/corp/corpInformation.aspx?id={corp_id}"
 
         request_success = False
@@ -171,12 +171,12 @@ with open(file_name, "a", encoding="utf8") as output_file:
             #     print("      [?] Translaetd type1: LTD")
 
             if "LTD" in business_type_string:
-                business_info["business_type"] = "LTD"
-                print("      [?] Translaetd type 2: LTD")
+                business_info["business_type"] = "LLC"
+                print("      [?] Translaetd type 2: LLC")
 
             if "L.T.D" in business_type_string:
-                business_info["business_type"] = "LTD"
-                print("      [?] Translaetd type 3: LTD")
+                business_info["business_type"] = "LLC"
+                print("      [?] Translaetd type 3: LLC")
 
             website_state = str(parser.xpath('//*[@id="printDiv"]/dl[1]/dd[5]/text()')[0]).strip().upper().replace("  ", " ")
             filing_number = str(parser.xpath('//*[@id="printDiv"]/dl[1]/dd[1]/text()')[0]).strip().replace("  ", " ")
