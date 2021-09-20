@@ -13,7 +13,9 @@ def run_parallel():
     four_start = 900000000
     five_start = 1200000000
 
-    list_ranges = [[one_start, 300000000, 1], [two_start,  600000000, 2], [three_start, 900000000, 3], [four_start, 1200000000, 4], [five_start, 1500000000, 5]]
+    # Five found : 1200005665
+
+    list_ranges = [[one_start, 300000000, 1], [two_start,  600000000, 2], [three_start, 900000000, 3], [four_start, 1200000000, 4]]#, [five_start, 1500000000, 5]]
     try:
         pool = Pool(processes=len(list_ranges))
         pool.map(find_min, list_ranges)
