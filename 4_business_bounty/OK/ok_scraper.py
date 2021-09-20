@@ -52,7 +52,7 @@ last_row = df.tail(1)
 last_id = last_row["corp_id"].values[0]
 last_id += 1
 
-last_id = 1900195640
+last_id = 1900246779
 
 with open(file_name, "a", encoding="utf8") as output_file:
     writer = csv.DictWriter(output_file, fieldnames=columns)
@@ -60,7 +60,7 @@ with open(file_name, "a", encoding="utf8") as output_file:
     if os.stat(file_name).st_size == 0:
         writer.writeheader()
 
-    for corp_id in tqdm(range(last_id, 1900246779)):
+    for corp_id in tqdm(range(last_id, 1999999999)):
     # corp_id = 3512384626
         business_info = {}
         print("\n corp_id: " + str(corp_id))
