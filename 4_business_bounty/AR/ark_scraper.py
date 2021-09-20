@@ -115,37 +115,37 @@ with open(filename, "w", encoding="utf-8") as output_file:
             else:
                 business_info["state_registered"] = ""
 
-            business_info["filing_number"] = str(data["Filing #"]).strip().replace(" ", "")
+            business_info["filing_number"] = str(data["filing_number"]).strip().replace(" ", "")
             business_info["corp_id"] = detail_id
-
-            try:
-                print("   [*] Address: " + str(data["principal_address"]).upper().strip().replace("  "," "))
-                address_string = str(data["principal_address"]).upper().strip().replace("  ", " ")
-                address_string = str(" ".join(address_string.split()))
-                print("      [*] Cleaned Address: " + address_string)
-                parsed_address = usaddress.tag(address_string)
-                parse_success = True
-            except usaddress.RepeatedLabelError as e:
-                print(e)
-                parse_success = False
-
-            if parse_success:
-                try:
-                    # print("      [*] Parsed Address: " + str(parsed_address[0]))
-                    street_registered = f'{parsed_address[0]["AddressNumber"]} {parsed_address[0]["StreetName"]} {parsed_address[0]["StreetNamePostType"]}'
-                    business_info["street_physical"] = street_registered
-                    business_info["city_physical"] = parsed_address[0]["PlaceName"]
-                    business_info["zip5_physical"] = parsed_address[0]["ZipCode"]
-
-                except KeyError as e:
-                    print(e)
-                    try:
-                        business_info["city_physical"] = parsed_address[0]["PlaceName"]
-                        parse_success = True
-
-                    except KeyError as e:
-                        print(e)
-                        pass
+            #
+            # try:
+            #     print("   [*] Address: " + str(data["principal_address"]).upper().strip().replace("  "," "))
+            #     address_string = str(data["principal_address"]).upper().strip().replace("  ", " ")
+            #     address_string = str(" ".join(address_string.split()))
+            #     print("      [*] Cleaned Address: " + address_string)
+            #     parsed_address = usaddress.tag(address_string)
+            #     parse_success = True
+            # except usaddress.RepeatedLabelError as e:
+            #     print(e)
+            #     parse_success = False
+            #
+            # if parse_success:
+            #     try:
+            #         # print("      [*] Parsed Address: " + str(parsed_address[0]))
+            #         street_registered = f'{parsed_address[0]["AddressNumber"]} {parsed_address[0]["StreetName"]} {parsed_address[0]["StreetNamePostType"]}'
+            #         business_info["street_physical"] = street_registered
+            #         business_info["city_physical"] = parsed_address[0]["PlaceName"]
+            #         business_info["zip5_physical"] = parsed_address[0]["ZipCode"]
+            #
+            #     except KeyError as e:
+            #         print(e)
+            #         try:
+            #             business_info["city_physical"] = parsed_address[0]["PlaceName"]
+            #             parse_success = True
+            #
+            #         except KeyError as e:
+            #             print(e)
+            #             pass
 
             business_type_string = str(data["business_type"]).upper().strip().replace("  ", " ")
             print("   [*] Business Type: " + business_type_string)
