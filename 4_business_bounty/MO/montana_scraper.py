@@ -9,6 +9,8 @@ import json
 import random
 import re
 import time
+# import heartrate; heartrate.trace(browser=True, port=9998)
+
 
 # Get random user agent
 def get_user_agent():
@@ -47,8 +49,8 @@ with open(file_name, "a", encoding="utf8") as output_file:
 
     if os.stat(file_name).st_size == 0:
         writer.writeheader()
-
-    for search_value in tqdm(range(2030, 999999)):
+                                    # 284383
+    for search_value in tqdm(range(284383, 9999999)):
         business_info = {}
         business_info["corp_id"] = str(search_value).zfill(6) # I don't want "A"/letter in it as it's used to start loops
         padded_search_value = "A" + str(search_value).zfill(6)
@@ -77,6 +79,7 @@ with open(file_name, "a", encoding="utf8") as output_file:
         request_tries = 0
         while not request_success or request_tries > 10:
             try:
+                print("  [*] Getting results....")
                 response = requests.request("POST", url, headers=get_user_agent(), data=payload)
                 request_success = True
             except requests.exceptions.ConnectionError:
@@ -103,12 +106,17 @@ with open(file_name, "a", encoding="utf8") as output_file:
 
                 while not request_success or request_tries > 10:
                     try:
-                        response = requests.request("GET", url, headers=get_user_agent(), data=payload)
+                        response = requests.request("GET", url, headers=get_user_agent(), data=payload, timeout=20)
                         request_success = True
                     except requests.exceptions.ConnectionError:
                         print("  [!] Connection Closed! Retrying in 5...")
                         time.sleep(5)
                         # response = requests.request("GET", url, headers=get_user_agent(), data=payload)
+                        request_success = False
+                        request_tries += 1
+
+                    except requests.exceptions.ReadTimeout:
+                        print("   [!] Read timeout! Retrying in 5...")
                         request_success = False
                         request_tries += 1
 
