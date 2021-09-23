@@ -41,14 +41,15 @@ columns = [
 
 filename = "arkansas.csv"
 
-# df = pd.read_csv(filename)
-# df_columns = list(df.columns)
-# data_columns = ",".join(map(str, df_columns))
-#
-# # Get the last row from df
-# last_row = df.tail(1)
-# # Access the corp_id
-# last_id = last_row["corp_id"].values[0]
+df = pd.read_csv(filename)
+df_columns = list(df.columns)
+data_columns = ",".join(map(str, df_columns))
+
+# Get the last row from df
+last_row = df.tail(1)
+# Access the corp_id
+last_id = last_row["corp_id"].values[0]
+last_id += 1
 
 with open(filename, "a", encoding="utf-8") as output_file:
     writer = csv.DictWriter(output_file, fieldnames=columns)
@@ -56,7 +57,7 @@ with open(filename, "a", encoding="utf-8") as output_file:
     if os.stat(filename).st_size == 0:
         writer.writeheader()
 
-    for detail_id in tqdm(range(377, 607920)):
+    for detail_id in tqdm(range(last_id, 607920)):
         # detail_id = 340105
         # Convert the int to a left-padded str compatible with website
         detail_padded = str(detail_id).zfill(6)
@@ -68,12 +69,17 @@ with open(filename, "a", encoding="utf-8") as output_file:
         request_success = False
         while not request_success or request_tries > 10:
             try:
-                r = requests.request("GET", url, headers=headers, data=payload)
+                r = requests.request("GET", url, headers=headers, data=payload, timeout=20)
                 request_success = True
             except requests.exceptions.ConnectionError:
                 print("  [!] Connection Closed! Retrying in 5...")
                 time.sleep(5)
                 r = requests.request("GET", url, headers=headers, data=payload)
+                request_success = False
+                request_tries += 1
+
+            except requests.exceptions.ReadTimeout:
+                print("   [!] Read timeout! Retrying in 5...")
                 request_success = False
                 request_tries += 1
 
@@ -84,23 +90,44 @@ with open(filename, "a", encoding="utf-8") as output_file:
         table = doc.xpath('.//table[@align="center"]')[0]
 
         print(str(table.xpath("/tr[4]/td[2]/font/text()")).strip())
-        data = {
-            "name": str(" ".join(str(table.xpath('tr[2]/td[2]/font/text()')[0]).upper().strip().split())),
-            "ignored_name": table.xpath(".//tr[3]/td[2]/font/text()"),
-            "filing_number": str(table.xpath(".//tr[4]/td[2]/font/text()")[0]).strip(),
-            "business_type": str(" ".join(str(table.xpath(".//tr[5]/td[2]/font/text()")[0]).upper().strip().split())),
-            "ignored_act": str(table.xpath(".//tr[6]/td[2]/font/text()")),
-            "status": str(table.xpath(".//tr[7]/td[2]/font/text()")[0]).upper().strip(),
-            # "principal_address": str(" ".join(str(",".join(table.xpath(".//tr[8]/td[2]/font/text()")[0])).upper().strip().split())),
-            "principal_address": str(table.xpath(".//tr[8]/td[2]/font/text()")).upper().strip(),
-            "reg_agent": str(table.xpath(".//tr[9]/td[2]/font/text()")[0]),
-            "agent_address": str(" ".join(str(",".join(table.xpath(".//tr[10]/td[2]/font/text()"))).upper().strip().split())),
-            "date_filed": table.xpath(".//tr[11]/td[2]/font/text()"),
-            "officers": table.xpath(".//tr[12]/td[2]/font/text()")[0],
-            "foreign_name": table.xpath(".//tr[13]/td[2]/font/text()"),
-            "foreign_address": table.xpath(".//tr[14]/td[2]/font/text()"),
-            "state_of_origin": str(table.xpath(".//tr[15]/td[2]/font/text()")[0]).upper().strip(),
-        }
+        try:
+            data = {
+                "name": str(" ".join(str(table.xpath('tr[2]/td[2]/font/text()')[0]).upper().strip().split())),
+                "ignored_name": table.xpath(".//tr[3]/td[2]/font/text()"),
+                "filing_number": str(table.xpath(".//tr[4]/td[2]/font/text()")[0]).strip(),
+                "business_type": str(" ".join(str(table.xpath(".//tr[5]/td[2]/font/text()")[0]).upper().strip().split())),
+                "ignored_act": str(table.xpath(".//tr[6]/td[2]/font/text()")),
+                "status": str(table.xpath(".//tr[7]/td[2]/font/text()")[0]).upper().strip(),
+                # "principal_address": str(" ".join(str(",".join(table.xpath(".//tr[8]/td[2]/font/text()")[0])).upper().strip().split())),
+                "principal_address": str(table.xpath(".//tr[8]/td[2]/font/text()")).upper().strip(),
+                "reg_agent": str(table.xpath(".//tr[9]/td[2]/font/text()")[0]),
+                "agent_address": str(" ".join(str(",".join(table.xpath(".//tr[10]/td[2]/font/text()"))).upper().strip().split())),
+                "date_filed": table.xpath(".//tr[11]/td[2]/font/text()"),
+                "officers": table.xpath(".//tr[12]/td[2]/font/text()")[0],
+                "foreign_name": table.xpath(".//tr[13]/td[2]/font/text()"),
+                "foreign_address": table.xpath(".//tr[14]/td[2]/font/text()"),
+                "state_of_origin": str(table.xpath(".//tr[15]/td[2]/font/text()")[0]).upper().strip(),
+            }
+        except IndexError as e:
+            print(e)
+            data = {
+                "name": str(" ".join(str(table.xpath('tr[2]/td[2]/font/text()')[0]).upper().strip().split())),
+                "ignored_name": table.xpath(".//tr[3]/td[2]/font/text()"),
+                "filing_number": str(table.xpath(".//tr[4]/td[2]/font/text()")[0]).strip(),
+                "business_type": str(" ".join(str(table.xpath(".//tr[5]/td[2]/font/text()")[0]).upper().strip().split())),
+                "ignored_act": str(table.xpath(".//tr[6]/td[2]/font/text()")),
+                "status": str(table.xpath(".//tr[7]/td[2]/font/text()")[0]).upper().strip(),
+                # "principal_address": str(" ".join(str(",".join(table.xpath(".//tr[8]/td[2]/font/text()")[0])).upper().strip().split())),
+                "principal_address": str(table.xpath(".//tr[8]/td[2]/font/text()")).upper().strip(),
+                "reg_agent": str(table.xpath(".//tr[9]/td[2]/font/text()")[0]),
+                "agent_address": str(" ".join(str(",".join(table.xpath(".//tr[10]/td[2]/font/text()"))).upper().strip().split())),
+                "date_filed": table.xpath(".//tr[11]/td[2]/font/text()"),
+                "officers": table.xpath(".//tr[12]/td[2]/font/text()")[0],
+                "foreign_name": table.xpath(".//tr[13]/td[2]/font/text()"),
+                "foreign_address": table.xpath(".//tr[14]/td[2]/font/text()"),
+                "state_of_origin": str(table.xpath(".//tr[15]/td[2]/font/text()")).upper().strip(),
+            }
+
         # //*[@id="mainContent"]/table[2]/tbody/tr[2]/td[2]/font
         # //*[@id="mainContent"]/table[2]/tbody/tr[4]/td[2]/font
         # values = table.xpath('.//td[@width="375"]/font/text()')
@@ -361,7 +388,7 @@ with open(filename, "a", encoding="utf-8") as output_file:
                         )
             except KeyError as e:
                 print(e)
-                
+
 
 
         # print(data)
