@@ -7,6 +7,7 @@ import os
 import random
 import pandas as pd
 import time
+import heartrate; heartrate.trace(browser=True)
 
 
 
@@ -70,7 +71,8 @@ with open(file_name, "a", encoding="utf8") as output_file:
         request_tries = 0
         while not request_success or request_tries > 10:
             try:
-                response = requests.request("GET", url, headers=get_user_agent(), data=payload)
+                print("   [*] Getting response...")
+                response = requests.request("GET", url, headers=get_user_agent(), data=payload, timeout=20)
                 request_success = True
             except requests.exceptions.ConnectionError:
                 print("  [!] Connection Closed! Retrying in 5...")
@@ -79,6 +81,10 @@ with open(file_name, "a", encoding="utf8") as output_file:
                 request_success = False
                 request_tries += 1
 
+            except requests.exceptions.ReadTimeout:
+                print("   [!] Read timeout! Retrying in 5...")
+                request_success = False
+                request_tries += 1
         parser = fromstring(response.text)
 
         status = parser.xpath('//*[@id="printDiv"]/dl[1]/dd[3]/text()')
@@ -219,4 +225,4 @@ with open(file_name, "a", encoding="utf8") as output_file:
             # print(response.text)
 
         else:
-            print("\n Not Exists: " + str(status[0]).strip().upper())
+            print("   [!] Not Exists: " + str(status[0]).strip().upper())
