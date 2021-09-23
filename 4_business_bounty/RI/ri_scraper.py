@@ -39,17 +39,17 @@ payload={}
 columns = ["name", "business_type", "state_registered","state_physical", "street_physical","city_physical","zip5_physical", "filing_number", "naics_2017", "corp_id"]
 file_name = "rhode_island.csv"
 
-df = pd.read_csv(file_name)
-df_columns = list(df.columns)
-data_columns = ",".join(map(str, df_columns))
+# df = pd.read_csv(file_name)
+# df_columns = list(df.columns)
+# data_columns = ",".join(map(str, df_columns))
+#
+# # Get the last row from df
+# last_row = df.tail(1)
+# # Access the corp_id
+# last_id = last_row["corp_id"].values[0]
+# last_id += 1
 
-# Get the last row from df
-last_row = df.tail(1)
-# Access the corp_id
-last_id = last_row["corp_id"].values[0]
-last_id += 1
-
-# last_id = 1
+last_id = 264889
 
 with open(file_name, "a", encoding="utf8") as output_file:
     writer = csv.DictWriter(output_file, fieldnames=columns)
@@ -57,12 +57,28 @@ with open(file_name, "a", encoding="utf8") as output_file:
     if os.stat(file_name).st_size == 0:
         writer.writeheader()
 
-    for id_number in tqdm(range(last_id, 165688)):
+    for id_number in tqdm(range(last_id, 999999)):
+        print("   [*] Current ID: " + str(id_number))
         business_info = {}
         # print("\n" + str(id_number))
         padded_id = str(id_number).zfill(9)
         url = f"https://business.sos.ri.gov/CorpWeb/CorpSearch/CorpSummary.aspx?FEIN={padded_id}&SEARCH_TYPE=1"
-        response = requests.request("GET", url, headers=get_user_agent())
+
+        request_tries = 0
+        request_success = False
+        while not request_success or request_tries > 10:
+            try:
+                response = requests.request("GET", url, headers=get_user_agent())
+                request_success = True
+            except requests.exceptions.ConnectionError:
+                print("  [!] Connection Closed! Retrying in 5...")
+                time.sleep(5)
+                request_success = False
+                request_tries += 1
+
+        if request_tries > 10:
+            sys.exit()
+
 
         parser = fromstring(response.text)
 
