@@ -328,17 +328,23 @@ with open(filename, "a", encoding="utf-8") as output_file:
 
             try:
                 if business_info["business_type"]:
-                    writer.writerow(business_info)
+                    do_save = True
 
                 # This probably wouldn't run, so I'm also putting it in the exception block
                 else:
+                    do_save = False
                     with open("fails.txt", "a") as f:
                         f.write(f"{name}, {business_type_string}, {corp_id}\n")
 
             except KeyError as e:
+                do_save = False
                 print(e)
                 with open("fails.txt", "a") as f:
                     f.write(f"{name}, {business_type_string}, {corp_id}\n")
+
+            if do_save:
+                print(json.dumps(business_info, indent=4))
+                writer.writerow(business_info)
 
 
 
