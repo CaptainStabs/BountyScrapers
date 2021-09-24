@@ -36,7 +36,7 @@ def get_user_agent():
     }
     return headers
 
-columns = ["name", "business_type", "state_registered","street_registered","city_registered","zip5_registered", "state_physical", "city_physical", "zip5_physical", "filing_number", "corp_id"]
+columns = ["name", "business_type", "state_registered","street_registered","city_registered","zip5_registered", "state_physical", "street_physical", "city_physical", "zip5_physical", "filing_number", "corp_id"]
 
 filename = "west_virginia.csv"
 
@@ -187,7 +187,15 @@ with open(filename, "a", encoding="utf-8") as output_file:
                 business_info["business_type"] = "LTD"
                 print("      [?] Translaetd type 3: LTD")
 
-            state_registered = str(parser.xpath('/html/body/form/div[4]/div[4]/table[2]/tr[4]/td[1]/text()')[0])
+            try:
+                if not business_info["business_type"]:
+                    with open("unmapped_business_type.txt", "a") as f:
+                        f.write(f"{name}, {business_type_string}, {corp_id}\n")
+            except Exception as e:
+                print(e)
+
+
+
             # registered_address = ", ".join(parser.xpath('/html/body/form/div[4]/div[4]/table[4]/tr[3]/td/text()')[1:])
             # registered_address = str(" ".join(str(registered_address).upper().strip().split()))
             # print("   [*] Registered address: " + registered_address)
@@ -212,78 +220,130 @@ with open(filename, "a", encoding="utf-8") as output_file:
             if index_found:
                 # TR val is 6, but im getting 3
                 field_index = field_index * 2
-                print(fields)
-                print(field_index)
-                values = parser.xpath(f'/html/body/form/div[4]/div[4]/table[3]/tr{field_index}/td/text()')
+                # print("Fields: " + str(fields))
+                # print("Field index: " + str(field_index))
+                values = parser.xpath(f'/html/body/form/div[4]/div[4]/table[3]/tr[{field_index}]/td/text()')
+                # /html/body/form/div[4]/div[4]/table[3]/tbody/tr[6]/td
                 # print(fields[field_index])
-                print("\n")
-                print(values)
+                # print("\n")
+                print("      [*]Values: " + str(values))
+
+                # Just making this match the recycled code
+                physical_address = str(", ".join(values))
+                # Split and rejoin to remove and extra whitespace
+                physical_address = " ".join(physical_address.upper().strip().split())
+                print("   [*] Physical Address: " + str(physical_address))
+
             # print(parser.xpath('//*[@id="tableResults"]//tr[contains(@class, "rowNormal")]/td/text()'))
-            #
-            # try:
-            #     # address_string = str(" ".join(address_string.split()))
-            #     # print("      [*] Cleaned Address: " + address_string)
-            #     parsed_address = usaddress.tag(registered_address)
-            #     parse_success = True
-            # except usaddress.RepeatedLabelError as e:
-            #     print(e)
-            #     parse_success = False
-            #
-            # if parse_success:
-            #     try:
-            #         print("      [*] Parsed Address: " + str(parsed_address[0]))
-            #         street_physical = str(data["principal_address"].split(parsed_address[0]["PlaceName"])[0]).rstrip(",").strip()
-            #         print("   [*] Street street_physical: " + str(street_physical))
-            #         # street_registered = f'{parsed_address[0]["AddressNumber"]} {parsed_address[0]["StreetName"]} {parsed_address[0]["StreetNamePostType"]}'
-            #         business_info["street_registered"] = street_physical
-            #         business_info["city_registered"] = parsed_address[0]["PlaceName"]
-            #         business_info["zip5_registered"] = parsed_address[0]["ZipCode"]
-            #     except KeyError as e:
-            #         print(e)
-            #         try:
-            #             business_info["city_registered"] = parsed_address[0]["PlaceName"]
-            #             parse_success = True
-            #
-            #         except KeyError as e:
-            #             print(e)
-            #             pass
-            #
-            # parse_success = False
-            #
-            # # Get physical address
-            # try:
-            #     address_string = str(data["agent_address"])
-            #     print("      [*] Registered/Agent Address: " + address_string)
-            #     parsed_address = usaddress.tag(address_string)
-            #     parse_success = True
-            #
-            # except usaddress.RepeatedLabelError as e:
-            #     print(e)
-            #     parse_success = False
-            #
-            # if parse_success:
-            #     try:
-            #         print("      [*] Parsed Address: " + str(parsed_address[0]))
-            #         street_registered = str(data["agent_address"].split(parsed_address[0]["PlaceName"])[0]).rstrip(",").strip()
-            #         print("   [*] Street Registered: " + str(street_registered))
-            #         # street_registered = f'{parsed_address[0]["AddressNumber"]} {parsed_address[0]["StreetName"]} {parsed_address[0]["StreetNamePostType"]}'
-            #         business_info["street_registered"] = street_registered
-            #         business_info["city_registered"] = parsed_address[0]["PlaceName"]
-            #         business_info["zip5_registered"] = parsed_address[0]["ZipCode"]
-            #         business_info["state_registered"] = parsed_address[0]["StateName"]
-            #     except KeyError as e:
-            #         print(e)
-            #         try:
-            #             business_info["city_registered"] = parsed_address[0]["PlaceName"]
-            #             parse_success = True
-            #
-            #         except KeyError as e:
-            #             print(e)
-            #             pass
-            #
-            # # columns = [state_registered","street_registered","city_registered","zip5_registered", "state_physical", "city_physical", "zip5_physical", "filing_number", "corp_id"]
-            # business_info["name"] = name
-            # business_info["state_registered"] = state_registered
-            #
+
+                """Physical Address parsing and cleaned_string"""
+                try:
+                    # address_string = str(" ".join(address_string.split()))
+                    # print("      [*] Cleaned Address: " + address_string)
+                    parsed_address = usaddress.tag(physical_address)
+                    parse_success = True
+
+                except usaddress.RepeatedLabelError as e:
+                    print(e)
+                    parse_success = False
+
+                if parse_success:
+                    try:
+                        print("      [*] Parsed Address: " + str(parsed_address[0]))
+                        # Split the address at the city to get the street
+                        street_physical = str(physical_address.split(parsed_address[0]["PlaceName"])[0]).strip(",").strip()
+                        street_physical = street_physical.strip(",")
+                        print("   [*] Street street_physical: " + str(street_physical))
+                        # street_registered = f'{parsed_address[0]["AddressNumber"]} {parsed_address[0]["StreetName"]} {parsed_address[0]["StreetNamePostType"]}'
+                        business_info["street_physical"] = street_physical
+                        business_info["city_physical"] = parsed_address[0]["PlaceName"]
+                        business_info["zip5_physical"] = parsed_address[0]["ZipCode"]
+                        try:
+                            business_info["state_physical"] = parsed_address[0]["StateName"]
+
+                        except KeyError as e:
+                            print(e)
+
+                    except KeyError as e:
+                        print(e)
+                        try:
+                            business_info["city_physical"] = parsed_address[0]["PlaceName"]
+                            parse_success = True
+
+                        except KeyError as e:
+                            print(e)
+                            pass
+            else:
+                print("   [!] This should never happen, but field_index wasn't found")
+
+            """
+            Registered Address stuff
+            """
+            # Slice out agent name
+            registered_address = ", ".join(parser.xpath('/html/body/form/div[4]/div[4]/table[4]/tr[3]/td/text()')[1:])
+            registered_address = str(" ".join(str(registered_address).upper().split()))
+            print("   [*] Registered Address: " + registered_address)
+
+            parse_success = False
+
+            # Get physical address
+            try:
+                address_string = str(registered_address)
+                print("      [*] Registered/Agent Address: " + address_string)
+                parsed_address = usaddress.tag(address_string)
+                parse_success = True
+
+            except usaddress.RepeatedLabelError as e:
+                print(e)
+                parse_success = False
+
+            if parse_success:
+                try:
+                    print("      [*] Parsed Address: " + str(parsed_address[0]))
+                    street_registered = str(address_string.split(parsed_address[0]["PlaceName"])[0]).rstrip(",").strip()
+                    street_registered = street_registered.strip(",") # Not sure why i have to do this twice
+                    print("   [*] Street Registered: " + str(street_registered))
+                    # street_registered = f'{parsed_address[0]["AddressNumber"]} {parsed_address[0]["StreetName"]} {parsed_address[0]["StreetNamePostType"]}'
+                    business_info["street_registered"] = street_registered
+                    business_info["city_registered"] = parsed_address[0]["PlaceName"]
+                    business_info["zip5_registered"] = parsed_address[0]["ZipCode"]
+                    try:
+                        business_info["state_registered"] = parsed_address[0]["StateName"]
+                    except KeyError as e:
+                        print(e)
+                except KeyError as e:
+                    print(e)
+                    try:
+                        business_info["city_registered"] = parsed_address[0]["PlaceName"]
+                        parse_success = True
+
+                    except KeyError as e:
+                        print(e)
+                        pass
+
+            # columns = ["filing_number", "corp_id"]
+            business_info["name"] = name
+            business_info["filing_number"] = corp_id
+            business_info["corp_id"] = corp_id
+
+            try:
+                if business_info["business_type"]:
+                    writer.writerow(business_info)
+
+                # This probably wouldn't run, so I'm also putting it in the exception block
+                else:
+                    with open("fails.txt", "a") as f:
+                        f.write(f"{name}, {business_type_string}, {corp_id}\n")
+
+            except KeyError as e:
+                print(e)
+                with open("fails.txt", "a") as f:
+                    f.write(f"{name}, {business_type_string}, {corp_id}\n")
+
+
+
+
+
+
         else:
             print("   [*] Not Active: " + str(status_reason))
