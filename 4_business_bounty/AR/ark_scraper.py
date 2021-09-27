@@ -57,7 +57,7 @@ with open(filename, "a", encoding="utf-8") as output_file:
     if os.stat(filename).st_size == 0:
         writer.writeheader()
 
-    for detail_id in tqdm(range(last_id, 607920)):
+    for detail_id in tqdm(range(last_id, 999999)):
         # detail_id = 340105
         # Convert the int to a left-padded str compatible with website
         detail_padded = str(detail_id).zfill(6)
