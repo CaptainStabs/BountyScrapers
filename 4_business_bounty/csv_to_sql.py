@@ -7,7 +7,7 @@ table_name = "businesses"
 
 # SQL Update Settings
 pk = ["name", "business_type", "state_registered"]
-updated_columns = [""]
+updated_columns = ["street_physical"]
 
 output_filename = str(filename).strip(".csv") + "_sql.sql"
 print(output_filename)
@@ -61,6 +61,9 @@ def csv_to_update(filename, pk, updated_columns):
 
                 # Every other line
                 else:
+
                     values = str(row).strip("[]")
-                    query_statement = f"UPDATE {table_name} SET col1 = 'x',col2 = 'x',col3 = 'x',col4 = 'x' WHERE pk1 = 'x from csv' AND pk2 = 'x from csv' AND pk3 = 'x from csv';);\n"
+                    query_statement = f"UPDATE {table_name} SET {updated_columns[0]} = '{row["street_physical"]}' WHERE {pk[0]} = '{row["name"]}' and '{pk[1]} = '{row["business_type"]}' and {pk[2]} = '{row["state_registered"]}';\n"
                     output_file.write(query_statement)
+
+csv_to_update(filename, pk, updated_columns)
