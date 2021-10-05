@@ -7,7 +7,7 @@ import os
 import random
 import pandas as pd
 import time
-import heartrate; heartrate.trace(browser=True)
+# import heartrate; heartrate.trace(browser=True)
 
 
 
@@ -53,9 +53,9 @@ last_row = df.tail(1)
 last_id = last_row["corp_id"].values[0]
 last_id += 1
 
-last_id = 1900246779
+last_id = 200728590
 
-with open(file_name, "a", encoding="utf8") as output_file:
+with open(file_name, "a", encoding="utf8", newline="") as output_file:
     writer = csv.DictWriter(output_file, fieldnames=columns)
 
     if os.stat(file_name).st_size == 0:
@@ -72,6 +72,7 @@ with open(file_name, "a", encoding="utf8") as output_file:
         while not request_success or request_tries > 10:
             try:
                 print("   [*] Getting response...")
+                print(f"      [] Request Tries: {request_tries}")
                 response = requests.request("GET", url, headers=get_user_agent(), data=payload, timeout=20)
                 request_success = True
             except requests.exceptions.ConnectionError:
@@ -85,6 +86,8 @@ with open(file_name, "a", encoding="utf8") as output_file:
                 print("   [!] Read timeout! Retrying in 5...")
                 request_success = False
                 request_tries += 1
+            if request_tries > 10:
+                break
         parser = fromstring(response.text)
 
         status = parser.xpath('//*[@id="printDiv"]/dl[1]/dd[3]/text()')
