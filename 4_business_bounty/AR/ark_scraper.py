@@ -17,7 +17,7 @@ headers = {
     "sec-ch-ua-platform": '"Windows"',
     "DNT": "1",
     "Upgrade-Insecure-Requests": "1",
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36",
+    "User-Agent": "Mozilla/5.0 (Linux; Android 11; SM-G960U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.72 Mobile Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
     "Sec-Fetch-Site": "none",
     "Sec-Fetch-Mode": "navigate",
@@ -39,7 +39,7 @@ columns = [
     "corp_id",
 ]
 
-filename = "arkansas.csv"
+filename = "arkansas_3.csv"
 
 df = pd.read_csv(filename)
 df_columns = list(df.columns)
@@ -50,14 +50,15 @@ last_row = df.tail(1)
 # Access the corp_id
 last_id = last_row["corp_id"].values[0]
 last_id += 1
+last_id = 800500
 
-with open(filename, "a", encoding="utf-8") as output_file:
+with open(filename, "a", encoding="utf-8", newline="") as output_file:
     writer = csv.DictWriter(output_file, fieldnames=columns)
 
     if os.stat(filename).st_size == 0:
         writer.writeheader()
 
-    for detail_id in tqdm(range(last_id, 999999)):
+    for detail_id in tqdm(range(last_id, 100042780)):
         # detail_id = 340105
         # Convert the int to a left-padded str compatible with website
         detail_padded = str(detail_id).zfill(6)
@@ -69,12 +70,12 @@ with open(filename, "a", encoding="utf-8") as output_file:
         request_success = False
         while not request_success or request_tries > 10:
             try:
-                r = requests.request("GET", url, headers=headers, data=payload, timeout=20)
+                r = requests.request("GET", url, headers=headers, data=payload, timeout=5)
                 request_success = True
             except requests.exceptions.ConnectionError:
                 print("  [!] Connection Closed! Retrying in 5...")
                 time.sleep(5)
-                r = requests.request("GET", url, headers=headers, data=payload)
+                # r = requests.request("GET", url, headers=headers, data=payload, timeout=5)
                 request_success = False
                 request_tries += 1
 
