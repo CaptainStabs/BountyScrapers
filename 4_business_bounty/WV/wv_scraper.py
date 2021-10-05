@@ -9,6 +9,7 @@ from tqdm import tqdm
 import pandas as pd
 import json
 import random
+import time
 # from us_state_abbrev import us_state_abbrev
 
 def get_user_agent():
@@ -38,7 +39,7 @@ def get_user_agent():
 
 columns = ["name", "business_type", "state_registered","street_registered","city_registered","zip5_registered", "state_physical", "street_physical", "city_physical", "zip5_physical", "filing_number", "corp_id"]
 
-filename = "west_virginia.csv"
+filename = "west_virginia_3.csv"
 
 # df = pd.read_csv(filename)
 # df_columns = list(df.columns)
@@ -49,15 +50,15 @@ filename = "west_virginia.csv"
 # # Access the corp_id
 # last_id = last_row["corp_id"].values[0]
 # last_id += 1
-last_id = 502
+last_id = 821342
 
 with open(filename, "a", encoding="utf-8") as output_file:
     writer = csv.DictWriter(output_file, fieldnames=columns)
 
     if os.stat(filename).st_size == 0:
         writer.writeheader()
-
-    for corp_id in range(last_id, 521078):
+# 521078                                                                       5252
+    for corp_id in tqdm(range(last_id, 9999999)):
         # corp_id = 19992000
         business_info = {}
         print("\n   [*] Current ID: " + str(corp_id))
@@ -81,6 +82,8 @@ with open(filename, "a", encoding="utf-8") as output_file:
                 request_success = False
                 request_tries += 1
 
+            if request_tries > 10:
+                break
         parser = fromstring(response.text)
         try:
             status_date = parser.xpath('//*[@id="tableResults"]/tr[3]/td[8]/text()')[0]
@@ -333,14 +336,14 @@ with open(filename, "a", encoding="utf-8") as output_file:
                 # This probably wouldn't run, so I'm also putting it in the exception block
                 else:
                     do_save = False
-                    with open("fails.txt", "a") as f:
-                        f.write(f"{name}, {business_type_string}, {corp_id}\n")
+                    with open("fails_2.txt", "a") as f:
+                        f.write(f"{name}, {business_type_string}, {corp_id}, business type null\n")
 
             except KeyError as e:
                 do_save = False
                 print(e)
-                with open("fails.txt", "a") as f:
-                    f.write(f"{name}, {business_type_string}, {corp_id}\n")
+                with open("fails_2.txt", "a") as f:
+                    f.write(f"{name}, {business_type_string}, {corp_id}, key error\n")
 
             if do_save:
                 print(json.dumps(business_info, indent=4))
