@@ -39,17 +39,17 @@ payload={}
 columns = ["name", "business_type", "state_registered","state_physical", "street_physical","city_physical","zip5_physical", "filing_number", "naics_2017", "corp_id"]
 file_name = "rhode_island.csv"
 
-# df = pd.read_csv(file_name)
-# df_columns = list(df.columns)
-# data_columns = ",".join(map(str, df_columns))
-#
-# # Get the last row from df
-# last_row = df.tail(1)
-# # Access the corp_id
-# last_id = last_row["corp_id"].values[0]
-# last_id += 1
+df = pd.read_csv(file_name)
+df_columns = list(df.columns)
+data_columns = ",".join(map(str, df_columns))
 
-last_id = 264889
+# Get the last row from df
+last_row = df.tail(1)
+# Access the corp_id
+last_id = last_row["corp_id"].values[0]
+last_id += 1
+
+# last_id =  687052
 
 with open(file_name, "a", encoding="utf8") as output_file:
     writer = csv.DictWriter(output_file, fieldnames=columns)
