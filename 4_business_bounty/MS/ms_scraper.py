@@ -56,8 +56,14 @@ def get_ids(business_id):
             request_success = False
             request_tries += 1
 
+        except requests.exceptions.ReadTimeout:
+            print("   [!] Read timeout! Retrying in 5...")
+            request_success = False
+            request_tries += 1
+
 
     response_json = json.loads(response.text)
+    # print(response_json)
     # print(json.dumps(response_json, indent=4))
     d_json = json.loads(response_json["d"])
     # print(d_json["Table"][0]["FilingId"])
@@ -78,7 +84,9 @@ def get_info(filing_id, writer):
         request_tries = 0
         request_success = False
         while not request_success or request_tries > 10:
+            print(f"      [*] Request Tries: {request_tries}")
             try:
+                proxy = "140.227.69.170"
                 response = requests.request("GET", url, headers=get_user_agent())
                 request_success = True
             except requests.exceptions.ConnectionError:
@@ -87,6 +95,14 @@ def get_info(filing_id, writer):
                 response = requests.request("GET", url, headers=get_user_agent())
                 request_success = False
                 request_tries += 1
+
+            except requests.exceptions.ReadTimeout:
+                print("   [!] Read timeout! Retrying in 5...")
+                request_success = False
+                request_tries += 1
+
+            if request_tries > 10:
+                break
 
         if request_tries > 10:
             sys.exit()
@@ -272,15 +288,16 @@ last_row = df.tail(1)
 # Access the corp_id
 last_id = last_row["corp_id"].values[0]
 last_id += 1
+# last_id =  1142457
 
 columns = ["name", "business_type", "state_registered","street_physical","city_physical","zip5_physical", "filing_number", "corp_id"]
-with open(filename, "a", encoding="utf-8") as output_file:
+with open(filename, "a", encoding="utf-8", newline="") as output_file:
     writer = csv.DictWriter(output_file, fieldnames=columns)
 
     if os.stat(filename).st_size == 0:
         writer.writeheader()
 
-    # business_id = 1073778
-    for business_id in tqdm(range(last_id, 1047088)):
-        print("   [*] Current id: " + str(business_id))
+    # business_id = 1073778                1975860
+    for business_id in tqdm(range(last_id, 1975860)):
+        print("\n   [*] Current id: " + str(business_id))
         get_info(get_ids(business_id), writer)
