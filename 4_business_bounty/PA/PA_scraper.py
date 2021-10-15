@@ -44,6 +44,8 @@ with open(filename, "a", encoding="utf-8", newline="") as output_file:
     if os.stat(filename).st_size == 0:
         writer.writeheader()
 
+    s = requests.Session()
+    s.headers.update(headers)
     for corp_id in tqdm(range(last_id, 89999999)):
         print(f"   [*] Current ID: {corp_id}")
         '''
@@ -53,7 +55,7 @@ with open(filename, "a", encoding="utf-8", newline="") as output_file:
 
         # Get search page
         url = "https://www.corporations.pa.gov/search/corpsearch"
-        response = requests.request("GET", url, headers=headers)
+        response = s.request("GET", url, headers=headers)
 
         # Parse raw html with lxml
         parser = fromstring(response.text)
@@ -74,7 +76,7 @@ with open(filename, "a", encoding="utf-8", newline="") as output_file:
 
 
         # Get "Select Business Entity page"
-        result_page = requests.request("POST", url, data=payload)
+        result_page = s.request("POST", url, data=payload)
 
         # Get view stuff from this page, and buttons daat
         result_parser = fromstring(result_page.text)
@@ -110,7 +112,7 @@ with open(filename, "a", encoding="utf-8", newline="") as output_file:
                 }
 
 
-                business_page = requests.request("POST", url, headers=headers, data=payload)
+                business_page = s.request("POST", url, headers=headers, data=payload)
                 business_parser = fromstring(business_page.text)
 
                 df = pd.read_html(business_page.text)
