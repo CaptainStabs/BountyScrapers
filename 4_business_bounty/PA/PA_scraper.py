@@ -5,6 +5,7 @@ import pandas as pd
 from utils.business_parser import business_type_parser
 import os
 import usaddress
+from tqdm import tqdm
 
 headers = {
     'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"',
@@ -43,7 +44,7 @@ with open(filename, "a", encoding="utf-8", newline="") as output_file:
     if os.stat(filename).st_size == 0:
         writer.writeheader()
 
-    for corp_id in range(last_id,89999999):
+    for corp_id in tqdm(range(last_id, 89999999)):
         print(f"   [*] Current ID: {corp_id}")
         '''
         Step 1:
