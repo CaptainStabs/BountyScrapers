@@ -39,7 +39,7 @@ payload = {
     '__VIEWSTATE': view_state,
     'ctl00$MainContent$btnSearch': 'Search',
     'ctl00$MainContent$ddlSearchType': '1',
-    'ctl00$MainContent$txtSearchTerms': '710774'
+    'ctl00$MainContent$txtSearchTerms': '1032742'
 }
 
 
@@ -69,6 +69,8 @@ payload = {
 
 
 business_page = requests.request("POST", url, headers=headers, data=payload)
+with open("test2.html", "w") as f:
+    f.write(business_page.text)
 business_parser = fromstring(business_page.text)
 
 with open("test.html", 'w') as f:
@@ -78,8 +80,18 @@ print("Name: " + str(business_parser.xpath('//td[@align="left"]/text()')[0]).str
 print(business_parser.xpath('/html/body/div/form/div[5]/div[2]/div[3]/div/div[5]/div[1]/table/tr[1]/td[2]/text()'))
 # //*[@id="MainContent_pnlEntityDetails"]/div[3]/div/div[5]/div[1]/table/tbody/tr[3]/td[2]
 df = pd.read_html(business_page.text)
+print(df)
 entity_details = df[1]
 info_dict = entity_details.set_index(0).to_dict()
 print(info_dict)
 raw_registered_address = info_dict[1]['Address']
 print(raw_registered_address)
+
+agent_details = df[2]
+print(agent_details)
+
+print(business_parser.xpath('//div[@class="col-md-6"]/table[1]/tr[1]/text()'))
+
+# print(business_parser.xpath('//*[@id="MainContent_pnlEntityDetails"]/div[3]/div/div[5]/div[2]/child'))
+print()
+agent_dict = agent_details.set_index(0).to_dict()
