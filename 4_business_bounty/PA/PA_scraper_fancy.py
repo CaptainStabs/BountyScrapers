@@ -72,7 +72,7 @@ class Scraper():
         self.event_validation_2 = self.result_parser.xpath('//*[@id="__EVENTVALIDATION"]/@value')[0]
         self.view_state_2 = self.result_parser.xpath('//*[@id="__VIEWSTATE"]/@value')[0]
 
-    def request_business_info(self, s):
+    def request_business_info(self, s, tries=0):
         '''
         Step 2:
         After searching, we need to get the view_state and event_validation once again
@@ -91,10 +91,16 @@ class Scraper():
         business_page = s.request("POST", self.url, headers=self.headers, data=payload)
         self.business_parser = fromstring(business_page.text)
 
-        self.df = pd.read_html(business_page.text)
-        entity_details = self.df[1]
-        # print(entity_details)
-        self.info_dict = entity_details.set_index(0).to_dict()
+        try:
+            self.df = pd.read_html(business_page.text)
+            entity_details = self.df[1]
+            # print(entity_details)
+            self.info_dict = entity_details.set_index(0).to_dict()
+        except IndexError:
+            print("      [!] No tables found, trying connection again")
+            if tries < 5:
+                self.request_business_info(s, tries)
+                tries += 1
 
     def main_scraper(self, filename, columns):
         with open(filename, "a", encoding="utf-8", newline="") as output_file:
@@ -114,7 +120,6 @@ class Scraper():
                 '''
 
                 # Get search page
-
                 response = s.request("GET", self.url, headers=self.headers)
 
                 # Parse raw html with lxml
