@@ -158,7 +158,7 @@ class Scraper():
                         """Parse physical address"""
 
                         raw_physical_address = str(self.info_dict[1]['Address']).upper().strip()
-                        print(f"   [*] Address: {raw_physical_address}")
+                        print(f"   [*] Physical Address: {raw_physical_address}")
                         self.business_info["raw_physical_address"] = raw_physical_address
 
                         try:
@@ -209,6 +209,8 @@ class Scraper():
                                 print("      [!] Agent name or agent title key error!")
 
                             raw_registered_address = " ".join(str(agent_dict[1]["Address"]).split()).upper().strip()
+
+                            print(f"   [*] Agent address: {raw_registered_address}")
                             if raw_registered_address != "NAN":
                                 self.business_info["raw_registered_address"] = raw_registered_address
                                 try:
@@ -225,18 +227,18 @@ class Scraper():
                                         street_registered = street_registered.strip(",").strip().upper()
                                         self.business_info["street_registered"] = street_registered
                                     except KeyError:
-                                        print("      [!] PlaceName parse failed!")
+                                        print("         [!] PlaceName parse failed!")
 
                                     try:
                                         self.business_info["city_registered"] = " ".join(str(parsed_registered_address[0]["PlaceName"]).strip(",").strip().upper().split())
                                     except KeyError:
-                                        print("      [!] City Registered parse failure!")
+                                        print("         [!] City Registered parse failure!")
 
                                     try:
                                         self.business_info["zip5_registered"] = str(parsed_address[0]["ZipCode"]).strip()
 
                                     except KeyError:
-                                        print("      [!] zip5_registered parse failure!")
+                                        print("         [!] zip5_registered parse failure!")
 
                             else:
                                 print("      [!] Raw registered address is nan, skipping.")
