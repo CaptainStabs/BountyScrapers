@@ -158,6 +158,7 @@ class Scraper():
                         """Parse physical address"""
 
                         raw_physical_address = str(self.info_dict[1]['Address']).upper().strip()
+                        print(f"   [*] Address: {raw_physical_address}")
                         self.business_info["raw_physical_address"] = raw_physical_address
 
                         try:
@@ -176,24 +177,24 @@ class Scraper():
                                 street_physical = " ".join(str(raw_physical_address.split(parsed_address[0]["PlaceName"])[0]).strip(",").strip().upper().split())
                                 self.business_info["street_physical"] = street_physical
                             except KeyError:
-                                print("      [!] PlaceName was not parsed!")
+                                print("         [!] PlaceName was not parsed!")
 
                             try:
                                 self.business_info["city_physical"] = " ".join(str(parsed_address[0]["PlaceName"]).strip(",").strip().upper().split())
 
                             except KeyError:
-                                print("      [!] City physical key error!")
+                                print("         [!] City physical key error!")
 
                             try:
                                 self.business_info["zip5_physical"] = str(parsed_address[0]["ZipCode"]).strip()
 
                             except KeyError:
-                                print("      [!] Zip code key error!")
+                                print("         [!] Zip code key error!")
 
                             try:
                                 self.business_info["state_physical"] = str(parsed_address[0]["StateName"]).upper().strip()
                             except KeyError:
-                                print("      [!] State physical key error!")
+                                print("         [!] State physical key error!")
 
                         # Registered agent will need a check to see if officer table exists
                         if len(self.df) == 6:
