@@ -198,14 +198,14 @@ def scraper(filename, start_num, end_id):
                         if business_status == "ACTIVE":
                             print("         [*] Business is active")
                             business_page = request_business_info(s, url, event_validation_2, view_state_2)
-                            business_parser = fromstring()
+                            business_parser = fromstring(business_page)
 
                             tries = 0
                             got_entity_details = False
                             while not got_entity_details or tries == 5:
                                 try:
                                     print("Getting tables")
-                                    df = pd.read_html(business_page.text)
+                                    df = pd.read_html(business_page)
                                     entity_details = df[1]
                                     # print(entity_details)
                                     info_dict = entity_details.set_index(0).to_dict()
