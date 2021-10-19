@@ -61,9 +61,26 @@ class Scraper():
             'ctl00$MainContent$txtSearchTerms': corp_id,
             'ctl00$MainContent$ddlSearchType': '6' # Exact match search
         }
+        request_success = False
+        request_tries = 0
+        while not request_success or request_tries > 10:
+            try:
+                # Get "Select Business Entity page"
+                result_page = s.request("POST", self.url, data=payload)
+                request_success = True
 
-        # Get "Select Business Entity page"
-        result_page = s.request("POST", self.url, data=payload)
+            except requests.exceptions.ConnectionError:
+                print("   [!] Connection Closed! Retrying in 1...")
+                time.sleep(1)
+                request_success = False
+                request_tries += 1
+
+            except requests.exceptions.ReadTimeout:
+                print("   [!] Read timeout! Retrying in 1...")
+                time.sleep(1)
+                request_success = False
+                request_tries += 1
+
 
         # Get view stuff from this page, and buttons daat
         self.result_parser = fromstring(result_page.text)
@@ -87,8 +104,28 @@ class Scraper():
             '__VIEWSTATE': self.view_state_2
         }
 
+        request_success = False
+        request_tries = 0
+        while not request_success or request_tries > 10:
+            try:
+                # ching for search")
+                business_page = s.request("POST", self.url, headers=self.headers, data=payload)
+                request_success = True
 
-        business_page = s.request("POST", self.url, headers=self.headers, data=payload)
+            except requests.exceptions.ConnectionError:
+                print("      [! Connecting Closed! Retrying in 1...")
+                time.sleep(1)
+                request_success = False
+                request_tries += 1
+
+            except requests.exceptions.ReadTimeout:
+                print("      [!] Read timeout! Retrying in 1...")
+                request_success = False
+                request_tries += 1
+            except Exception as e:
+                print("   [!] Uncaught exception!")
+                print(e)
+
         self.business_parser = fromstring(business_page.text)
 
         try:
@@ -126,7 +163,28 @@ class Scraper():
                 '''
 
                 # Get search page
-                response = s.request("GET", self.url, headers=self.headers)
+                request_success = False
+                request_tries = 0
+                while not request_success or request_tries > 10:
+                    try:
+                        # ching for search")
+                        response = s.request("GET", self.url, headers=self.headers)
+                        request_success = True
+
+                    except requests.exceptions.ConnectionError:
+                        print("      [! Connecting Closed! Retrying in 1...")
+                        time.sleep(1)
+                        request_success = False
+                        request_tries += 1
+
+                    except requests.exceptions.ReadTimeout:
+                        print("      [!] Read timeout! Retrying in 1...")
+                        request_success = False
+                        request_tries += 1
+                    except Exception as e:
+                        print("   [!] Uncaught exception!")
+                        print(e)
+
 
                 # Parse raw html with lxml
                 parser = fromstring(response.text)
