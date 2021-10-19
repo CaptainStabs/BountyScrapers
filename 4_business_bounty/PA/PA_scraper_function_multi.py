@@ -66,6 +66,7 @@ def request_business_info(s, event_validation_2, view_state_2):
     while not request_success or request_tries > 10:
         try:
             business_page = s.request("POST", url, headers=headers, data=payload)
+            request_success = True
 
         except requests.exceptions.ConnectionError:
             print("   [!] Connection Closed! Retrying in 1...")
@@ -116,6 +117,7 @@ def scraper(filename, start_num, end_id):
                     try:
                         print("Searching for search")
                         response = s.request("GET", url, headers=headers)
+                        request_success = True
 
                     except requests.exceptions.ConnectionError:
                         print("      [! Connecting Closed! Retrying in 1...")
@@ -153,6 +155,7 @@ def scraper(filename, start_num, end_id):
                     try:
                         # Get "Select Business Entity page"
                         result_page = s.request("POST", url, data=payload)
+                        request_success = True
 
                     except requests.exceptions.ConnectionError:
                         print("   [!] Connection Closed! Retrying in 1...")
