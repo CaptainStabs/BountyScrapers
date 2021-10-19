@@ -97,10 +97,16 @@ class Scraper():
             # print(entity_details)
             self.info_dict = entity_details.set_index(0).to_dict()
         except IndexError:
-            print("      [!] No tables found, trying connection again")
+            print("      [!] No tables found, trying connection again (IndexError)")
             if tries < 5:
                 self.request_business_info(s, tries)
                 tries += 1
+        except ValueError:
+            print("      [!] No tables found, trying connection again (ValueError)")
+            if tries < 5:
+                self.request_business_info(s, tries)
+                tries += 1
+
 
     def main_scraper(self, filename, columns):
         with open(filename, "a", encoding="utf-8", newline="") as output_file:
