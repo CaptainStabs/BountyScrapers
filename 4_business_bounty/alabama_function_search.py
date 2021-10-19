@@ -63,7 +63,7 @@ def alabama_scraper(lists):
         end_id = lists[1]
         file_name = lists[2]
         worker_number = lists[3]
-        with open(file_name, "a") as output_file:
+        with open(file_name, "a", encoding="utf-8", newline="") as output_file:
             writer = csv.DictWriter(output_file, fieldnames=columns)
 
             if os.stat(file_name).st_size == 0:
@@ -302,7 +302,7 @@ def alabama_scraper_proxy(lists):
     end_id = lists[1]
     file_name = lists[2]
     worker_number = lists[3]
-    with open(file_name, "a") as output_file:
+    with open(file_name, "a", encoding="utf-8", newline="") as output_file:
         writer = csv.DictWriter(output_file, fieldnames=columns)
 
         if os.stat(file_name).st_size == 0:
