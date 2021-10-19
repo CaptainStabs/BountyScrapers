@@ -31,7 +31,7 @@ class KeyboardInterruptError(Exception):
     pass
 
 def get_last_id(filename):
-    if os.path.exists(filename) and os.stat(filename).st_size > 0:
+    if os.path.exists(filename) and os.stat(filename).st_size > 1:
         df = pd.read_csv(filename)
         df_columns = list(df.columns)
         data_columns = ",".join(map(str, df_columns))
@@ -39,14 +39,19 @@ def get_last_id(filename):
         # Get the last row from df
         last_row = df.tail(1)
         # Access the corp_id
-        last_id = last_row["filing_number"].values[0]
-        last_id += 1
-        return last_id
+        try:
+            last_id = last_row["filing_number"].values[0]
+            last_id += 1
+            return last_id
+        except IndexError:
+            print("  [!] File likely did not have any data other than header. " + str(filename))
+            last_id = 1
+            return last_id
     else:
         last_id = 1
         return last_id
 
-def request_business_info(s, event_validation_2, view_state_2):
+def request_business_info(s, url, event_validation_2, view_state_2):
     '''
     Step 2:
     After searching, we need to get the view_state and event_validation once again
@@ -90,7 +95,7 @@ def scraper(filename, start_num, end_id):
         with open(filename, "a", encoding="utf-8", newline="") as output_file:
             writer = csv.DictWriter(output_file, fieldnames=columns)
 
-            if os.path.exists(filename) and os.stat(filename).st_size > 0:
+            if os.path.exists(filename) and os.stat(filename).st_size > 1:
                 start_id = get_last_id(filename)
             else:
                 start_id = start_num
@@ -115,7 +120,7 @@ def scraper(filename, start_num, end_id):
                 request_tries = 0
                 while not request_success or request_tries > 10:
                     try:
-                        print("Searching for search")
+                        # ching for search")
                         response = s.request("GET", url, headers=headers)
                         request_success = True
 
@@ -130,9 +135,11 @@ def scraper(filename, start_num, end_id):
                         request_success = False
                         request_tries += 1
                     except Exception as e:
+                        print("   [!] Uncaught exception!")
                         print(e)
 
                 # Parse raw html with lxml
+                print("   [*] Parsing...")
                 parser = fromstring(response.text)
 
                 event_validation = parser.xpath('//*[@id="__EVENTVALIDATION"]/@value')[0]
@@ -182,34 +189,42 @@ def scraper(filename, start_num, end_id):
                         got_results = True
                     except IndexError:
                         # This is caused by no results being returned
-                        # print("      [!] Business status not found!")
+                        print("      [!] Business status not found!")
                         got_results = False
 
                     # Prevent rest of script from running
                     if got_results:
                         # Only want active businesses
                         if business_status == "ACTIVE":
-
-                            business_parser = fromstring(request_business_info(s, event_validation_2, view_state_2))
+                            print("         [*] Business is active")
+                            business_page = request_business_info(s, url, event_validation_2, view_state_2)
+                            business_parser = fromstring()
 
                             tries = 0
+                            got_entity_details = False
+                            while not got_entity_details or tries == 5:
+                                try:
+                                    print("Getting tables")
+                                    df = pd.read_html(business_page.text)
+                                    entity_details = df[1]
+                                    # print(entity_details)
+                                    info_dict = entity_details.set_index(0).to_dict()
+                                    got_entity_details = True
 
-                            try:
-                                df = pd.read_html(business_page.text)
-                                entity_details = df[1]
-                                # print(entity_details)
-                                info_dict = entity_details.set_index(0).to_dict()
+                                except IndexError:
+                                    print("      [!] No tables found, trying connection again (IndexError)")
+                                    got_entity_details = False
+                                    if tries < 5:
+                                        request_business_info(s, url, event_validation_2, view_state_2)
+                                        tries += 1
+                                except ValueError:
+                                    print("      [!] No tables found, trying connection again (ValueError)")
+                                    got_entity_details = False
+                                    if tries < 5:
+                                        request_business_info(s, url, event_validation_2, view_state_2)
+                                        tries += 1
 
-                            except IndexError:
-                                print("      [!] No tables found, trying connection again (IndexError)")
-                                if tries < 5:
-                                    request_business_info(s, event_validation_2, view_state_2)
-                                    tries += 1
-                            except ValueError:
-                                print("      [!] No tables found, trying connection again (ValueError)")
-                                if tries < 5:
-                                    request_business_info(s, event_validation_2, view_state_2)
-                                    tries += 1
+                            # This will definetly fail if pandas couldn't read the html
                             business_info = {
                                 "name": " ".join(str(business_parser.xpath('//td[@align="left"]/text()')[0]).strip().upper().split()),
                                 "business_type": "CORPORATION", # This will get replaced if it is parsed
@@ -345,22 +360,27 @@ if __name__ == '__main__':
         else:
             # Use end_id before it is added to
             start_num = end_id - 1500000
-        print("Startnum: " + str(start_num))
+        # print("Startnum: " + str(start_num))
         arguments.append((f"./files/pa_{i}.csv", start_num, end_id))
         end_id = end_id + 1500000
-    print(arguments)
+    # print(arguments)
     try:
         pool = Pool(processes=60)
         pool.starmap(scraper, arguments)
         pool.close()
     except KeyboardInterrupt:
         print("   [!] Caught KeyboardInterrupt! Terminating and joining pool...")
-        pool.terminate()
+        pool.close()
         # pool.join()
+    except IndexError as e:
+        print(e)
+        tb.print_exc()
+        print("   [!] Weird pandas/numpy/multithreadding problem, passing")
+        pass
     except Exception as e:
         print(e)
         tb.print_exc()
-        pool.terminate()
+        pool.close()
         # pool.join()
     finally:
         print("   [*] Joining pool...")
