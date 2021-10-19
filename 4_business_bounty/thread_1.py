@@ -1,5 +1,6 @@
 from alabama_function_search import alabama_scraper
 from multiprocessing import Pool
+import traceback as tb
 import pandas as pd
 
 def run_parallel():
@@ -26,11 +27,20 @@ def run_parallel():
     try:
         pool = Pool(processes=len(list_ranges))
         pool.map(alabama_scraper, list_ranges)
-
+        pool.close()
     except KeyboardInterrupt:
         print("Quitting")
         pool.terminate()
-        sys.exit(1)
+    except Exception as e:
+        print(e)
+        tb.print_exc()
+        pool.terminate()
+    finally:
+        print("   [*] Joining pool...")
+        pool.join()
+        print("   [*] Finished joining...")
+        # sys.exit(1)
+
     # alabama_scraper()
 
 if __name__ == "__main__":

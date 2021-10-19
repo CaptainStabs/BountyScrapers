@@ -26,6 +26,10 @@ headers = {
     'Sec-Fetch-User': '?1',
     'Sec-Fetch-Dest': 'document'
 }
+
+class KeyboardInterruptError(Exception):
+    pass
+
 def get_last_id(filename):
     if os.path.exists(filename) and os.stat(filename).st_size > 0:
         df = pd.read_csv(filename)
@@ -42,217 +46,286 @@ def get_last_id(filename):
         last_id = 1
         return last_id
 
+def request_business_info(s, event_validation_2, view_state_2):
+    '''
+    Step 2:
+    After searching, we need to get the view_state and event_validation once again
+    EVENTTARGET is from the result list link pointing to entity name
+    This step (finally) gets the actual business info
+    '''
+
+    payload = {
+        '__EVENTARGUMENT': '',
+        '__EVENTTARGET': 'ctl00$MainContent$gvResults$ctl02$lnkBEName',
+        '__EVENTVALIDATION': event_validation_2,
+        '__VIEWSTATE': view_state_2
+    }
+
+    request_success = False
+    request_tries = 0
+    while not request_success or request_tries > 10:
+        try:
+            business_page = s.request("POST", url, headers=headers, data=payload)
+
+        except requests.exceptions.ConnectionError:
+            print("   [!] Connection Closed! Retrying in 1...")
+            time.sleep(1)
+            request_success = False
+            request_tries += 1
+
+        except requests.exceptions.ReadTimeout:
+            print("   [!] Read timeout! Retrying in 1...")
+            time.sleep(1)
+            request_success = False
+            request_tries += 1
+    return business_page.text
+
 def scraper(filename, start_num, end_id):
     columns = ["name", "business_type", "state_registered", "street_registered", "city_registered", "zip5_registered", "state_physical", "street_physical", "city_physical", "zip5_physical", "filing_number", "agent_name", "agent_title", "raw_physical_address", "raw_registered_address"]
 
     # filename = "pa.csv"
 
+    try:
+        with open(filename, "a", encoding="utf-8", newline="") as output_file:
+            writer = csv.DictWriter(output_file, fieldnames=columns)
 
-    with open(filename, "a", encoding="utf-8", newline="") as output_file:
-        writer = csv.DictWriter(output_file, fieldnames=columns)
+            if os.path.exists(filename) and os.stat(filename).st_size > 0:
+                start_id = get_last_id(filename)
+            else:
+                start_id = start_num
 
-        if os.path.exists(filename) and os.stat(filename).st_size > 0:
-            start_id = get_last_id(filename)
-        else:
-            start_id = start_num
+            if os.stat(filename).st_size == 0:
+                writer.writeheader()
 
-        if os.stat(filename).st_size == 0:
-            writer.writeheader()
+            s = requests.Session()
+            s.headers.update(headers)
 
-        s = requests.Session()
-        s.headers.update(headers)
+            for corp_id in tqdm(range(start_id, end_id)):
+                print(f"   [*] Current ID: {corp_id}")
+                '''
+                Step 1:
+                Need to get the first search page to search for ID
+                '''
 
-        for corp_id in tqdm(range(start_id, end_id)):
-            print(f"   [*] Current ID: {corp_id}")
-            '''
-            Step 1:
-            Need to get the first search page to search for ID
-            '''
+                # Get search page
+                url = "https://www.corporations.pa.gov/search/corpsearch"
 
-            # Get search page
-            url = "https://www.corporations.pa.gov/search/corpsearch"
-            response = s.request("GET", url, headers=headers)
+                request_success = False
+                request_tries = 0
+                while not request_success or request_tries > 10:
+                    try:
+                        response = s.request("GET", url, headers=headers)
 
-            # Parse raw html with lxml
-            parser = fromstring(response.text)
+                    except requests.exceptions.ConnectionError:
+                        print("      [! Connecting Closed! Retrying in 1...")
+                        time.sleep(1)
+                        request_success = False
+                        request_tries += 1
 
-            event_validation = parser.xpath('//*[@id="__EVENTVALIDATION"]/@value')[0]
-            view_state = parser.xpath('//*[@id="__VIEWSTATE"]/@value')[0]
+                    except requests.exceptions.ReadTimeout:
+                        print("      [!] Read timeout! Retrying in 1...")
+                        request_success = False
+                        request_tries += 1
 
-            # Setup payload
-            payload = {
-                '__EVENTTARGET': '',
-                '__EVENTVALIDATION': event_validation,
-                '__VIEWSTATE': view_state,
-                'ctl00$MainContent$btnSearch': 'Search',
-                'ctl00$MainContent$ddlSearchType': '1',
-                'ctl00$MainContent$txtSearchTerms': corp_id,
-                'ctl00$MainContent$ddlSearchType': '6' # Exact match search
-            }
+                # Parse raw html with lxml
+                parser = fromstring(response.text)
 
+                event_validation = parser.xpath('//*[@id="__EVENTVALIDATION"]/@value')[0]
+                view_state = parser.xpath('//*[@id="__VIEWSTATE"]/@value')[0]
 
-            # Get "Select Business Entity page"
-            result_page = s.request("POST", url, data=payload)
+                # Setup payload
+                payload = {
+                    '__EVENTTARGET': '',
+                    '__EVENTVALIDATION': event_validation,
+                    '__VIEWSTATE': view_state,
+                    'ctl00$MainContent$btnSearch': 'Search',
+                    'ctl00$MainContent$ddlSearchType': '1',
+                    'ctl00$MainContent$txtSearchTerms': corp_id,
+                    'ctl00$MainContent$ddlSearchType': '6' # Exact match search
+                }
 
-            # Get view stuff from this page, and buttons daat
-            result_parser = fromstring(result_page.text)
+                request_success = False
+                request_tries = 0
+                while not request_success or request_tries > 10:
+                    try:
+                        # Get "Select Business Entity page"
+                        result_page = s.request("POST", url, data=payload)
 
-            # Get aspx junk for step 2 request
-            event_validation_2 = result_parser.xpath('//*[@id="__EVENTVALIDATION"]/@value')[0]
-            view_state_2 = result_parser.xpath('//*[@id="__VIEWSTATE"]/@value')[0]
+                    except requests.exceptions.ConnectionError:
+                        print("   [!] Connection Closed! Retrying in 1...")
+                        time.sleep(1)
+                        request_success = False
+                        request_tries += 1
 
-            try:
-                business_status = str(result_parser.xpath('//*[@id="lblBEStatus"]/text()')[0]).upper().strip()
-                got_results = True
-            except IndexError:
-                # This is caused by no results being returned
-                # print("      [!] Business status not found!")
-                got_results = False
+                    except requests.exceptions.ReadTimeout:
+                        print("   [!] Read timeout! Retrying in 1...")
+                        time.sleep(1)
+                        request_success = False
+                        request_tries += 1
 
-            # Prevent rest of script from running
-            if got_results:
-                # Only want active businesses
-                if business_status == "ACTIVE":
-                    '''
-                    Step 2:
-                    After searching, we need to get the view_state and event_validation once again
-                    EVENTTARGET is from the result list link pointing to entity name
-                    This step (finally) gets the actual business info
-                    '''
+                if request_success:
+                    # Get view stuff from this page, and buttons daat
+                    result_parser = fromstring(result_page.text)
 
-                    payload = {
-                        '__EVENTARGUMENT': '',
-                        '__EVENTTARGET': 'ctl00$MainContent$gvResults$ctl02$lnkBEName',
-                        '__EVENTVALIDATION': event_validation_2,
-                        '__VIEWSTATE': view_state_2
-                    }
-
-
-                    business_page = s.request("POST", url, headers=headers, data=payload)
-                    business_parser = fromstring(business_page.text)
-
-                    df = pd.read_html(business_page.text)
-                    entity_details = df[1]
-                    # print(entity_details)
-                    info_dict = entity_details.set_index(0).to_dict()
-
-                    business_info = {
-                        "name": " ".join(str(business_parser.xpath('//td[@align="left"]/text()')[0]).strip().upper().split()),
-                        "business_type": "CORPORATION", # This will get replaced if it is parsed
-                        "state_registered": str(info_dict[1]["State Of Inc"]).upper().strip(),
-                        "filing_number": str(info_dict[1]["Entity Number"]).strip()
-                        }
-
-                    print("      [*] Name: " + str(business_parser.xpath('//td[@align="left"]/text()')[0]).strip())
-
-
-
-                    """Parse physical address"""
-
-                    raw_physical_address = str(info_dict[1]['Address']).upper().strip()
-                    business_info["raw_physical_address"] = raw_physical_address
+                    # Get aspx junk for step 2 request
+                    event_validation_2 = result_parser.xpath('//*[@id="__EVENTVALIDATION"]/@value')[0]
+                    view_state_2 = result_parser.xpath('//*[@id="__VIEWSTATE"]/@value')[0]
 
                     try:
-                        parsed_address = usaddress.tag(raw_physical_address)
-                        parse_success = True
+                        business_status = str(result_parser.xpath('//*[@id="lblBEStatus"]/text()')[0]).upper().strip()
+                        got_results = True
+                    except IndexError:
+                        # This is caused by no results being returned
+                        # print("      [!] Business status not found!")
+                        got_results = False
 
-                    except usaddress.RepeatedLabelError as e:
-                        print(e)
-                        parse_success = False
+                    # Prevent rest of script from running
+                    if got_results:
+                        # Only want active businesses
+                        if business_status == "ACTIVE":
 
+                            business_parser = fromstring(request_business_info(s, event_validation_2, view_state_2))
 
-                    if parse_success:
-                        # print(parsed_address)
+                            tries = 0
 
-                        try:
-                            street_physical = " ".join(str(raw_physical_address.split(parsed_address[0]["PlaceName"])[0]).strip(",").strip().upper().split())
-                            business_info["street_physical"] = street_physical
-                        except KeyError:
-                            pass
-                            # print("      [!] PlaceName was not parsed!")
-
-                        try:
-                            business_info["city_physical"] = " ".join(str(parsed_address[0]["PlaceName"]).strip(",").strip().upper().split())
-
-                        except KeyError:
-                            pass
-                            # print("      [!] City physical key error!")
-
-                        try:
-                            business_info["zip5_physical"] = str(parsed_address[0]["ZipCode"]).strip()
-
-                        except KeyError:
-                            pass
-                            # print("      [!] Zip code key error!")
-
-                        try:
-                            business_info["state_physical"] = str(parsed_address[0]["StateName"]).upper().strip()
-                        except KeyError:
-                            pass
-                            # print("      [!] State physical key error!")
-
-                    # Registered agent will need a check to see if officer table exists
-                    if len(df) == 6:
-                        agent_details = df[2]
-                        agent_dict = agent_details.set_index(0).to_dict()
-
-                        try:
-                            business_info["agent_name"] = str(agent_dict[1]["Name"]).upper().strip()
-                            business_info["agent_title"] = str(agent_dict[1]["Title"]).upper().strip()
-
-                        except KeyError:
-                            pass
-                            # print("      [!] Agent name or agent title key error!")
-
-                        raw_registered_address = " ".join(str(agent_dict[1]["Address"]).split()).upper().strip()
-                        if raw_registered_address != "NAN":
-                            business_info["raw_registered_address"] = raw_registered_address
                             try:
-                                parsed_registered_address = usaddress.tag(raw_registered_address)
+                                df = pd.read_html(business_page.text)
+                                entity_details = df[1]
+                                # print(entity_details)
+                                info_dict = entity_details.set_index(0).to_dict()
+
+                            except IndexError:
+                                print("      [!] No tables found, trying connection again (IndexError)")
+                                if tries < 5:
+                                    request_business_info(s, event_validation_2, view_state_2)
+                                    tries += 1
+                            except ValueError:
+                                print("      [!] No tables found, trying connection again (ValueError)")
+                                if tries < 5:
+                                    request_business_info(s, event_validation_2, view_state_2)
+                                    tries += 1
+                            business_info = {
+                                "name": " ".join(str(business_parser.xpath('//td[@align="left"]/text()')[0]).strip().upper().split()),
+                                "business_type": "CORPORATION", # This will get replaced if it is parsed
+                                "state_registered": str(info_dict[1]["State Of Inc"]).upper().strip(),
+                                "filing_number": str(info_dict[1]["Entity Number"]).strip()
+                                }
+
+                            print("      [*] Name: " + str(business_parser.xpath('//td[@align="left"]/text()')[0]).strip())
+
+
+
+                            """Parse physical address"""
+
+                            raw_physical_address = str(info_dict[1]['Address']).upper().strip()
+                            business_info["raw_physical_address"] = raw_physical_address
+
+                            try:
+                                parsed_address = usaddress.tag(raw_physical_address)
                                 parse_success = True
+
                             except usaddress.RepeatedLabelError as e:
-                                # print("      [!] Registered address parsing failed!\n      " + str(e))
+                                print(e)
                                 parse_success = False
 
+
                             if parse_success:
-                                try:
+                                # print(parsed_address)
 
-                                    street_registered = str(raw_registered_address).split(parsed_registered_address[0]["PlaceName"])[0]
-                                    street_registered = street_registered.strip(",").strip().upper()
-                                    business_info["street_registered"] = street_registered
+                                try:
+                                    street_physical = " ".join(str(raw_physical_address.split(parsed_address[0]["PlaceName"])[0]).strip(",").strip().upper().split())
+                                    business_info["street_physical"] = street_physical
                                 except KeyError:
                                     pass
-                                    # print("      [!] PlaceName parse failed!")
+                                    # print("      [!] PlaceName was not parsed!")
 
                                 try:
-                                    business_info["city_registered"] = " ".join(str(parsed_registered_address[0]["PlaceName"]).strip(",").strip().upper().split())
-                                except KeyError:
-                                    pass
-                                    # print("      [!] City Registered parse failure!")
-
-                                try:
-                                    business_info["zip5_registered"] = str(parsed_address[0]["ZipCode"]).strip()
+                                    business_info["city_physical"] = " ".join(str(parsed_address[0]["PlaceName"]).strip(",").strip().upper().split())
 
                                 except KeyError:
                                     pass
-                                    # print("      [!] zip5_registered parse failure!")
+                                    # print("      [!] City physical key error!")
+
+                                try:
+                                    business_info["zip5_physical"] = str(parsed_address[0]["ZipCode"]).strip()
+
+                                except KeyError:
+                                    pass
+                                    # print("      [!] Zip code key error!")
+
+                                try:
+                                    business_info["state_physical"] = str(parsed_address[0]["StateName"]).upper().strip()
+                                except KeyError:
+                                    pass
+                                    # print("      [!] State physical key error!")
+
+                            # Registered agent will need a check to see if officer table exists
+                            if len(df) == 6:
+                                agent_details = df[2]
+                                agent_dict = agent_details.set_index(0).to_dict()
+
+                                try:
+                                    business_info["agent_name"] = str(agent_dict[1]["Name"]).upper().strip()
+                                    business_info["agent_title"] = str(agent_dict[1]["Title"]).upper().strip()
+
+                                except KeyError:
+                                    pass
+                                    # print("      [!] Agent name or agent title key error!")
+
+                                raw_registered_address = " ".join(str(agent_dict[1]["Address"]).split()).upper().strip()
+                                if raw_registered_address != "NAN":
+                                    business_info["raw_registered_address"] = raw_registered_address
+                                    try:
+                                        parsed_registered_address = usaddress.tag(raw_registered_address)
+                                        parse_success = True
+                                    except usaddress.RepeatedLabelError as e:
+                                        # print("      [!] Registered address parsing failed!\n      " + str(e))
+                                        parse_success = False
+
+                                    if parse_success:
+                                        try:
+
+                                            street_registered = str(raw_registered_address).split(parsed_registered_address[0]["PlaceName"])[0]
+                                            street_registered = street_registered.strip(",").strip().upper()
+                                            business_info["street_registered"] = street_registered
+                                        except KeyError:
+                                            pass
+                                            # print("      [!] PlaceName parse failed!")
+
+                                        try:
+                                            business_info["city_registered"] = " ".join(str(parsed_registered_address[0]["PlaceName"]).strip(",").strip().upper().split())
+                                        except KeyError:
+                                            pass
+                                            # print("      [!] City Registered parse failure!")
+
+                                        try:
+                                            business_info["zip5_registered"] = str(parsed_address[0]["ZipCode"]).strip()
+
+                                        except KeyError:
+                                            pass
+                                            # print("      [!] zip5_registered parse failure!")
+
+                                else:
+                                    print("      [!] Raw registered address is nan, skipping.")
+
+
+
+                            business_type_string = info_dict[1]["Entity Type"]
+                            business_info["business_type"] = business_type_parser(str(business_type_string).upper().strip())
+
+                            writer.writerow(business_info)
+                            sleep_time = randrange(5)
+                            print("         [*] Sleeping for " + str(sleep_time))
+                            time.sleep(sleep_time)
+
 
                         else:
-                            print("      [!] Raw registered address is nan, skipping.")
-
-
-
-                    business_type_string = info_dict[1]["Entity Type"]
-                    business_info["business_type"] = business_type_parser(str(business_type_string).upper().strip())
-
-                    writer.writerow(business_info)
-                    sleep_time = randrange(5)
-                    print("         [*] Sleeping for " + str(sleep_time))
-                    time.sleep(sleep_time)
-
-
+                            print(f"      [!] Business not active: {business_status}")
                 else:
-                    print(f"      [!] Business not active: {business_status}")
+                    print("   [!] Couldn't connect!")
+                    raise KeyboardInterruptError()
+    except KeyboardInterrupt:
+        raise KeyboardInterruptError()
 
 if __name__ == '__main__':
     arguments = []
@@ -273,8 +346,17 @@ if __name__ == '__main__':
     try:
         pool = Pool(processes=60)
         pool.starmap(scraper, arguments)
+        pool.close()
+    except KeyboardInterrupt:
+        print("   [!] Caught KeyboardInterrupt! Terminating and joining pool...")
+        pool.terminate()
+        # pool.join()
     except Exception as e:
         print(e)
         tb.print_exc()
         pool.terminate()
+        # pool.join()
+    finally:
+        print("   [*] Joining pool...")
         pool.join()
+        print("   [*] Finished joining...")
