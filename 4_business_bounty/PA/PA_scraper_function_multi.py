@@ -114,6 +114,7 @@ def scraper(filename, start_num, end_id):
                 request_tries = 0
                 while not request_success or request_tries > 10:
                     try:
+                        print("Searching for search")
                         response = s.request("GET", url, headers=headers)
 
                     except requests.exceptions.ConnectionError:
@@ -126,6 +127,8 @@ def scraper(filename, start_num, end_id):
                         print("      [!] Read timeout! Retrying in 1...")
                         request_success = False
                         request_tries += 1
+                    except Exception as e:
+                        print(e)
 
                 # Parse raw html with lxml
                 parser = fromstring(response.text)
