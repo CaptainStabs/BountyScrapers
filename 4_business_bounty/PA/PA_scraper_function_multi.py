@@ -87,7 +87,7 @@ def request_business_info(s, url, event_validation_2, view_state_2):
     request_tries = 0
     while not request_success or request_tries > 10:
         try:
-            business_page = s.request("POST", url, headers=get_user_agent(), data=payload)
+            business_page = s.request("POST", url, data=payload)
             request_success = True
 
         except requests.exceptions.ConnectionError:
@@ -120,10 +120,12 @@ def scraper(filename, start_num, end_id):
             if os.stat(filename).st_size == 0:
                 writer.writeheader()
 
-            s = requests.Session()
+            # s = requests.Session()
             # s.headers.update(headers)
 
             for corp_id in tqdm(range(start_id, end_id)):
+                # Create a new session for each search, may help prevent blocking?
+                s = requests.Session()
                 s.headers.update(get_user_agent())
                 print(f"   [*] Current ID: {corp_id}")
                 '''
@@ -139,7 +141,7 @@ def scraper(filename, start_num, end_id):
                 while not request_success or request_tries > 10:
                     try:
                         # ching for search")
-                        response = s.request("GET", url, headers=get_user_agent())
+                        response = s.request("GET", url)
                         request_success = True
 
                     except requests.exceptions.ConnectionError:
@@ -215,14 +217,15 @@ def scraper(filename, start_num, end_id):
                         # Only want active businesses
                         if business_status == "ACTIVE":
                             print("         [*] Business is active")
-                            business_page = request_business_info(s, url, event_validation_2, view_state_2)
-                            business_parser = fromstring(business_page)
 
                             tries = 0
                             got_entity_details = False
                             while not got_entity_details or tries > 5:
                                 try:
-                                    print("Getting tables")
+                                    business_page = request_business_info(s, url, event_validation_2, view_state_2)
+                                    business_parser = fromstring(business_page)
+
+                                    print("\n      [*] Getting tables")
                                     df = pd.read_html(business_page)
                                     entity_details = df[1]
                                     # print(entity_details)
@@ -232,12 +235,11 @@ def scraper(filename, start_num, end_id):
                                 except IndexError:
                                     print("      [!] No tables found, trying connection again (IndexError)")
                                     got_entity_details = False
-                                    business_page = request_business_info(s, url, event_validation_2, view_state_2)
                                     tries += 1
+
                                 except ValueError:
                                     print("      [!] No tables found, trying connection again (ValueError)")
                                     got_entity_details = False
-                                    business_page = request_business_info(s, url, event_validation_2, view_state_2)
                                     tries += 1
 
                             # This will definetly fail if pandas couldn't read the html
@@ -248,6 +250,7 @@ def scraper(filename, start_num, end_id):
                                 "filing_number": str(info_dict[1]["Entity Number"]).strip()
                                 }
 
+                            # Moreso just to allow me to make sure it's still working
                             print("      [*] Name: " + str(business_parser.xpath('//td[@align="left"]/text()')[0]).strip())
 
 
