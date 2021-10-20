@@ -9,23 +9,40 @@ import usaddress
 from tqdm import tqdm
 from multiprocessing import Pool
 import traceback as tb
-from random import randrange
+from random import randrange, choice
+
+def get_user_agent():
+    user_agents = [
+     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
+     'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
+     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
+     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/602.2.14 (KHTML, like Gecko) Version/10.0.1 Safari/602.2.14',
+     'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
+     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36',
+     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36',
+     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36',
+     'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36',
+     'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0'
+     ]
+
+    user_agent = choice(user_agents)
+    headers = {
+        'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'Upgrade-Insecure-Requests': '1',
+        'DNT': '1',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'User-Agent': user_agent,
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+        'Sec-Fetch-Site': 'same-origin',
+        'Sec-Fetch-Mode': 'navigate',
+        'Sec-Fetch-User': '?1',
+        'Sec-Fetch-Dest': 'document'
+    }
+    return headers
 
 
-headers = {
-    'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"',
-    'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-platform': '"Windows"',
-    'Upgrade-Insecure-Requests': '1',
-    'DNT': '1',
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-    'Sec-Fetch-Site': 'same-origin',
-    'Sec-Fetch-Mode': 'navigate',
-    'Sec-Fetch-User': '?1',
-    'Sec-Fetch-Dest': 'document'
-}
 
 class KeyboardInterruptError(Exception):
     pass
@@ -70,7 +87,7 @@ def request_business_info(s, url, event_validation_2, view_state_2):
     request_tries = 0
     while not request_success or request_tries > 10:
         try:
-            business_page = s.request("POST", url, headers=headers, data=payload)
+            business_page = s.request("POST", url, headers=get_user_agent(), data=payload)
             request_success = True
 
         except requests.exceptions.ConnectionError:
@@ -104,9 +121,10 @@ def scraper(filename, start_num, end_id):
                 writer.writeheader()
 
             s = requests.Session()
-            s.headers.update(headers)
+            # s.headers.update(headers)
 
             for corp_id in tqdm(range(start_id, end_id)):
+                s.headers.update(get_user_agent())
                 print(f"   [*] Current ID: {corp_id}")
                 '''
                 Step 1:
@@ -121,7 +139,7 @@ def scraper(filename, start_num, end_id):
                 while not request_success or request_tries > 10:
                     try:
                         # ching for search")
-                        response = s.request("GET", url, headers=headers)
+                        response = s.request("GET", url, headers=get_user_agent())
                         request_success = True
 
                     except requests.exceptions.ConnectionError:
@@ -202,7 +220,7 @@ def scraper(filename, start_num, end_id):
 
                             tries = 0
                             got_entity_details = False
-                            while not got_entity_details or tries == 5:
+                            while not got_entity_details or tries > 5:
                                 try:
                                     print("Getting tables")
                                     df = pd.read_html(business_page)
@@ -214,15 +232,13 @@ def scraper(filename, start_num, end_id):
                                 except IndexError:
                                     print("      [!] No tables found, trying connection again (IndexError)")
                                     got_entity_details = False
-                                    if tries < 5:
-                                        request_business_info(s, url, event_validation_2, view_state_2)
-                                        tries += 1
+                                    business_page = request_business_info(s, url, event_validation_2, view_state_2)
+                                    tries += 1
                                 except ValueError:
                                     print("      [!] No tables found, trying connection again (ValueError)")
                                     got_entity_details = False
-                                    if tries < 5:
-                                        request_business_info(s, url, event_validation_2, view_state_2)
-                                        tries += 1
+                                    business_page = request_business_info(s, url, event_validation_2, view_state_2)
+                                    tries += 1
 
                             # This will definetly fail if pandas couldn't read the html
                             business_info = {
