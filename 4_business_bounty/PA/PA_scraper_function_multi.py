@@ -374,11 +374,11 @@ def scraper(filename, start_num, end_id):
                                 time.sleep(sleep_time)
 
 
-                        else:
-                            print(f"      [!] Business not active: {business_status}")
-                else:
-                    print("   [!] Couldn't connect!")
-                    raise KeyboardInterruptError()
+                            else:
+                                print(f"      [!] Business not active: {business_status}")
+                    else:
+                        print("   [!] Couldn't connect!")
+                        raise KeyboardInterruptError()
     except KeyboardInterrupt:
         raise KeyboardInterruptError()
     except Exception as e:
