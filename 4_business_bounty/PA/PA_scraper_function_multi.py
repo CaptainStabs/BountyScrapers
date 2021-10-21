@@ -173,8 +173,13 @@ def scraper(filename, start_num, end_id):
                     business_found = True
 
                 except IndexError:
-                    business_not_found = parser.xpath('//*[@id="MainContent_lblnoResultsMsg"]/text()')[0]
-                    logging.info(str(business_not_found) + " " + str(corp_id))
+                    try:
+                            business_not_found = parser.xpath('//*[@id="MainContent_lblnoResultsMsg"]/text()')[0]
+                            logging.info(str(business_not_found) + " " + str(corp_id))
+
+                    except IndexError:
+                        logging.info("IndexError on `business_not_found`")
+
                     business_found = False
 
                 if business_found:
