@@ -371,17 +371,17 @@ if __name__ == '__main__':
     arguments = []
 
     # Total divided by 60
-    end_id = 1500000
+    end_id = 123316
     # start_num is supplemental for first run and is only used if the files don't exist
     for i in range(60):
         if i == 0:
             start_num = 0
         else:
             # Use end_id before it is added to
-            start_num = end_id - 1500000
+            start_num = end_id - 123316
         # print("Startnum: " + str(start_num))
         arguments.append((f"./files/pa_{i}.csv", start_num, end_id))
-        end_id = end_id + 1500000
+        end_id = end_id + 123316
     # print(arguments)
     try:
         pool = Pool(processes=60)
