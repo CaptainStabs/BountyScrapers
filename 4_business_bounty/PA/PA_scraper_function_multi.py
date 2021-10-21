@@ -106,7 +106,7 @@ def request_business_info(s, url, event_validation_2, view_state_2):
 
 def scraper(filename, start_num, end_id):
     columns = ["name", "business_type", "state_registered", "street_registered", "city_registered", "zip5_registered", "state_physical", "street_physical", "city_physical", "zip5_physical", "filing_number", "agent_name", "agent_title", "raw_physical_address", "raw_registered_address"]
-    logging.basicConfig(filename='error.log', encoding='utf-8')
+    logging.basicConfig(filename='threads.log', encoding='utf-8')
 
     # filename = "pa.csv"
 
