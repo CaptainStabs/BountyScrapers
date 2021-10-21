@@ -217,7 +217,8 @@ def scraper(filename, start_num, end_id):
                         try:
                             event_validation_2 = result_parser.xpath('//*[@id="__EVENTVALIDATION"]/@value')[0]
                         except IndexError as e:
-                            logging.exception("\n   " + str(e) + " " + str(corp_id))
+                            logging.exception("\n   " + str(e) + " " + str())
+                            logging.exception(result_page.text)
                         view_state_2 = result_parser.xpath('//*[@id="__VIEWSTATE"]/@value')[0]
 
                         try:
