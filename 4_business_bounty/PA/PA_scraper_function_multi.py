@@ -173,13 +173,6 @@ def scraper(filename, start_num, end_id):
                     business_found = True
 
                 except IndexError:
-                    try:
-                            business_not_found = parser.xpath('//*[@id="MainContent_lblnoResultsMsg"]/text()')[0]
-                            logging.info(str(business_not_found) + " " + str(corp_id))
-
-                    except IndexError:
-                        logging.info("IndexError on `business_not_found`")
-
                     business_found = False
 
                 if business_found:
@@ -221,7 +214,10 @@ def scraper(filename, start_num, end_id):
                         result_parser = fromstring(result_page.text)
 
                         # Get aspx junk for step 2 request
-                        event_validation_2 = result_parser.xpath('//*[@id="__EVENTVALIDATION"]/@value')[0]
+                        try:
+                            event_validation_2 = result_parser.xpath('//*[@id="__EVENTVALIDATION"]/@value')[0]
+                        except IndexError as e:
+                            logging.exception("\n   " + str(e) + " " + str(corp_id))
                         view_state_2 = result_parser.xpath('//*[@id="__VIEWSTATE"]/@value')[0]
 
                         try:
