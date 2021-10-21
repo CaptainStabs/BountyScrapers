@@ -10,6 +10,7 @@ from tqdm import tqdm
 from multiprocessing import Pool
 import traceback as tb
 from random import randrange, choice
+import logging
 
 def get_user_agent():
     user_agents = [
@@ -105,6 +106,7 @@ def request_business_info(s, url, event_validation_2, view_state_2):
 
 def scraper(filename, start_num, end_id):
     columns = ["name", "business_type", "state_registered", "street_registered", "city_registered", "zip5_registered", "state_physical", "street_physical", "city_physical", "zip5_physical", "filing_number", "agent_name", "agent_title", "raw_physical_address", "raw_registered_address"]
+    logging.basicConfig(filename='error.log', encoding='utf-8')
 
     # filename = "pa.csv"
 
@@ -370,6 +372,8 @@ def scraper(filename, start_num, end_id):
                     raise KeyboardInterruptError()
     except KeyboardInterrupt:
         raise KeyboardInterruptError()
+    except Exception as e:
+        logging.critical(str(e))
 
 if __name__ == '__main__':
     arguments = []
@@ -402,6 +406,7 @@ if __name__ == '__main__':
         pass
     except Exception as e:
         print(e)
+
         tb.print_exc()
         pool.close()
         # pool.join()
