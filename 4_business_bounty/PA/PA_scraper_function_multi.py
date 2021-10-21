@@ -48,7 +48,7 @@ class KeyboardInterruptError(Exception):
     pass
 
 def get_last_id(filename):
-    if os.path.exists(filename) and os.stat(filename).st_size > 1:
+    if os.path.exists(filename) and os.stat(filename).st_size > 227:
         df = pd.read_csv(filename)
         df_columns = list(df.columns)
         data_columns = ",".join(map(str, df_columns))
@@ -112,7 +112,11 @@ def scraper(filename, start_num, end_id):
         with open(filename, "a", encoding="utf-8", newline="") as output_file:
             writer = csv.DictWriter(output_file, fieldnames=columns)
 
-            if os.path.exists(filename) and os.stat(filename).st_size > 1:
+            '''
+            Files with only the header are 227 bytes,
+            I just added three bytes to the check just in case.
+            '''
+            if os.path.exists(filename) and os.stat(filename).st_size > 230:
                 start_id = get_last_id(filename)
             else:
                 start_id = start_num
