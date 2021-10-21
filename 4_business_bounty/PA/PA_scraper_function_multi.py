@@ -373,7 +373,8 @@ def scraper(filename, start_num, end_id):
     except KeyboardInterrupt:
         raise KeyboardInterruptError()
     except Exception as e:
-        logging.critical(str(e))
+        logging.exception("\n" + str(e) + str(corp_id))
+        raise
 
 if __name__ == '__main__':
     arguments = []
