@@ -14,17 +14,13 @@ with open(filename, "r",  encoding="utf-8") as f:
     total = 0
     for line in tqdm(lines):
         total += 1
-    fieldnames = ["name",	"business_type",	"state_registered",	"street_registered",	"city_registered",	"zip5_registered",	"state_physical",	"street_physical",	"city_physical",	"zip5_physical",	"filing_number",	"public",	"naics_2017",	"ein",	"sic4",	"parent",	"website", "duns"]
+    fieldnames = ["name",	"business_type",	"state_registered", column_name]
     f.seek(0)
     with open(output_filename, "a", encoding="utf-8", newline="") as output_file:
         writer = csv.DictWriter(output_file, fieldnames=columns)
         reader = csv.DictReader(f, fieldnames=fieldnames)
         if os.stat(output_filename).st_size == 0:
             writer.writeheader()
-
-
-
-
 
         for row in tqdm(reader, total=total):
             old_street = row[column_name]
