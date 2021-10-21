@@ -7,7 +7,7 @@ columns = ["name", "business_type", "state_registered", "street_physical"]
 
 filename = "E:\\us-businesses\\fix_commas.csv"
 output_filename = "E:\\us-businesses\\cleaned_spaces.csv"
-column_name = "street_physical" # city_registered or city_physical
+column_name = "street_registered" # city_registered or city_physical
 #
 with open(filename, "r",  encoding="utf-8") as f:
     lines = f.readlines()
