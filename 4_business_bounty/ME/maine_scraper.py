@@ -22,7 +22,7 @@ def get_user_agent():
 
     user_agent = random.choice(user_agents)
     headers = {
-        'sec-ch-ua': '"Chromium";v="92", " Not A;Brand";v="99", "Google Chrome";v="92"',
+        'sec-ch-ua': '"Chromium";v="92", " Not A;Brand";v="99", "Google Chrome";v="91"',
         'sec-ch-ua-mobile': '?0',
         'DNT': '1',
         'Upgrade-Insecure-Requests': '1',
@@ -57,6 +57,7 @@ with open(filename, "a", encoding="utf-8") as output_file:
         writer.writeheader()
 
     for corp_id in tqdm(range(last_id, 19992588)):
+        print("   [*] Current ID: " + str(corp_id))
         # corp_id = 19992000
         business_info = {}
         url = f"https://icrs.informe.org/nei-sos-icrs/ICRS?CorpSumm={corp_id}+D"
@@ -167,50 +168,50 @@ with open(filename, "a", encoding="utf-8") as output_file:
                 print("      [?] Translaetd type 3: LTD")
 
 
-                            """
-                            Registered Address stuff
-                            """
-                            # Slice out agent name
-                            registered_address = ", ".join(parser.xpath('/html/body/form/div[4]/div[4]/table[4]/tr[3]/td/text()')[1:])
-                            registered_address = str(" ".join(str(registered_address).upper().split()))
-                            print("   [*] Registered Address: " + registered_address)
+            """
+            Registered Address stuff
+            """
+            # Slice out agent name
+            registered_address = ", ".join(parser.xpath('/html/body/form/div[4]/div[4]/table[4]/tr[3]/td/text()')[1:])
+            registered_address = str(" ".join(str(registered_address).upper().split()))
+            print("   [*] Registered Address: " + registered_address)
 
-                            parse_success = False
+            parse_success = False
 
-                            # Get physical address
-                            try:
-                                address_string = str(registered_address)
-                                print("      [*] Registered/Agent Address: " + address_string)
-                                parsed_address = usaddress.tag(address_string)
-                                parse_success = True
+            # Get physical address
+            try:
+                address_string = str(registered_address)
+                print("      [*] Registered/Agent Address: " + address_string)
+                parsed_address = usaddress.tag(address_string)
+                parse_success = True
 
-                            except usaddress.RepeatedLabelError as e:
-                                print(e)
-                                parse_success = False
+            except usaddress.RepeatedLabelError as e:
+                print(e)
+                parse_success = False
 
-                            if parse_success:
-                                try:
-                                    print("      [*] Parsed Address: " + str(parsed_address[0]))
-                                    street_registered = str(address_string.split(parsed_address[0]["PlaceName"])[0]).rstrip(",").strip()
-                                    street_registered = street_registered.strip(",") # Not sure why i have to do this twice
-                                    print("   [*] Street Registered: " + str(street_registered))
-                                    # street_registered = f'{parsed_address[0]["AddressNumber"]} {parsed_address[0]["StreetName"]} {parsed_address[0]["StreetNamePostType"]}'
-                                    business_info["street_registered"] = street_registered
-                                    business_info["city_registered"] = parsed_address[0]["PlaceName"]
-                                    business_info["zip5_registered"] = parsed_address[0]["ZipCode"]
-                                    try:
-                                        business_info["state_registered"] = parsed_address[0]["StateName"]
-                                    except KeyError as e:
-                                        print(e)
-                                except KeyError as e:
-                                    print(e)
-                                    try:
-                                        business_info["city_registered"] = parsed_address[0]["PlaceName"]
-                                        parse_success = True
+            if parse_success:
+                try:
+                    print("      [*] Parsed Address: " + str(parsed_address[0]))
+                    street_registered = str(address_string.split(parsed_address[0]["PlaceName"])[0]).rstrip(",").strip()
+                    street_registered = street_registered.strip(",") # Not sure why i have to do this twice
+                    print("   [*] Street Registered: " + str(street_registered))
+                    # street_registered = f'{parsed_address[0]["AddressNumber"]} {parsed_address[0]["StreetName"]} {parsed_address[0]["StreetNamePostType"]}'
+                    business_info["street_registered"] = street_registered
+                    business_info["city_registered"] = parsed_address[0]["PlaceName"]
+                    business_info["zip5_registered"] = parsed_address[0]["ZipCode"]
+                    try:
+                        business_info["state_registered"] = parsed_address[0]["StateName"]
+                    except KeyError as e:
+                        print(e)
+                except KeyError as e:
+                    print(e)
+                    try:
+                        business_info["city_registered"] = parsed_address[0]["PlaceName"]
+                        parse_success = True
 
-                                    except KeyError as e:
-                                        print(e)
-                                        pass
+                    except KeyError as e:
+                        print(e)
+                        pass
 
 
             # ["name", "business_type", "state_registered","state_physical", "street_physical","city_physical","zip5_physical", "filing_number", "naics_2017", "corp_id"]
