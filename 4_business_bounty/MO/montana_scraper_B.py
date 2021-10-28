@@ -41,7 +41,7 @@ def get_user_agent():
     return headers
 
 
-file_name = "montana.csv"
+file_name = "montana_B.csv"
 url = "https://biz.sosmt.gov/api/Records/businesssearch"
 columns = ["name", "business_type", "state_registered","street_registered","city_registered","zip5_registered", "state_physical", "city_physical", "zip5_physical", "filing_number", "corp_id"]
 with open(file_name, "a", encoding="utf8") as output_file:
@@ -50,10 +50,10 @@ with open(file_name, "a", encoding="utf8") as output_file:
     if os.stat(file_name).st_size == 0:
         writer.writeheader()
                                     # 284383
-    for search_value in tqdm(range(359059, 9999999)):
+    for search_value in tqdm(range(55718, 9999999)):
         business_info = {}
         business_info["corp_id"] = str(search_value).zfill(6) # I don't want "A"/letter in it as it's used to start loops
-        padded_search_value = "A" + str(search_value).zfill(6)
+        padded_search_value = "B" + str(search_value).zfill(6)
         print("\n\n   [*] Current business ID: " + padded_search_value)
         payload = json.dumps({
             "SEARCH_VALUE": f"{padded_search_value}",
@@ -80,7 +80,7 @@ with open(file_name, "a", encoding="utf8") as output_file:
         while not request_success or request_tries > 10:
             try:
                 print("  [*] Getting results....")
-                response = requests.request("POST", url, headers=get_user_agent(), data=payload, timeout=20)
+                response = requests.request("POST", url, headers=get_user_agent(), data=payload)
                 request_success = True
             except requests.exceptions.ConnectionError:
                 print("  [!] Connection Closed! Retrying in 5...")
@@ -88,14 +88,6 @@ with open(file_name, "a", encoding="utf8") as output_file:
                 # response = requests.request("GET", url, headers=get_user_agent(), data=payload)
                 request_success = False
                 request_tries += 1
-
-            except requests.exceptions.ReadTimeout:
-                print("   [!] Read timeout! Retrying in 5...")
-                request_success = False
-                request_tries += 1
-
-            if request_tries > 10:
-                break
 
         parsed_json = json.loads(response.text)
 
@@ -112,7 +104,7 @@ with open(file_name, "a", encoding="utf8") as output_file:
 
                 url = f"https://biz.sosmt.gov/api/FilingDetail/business/{url_id}/false"
 
-                while not request_success or request_tries < 10:
+                while not request_success or request_tries > 10:
                     try:
                         response = requests.request("GET", url, headers=get_user_agent(), data=payload, timeout=20)
                         request_success = True
@@ -127,10 +119,8 @@ with open(file_name, "a", encoding="utf8") as output_file:
                         print("   [!] Read timeout! Retrying in 5...")
                         request_success = False
                         request_tries += 1
-
                     if request_tries > 10:
                         break
-
                 business_data = json.loads(response.text)
                 business_data = business_data["DRAWER_DETAIL_LIST"]
 
