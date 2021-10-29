@@ -79,7 +79,7 @@ def scraper(filename, start_num, end_id):
             writer = csv.DictWriter(output_file, fieldnames=columns)
 
             if os.path.exists(filename) and os.stat(filename).st_size > 2:
-
+                start_id = get_last_id(filename)
 
             else:
                 start_id = start_num
@@ -374,7 +374,7 @@ def scraper(filename, start_num, end_id):
 
     except KeyboardInterrupt:
         raise KeyboardInterruptError()
-        
+
     except Exception as e:
         logging.exception("\n" + str(e) + str(corp_id))
         raise
