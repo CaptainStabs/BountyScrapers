@@ -393,7 +393,7 @@ if __name__ == '__main__':
             # Use end_id before it is added to
             start_num = end_id - 250000
         # print("Startnum: " + str(start_num))
-        arguments.append((f"./files/pa_{i}.csv", start_num, end_id))
+        arguments.append((f"./files/MT_{i}.csv", start_num, end_id))
         end_id = end_id + 250000
     # print(arguments)
     try:
