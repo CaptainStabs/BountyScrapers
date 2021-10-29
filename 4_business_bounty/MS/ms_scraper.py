@@ -52,7 +52,7 @@ def get_ids(business_id):
         except requests.exceptions.ConnectionError:
             print("  [!] Connection Closed! Retrying in 5...")
             time.sleep(5)
-            response = requests.request("POST", url, headers=get_user_agent(), data=payload)
+            # response = requests.request("POST", url, headers=get_user_agent(), data=payload)
             request_success = False
             request_tries += 1
 
@@ -92,7 +92,7 @@ def get_info(filing_id, writer):
             except requests.exceptions.ConnectionError:
                 print("  [!] Connection Closed! Retrying in 5...")
                 time.sleep(5)
-                response = requests.request("GET", url, headers=get_user_agent())
+                # response = requests.request("GET", url, headers=get_user_agent())
                 request_success = False
                 request_tries += 1
 
@@ -228,7 +228,7 @@ def get_info(filing_id, writer):
                 city_state_zip = str(parser.xpath('//*[@id="printDiv2"]/table[1]/tr[6]/td[2]/text()[2]')).upper().replace("  ", " ").strip().replace("\\XA0\\R\\N", "").replace("\\XA0", "").strip("[]").join(",")
 
 
-                if address_string != "NO PRINCIPAL OFFICE ADDRESS FOUND":
+                if address_string.strip("[]") != "NO PRINCIPAL OFFICE ADDRESS FOUND":
                     business_info["street_physical"] = street_address.strip("[]")
                     # try:
                     #     print("   [*] Address " + address_string)
@@ -288,7 +288,7 @@ last_row = df.tail(1)
 # Access the corp_id
 last_id = last_row["corp_id"].values[0]
 last_id += 1
-# last_id =  1142457
+last_id =  1837605
 
 columns = ["name", "business_type", "state_registered","street_physical","city_physical","zip5_physical", "filing_number", "corp_id"]
 with open(filename, "a", encoding="utf-8", newline="") as output_file:
