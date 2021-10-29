@@ -51,7 +51,7 @@ with open(file_name, "a", encoding="utf8") as output_file:
     if os.stat(file_name).st_size == 0:
         writer.writeheader()
                                     # 284383
-    for search_value in tqdm(range(0, 9999999)):
+    for search_value in tqdm(range(13672, 9999999)):
         for letter in letter_list:
             business_info = {}
             business_info["corp_id"] = str(search_value).zfill(6) # I don't want "A"/letter in it as it's used to start loops
