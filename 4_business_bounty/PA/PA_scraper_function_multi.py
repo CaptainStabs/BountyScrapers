@@ -362,7 +362,7 @@ def scraper(filename, start_num, end_id):
                                                 # print("      [!] City Registered parse failure!")
 
                                             try:
-                                                business_info["zip5_registered"] = str(parsed_address[0]["ZipCode"]).strip()
+                                                business_info["zip5_registered"] = str(parsed_registered_address[0]["ZipCode"]).strip()
 
                                             except KeyError:
                                                 pass
@@ -393,6 +393,7 @@ def scraper(filename, start_num, end_id):
     except Exception as e:
         logging.exception("\n" + str(e) + str(corp_id))
         raise
+        pass
 
 if __name__ == '__main__':
     arguments = []
@@ -425,7 +426,7 @@ if __name__ == '__main__':
         pass
     except Exception as e:
         print(e)
-
+        logging.exception(e)
         tb.print_exc()
         pool.close()
         # pool.join()
