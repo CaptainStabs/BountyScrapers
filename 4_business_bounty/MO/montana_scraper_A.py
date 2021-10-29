@@ -108,7 +108,8 @@ with open(file_name, "a", encoding="utf8") as output_file:
                 url_id = next(iter(parsed_json["rows"]))
                 print("   [*] url_id: " + str(url_id))
 
-                if str(parsed_json["rows"][url_id]["STATUS"]).upper().strip().replace("  ", " ") == "ACTIVE":
+                status = str(parsed_json["rows"][url_id]["STATUS"]).upper().strip().replace("  ", " ")
+                if status == "ACTIVE" or status == "ACTIVE-GOOD STANDING":
                     business_info["name"] = str(parsed_json["rows"][url_id]["TITLE"][0]).upper().strip().replace("  ", " ").replace(f"({padded_search_value})", "")
                     print("   [*] Name: " + business_info["name"])
 
