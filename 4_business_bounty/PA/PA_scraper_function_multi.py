@@ -63,6 +63,7 @@ def get_last_id(filename):
             return last_id
         except IndexError:
             print("  [!] File likely did not have any data other than header. " + str(filename))
+            # logging.exception("\n" + str(corp_id))
             last_id = 1
             return last_id
     else:
@@ -162,6 +163,7 @@ def scraper(filename, start_num, end_id):
                         request_tries += 1
                     except Exception as e:
                         print("   [!] Uncaught exception!")
+                        logging.exception("\n" + str(e) + str(corp_id))
                         print(e)
 
                 # Parse raw html with lxml
@@ -209,6 +211,9 @@ def scraper(filename, start_num, end_id):
                             request_success = False
                             request_tries += 1
 
+                    if "The page you are looking for cannot be found. Error Code 3759" in result_page.text:
+                        request_success = False
+
                     if request_success:
                         # Get view stuff from this page, and buttons daat
                         result_parser = fromstring(result_page.text)
@@ -217,8 +222,8 @@ def scraper(filename, start_num, end_id):
                         try:
                             event_validation_2 = result_parser.xpath('//*[@id="__EVENTVALIDATION"]/@value')[0]
                         except IndexError as e:
-                            logging.exception("\n   " + str(e) + " " + str())
-                            logging.exception(result_page.text)
+                            print(e)
+                            # logging.exception("\n   " + str(e) + " " + str(corp_id))
                         view_state_2 = result_parser.xpath('//*[@id="__VIEWSTATE"]/@value')[0]
 
                         try:
@@ -227,6 +232,7 @@ def scraper(filename, start_num, end_id):
                         except IndexError:
                             # This is caused by no results being returned
                             print("      [!] Business status not found!")
+                            # logging.exception("\n" + str(corp_id))
                             got_results = False
 
                         # Prevent rest of script from running
@@ -380,7 +386,8 @@ def scraper(filename, start_num, end_id):
                                 print(f"      [!] Business not active: {business_status}")
                     else:
                         print("   [!] Couldn't connect!")
-                        raise KeyboardInterruptError()
+                        logging.info("Couldn't connect!" + str(corp_id))
+                        # raise KeyboardInterruptError()
     except KeyboardInterrupt:
         raise KeyboardInterruptError()
     except Exception as e:
