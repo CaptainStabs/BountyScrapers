@@ -3,11 +3,12 @@ from tqdm import tqdm
 import os
 import pandas as pd
 
-columns = ["name", "business_type", "state_registered", "street_physical"]
 
-filename = "E:\\us-businesses\\fix_commas.csv"
-output_filename = "E:\\us-businesses\\cleaned_spaces.csv"
-column_name = "street_registered" # city_registered or city_physical
+column_name = "street_physical" # city_registered or city_physical
+filename = f"F:\\us-businesses\\{column_name}.csv"
+output_filename = f"F:\\us-businesses\\us-businesses\\{column_name}_cleaned.csv"
+
+columns = ["name", "business_type", "state_registered", column_name]
 #
 with open(filename, "r",  encoding="utf-8") as f:
     lines = f.readlines()
