@@ -1,11 +1,13 @@
-from utilities.utilities import get_proxy_cycle, get_open_proxy_cycle
-import requests
+import pandas as pd
 
-proxy_cycle = get_open_proxy_cycle()
-proxy = next(proxy_cycle)
-print(proxy)
+id_list = []
+for i in range(1,6): # Open alabama(x).csv
+    df = pd.read_csv(f"alabama{i}.csv")
+    df_columns = list(df.columns)
+    data_columns = ",".join(map(str, df_columns))
 
-# response = requests.get("https://arc-sos.state.al.us/cgi/corpdetail.mbr/detail?page=number&num1=000001",  proxies={"http": proxy, "https": proxy})
-# print(respsonse.status_code)
-# print(next(get_proxy_cycle()))
-# print(next(get_proxy_cycle()))
+    # Get the last row from df
+    last_row = df.tail(1)
+    # Access the corp_id
+    last_id = last_row["corp_id"].values[0]
+    id_list.append(last_id)
