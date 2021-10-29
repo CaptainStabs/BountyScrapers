@@ -142,7 +142,7 @@ with open(file_name, "a", encoding="utf8") as output_file:
                         # I could just assume that the list's order will always be the same, but I don't trust it enough
                         business_dict = business_data[i]
                         if business_dict["LABEL"] == "Filing Number":
-                            business_info["filing_number"] = filing_dict["VALUE"]
+                            business_info["filing_number"] = business_dict["VALUE"]
 
                         if business_dict["LABEL"] == "Entity SubType":
                             business_type_string = str(business_dict["VALUE"]).upper().strip()
@@ -268,9 +268,9 @@ with open(file_name, "a", encoding="utf8") as output_file:
                                         except KeyError as e:
                                             print("      [!] Failed a second time! Giving up...")
 
-                        if business_dict["LABEL"] == "Mailing Address":
-                            if str(business_dict["VALUE"]).upper().strip() != "N/A":
-                                print("   [*] Mailing Address is not N/A: " + str(business_dict["VALUE"]).upper().strip())
+                        if business_dict["LABEL"] == "Registered Agent":
+                            if str(business_dict["VALUE"]).upper().strip() != "N/A" or str:
+                                print("   [*] Registered Agent is not N/A: " + str(business_dict["VALUE"]).upper().strip())
                                 address_string = str(business_dict["VALUE"]).upper().strip().replace(",,", ",")
                                 address_string = str(" ".join(address_string.split()))
 
