@@ -90,6 +90,9 @@ def scraper(filename, start_num, end_id):
                 writer.writeheader()
 
             for search_value in tqdm(range(start_id, end_id)):
+                s = requests.Session()
+                s.headers.update(get_user_agent())
+                
                 for letter in letter_list:
                     business_info = {}
                     business_info["corp_id"] = str(search_value).zfill(6) # I don't want "A"/letter in it as it's used to start loops
@@ -120,7 +123,7 @@ def scraper(filename, start_num, end_id):
                     while not request_success or request_tries > 10:
                         try:
                             print("  [*] Getting results....")
-                            response = requests.request("POST", url, headers=get_user_agent(), data=payload, timeout=20)
+                            response = s.request("POST", url, data=payload, timeout=20)
                             request_success = True
                         except requests.exceptions.ConnectionError:
                             print("  [!] Connection Closed! Retrying in 5...")
@@ -155,7 +158,7 @@ def scraper(filename, start_num, end_id):
 
                             while not request_success or request_tries < 10:
                                 try:
-                                    response = requests.request("GET", url, headers=get_user_agent(), data=payload, timeout=20)
+                                    response = s.request("GET", url, data=payload, timeout=20)
                                     request_success = True
                                 except requests.exceptions.ConnectionError:
                                     print("  [!] Connection Closed! Retrying in 5...")
