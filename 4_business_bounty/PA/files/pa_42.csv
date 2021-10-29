@@ -1,2 +1,4 @@
 name,business_type,state_registered,street_registered,city_registered,zip5_registered,state_physical,street_physical,city_physical,zip5_physical,filing_number,agent_name,agent_title,raw_physical_address,raw_registered_address
 MEMORIAL BAPTIST CHURCH,NONPROFIT,NAN,,,,,,,,5181123,,,NAN,
+"ENTERPRISE UNLIMITED, LLC.",LLC,PA,,,,PA,124 E MAIN ST,LEOLA,17540,5192141,,,124 E MAIN ST LEOLA PA 17540 LANCASTER,
+BOROUGH OF GREENSBORO,NONPROFIT,NAN,,,,,,,,5192862,,,NAN,
