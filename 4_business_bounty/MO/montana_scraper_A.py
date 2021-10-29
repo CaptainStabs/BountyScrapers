@@ -147,6 +147,10 @@ with open(file_name, "a", encoding="utf8") as output_file:
                         if business_dict["LABEL"] == "Entity SubType":
                             business_type_string = str(business_dict["VALUE"]).upper().strip()
                             print("   [*] Business Type String: " + business_type_string)
+                            if "ASSUMED BUSINESS NAME" in business_type_string:
+                                business_info["business_type"] = "DBA"
+                                print("      [?] Translated type: DBA")
+
                             if "COOPERATIVE" in business_type_string:
                                 business_info["business_type"] = "COOP"
                                 print("      [?] Translated type 1: COOP")
@@ -234,6 +238,17 @@ with open(file_name, "a", encoding="utf8") as output_file:
                                 business_info["business_type"] = "SOLE PROPRIETORSHIP"
                                 print("      [?] Translated Type: SOLE PROPRIETORSHIP")
 
+                            if "FICTITIOUS NAME" in business_type_string:
+                                business_info["business_type"] = "DBA"
+                                print("      [?] Translated Type: DBA")
+
+                            try:
+                                print(business_info["business_type"])
+                            except KeyError:
+                                print("      [!] No business type defined, defaulting to CORPORATION")
+                                business_info["business_type"] = "CORPORATION"
+
+
                         if business_dict["LABEL"] == "Principal Address":
                             if str(business_dict["VALUE"]).upper().strip() != "N/A":
                                 print("   [*] Principal Address Not N/A: " + str(business_dict["VALUE"]))
@@ -253,26 +268,31 @@ with open(file_name, "a", encoding="utf8") as output_file:
 
                                 if parse_success:
                                     try:
-                                        street_registered = f'{parsed_address[0]["AddressNumber"]} {parsed_address[0]["StreetName"]} {parsed_address[0]["StreetNamePostType"]}'
-                                        business_info["street_physical"] = street_registered
-                                        business_info["city_physical"] = parsed_address[0]["PlaceName"]
-                                        business_info["zip5_physical"] = parsed_address[0]["ZipCode"]
+                                        street_physical = str(address_string).split(parsed_address[0]["PlaceName"])[0]
+                                        street_physical = street_physical.strip(",").strip().upper()
+                                        business_info["street_physical"] = street_physical
+                                    except KeyError:
+                                        pass
+                                    try:
+                                        business_info["city_physical"] = " ".join(str(parsed_physical_address[0]["PlaceName"]).strip(",").strip().upper().split())
+                                    except KeyError:
+                                        pass
+                                        # print("      [!] City physical parse failure!")
 
-                                    except KeyError as e:
-                                        print("   [!] KeyError, Trying again: ")
-                                        print(e)
+                                    try:
+                                        business_info["zip5_physical"] = str(parsed_physical_address[0]["ZipCode"]).strip()
 
-                                        try:
-                                            business_info["city_physical"] = parsed_address[0]["PlaceName"]
-                                            business_info["zip5_physical"] = parsed_address[0]["ZipCode"]
-                                        except KeyError as e:
-                                            print("      [!] Failed a second time! Giving up...")
+                                    except KeyError:
+                                        pass
 
                         if business_dict["LABEL"] == "Registered Agent":
-                            if str(business_dict["VALUE"]).upper().strip() != "N/A" or str:
+                            if str(business_dict["VALUE"]).upper().strip() != "N/A" or str(business_dict["VALUE"].upper().strip() != "NO AGENT"):
                                 print("   [*] Registered Agent is not N/A: " + str(business_dict["VALUE"]).upper().strip())
-                                address_string = str(business_dict["VALUE"]).upper().strip().replace(",,", ",")
+                                address_list = str(business_dict["VALUE"]).upper().strip().replace(",,", ",").split("\n")
+                                print("      [*] Registered Agent string: " + address_list)
+                                address_string = ", ".join(address_list[:1])
                                 address_string = str(" ".join(address_string.split()))
+                                print("         [*] Address string with agent stripped: " + address_string)
 
                                 try:
                                     parsed_address = usaddress.tag(address_string)
@@ -286,22 +306,25 @@ with open(file_name, "a", encoding="utf8") as output_file:
 
                                 if parse_success:
                                     try:
-                                        street_registered = f'{parsed_address[0]["AddressNumber"]} {parsed_address[0]["StreetName"]} {parsed_address[0]["StreetNamePostType"]}'
+                                        street_registered = str(address_string).split(parsed_address[0]["PlaceName"])[0]
+                                        street_registered = street_registered.strip(",").strip().upper()
                                         business_info["street_registered"] = street_registered
-                                        business_info["city_registered"] = parsed_address[0]["PlaceName"]
-                                        business_info["zip5_registered"] = parsed_address[0]["ZipCode"]
+                                    except KeyError:
+                                        pass
 
-                                    except KeyError as e:
-                                        print("   [!] KeyError, Trying again: ")
-                                        print(e)
+                                    try:
+                                        business_info["city_registered"] = " ".join(str(parsed_registered_address[0]["PlaceName"]).strip(",").strip().upper().split())
+                                    except KeyError:
+                                        pass
+                                        # print("      [!] City Registered parse failure!")
 
-                                        try:
-                                            business_info["city_registered"] = parsed_address[0]["PlaceName"]
-                                            business_info["zip5_registered"] = parsed_address[0]["ZipCode"]
-                                        except KeyError as e:
-                                            print("      [!] Failed a second time! Giving up...")
+                                    try:
+                                        business_info["zip5_registered"] = str(parsed_registered_address[0]["ZipCode"]).strip()
+
+                                    except KeyError:
+                                        pass
                             else:
-                                print("   [*] Mailing Address IS N/A: " + str(business_dict["VALUE"]).upper().strip())
+                                print("   [*] Registered Agent IS N/A: " + str(business_dict["VALUE"]).upper().strip())
 
                     writer.writerow(business_info)
 
