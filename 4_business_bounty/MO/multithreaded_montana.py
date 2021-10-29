@@ -11,6 +11,7 @@ import random
 import re
 import time
 import logging
+import traceback as tb
 
 class KeyboardInterruptError(Exception):
     pass
@@ -62,7 +63,6 @@ def get_last_id(filename):
             return last_id
         except IndexError:
             print("  [!] File likely did not have any data other than header. " + str(filename))
-            # logging.exception("\n" + str(corp_id))
             last_id = 1
             return last_id
     else:
@@ -70,15 +70,17 @@ def get_last_id(filename):
         return
 
 def scraper(filename, start_num, end_id):
-    logging.basicConfig(filename='threads.log', encoding='utf-8')
+    print("Startnum: " + str(start_num))
+    print("Endnum: " + str(end_id))
     url = "https://biz.sosmt.gov/api/Records/businesssearch"
     columns = ["name", "business_type", "state_registered","street_registered","city_registered","zip5_registered", "state_physical", "city_physical", "zip5_physical", "filing_number", "corp_id"]
     letter_list = ["A", "B", "C", "D", "E", "F"]
+    logging.basicConfig(filename='threads.log')
     try:
         with open(filename, "a", encoding="utf8") as output_file:
             writer = csv.DictWriter(output_file, fieldnames=columns)
 
-            if os.path.exists(filename) and os.stat(filename).st_size > 2:
+            if os.path.exists(filename) and os.stat(filename).st_size > 4:
                 start_id = get_last_id(filename)
 
             else:
@@ -86,7 +88,7 @@ def scraper(filename, start_num, end_id):
 
             if os.stat(filename).st_size == 0:
                 writer.writeheader()
-                                            # 284383
+
             for search_value in tqdm(range(start_id, end_id)):
                 for letter in letter_list:
                     business_info = {}
@@ -376,7 +378,7 @@ def scraper(filename, start_num, end_id):
         raise KeyboardInterruptError()
 
     except Exception as e:
-        logging.exception("\n" + str(e) + str(corp_id))
+        logging.exception("\n" + str(e))
         raise
         pass
 
@@ -384,20 +386,20 @@ if __name__ == '__main__':
     arguments = []
 
     # Total divided by 40
-    end_id = 250000
+    end_id = 500000
     # start_num is supplemental for first run and is only used if the files don't exist
-    for i in range(40):
+    for i in range(20):
         if i == 0:
-            start_num = 0
+            start_num = 21000
         else:
             # Use end_id before it is added to
-            start_num = end_id - 250000
+            start_num = end_id - 500000
         # print("Startnum: " + str(start_num))
-        arguments.append((f"./files/MT_{i}.csv", start_num, end_id))
-        end_id = end_id + 250000
+        arguments.append((f"./files/mt_{i}.csv", start_num, end_id))
+        end_id = end_id + 500000
     # print(arguments)
     try:
-        pool = Pool(processes=40)
+        pool = Pool(processes=20)
         pool.starmap(scraper, arguments)
         pool.close()
     except KeyboardInterrupt:
