@@ -92,7 +92,7 @@ def scraper(filename, start_num, end_id):
             for search_value in tqdm(range(start_id, end_id)):
                 s = requests.Session()
                 s.headers.update(get_user_agent())
-                
+
                 for letter in letter_list:
                     business_info = {}
                     business_info["corp_id"] = str(search_value).zfill(6) # I don't want "A"/letter in it as it's used to start loops
@@ -150,13 +150,14 @@ def scraper(filename, start_num, end_id):
                         print("   [*] url_id: " + str(url_id))
 
                         status = str(parsed_json["rows"][url_id]["STATUS"]).upper().strip().replace("  ", " ")
+                        print("   [*] Status: " + status)
                         if status == "ACTIVE" or status == "ACTIVE-GOOD STANDING":
                             business_info["name"] = str(parsed_json["rows"][url_id]["TITLE"][0]).upper().strip().replace("  ", " ").replace(f"({padded_search_value})", "")
                             print("   [*] Name: " + business_info["name"])
 
                             url = f"https://biz.sosmt.gov/api/FilingDetail/business/{url_id}/false"
 
-                            while not request_success or request_tries < 10:
+                            while not request_success or request_tries > 10:
                                 try:
                                     response = s.request("GET", url, data=payload, timeout=20)
                                     request_success = True
@@ -389,20 +390,20 @@ if __name__ == '__main__':
     arguments = []
 
     # Total divided by 40
-    end_id = 500000
+    end_id = 250000
     # start_num is supplemental for first run and is only used if the files don't exist
-    for i in range(20):
+    for i in range(40):
         if i == 0:
             start_num = 21000
         else:
             # Use end_id before it is added to
-            start_num = end_id - 500000
+            start_num = end_id - 250000
         # print("Startnum: " + str(start_num))
         arguments.append((f"./files/mt_{i}.csv", start_num, end_id))
-        end_id = end_id + 500000
+        end_id = end_id + 250000
     # print(arguments)
     try:
-        pool = Pool(processes=20)
+        pool = Pool(processes=40)
         pool.starmap(scraper, arguments)
         pool.close()
     except KeyboardInterrupt:
