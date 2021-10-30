@@ -124,7 +124,7 @@ with open(file_name, "a", encoding="utf8") as output_file:
 
                     while not request_success or request_tries > 10:
                         try:
-                            response = s.request("GET", url, timeout=5)
+                            response = s.request("GET", url, data=payload, timeout=5)
                             request_success = True
                         except requests.exceptions.ConnectionError:
                             print("  [!] Connection Closed! Retrying in 5...")
@@ -139,6 +139,7 @@ with open(file_name, "a", encoding="utf8") as output_file:
                             request_tries += 1
 
                     business_data = json.loads(response.text)
+                    print(business_data)
                     business_data = business_data["DRAWER_DETAIL_LIST"]
 
 
