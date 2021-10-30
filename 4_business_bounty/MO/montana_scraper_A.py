@@ -9,7 +9,7 @@ import json
 import random
 import re
 import time
-# import heartrate; heartrate.trace(browser=True, port=9998)
+import heartrate; heartrate.trace(browser=True, daemon=True, port=9998)
 
 
 # Get random user agent
@@ -56,7 +56,9 @@ with open(file_name, "a", encoding="utf8") as output_file:
     if os.stat(file_name).st_size == 0:
         writer.writeheader()
                                     # 284383
-    for search_value in tqdm(range(13672, 9999999)):
+    for search_value in tqdm(range(123623, 123625)):
+        s = requests.Session()
+        s.headers.update(get_user_agent())
         for letter in letter_list:
             business_info = {}
             business_info["corp_id"] = str(search_value).zfill(6) # I don't want "A"/letter in it as it's used to start loops
@@ -87,7 +89,7 @@ with open(file_name, "a", encoding="utf8") as output_file:
             while not request_success or request_tries > 10:
                 try:
                     print("  [*] Getting results....")
-                    response = requests.request("POST", url, headers=get_user_agent(), data=payload, timeout=20)
+                    response = s.request("POST", url, data=payload)
                     request_success = True
                 except requests.exceptions.ConnectionError:
                     print("  [!] Connection Closed! Retrying in 5...")
@@ -120,9 +122,9 @@ with open(file_name, "a", encoding="utf8") as output_file:
 
                     url = f"https://biz.sosmt.gov/api/FilingDetail/business/{url_id}/false"
 
-                    while not request_success or request_tries < 10:
+                    while not request_success or request_tries > 10:
                         try:
-                            response = requests.request("GET", url, headers=get_user_agent(), data=payload, timeout=20)
+                            response = s.request("GET", url, timeout=5)
                             request_success = True
                         except requests.exceptions.ConnectionError:
                             print("  [!] Connection Closed! Retrying in 5...")
@@ -135,9 +137,6 @@ with open(file_name, "a", encoding="utf8") as output_file:
                             print("   [!] Read timeout! Retrying in 5...")
                             request_success = False
                             request_tries += 1
-
-                        if request_tries > 10:
-                            break
 
                     business_data = json.loads(response.text)
                     business_data = business_data["DRAWER_DETAIL_LIST"]
@@ -338,6 +337,8 @@ with open(file_name, "a", encoding="utf8") as output_file:
 
                 else:
                     print("   [*] Not Active: " + str(parsed_json["rows"][url_id]["STATUS"]).upper().strip().replace("  ", " ") + "\n")
+            else:
+                print("   [*] No data returned")
 
 
 
