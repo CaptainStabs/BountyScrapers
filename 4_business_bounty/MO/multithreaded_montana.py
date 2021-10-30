@@ -92,14 +92,250 @@ def scraper(filename, start_num, end_id):
             for search_value in tqdm(range(start_id, end_id)):
                 s = requests.Session()
                 s.headers.update(get_user_agent())
+                business_info = {}
+                business_info["corp_id"] = search_value
 
-                for letter in letter_list:
-                    business_info = {}
-                    business_info["corp_id"] = str(search_value).zfill(6) # I don't want "A"/letter in it as it's used to start loops
-                    padded_search_value = letter + str(search_value).zfill(6)
-                    print("\n\n   [*] Current business ID: " + padded_search_value)
+                request_success = False
+                request_tries = 0
+                url = f"https://biz.sosmt.gov/api/FilingDetail/business/{search_value}/false"
+
+                while not request_success or request_tries > 10:
+                    try:
+                        print("  [*] Getting results....")
+                        response = s.request("GET", url)
+                        request_success = True
+                    except requests.exceptions.ConnectionError:
+                        print("  [!] Connection Closed! Retrying in 5...")
+                        time.sleep(5)
+                        # response = requests.request("GET", url, headers=get_user_agent(), data=payload)
+                        request_success = False
+                        request_tries += 1
+
+                    except requests.exceptions.ReadTimeout:
+                        print("   [!] Read timeout! Retrying in 5...")
+                        request_success = False
+                        request_tries += 1
+
+
+
+                business_data = json.loads(response.text)
+                # print(business_data)
+                business_data = business_data["DRAWER_DETAIL_LIST"]
+
+
+                for i in range(len(business_data)):
+                    # I could just assume that the list's order will always be the same, but I don't trust it enough
+                    business_dict = business_data[i]
+                    if business_dict["LABEL"] == "Status":
+                        if business_dict["VALUE"] == "Active-Good Standing" or business_dict["VALUE"] == "Active":
+                            print("   [*] Business active: " + str(business_dict["VALUE"]))
+                            do_save = True
+                            continue
+                        else:
+                            print("   [*] Business not active: " + str(business_dict["VALUE"]))
+                            do_save = False
+                            break
+                    if business_dict["LABEL"] == "Filing Number":
+                        business_info["filing_number"] = business_dict["VALUE"]
+
+                    if business_dict["LABEL"] == "Entity SubType":
+                        business_type_string = str(business_dict["VALUE"]).upper().strip()
+                        print("   [*] Business Type String: " + business_type_string)
+                        if "ASSUMED BUSINESS NAME" in business_type_string:
+                            business_info["business_type"] = "DBA"
+                            print("      [?] Translated type: DBA")
+
+                        if "COOPERATIVE" in business_type_string:
+                            business_info["business_type"] = "COOP"
+                            print("      [?] Translated type 1: COOP")
+
+                        if "COOP " in business_type_string:
+                            business_info["business_type"] = "COOP"
+                            print("      [?] Translated type 2: COOP")
+                        if "CORP" in business_type_string:
+                            business_info["business_type"] = "CORPORATION"
+                            print("      [?] Translated type 1: CORPORATION")
+
+                        if "CORP " in business_type_string:
+                            business_info["business_type"] = "CORPORATION"
+                            print("      [?] Translated type 2: CORPORATION")
+
+                        if "CORPORATION" in business_type_string:
+                            business_info["business_type"] = "CORPORATION"
+                            print("      [?] Translated type 3: CORPORATION")
+
+                        if "DBA" in business_type_string:
+                            business_info["business_type"] = "DBA"
+                            print("      [?] Translated type: DBA")
+
+                        if "LIMITED LIABILITY COMPANY" in business_type_string:
+                            business_info["business_type"] = "LLC"
+                            print("      [?] Translated type 1: LLC")
+
+                        if "LLC" in business_type_string:
+                            business_info["business_type"] = "LLC"
+                            print("      [?] Translated type 2: LLC")
+
+                        if "L.L.C." in business_type_string:
+                            business_info["business_type"] = "LLC"
+                            print("      [?] Translated type 3: LLC")
+
+                        if "L.L.C" in business_type_string:
+                            business_info["business_type"] = "LLC"
+                            print("      [?] Translated type 4: LLC")
+
+                        if "NON-PROFIT" in business_type_string:
+                            business_info["business_type"] = "NONPROFIT"
+                            print("      [?] Translated type 1: NON-PROFIT")
+
+                        if "NONPROFIT" in business_type_string:
+                            business_info["business_type"] = "NONPROFIT"
+                            print("      [?] Translated type 2: NONPROFIT")
+
+                        if "PARTNERSHIP" in business_type_string:
+                            business_info["business_type"] = "PARTNERSHIP"
+                            print("      [?] Translated type: PARTNERSHIP")
+
+                        if "SOLE PROPRIETORSHIP" in business_type_string:
+                            business_info["business_type"] = "SOLE PROPRIETORSHIP"
+                            print("      [?] Translated type: SOLE PROPRIETORSHIP")
+
+                        if "TRUST" in business_type_string:
+                            business_info["business_type"] = "TRUST"
+                            print("      [?] Translated type: TRUST")
+
+                        if "INC " in business_type_string:
+                            business_info["business_type"] = "CORPORATION"
+                            print("      [?] Translated type 1: INC")
+
+                        if "INC" in business_type_string:
+                            business_info["business_type"] = "CORPORATION"
+                            print("      [?] Translated type 2: INC")
+
+                        if "INCORPORATED" in business_type_string:
+                            business_info["business_type"] = "CORPORATION"
+                            print("      [?] Translated type 3: INC")
+
+                        # if "LIMITED" in business_type_string:
+                        #     business_info["business_type"] = "LTD"
+                        #     print("      [?] Translaetd type1: LTD")
+
+                        if "LTD" in business_type_string:
+                            business_info["business_type"] = "LLC"
+                            print("      [?] Translaetd type 2: LLC")
+
+                        if "L.T.D" in business_type_string:
+                            business_info["business_type"] = "LLC"
+                            print("      [?] Translaetd type 3: LLC")
+
+                        if "INDIVIDUAL" in business_type_string:
+                            business_info["business_type"] = "SOLE PROPRIETORSHIP"
+                            print("      [?] Translated Type: SOLE PROPRIETORSHIP")
+
+                        if "FICTITIOUS NAME" in business_type_string:
+                            business_info["business_type"] = "DBA"
+                            print("      [?] Translated Type: DBA")
+
+                        try:
+                            print(business_info["business_type"])
+                        except KeyError:
+                            print("      [!] No business type defined, defaulting to CORPORATION")
+                            business_info["business_type"] = "CORPORATION"
+
+
+                    if business_dict["LABEL"] == "Principal Address":
+                        if str(business_dict["VALUE"]).upper().strip() != "N/A":
+                            # print("   [*] Principal Address Not N/A: " + str(business_dict["VALUE"]))
+
+                            address_string = str(business_dict["VALUE"]).upper().strip().replace(",,", ",")
+                            address_string = str(" ".join(address_string.split()))
+
+                            try:
+                                parsed_address = usaddress.tag(address_string)
+                                # print(parsed_address)
+                                parse_success = True
+
+                            except usaddress.RepeatedLabelError as e:
+                                print(e)
+                                parse_success = False
+
+
+                            if parse_success:
+                                try:
+                                    street_physical = str(address_string).split(parsed_address[0]["PlaceName"])[0]
+                                    street_physical = street_physical.strip(",").strip().upper()
+                                    business_info["street_physical"] = street_physical
+                                except KeyError:
+                                    pass
+                                try:
+                                    business_info["city_physical"] = " ".join(str(parsed_address[0]["PlaceName"]).strip(",").strip().upper().split())
+                                except KeyError:
+                                    pass
+                                    # print("      [!] City physical parse failure!")
+
+                                try:
+                                    business_info["zip5_physical"] = str(parsed_address[0]["ZipCode"]).strip()
+
+                                except KeyError:
+                                    pass
+
+                                try:
+                                    business_info["state_physical"] = str(parsed_address[0]["StateName"]).strip().upper()
+                                except KeyError:
+                                    pass
+
+                    if business_dict["LABEL"] == "Registered Agent":
+                        if str(business_dict["VALUE"]).upper().strip() != "N/A" or str(business_dict["VALUE"].upper().strip() != "NO AGENT"):
+                            # print("   [*] Registered Agent is not N/A: " + str(business_dict["VALUE"]).upper().strip())
+                            address_list = str(business_dict["VALUE"]).upper().strip().replace(",,", ",").split("\n")
+                            # print("      [*] Registered Agent string: " + str(address_list))
+                            address_string = ", ".join(address_list[3:])
+                            address_string = str(" ".join(address_string.split()))
+                            # print("         [*] Address string with agent stripped: " + address_string)
+
+                            try:
+                                parsed_registered_address = usaddress.tag(address_string)
+                                # print(parsed_address)
+                                parse_success = True
+
+                            except usaddress.RepeatedLabelError as e:
+                                print(e)
+                                parse_success = False
+
+
+                            if parse_success:
+                                try:
+                                    street_registered = str(address_string).split(parsed_registered_address[0]["PlaceName"])[0]
+                                    street_registered = street_registered.strip(",").strip().upper()
+                                    business_info["street_registered"] = street_registered
+                                except KeyError:
+                                    pass
+
+                                try:
+                                    business_info["city_registered"] = " ".join(str(parsed_registered_address[0]["PlaceName"]).strip(",").strip().upper().split())
+                                except KeyError:
+                                    pass
+                                    # print("      [!] City Registered parse failure!")
+
+                                try:
+                                    business_info["zip5_registered"] = str(parsed_registered_address[0]["ZipCode"]).strip()
+
+                                except KeyError:
+                                    pass
+
+                                try:
+                                    business_info["state_registered"] = str(parsed_registered_address[0]["StateName"]).strip().upper()
+
+                                except KeyError:
+                                    pass
+                        else:
+                            print("   [*] Registered Agent IS N/A: " + str(business_dict["VALUE"]).upper().strip())
+
+
+                if do_save:
+
                     payload = json.dumps({
-                        "SEARCH_VALUE": f"{padded_search_value}",
+                        "SEARCH_VALUE": business_info["filing_number"],
                         "STARTS_WITH_YN": True,
                         "FILING_TYPE_ID": "0",
                         "FILING_SUBTYPE_ID": "0",
@@ -117,13 +353,13 @@ def scraper(filename, start_num, end_id):
                         }
                     })
 
-
+                    search_url = "https://biz.sosmt.gov/api/Records/businesssearch"
                     request_success = False
                     request_tries = 0
                     while not request_success or request_tries > 10:
                         try:
                             print("  [*] Getting results....")
-                            response = s.request("POST", url, data=payload, timeout=20)
+                            response = s.request("POST", search_url, data=payload)
                             request_success = True
                         except requests.exceptions.ConnectionError:
                             print("  [!] Connection Closed! Retrying in 5...")
@@ -137,246 +373,27 @@ def scraper(filename, start_num, end_id):
                             request_success = False
                             request_tries += 1
 
-                        if request_tries > 10:
-                            break
+                    try:
+                        parsed_json = json.loads(response.text)
+                        json_parsed = True
 
-                    parsed_json = json.loads(response.text)
+                    except Exception as e:
+                        print("Error parsing JSON response")
+                        json_parsed = False
 
-                    # print(json.dumps(parsed_json, indent=4))
+                    # print(response.text)
+                    if json_parsed:
+                        if bool(parsed_json["rows"]):
+                            url_id = next(iter(parsed_json["rows"]))
+                            print("   [*] url_id: " + str(url_id))
+                            name = str(parsed_json["rows"][url_id]["TITLE"][0]).upper().strip().replace("  ", " ").replace(f"({business_info['filing_number']})", "")
+                            name = " ".join(name.split())
+                            print("   [*]  Name: " + name)
+                            business_info["name"] = name
 
-                    if bool(parsed_json["rows"]):
-                        # Get the id from the unknown key after `rows`
-                        url_id = next(iter(parsed_json["rows"]))
-                        print("   [*] url_id: " + str(url_id))
-
-                        status = str(parsed_json["rows"][url_id]["STATUS"]).upper().strip().replace("  ", " ")
-                        print("   [*] Status: " + status)
-                        if status == "ACTIVE" or status == "ACTIVE-GOOD STANDING":
-                            business_info["name"] = str(parsed_json["rows"][url_id]["TITLE"][0]).upper().strip().replace("  ", " ").replace(f"({padded_search_value})", "")
-                            print("   [*] Name: " + business_info["name"])
-
-                            url = f"https://biz.sosmt.gov/api/FilingDetail/business/{url_id}/false"
-
-                            while not request_success or request_tries > 10:
-                                try:
-                                    response = s.request("GET", url, data=payload, timeout=20)
-                                    request_success = True
-                                except requests.exceptions.ConnectionError:
-                                    print("  [!] Connection Closed! Retrying in 5...")
-                                    time.sleep(5)
-                                    # response = requests.request("GET", url, headers=get_user_agent(), data=payload)
-                                    request_success = False
-                                    request_tries += 1
-
-                                except requests.exceptions.ReadTimeout:
-                                    print("   [!] Read timeout! Retrying in 5...")
-                                    request_success = False
-                                    request_tries += 1
-
-                                if request_tries > 10:
-                                    break
-
-                            business_data = json.loads(response.text)
-                            business_data = business_data["DRAWER_DETAIL_LIST"]
-
-
-                            for i in range(len(business_data)):
-                                # I could just assume that the list's order will always be the same, but I don't trust it enough
-                                business_dict = business_data[i]
-                                if business_dict["LABEL"] == "Filing Number":
-                                    business_info["filing_number"] = business_dict["VALUE"]
-
-                                if business_dict["LABEL"] == "Entity SubType":
-                                    business_type_string = str(business_dict["VALUE"]).upper().strip()
-                                    print("   [*] Business Type String: " + business_type_string)
-                                    if "ASSUMED BUSINESS NAME" in business_type_string:
-                                        business_info["business_type"] = "DBA"
-                                        print("      [?] Translated type: DBA")
-
-                                    if "COOPERATIVE" in business_type_string:
-                                        business_info["business_type"] = "COOP"
-                                        print("      [?] Translated type 1: COOP")
-
-                                    if "COOP " in business_type_string:
-                                        business_info["business_type"] = "COOP"
-                                        print("      [?] Translated type 2: COOP")
-                                    if "CORP" in business_type_string:
-                                        business_info["business_type"] = "CORPORATION"
-                                        print("      [?] Translated type 1: CORPORATION")
-
-                                    if "CORP " in business_type_string:
-                                        business_info["business_type"] = "CORPORATION"
-                                        print("      [?] Translated type 2: CORPORATION")
-
-                                    if "CORPORATION" in business_type_string:
-                                        business_info["business_type"] = "CORPORATION"
-                                        print("      [?] Translated type 3: CORPORATION")
-
-                                    if "DBA" in business_type_string:
-                                        business_info["business_type"] = "DBA"
-                                        print("      [?] Translated type: DBA")
-
-                                    if "LIMITED LIABILITY COMPANY" in business_type_string:
-                                        business_info["business_type"] = "LLC"
-                                        print("      [?] Translated type 1: LLC")
-
-                                    if "LLC" in business_type_string:
-                                        business_info["business_type"] = "LLC"
-                                        print("      [?] Translated type 2: LLC")
-
-                                    if "L.L.C." in business_type_string:
-                                        business_info["business_type"] = "LLC"
-                                        print("      [?] Translated type 3: LLC")
-
-                                    if "L.L.C" in business_type_string:
-                                        business_info["business_type"] = "LLC"
-                                        print("      [?] Translated type 4: LLC")
-
-                                    if "NON-PROFIT" in business_type_string:
-                                        business_info["business_type"] = "NONPROFIT"
-                                        print("      [?] Translated type 1: NON-PROFIT")
-
-                                    if "NONPROFIT" in business_type_string:
-                                        business_info["business_type"] = "NONPROFIT"
-                                        print("      [?] Translated type 2: NONPROFIT")
-
-                                    if "PARTNERSHIP" in business_type_string:
-                                        business_info["business_type"] = "PARTNERSHIP"
-                                        print("      [?] Translated type: PARTNERSHIP")
-
-                                    if "SOLE PROPRIETORSHIP" in business_type_string:
-                                        business_info["business_type"] = "SOLE PROPRIETORSHIP"
-                                        print("      [?] Translated type: SOLE PROPRIETORSHIP")
-
-                                    if "TRUST" in business_type_string:
-                                        business_info["business_type"] = "TRUST"
-                                        print("      [?] Translated type: TRUST")
-
-                                    if "INC " in business_type_string:
-                                        business_info["business_type"] = "CORPORATION"
-                                        print("      [?] Translated type 1: INC")
-
-                                    if "INC" in business_type_string:
-                                        business_info["business_type"] = "CORPORATION"
-                                        print("      [?] Translated type 2: INC")
-
-                                    if "INCORPORATED" in business_type_string:
-                                        business_info["business_type"] = "CORPORATION"
-                                        print("      [?] Translated type 3: INC")
-
-                                    # if "LIMITED" in business_type_string:
-                                    #     business_info["business_type"] = "LTD"
-                                    #     print("      [?] Translaetd type1: LTD")
-
-                                    if "LTD" in business_type_string:
-                                        business_info["business_type"] = "LLC"
-                                        print("      [?] Translaetd type 2: LLC")
-
-                                    if "L.T.D" in business_type_string:
-                                        business_info["business_type"] = "LLC"
-                                        print("      [?] Translaetd type 3: LLC")
-
-                                    if "INDIVIDUAL" in business_type_string:
-                                        business_info["business_type"] = "SOLE PROPRIETORSHIP"
-                                        print("      [?] Translated Type: SOLE PROPRIETORSHIP")
-
-                                    if "FICTITIOUS NAME" in business_type_string:
-                                        business_info["business_type"] = "DBA"
-                                        print("      [?] Translated Type: DBA")
-
-                                    try:
-                                        print(business_info["business_type"])
-                                    except KeyError:
-                                        print("      [!] No business type defined, defaulting to CORPORATION")
-                                        business_info["business_type"] = "CORPORATION"
-
-
-                                if business_dict["LABEL"] == "Principal Address":
-                                    if str(business_dict["VALUE"]).upper().strip() != "N/A":
-                                        print("   [*] Principal Address Not N/A: " + str(business_dict["VALUE"]))
-
-                                        address_string = str(business_dict["VALUE"]).upper().strip().replace(",,", ",")
-                                        address_string = str(" ".join(address_string.split()))
-
-                                        try:
-                                            parsed_address = usaddress.tag(address_string)
-                                            print(parsed_address)
-                                            parse_success = True
-
-                                        except usaddress.RepeatedLabelError as e:
-                                            print(e)
-                                            parse_success = False
-
-
-                                        if parse_success:
-                                            try:
-                                                street_physical = str(address_string).split(parsed_address[0]["PlaceName"])[0]
-                                                street_physical = street_physical.strip(",").strip().upper()
-                                                business_info["street_physical"] = street_physical
-                                            except KeyError:
-                                                pass
-                                            try:
-                                                business_info["city_physical"] = " ".join(str(parsed_physical_address[0]["PlaceName"]).strip(",").strip().upper().split())
-                                            except KeyError:
-                                                pass
-                                                # print("      [!] City physical parse failure!")
-
-                                            try:
-                                                business_info["zip5_physical"] = str(parsed_physical_address[0]["ZipCode"]).strip()
-
-                                            except KeyError:
-                                                pass
-
-                                if business_dict["LABEL"] == "Registered Agent":
-                                    if str(business_dict["VALUE"]).upper().strip() != "N/A" or str(business_dict["VALUE"].upper().strip() != "NO AGENT"):
-                                        print("   [*] Registered Agent is not N/A: " + str(business_dict["VALUE"]).upper().strip())
-                                        address_list = str(business_dict["VALUE"]).upper().strip().replace(",,", ",").split("\n")
-                                        print("      [*] Registered Agent string: " + address_list)
-                                        address_string = ", ".join(address_list[:1])
-                                        address_string = str(" ".join(address_string.split()))
-                                        print("         [*] Address string with agent stripped: " + address_string)
-
-                                        try:
-                                            parsed_address = usaddress.tag(address_string)
-                                            print(parsed_address)
-                                            parse_success = True
-
-                                        except usaddress.RepeatedLabelError as e:
-                                            print(e)
-                                            parse_success = False
-
-
-                                        if parse_success:
-                                            try:
-                                                street_registered = str(address_string).split(parsed_address[0]["PlaceName"])[0]
-                                                street_registered = street_registered.strip(",").strip().upper()
-                                                business_info["street_registered"] = street_registered
-                                            except KeyError:
-                                                pass
-
-                                            try:
-                                                business_info["city_registered"] = " ".join(str(parsed_registered_address[0]["PlaceName"]).strip(",").strip().upper().split())
-                                            except KeyError:
-                                                pass
-                                                # print("      [!] City Registered parse failure!")
-
-                                            try:
-                                                business_info["zip5_registered"] = str(parsed_registered_address[0]["ZipCode"]).strip()
-
-                                            except KeyError:
-                                                pass
-                                    else:
-                                        print("   [*] Registered Agent IS N/A: " + str(business_dict["VALUE"]).upper().strip())
 
                             writer.writerow(business_info)
 
-
-
-
-                        else:
-                            print("   [*] Not Active: " + str(parsed_json["rows"][url_id]["STATUS"]).upper().strip().replace("  ", " ") + "\n")
-
-                        # print(json.dumps(business_data, indent=4))
 
     except KeyboardInterrupt:
         raise KeyboardInterruptError()
