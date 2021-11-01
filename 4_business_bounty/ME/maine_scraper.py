@@ -89,7 +89,9 @@ with open(filename, "a", encoding="utf-8") as output_file:
             elif business_status == "DISSOLVED":
                 print("   [*] Dissolved: " + business_status)
                 do_save = False
-
+            else:
+                do_save = False
+                
             if do_save:
                 name = str(parser.xpath('/html/body/center/table/tr[3]/td/table/tr[5]/td[1]/text()')[0]).upper().strip().replace("  ", " ")
                 business_type_string = str(parser.xpath('/html/body/center/table/tr[3]/td/table/tr[5]/td[3]/text()')[0]).upper().strip().replace("  ", " ")
