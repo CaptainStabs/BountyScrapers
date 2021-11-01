@@ -27,7 +27,7 @@ columns = ["name", "business_type", "state_registered", "street_registered", "ci
 s = requests.Session()
 s.headers.update(headers)
 
-last_id = 7378357
+last_id = 7389000
 j = last_id
 with open("max.txt", "a", newline="") as f:
     for corp_id in tqdm(range(last_id, 7900000)):

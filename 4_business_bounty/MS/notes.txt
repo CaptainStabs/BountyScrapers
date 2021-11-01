@@ -1,0 +1,2 @@
+Replace `NO PRINCIPAL OFFICE ADDRESS FOUND` in `street_physical` with NULL
+Replace MISSISSIPPI with `MS` in `state_registered`
