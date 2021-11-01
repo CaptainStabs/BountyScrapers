@@ -1,0 +1,14 @@
+Remove trailing commas:
+UPDATE businesses SET city_physical = SUBSTRING(city_physical, 1, char_length(city_physical) -1) where city_physical like '%,';
+
+Revert cells to previous commit:
+update schools as s1 set district=(select district from schools as of '66c1ac1j8phaga1ubf4fcra0og5gfo31' where name=s1.name AND city=s1.city AND state=s1.state)
+
+Title case strings:
+update sic set description = CONCAT(UCASE(SUBSTRING(description, 1, 1)), LOWER(SUBSTRING(description, 2)));
+
+Compare two sides of string:
+UPDATE businesses
+SET street_physical = SUBSTRING(street_physical, 1, LENGTH(street_physical) DIV 2)
+WHERE
+SUBSTRING(street_physical, 1, LENGTH(street_physical) DIV 2) = SUBSTRING(street_physical, LENGTH(street_physical) DIV 2 + 1, LENGTH(street_physical) DIV 2);

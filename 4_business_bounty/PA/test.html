@@ -1,0 +1,1206 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en" >
+
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,&#32;initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=11;IE=10;IE=9;&#32;IE=8;&#32;IE=7;&#32;IE=EDGE" /><title>
+	
+</title>
+    
+    
+    
+    <script>
+       function LogOut() {
+            __doPostBack('btnLogout_Click ', 'logout');
+        }
+        function BackToBOSS() {
+            __doPostBack('btnLogout_Click ', 'backtoboss');
+        }
+    </script>
+
+    <script src="/bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
+<link href="/Content/css?v=Oz08iX45W3jtjHYZtblaYAWoMS0M9vfe-uMd6kw4DG41" rel="stylesheet"/>
+<link href="../favicon.ico" rel="shortcut&#32;icon" type="image/x-icon" /><link href="../Content/bootstrap-glyphicons.css" rel="stylesheet" />
+    <style>
+        .heading {
+            font-size: 24px;
+            padding-left: 15px;
+        }
+
+
+        #gvResults td {
+            padding-left: 18px;
+        }
+
+        #gvResults a {
+            color: blue;
+            text-decoration: underline;
+        }
+
+            #gvResults a:active {
+                color: black;
+                background: white;
+            }
+
+        #gvResults_length, #gvResults_info {
+            padding-left: 15px;
+        }
+
+        #gvResults_filter {
+            padding-right: 10px;
+        }
+
+        .tdr {
+            text-align: right;
+        }
+
+        .tdc {
+            text-align: center;
+        }
+
+        .tdcalldocs {
+            text-align: center;
+            width: 60px;
+        }
+
+        .disabledElement {
+            pointer-events: none;
+            opacity: 0.4;
+        }
+
+        .spx {
+            text-align: right;
+            vertical-align: top;
+        }
+
+        th[align="right"] {
+            text-align: right;
+        }
+
+        #gvOrderDocs thead th {
+            padding-left: 5px;
+            padding-right: 5px;
+            text-align: center;
+            border-bottom: 1px solid #111;
+            border-top: 1px solid #111;
+        }
+
+        /* --- SWITCH --- */
+
+        .switch * {
+            cursor: pointer;
+        }
+
+        .switch input[type=checkbox] {
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .switch span {
+            position: relative;
+            display: inline-block;
+            width: 58px;
+            height: 30px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 100px;
+            transition: all .5s;
+            box-shadow: 1px 2px 3px rgba(0,0,0,0.1) inset;
+        }
+
+            .switch span:after {
+                content: "";
+                position: absolute;
+                background-color: #fff;
+                top: 0;
+                left: 0;
+                height: 28px;
+                width: 28px;
+                border: 1px solid #ddd;
+                border-radius: 400px;
+                box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+                -webkit-transition: all .2s;
+            }
+
+        .switch input:checked + span {
+            background-color: teal;
+            border-color: teal;
+            transition: all .5s;
+        }
+
+            .switch input:checked + span:after {
+                left: 50%;
+                transition: all .2s;
+            }
+    </style>
+
+
+
+    <!-- google analytics code  -->
+    <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-46449415-1']);
+    _gaq.push(['_setDomainName', 'state.pa.us']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    </script>
+    
+    <style>
+    /* CSS used here will be applied after bootstrap.css */
+    .panel a {
+        color:#777;
+    }
+
+    .panel-scroll {
+        max-height: 420px;
+	    overflow: hidden;
+	    overflow-y: auto;
+    }
+
+    .panel a:hover {
+        text-decoration:none;
+        color:#222;
+    }
+
+    .panel .table td {
+    /*   border-color: #f3f3f3;*/
+    }
+
+    .dropdown-menu {
+        background-color: #f8f8f8;
+    }
+
+    .dropdown-menu > li {
+        /*background-color: #DDE9EE;*/
+        background-color: rgb(248, 248, 248);
+    }
+
+    .dropdown-menu > li > a {
+        color: #222;
+    }
+</style>
+    
+
+</head>
+
+<body>
+    <NOSCRIPT>
+
+        <div class="bg-callout-red text-danger bold" style="width: 60%; margin: 0 auto; font-size: large">         
+        Your browser doesn't support JavaScript OR JavaScript support has been 
+        disabled!
+        <br>
+        Please use a browser which supports Javascript OR enable Javascript in 
+        the browser! 
+        </div>
+    </NOSCRIPT>
+    <div class="container">
+    
+    <form method="post" action="./corpsearch" id="form1" autocomplete="off">
+<div class="aspNetHidden">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZFpQ6ReOVWSOr8mdyCQIjd4EV6um40TlAhBGghATWfDM9199KMEnMeQu0bpe4HXeYg2&amp;t=637453888939909757" type="text/javascript"></script>
+
+
+<script src="/bundles/MsAjaxJs?v=D6VN0fHlwFSIWjbVzi6mZyE9Ls-4LNrSSYVGRU46XF81" type="text/javascript"></script>
+<script src="../Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="../Scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../Scripts/respond.min.js" type="text/javascript"></script>
+<script src="/bundles/WebFormsJs?v=N8tymL9KraMLGAMFuPycfH3pXe6uUlRXdhtYv8A_jUU1" type="text/javascript"></script>
+<script src="/WebResource.axd?d=JoBkLzP19aTuxbWOhHobYm5PX_1hPO4soEUnySzSwtz0-i2jWOduYgevkYP0AzyFHdvllHS2FWX5CGDyVcBuMg2&amp;t=637453888939909757" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="5141B9E9" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="sjTPbOk9w5HfqJbiTegza2euhDHzVTV08Q2I7by1er6+5+X+EstnMcLubtNl2hE8PS54nS97OsodBndHw0JJ8Ry/U0w4EVkwLT2kWfkn6ckx1GWPLjv6gFlPQHJA/ChZS6vCVPth7wKge5UFC6D2+P1LgRE3kqYyByTyTa3Pt+G/Qb8SWjzEBYG7XKCgbYIFw0eFKMIpLiQpUCZZ/q20aVbBqAnrpgrbrvRWqRMpeCJpXK+/DSq9kM+KHceWk0lR5G53P74OUFPbdUBxqW+L3AstlsUaqBzHAQN/6RvjDh1zeAokMbfNAF/lZUvMVUEZlQMG+pKVndhGgKShbq/gItO/082WrscST9NVaG2NuXM+2XPEojC77FmROdnSDUgiImnkewgk7NgFu6iU8RSy6FIEatsxwkU4py2l/P0oJG8Yi5wJxUh+z/WA8O8Y7FDeF2C96+gpKJghU8y6yGhAJV9lNgn89I7H8sVJS0BD/Zzbr/wowOCdmfujY36cCosHAvPlVU+sUO6oiq1ERMgdPad7Mmj8T6hOBHFIlZ/rXyCptQJQiSU53Tr0Uc3pdbFr0SfIb1cZkmn07MBqZHVB0RdKgkVaFsvSNMy5r5O2dDfl7Tv1oqdzyaUmVSRsmcVGpFwbgCp0PNhnHE1WSeqPoCkt70z22QbWSalMsH8i8TncCDMo9WDirDXvp6jVgM28TdHGCpheuEdqzuUFAjDqs5PQbZ9rqAuP6INN958G1BVr+DPc4eg+X092xDu7PPbX5RunZFLlN0xqBeHCADM0CAkkcacgpcP3YLk1VSyOImVYE+aHoHx+k2Z4rwbU7m6onXyKz352+I9ZaCwws0WOlrQRzjPfzo0iWyQz3oF63jXlo8hkt2zkcoKq7d2nHtXcEsj3rdbEH/8aoGcyYlvKeZczYKuTcW2S1jLA+QKIec4JVy1Qj5RMwqA7O++nm1ZrM/QE2MmOiTDj6t+wgNj4QLtqE/PEnYWw/QQ4+XC+unj/bQdm4zl/0y2kJEJgAXcBCcoE+in9+v8xR2pW2s+l+w==" />
+</div>
+
+            <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl09', 'form1', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+            <script type="text/javascript" src="../Scripts/jquery-ui-1.10.4.min.js"></script>
+            <link href="../Content/jquery-ui.min.css" rel="stylesheet">
+
+            
+            
+
+            
+            <img id="StateImage" class="hidden-sm&#32;hidden-xs" src="../Images/banner-agency2.png" alt="Pennsylvania&#32;State&#32;Banner" align="top" style="width: 1140px;" />
+            
+
+
+            
+            
+
+
+            
+            <div id="headerContentHome">
+
+                <div class="navbar navbar-default" role="navigation">
+
+                    <div class="container-fluid">
+
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand nav-title" id="page_title" href="http://www.dos.state.pa.us/"" target="_blank">Department of State</a>
+                        </div>
+
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav"></ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                
+                                
+                                <li>
+                                    <a href="mailto:RA-STPENNFILE@pa.gov"><span class="glyphicon glyphicon-envelope"></span>&nbsp;Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="../UICommon/FAQs"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;FAQs</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="form-container-lg" style="padding: 3px;">
+                <ul class="nav nav-pills">
+	                <li class="dropdown">
+	                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Corporations <b class="caret"></b></a>
+	                    <ul class="dropdown-menu">
+	                        <li><a href="corpsearch.aspx">Search Business Entities</a></li>
+                            <li><a href="uccsearch.aspx">Search UCC Transactions</a></li>
+	                         <li class="divider"></li>
+	                        <li><a href="../order/BusinessOrderListSearch.aspx">Order Business List</a></li>
+	                        <li class="divider"></li>
+	                        <li><a href="../order/verify.aspx">Verify Certification</a></li>
+	                        <li class="divider"></li>
+	                        <li><a href="http://www.pa.gov/Pages/Privacy-Policy.aspx">Privacy Policy</a></li>
+	                        <li><a href="http://www.pa.gov/Pages/Security-Policy.aspx">Security Policy</a></li>
+	                    </ul>
+	                </li>
+                    <li><a href="corpsearch.aspx">Search Business Entities</a></li>
+                    <li><a href="uccsearch.aspx">Search UCC Transactions</a></li>
+	                <li class="dropdown">
+	                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Forms <b class="caret"></b></a>
+				        <ul class="dropdown-menu" role="menu" aria-labelledby="forms-menu">
+					        <li role="presentation"><a role="menuitem" tabindex="-1" href="../download/forms.aspx?t=f1">Expedited Services</a></li>
+					        <li role="presentation"><a role="menuitem" tabindex="-1" href="../download/forms.aspx?t=f2">Fictitious Names</a></li>
+					        <li role="presentation"><a role="menuitem" tabindex="-1" href="../download/forms.aspx?t=f3">Domestic Business Corporation</a></li>
+					        <li role="presentation"><a role="menuitem" tabindex="-1" href="../download/forms.aspx?t=f4">Domestic Nonprofit Corporation</a></li>
+					        <li role="presentation"><a role="menuitem" tabindex="-1" href="../download/forms.aspx?t=f5">Domestic Limited Liability Company</a></li>
+					        <li role="presentation"><a role="menuitem" tabindex="-1" href="../download/forms.aspx?t=f6">Domestic Limited Partnership</a></li>
+					        <li role="presentation"><a role="menuitem" tabindex="-1" href="../download/forms.aspx?t=f7">Domestic Limited Liability Partnership/Limited Liability Limited Partnership</a></li>
+					        <li role="presentation"><a role="menuitem" tabindex="-1" href="../download/forms.aspx?t=f8">Foreign Associations</a></li>
+					        <li role="presentation"><a role="menuitem" tabindex="-1" href="../download/forms.aspx?t=f9">Trademarks, Insignias, Marks used with Articles or Supplies</a></li>
+					        <li role="presentation"><a role="menuitem" tabindex="-1" href="../download/forms.aspx?t=f10">Docketing Statements</a></li>
+					        <li role="presentation"><a role="menuitem" tabindex="-1" href="../download/forms.aspx?t=f11">Unincorporated Nonprofit Associations</a></li>
+					        <li role="presentation"><a role="menuitem" tabindex="-1" href="../download/forms.aspx?t=f12">Miscellaneous Forms</a></li>
+					        <li role="presentation"><a role="menuitem" tabindex="-1" href="../download/forms.aspx?t=f13">Uniform Commercial Code Forms</a></li>
+				        </ul>
+	                </li>
+	                <li><a href="http://www.dos.pa.gov/BusinessCharities/Pages/default.aspx">Contact Corporations</a></li>                    
+                    <li id="liLogin" class="pull-right"><a id="hlLogin" class="pull-right" href="https://hub.business.pa.gov/login">Login</a></li>
+                    
+	            </ul>
+            </div>       
+            
+    <script type="text/javascript" src="../Scripts/jquery.dataTables.min.js"></script>
+    <link href="../Content/jquery.dataTables.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jquery-ui-1.10.4.min.js"></script>
+    <link href="../Content/jquery-ui.min.css" rel="stylesheet">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if ($('#btnSearch').length) { //fix for issue when user clicks enter - it goes to shopping cart instead of performing search.
+                //alert('setting focus on btnSearch');
+                $('#btnSearch').triggerHandler("focus");
+                $('#txtSearchTerms').focus();
+
+            }
+
+
+            var tooltipContent = $("[id$='hiddenHlpOrder']").html();
+
+            //check if any order line has been selected and if so update the total columns
+            //alert('calling updateOrderTotal');
+            updateOrderTotal(true);
+
+            $("[id$='tooltip-pop']").popover({
+                title: '<b>Notes</b>',
+                content: tooltipContent,
+                placement: 'left',
+                html: true,
+                trigger: 'click'
+            });
+
+            $(".spx").spinner({
+                max: 999,
+                min: 0,
+                spin: function (event, ui) {
+                    var id = event.target.id;
+                    var name = event.target.name;
+                    var qty = ui.value;
+                    var pcst = 0;
+                    var ccst = 0;
+
+                    var pages = parseInt($(this).closest('tr').find('.pagecount').text());
+                    if (id == 'pcq') {
+                        var pcprice = parseFloat($(this).closest('tr').find('.pcp').text().replace("$", ""));
+                        pcprice = pcprice.toFixed(2);
+                        pcst = pcprice * qty * pages;
+
+                        var ccqty = parseInt($(this).closest('tr').find('.ccq').val());
+                        var ccprice = parseFloat($(this).closest('tr').find('.ccp').text().replace("$", ""));
+                        ccprice = ccprice.toFixed(2);
+                        if ($(this).closest('tr').find('.pcp').length) {
+                            var ccqty = parseInt($(this).closest('tr').find('.ccq').val());
+                            if (qty < ccqty) {
+                                // the quantity for plain copies cannot be less than those for certified copies   
+                                var ccq = $(this).closest('tr').find('.ccq');
+                                ccq.val(qty);
+                                ccqty = qty;
+                            }
+                        }
+                        ccst = ccprice * ccqty;
+                    } else if (id == 'ccq') {
+                        var ccprice = parseFloat($(this).closest('tr').find('.ccp').text().replace("$", ""));
+                        ccprice = ccprice.toFixed(2);
+                        ccst = ccprice * qty;
+
+                        if ($(this).closest('tr').find('.pcp').length) {
+                            var pcprice = parseFloat($(this).closest('tr').find('.pcp').text().replace("$", ""));
+                            pcprice = pcprice.toFixed(2);
+                            var pcqty = parseInt($(this).closest('tr').find('.pcq').val());
+                            if (pcqty < qty) {
+                                // the quantity for plain copies cannot be less than those for certified copies
+                                var pcq = $(this).closest('tr').find('.pcq');
+                                pcq.val(qty);
+                                pcqty = qty;
+                            }
+                            pcst = pcprice * pcqty * pages;
+                        }
+                    } else if (id == 'cqAll') {
+                        var allDocPrice = parseFloat($(this).closest('tr').find('.alldocprice').text().replace('$', ''));
+                        allDocPrice = allDocPrice.toFixed(2);
+                        var isSearchReqAll = $('#hidIsSearchReqAll').val().toLowerCase();
+                        var additionalAllDocs = parseInt($('#hidFlatAmount').val());
+                        ccst = (allDocPrice * qty) + additionalAllDocs;
+                    } else if (id == 'cqAllPlain') {
+                        var allDocPrice = parseFloat($(this).closest('tr').find('.allPlainprice').text().replace('$', ''));
+                        allDocPrice = allDocPrice.toFixed(2);
+                        var isSearchReqAll = $('#hidAllPlainIsSearchReqAll').val().toLowerCase();
+                        var additionalAllDocs = parseInt($('#hidAllPlainFlatAmount').val());
+                        ccst = (allDocPrice * qty) + additionalAllDocs;
+                    }
+
+                    var docSelected = $(this).closest('tr').find(':checkbox').prop('checked');
+                    if (docSelected) {
+                        var lineTotal = pcst + ccst;
+                        var lblinetotal = $(this).closest('tr').find('#lbLineTotal');
+                        $(lblinetotal).html(formatCurrency(lineTotal));
+                        updateOrderTotal(false);
+                    }
+                }
+            });
+
+            $("[id$='selDoc']").click(function (event) { //on click
+                var rowSelected = $(this).prop('checked');
+                var row = $(this).closest('tr');
+                var searchReqRow = $('td').filter(function () {
+                    return $(this).text() == "Search Request";
+                }).closest("tr");
+                var rowTotal = updateRowTotal(row, rowSelected);
+                if (rowTotal == 0) {
+                    setSearchReqRow(rowSelected, searchReqRow);
+                }
+                updateOrderTotal(false);
+            });
+
+            $("[id$='selAllCertifiedDocs']").on('click', function () {
+                var allDocsChecked = $(this).prop('checked');
+                var lblinetotal = $(this).closest('tr').find('#lbLineTotal');
+                var additionalAllDocs = parseInt($(this).closest('tr').find('#hidFlatAmount').val());
+
+                $("#gvOrderAllCertifiedDocs tr").each(function () {
+                    var row = $(this);
+                    var lblinetotalR = $(this).closest('tr').find('#lbLineTotal');
+                    $(lblinetotalR).html("&nbsp;");
+
+                });
+                if (allDocsChecked) {
+                    $('#divOrderDocs').addClass('disabledElement');
+                    var ccstAllDocs = 0;
+                    var ccqtyAllDocs = parseInt($(this).closest('tr').find('#cqAll').val());
+
+                    //ctl00_MainContent_gvOrderAllCertifiedDocs_ctl02_selAllCertifiedDocs
+
+                    var hideType = parseInt($(this).closest('tr').find('#hidType').val());
+
+                    var ctrlCheckbox;
+
+                    if (hideType == 1) {
+                        ctrlCheckbox = $('#ctl00_MainContent_gvOrderAllCertifiedDocs_ctl0' + (hideType + 2) + '_selAllCertifiedDocs');
+                        ctrlCheckbox.removeAttr('checked');
+
+                    } else if (hideType == 2) {
+                        ctrlCheckbox = $('#ctl00_MainContent_gvOrderAllCertifiedDocs_ctl0' + (hideType) + '_selAllCertifiedDocs');
+                        ctrlCheckbox.removeAttr('checked');
+                    }
+
+
+                    if (ccqtyAllDocs > 0) {
+                        var ccAllDocsPrice = parseFloat($(this).closest('tr').find('.alldocprice').text().replace("$", ""));
+                        var pages = parseInt($(this).closest('tr').find('.pagecount').text());
+                        ccstAllDocs = (ccAllDocsPrice * ccqtyAllDocs) + additionalAllDocs;
+                        $(lblinetotal).html(formatCurrency(ccstAllDocs));
+                    }
+                    else if (ccqtyAllDocs == 0 && additionalAllDocs > 0) {
+                        ccstAllDocs = additionalAllDocs;
+                        $(lblinetotal).html(formatCurrency(ccstAllDocs));
+                    }
+
+                    var certDocsTotal = updateCertifiedDocsTotal(false);
+
+                    var orderTotal = parseInt(ccstAllDocs) + parseInt(certDocsTotal);
+                    //alert("c:" + certDocsTotal + " o:" + orderTotal);
+                    if (orderTotal > 0) {
+                        $('#lblOrderTotal').html(formatCurrency(orderTotal));
+                    } else {
+                        $('#lblOrderTotal').html("&nbsp;");
+                    }
+
+                } else {
+                    $(lblinetotal).html("&nbsp;");
+                    $('#divOrderDocs').removeClass('disabledElement');
+                    updateOrderTotal(false);
+                }
+            });
+
+            $.fn.disable = function () {
+                return this.each(function () {
+                    if (typeof this.disabled != "undefined") {
+                        $(this).data('jquery.disabled', this.disabled);
+                        this.disabled = true;
+                    }
+                });
+            };
+
+            $.fn.enable = function () {
+                return this.each(function () {
+                    if (typeof this.disabled != "undefined") {
+                        this.disabled = $(this).data('jquery.disabled');
+                    }
+                });
+            };
+
+            $("#gvResults").dataTable({
+                "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]], //value:item pair
+                "language": {
+                    "search": "Filter Records <img src='../images/Filter-icon.png' title='Filter records' />"
+                }
+            });
+
+            $("#gvOrderDocs").dataTable({
+                "lengthMenu": [[25, 50, 100], [25, 50, 100]], //value:item pair
+                "language": { "search": "Filter Records <img src='../images/Filter-icon.png' title='Filter records' />" },
+                "bSort": false
+            });
+
+            // setCheckBox to Switch
+            if ($('#hidSearchReqFound').val() == "true") {
+                $("#gvOrderDocs tr").each(function () {
+                    var row = $(this);
+                    if (row.find('input.helpimg').length) {
+                        row.find('input[type="checkbox"]').wrap("<label class='switch'></label>").after('<span></span>');
+                    }
+
+                });
+
+                var searchReqRow = $('td').filter(function () {
+                    return $(this).text() == "Search Request";
+                }).closest("tr");
+
+                searchReqRow.find('input[type="checkbox"]').wrap("<label class='switch'></label>").after('<span></span>');
+                searchReqRow.find('div.divSelDoc').hide();
+
+                //set up the popup on hovering on help icon for missing documents - re search request
+                $('.helpimg').popover({
+                    trigger: 'hover',
+                    html: true,
+                    title: '<b>Search Request Information</b>',
+                    content: $('#divSearchRequestInfo').html()
+                });
+            }
+
+
+
+        });
+
+        function updateOrderTotal(setRowTotal) {
+            var orderTotal = 0;
+            var AllCertifiedDocs = 0;
+            $("#gvOrderAllCertifiedDocs tr").each(function () {
+                var row = $(this);
+                if (row.find('input[type="checkbox"]').is(':checked')) {
+                    var rowTotal = 0;
+                    if (setRowTotal) {
+                        rowTotal = updateRowTotal(row, true);
+                    } else {
+                        rowTotal = getRowTotal(row);
+                    }
+                    if (!isNaN(rowTotal)) {
+                        orderTotal = parseInt(orderTotal) + parseInt(rowTotal);
+                        AllCertifiedDocs = parseInt(rowTotal);
+                    }
+                }
+            });
+
+            if (AllCertifiedDocs == 0)
+            { 
+                $("#gvOrderDocs tr").each(function () {
+                    var row = $(this);
+                    if (row.find('input[type="checkbox"]').is(':checked')) {
+                        var rowTotal = 0;
+                        if (setRowTotal) {
+                            rowTotal = updateRowTotal(row, true);
+                        } else {
+                            rowTotal = getRowTotal(row);
+                        }
+                        if (!isNaN(rowTotal)) {
+                            orderTotal = parseInt(orderTotal) + parseInt(rowTotal);
+                        }
+                    }
+              
+            });
+            }
+            var certDocsTotal = updateCertifiedDocsTotal(setRowTotal);
+            //alert('cc:' + certDocsTotal);
+            orderTotal = orderTotal + certDocsTotal;
+
+            if (orderTotal > 0) {
+                $('#lblOrderTotal').html(formatCurrency(orderTotal));
+            } else {
+                $('#lblOrderTotal').html("");
+            }
+        }
+
+        function updateCertifiedDocsTotal(setRowTotal) {
+            var cdTotal = 0;
+            $("#gvOrderCertifiedDocs tr").each(function () {
+                var row = $(this);
+                if (row.find('input[type="checkbox"]').is(':checked')) {
+                    var rowTotal = 0;
+                    if (setRowTotal) {
+                        rowTotal = updateRowTotal(row, true);
+                    } else {
+                        rowTotal = getRowTotal(row);
+                    }
+                    if (!isNaN(rowTotal)) {
+                        cdTotal = parseInt(cdTotal) + parseInt(rowTotal);
+                    }
+                }
+            });
+            return cdTotal;
+
+        }
+
+        function updateRowTotal(row, rowSelected) {
+            var lblinetotal = $(row).find('#lbLineTotal');
+            var lineTotal = 0;
+            if (rowSelected) {
+                lineTotal = calcRowTotal(row);
+                //alert("lx:" + lineTotal);
+                $(lblinetotal).html(formatCurrency(lineTotal));
+            } else {
+                $(lblinetotal).html("");
+            }
+
+            return lineTotal;
+        }
+
+        function setSearchReqRow(setRow, row) {
+            var price = 0;
+            var lblinetotal = $(row).find('#lbLineTotal');
+            if (setRow) {
+                row.find('div.divSelDoc').show();
+                row.find('input[type="checkbox"]').prop('checked', setRow);
+
+                price = parseFloat($(row).find('.pcp').text().replace("$", ""));
+                searchReqPrice = price.toFixed(2);
+                $(lblinetotal).html(formatCurrency(searchReqPrice));
+            } else {
+                var countChecked = 0;
+
+                var rows = $('#gvOrderDocs td.pcp').filter(function () {
+                    return $(this).text() == "$0.00";
+                }).closest("tr");
+
+                var checkBoxArr = $(rows).find("td input[type='checkbox']");
+                $(checkBoxArr).each(function () {
+                    //alert('y');
+                    if ($(this).prop('checked')) {
+                        countChecked++;
+                    }
+                });
+
+                if (countChecked == 0) {
+                    row.find('input[type="checkbox"]').prop('checked', setRow);
+                    row.find('div.divSelDoc').hide();
+                    $(lblinetotal).html("");
+                }
+            }
+            return price;
+        }
+
+        function calcRowTotal(row) {
+            var pcqty = 0;
+            var lt = 0;
+
+            pcqty = parseInt($(row).find('.pcq').val());
+
+            if (isNaN(pcqty)) {
+                pcqty = 0;
+            }
+
+            var pcst = 0;
+            var pages = parseInt($(row).find('.pagecount').text());
+            var ccst = 0;
+            var ccqty = parseInt($(row).find('.ccq').val());
+            if (isNaN(pages)) {
+                pages = 0;
+                ccqty = 0;
+            }
+
+            //alert('pcp raw:' + $(row).find('.pcp').text());
+
+            if (pcqty > 0) {
+                var pcprice = parseFloat($(row).find('.pcp').text().replace("$", ""));
+                pcprice = pcprice.toFixed(2);
+                pcst = pcprice * pcqty * pages;
+            }
+
+
+            if (ccqty > 0) {
+                var ccprice = parseFloat($(row).find('.ccp').text().replace("$", ""));
+                ccprice = ccprice.toFixed(2);
+                ccst = ccprice * ccqty;
+            }
+
+            lt = pcst + ccst;
+            //alert("pcq:" + pcqty + " pcp:" + pcprice + " ccq:" + ccqty + " ccp:" + ccprice + " lt:" + lt);
+            //alert('lt:' + lt);
+            return lt;
+        }
+
+        function getRowTotal(row) {
+            var lineTotal = parseFloat($(row).find('#lbLineTotal').text().replace("$", ""));
+            lineTotal = lineTotal.toFixed(2);
+            return lineTotal;
+        }
+
+
+        function formatCurrency(num) {
+            num = isNaN(num) || num === '' || num === null ? 0.00 : num;
+            return "$" + parseFloat(num).toFixed(2);
+        }
+
+        function validateProgressToCart() {
+            var btnName = $("[id$='btnProgressToCart']").val();
+            if (btnName == "Login") {
+                //no need to validate in case the user has not logged in
+                return true;
+            }
+
+            var foundOrder = false;
+            var orderTotal = parseInt($('#lblOrderTotal').text().replace("$", "").trim());
+
+            //alert('o:' + orderTotal + " x:" + $('#lblOrderTotal').text().replace("$",""));
+            if (isNaN(orderTotal) || orderTotal == 0) {
+                //display error message
+                $('#divNoItemsSelectedError').show();
+            } else if ($('#hidSearchReqFound').val() == "true") {
+                var searchReqRow = $('td').filter(function () {
+                    return $(this).text() == "Search Request";
+                }).closest("tr");
+
+
+                var confSearchReqText = $("#hidDialogConfirmSearchReq").val();
+
+                if (confirm(confSearchReqText)) {
+                    searchReqRow.find('input[type="checkbox"]').removeAttr("disabled");
+                    foundOrder = true;
+                }
+            } else {
+                foundOrder = true;
+            }
+            return foundOrder;
+        }
+
+
+    </script>
+
+    <div class="form-container-lg">
+        <div class="row relative">
+            <span id="MainContent_lblBreadCrumb"><ul class='breadcrumb'><li>Search entity</li><li>Select entity</li><li class='active'><b>Order documents</b></li></ul></span>
+        </div>
+        
+        
+        
+        <div id="MainContent_pnlEntityDetails">
+	
+            <div class="row">
+                <div class="col-md-8">
+                    <span id="MainContent_lblTitleOrder" class="text-navy&#32;bold" style="font-size:X-Large;">Order Business Documents</span>
+                </div>
+                <div class="col-md-4" style="padding-right: 30px; text-align: right">
+                    
+            <a title='<b>Notes</b>' id='order-tooltip-pop' data-placement='right'><img src="../images/help.png" /></a>
+                    
+                </div>
+                <div class="col-md-2" style="text-align: right; padding-top: 20px;">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    
+                    <input type="hidden" name="ctl00$MainContent$hidSearchReqFound" id="hidSearchReqFound" value="true" />
+                    <input type="hidden" name="ctl00$MainContent$hidDialogConfirmSearchReq" id="hidDialogConfirmSearchReq" value="By&#32;clicking&#32;OK&#32;I&#32;acknowledge&#32;my&#32;understanding&#32;of&#32;the&#32;associated&#32;fees&#32;and&#32;agree&#32;to&#32;pay&#32;all&#32;fees&#32;for&#32;this&#32;order.&#32;Please&#32;allow&#32;up&#32;to&#32;5&#32;business&#32;days&#32;for&#32;your&#32;request&#32;to&#32;be&#32;completed.&#32;An&#32;invoice&#32;for&#32;any&#32;additional&#32;fees&#32;will&#32;be&#32;emailed.&#32;Once&#32;your&#32;order&#32;is&#32;paid&#32;in&#32;full,&#32;please&#32;allow&#32;up&#32;to&#32;24&#32;hours&#32;to&#32;receive&#32;your&#32;documents&#32;by&#32;email." />
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div style="float: right; padding-top: 6px;">
+                                <span id="MainContent_Label2"><b>Date</b>: 10/14/2021</span><br />
+                                
+                            </div>
+                            <hr class="hr-dark-gray" style="clear: both;" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span id="MainContent_Label3" style="font-size:Large;font-weight:bold;">Business Name History</span>
+                        </div>
+                    </div>
+                    <div id="namedetails" class="row relative">
+                        <div class="col-md-12">
+                            <div>
+		<table class="table&#32;table-striped&#32;table-hover&#32;table-bordered" cellspacing="0" id="gvBusinessNameHistory" style="border-style:None;font-family:Verdana;font-size:Small;border-collapse:collapse;">
+			<thead>
+				<tr>
+					<th align="left" scope="col">Name</th><th align="left" scope="col">Name Type</th>
+				</tr>
+			</thead><tbody>
+				<tr>
+					<td align="left" valign="middle">
+                                            
+                                            
+                                            A.P.P.L.E. AUTO REPAIRS, INC.
+                                        </td><td align="left" valign="middle">
+                                            <span id="lbNameType">Current Name</span>
+                                        </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" style="text-align: center">
+                            <span id="MainContent_lblEntityDetails" style="font-size:Large;font-weight:bold;">Business Entity Details</span>
+                        </div>
+                        <div class="col-md-6" style="text-align: center">
+                            <span id="MainContent_lblOfficers" style="font-size:Large;font-weight:bold;">Officers</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <table class='table table-striped table-hover table-bordered'><tbody><tr><td style='width: 40%'><b>Name</b></td><td>A.P.P.L.E. AUTO REPAIRS, INC.</td></tr><tr><td style='width: 40%'><b>Entity Number</b></td><td>710774</td></tr><tr><td style='width: 40%'><b>Entity Type</b></td><td>Business Corporation</td></tr><tr><td style='width: 40%'><b>Status</b></td><td>Active</td></tr><tr><td style='width: 40%'><b>Citizenship</b></td><td>Domestic</td></tr><tr><td style='width: 40%'><b>Entity Creation Date</b></td><td>06/23/1980</td></tr><tr><td style='width: 40%'><b>Effective Date</b></td><td>06/23/1980</td></tr><tr><td style='width: 40%'><b>State Of Inc</b></td><td>PA</td></tr><tr><td style='width: 40%'><b>Address</b></td><td>63 KNIGHTSBERRY APTS., KNIGHTS RD.        BENSALEM             PA 19020-0     Bucks</td></tr></tbody></table>
+                        </div>
+                        <div class="col-md-6">
+                            
+                        </div>
+                        <div class="col-md-1" style="display: none">
+                            ffab95e8-7ceb-40aa-b7bb-5a4c86544fec
+                            A.P.P.L.E. AUTO REPAIRS, INC.
+                            A
+                            You can not add more than 25 items in your Cart
+                            This request is too large to be processed online.  Please submit a written request to the Bureau for processing.
+                        </div>
+                    </div>
+                    <div id="MainContent_pnlOrderDocuments">
+		
+                        <div class="row">
+                            <div class="col-md-12">
+                                <hr class="hr-dark-gray" style="clear: both;" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span id="MainContent_Label1" style="font-size:Large;font-weight:bold;">Filed Documents</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span id="MainContent_lblLoginToOrderMsg">The information presented below is for your reference. To place an order you will need to log in. If you do not have a PENN File account, you may register for an account by <a href=/Account/Register_account>clicking here<a>.</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="row relative">
+                            <div class="col-md-12">
+                                <div id="divOrderDocs">
+                                    <div>
+			<table class="table&#32;table-striped&#32;table-hover&#32;table-bordered" cellspacing="0" id="gvOrderDocs" style="border-style:None;font-family:Verdana;font-size:Small;border-collapse:collapse;">
+				<thead>
+					<tr>
+						<th class="tdc" align="center" scope="col">
+                                                    <span id="lbSelAll" style="font-weight:bold;">Select</span>
+                                                </th><th align="left" scope="col">Date</th><th scope="col">Document</th><th scope="col">Pages</th><th scope="col">Plain Copy<br />Quantity#</th><th scope="col">Price</th><th scope="col">&nbsp;</th><th scope="col">Certified Copy<br />Quantity#</th><th align="right" scope="col">Certified Copy Price</th><th align="right" scope="col">Microfilm #</th><th align="right" scope="col">Microfilm Start</th><th align="right" scope="col">Microfilm End</th><th align="right" scope="col">Line Total</th>
+					</tr>
+				</thead><tbody>
+					<tr>
+						<td class="tdc" style="width:50px;">
+                                                    <div class="divSelDoc">
+                                                        <span class="aspNetDisabled"><input id="selDoc" type="checkbox" name="ctl00$MainContent$gvOrderDocs$ctl02$selDoc" disabled="disabled" /></span>
+                                                    </div>
+                                                    
+                                                    
+
+
+                                                    
+                                                    
+                                                </td><td align="center" valign="middle" style="width:90px;">
+                                                    <span id="lbDate"></span>
+                                                </td><td style="width:120px;">Search Request</td><td class="pagecount&#32;tdr" style="width:50px;">&nbsp;</td><td align="right" style="width:90px;">
+                                                    
+                                                </td><td class="tdr&#32;pcp" style="width:50px;">$15.00</td><td style="width:1px;">
+                                                     
+                                                    <input type="hidden" name="ctl00$MainContent$gvOrderDocs$ctl02$hidEventLogID" id="hidEventLogID" />
+                                                    <input type="hidden" name="ctl00$MainContent$gvOrderDocs$ctl02$hidIsSearchReq" id="hidIsSearchReq" value="True" />
+                                                    <input type="hidden" name="ctl00$MainContent$gvOrderDocs$ctl02$hidHasDocumentID" id="hidHasDocumentID" value="False" />
+                                                    <input type="hidden" name="ctl00$MainContent$gvOrderDocs$ctl02$hidNeedsBackScan" id="hidNeedsBackScan" value="False" />
+                                                    <input type="hidden" name="ctl00$MainContent$gvOrderDocs$ctl02$hidPlainCopyTransTypeID" id="hidPlainCopyTransTypeID" value="72741813-4760-4f57-b981-542d4af47e18" />
+                                                    <input type="hidden" name="ctl00$MainContent$gvOrderDocs$ctl02$hidCertifiedTransTypeID" id="hidCertifiedTransTypeID" />
+                                                </td><td align="right" style="width:90px;">
+                                                    
+                                                </td><td class="tdr&#32;ccp" style="width:90px;">&nbsp;</td><td class="tdr" style="width:50px;">&nbsp;</td><td class="tdr" style="width:50px;">&nbsp;</td><td class="tdr" style="width:50px;">&nbsp;</td><td align="right" valign="middle" style="width:100px;">
+                                                    <span id="lbLineTotal" class="lt"></span>
+                                                </td>
+					</tr><tr>
+						<td class="tdc" style="width:50px;">
+                                                    <div class="divSelDoc">
+                                                        <input id="selDoc" type="checkbox" name="ctl00$MainContent$gvOrderDocs$ctl03$selDoc" />
+                                                    </div>
+                                                    
+                                                    <input type="image" name="ctl00$MainContent$gvOrderDocs$ctl03$ibtnHelpImage" id="ibtnHelpImage" tabindex="50" class="helpimg" data-toggle="popover" data-placement="right" src="../Images/help.png" onclick="javascript:WebForm_DoPostBackWithOptions(new&#32;WebForm_PostBackOptions(&quot;ctl00$MainContent$gvOrderDocs$ctl03$ibtnHelpImage&quot;,&#32;&quot;&quot;,&#32;true,&#32;&quot;&quot;,&#32;&quot;&quot;,&#32;false,&#32;false))" />
+
+
+                                                    
+                                                    
+                                                </td><td align="center" valign="middle" style="width:90px;">
+                                                    <span id="lbDate">06/23/1980</span>
+                                                </td><td style="width:120px;">ARTICLES OF INCORPORATION 1</td><td class="pagecount&#32;tdr" style="width:50px;">&nbsp;</td><td align="right" style="width:90px;">
+                                                    <input name="ctl00$MainContent$gvOrderDocs$ctl03$pcq" type="text" value="1" id="pcq" class="spx&#32;pcq" style="width:30px;" />
+                                                </td><td class="tdr&#32;pcp" style="width:50px;">$0.00</td><td style="width:1px;">
+                                                     
+                                                    <input type="hidden" name="ctl00$MainContent$gvOrderDocs$ctl03$hidEventLogID" id="hidEventLogID" value="59cb7adc-6c0e-4435-8a58-4d2f90eabb26" />
+                                                    <input type="hidden" name="ctl00$MainContent$gvOrderDocs$ctl03$hidIsSearchReq" id="hidIsSearchReq" value="False" />
+                                                    <input type="hidden" name="ctl00$MainContent$gvOrderDocs$ctl03$hidHasDocumentID" id="hidHasDocumentID" value="False" />
+                                                    <input type="hidden" name="ctl00$MainContent$gvOrderDocs$ctl03$hidNeedsBackScan" id="hidNeedsBackScan" value="True" />
+                                                    <input type="hidden" name="ctl00$MainContent$gvOrderDocs$ctl03$hidPlainCopyTransTypeID" id="hidPlainCopyTransTypeID" value="8101ff11-d37c-43b1-8194-5297d3b893dc" />
+                                                    <input type="hidden" name="ctl00$MainContent$gvOrderDocs$ctl03$hidCertifiedTransTypeID" id="hidCertifiedTransTypeID" value="c46f819e-4cbb-420b-8ecd-4ff13be48ac2" />
+                                                </td><td align="right" style="width:90px;">
+                                                    <input name="ctl00$MainContent$gvOrderDocs$ctl03$ccq" type="text" value="0" id="ccq" class="spx&#32;ccq" style="width:30px;" />
+                                                </td><td class="tdr&#32;ccp" style="width:90px;">$40.00</td><td class="tdr" style="width:50px;">8036</td><td class="tdr" style="width:50px;">537</td><td class="tdr" style="width:50px;">539</td><td align="right" valign="middle" style="width:100px;">
+                                                    <span id="lbLineTotal" class="lt"></span>
+                                                </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+                                </div>
+                                <div>
+                                    <div id="divCertDocs">
+                                        <div>
+			<table class="table&#32;table-striped&#32;table-hover&#32;table-bordered" cellspacing="0" rules="all" border="1" id="gvOrderAllCertifiedDocs" style="border-style:None;font-family:Verdana;font-size:Small;border-collapse:collapse;">
+				<tr>
+					<td class="tdcalldocs" style="width:53px;">
+                                                        <input id="ctl00_MainContent_gvOrderAllCertifiedDocs_ctl02_selAllCertifiedDocs" type="checkbox" name="ctl00$MainContent$gvOrderAllCertifiedDocs$ctl02$selAllCertifiedDocs" />
+                                                    </td><td valign="middle" style="width:90px;">
+                                                        <span id="lbDateAllDocs">All Dates</span>
+                                                    </td><td valign="middle" style="width:120px;">
+                                                        <span id="lbEventNameAll">All Certified Copies</span>
+                                                    </td><td class="pagecount&#32;tdr" style="width:60px;">&nbsp;</td><td align="right" style="width:250px;">
+                                                        <span id="lbCQPriceText">Quantity #</span>
+                                                        <input name="ctl00$MainContent$gvOrderAllCertifiedDocs$ctl02$cqAll" type="text" value="1" id="cqAll" class="spx" style="width:30px;" />
+                                                    </td><td class="alldocprice&#32;tdr" style="width:90px;">$40.00</td><td align="right" style="width:250px;">
+                                                        <span id="lblFlatAmount">Search Fee</span>
+                                                        <span id="FlatAmount" class="lt">$15.00</span>
+                                                    </td><td style="width:250px;">
+                                                        <input type="hidden" name="ctl00$MainContent$gvOrderAllCertifiedDocs$ctl02$hidAllDocTransTypeID" id="hidAllDocTransTypeID" value="65ad7944-2879-483d-bad9-58e1e9140d3a" />
+                                                        <input type="hidden" name="ctl00$MainContent$gvOrderAllCertifiedDocs$ctl02$hidEventNameAll" id="hidEventNameAll" value="All&#32;Certified&#32;Copies" />
+                                                        <input type="hidden" name="ctl00$MainContent$gvOrderAllCertifiedDocs$ctl02$hidIsSearchReqAll" id="hidIsSearchReqAll" value="True" />
+                                                        <input type="hidden" name="ctl00$MainContent$gvOrderAllCertifiedDocs$ctl02$hidFlatAmount" id="hidFlatAmount" value="15.0000" />
+                                                         <input type="hidden" name="ctl00$MainContent$gvOrderAllCertifiedDocs$ctl02$hidType" id="hidType" value="1" />
+                                                    </td><td align="right" valign="middle" style="width:100px;">
+                                                        <span id="lbLineTotal" class="lt"></span>
+                                                    </td>
+				</tr><tr>
+					<td class="tdcalldocs" style="width:53px;">
+                                                        <input id="ctl00_MainContent_gvOrderAllCertifiedDocs_ctl03_selAllCertifiedDocs" type="checkbox" name="ctl00$MainContent$gvOrderAllCertifiedDocs$ctl03$selAllCertifiedDocs" />
+                                                    </td><td valign="middle" style="width:90px;">
+                                                        <span id="lbDateAllDocs">All Dates</span>
+                                                    </td><td valign="middle" style="width:120px;">
+                                                        <span id="lbEventNameAll">All Plain Copies</span>
+                                                    </td><td class="pagecount&#32;tdr" style="width:60px;">&nbsp;</td><td align="right" style="width:250px;">
+                                                        <span id="lbCQPriceText">Quantity #</span>
+                                                        <input name="ctl00$MainContent$gvOrderAllCertifiedDocs$ctl03$cqAll" type="text" value="1" id="cqAll" class="spx" style="width:30px;" />
+                                                    </td><td class="alldocprice&#32;tdr" style="width:90px;">$0.00</td><td align="right" style="width:250px;">
+                                                        <span id="lblFlatAmount">Search Fee</span>
+                                                        <span id="FlatAmount" class="lt">$15.00</span>
+                                                    </td><td style="width:250px;">
+                                                        <input type="hidden" name="ctl00$MainContent$gvOrderAllCertifiedDocs$ctl03$hidAllDocTransTypeID" id="hidAllDocTransTypeID" value="f328a275-105e-4ebf-a970-5845b3eaa5c1" />
+                                                        <input type="hidden" name="ctl00$MainContent$gvOrderAllCertifiedDocs$ctl03$hidEventNameAll" id="hidEventNameAll" value="All&#32;Plain&#32;Copies" />
+                                                        <input type="hidden" name="ctl00$MainContent$gvOrderAllCertifiedDocs$ctl03$hidIsSearchReqAll" id="hidIsSearchReqAll" value="True" />
+                                                        <input type="hidden" name="ctl00$MainContent$gvOrderAllCertifiedDocs$ctl03$hidFlatAmount" id="hidFlatAmount" value="15.0000" />
+                                                         <input type="hidden" name="ctl00$MainContent$gvOrderAllCertifiedDocs$ctl03$hidType" id="hidType" value="2" />
+                                                    </td><td align="right" valign="middle" style="width:100px;">
+                                                        <span id="lbLineTotal" class="lt"></span>
+                                                    </td>
+				</tr>
+			</table>
+		</div>
+                                    </div>
+                                </div>
+
+
+                                <div id="MainContent_pnlSearchRequestInfo">
+			
+                                    <div class="row">
+                                        <hr class="hr-dark-gray" style="clear: both;" />
+                                        <div class="col-md-12 bg-callout-blue section ext-warning bold" id="divSearchRequestInfo">
+                                            <p>Note: Some of the images are currently unavailable through the website. You may submit an order for copies by selecting a document and then clicking on the 'Proceed to Cart' button. An initial $15 search fee is due and payable at the time of the order. Additional fees of $3.00 per page will be invoiced through the email identified with the user login.
+        When all fees due have been paid, you will receive an email indicating the order is available on the users Home page under the Downloads section.</p>
+        <p>By selecting 'Proceed to Cart' you are agreeing to pay all fees for this order.</p>
+                                        </div>
+                                    </div>
+                                
+		</div>
+
+
+                                <div id="MainContent_pnlCertDocs">
+			
+
+                                    <div class="row">
+                                        <hr class="hr-dark-gray" style="clear: both;" />
+                                        <div class="col-md-12">
+                                            <span id="MainContent_lbCertifiedDocs" style="font-size:Large;font-weight:bold;">Certified Documents</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+				<table class="table&#32;table-striped&#32;table-hover&#32;table-bordered" cellspacing="0" rules="all" border="1" id="gvOrderCertifiedDocs" style="border-style:None;font-family:Verdana;font-size:Small;border-collapse:collapse;">
+					<tr>
+						<th class="tdc" align="center" scope="col">
+                                                        <span id="lbSelAllCert" style="font-weight:bold;">Select</span>
+                                                    </th><th align="center" scope="col">Date</th><th scope="col">Document</th><th scope="col">Pages</th><th align="right" scope="col">Quantity#</th><th align="right" scope="col">Price</th><th scope="col">&nbsp;</th><th align="right" scope="col">Line Total</th>
+					</tr><tr>
+						<td class="tdc" style="width:50px;">
+                                                        <input id="selDoc" type="checkbox" name="ctl00$MainContent$gvOrderCertifiedDocs$ctl02$selDoc" />
+                                                    </td><td align="center" valign="middle" style="width:90px;">
+                                                        <span id="lbDate">10/14/2021</span>
+                                                        <input type="hidden" name="ctl00$MainContent$gvOrderCertifiedDocs$ctl02$hidCertifiedTransTypeID" id="hidCertifiedTransTypeID" value="65298044-1533-4864-84eb-277a6bbc6c5f" />
+                                                    </td><td style="width:130px;">Subsistence Certificate</td><td class="pagecount&#32;tdr" style="width:60px;">1</td><td class="tdr" style="width:300px;">
+                                                        <input name="ctl00$MainContent$gvOrderCertifiedDocs$ctl02$ccq" type="text" value="1" id="ccq" class="spx&#32;ccq" style="width:30px;" />
+                                                    </td><td class="ccp&#32;tdr" style="width:90px;">$40.00</td><td style="width:250px;">&nbsp;</td><td align="right" valign="middle" style="width:100px;">
+                                                        <span id="lbLineTotal" class="lt" style="display:inline-block;width:100px;"></span>
+                                                    </td>
+					</tr><tr>
+						<td class="tdc" style="width:50px;">
+                                                        <input id="selDoc" type="checkbox" name="ctl00$MainContent$gvOrderCertifiedDocs$ctl03$selDoc" />
+                                                    </td><td align="center" valign="middle" style="width:90px;">
+                                                        <span id="lbDate">10/14/2021</span>
+                                                        <input type="hidden" name="ctl00$MainContent$gvOrderCertifiedDocs$ctl03$hidCertifiedTransTypeID" id="hidCertifiedTransTypeID" value="2aee2c1b-c7ae-417e-9dea-10ea1f50548f" />
+                                                    </td><td style="width:130px;">Index and Docket Report</td><td class="pagecount&#32;tdr" style="width:60px;">1</td><td class="tdr" style="width:300px;">
+                                                        <input name="ctl00$MainContent$gvOrderCertifiedDocs$ctl03$ccq" type="text" value="1" id="ccq" class="spx&#32;ccq" style="width:30px;" />
+                                                    </td><td class="ccp&#32;tdr" style="width:90px;">$15.00</td><td style="width:250px;">&nbsp;</td><td align="right" valign="middle" style="width:100px;">
+                                                        <span id="lbLineTotal" class="lt" style="display:inline-block;width:100px;"></span>
+                                                    </td>
+					</tr><tr>
+						<td class="tdc" style="width:50px;">
+                                                        <input id="selDoc" type="checkbox" name="ctl00$MainContent$gvOrderCertifiedDocs$ctl04$selDoc" />
+                                                    </td><td align="center" valign="middle" style="width:90px;">
+                                                        <span id="lbDate">10/14/2021</span>
+                                                        <input type="hidden" name="ctl00$MainContent$gvOrderCertifiedDocs$ctl04$hidCertifiedTransTypeID" id="hidCertifiedTransTypeID" value="8a8ce433-4633-40d6-8121-8c5f659a8c69" />
+                                                    </td><td style="width:130px;">Index and Docket Certified Report</td><td class="pagecount&#32;tdr" style="width:60px;">1</td><td class="tdr" style="width:300px;">
+                                                        <input name="ctl00$MainContent$gvOrderCertifiedDocs$ctl04$ccq" type="text" value="1" id="ccq" class="spx&#32;ccq" style="width:30px;" />
+                                                    </td><td class="ccp&#32;tdr" style="width:90px;">$55.00</td><td style="width:250px;">&nbsp;</td><td align="right" valign="middle" style="width:100px;">
+                                                        <span id="lbLineTotal" class="lt" style="display:inline-block;width:100px;"></span>
+                                                    </td>
+					</tr>
+				</table>
+			</div>
+
+                                    </div>
+                                
+		</div>
+
+                                <div>
+                                    <span id="MainContent_lblOrdTotalStr" class="text-danger&#32;bold" style="font-size:Large;">Order Total :</span>
+                                    <span id="lblOrderTotal" class="text-danger&#32;bold" style="font-size:Large;"></span>
+                                </div>
+                            </div>
+                            <div id="MainContent_hiddenHlpOrder" style="display:&#32;none;"><ol>
+        <li>All documents listed below are certified by the Office of Secretary of State</li>
+        <li>$40.00 - Original, certified Certificate of Existence (Good Standing) can be viewed and/or printed at your computer.</li>
+        <li>Upon making payment the order will be available online instantly unless the documents need to be scanned. In the case where the documents need to be scanned, the ordered documents will be available for download in one business day. Ordered documents will be available for download for 30 days and may be downloaded by clicking the Check My Orders link under the Online Orders menu.</li>
+        </ol></div>
+                        </div>
+                        <div class="row">
+                            <div id="divNoItemsSelectedError" class="col-md-12" style="display: none">
+                                <span id="MainContent_lblNoItemsSelectedError" class="text-danger&#32;bold">Please select at least one document (quantity greater than 0) to proceed to cart</span>
+                            </div>
+                        </div>
+                    
+	</div>
+
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                    <input type="submit" name="ctl00$MainContent$btnBackToSearchFromOrderBottom" value="&lt;&lt;&#32;Back&#32;to&#32;Search&#32;Results" onclick="javascript:WebForm_DoPostBackWithOptions(new&#32;WebForm_PostBackOptions(&quot;ctl00$MainContent$btnBackToSearchFromOrderBottom&quot;,&#32;&quot;&quot;,&#32;true,&#32;&quot;&quot;,&#32;&quot;&quot;,&#32;false,&#32;false))" id="btnBackToSearchFromOrderBottom" class="btn&#32;btn-primary" />
+                </div>
+                <div class="col-md-6" style="text-align: right;">
+                </div>
+                <div class="col-md-4" style="text-align: right; padding-right: 10px;">
+                    <input type="submit" name="ctl00$MainContent$btnProgressToCart" value="Login" onclick="return&#32;validateProgressToCart();WebForm_DoPostBackWithOptions(new&#32;WebForm_PostBackOptions(&quot;ctl00$MainContent$btnProgressToCart&quot;,&#32;&quot;&quot;,&#32;true,&#32;&quot;&quot;,&#32;&quot;&quot;,&#32;false,&#32;false))" id="btnProgressToCart" class="btn&#32;btn-primary" />
+                    
+                </div>
+            </div>
+        
+</div>
+        
+    </div>
+
+
+            
+            <div id="footer">
+
+                <div class="navbar navbar-default" role="navigation">
+
+                    <div class="container-fluid">
+
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <div class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                    <li>
+                                        <a href="http://www.pa.gov/privacy-policy/" target="_blank">Privacy Policy</a>
+
+                                    </li>
+                                    <li>
+                                        <a href="http://www.pa.gov/security-policy/" target="_blank">Security Policy</a>
+
+                                    </li>
+                                    <li>
+                                        <a href="http://www.pa.gov/" target="_blank">Agencies</a>
+                                    </li>
+                                    <li>
+                                        <p class="navbar-text">Copyright &copy; 2014 Commonwealth of Pennsylvania. All Rights Reserved</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        
+
+<script type="text/javascript">
+//<![CDATA[
+WebForm_AutoFocus('btnProgressToCart');//]]>
+</script>
+</form>
+        
+    <div class="modal fade" id="MissingImagePopup" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Image not available</h4>
+                </div>
+                <div class="modal-body">
+                    <p>This image is currently unavailable through the website.  To obtain a copy please submit a written request to Bureau of Corporations and Charitable Organizations along with payment to PO Box 8722, Harrisburg, PA 17105.</p>
+        <p>You may download and submit this form.<br /><a target="_blank" href="http://www.dos.pa.gov/BusinessCharities/Business/RegistrationForms/Documents/RegForms/15-133_145_153%20Copy_Certification%20request.pdf">Copy/Certification Request  [DSCB:15-133/145/153]</a> </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+</body>
+
+</html>
