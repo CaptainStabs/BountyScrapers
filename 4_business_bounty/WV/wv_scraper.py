@@ -39,7 +39,7 @@ def get_user_agent():
 
 columns = ["name", "business_type", "state_registered","street_registered","city_registered","zip5_registered", "state_physical", "street_physical", "city_physical", "zip5_physical", "filing_number", "corp_id"]
 
-filename = "west_virginia_3.csv"
+filename = "west_virginia_4.csv"
 
 # df = pd.read_csv(filename)
 # df_columns = list(df.columns)
@@ -50,7 +50,7 @@ filename = "west_virginia_3.csv"
 # # Access the corp_id
 # last_id = last_row["corp_id"].values[0]
 # last_id += 1
-last_id = 821342
+last_id = 522184
 
 with open(filename, "a", encoding="utf-8") as output_file:
     writer = csv.DictWriter(output_file, fieldnames=columns)

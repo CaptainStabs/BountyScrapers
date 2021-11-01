@@ -1,0 +1,3 @@
+Delete  rows tha thave  street  physical city physical address as '#'
+rerun sql statements without the naics id
+remove rows with `MERGED` in name
