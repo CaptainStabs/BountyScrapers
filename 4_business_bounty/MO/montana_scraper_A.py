@@ -139,7 +139,6 @@ with open(file_name, "a", encoding="utf8") as output_file:
                             request_tries += 1
 
                     business_data = json.loads(response.text)
-                    print(business_data)
                     business_data = business_data["DRAWER_DETAIL_LIST"]
 
 

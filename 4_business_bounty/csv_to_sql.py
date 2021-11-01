@@ -32,6 +32,7 @@ def csv_to_insert(filename, table_name):
                 # Get the header and parse to fields
                 if index == 0:
                     fields = ",".join(row)
+                    # print(fields)
 
                 # Every other line
                 else:
