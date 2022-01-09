@@ -18,7 +18,7 @@ headers = {
     'Cookie': 'ASPSESSIONIDSQQAARDC=OLCJBOCALPJEDCDIOGHEIJEN'
 }
 
-url = f"https://docs.oklahomacounty.org/AssessorWP5/AN-R.asp?PropertyID=10"
+url = f"https://docs.oklahomacounty.org/AssessorWP5/AN-R.asp?PropertyID=15000"
 
 s = requests.Session()
 s.headers.update(headers)
@@ -30,4 +30,6 @@ print(parser.xpath('/html/body/table[8]/thead/tr[1]/th/font/text()'))
 # table = parser.xpath('//table[./thead/tr/th/font/text()="\r\n\t\t\tProperty Deed Transaction History\xa0\xa0 ("]/tbody/tr/td/p/font/text()')
 table = parser.xpath('//table[./thead/tr/th/font/text()="\r\n\t\t\tProperty Deed Transaction History\xa0\xa0 ("]/tbody/tr')
 for row in table:
-    print(row)
+    for column in row:
+        if str(column.xpath('.//p/font/text()')[0]).lstrip("\r\n\t\t\t"):
+            print(str(column.xpath('.//p/font/text()')[0]).lstrip("\r\n\t\t\t"))
