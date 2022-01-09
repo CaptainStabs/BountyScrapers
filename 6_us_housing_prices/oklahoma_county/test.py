@@ -24,9 +24,10 @@ s = requests.Session()
 s.headers.update(headers)
 
 response = s.request("GET", url, headers=headers)
-
 parser = fromstring(response.text)
 
-
-table = parser.xpath('/html/body/table[10]/tr[1]/td[1]/p/font/text()')
-print(table)
+print(parser.xpath('/html/body/table[8]/thead/tr[1]/th/font/text()'))
+# table = parser.xpath('//table[./thead/tr/th/font/text()="\r\n\t\t\tProperty Deed Transaction History\xa0\xa0 ("]/tbody/tr/td/p/font/text()')
+table = parser.xpath('//table[./thead/tr/th/font/text()="\r\n\t\t\tProperty Deed Transaction History\xa0\xa0 ("]/tbody/tr')
+for row in table:
+    print(row)
