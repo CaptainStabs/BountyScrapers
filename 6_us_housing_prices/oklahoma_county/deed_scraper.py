@@ -7,7 +7,12 @@ import usaddress
 from tqdm import tqdm
 from multiprocessing import Pool
 import traceback as tb
+# from datetime import datetime
+from dateutil import parser as dateparser
+# import heartrate; heartrate.trace(browser=True, daemon=True)
 
+class KeyboardInterruptError(Exception):
+    pass
 
 class Scraper():
     def __init__(self):
@@ -27,7 +32,7 @@ class Scraper():
             'Cookie': 'ASPSESSIONIDSQQAARDC=OLCJBOCALPJEDCDIOGHEIJEN'
         }
 
-        self.columns = ["state", "physical_address", "city", "county", "property_id", "sale_date", "property_type", "sale_price", "seller_name", "buyer_name", "year_built", "source_url", "book", "page"]
+        self.columns = ["state", "physical_address", "city", "county", "property_id", "sale_date", "property_type", "sale_price", "seller_name", "buyer_name", "year_built", "source_url", "book", "page", "type", "prop_id"]
 
     def get_last_id(self, filename):
         if os.path.exists(filename) and os.stat(filename).st_size > 0:
@@ -38,7 +43,7 @@ class Scraper():
             # Get the last row from df
             last_row = df.tail(1)
             # Access the corp_id
-            last_id = last_row["filing_number"].values[0]
+            last_id = last_row["prop_id"].values[0]
             last_id += 1
             return last_id
         else:
@@ -64,12 +69,14 @@ class Scraper():
 
                 for prop_id in tqdm(range(start_id, int(end_id))):
                     url = f"https://docs.oklahomacounty.org/AssessorWP5/AN-R.asp?PropertyID={prop_id}"
+
                     request_success = False
                     request_tries = 0
                     while not request_success or request_tries > 10:
                         try:
                             # Get search page
                             response = s.request("GET", url, headers=self.headers)
+                            request_success = True
                         except requests.exceptions.ConnectionError:
                             print("  [!] Connection Closed! Retrying in 1...")
                             time.sleep(1)
@@ -79,21 +86,23 @@ class Scraper():
                     if request_success:
                         land_info = {
                             "state": "OK",
-                            "county": "OKLAHOMA"
+                            "county": "OKLAHOMA",
+                            "source_url": url,
+                            "prop_id": prop_id
                         }
 
                         parser = fromstring(response.text)
 
                         # "sale_date", "property_type", "sale_price", "seller_name", "buyer_name", "year_built", "source_url", "book", "page"]
                         try:
-                            physical_address = " ".join(str(parser.xpath('/html/body/table[4]/tbody/tr[1]/td[5]/p/font/text()')[0]).strip().lstrip("\r\n\t\t\t").upper().split()))
-                            if physical_address != "UNKNOWN":
+                            physical_address = " ".join(str(parser.xpath('/html/body/table[4]/tbody/tr[1]/td[5]/p/font/text()')[0]).strip().lstrip("\r\n\t\t\t").upper().split())
+                            if physical_address != "UNKNOWN" and physical_address != "0 UNKNOWN" and physical_address != "0" and physical_address != "0 0":
                                 land_info["physical_address"] = physical_address
                         except IndexError as e:
                             print("PHYSICAL_ADDRESS", e)
 
                         try:
-                            city = " ".join(str(parser.xpath('/html/body/table[4]/tbody/tr[2]/td[4]/p/font/text()')[0]).strip().lstrip("\r\n\t\t\t").upper().split()))
+                            city = " ".join(str(parser.xpath('/html/body/table[4]/tbody/tr[2]/td[4]/p/font/text()')[0]).strip().lstrip("\r\n\t\t\t").upper().split())
 
                             if city and city != "UNINCORPORATED":
                                 land_info["city"] = city
@@ -101,10 +110,60 @@ class Scraper():
                             print("CITY", e)
 
                         try:
-                            land_info["property_id"] = " ".join(str(parser.xpath('/html/body/table[4]/tbody/tr[1]/td[1]/font/font/text()')[0]).strip().lstrip("\r\n\t\t\t").upper().split())))
+                            land_info["property_id"] = " ".join(str(parser.xpath('/html/body/table[4]/tbody/tr[1]/td[1]/font/font/text()')[0]).strip().lstrip("\r\n\t\t\t").upper().split())
                         except IndexError as e:
                             print("PROPERTY_ID", e)
 
+                        table = parser.xpath('//table[./thead/tr/th/font/text()="\r\n\t\t\tProperty Deed Transaction History\xa0\xa0 ("]/tbody/tr')
+                        for row in table:
+                            # print(str(row.xpath('./td[1]/p/font/text()')[0]).lstrip("\r\n\t\t\t"))
+
+                            try:
+                                land_info["sale_date"] = dateparser.parse(str(row.xpath('./td[1]/p/font/text()')[0].lstrip("\r\n\t\t\t").strip())  + " 00:00:00")
+                            except IndexError as e:
+                                print("Sale date", e)
+
+                            try:
+                                land_info["type"] = str(row.xpath('./td[3]/p/font/text()')[0].lstrip("\r\n\t\t\t").strip()).upper()
+                            except IndexError as e:
+                                print("Type", e)
+
+                            try:
+                                land_info["book"] = str(row.xpath('./td[4]/p/font/a/text()')[0].lstrip("\r\n\t\t\t").strip())
+                            except IndexError as e:
+                                print("Book", e)
+
+                            try:
+                                land_info["page"] = str(row.xpath('./td[5]/p/font/a/text()')[0].lstrip("\r\n\t\t\t").strip())
+                            except IndexError as e:
+                                print("page", e)
+
+                            try:
+                                land_info["sale_price"] = str(row.xpath('./td[6]/p/font/text()')[0].lstrip("\r\n\t\t\t").strip()).replace(",", "")
+                            except IndexError as e:
+                                print("Price", e)
+
+                            try:
+                                land_info["seller_name"] = " ".join(str(row.xpath('./td[5]/p/font/text()')[0].lstrip("\r\n\t\t\t").strip()).split()).upper()
+                            except IndexError as e:
+                                print("Seller Name", e)
+
+                            try:
+                                land_info["buyer_name"] = " ".join(str(row.xpath('./td[6]/p/font/text()')[0].lstrip("\r\n\t\t\t").strip()).split()).upper()
+                            except IndexError as e:
+                                print("Buyer Name", e)
+
+                            try:
+                                land_info["year_built"] = str(parser.xpath('//table[./thead/tr/th/font/text()="Click \r\n\t\t\tbutton on building number to access \r\n\t\t\tdetailed information:"]/tbody/tr/td[5]/p/font/text()')[0].strip("\r\n\t\t\t").strip())
+                            except IndexError as e:
+                                print("Yearbuilt", e)
+
+                            # Each deed needs to be written
+                            writer.writerow(land_info)
+
+
+
+
 
 
 
@@ -112,29 +171,40 @@ class Scraper():
         except Exception as e:
             print(e)
 
-    if __name__ == '__main__':
-        scraper = Scraper()
-        # scraper.main_scraper(filename, columns)
-        arguments = []
+if __name__ == '__main__':
+    scraper = Scraper()
+    # scraper.main_scraper(filename, columns)
+    arguments = []
 
-        # Total divided by 60
-        end_id = 9000000
-        # start_num is supplemental for first run and is only used if the files don't exist
-        for i in range(10):
-            if i == 0:
-                start_num = 0
-            else:
-                # Use end_id before it is added to
-                start_num = end_id - 9000000
-            print("Startnum: " + str(start_num))
-            arguments.append((f"./files/deeds_{i}.csv", start_num, end_id))
-            end_id = end_id + 1500000
-        print(arguments)
-        try:
-            pool = Pool(processes=10)
-            pool.starmap(scraper.main_scraper, arguments, 10)
-        except Exception as e:
-            print(e)
-            tb.print_exc()
-            pool.terminate()
-            pool.join()
+    # Total divided by 60
+    end_id = 9000000
+    # start_num is supplemental for first run and is only used if the files don't exist
+    # for i in range(10):
+    #     if i == 0:
+    #         start_num = 0
+    #     else:
+    #         # Use end_id before it is added to
+    #         start_num = end_id - 9000000
+    #     print("Startnum: " + str(start_num))
+    #     arguments.append((f"./files/deeds_{i}.csv", start_num, end_id))
+    #     end_id = end_id + 1500000
+    # print(arguments)
+
+    scraper.main_scraper("./files/deeds_0.csv", 4, 200000)
+
+    # try:
+    #     pool = Pool(processes=1)
+    #     pool.starmap(scraper.main_scraper, arguments, 1)
+    #
+    # except KeyboardInterrupt:
+    #     print("Quitting")
+    #     pool.terminate()
+    # except Exception as e:
+    #     print(e)
+    #     tb.print_exc()
+    #     pool.terminate()
+    # finally:
+    #     print("   [*] Joining pool...")
+    #     pool.join()
+    #     print("   [*] Finished joining...")
+    #     # sys.exit(1)
