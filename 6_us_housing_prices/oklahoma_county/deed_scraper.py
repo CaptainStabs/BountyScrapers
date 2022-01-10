@@ -206,7 +206,7 @@ if __name__ == '__main__':
     #     end_id = end_id + 1500000
     # print(arguments)
 
-    scraper.main_scraper("./files/deeds_0.csv", 200000, 900000)
+    scraper.main_scraper("./files/deeds_0.csv", 200000, 354299)
 
     # try:
     #     pool = Pool(processes=1)
