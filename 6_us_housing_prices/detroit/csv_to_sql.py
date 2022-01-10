@@ -2,13 +2,13 @@ import csv
 from tqdm import tqdm
 
 # General settings
-filename = "C:\\Users\\adria\\github\\BountyScrapers\\4_business_bounty\\MO\\mt_cleaned_merged_data.csv"
-table_name = "businesses"
+filename = "extracted.csv"
+table_name = "sales"
 
 # SQL Update Settings
-pk = ["name", "business_type", "state_registered"]
-updated_columns = ["street_registered",	"city_registered",	"zip5_registered",	"state_physical",	"street_physical",	"city_physical",	"zip5_physical",	"filing_number"]
-fieldnames = ["name",	"business_type",	"state_registered",	"street_registered",	"city_registered",	"zip5_registered",	"state_physical",	"street_physical",	"city_physical",	"zip5_physical",	"filing_number"]#,	"public",	"naics_2017",	"ein",	"sic4",	"parent",	"website", "duns"]
+pk = ["state", "physical_address", "sale_date"]
+updated_columns = ["book", "page"]
+fieldnames = ["state", "physical_address", "sale_date", "book", "page"]
 
 output_filename = str(filename).strip(".csv") + "_sql.sql"
 print(output_filename)
@@ -71,7 +71,7 @@ def csv_to_update(filename, table_name, pk, updated_columns, fieldnames):
                         set_statement_list.append(f"{column_to_update} = '{row[column_to_update]}'")
 
                     set_statements = ",".join(set_statement_list)
-                    query_statement = f"UPDATE {table_name} SET " + str(set_statements) + f" WHERE {pk[0]} = '{row['name']}' and {pk[1]} = '{row['business_type']}' and {pk[2]} = '{row['state_registered']}';\n"
+                    query_statement = f"UPDATE {table_name} SET " + str(set_statements) + f" WHERE {pk[0]} = '{row['state']}' and {pk[1]} = '{row['physical_address']}' and {pk[2]} = '{row['sale_date']}';\n"
                     output_file.write(query_statement)
 
 csv_to_update(filename, table_name, pk, updated_columns, fieldnames)

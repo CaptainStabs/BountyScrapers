@@ -8,6 +8,7 @@ with open("Property_Sales.csv", 'r') as f:
 
     with open("extracted.csv", "a") as output:
         writer = csv.DictWriter(output, fieldnames=columns)
+        writer.writeheader()
         for i, row in tqdm(enumerate(read_csv)):
             if i:
                 if row[6]:
@@ -47,6 +48,8 @@ with open("Property_Sales.csv", 'r') as f:
                         #     if len(row[6]) != 10:
                         #         print(row[6])
                     else:
+                        book = row[6].split("/")[0]
+
                         try:
                             page = row[6].split("/")[1]
                         except IndexError:
@@ -55,6 +58,7 @@ with open("Property_Sales.csv", 'r') as f:
 
                     if "-" in page:
                         page = page.split("-")[0]
+
                     land_info["book"] = book
                     land_info["page"] = page
                     writer.writerow(land_info)

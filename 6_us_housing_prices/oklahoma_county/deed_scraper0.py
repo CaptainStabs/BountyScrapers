@@ -9,6 +9,7 @@ from multiprocessing import Pool
 import traceback as tb
 # from datetime import datetime
 from dateutil import parser as dateparser
+import time
 # import heartrate; heartrate.trace(browser=True, daemon=True)
 
 class KeyboardInterruptError(Exception):
@@ -190,35 +191,37 @@ if __name__ == '__main__':
     # scraper.main_scraper(filename, columns)
     arguments = []
 
-    # Total divided by 60
-    end_id = 9000000
+    # Total divided by 5
+    end_id = 70859
     # start_num is supplemental for first run and is only used if the files don't exist
-    # for i in range(10):
-    #     if i == 0:
-    #         start_num = 0
-    #     else:
-    #         # Use end_id before it is added to
-    #         start_num = end_id - 9000000
-    #     print("Startnum: " + str(start_num))
-    #     arguments.append((f"./files/deeds_{i}.csv", start_num, end_id))
-    #     end_id = end_id + 1500000
-    # print(arguments)
+    for i in range(5):
+        if i == 0:
+            start_num = 0
+        else:
+            # Use end_id before it is added to
+            start_num = end_id - 70859
+        print("Startnum: " + str(start_num))
+        arguments.append((f"./files/deeds_{i}.csv", start_num, end_id))
+        end_id = end_id + 70859
+    print(arguments)
 
-    scraper.main_scraper("./files/deeds_5.csv", 0, 200000)
+    # scraper.main_scraper("./files/deeds_5.csv", 0, 200000)
 
-    # try:
-    #     pool = Pool(processes=1)
-    #     pool.starmap(scraper.main_scraper, arguments, 1)
-    #
+    try:
+        pool = Pool(processes=5)
+        pool.starmap(scraper.main_scraper, arguments, 5)
+
+    except Exception as e:
+        print(e)
+        tb.print_exc()
+        pool.terminate()
+
     # except KeyboardInterrupt:
     #     print("Quitting")
     #     pool.terminate()
-    # except Exception as e:
-    #     print(e)
-    #     tb.print_exc()
-    #     pool.terminate()
-    # finally:
-    #     print("   [*] Joining pool...")
-    #     pool.join()
-    #     print("   [*] Finished joining...")
-    #     # sys.exit(1)
+
+    finally:
+        print("   [*] Joining pool...")
+        pool.join()
+        print("   [*] Finished joining...")
+        # sys.exit(1)
