@@ -9,6 +9,8 @@ from multiprocessing import Pool
 import traceback as tb
 # from datetime import datetime
 from dateutil import parser as dateparser
+import time
+
 # import heartrate; heartrate.trace(browser=True, daemon=True)
 
 class KeyboardInterruptError(Exception):
@@ -99,20 +101,26 @@ class Scraper():
                             if physical_address != "UNKNOWN" and physical_address != "0 UNKNOWN" and physical_address != "0" and physical_address != "0 0":
                                 land_info["physical_address"] = physical_address
                         except IndexError as e:
-                            print("PHYSICAL_ADDRESS", e)
+                            # print("PHYSICAL_ADDRESS", e)
+                            pass
 
                         try:
                             city = " ".join(str(parser.xpath('/html/body/table[4]/tbody/tr[2]/td[4]/p/font/text()')[0]).strip().lstrip("\r\n\t\t\t").upper().split())
 
                             if city and city != "UNINCORPORATED":
                                 land_info["city"] = city
+
+                            else:
+                                land_info["city"] = ""
                         except IndexError as e:
-                            print("CITY", e)
+                            # print("CITY", e)
+                            pass
 
                         try:
                             land_info["property_id"] = " ".join(str(parser.xpath('/html/body/table[4]/tbody/tr[1]/td[1]/font/font/text()')[0]).strip().lstrip("\r\n\t\t\t").upper().split())
                         except IndexError as e:
-                            print("PROPERTY_ID", e)
+                            # print("PROPERTY_ID", e)
+                            pass
 
                         table = parser.xpath('//table[./thead/tr/th/font/text()="\r\n\t\t\tProperty Deed Transaction History\xa0\xa0 ("]/tbody/tr')
                         for row in table:
@@ -121,42 +129,50 @@ class Scraper():
                             try:
                                 land_info["sale_date"] = dateparser.parse(str(row.xpath('./td[1]/p/font/text()')[0].lstrip("\r\n\t\t\t").strip())  + " 00:00:00")
                             except IndexError as e:
-                                print("Sale date", e)
+                                # print("Sale date", e)
+                                pass
 
                             try:
                                 land_info["type"] = str(row.xpath('./td[3]/p/font/text()')[0].lstrip("\r\n\t\t\t").strip()).upper()
                             except IndexError as e:
-                                print("Type", e)
+                                # print("Type", e)
+                                pass
 
                             try:
                                 land_info["book"] = str(row.xpath('./td[4]/p/font/a/text()')[0].lstrip("\r\n\t\t\t").strip())
                             except IndexError as e:
-                                print("Book", e)
+                                # print("Book", e)
+                                pass
 
                             try:
                                 land_info["page"] = str(row.xpath('./td[5]/p/font/a/text()')[0].lstrip("\r\n\t\t\t").strip())
                             except IndexError as e:
-                                print("page", e)
+                                # print("page", e)
+                                pass
 
                             try:
                                 land_info["sale_price"] = str(row.xpath('./td[6]/p/font/text()')[0].lstrip("\r\n\t\t\t").strip()).replace(",", "")
                             except IndexError as e:
-                                print("Price", e)
+                                # print("Price", e)
+                                pass
 
                             try:
                                 land_info["seller_name"] = " ".join(str(row.xpath('./td[5]/p/font/text()')[0].lstrip("\r\n\t\t\t").strip()).split()).upper()
                             except IndexError as e:
-                                print("Seller Name", e)
+                                # print("Seller Name", e)
+                                pass
 
                             try:
                                 land_info["buyer_name"] = " ".join(str(row.xpath('./td[6]/p/font/text()')[0].lstrip("\r\n\t\t\t").strip()).split()).upper()
                             except IndexError as e:
-                                print("Buyer Name", e)
+                                # print("Buyer Name", e)
+                                pass
 
                             try:
                                 land_info["year_built"] = str(parser.xpath('//table[./thead/tr/th/font/text()="Click \r\n\t\t\tbutton on building number to access \r\n\t\t\tdetailed information:"]/tbody/tr/td[5]/p/font/text()')[0].strip("\r\n\t\t\t").strip())
                             except IndexError as e:
-                                print("Yearbuilt", e)
+                                # print("Yearbuilt", e)
+                                pass
 
                             # Each deed needs to be written
                             writer.writerow(land_info)
@@ -190,7 +206,7 @@ if __name__ == '__main__':
     #     end_id = end_id + 1500000
     # print(arguments)
 
-    scraper.main_scraper("./files/deeds_0.csv", 4, 200000)
+    scraper.main_scraper("./files/deeds_0.csv", 200000, 900000)
 
     # try:
     #     pool = Pool(processes=1)
