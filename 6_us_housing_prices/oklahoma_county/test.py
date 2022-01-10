@@ -1,5 +1,6 @@
 import requests
 from lxml.html import fromstring
+import json
 
 
 headers = {
@@ -18,7 +19,7 @@ headers = {
     'Cookie': 'ASPSESSIONIDSQQAARDC=OLCJBOCALPJEDCDIOGHEIJEN'
 }
 
-url = f"https://docs.oklahomacounty.org/AssessorWP5/AN-R.asp?PropertyID=15000"
+url = f"https://docs.oklahomacounty.org/AssessorWP5/AN-R.asp?PropertyID=10"
 
 s = requests.Session()
 s.headers.update(headers)
@@ -29,7 +30,18 @@ parser = fromstring(response.text)
 print(parser.xpath('/html/body/table[8]/thead/tr[1]/th/font/text()'))
 # table = parser.xpath('//table[./thead/tr/th/font/text()="\r\n\t\t\tProperty Deed Transaction History\xa0\xa0 ("]/tbody/tr/td/p/font/text()')
 table = parser.xpath('//table[./thead/tr/th/font/text()="\r\n\t\t\tProperty Deed Transaction History\xa0\xa0 ("]/tbody/tr')
+land_info = {}
 for row in table:
-    for column in row:
-        if str(column.xpath('.//p/font/text()')[0]).lstrip("\r\n\t\t\t"):
-            print(str(column.xpath('.//p/font/text()')[0]).lstrip("\r\n\t\t\t"))
+    print(str(row.xpath('./td[1]/p/font/text()')[0]).lstrip("\r\n\t\t\t"))
+    land_info["sale_date"] = str(row.xpath('./td[1]/p/font/text()')[0].lstrip("\r\n\t\t\t").strip())
+    land_info["type"] = str(row.xpath('./td[3]/p/font/text()')[0].lstrip("\r\n\t\t\t").strip())
+    land_info["book"] = str(row.xpath('./td[4]/p/font/a/text()')[0].lstrip("\r\n\t\t\t").strip())
+    land_info["page"] = str(row.xpath('./td[5]/p/font/a/text()')[0].lstrip("\r\n\t\t\t").strip())
+    land_info["price"] = str(row.xpath('./td[6]/p/font/text()')[0].lstrip("\r\n\t\t\t").strip())
+    land_info["seller_name"] = str(row.xpath('./td[5]/p/font/text()')[0].lstrip("\r\n\t\t\t").strip())
+    land_info["buyer_name"] = str(row.xpath('./td[6]/p/font/text()')[0].lstrip("\r\n\t\t\t").strip())
+
+# print(parser.xpath('//table/thead/tr/th/font/text()'))
+land_info["year_built"] = str(parser.xpath('//table[./thead/tr/th/font/text()="Click \r\n\t\t\tbutton on building number to access \r\n\t\t\tdetailed information:"]/tbody/tr/td[5]/p/font/text()')[0].strip("\r\n\t\t\t").strip())
+# print(parser.xpath('//table[./thead/tr/th/font/text()="Click \r\n\t\t\tbutton on building number to access \r\n\t\t\tdetailed information:"]/tbody/tr/td[5]/p/font/text()'))
+print(json.dumps(land_info, indent=2))

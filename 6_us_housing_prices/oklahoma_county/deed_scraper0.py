@@ -9,8 +9,6 @@ from multiprocessing import Pool
 import traceback as tb
 # from datetime import datetime
 from dateutil import parser as dateparser
-import time
-
 # import heartrate; heartrate.trace(browser=True, daemon=True)
 
 class KeyboardInterruptError(Exception):
@@ -206,7 +204,7 @@ if __name__ == '__main__':
     #     end_id = end_id + 1500000
     # print(arguments)
 
-    scraper.main_scraper("./files/deeds_0.csv", 200000, 900000)
+    scraper.main_scraper("./files/deeds_5.csv", 0, 200000)
 
     # try:
     #     pool = Pool(processes=1)
