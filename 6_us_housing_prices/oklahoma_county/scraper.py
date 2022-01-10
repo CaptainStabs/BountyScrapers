@@ -51,9 +51,9 @@ with open("data.csv", "a", newline="", encoding="utf-8") as f:
                         "sale_date": str(parser.xpath(f'/html/body/table[4]/tbody/tr[{row}]/td[1]/p/font/text()')[0]).lstrip("\r\n\t\t\t").upper(),
                         "map_num": str(parser.xpath(f'/html/body/table[4]/tbody/tr[{row}]/td[2]/p/font/text()')[0]).lstrip("\r\n\t\t\t"),
                         "deed": str(parser.xpath(f'/html/body/table[4]/tbody/tr[{row}]/td[3]/p/font/text()')[0]).lstrip("\r\n\t\t\t"),
-                        "property_id": str(parser.xpath(f'/html/body/table[4]/tbody/tr[1]/td[4]/p/font/a/text()')[0]).lstrip("\r\n\t\t\t").upper(),
+                        "property_id": str(parser.xpath(f'/html/body/table[4]/tbody/tr[{row}]/td[4]/p/font/a/text()')[0]).lstrip("\r\n\t\t\t").upper(),
                         "res/com": str(parser.xpath(f'/html/body/table[4]/tbody/tr[{row}]/td[5]/p/font/text()')[0]).lstrip("\r\n\t\t\t"),
-                        "source_url": "https://docs.oklahomacounty.org/AssessorWP5/"  + str(parser.xpath(f'/html/body/table[4]/tbody/tr[1]/td[4]/p/font/a/@href')[0]).lstrip("\r\n\t\t\t"),
+                        "source_url": "https://docs.oklahomacounty.org/AssessorWP5/"  + str(parser.xpath(f'/html/body/table[4]/tbody/tr[{row}]/td[4]/p/font/a/@href')[0]).lstrip("\r\n\t\t\t"),
                     }
                     try:
                         land_info["city"] =  " ".join(str(parser.xpath(f'/html/body/table[4]/tbody/tr[{row}]/td[6]/p/font/text()')[0]).lstrip("\r\n\t\t\t").replace("  ", " ").split()).upper()
