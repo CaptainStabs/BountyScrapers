@@ -1,0 +1,918 @@
+<!DOCTYPE HTML>
+<html lang='en-US' XMLNS:MPC><head runat='server'>
+	                            <title>CCG Public Access Site - Sales Search Search</title>
+                                <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+                                <meta http-equiv='X-UA-Compatible' content='IE=9' />
+	                            <meta http-equiv='Keywords' content='CAMA, Assessment Administration, Tax'>
+	                            <meta http-equiv='Description' content='iasWorld'>
+	                            <meta name='Copyright' content='Tyler Technologies Inc, Akanda Solutions, LLC'> 
+                                <link rel='icon' href='https://publicaccess.columbusga.org/favicon.ico' type='image/x-icon'>
+                                <link rel='shortcut icon' href='https://publicaccess.columbusga.org/favicon.ico' type='image/x-icon'>
+                                <meta http-equiv='pragma' content='no-cache'>
+                            </head><link rel='stylesheet' href='https://publicaccess.columbusga.org/styles/font-awesome.min.css' type='text/css'><link rel='stylesheet' href='https://publicaccess.columbusga.org/styles/styles.css' type='text/css'><link rel='stylesheet' href='https://publicaccess.columbusga.org/styles/custom/override-ColumbusGA.css' type='text/css'><body id='thebody' class='normalpage' ><div id='pagewrapper'><div id='divSMaint' style='display:none;border-bottom:2px solid red;width:780'><table role='presentation' cellpadding='0' cellspacing='0' width=780><tr id='trSMaint' class='MessageBar' style='height:21px;vertical-align:middle;'><td id='tdSMaint'>&nbsp;The System is currently unavailable due to maintenance.  Please check again later.</td><td id='tdTimer' align='right'></td><td align="right" valign="middle" onmouseout="ChangeImage('out')" onmouseover="ChangeImage('over')"><img id="CloseMsgBar" src="../images/icons/Set1/closeicon-normal.gif" height="14px" alt="Hide Bar" style="vertical-align:middle; border:solid 1px white; cursor:pointer" onclick="HideBar()"  />&nbsp;</td></tr></table></div><script type='text/javascript' language='javascript'>function HideBar() { document.getElementById('divSMaint').style.display='none';SoapInvokeService(WS_ACCESS_MANAGER, 'HideBar', null, false)}function ChangeImage(el) { var img = document.getElementById('CloseMsgBar'); if (el == 'out') img.src = img.src.replace('closeicon-mouseover.gif', 'closeicon-normal.gif');  else img.src = img.src.replace('closeicon-normal.gif', 'closeicon-mouseover.gif'); }</script><input type='hidden' id='hdDefHelp' value='0'><input type='hidden' id='hdThisFile' value='search/advancedsearch.aspx'><div id='outerheader'><div id='middleheader'>
+
+<header>
+    <div id='header'>
+        <div class='sitelogocontainer'>
+            <a href="https://www.columbusga.gov/" id="aIASWLink" target="_blank"><div class="sitelogo"></div></a>
+        </div>
+        <div class="HeaderSiteTitle"></div>
+        <div id='rightsection' class='HeaderLinks'>
+            <span id="RoleValue" class="HeaderLinks">
+                    </span><span id="lbRole"></span>
+            
+            <span id="lbHelp"><a class="Headerlinks Help" href="javascript:showHelp('')"
+                class='HeaderLinks'>
+                <img src='../images/common/icons/050.png' alt='Help' /></a> &nbsp;&nbsp; </span>
+            
+        </div>
+    </div>
+</header>
+
+<nav>
+       <div id='topmenu'><ul><li class='unsel'><a href='../forms/htmlframe.aspx?mode=content/home.htm' target=''><span>Home</span></a></li><li id='pd_Parent' class='sel' onmouseover='menuOver_pd("pd_2", event, this)' onmouseout='menuOut("pd_2", event, this)' onfocus='menuOver_pd("pd_2", event, this)' onfocusout='menuOut("pd_2", event, this)'><a href='../search/commonsearch.aspx?mode=owner' target=''><span>Property Records<span style='font-size: 7'></span></span></a></li><li class='unsel'><a href='../forms/htmlframe.aspx?mode=content/faq.htm' target=''><span>FAQ</span></a></li><li class='unsel'><a href='../forms/htmlframe.aspx?mode=content/forms.htm' target=''><span>Forms</span></a></li><li class='unsel'><a href='../forms/htmlframe.aspx?mode=content/links.htm' target=''><span>Links</span></a></li><li class='unsel'><a href='../forms/htmlframe.aspx?mode=content/notices.htm' target=''><span>Notices</span></a></li><li class='unsel'><a href='../forms/htmlframe.aspx?mode=content/contactus.htm' target=''><span>Contact Us</span></a></li></ul></div>
+       <div id='secondarytopmenu'><ul></ul></div>
+   </nav>
+<script language='Javascript' src='../Script/Menu.js'></script>
+<div id='pd_2' class='PullDownMenuLayer' style='visibility:hidden; position: absolute; width:50; top:0; left:0' onmouseover='bMenuOn=true' onmouseout='menuOut(this.id)' onfocus='bMenuOn=true' onfocusout='menuOut(this.id)'>
+<div class='PullDownMenuItem'><a class='PullDownMenuItem' onclick='location="../search/commonsearch.aspx?mode=owner"' onmouseover='this.className="MenuRowHL"' 
+onmouseout='menuLinkOut(this); this.className="PullDownMenuItem"' onfocus='this.className="MenuRowHL"' 
+onfocusout='menuLinkOut(this); this.className="PullDownMenuItem"' 
+onmousedown='this.className="MenuRowClicked"'>&nbsp;&nbsp;Owner Search&nbsp;</a></div>
+<div class='PullDownMenuItem'><a class='PullDownMenuItem' onclick='location="../search/commonsearch.aspx?mode=parid"' onmouseover='this.className="MenuRowHL"' 
+onmouseout='menuLinkOut(this); this.className="PullDownMenuItem"' onfocus='this.className="MenuRowHL"' 
+onfocusout='menuLinkOut(this); this.className="PullDownMenuItem"' 
+onmousedown='this.className="MenuRowClicked"'>&nbsp;&nbsp;Parcel Search&nbsp;</a></div>
+<div class='PullDownMenuItem'><a class='PullDownMenuItem' onclick='location="../search/commonsearch.aspx?mode=address"' onmouseover='this.className="MenuRowHL"' 
+onmouseout='menuLinkOut(this); this.className="PullDownMenuItem"' onfocus='this.className="MenuRowHL"' 
+onfocusout='menuLinkOut(this); this.className="PullDownMenuItem"' 
+onmousedown='this.className="MenuRowClicked"'>&nbsp;&nbsp;Address Search&nbsp;</a></div>
+<div class='PullDownMenuItem'><a class='PullDownMenuItem' onclick='location="../search/advancedsearch.aspx?mode=advanced"' onmouseover='this.className="MenuRowHL"' 
+onmouseout='menuLinkOut(this); this.className="PullDownMenuItem"' onfocus='this.className="MenuRowHL"' 
+onfocusout='menuLinkOut(this); this.className="PullDownMenuItem"' 
+onmousedown='this.className="MenuRowClicked"'>&nbsp;&nbsp;Advanced Search&nbsp;</a></div>
+<div class='PullDownMenuItem'><a class='PullDownMenuItem' onclick='location="../maps/mapadv.aspx"' onmouseover='this.className="MenuRowHL"' 
+onmouseout='menuLinkOut(this); this.className="PullDownMenuItem"' onfocus='this.className="MenuRowHL"' 
+onfocusout='menuLinkOut(this); this.className="PullDownMenuItem"' 
+onmousedown='this.className="MenuRowClicked"'>&nbsp;&nbsp;Map Search&nbsp;</a></div></div>
+<script type="text/javascript" src="../script/soap.js?210917101150"></script>
+<script type="text/javascript" src="../script/Common.js?210917101148"></script>
+<script type="text/javascript">
+
+    function HeaderClick(link) {
+        var par = window.parent;
+        if (par == window) return true;
+        var op = par.opener;
+        if (op == null) return true;
+        if (op.HeaderClick == null) return true;
+        var id = link.id;
+        var el = op.document.getElementById(id);
+        if (el == null) return true;
+        if (!confirm("This command will close the current window.\nDo you want to proceed?")) return false;
+
+        if (document.createEvent) {
+            var evt = document.createEvent('MouseEvents');
+            evt.initEvent('click', true, false);
+            el.dispatchEvent(evt);
+        } else if (typeof el.onclick == 'function') {
+            el.click();
+        }
+
+        par.close();
+        op.focus();
+        return false;
+    }
+
+    function SetMyHome(url) {
+        var DLG_SETMYHOME = "center:yes; dialogHeight:180px; dialogWidth:240px; help:no; resizable:no; status:no; title:no";
+        window.showModalDialog('../Forms/SetMyHome.aspx?url=' + url, null, DLG_SETMYHOME);
+    }
+
+
+    function ShowSimpleHelp(url) {
+        var DLG_POPUP = "scrollbar= yes, height=600, Width=800, resizable=yes, status=no, titlebar=no";
+        if (url.indexOf("?") > 0) {
+            url += "&";
+        } else {
+            url += "?";
+        }
+        window.open(url, null, DLG_POPUP);
+    }
+
+    function ViewCompleted() {
+        var url = "../Maintain/ReportSpool.aspx?simple=1&runningJobs=0&batchJobs=2";
+        window.open(url, "Reports", "status=1, toolbar=0, height=650px, width=1000px, resizable=1, scrollbars=yes");
+    }
+
+    function PopupWindow2(url) {
+        var DLG_POPUP = "dialogLeft:0; dialogTop: 0; edge: sunken; scroll: yes; center:yes; dialogHeight:750; dialogWidth:1028; help:no; resizable:yes; status:no; title:no";
+        if (url.indexOf("?") > 0) {
+            url += "&";
+        } else {
+            url += "?";
+        }
+        url += "frameset=1";
+        window.showModalDialog(url, null, DLG_POPUP);
+    }
+
+    var gLastPopup = parseInt(Math.random() * 10);
+
+    function PopupWindow(url, noToolbar, name) {
+        var win = null;
+
+        if (name == null)
+            name = "";
+        else
+            name = name.replace(' ', "");
+
+        if (win == null) {
+            if (name == null || name.length == 0) name = "popup" + (gLastPopup++ % 10);
+            var params;
+            if (noToolbar) {
+                params = "fullscreen=no, titlebar=no, location=no, menubar=no, toolbar=no, resizable=yes, scrollbars=yes, status=yes, titlebar=yes";
+            } else {
+                params = null;
+            }
+            win = window.open(url, name, params);
+        }
+        return win;
+    }
+
+    function setRole(val, form) {
+        var url = window.location.href;
+        url = url.replace("#", "");
+        var i = url.indexOf("&");
+        if (i != -1) {
+            url = url.substr(0, i);
+        }
+        var pars = SoapBuildInputParam("SelectedRole", val);
+        pars += SoapBuildInputParam("URL", url);
+        var res = SoapInvokeService(WS_PUBLIC, "AssignSelectedRole", pars);
+        if (res == -1) {
+            location.href = "../Main/Home.aspx";
+        }
+        else {
+            location.reload();
+        }
+    }
+</script>
+</div></div><div id='wrapper' class='center'><section><div id='bodyarea' >
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="//code.jquery.com/jquery-3.5.1.js"></script>
+<script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<script>
+var gMyCriteria = "dav";
+</script>
+<script src="../script/common.js"></script>
+<script src="../Search/Script/Search.js"></script>
+<script src="../Script/xapi.js"></script>
+
+<body onload="Init()">
+	<form name="frmMain" method="post" action="./advancedsearch.aspx?mode=advanced" id="frmMain" onsubmit="return&#32;startSearch()">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="AB0UD22TaMH+tT/uXDJJkuSoTgh5BiPEZjF8uFVcGmI2sEl8++63xcE18ODcCBq0gjBbV0N3L8s3HJ15ihRx+v8xCLh2YPS3rN9aK6o4Xx44GWwHF/51kqQlcc5oDRoky2Gr4Mh6iE1DE3dshy6P1bYb58a/UeNMCvXSZPTaUaP2NEvSsMSdbrD8n2LKBvyQLNRpkgT3NVQNOaUhabGqCPYPVFhEQofqreq/pidjoFX9+w9oI2wQuHmo6IpqfK8J733j/dELB9hTYQiEHNbEKmcbfk4htS6sKJ86OCKrwKB4sSCeIZLNeuJQjuN9iYdN5lecgSmnB1y3AARHa6JCbRpiBSV5rywWwj9MNbQN+u5xe29KEEohWLXKWqM+LCx2ae0pEvrPWCqGhvsZJbp2rMzerXHKEZFL7YD7o1Gm5T/9E88JuYjvUIor3cFbA0ivumO+crGAnaKjkdZLXaMfGmmkP8zEvD7qCK0T7YkCDe/91W9ar28kg+6e/lBp50Zy0ogY8eylSi5egdYgCAPB/8kSq24QrbvlUHcemc+mXroEVL4/HuP6k24rqgNTxGRdHrCdkY/uHljE+prT8Au8WA==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['frmMain'];
+if (!theForm) {
+    theForm = document.frmMain;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZMeuEkgTRhg6h310m3ctNnWu1R8Wvor3nM-cq6wdwmBIXeShQDm3GfJP9-z8XeQ7Gw2&amp;t=637453890340000000" type="text/javascript"></script>
+
+<script language="javascript">
+			var mode = "ADVANCED";
+			</script><link class='Telerik_stylesheet' type='text/css' rel='stylesheet' href='/WebResource.axd?d=bZQu9IErOfGRZdP9C3BB5eWc5yC4WaThwSh0-QQlhZEcp3sJaqu56cgqDfPLFmIR-2504e_gXqKcIU6uasGHZtUMo_M8gcmYTOXai52AkOzjdySU1xBcM6RPleYK-Z0R0&amp;t=637674702960000000' /><link class='Telerik_stylesheet' type='text/css' rel='stylesheet' href='/WebResource.axd?d=EkHr37SACCjvnXcRDMYA5R0qBGwYt8MklXWw1cC4Ze3aodr7UmReVypJjeMDVUdeWWSVYJDht0CF9u8EWaSTlS82W73hR_6j-f795g0jPyCQTL7bF0_boX6C4x1piC0yft1KuGJ0IXGTfWjmxMKn-A2&amp;t=637674702960000000' /><link class='Telerik_stylesheet' type='text/css' rel='stylesheet' href='/WebResource.axd?d=AvBWCtbpLXYjyyNienFv2FoKN-wXq0oyq6Qm67GMS9apbWpC9zJCFRZhnsBMh_VOIeJWNhLR77evtnv0jkfPziDcHawpgz5JX2RuYmLQq2A32GjNubDy7REiyfFc2m4j6FSpZ2SkSiGwUZsxQaRNbA2&amp;t=637674702960000000' /><link class='Telerik_stylesheet' type='text/css' rel='stylesheet' href='/WebResource.axd?d=QioIuMiTvakjAw8Q44fnHtQ25e-cXQ0bSREB-hYdNm9jOmPtfBbWYmX6aG07o2YcQZ7AXKjmUR4Ntu4t5Ug42htJJTpP1yVn2LG2zr-lx2tzgs49ccFH_8k8oLbS28KHOzrD4Fps1u5S6lupd6YSUT3NDx31LjIAMuUvqQuU2js1&amp;t=637674702960000000' /><link class='Telerik_stylesheet' type='text/css' rel='stylesheet' href='/WebResource.axd?d=Nhf6TpUj19KZ9rhEj2xtdV2wDZflAD3FGYwgKps5rnObN-txhJqujpxleOzq3LNIYXwBdzoAyiP_uQyxM0B6q6EC1laz7bDzt3t7_CQBPhtCOAidqNkXCWn6MAVb7kyd0&amp;t=637674702960000000' />
+<script src="/ScriptResource.axd?d=x6wALODbMJK5e0eRC_p1LdDU4nNjkvxBlXx_Vf601ycniwmlC20GccNxuSWg39xy31zvx42V_cOFAG_2_X_3A33Xz_rMjtugmAADnKYK5MkYZfCDmZTpH9rOJIOiiJ1o0&amp;t=27117261" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=P5lTttoqSeZXoYRLQMIScD01jZca2QtIUV0HRxUneVOhkMG_zzDQpMy2Ly9BU2Xg2fBKBlqnSfRG633sU8ICVD33sTarS2vJ5miY5jRXb_LEc4HbyXKXI9wJEQqq_Nc_0&amp;t=27117261" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=TDVjdgRbdvNAY3tnbizUcCaei4OwNQlAx1Q9EI-8vCRtOXNP_YwVX_u5JHBoM4WYv8zBtaYZcV54cH9Xd_WwvCavF7nNOfm72Es4KiFg5omtfXSEjHaw09tno_9_O5MX0&amp;t=ffffffffcd00b330" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=mbGZm65DzNC0tMTq0ElbcSBlGi5eQLx3auj7LQZBWwit891TDGtVxBBTWa23_vFYReagFeGHlIGYIAth4d0pUEIoN_gjRj067FWsBNZcSt2GU47-ntfeBBbkhyLO6PkbyyLxL5DmHhXURtlQejz3bQ2&amp;t=ffffffffcd00b330" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=86EhAqQjfuMKlbK4FWyenAwho-UEpJOwwx9s3Y22OOQEej7ioiXSFuF8NlNu-Cit54sk7S1S-n51LteZWQTmljf49U71EanSQfdg4A39OkhlBTsvUU_l2wG323ahtBqsXOaSKAtgIy0EJAJcb_f0BgxI2DXFCTaqVRM8W0ZnJik1&amp;t=ffffffffcd00b330" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=hnK2W82KRFfF7GBe-cfZ6sxlkhqVSa47ZIqZXwjrUdRdE9kz-bOy0RneixdbZ0B1l3MwgHq6xrQxfpBqyW901sfY1vmT-f4jBLCzUFymg2i94zTpS6Nq9en3NsxfxaFO-jgmFJOIR3GgH9hxhe0nNQ2&amp;t=ffffffffcd00b330" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=VAoao3V0Em1AmKblq5dVU5uXh3_cCynYaznwbtug2brBvLFrFbIN6r6zYj4NRLjwWiRuLzACpFKhDkwCIowJy94cxIIRxb8jypvRYnFuS8SpB--3KG5XG9P9ARPAhkrHPmIoP3aJCQMxWMs2wkBW5PjEJCEF03qSFxuciL5I4eM1&amp;t=ffffffffcd00b330" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=uZyysmNAhs23bID72ZUaSv4uwA_ioMgsQPdbuQoQkEYlc5-9AVh4zMx4-RrXRGmrLN_6TaqoiONDj0sSnPRCzCgMbYXT_4tg9SXNmUWNUarjPl0mwAoHM9mYYPWhgbmJETEgbdZXGv3r6IPtUouB9Fs5rYTxzPEDm3V6Irt54M41&amp;t=ffffffffcd00b330" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=CKWp3hTbfUbZoJvrOz6P-zQ4DhxOl3O8eATt4rOIzroN6JVRE1TZUfBFFtW7eSTo51Zq85Tmhcx2ruTNLYBI4IBKupVI7jwFuo3hxfS4XZnZyIenyxWtYToDta9y2_R5uo71uryqQEVi7s3rehahPQ2&amp;t=ffffffffcd00b330" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=onec4cz-_1nbl1vDeOhfe3xilqcLVr6iHi1facWC8Ja5GcvX7Sphhi0U9tWIrIax6YrMLvpftsYI3FCAQqoqxUkzuefH3rInOljcpuS6YJDjfw1qWrW7tQiBFN4qdNDKw2Qpe9z3A-P5rE1bnVrberrxsQivIWlJtwAx99tk1TA1&amp;t=ffffffffcd00b330" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=cZvwkQdrztqupmttwVUXY6NGxSEbIEgkn-JDCqyijDrx1I7nnL3LLGwhLjKMQiTetCEx4b5z5x4-hd4hIyC59q1X-ldy9lwWI77QO_4Tqi1S1x87AzRjwlRfPH6psHq4GFI9AEO9dWSoJ4nzn3SmiA2&amp;t=ffffffffcd00b330" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=wtNuOIy3fVfy_-PUDV53xqdo7mkUIA2rj6Dvuloz7eUAOSF_8nDK01sEFmDa3gVAuKNuFFUTjC0K_AXkKNOWXIZGnMoQrfZ2YZ_uzR99OxR7EuKmPP5MnrQobGRGGXbNat3DhLUmH6arHm3gP9VtjjbOnZ0CgsFKQ2iBDrLXoEI1&amp;t=ffffffffcd00b330" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=jsREEuQJotslNUdHnktdplvxZXsWCF9wpXM3-GjjCYnmZZtUR4uWQbQhnkZpykmmhhkmg_q-sYsM2_TfauLPygV-ChGkAV9YDOGti_LFNmtNztBFBM_cTOcb60ohsfq5CauMFu4WhLvpK5dvW2C-IQ2&amp;t=ffffffffcd00b330" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=cmIcXiVJ__exjjpjrN730sur49oMnV0Yo8bltPTHHci0nNhEibL5pfwbcokgKZnIbgyby1rGKSRfj-yXuGRTB8CezAoKA_geklYg0yVKysfrflIgsyu15pKG5vbS6ZNYC71IeaIJ5wSVfk_Bci7_0Q2&amp;t=ffffffffcd00b330" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=utaAJrK4EroNO-KNr3p19HhMZSY8mfdqRaR8pt79d7iFiuy0hJKwovrmjC12S07FxSqyRibmhWhv5QUfM38d4pWtkxCjgPMawuI8YX-yIM3VOPbiIxx-uf1MZsp9WdhSE0JilnPPP8BxcGL0beAlVw2&amp;t=ffffffffcd00b330" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="81E50120" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="FdfC0+b82J7PmEeRcOVlTXn0bHfNIeIXLneEPoRDJsNNIjrmqQl680K5mGrF2dpbaSaCN5+W0ysdhCb99t90uKOyy5aZqodCytfVxW9hSw3Up2HBEWpd2/PorWrfgui63m1e7ll1JP9DuNkPHEOMvcg4RGKSUoPGHVMpX7IOvE43XBSZ9W3icqKn7l0HB/eovGZ1nGNRf7XTt19wk16WE3ZXH3zNfOACCN8FOjiQMyS2HjmbpiNRq632ue/En9QKyIo5BTlw8qoDX6UjuZGR1m5MH6UUY1KzU/C3/L6FQrqJ8b4/vN5jlULqsZE4M81Evbkw1PhLm/Rd+Kn3QqWDhuGwaMuIfFzoeqQ0XKMEsGzCVLBWk3Jeypxr9pHVzm1TgOfjO3HTf7dXesulfkF0c5K5gIu0mnPW9jmAaq4f4odH97cRlxY3eO6afFOhsKcvIqnuxxVqa5ux/E4g/5dHwRrWhLjBBA4DU5eug73JgqbHfLzRs4KqFiTmwzSqcP7APewpH9/72dPKDfDoClnc8Fq7Vx97l+fRUiDHo9J5PJo=" />
+</div>
+
+		<input name="PageNum" type="hidden" id="PageNum" />
+		<input type="hidden" id="SortBy" name="SortBy" value="PARID">
+		<input type="hidden" id="SortDir" name="SortDir" value=" asc">
+		<input type="hidden" id="PageSize" name="PageSize" value="15">
+		<input name="hdTaxYear" type="hidden" id="hdTaxYear" />
+		<input name="hdAction" type="hidden" id="hdAction" />
+		<input name="hdCriteria" type="hidden" id="hdCriteria" />
+        <input name="hdCriteriaLov" type="hidden" id="hdCriteriaLov" />
+		<input name="hdCriteriaTypes" type="hidden" id="hdCriteriaTypes" />
+		<input name="hdLastState" type="hidden" id="hdLastState" value="1" />
+		<input name="hdReset" type="hidden" id="hdReset" />
+		<input name="hdName" type="hidden" id="hdName" />
+		<input name="hdSelectedQuery" type="hidden" id="hdSelectedQuery" value="0" />
+		<input name="mode" type="hidden" id="mode" />
+		<input name="hdSearchType" type="hidden" id="hdSearchType" value="ADVANCED" />
+		<input name="hdListType" type="hidden" id="hdListType" />
+		<input name="hdIndex" type="hidden" id="hdIndex" />
+		<input name="hdSelected" type="hidden" id="hdSelected" />
+		<input name="hdCriteriaGroup" type="hidden" id="hdCriteriaGroup" />
+		<input name="hdCriterias" type="hidden" id="hdCriterias" value="Book|luc|Class|sfla|nbhd|Page|price|salesdate|saletype|SaleValid|com_sf|stories|yr_com|yr_buitl" />
+        <input name="hdSelectAllChecked" type="hidden" id="hdSelectAllChecked" /> <!--CLT-19026 -->
+
+
+<table align="center">
+<tr>
+<td>
+<div class='contentpanel'><div style="max-width:855; min-width:855; overflow:hidden;">
+	
+<table align="center" width="855" border="0" role="presentation">
+<script type="text/javascript" language="javascript">
+var search_Params = new Array("inpowner","inpparid","inpadrno","inpadrstr","inpnbhd","inpstories","inpbathrooms","inpsfla","inpsalesdate","inpprice","inptaxyr","inpluc","inppermit","inppermflag","inpbedrooms","inpClass","inpsaletype","inpstyle","inpcom_sf","inpyr_buitl","inpyr_com","inpSaleValid","inpBook","inpPage");
+</script><script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl01$ScriptManager1', 'frmMain', [], [], [], 90, '');
+	//]]>
+</script>
+
+<script type="text/javascript" src="../controls/scripts/DatePicker.js"></script>
+			<tr class="BannerTabsT" height="2"><td></td></tr>
+			<tr>
+				<td>
+					<table cellspacing="0" cellpadding="0" align="center" width="100%" border="0" role="presentation">
+						<tr>
+						    <td width="45%">
+						        <table cellpadding="2" cellspacing="0" border="0" align="left" role="presentation">
+						            <tr>
+						                <td>&nbsp;&nbsp;&nbsp;</td>
+							            <td class="SearchText"><h1>Sales Search</h1></td>
+							            
+							            <td>
+								            
+							            </td>
+						            </tr>
+						        </table>
+						    </td>
+				            <td width="10%" id="criteria-label" align="right" class="IndexLink" width="130px">Criteria:&nbsp;</td>
+    						<td nowrap align="left"  width="20%">
+								<select id="sCriteria" name="sCriteria" onchange="setCriteria(this.value)" aria-labelledby="criteria-label">
+								</select>
+							</td>
+							
+							<td class="IndexList">&nbsp;</td>
+							
+						<tr>
+					</table>
+				</td>
+			</tr>
+			<tr class="BannerTabsT" height="2"><td></td></tr>
+			<tr>
+				<td valign="top">
+					<table  cellpadding="0" cellspacing="0" border="0" width="100%" role="presentation">
+						<tr>
+							<td valign="top" width="54%">
+								<table cellpadding="4" cellspacing="0" border="0" width="100%"  role="presentation">
+									<tr id="dvPickList" name="dvPickList" style="display:none">
+										<td id="selPrompt1" name="selPrompt1" class="IndexLink" align="right">Please select:</td>
+										<td colspan="2" align="left">
+											<select id="sPickList" name="sPickList" aria-labelledby="selPrompt1">
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td id="sPrompt" name="sPrompt" align="right" class="IndexLink">&nbsp;</td>
+										<td width="26*8">
+                    <div id="divCal1" style="display:none">
+											
+                                            <div id="ctl01_cal1_wrapper" class="RadPicker&#32;RadPicker_Default&#32;DatePicker" name="cal1" style="display:inline-block;width:176px;">
+		<!-- 2020.2.512.45 --><input style="visibility:hidden;display:block;float:right;margin:0 0 -1px -1px;width:1px;height:1px;overflow:hidden;border:0;padding:0;" id="ctl01_cal1" name="ctl01$cal1" type="text" class="rdfd_ radPreventDecorate" value="" title="Visually hidden input created for functionality purposes." /><table cellspacing="0" class="rcTable&#32;rcSingle" summary="Table&#32;holding&#32;date&#32;picker&#32;control&#32;for&#32;selection&#32;of&#32;dates." style="width:100%;">
+			<caption style="display:none;">
+				RadDatePicker
+			</caption><thead style="display:none;">
+				<tr>
+					<th scope="col">RadDatePicker</th>
+				</tr>
+			</thead><tbody>
+				<tr>
+					<td class="rcInputCell" style="width:100%;"><span id="ctl01_cal1_dateInput_wrapper" class="riSingle&#32;RadInput&#32;RadInput_Default" style="display:block;width:100%;"><label class="riLabel" for="ctl01_cal1_dateInput" id="ctl01_cal1_dateInput_Label" style="width:40%;">Date From</label><span class="riContentWrapper" style="width:60%;"><input id="ctl01_cal1_dateInput" name="ctl01$cal1$dateInput" class="riTextBox&#32;riEnabled" type="text" /></span><input id="ctl01_cal1_dateInput_ClientState" name="ctl01_cal1_dateInput_ClientState" type="hidden" /></span></td><td><a title="Open&#32;the&#32;calendar&#32;popup." href="#" id="ctl01_cal1_popupButton"><img id="ctl01_cal1_CalendarPopupButton" src="../images/common/icons/037.png" alt="Open&#32;the&#32;calendar&#32;popup." style="border-width:0px;" /></a><div id="ctl01_cal1_calendar_wrapper" style="display:none;">
+						<table id="ctl01_cal1_calendar" cellspacing="0" class="RadCalendar&#32;RadCalendar_Default" border="0">
+							<caption>
+								<span style='display:none;'>Calendar</span>
+							</caption><thead>
+								<tr>
+									<td class="rcTitlebar"><table cellspacing="0" border="0">
+										<caption>
+											<span style='display:none;'>Title and navigation</span>
+										</caption><thead>
+											<tr style="display:none;">
+												<th scope="col">Title and navigation</th>
+											</tr>
+										</thead><tbody>
+	<tr>
+		<td><a id="ctl01_cal1_calendar_FNP" class="t-button&#32;rcFastPrev" title="&lt;&lt;" href="#">&lt;&lt;</a></td><td><a id="ctl01_cal1_calendar_NP" class="t-button&#32;rcPrev" title="&lt;" href="#">&lt;</a></td><td id="ctl01_cal1_calendar_Title" class="rcTitle">January 2022</td><td><a id="ctl01_cal1_calendar_NN" class="t-button&#32;rcNext" title="&gt;" href="#">&gt;</a></td><td><a id="ctl01_cal1_calendar_FNN" class="t-button&#32;rcFastNext" title="&gt;&gt;" href="#">&lt;&lt;</a></td>
+	</tr>
+</tbody>
+									</table></td>
+								</tr>
+							</thead><tbody>
+	<tr>
+		<td class="rcMain"><table id="ctl01_cal1_calendar_Top" class="rcMainTable" cellspacing="0" border="0">
+	<caption>
+		<span style='display:none;'>January 2022</span>
+	</caption><thead>
+		<tr class="rcWeek">
+			<th class="rcViewSel" scope="col">&nbsp;</th><th id="ctl01_cal1_calendar_Top_cs_1" title="Sunday" scope="col">S</th><th id="ctl01_cal1_calendar_Top_cs_2" title="Monday" scope="col">M</th><th id="ctl01_cal1_calendar_Top_cs_3" title="Tuesday" scope="col">T</th><th id="ctl01_cal1_calendar_Top_cs_4" title="Wednesday" scope="col">W</th><th id="ctl01_cal1_calendar_Top_cs_5" title="Thursday" scope="col">T</th><th id="ctl01_cal1_calendar_Top_cs_6" title="Friday" scope="col">F</th><th id="ctl01_cal1_calendar_Top_cs_7" title="Saturday" scope="col">S</th>
+		</tr>
+	</thead><tbody>
+		<tr class="rcRow">
+			<th id="ctl01_cal1_calendar_Top_rs_1" scope="row">53</th><td class="rcOtherMonth" title="Sunday,&#32;December&#32;26,&#32;2021"><a href="#">26</a></td><td class="rcOtherMonth" title="Monday,&#32;December&#32;27,&#32;2021"><a href="#">27</a></td><td class="rcOtherMonth" title="Tuesday,&#32;December&#32;28,&#32;2021"><a href="#">28</a></td><td class="rcOtherMonth" title="Wednesday,&#32;December&#32;29,&#32;2021"><a href="#">29</a></td><td class="rcOtherMonth" title="Thursday,&#32;December&#32;30,&#32;2021"><a href="#">30</a></td><td class="rcOtherMonth" title="Friday,&#32;December&#32;31,&#32;2021"><a href="#">31</a></td><td class="rcWeekend" title="Saturday,&#32;January&#32;01,&#32;2022"><a href="#">1</a></td>
+		</tr><tr class="rcRow">
+			<th id="ctl01_cal1_calendar_Top_rs_2" scope="row">2</th><td class="rcWeekend" title="Sunday,&#32;January&#32;02,&#32;2022"><a href="#">2</a></td><td title="Monday,&#32;January&#32;03,&#32;2022"><a href="#">3</a></td><td title="Tuesday,&#32;January&#32;04,&#32;2022"><a href="#">4</a></td><td title="Wednesday,&#32;January&#32;05,&#32;2022"><a href="#">5</a></td><td title="Thursday,&#32;January&#32;06,&#32;2022"><a href="#">6</a></td><td title="Friday,&#32;January&#32;07,&#32;2022"><a href="#">7</a></td><td class="rcWeekend" title="Saturday,&#32;January&#32;08,&#32;2022"><a href="#">8</a></td>
+		</tr><tr class="rcRow">
+			<th id="ctl01_cal1_calendar_Top_rs_3" scope="row">3</th><td class="rcWeekend" title="Sunday,&#32;January&#32;09,&#32;2022"><a href="#">9</a></td><td title="Monday,&#32;January&#32;10,&#32;2022"><a href="#">10</a></td><td class="rcToday&#32;rcToday" title="Tuesday,&#32;January&#32;11,&#32;2022"><a href="#">11</a></td><td title="Wednesday,&#32;January&#32;12,&#32;2022"><a href="#">12</a></td><td title="Thursday,&#32;January&#32;13,&#32;2022"><a href="#">13</a></td><td title="Friday,&#32;January&#32;14,&#32;2022"><a href="#">14</a></td><td class="rcWeekend" title="Saturday,&#32;January&#32;15,&#32;2022"><a href="#">15</a></td>
+		</tr><tr class="rcRow">
+			<th id="ctl01_cal1_calendar_Top_rs_4" scope="row">4</th><td class="rcWeekend" title="Sunday,&#32;January&#32;16,&#32;2022"><a href="#">16</a></td><td title="Monday,&#32;January&#32;17,&#32;2022"><a href="#">17</a></td><td title="Tuesday,&#32;January&#32;18,&#32;2022"><a href="#">18</a></td><td title="Wednesday,&#32;January&#32;19,&#32;2022"><a href="#">19</a></td><td title="Thursday,&#32;January&#32;20,&#32;2022"><a href="#">20</a></td><td title="Friday,&#32;January&#32;21,&#32;2022"><a href="#">21</a></td><td class="rcWeekend" title="Saturday,&#32;January&#32;22,&#32;2022"><a href="#">22</a></td>
+		</tr><tr class="rcRow">
+			<th id="ctl01_cal1_calendar_Top_rs_5" scope="row">5</th><td class="rcWeekend" title="Sunday,&#32;January&#32;23,&#32;2022"><a href="#">23</a></td><td title="Monday,&#32;January&#32;24,&#32;2022"><a href="#">24</a></td><td title="Tuesday,&#32;January&#32;25,&#32;2022"><a href="#">25</a></td><td title="Wednesday,&#32;January&#32;26,&#32;2022"><a href="#">26</a></td><td title="Thursday,&#32;January&#32;27,&#32;2022"><a href="#">27</a></td><td title="Friday,&#32;January&#32;28,&#32;2022"><a href="#">28</a></td><td class="rcWeekend" title="Saturday,&#32;January&#32;29,&#32;2022"><a href="#">29</a></td>
+		</tr><tr class="rcRow">
+			<th id="ctl01_cal1_calendar_Top_rs_6" scope="row">6</th><td class="rcWeekend" title="Sunday,&#32;January&#32;30,&#32;2022"><a href="#">30</a></td><td title="Monday,&#32;January&#32;31,&#32;2022"><a href="#">31</a></td><td class="rcOtherMonth" title="Tuesday,&#32;February&#32;01,&#32;2022"><a href="#">1</a></td><td class="rcOtherMonth" title="Wednesday,&#32;February&#32;02,&#32;2022"><a href="#">2</a></td><td class="rcOtherMonth" title="Thursday,&#32;February&#32;03,&#32;2022"><a href="#">3</a></td><td class="rcOtherMonth" title="Friday,&#32;February&#32;04,&#32;2022"><a href="#">4</a></td><td class="rcOtherMonth" title="Saturday,&#32;February&#32;05,&#32;2022"><a href="#">5</a></td>
+		</tr>
+	</tbody>
+</table></td>
+	</tr>
+</tbody>
+						</table><input type="hidden" name="ctl01_cal1_calendar_SD" id="ctl01_cal1_calendar_SD" value="[]" /><input type="hidden" name="ctl01_cal1_calendar_AD" id="ctl01_cal1_calendar_AD" value="[[1900,1,1],[2099,12,30],[2022,1,11]]" />
+					</div></td>
+				</tr>
+			</tbody>
+		</table><input id="ctl01_cal1_ClientState" name="ctl01_cal1_ClientState" type="hidden" />
+	</div>&nbsp;
+                     </div>
+                      <input type="text" size="26"  class="Input" id="txtCrit" name="txtCrit" style="display:none" aria-labelledby="sPrompt">
+										</td>
+										<td>
+										
+                
+                   
+
+                
+										</td>
+										<td id="tdSoundex" name="tdSoundex" class="IndexLink">
+											<input type="checkbox" id="cbSoundex" name="cbSoundex" aria-label="Sounds Like">Sounds Like
+										</td>
+									</tr>
+									<tr id="dvPickList2" name="dvPickList2" style="display:none">
+										<td id="selPrompt2" name="selPrompt2" class="IndexLink">Please select:</td>
+										<td colspan="2" align="right">
+											<select id="sPickList2" name="sPickList2" aria-labelledby="selPrompt2">
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td id="sPrompt1" name="sPrompt1" align="right" class="IndexLink">&nbsp;</td>
+										<td nowrap>
+                    <div id="divCal2" style="display:none">
+											<div id="ctl01_cal2_wrapper" class="RadPicker&#32;RadPicker_Default&#32;DatePicker" name="cal2" style="display:inline-block;width:176px;">
+		<input style="visibility:hidden;display:block;float:right;margin:0 0 -1px -1px;width:1px;height:1px;overflow:hidden;border:0;padding:0;" id="ctl01_cal2" name="ctl01$cal2" type="text" class="rdfd_ radPreventDecorate" value="" title="Visually hidden input created for functionality purposes." /><table cellspacing="0" class="rcTable&#32;rcSingle" summary="Table&#32;holding&#32;date&#32;picker&#32;control&#32;for&#32;selection&#32;of&#32;dates." style="width:100%;">
+			<caption style="display:none;">
+				RadDatePicker
+			</caption><thead style="display:none;">
+				<tr>
+					<th scope="col">RadDatePicker</th>
+				</tr>
+			</thead><tbody>
+				<tr>
+					<td class="rcInputCell" style="width:100%;"><span id="ctl01_cal2_dateInput_wrapper" class="riSingle&#32;RadInput&#32;RadInput_Default" style="display:block;width:100%;"><label class="riLabel" for="ctl01_cal2_dateInput" id="ctl01_cal2_dateInput_Label" style="width:40%;">Date To</label><span class="riContentWrapper" style="width:60%;"><input id="ctl01_cal2_dateInput" name="ctl01$cal2$dateInput" class="riTextBox&#32;riEnabled" type="text" /></span><input id="ctl01_cal2_dateInput_ClientState" name="ctl01_cal2_dateInput_ClientState" type="hidden" /></span></td><td><a title="Open&#32;the&#32;calendar&#32;popup." href="#" id="ctl01_cal2_popupButton"><img id="ctl01_cal2_CalendarPopupButton" src="../images/common/icons/037.png" alt="Open&#32;the&#32;calendar&#32;popup." style="border-width:0px;" /></a><div id="ctl01_cal2_calendar_wrapper" style="display:none;">
+						<table id="ctl01_cal2_calendar" cellspacing="0" class="RadCalendar&#32;RadCalendar_Default" border="0">
+							<caption>
+								<span style='display:none;'>Calendar</span>
+							</caption><thead>
+								<tr>
+									<td class="rcTitlebar"><table cellspacing="0" border="0">
+										<caption>
+											<span style='display:none;'>Title and navigation</span>
+										</caption><thead>
+											<tr style="display:none;">
+												<th scope="col">Title and navigation</th>
+											</tr>
+										</thead><tbody>
+	<tr>
+		<td><a id="ctl01_cal2_calendar_FNP" class="t-button&#32;rcFastPrev" title="&lt;&lt;" href="#">&lt;&lt;</a></td><td><a id="ctl01_cal2_calendar_NP" class="t-button&#32;rcPrev" title="&lt;" href="#">&lt;</a></td><td id="ctl01_cal2_calendar_Title" class="rcTitle">January 2022</td><td><a id="ctl01_cal2_calendar_NN" class="t-button&#32;rcNext" title="&gt;" href="#">&gt;</a></td><td><a id="ctl01_cal2_calendar_FNN" class="t-button&#32;rcFastNext" title="&gt;&gt;" href="#">&lt;&lt;</a></td>
+	</tr>
+</tbody>
+									</table></td>
+								</tr>
+							</thead><tbody>
+	<tr>
+		<td class="rcMain"><table id="ctl01_cal2_calendar_Top" class="rcMainTable" cellspacing="0" border="0">
+	<caption>
+		<span style='display:none;'>January 2022</span>
+	</caption><thead>
+		<tr class="rcWeek">
+			<th class="rcViewSel" scope="col">&nbsp;</th><th id="ctl01_cal2_calendar_Top_cs_1" title="Sunday" scope="col">S</th><th id="ctl01_cal2_calendar_Top_cs_2" title="Monday" scope="col">M</th><th id="ctl01_cal2_calendar_Top_cs_3" title="Tuesday" scope="col">T</th><th id="ctl01_cal2_calendar_Top_cs_4" title="Wednesday" scope="col">W</th><th id="ctl01_cal2_calendar_Top_cs_5" title="Thursday" scope="col">T</th><th id="ctl01_cal2_calendar_Top_cs_6" title="Friday" scope="col">F</th><th id="ctl01_cal2_calendar_Top_cs_7" title="Saturday" scope="col">S</th>
+		</tr>
+	</thead><tbody>
+		<tr class="rcRow">
+			<th id="ctl01_cal2_calendar_Top_rs_1" scope="row">53</th><td class="rcOtherMonth" title="Sunday,&#32;December&#32;26,&#32;2021"><a href="#">26</a></td><td class="rcOtherMonth" title="Monday,&#32;December&#32;27,&#32;2021"><a href="#">27</a></td><td class="rcOtherMonth" title="Tuesday,&#32;December&#32;28,&#32;2021"><a href="#">28</a></td><td class="rcOtherMonth" title="Wednesday,&#32;December&#32;29,&#32;2021"><a href="#">29</a></td><td class="rcOtherMonth" title="Thursday,&#32;December&#32;30,&#32;2021"><a href="#">30</a></td><td class="rcOtherMonth" title="Friday,&#32;December&#32;31,&#32;2021"><a href="#">31</a></td><td class="rcWeekend" title="Saturday,&#32;January&#32;01,&#32;2022"><a href="#">1</a></td>
+		</tr><tr class="rcRow">
+			<th id="ctl01_cal2_calendar_Top_rs_2" scope="row">2</th><td class="rcWeekend" title="Sunday,&#32;January&#32;02,&#32;2022"><a href="#">2</a></td><td title="Monday,&#32;January&#32;03,&#32;2022"><a href="#">3</a></td><td title="Tuesday,&#32;January&#32;04,&#32;2022"><a href="#">4</a></td><td title="Wednesday,&#32;January&#32;05,&#32;2022"><a href="#">5</a></td><td title="Thursday,&#32;January&#32;06,&#32;2022"><a href="#">6</a></td><td title="Friday,&#32;January&#32;07,&#32;2022"><a href="#">7</a></td><td class="rcWeekend" title="Saturday,&#32;January&#32;08,&#32;2022"><a href="#">8</a></td>
+		</tr><tr class="rcRow">
+			<th id="ctl01_cal2_calendar_Top_rs_3" scope="row">3</th><td class="rcWeekend" title="Sunday,&#32;January&#32;09,&#32;2022"><a href="#">9</a></td><td title="Monday,&#32;January&#32;10,&#32;2022"><a href="#">10</a></td><td class="rcToday&#32;rcToday" title="Tuesday,&#32;January&#32;11,&#32;2022"><a href="#">11</a></td><td title="Wednesday,&#32;January&#32;12,&#32;2022"><a href="#">12</a></td><td title="Thursday,&#32;January&#32;13,&#32;2022"><a href="#">13</a></td><td title="Friday,&#32;January&#32;14,&#32;2022"><a href="#">14</a></td><td class="rcWeekend" title="Saturday,&#32;January&#32;15,&#32;2022"><a href="#">15</a></td>
+		</tr><tr class="rcRow">
+			<th id="ctl01_cal2_calendar_Top_rs_4" scope="row">4</th><td class="rcWeekend" title="Sunday,&#32;January&#32;16,&#32;2022"><a href="#">16</a></td><td title="Monday,&#32;January&#32;17,&#32;2022"><a href="#">17</a></td><td title="Tuesday,&#32;January&#32;18,&#32;2022"><a href="#">18</a></td><td title="Wednesday,&#32;January&#32;19,&#32;2022"><a href="#">19</a></td><td title="Thursday,&#32;January&#32;20,&#32;2022"><a href="#">20</a></td><td title="Friday,&#32;January&#32;21,&#32;2022"><a href="#">21</a></td><td class="rcWeekend" title="Saturday,&#32;January&#32;22,&#32;2022"><a href="#">22</a></td>
+		</tr><tr class="rcRow">
+			<th id="ctl01_cal2_calendar_Top_rs_5" scope="row">5</th><td class="rcWeekend" title="Sunday,&#32;January&#32;23,&#32;2022"><a href="#">23</a></td><td title="Monday,&#32;January&#32;24,&#32;2022"><a href="#">24</a></td><td title="Tuesday,&#32;January&#32;25,&#32;2022"><a href="#">25</a></td><td title="Wednesday,&#32;January&#32;26,&#32;2022"><a href="#">26</a></td><td title="Thursday,&#32;January&#32;27,&#32;2022"><a href="#">27</a></td><td title="Friday,&#32;January&#32;28,&#32;2022"><a href="#">28</a></td><td class="rcWeekend" title="Saturday,&#32;January&#32;29,&#32;2022"><a href="#">29</a></td>
+		</tr><tr class="rcRow">
+			<th id="ctl01_cal2_calendar_Top_rs_6" scope="row">6</th><td class="rcWeekend" title="Sunday,&#32;January&#32;30,&#32;2022"><a href="#">30</a></td><td title="Monday,&#32;January&#32;31,&#32;2022"><a href="#">31</a></td><td class="rcOtherMonth" title="Tuesday,&#32;February&#32;01,&#32;2022"><a href="#">1</a></td><td class="rcOtherMonth" title="Wednesday,&#32;February&#32;02,&#32;2022"><a href="#">2</a></td><td class="rcOtherMonth" title="Thursday,&#32;February&#32;03,&#32;2022"><a href="#">3</a></td><td class="rcOtherMonth" title="Friday,&#32;February&#32;04,&#32;2022"><a href="#">4</a></td><td class="rcOtherMonth" title="Saturday,&#32;February&#32;05,&#32;2022"><a href="#">5</a></td>
+		</tr>
+	</tbody>
+</table></td>
+	</tr>
+</tbody>
+						</table><input type="hidden" name="ctl01_cal2_calendar_SD" id="ctl01_cal2_calendar_SD" value="[]" /><input type="hidden" name="ctl01_cal2_calendar_AD" id="ctl01_cal2_calendar_AD" value="[[1900,1,1],[2099,12,30],[2022,1,11]]" />
+					</div></td>
+				</tr>
+			</tbody>
+		</table><input id="ctl01_cal2_ClientState" name="ctl01_cal2_ClientState" type="hidden" />
+	</div>&nbsp;
+                      </div>
+                      <input type="text" size="26" class="Input" id="txtCrit2" name="txtCrit2" style="display:none" aria-labelledby="sPrompt1"></td>
+										<td>
+											
+                      
+										</td>
+									</tr>
+									<tr>
+										<td colspan="3" align="center" id="sPrompt2" name="sPrompt2" class="GLabel">&nbsp;</td>
+									</tr>
+								</table>
+							</td>
+							<td valign="top">
+								<table cellpadding="4" cellspacing="0" width="*" role="presentation">
+									<tr>
+										<td id="lbCurrentSearchCriteria" class="IndexLink">Current search criteria</td>
+									</tr>
+									<tr>
+										<td>
+											<select id="txCriterias" name="txCriterias" onchange="criteriaSelected(this)" size="10" MULTIPLE style="width:240px;font-family:Verdana;font-size:9px;" aria-labelledby="lbCurrentSearchCriteria">
+											</select>
+										</td>
+									
+										<td class="IndexLink" align="left" valign="bottom" width="*">&nbsp;
+											<input type="checkbox" name="inpInResults" id="inpInResults"  aria-labelledby="ShowInResults-label">
+											<label id="ShowInResults-label">Show in results.</label>
+										</td>
+									
+									</tr>
+								</table>
+							</td>
+							<td width="*">&nbsp;</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table align="center" cellpadding="4" cellspacing="0" role="presentation">
+						<tr>
+							 <td>
+<button type="button" id="btAdd" name="btAdd" class="Btn BtnGreen" onclick="addCriteria()" title="" style="clear:both; " >Add</button></td>
+               <td>
+<button type="button" id="btEdit" name="btEdit" class="Btn BtnGreen" onclick="editCriteria()" title="" style="clear:both; " >Edit</button></td>
+               <td>
+<button type="button" id="btRemove" name="btRemove" class="Btn BtnGreen" onclick="removeOne()" title="" style="clear:both; " >Remove</button></td>
+               <td>
+<button type="button" id="btRemoveAll" name="btRemoveAll" class="Btn BtnGreen" onclick="removeAll()" title="" style="clear:both; " >Remove All</button></td>
+               
+              
+						</tr>
+            
+					</table>
+				</td>
+			</tr>
+<script>
+var vCriterias = "Book|luc|Class|sfla|nbhd|Page|price|salesdate|saletype|SaleValid|com_sf|stories|yr_com|yr_buitl";
+var vLabels	   = "Book|Category Code|Class|Living Area|Neighborhood Code|Page|Sale Amount|Sale Date|Sale Type|Sale Validity|Square Feet (Com)|Units (Com)|Year Built (Com)|Year Built (Res)";
+var vTypes     = "C|C|C|N|C|C|N|D|C|C|N|N|N|N";
+var vRanges	   = "N|N|N|Y|N|N|Y|Y|N|N|Y|N|Y|Y";
+var vLovs	   = "|LANDUSE|CLASS||NEIGHBORHOOD||||SALETYPE|SALE_VALIDITY||||";
+var vMaxs	   = "6|8|2|6|30|6|9|0|1|10|11|2|4|4";
+var vLandTypes = "";
+var salesDates = "";
+var salesPrices = "";
+var jurIDs	   = ",000,";
+var IsFormLayout = false;
+var vSubjectPinValues = "";
+var order = "LABEL";
+</script>
+
+
+<script type="text/javascript">
+  
+  function OnDateSelected(sender, e) {
+//    if (e.get_newDate() != null) {
+//      //alert("OnDateSelected: " + e.get_newDate().toDateString() + " selected in " + sender.get_id() + "<br />");
+//    }
+//    else {
+//      //alert("OnDateSelected: Date cleared in " + sender.get_id() + "<br />");
+//    }
+
+    var txtCrit = document.getElementById('txtCrit');
+    var txtCrit2 = document.getElementById('txtCrit2');
+
+    if (sender.get_id() == "ctl01_cal1") {
+      txtCrit.value = e.get_newValue();
+      //validate
+      //DatePickerInputValidate(txtCrit, true);
+    }
+    else {
+      txtCrit2.value = e.get_newValue();
+      //validate
+    }
+    
+  }
+
+
+  function showCal(yes, date1, date2) {
+
+    //alert("showCal = " + yes);
+    var cal1 = $find("ctl01_cal1");
+    var cal2 = $find("ctl01_cal2");
+    var divCal1 = document.getElementById('divCal1');
+    var divCal2 = document.getElementById('divCal2');
+    //reset to null
+    //var date1 = cal1.get_selectedDate();
+    //var date2 = cal2.get_selectedDate();
+    //cal1.clear();
+    //cal2.clear();
+
+    var txtCrit = document.getElementById('txtCrit');
+    var txtCrit2 = document.getElementById('txtCrit2');
+
+    if (cal1 != null && cal2 != null) {
+        
+      cal1.clear();
+      cal2.clear();
+      if (yes == "true") {
+        //alert('inside vible block');
+        cal1.set_visible(true);
+        cal2.set_visible(true);
+        txtCrit.style.display = "none";
+        txtCrit2.style.display = "none";
+        //enable the div tag that surrounds the control
+        divCal1.style.display = "";
+        divCal2.style.display = "";
+        if (date1) {
+            var dateParts = date1.split("/");
+            var fromDate = new Date(dateParts[2], dateParts[0] - 1, dateParts[1]);
+            cal1.set_selectedDate(fromDate);
+        }
+        if (date2) {
+            var dateParts = date2.split("/");
+            var toDate = new Date(dateParts[2], dateParts[0] - 1, dateParts[1]);
+            cal2.set_selectedDate(toDate);
+        }     
+      }
+      else {
+        //alert('inside vible false block');
+        divCal1.style.display = "none";
+        divCal2.style.display = "none";
+        cal1.set_visible(false);
+        cal2.set_visible(false);
+        txtCrit.style.display = "";
+        txtCrit2.style.display = "";
+      }
+    }
+  }
+   
+  function enableCal(yes)
+  {
+    var cal1 = $find("ctl01_cal1");
+    var cal2 = $find("ctl01_cal2");
+    if (cal1 != null && cal2 != null) {
+
+      if (yes=="true") {
+        cal1.set_enabled(false);
+        cal2.set_enabled(false);
+      }
+      else {
+        cal1.set_enabled(true);
+        cal2.set_enabled(true);
+      }
+    }
+  }
+  
+
+</script>
+
+<script type="text/javascript" language="javascript">
+var search_Filter = new Array("inpJur","inpCity","inpTaxyr","inpRoll","inpInAccts");
+</script>
+
+<tr>
+	<td>
+		<table width="100%" border="0" role="presentation">
+    
+    <tr class="BannerTabsT"><td colspan="6"></td></tr>
+    
+			<tr valign="bottom">
+				<td class="SearchText" valign="middle" rowspan="2" width="100" style="FONT-SIZE: 14px;">
+					<h2>
+						Filter By
+					</h2>
+				</td>
+				
+			</tr>
+			<tr valign="top">
+				
+			</tr>
+		</table>
+	</td>
+</tr>
+
+<script type="text/javascript">
+/*
+    var el = document.getElementById("inpJur");
+    if (el != null) {
+        var val = "*";
+        if (el != null) {
+            val = el.value;
+            if (val == "-1") {
+                val = "*";
+            }
+        }
+        try  {
+            MaskParcel(val);
+        }
+        catch (e) {
+        }
+    }
+    else {
+        try {
+            var val = searchFilter_LovCtrlGetValue();
+            changeMultiJur()
+        }
+        catch (e) {
+        }
+    }    
+*/    
+function changeJur(el) {
+//debugger;
+    var val = "*";
+    if (el != null) {
+        val = el.value;
+        if (val == "-1") {
+            val = "*";
+        }
+    }
+    /*
+    try  {
+        MaskParcel(val, true);
+    }
+    catch (e) {
+    }
+    */
+	var comm = document.frmMain.inpCity;
+	if (el!=null && el.multiple == false && comm != null)
+	{
+		frmMain.hdAction.value = "ChangeUnit";
+		frmMain.submit();
+	}
+	else
+	{
+		return true;
+	}
+}
+function changeMultiJur() {
+//debugger;
+   var val = searchFilter_LovCtrlGetValue();
+   if (val=="-1" || val == '' || val.indexOf(',')>=0)
+        val='*';
+   
+    try  {
+        var hdJur = document.getElementById("hdJur");
+        if (hdJur != null && hdJur.value != val)
+        {
+            hdJur.value = val;
+            MaskParcel(val, true);
+        }
+    }
+    catch (e) {
+    }
+}
+</script>
+
+
+
+<tr class="BannerTabsT" height="2"><td></td></tr>
+<tr id="optionsRowElement">
+	<td>
+		<table width="100%"  border="0" role="presentation">
+			<tr valign="middle">
+				<td class="SearchText" valign="middle" width="100" style="FONT-SIZE: 14px;">
+					<h2>
+						Options
+					</h2>
+				</td>
+				<td class="IndexLink" id="sortby-label" align="right" width="50" nowrap>Sort by:</td>
+				<td class="IndexLink">
+					<select style="height:21px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px" id="selSortBy" name="selSortBy" onchange="changeOrder(this)" aria-labelledby="sortby-label">
+					<option value=PARID selected>Parcel ID</option><option value=OWNER>Owner Name</option><option value=FULLADD>Parcel Address</option><option value=BOOK>Book</option><option value=PAGE>Page</option><option value=SALEKEY>Sale Key</option><option value=SALEDT>Sale Date</option><option value=PRICE>Sale Price</option>
+					</select>&nbsp;
+					<select style="height:21px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px" id="selSortDir" name="selSortDir" onchange="changeDir(this)" aria-label="Sort by Direction">
+						<option value=" asc">Ascending</option>
+						<option value=" desc">Descending</option>
+					</select>
+				</td>
+				<td class="IndexLink" nowrap>
+				
+					&nbsp;
+				
+				</td>
+				<td class="IndexLink" align="right">
+<input name="searchOptions$hdBeta" type="hidden" id="searchOptions_hdBeta" />
+
+
+<button type="submit" id="btSearch" name="btSearch" class="Btn BtnBlue" onclick="submitPage()" title="" style="clear:both; " >Search</button>			
+	
+	
+        </td>
+			</tr>
+      
+		</table>
+	</td>
+</tr>
+
+<script>
+    function submitPage() {
+        
+        var _hdSelectAllChecked = document.getElementById("hdSelectAllChecked");
+        if (_hdSelectAllChecked) {
+            _hdSelectAllChecked.value = "false";        }
+      
+        //CLT-19155 Not needed, as the click event is firing now..
+        //document.forms[0].submit();
+    }
+</script>
+
+<tr class="BannerTabsT" height="2"><td></td></tr>
+		</table>
+		<table width="100%" border="0" role="presentation">
+			<tr>    	
+				<td valign="top">
+					<table border="0" cellspacing=0 cellpadding=0 ALIGN="center" border="0" width="100%" border="0" role="presentation">
+						<tr>
+							<td align="center">
+								
+							</td>
+						</tr>
+						<tr>
+							<td align="center">
+								
+<table id="Table1" cellspacing="1" cellpadding="1" width="450" border="0">
+	<tr>
+		<td>
+			<div id="phInstructions_dvInstr"></div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div id="phInstructions_dvExampl"></div>
+		</td>
+	</tr>
+    
+</table>
+
+							</td>
+						</tr>
+						<tr>
+							<td align="center" width="100%">
+								
+							</td>
+						</tr>
+					</table>
+				</td>   
+				
+			</tr>
+		</table>
+    
+</div></div>
+    </td>
+    </tr>
+    </table>
+	
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadDateInput, {"_displayText":"","_focused":false,"_initialValueAsText":"","_postBackEventReferenceScript":"__doPostBack(\u0027ctl01$cal1\u0027,\u0027\u0027)","_skin":"Default","_validationText":"","clientStateFieldID":"ctl01_cal1_dateInput_ClientState","dateFormat":"MM/dd/yyyy","dateFormatInfo":{"DayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"MonthNames":["January","February","March","April","May","June","July","August","September","October","November","December",""],"AbbreviatedDayNames":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"AbbreviatedMonthNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"AMDesignator":"AM","PMDesignator":"PM","DateSeparator":"/","TimeSeparator":":","FirstDayOfWeek":0,"DateSlots":{"Month":0,"Day":1,"Year":2},"ShortYearCenturyEnd":2029,"TimeInputOnly":false,"MonthYearOnly":false},"displayDateFormat":"MM/dd/yyyy","enabled":true,"incrementSettings":{InterceptArrowKeys:true,InterceptMouseWheel:true,Step:1},"minDate":"1900-01-01-00-00-00","styles":{HoveredStyle: ["width:100%;", "riTextBox riHover"],InvalidStyle: ["width:100%;", "riTextBox riError"],DisabledStyle: ["width:100%;", "riTextBox riDisabled"],FocusedStyle: ["width:100%;", "riTextBox riFocused"],EmptyMessageStyle: ["width:100%;", "riTextBox riEmpty"],ReadOnlyStyle: ["width:100%;", "riTextBox riRead"],EnabledStyle: ["width:100%;", "riTextBox riEnabled"]}}, null, null, $get("ctl01_cal1_dateInput"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadCalendar, {"_DayRenderChangedDays":{"2022_1_11":["","rcToday rcToday"]},"_FormatInfoArray":[["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],["January","February","March","April","May","June","July","August","September","October","November","December",""],["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"dddd, MMMM d, yyyy h:mm:ss tt","dddd, MMMM d, yyyy","h:mm:ss tt","MMMM d","ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","M/d/yyyy","h:mm tt","yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","MMMM yyyy","AM","PM","/",":",0],"_ViewRepeatableDays":{"2022_1_11":"0001_1_1"},"_ViewsHash":{"ctl01_cal1_calendar_Top" : [[2022,1,1], 1]},"_calendarWeekRule":0,"_culture":"en-US","_enableKeyboardNavigation":false,"_enableViewSelector":false,"_firstDayOfWeek":7,"_postBackCall":"__doPostBack(\u0027ctl01$cal1$calendar\u0027,\u0027@@\u0027)","_rangeSelectionMode":0,"clientStateFieldID":"ctl01_cal1_calendar_ClientState","enableMultiSelect":false,"enabled":true,"monthYearNavigationSettings":["Today","OK","Cancel","Date is out of range.","False","True","300","1","300","1","False"],"skin":"Default","specialDaysArray":[[,[2022,1,11],1,0,0,0,16,0,,{"SpecialDayStyle_2022_1_11": ["", "rcToday"]}]],"stylesHash":{"DayStyle": ["", ""],"CalendarTableStyle": ["", "rcMainTable"],"OtherMonthDayStyle": ["", "rcOtherMonth"],"TitleStyle": ["", ""],"SelectedDayStyle": ["", "rcSelected"],"SelectorStyle": ["", ""],"DisabledDayStyle": ["", "rcDisabled"],"OutOfRangeDayStyle": ["", "rcOutOfRange"],"WeekendDayStyle": ["", "rcWeekend"],"DayOverStyle": ["", "rcHover"],"FastNavigationStyle": ["", "RadCalendarMonthView RadCalendarMonthView_Default"],"ViewSelectorStyle": ["", "rcViewSel"]},"useColumnHeadersAsSelectors":false,"useRowHeadersAsSelectors":false}, null, null, $get("ctl01_cal1_calendar"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadDatePicker, {"_PopupButtonSettings":{ ResolvedImageUrl : "/images/common/icons/037.png", ResolvedHoverImageUrl : "/images/common/icons/037.png"},"_animationSettings":{ShowAnimationDuration:300,ShowAnimationType:1,HideAnimationDuration:300,HideAnimationType:1},"_enableKeyboardNavigation":false,"_popupControlID":"ctl01_cal1_popupButton","clientStateFieldID":"ctl01_cal1_ClientState","focusedDate":"2022-01-11-00-00-00","minDate":"1900-01-01-00-00-00"}, {"dateSelected":OnDateSelected}, {"calendar":"ctl01_cal1_calendar","dateInput":"ctl01_cal1_dateInput"}, $get("ctl01_cal1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadDateInput, {"_displayText":"","_focused":false,"_initialValueAsText":"","_postBackEventReferenceScript":"__doPostBack(\u0027ctl01$cal2\u0027,\u0027\u0027)","_skin":"Default","_validationText":"","clientStateFieldID":"ctl01_cal2_dateInput_ClientState","dateFormat":"MM/dd/yyyy","dateFormatInfo":{"DayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"MonthNames":["January","February","March","April","May","June","July","August","September","October","November","December",""],"AbbreviatedDayNames":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"AbbreviatedMonthNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"AMDesignator":"AM","PMDesignator":"PM","DateSeparator":"/","TimeSeparator":":","FirstDayOfWeek":0,"DateSlots":{"Month":0,"Day":1,"Year":2},"ShortYearCenturyEnd":2029,"TimeInputOnly":false,"MonthYearOnly":false},"displayDateFormat":"MM/dd/yyyy","enabled":true,"incrementSettings":{InterceptArrowKeys:true,InterceptMouseWheel:true,Step:1},"minDate":"1900-01-01-00-00-00","styles":{HoveredStyle: ["width:100%;", "riTextBox riHover"],InvalidStyle: ["width:100%;", "riTextBox riError"],DisabledStyle: ["width:100%;", "riTextBox riDisabled"],FocusedStyle: ["width:100%;", "riTextBox riFocused"],EmptyMessageStyle: ["width:100%;", "riTextBox riEmpty"],ReadOnlyStyle: ["width:100%;", "riTextBox riRead"],EnabledStyle: ["width:100%;", "riTextBox riEnabled"]}}, null, null, $get("ctl01_cal2_dateInput"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadCalendar, {"_DayRenderChangedDays":{"2022_1_11":["","rcToday rcToday"]},"_FormatInfoArray":[["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],["January","February","March","April","May","June","July","August","September","October","November","December",""],["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"dddd, MMMM d, yyyy h:mm:ss tt","dddd, MMMM d, yyyy","h:mm:ss tt","MMMM d","ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","M/d/yyyy","h:mm tt","yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","MMMM yyyy","AM","PM","/",":",0],"_ViewRepeatableDays":{"2022_1_11":"0001_1_1"},"_ViewsHash":{"ctl01_cal2_calendar_Top" : [[2022,1,1], 1]},"_calendarWeekRule":0,"_culture":"en-US","_enableKeyboardNavigation":false,"_enableViewSelector":false,"_firstDayOfWeek":7,"_postBackCall":"__doPostBack(\u0027ctl01$cal2$calendar\u0027,\u0027@@\u0027)","_rangeSelectionMode":0,"clientStateFieldID":"ctl01_cal2_calendar_ClientState","enableMultiSelect":false,"enabled":true,"monthYearNavigationSettings":["Today","OK","Cancel","Date is out of range.","False","True","300","1","300","1","False"],"skin":"Default","specialDaysArray":[[,[2022,1,11],1,0,0,0,16,0,,{"SpecialDayStyle_2022_1_11": ["", "rcToday"]}]],"stylesHash":{"DayStyle": ["", ""],"CalendarTableStyle": ["", "rcMainTable"],"OtherMonthDayStyle": ["", "rcOtherMonth"],"TitleStyle": ["", ""],"SelectedDayStyle": ["", "rcSelected"],"SelectorStyle": ["", ""],"DisabledDayStyle": ["", "rcDisabled"],"OutOfRangeDayStyle": ["", "rcOutOfRange"],"WeekendDayStyle": ["", "rcWeekend"],"DayOverStyle": ["", "rcHover"],"FastNavigationStyle": ["", "RadCalendarMonthView RadCalendarMonthView_Default"],"ViewSelectorStyle": ["", "rcViewSel"]},"useColumnHeadersAsSelectors":false,"useRowHeadersAsSelectors":false}, null, null, $get("ctl01_cal2_calendar"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadDatePicker, {"_PopupButtonSettings":{ ResolvedImageUrl : "/images/common/icons/037.png", ResolvedHoverImageUrl : "/images/common/icons/037.png"},"_animationSettings":{ShowAnimationDuration:300,ShowAnimationType:1,HideAnimationDuration:300,HideAnimationType:1},"_enableKeyboardNavigation":false,"_popupControlID":"ctl01_cal2_popupButton","clientStateFieldID":"ctl01_cal2_ClientState","focusedDate":"2022-01-11-00-00-00","minDate":"1900-01-01-00-00-00"}, {"dateSelected":OnDateSelected}, {"calendar":"ctl01_cal2_calendar","dateInput":"ctl01_cal2_dateInput"}, $get("ctl01_cal2"));
+});
+//]]>
+</script>
+</form>
+	<div style="display: none">
+<form name="frmWS" method="post" action="../Reports/CSVReport.aspx" ID="frmWS">
+	<input name="pins" type="hidden" ID="pins">
+	<input name="rptname" type="hidden" ID="rptname">
+</form>
+</div>	
+</body>
+<script src="../Search/Script/AdvancedSearch.js"></script>
+<script>
+var vCtlID = "";
+var div = null;
+var dragDlg = null;
+var vLastCriteria = document.getElementById('hdCriteria').value;
+var searching = false;
+var promptDateFormat = "MM/DD/YYYY";
+var stripSpaces = "N";
+
+</script>
+</div></section></div></div><footer><div id='footerarea' ><div id='footercontent' ><div id="dvFooter" style="clear:both;&#32;text-align:center;">
+<head>
+<style type="text/css">
+.auto-style1 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+</style>
+</head>
+
+<table border="0" width="100%" align="center" id="Table1">
+	<tr>
+		<td align="center" width="100%">
+			<table border="0" class="AkandaCopyright" id="Table2">
+				<tr>
+					<td align="center" valign="bottom" class="auto-style1">
+						<font size="2">
+						<a href="http://support.iasworld.net/company.htm" target="_blank"></a>
+						</font>
+					</td>
+					<td class="AkandaCopyright" align="center">
+					<font size="2">
+						<br class="auto-style1">
+					</font>
+					<font size="1">
+						<span class="auto-style1">Data Copyright Muscogee County Tax Commissioner<br><B>Last Updated:</B>&nbsp;</span><span id="lbLastUpdate" class="auto-style1">January   11, 2022
+</span><span class="auto-style1">
+					</span>
+					</font>
+					<br>
+					<span class="auto-style1">
+					<font size="1">
+					Powered by <a href="http://www.tylertech.com">iasWorld Public Access</a>. All
+					rights reserved.
+					</font>
+					</span>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table></div>
+<script>
+var tmpLate = "../images/cur_template";
+function getTmpLate(par)
+{
+	return tmpLate + par;
+}
+</script>
+
+
+</div></div></footer></body><script language=JavaScript>window.setTimeout("window.location.replace('../search/commonsearch.aspx?mode=realprop')", 28790000);</script></html>

@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html lang='en-US' XMLNS:MPC><head runat='server'>
+	                            <title>CCG Public Access Site</title>
+                                <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+                                <meta http-equiv='X-UA-Compatible' content='IE=9' />
+	                            <meta http-equiv='Keywords' content='CAMA, Assessment Administration, Tax'>
+	                            <meta http-equiv='Description' content='iasWorld'>
+	                            <meta name='Copyright' content='Tyler Technologies Inc, Akanda Solutions, LLC'> 
+                                <link rel='icon' href='https://publicaccess.columbusga.org/favicon.ico' type='image/x-icon'>
+                                <link rel='shortcut icon' href='https://publicaccess.columbusga.org/favicon.ico' type='image/x-icon'>
+                                <meta http-equiv='pragma' content='no-cache'>
+                            </head><link rel='stylesheet' href='https://publicaccess.columbusga.org/styles/font-awesome.min.css' type='text/css'><link rel='stylesheet' href='https://publicaccess.columbusga.org/styles/styles.css' type='text/css'><link rel='stylesheet' href='https://publicaccess.columbusga.org/styles/custom/override-ColumbusGA.css' type='text/css'><body id='thebody' class='normalpage' ><div id='pagewrapper'><div id='divSMaint' style='display:none;border-bottom:2px solid red;width:780'><table role='presentation' cellpadding='0' cellspacing='0' width=780><tr id='trSMaint' class='MessageBar' style='height:21px;vertical-align:middle;'><td id='tdSMaint'>&nbsp;The System is currently unavailable due to maintenance.  Please check again later.</td><td id='tdTimer' align='right'></td><td align="right" valign="middle" onmouseout="ChangeImage('out')" onmouseover="ChangeImage('over')"><img id="CloseMsgBar" src="../images/icons/Set1/closeicon-normal.gif" height="14px" alt="Hide Bar" style="vertical-align:middle; border:solid 1px white; cursor:pointer" onclick="HideBar()"  />&nbsp;</td></tr></table></div><script type='text/javascript' language='javascript'>function HideBar() { document.getElementById('divSMaint').style.display='none';SoapInvokeService(WS_ACCESS_MANAGER, 'HideBar', null, false)}function ChangeImage(el) { var img = document.getElementById('CloseMsgBar'); if (el == 'out') img.src = img.src.replace('closeicon-mouseover.gif', 'closeicon-normal.gif');  else img.src = img.src.replace('closeicon-normal.gif', 'closeicon-mouseover.gif'); }</script><input type='hidden' id='hdDefHelp' value='0'><input type='hidden' id='hdThisFile' value='search/disclaimer.aspx'><div id='outerheader'><div id='middleheader'>
+
+<header>
+    <div id='header'>
+        <div class='sitelogocontainer'>
+            <a href="https://www.columbusga.gov/" id="aIASWLink" target="_blank"><div class="sitelogo"></div></a>
+        </div>
+        <div class="HeaderSiteTitle"></div>
+        <div id='rightsection' class='HeaderLinks'>
+            <span id="RoleValue" class="HeaderLinks">
+                    </span><span id="lbRole"></span>
+            
+            <span id="lbHelp"><a class="Headerlinks Help" href="javascript:showHelp('')"
+                class='HeaderLinks'>
+                <img src='../images/common/icons/050.png' alt='Help' /></a> &nbsp;&nbsp; </span>
+            
+        </div>
+    </div>
+</header>
+
+<nav>
+       <div id='topmenu'><ul><li class='unsel'><a href='../forms/htmlframe.aspx?mode=content/home.htm' target=''><span>Home</span></a></li><li id='pd_Parent' class='unsel' onmouseover='menuOver_pd("pd_2", event, this)' onmouseout='menuOut("pd_2", event, this)' onfocus='menuOver_pd("pd_2", event, this)' onfocusout='menuOut("pd_2", event, this)'><a href='../search/commonsearch.aspx?mode=owner' target=''><span>Property Records<span style='font-size: 7'></span></span></a></li><li class='unsel'><a href='../forms/htmlframe.aspx?mode=content/faq.htm' target=''><span>FAQ</span></a></li><li class='unsel'><a href='../forms/htmlframe.aspx?mode=content/forms.htm' target=''><span>Forms</span></a></li><li class='unsel'><a href='../forms/htmlframe.aspx?mode=content/links.htm' target=''><span>Links</span></a></li><li class='unsel'><a href='../forms/htmlframe.aspx?mode=content/notices.htm' target=''><span>Notices</span></a></li><li class='unsel'><a href='../forms/htmlframe.aspx?mode=content/contactus.htm' target=''><span>Contact Us</span></a></li></ul></div>
+       <div id='secondarytopmenu'><ul></ul></div>
+   </nav>
+<script language='Javascript' src='../Script/Menu.js'></script>
+<div id='pd_2' class='PullDownMenuLayer' style='visibility:hidden; position: absolute; width:50; top:0; left:0' onmouseover='bMenuOn=true' onmouseout='menuOut(this.id)' onfocus='bMenuOn=true' onfocusout='menuOut(this.id)'>
+<div class='PullDownMenuItem'><a class='PullDownMenuItem' onclick='location="../search/commonsearch.aspx?mode=owner"' onmouseover='this.className="MenuRowHL"' 
+onmouseout='menuLinkOut(this); this.className="PullDownMenuItem"' onfocus='this.className="MenuRowHL"' 
+onfocusout='menuLinkOut(this); this.className="PullDownMenuItem"' 
+onmousedown='this.className="MenuRowClicked"'>&nbsp;&nbsp;Owner Search&nbsp;</a></div>
+<div class='PullDownMenuItem'><a class='PullDownMenuItem' onclick='location="../search/commonsearch.aspx?mode=parid"' onmouseover='this.className="MenuRowHL"' 
+onmouseout='menuLinkOut(this); this.className="PullDownMenuItem"' onfocus='this.className="MenuRowHL"' 
+onfocusout='menuLinkOut(this); this.className="PullDownMenuItem"' 
+onmousedown='this.className="MenuRowClicked"'>&nbsp;&nbsp;Parcel Search&nbsp;</a></div>
+<div class='PullDownMenuItem'><a class='PullDownMenuItem' onclick='location="../search/commonsearch.aspx?mode=address"' onmouseover='this.className="MenuRowHL"' 
+onmouseout='menuLinkOut(this); this.className="PullDownMenuItem"' onfocus='this.className="MenuRowHL"' 
+onfocusout='menuLinkOut(this); this.className="PullDownMenuItem"' 
+onmousedown='this.className="MenuRowClicked"'>&nbsp;&nbsp;Address Search&nbsp;</a></div>
+<div class='PullDownMenuItem'><a class='PullDownMenuItem' onclick='location="../search/advancedsearch.aspx?mode=advanced"' onmouseover='this.className="MenuRowHL"' 
+onmouseout='menuLinkOut(this); this.className="PullDownMenuItem"' onfocus='this.className="MenuRowHL"' 
+onfocusout='menuLinkOut(this); this.className="PullDownMenuItem"' 
+onmousedown='this.className="MenuRowClicked"'>&nbsp;&nbsp;Advanced Search&nbsp;</a></div>
+<div class='PullDownMenuItem'><a class='PullDownMenuItem' onclick='location="../maps/mapadv.aspx"' onmouseover='this.className="MenuRowHL"' 
+onmouseout='menuLinkOut(this); this.className="PullDownMenuItem"' onfocus='this.className="MenuRowHL"' 
+onfocusout='menuLinkOut(this); this.className="PullDownMenuItem"' 
+onmousedown='this.className="MenuRowClicked"'>&nbsp;&nbsp;Map Search&nbsp;</a></div></div>
+<script type="text/javascript" src="../script/soap.js?210917101150"></script>
+<script type="text/javascript" src="../script/Common.js?210917101148"></script>
+<script type="text/javascript">
+
+    function HeaderClick(link) {
+        var par = window.parent;
+        if (par == window) return true;
+        var op = par.opener;
+        if (op == null) return true;
+        if (op.HeaderClick == null) return true;
+        var id = link.id;
+        var el = op.document.getElementById(id);
+        if (el == null) return true;
+        if (!confirm("This command will close the current window.\nDo you want to proceed?")) return false;
+
+        if (document.createEvent) {
+            var evt = document.createEvent('MouseEvents');
+            evt.initEvent('click', true, false);
+            el.dispatchEvent(evt);
+        } else if (typeof el.onclick == 'function') {
+            el.click();
+        }
+
+        par.close();
+        op.focus();
+        return false;
+    }
+
+    function SetMyHome(url) {
+        var DLG_SETMYHOME = "center:yes; dialogHeight:180px; dialogWidth:240px; help:no; resizable:no; status:no; title:no";
+        window.showModalDialog('../Forms/SetMyHome.aspx?url=' + url, null, DLG_SETMYHOME);
+    }
+
+
+    function ShowSimpleHelp(url) {
+        var DLG_POPUP = "scrollbar= yes, height=600, Width=800, resizable=yes, status=no, titlebar=no";
+        if (url.indexOf("?") > 0) {
+            url += "&";
+        } else {
+            url += "?";
+        }
+        window.open(url, null, DLG_POPUP);
+    }
+
+    function ViewCompleted() {
+        var url = "../Maintain/ReportSpool.aspx?simple=1&runningJobs=0&batchJobs=2";
+        window.open(url, "Reports", "status=1, toolbar=0, height=650px, width=1000px, resizable=1, scrollbars=yes");
+    }
+
+    function PopupWindow2(url) {
+        var DLG_POPUP = "dialogLeft:0; dialogTop: 0; edge: sunken; scroll: yes; center:yes; dialogHeight:750; dialogWidth:1028; help:no; resizable:yes; status:no; title:no";
+        if (url.indexOf("?") > 0) {
+            url += "&";
+        } else {
+            url += "?";
+        }
+        url += "frameset=1";
+        window.showModalDialog(url, null, DLG_POPUP);
+    }
+
+    var gLastPopup = parseInt(Math.random() * 10);
+
+    function PopupWindow(url, noToolbar, name) {
+        var win = null;
+
+        if (name == null)
+            name = "";
+        else
+            name = name.replace(' ', "");
+
+        if (win == null) {
+            if (name == null || name.length == 0) name = "popup" + (gLastPopup++ % 10);
+            var params;
+            if (noToolbar) {
+                params = "fullscreen=no, titlebar=no, location=no, menubar=no, toolbar=no, resizable=yes, scrollbars=yes, status=yes, titlebar=yes";
+            } else {
+                params = null;
+            }
+            win = window.open(url, name, params);
+        }
+        return win;
+    }
+
+    function setRole(val, form) {
+        var url = window.location.href;
+        url = url.replace("#", "");
+        var i = url.indexOf("&");
+        if (i != -1) {
+            url = url.substr(0, i);
+        }
+        var pars = SoapBuildInputParam("SelectedRole", val);
+        pars += SoapBuildInputParam("URL", url);
+        var res = SoapInvokeService(WS_PUBLIC, "AssignSelectedRole", pars);
+        if (res == -1) {
+            location.href = "../Main/Home.aspx";
+        }
+        else {
+            location.reload();
+        }
+    }
+</script>
+</div></div><div id='wrapper' class='center'><section><div id='bodyarea' >
+
+<body>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <style type="text/css">       
+        #ContentPanel1 {
+            width:800px;
+            margin:0 auto;
+        }        
+        #captcha_div {
+            width:800px;          
+            text-align:center;
+            margin:0 auto;
+        }
+        #recaptcha_area {
+            margin:0 auto;
+        }
+        div_cfg {
+            margin:0 auto;
+            overflow:auto;
+        }
+    </style>
+<form name="Form1" method="post" action="./Disclaimer.aspx" id="Form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="nmWvf2doOK5dMnU4xGO5aWOoY6qdI4Lg6MTX7dpysyV8gwucYrLbP3mF7GOlT3x0fZuTJXWW6K8YfVbPhzk7TTftBmzC2Ug6mdUcAif284c=" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CFCEF872" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="UfxTyzhf0xFn/ppiXx46DyO//aHYVrruIfW2VOk7reNitZrcHcpWPpMV98KBDvxrjx5yPuarr2y1SlbzAXyTEv4jFE1EdOSCa5W0raxTuojjm6+DSfyJc332qUVDVbkrRgVVvaoG9ZL3+rX1uTUMgA==" />
+</div>
+
+<div class='contentpanel'><div id="ContentPanel1">
+	
+	
+    <div id="div_cfg">
+	    <div class="Banner">
+	<p>The Muscogee County Board of Assessors makes every effort to produce the most accurate information possible. No warranties, expressed or implied are provided for the data herein, its use or interpretation. The assessment information is from the last certified tax roll. All other data is subject to change.
+	</p>
+</div>
+
+     
+    </div>
+
+    <div style="text-align:center;">
+        
+<button type="submit" id="btDisagree" name="btDisagree" class="Btn BtnBlue" onclick="" title="Disagree" >Disagree</button>
+        
+<button type="submit" id="btAgree" name="btAgree" class="Btn BtnBlue" onclick="" title="Agree" >Agree</button>
+    </div> 	
+	<input name="hdURL" type="hidden" id="hdURL" />
+	<input name="action" type="hidden" id="action" />
+
+</div></div>
+</form>
+</body>
+
+</div></section></div></div><footer><div id='footerarea' ><div id='footercontent' ><div id="dvFooter" style="clear:both;&#32;text-align:center;">
+<head>
+<style type="text/css">
+.auto-style1 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+</style>
+</head>
+
+<table border="0" width="100%" align="center" id="Table1">
+	<tr>
+		<td align="center" width="100%">
+			<table border="0" class="AkandaCopyright" id="Table2">
+				<tr>
+					<td align="center" valign="bottom" class="auto-style1">
+						<font size="2">
+						<a href="http://support.iasworld.net/company.htm" target="_blank"></a>
+						</font>
+					</td>
+					<td class="AkandaCopyright" align="center">
+					<font size="2">
+						<br class="auto-style1">
+					</font>
+					<font size="1">
+						<span class="auto-style1">Data Copyright Muscogee County Tax Commissioner<br><B>Last Updated:</B>&nbsp;</span><span id="lbLastUpdate" class="auto-style1">January   11, 2022
+</span><span class="auto-style1">
+					</span>
+					</font>
+					<br>
+					<span class="auto-style1">
+					<font size="1">
+					Powered by <a href="http://www.tylertech.com">iasWorld Public Access</a>. All
+					rights reserved.
+					</font>
+					</span>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table></div>
+<script>
+var tmpLate = "../images/cur_template";
+function getTmpLate(par)
+{
+	return tmpLate + par;
+}
+</script>
+
+
+</div></div></footer></body><script language=JavaScript>window.setTimeout("window.location.replace('../search/commonsearch.aspx?mode=realprop')", 28790000);</script></html>
