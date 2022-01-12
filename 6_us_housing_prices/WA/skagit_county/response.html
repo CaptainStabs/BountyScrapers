@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+<html>
+<head id="Head1"><meta http-equiv="Content-type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="application-name" content="Skagit County Government"/>
+<meta name="msapplication-TileColor" content="#006699"/>
+<meta name="msapplication-square70x70logo" content="https://www.skagitcounty.net/tiny.png"/>
+<meta name="msapplication-square150x150logo" content="https://www.skagitcounty.net/square.png"/>
+<meta name="msapplication-wide310x150logo" content="https://www.skagitcounty.net/wide.png"/>
+<meta name="msapplication-square310x310logo" content="https://www.skagitcounty.net/large.png"/>
+<link href="https://www.skagitcounty.net/apple-touch-icon.png" rel="apple-touch-icon" />
+<link href="https://www.skagitcounty.net/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" />
+<link href="https://www.skagitcounty.net/apple-touch-icon-167x167.png" rel="apple-touch-icon" sizes="167x167" />
+<link href="https://www.skagitcounty.net/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" />
+<link href="https://www.skagitcounty.net/icon-hires.png" rel="icon" sizes="192x192" />
+<link href="https://www.skagitcounty.net/icon-normal.png" rel="icon" sizes="128x128" />
+<meta name="keywords" content="AAA,WWW.SKAGITCOUNTY.NET,Skagit,County,Government,Local,maps,employment,Skagit,Tulips,Washington,County,Taxes,Parcels,Administrative Services,Assessor,Auditor,Board of Equalization,Budget Finance,Clerk,Cooperative Extension,Coroner,County Commissioner's Office,District Court,District Court Probation,Emergency Management,Facilities Management,Fairgrounds,Fire Marshall,Health Department,Human Services,Information Services,Juvenile Probation" />
+<meta name="title" content="Access Skagit County" />
+<meta name="originatorJurisdiction" content="Skagit County, Washington" />
+<meta name="originatorOffice" content="Skagit Information Services" />
+<meta name="createDate" content="10/10/99" />
+<meta name="timePeriodTextual" content="Continuous" />
+<meta name="medium" content="www" />
+<meta name="govType" content="County" />
+<meta name="subjects" content="AAA,WWW.SKAGITCOUNTY.NET,Skagit,County, Skagit County Infiormation Services" />
+<meta name="contactOrganization" content="Skagit County Information Services" />
+<meta name="contactStreetAddress1" content="1800 Continental Place" />
+<meta name="contactCity" content="Mt. Vernon" />
+<meta name="contactState" content="WA" />
+<meta name="contactZipcode" content="98273" />
+<meta name="contactNetworkAddress" content="website@co.skagit.wa.us" />
+<meta name="google-site-verification" content="aI98-5Qto8EHUFRlYUD9vWwHFMe_U-SSOqO3hLRYx24" />
+<!-- css links in this section -->
+<link type="text/css" rel="stylesheet" href="/Common/css/normalize.css" />
+<link type="text/css" rel="stylesheet" href="/Common/css/flexslider.css"  />
+<link type="text/css" rel="stylesheet" href="/Common/css/SkagitCo.css?v=8" />
+<link rel="shortcut icon" href="/favicon.ico" />
+
+
+  <link href="/Search/Property/property.css" rel="stylesheet" type="text/css"/>
+
+
+<!--  begin javascript in this section -->
+<!--
+<script type="text/javascript" src="/Common/js/jquery-1.7.2.min.js"></script>
+-->
+<script type="text/javascript" src="/Common/js/jquery-1.11.1.min.js"></script>
+<!--
+<script type="text/javascript" src="/Common/js/jquery.cycle.all.js"></script>
+-->
+<script type="text/javascript" src="/Common/js/jscript.js"></script>
+<script type="text/javascript" src="/Common/js/Search.js"></script>
+<script type="text/javascript" src="/Common/js/nav1.1.min.js"></script>
+
+
+
+<script type="text/javascript" src="/Common/js/jquery.flexslider.js"></script>
+<!--<script type="text/javascript" src="/Common/js/dropdown.scr.js"></script>
+<script type="text/javascript" src="/Common/js/jquery.min.js"></script>
+-->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+      var heightContent = $("#content_").height();
+      var heightNav = $("#nav_").height();
+      if (heightContent > heightNav) $("#nav_").height(heightContent);
+      else $("#content_").height(heightNav);
+      // slideshow banner code
+      //$('.slideshow').cycle({ fx: 'fade', speed: 2500, pause: 2500 });
+      $('#SearchString').keyup(function (e) {
+        if (e.keyCode == 13) {
+          window.open('/Departments/Home/skagitsitesearch.htm?addsearch=' + $(this).val(),'_self');
+        }
+      }); // #SearchString
+  // jquery global menu plugin .. johnsh
+      /*
+      $("#navigation").navPlugin({
+        'itemWidth': 160,
+        'itemHeight': 30,
+        'navEffect': 'fade',
+        'speed': 100
+      }); // end navPlugin
+      */
+    });  // end ready
+    // for the window resize
+    $(window).resize(function () {
+      var heightContent = $("#content_").height();
+      var heightNav = $("#nav_").height();
+      if (heightContent > heightNav) $("#nav_").height(heightContent);
+      else $("#content_").height(heightNav);
+    });
+
+</script>
+<!-- Syntax Highlighter -->
+	<script type="text/javascript" src="/Common/js/dropdown.js"></script>
+<!-- /Syntax Highlighter -->
+<!-- call background image static <div id="bg">
+  <img src="/common/images/bg.jpg" alt="">
+</div>-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-47507549-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-47507549-1');
+</script>
+
+
+  <script type="text/javascript" src="/Common/js/jquery-ui-1.9.2.custom.min.js"></script>
+
+    <script type="text/javascript">
+        var vSite = 'public';
+    </script>
+
+  <script type="text/javascript" src="/Search/Property/property.js?v=3"></script>
+  
+
+ 
+ <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+
+
+<title>
+	Property Search
+</title></head>
+<body id="MasterPageBodyTag">
+  
+  <div id="main" class="container_12">
+   
+    <div id="searchtrans_">
+      
+        
+      
+<div id="sitesearch">
+<table width="100%" border="0" cellspacing="0" cellpadding="6" align="center">
+  <tr> <td align="center"><div align="center"><a href="/Departments/Home/main.htm"><span style="font: bold 16px Calibri, Arial; color:#fff">Home</span></a></div></td>
+    <td align="left">  
+  
+        <input type="site_search" style="font-size: 10pt; height: 20px; width: 150px; color: GrayText;" id="SearchString" name="SearchString" size="30" maxlength="70" value="Site Search" onClick="clickclear(this,'Site Search')" onBlur="clickrecall(this,'Site Search')" />    
+        <input value="New Query" type="image" src="/Common/images/btngo.png" title="Search Now" alt="Search Now" width="22" height="22" border="0" align="absbottom" name="Action" onClick="javascript: if (document.getElementById('SearchString').value != '' && document.getElementById('SearchString').value != 'Site Search') window.open('/Departments/Home/skagitsitesearch.htm?addsearch=' + document.getElementById('SearchString').value, '_self');" />                         
+      <!--
+  
+        <input type="text" style="font-size: 10pt; height: 20px; color: GrayText;" id="Text1" name="addsearch" size="25" maxlength="100" value="Site Search" onClick="clickclear(this, 'Site Search')" onBlur="clickrecall(this,'Site Search')" />
+        <input value="New Query" type="image" src="/Common/images/btngo.png" title="Search Now" alt="Search Now" width="22" height="22" border="0" align="absbottom" name="Action" onClick="javascript: if (document.getElementById('SearchString').value != '' && document.getElementById('SearchString').value != 'Site Search') window.open('/Departments/Home/skagitsitesearch.htm?addsearch=' + document.getElementById('SearchString').value, '_self');" />                         
+        -->
+    </td>
+
+    <td align="left" valign="middle"><ul id="sddm">
+
+  <asp:ContentPlaceHolder id="desktop_menu" runat="server"></asp:ContentPlaceHolder>
+  
+  <li><a href="/Departments/Home/directory.htm" class="nav" onMouseOver="mopen('m2')" onMouseOut="mclosetime()">Department Directory</a> 
+    <div id="m2" onMouseOver="mcancelclosetime()" onMouseOut="mclosetime()"> 
+      <table border="0" cellspacing="0" cellpadding="6" bgcolor="#FFFFFF" width="685">
+        <tr valign="top"> 
+          <td> <a href="/Departments/Home/directory.htm">All by Alpha</a> <a href="/Departments/Assessor/main.htm">Assessor </a><a href="/Departments/OfficeOfAssignedcounsel/main.htm"> Assigned 
+            Counsel</a> <a href="/Departments/Auditor/main.htm">Auditor</a> <a
+    href="/Departments/BoardOfEqualization/main.htm">Board of Equalization</a><a
+    href="/Departments/BoardOfHealth/main.htm">Board of Health</a>  
+            <a href="/Departments/BoundaryReviewBoard/main.htm">Boundary Review 
+            Board</a> <a href="/Departments/BudgetFinance/main.htm">Budget and 
+            Finance</a><a href="/Departments/CivilService/main.htm">Civil Service Commission</a><a href="/Departments/Clerk/main.htm">Clerk</a><a href="/Departments/CountyCommissioners/main.htm" > 
+            Commissioners</a><a href="/Departments/Coroner/main.htm">Coroner</a><a href="/Departments/Addressing/main.htm" >County Addressing</a><a href="/Departments/DistrictCourt/main.htm">District 
+            Court</a></td>
+          <td><a href="/Departments/DistrictCourtProbation/main.htm">District 
+            Court Probation</a><a href="/Departments/EmergencyManagement/main.htm">Emergency Management</a><a href="/Departments/EmergencyMedicalServices/main.htm">Emergency 
+            Medical Services</a><a href="/Departments/FacilitiesManagement/main.htm">Facilities Management</a><a href="/Departments/Fair/main.htm">Fair</a><a href="/Departments/Fairgrounds/main.htm"> 
+            Fairgrounds</a><a href="/Departments/FireMarshal/main.htm">Fire 
+            Marshal </a><a href="/Departments/GIS/main.htm">GIS / Mapping Services 
+            </a><a href="/Departments/OfficeofLandUsehearings/main.htm">Hearing 
+            Examiner</a><a href="/Departments/HistoricalSociety/main.htm">Historical 
+            Museum</a> <a href="/Departments/HumanResources/main.htm">Human Resources</a><a href="/Departments/Jail/main.htm" >Jail 
+            </a> <a href="/Departments/OfficeofJuvenileCourt/main.htm" >Juvenile 
+            Court</a> <a href="/Departments/LawLibrary/main.htm">Law Library</a></td>
+            <td><a href="/Departments/NRLands/main.htm">Natural 
+            Resource Lands</a>
+           <a href="/Departments/Noxiousweeds/main.htm">Noxious Weeds</a><a href="/Departments/ParksAndRecreation/main.htm">Parks 
+            &amp; Recreation</a> <a href="/Departments/PlanningAndPermit/main.htm">Planning 
+            &amp; Development Services</a><a href="/Departments/ProsecutingAttorney/main.htm">Prosecutor</a> 
+            <a href="/Departments/PublicDefender/main.htm">Public Defender</a> 
+            <a href="/Departments/Health/main.htm">Public Health </a><a href="/Departments/PublicWorks/main.htm">Public Works</a> 
+            <a href="/Departments/RecordsManagement/main.htm">Records Management</a><a href="/Departments/Sheriff/main.htm" >Sheriff</a><a href="/Departments/TV21/main.htm">Skagit21 Television</a> 
+            <a href="/Departments/SuperiorCourt/main.htm">Superior Court</a><a href="/Departments/Treasurer/main.htm">Treasurer</a><a href="/Departments/UpriverServices/main.htm">Upriver 
+            Services</a></td>
+        </tr>
+      </table>
+    </div>
+  </li></ul></td>
+
+    <td align="left" valign="middle"><div id="google_translate_element"></div>
+      
+        <script type="text/javascript">
+
+            function googleTranslateElementInit() {
+                var ua = window.navigator.userAgent;
+                var msie = ua.indexOf("MSIE ");
+                var trident = ua.indexOf("Trident");
+
+                if (msie > -1 || trident > -1) {
+                    document.getElementById("google_translate_element").innerHTML = "<span style=\"font: bold 16px Calibri, Arial; color:#fff\">This Browser Does Not Support Language Translation</span>";
+                    $('#google_translate_element').css('color', 'white');
+                } else {
+                    new google.translate.TranslateElement({ pageLanguage: 'en',
+                        includedLanguages: 'de,es,fr,ja,no,ru,vi,en', layout:
+                google.translate.TranslateElement.InlineLayout.SIMPLE,
+                        gaTrack: true, gaId: 'UA-47507549-1'
+                    },
+                'google_translate_element');
+                }
+            }
+        </script>
+        <script type="text/javascript" 
+
+src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></td>
+    
+    <td align="center"><div align="center"><span id="headerdatefield" style="margin-left:20px; font: bold 16px Calibri, Arial; color:#fff">
+      <script language="JavaScript">getTodaysDate('headerdatefield');</script>
+    </span></div></td>
+    
+    </tr>
+
+
+  
+</table>
+ 
+</div>
+
+    </div>
+  
+    <div id="bannertrans_">
+      
+        
+      
+    </div>
+
+    <div id="banner_">
+      
+        
+      
+		<img src="/Apps/Common/Images/banner/1.jpg" width="100%" height="100" />
+		
+
+	
+	<!--img src="/Common/Images/banner/2.jpg" width="960" height="170" /-->
+    </div>
+
+    <div id="logotrans_">
+      
+        
+      <a href="/Departments/Home/main.htm"><img class="logo" src="/Apps/Common/images/SClogotrans.png" width="100" height="100" alt="Skagit County Logo" longdesc="/Apps/Common/images/SClogotrans.png" border="0" /></a> 
+
+    </div>
+    <div id="titletrans_">
+      
+        
+      
+<h1 class="dpt_title">Property Search</h1>
+<h6 class="dpt_title2">Assessor Information, Taxes, Land Improvements, Value History, Permits</h6>
+
+    </div>
+
+    <div id="globalmenu_">
+      
+
+      <!-- div class="sample" style="margin-bottom: 15px;height:42px;"><span -->
+
+<script type="text/javascript">
+function getcontact() {
+  var urlpath = window.location.pathname; // get URL
+  var parts = urlpath.split('/');
+  var dept;
+  if (parts[1] == 'Departments') {
+    dept = parts[2] // if static content dept will be the 2nd parameter, else 1st
+    window.open("/Departments/" + dept + "/dept.htm", "_self");
+  }
+  else window.open("/Departments/Home/feedback.htm", "_self");
+  return false;
+} 
+</script>
+<table align="center"><tr><td>
+<ul id="sddm" style="padding-top:3px">
+
+  <asp:ContentPlaceHolder id="desktop_menu" runat="server"></asp:ContentPlaceHolder>
+  
+ 
+  <li><a class="nav" href="/Departments/Home/quickguide.htm" onMouseOver="mopen('m3')" onMouseOut="mclosetime()">Find 
+    It Here</a> 
+    <div id="m3" onMouseOver="mcancelclosetime()" onMouseOut="mclosetime()"> <a href="/Departments/Home/about.htm">About 
+      Skagit County </a><a href="/Departments/Home/directory.htm">Alphabetical 
+      Directory</a> <a href="/Departments/Home/quickguide.htm"> Quickguide</a> <a href="/Departments/Home/services.htm"> Services By Topic</a> <a href="/Departments/FacilitiesManagement/facmap.htm">Facility 
+      Maps</a> <a href="/Departments/Home/forms.htm">Forms</a> <a href="/Departments/Home/links.htm">Links</a> 
+    </div>
+  </li>
+  <li><a class="nav" href="/Departments/SearchSkagit/searchskagit.htm" onMouseOver="mopen('m4')" onMouseOut="mclosetime()">Records</a> 
+    <div id="m4" onMouseOver="mcancelclosetime()" onMouseOut="mclosetime()"><a href="/Search/Property">Property 
+      One Stop</a> <a href="/Search/Recording/">Auditor's Recorded Documents</a> 
+      <a href="/Departments/SearchSkagit/searchskagit.htm">Advanced Search Menu</a> <a href="/Search/ContractAmendment/">Contracts &amp; Amendments</a>
+      <a href="/Search/ResolutionOrdinance/">Resolutions &amp; Ordinances</a> 
+      <a href="http://www.codepublishing.com/wa/skagitcounty/" target="_blank">Skagit 
+      County Code</a><a href="/Departments/RecordsManagement/finding.htm">Public 
+      Records Request</a> </div>
+  </li>
+  
+  <li><a class="nav" href="#" onclick="getcontact();" onMouseOver="mopen('m5')" onMouseOut="mclosetime()">Contact</a> 
+    <div id="m5" onMouseOver="mcancelclosetime()" onMouseOut="mclosetime()"> <a href="/Departments/Home/directory.htm">Alphabetical 
+      Directory</a> <a href="#" onclick="getcontact();">Department Contact</a> 
+      <a href="/Departments/Home/feedback.htm">Feedback</a> <a href="/Search/Phone/">Phone 
+      Directory</a></div>
+  </li>
+  <!--  <li><a class="nav" href="#" onclick="printpage();" onMouseOver="mopen('m7')" onMouseOut="mclosetime()">Print</a>
+     <div id="m7" onMouseOver="mcancelclosetime()" onMouseOut="mclosetime()">
+      </div>
+	</li>-->
+</ul></td></tr></table>
+
+
+          
+        
+    </div>
+    <div id="bodyContent">
+    <table>
+    <tr>
+    <td id="leftBody">
+    <div id="nav_">
+
+      
+
+      <div class='navTop'></div></ul><div class='navBottom'></div>
+
+    </div>
+    </td>
+    <td>
+    <div id="content_">
+      
+
+<div id="contentWrapper">
+<br />
+<h5 class="blue center" style="margin: 12px 0px 3px 0px;">Select a search option below:</h5>
+
+<form method="post" action="./?id=P78875" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTMyNDk4MjgwMWRkskxdS+/OzR76JIUUNWXl5TQiwFqrS1IOe2V3b7PyfH8=" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="4A234BBF" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAc+b2q8tAZnPiHQNz5bkZ+lpeV6ykwe/hqC44UFcZqCJBtRw8Nz3gUQsAVOrJ/150cBwptcleedXNzHDEBAK0urHG/Jt4R0XcGZ/d8XpX0dIP4FMyHFIQrUrqL1uDSHEBnjZhCXk+C7J0+R5/RRFAzWztC6P5PldYy5RNSdWjlwMMCaSaEeD5IiLIwOBrExrJs=" />
+<div id="searchControls">
+<div id="selector" style="text-align:center;margin:0px 0px 12px 0px;">
+  
+  <input type="radio" name="searchby" id="addr" value="addr" checked="checked" />
+  <label for="addr" class="radlabel">Address</label>
+  <input type="radio" name="searchby" id="propid" value="propid" />
+  <label for="propid" class="radlabel">Parcel #</label>
+  <input type="radio" name="searchby" id="owner" value="owner" />
+  <label for="owner">Owner Name (Last First)</label>
+  <input type="radio" name="searchby" id="road" value="road" style="margin-left: 16px;" />
+  <label for="road">Road</label>
+  <input type="radio" name="searchby" id="xrefid" value="xrefid" style="margin-left: 16px;" />
+  <label for="road">XrefID</label>
+
+</div>
+
+<div class="ui-widget" id="searchbox">
+  <label id="searchLabel" for="tbAuto" class="label">Enter Address: </label>
+  <input id="tbAuto" style="font-size:11pt;width:400px;" />
+  <input id="txtRoad" style="font-size:11pt;width:390px;"/> 
+  <a id="cleartbAuto" href="">Clear</a>
+  <a id="help" href="">Help</a><input id="printout" type="button" value="Print" />
+</div>
+
+<div id="propmenu" style="margin-top:1em;display:none;">     
+<ul>
+  <li id="details"><a href="Details">Summary</a></li>
+  <li><a href="Improvements">Improvements</a></li>
+  <li><a href="Land">Land</a></li>
+  <li><a href="Sales">Transfers</a></li>
+  <li><a href="History">History</a></li>
+  <li><a href="Taxes">Taxes</a></li>  
+  <li><a href="Permits">Permits</a></li>
+  <li><a href="Map">Map View</a></li>
+  <li><div id="salesComp" style=""><a href="Comps">Sales Comps</a></div></li>
+
+
+</ul>
+
+</div>
+
+</div> <!-- end of searchControls -->
+
+<!-- Place holders for content -->
+
+<div id="content_pdata"><div id="propmenu" style="margin-top:1em;display:none;"><ul><li id="details"><a href="Details">Details</a></li><li><a href="Improvements">Improvements</a></li><li><a href="Land">Land</a></li><li><a href="Sales">Transfers</a></li><li><a href="History">History</a></li><li><a href="Taxes">Taxes</a></li><li><a href="Permits">Permits</a></li><li><a href="Map">Map</a></li><li><a href="Comps">Sales Comps</a></li></ul></div><table width='100%' cellpadding='4' cellspacing='0' border='0'><tr bgcolor='#dddddd' align='center'>
+					<th>Details for Parcel: P78875</th></tr></table><div id='jzwrap' style='margin-top: 2px;'><table><tr><td style='vertical-align:text-top;'><div id='pic' class='grid_2'><a href='ViewPic.aspx?id=P78875' name='ancPhoto' target='_blank' title='Click to view a full size photo'> <img border='1' target='_blank' title='Click to view a full size photo' width='120' height='90' src='/Assessor/Images/PublicImages/75/P78875.jpg' /></a><br /> </div></td><td><table id='jzTable'><tr><td class='jzLabel'><div id='jlabel' class='grid_2' style='text-align:right; font-weight:bold;'>Jurisdiction:</div></td><td><div id='jurisdiction' class='grid_5'>SKAGIT COUNTY<br/></div></td></tr><tr><td class='jzLabel'></td><td></td></tr><tr><td class='jzLabel'><div id='zlabel' class='grid_2' style='text-align:right; font-weight:bold;'>Zoning Designation:</div></td><td><div id='zoning' class='grid_5'>Skagit County - <a href='http://www.codepublishing.com/wa/skagitcounty/html/SkagitCounty14/SkagitCounty1416.html#14.16.410' target='_blank' title='Click to view code description'>Industrial Forest-Natural Resource Lands</a><br/></div></td></tr><tr><td class='jzLabel'><div id='links' style='line-height:1.5em;text-align:right;margin-top:10px;' class='grid_2'><a href="/Search/Recording/results.aspx?PA=P78875&SC=DateRecorded&SO=DESC" target="_blank">Recorded Documents</a><br /></div></td><td><div id='linkdesc' style='font-style:italic;line-height:1.5em;;margin-top:10px;' class='grid_5'>Documents scanned and recorded by the Auditor's office<br /></div></td></tr></table></td></tr></table></div><?xml version="1.0" encoding="utf-8"?><table border="0" cellpadding="2" width="100%" align="center" cellspacing="2"><tr><td bgcolor="#E0E0E0" align="left"><b>Parcel Number </b></td><td bgcolor="#E0E0E0" align="left"><b>XrefID</b></td><td bgcolor="#E0E0E0" width="55" align="left"><b>Quarter</b></td><td bgcolor="#E0E0E0" width="55" align="left"><b>Section</b></td><td bgcolor="#E0E0E0" width="55" align="left"><b>Township</b></td><td bgcolor="#E0E0E0" width="55" align="left"><b>Range</b></td></tr><tr><td align="left" height="17"><b>P78875</b></td><td align="left" height="17">4229-001-044-0003</td><td align="left" height="17">SE</td><td align="left" height="17">28</td><td align="left" height="17">36</td><td align="left" height="17">08</td></tr></table><table border="0" cellspacing="0" cellpadding="0" align="center" width="100%"><tr><td valign="top"><table border="0" cellpadding="1" align="left" width="100%" cellspacing="2"><tr><td align="left" bgcolor="#E0E0E0"><b>Owner Information</b></td></tr><tr><td align="left">ALEX ALLAN L</td></tr><tr><td align="left">ALEX VICTORIA</td></tr><tr><td align="left">ATTN BARBARA KOURTESSIS</td></tr><tr><td align="left">1004   2075 COMOX STREET</td></tr><tr><td align="left">VANCOUVER BC V6G 1S2,  
+                      </td></tr></table></td><td valign="top"><table width="100%" border="0" align="left" cellpadding="1" cellspacing="2"><tr><td align="left" bgcolor="#E0E0E0"><b>Site Address(es) </b>.</td></tr><tr><td align="left">4623  KLOSH TUPSO TRAIL</td></tr><tr><td align="left"><font color="#444444"><i> [Old Address: 
+                          A 44 
+                          KLOSH TUPSO TRAIL]</i></font></td></tr><tr><td align="left">Skagit County, WA  <font color="#444444"><i>(Jurisdiction, State)</i></font></td></tr><tr><td align="left"><a href="https://tools.usps.com/go/ZipLookupAction!input.action" target="_blank" alt="Zip Code Lookup" title="Zip Code Lookup">Zip Code Lookup</a>
+                          |
+                          <a href="/Departments/Addressing/situsfaq.htm" target="_blank" alt="Site Address Information" title="Site Address Information">Site Address Information</a></td></tr></table></td><td valign="top"><table width="100%" border="0" align="left" cellpadding="1" cellspacing="2"><tr><td align="left" bgcolor="#E0E0E0"><b>Map Links </b></td></tr><tr><td align="left"><div align="left"><a href="&#xA;                      /Maps/iMap/?pid=P78875" target="_blank" title="">
+                    Open in iMap
+                  </a></div></td></tr><tr><td>                  
+                    Assessor's Parcel Map:<br /><a HREF="                        &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  https://www.skagitcounty.net/GISImages/pdf/283608.pdf&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;  " download="" target="_blank" title="View PDF Assessor Parcel Map of this Section">
+                      PDF
+                    </a>
+                    | <a HREF="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  https://www.skagitcounty.net/GISImages/dwf/assessor/T36R08/283608.dwf&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;  " download="" target="_blank" title="View DWF Assessor Parcel Map of this Section">
+                      DWF
+                    </a>
+					| <a HREF="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;https://www.skagitcounty.net/GISImages/dwf/assessor/T36R08/283608.dwg&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;" download="" target="_blank" title="View DWG Assessor Parcel Map of this Section">
+						DWG
+					</a></td></tr></table></td></tr></table><table border="0" cellspacing="2" cellpadding="1" width="100%" align="center"><tr><td bgcolor="#E0E0E0"><b>Current Legal Description</b>   <a href="javascript:void window.open('/assessor/html/abreviations.htm', '', 'height=400,width=500,scrollbars,menu,resizable');" Title="Click to view metadata"><b>
+							  Abbreviation Definitions
+						  </b></a></td></tr><tr><td><font size="2"><legal>LOT A-44, LAKE TYEE, DIVISION NO. II, AS PER PLAT THEREOF RECORDED IN VOLUME 11 OF PLATS, PAGES 15 THROUGH 24, INCLUSIVE, RECORDS OF SKAGIT COUNTY, WASHINGTON.</legal></font></td></tr><tr><td /></tr></table><br /><table border="0" cellspacing="2" cellpadding="1" width="100%" align="center"><tr><td bgcolor="#E0E0E0" align="left"><b>2021 Values for 2022
+                Taxes*
+              </b></td><td bgcolor="#E0E0E0" align="left"><strong>Sale Information </strong></td><td bgcolor="#E0E0E0" colspan="2" align="left"><b>2022
+                Property Tax Summary
+              </b></td></tr><tr><td valign="top"><left><table border="0" cellpadding="1" cellspacing="2"><tr><td align="right" nowrap="nowrap"><div align="left">Building Market Value</div></td><td align="right">
+                      $11,900.00</td></tr><tr><td align="right"><div align="left">Land Market Value </div></td><td align="right" nowrap="nowrap">
+                      +$18,100.00</td></tr><tr><td align="right"><div align="left">Total Market Value </div></td><td align="right">
+                      $30,000.00</td></tr><tr><td align="right"><div align="left">Assessed Value </div></td><td align="right">
+                        $30,000.00</td></tr><tr><td align="right"><div align="left"><strong>Taxable Value </strong></div></td><td align="right">
+                        $30,000.00</td></tr><tr><td colspan="2" align="right" /></tr></table></left></td><td valign="top"><table border="0" cellspacing="1" cellpadding="1"><tr><td align="left" valign="top">Deed Type</td><td align="left" valign="top">WARRANTY DEED</td></tr><tr><td align="left" valign="top">Sale Date</td><td align="left" valign="top">1991-12-26</td></tr><tr><td align="left" valign="top"><strong>Sale Price</strong></td><td align="left" valign="top">
+                    $20,500.00</td></tr><tr><td colspan="2">Sale requires NRL disclosure <span style="color:black;">(<a href="http://www.skagitcounty.net/PlanningAndPermit/Documents/forms/NaturalResource/Right%20to%20Manage%20NRLs%20Instructions.pdf" target="_blank" title="View Requirements">more info</a>)</span></td></tr></table></td><td valign="top"><left><table border="0" cellpadding="1" cellspacing="2"><tr><td><font color="red">2022 Taxes will be available after 2/15/2022</font></td></tr><tr><td><font color="white">.</font></td></tr><tr><td><font color="red">
+                            Use the Taxes link above for 2021 taxes
+                          </font></td></tr><tr><td colspan="2" align="right" /></tr></table></left></td></tr><tr><td colspan="2" align="left">
+              *<i> Effective date of value is January 1 of the assessment year (2021)</i></td><script type="text/javascript">				 
+				 var legalDefinition = "<p>This is the legal description as of the most recent certification of the assessment roll. The Current Legal Description reflects any changes resulting from boundary modifications after certification.</p>";
+				 var myWindow;
+
+				 function getLegalDescriptionPopup() {
+					 var legalDescription = ("Legal Description at time of Assessment:<p>" + legalDefinition + "LAKE TYEE DIV. 2 LT 44 BLK A</p>");
+					 myWindow = window.open("", "MsgWindow", "scrollbars=yes,width=400,height=300", "replace");
+					 myWindow.document.body.innerHTML = legalDescription;
+					 myWindow.document.title = "Assessment Legal Description";
+				 }
+			 </script><td align="right"><a id="assessmentLegal" href="javascript:void(0);" onclick="getLegalDescriptionPopup();" Title="Click to view Legal Description at time of assessment"><b>
+						 Legal Description at time of Assessment
+					 </b></a></td></tr></table><table width="100%" border="1" align="left" cellpadding="3" cellspacing="0" style="border-collapse:collapse;"><tr><td align="left" valign="top" width="25%"><b>*Assessment Use Code</b></td><td align="left" valign="top">(190) VACATION AND CABIN</td><td align="right" valign="top"><a href="/Departments/Assessor/WAC458PrintVersion.htm" target="_blank" title="Click here to view WAC 458-53-030">
+                WAC 458-53-030
+              </a></td></tr><tr><td align="left" valign="top" bgcolor="#E6E6E6"><b>Neighborhood</b></td><td align="left" valign="top" colspan="2" bgcolor="#E6E6E6">(10CCTYEE) CONCRETE RECREATION LAKE TYEE PROPERTY</td></tr></table><br /><table border="1" align="left" cellpadding="3" cellspacing="0" width="100%" style="border-collapse:collapse;"><tr><td align="left" valign="top" width="24%"><b>Levy Code</b></td><td align="left" valign="top" width="24%">3400</td><td width="1px" rowspan="3" align="left" valign="top" bgcolor="#888888" /><td align="left" valign="top" width="24%"><b>Fire District</b></td><td align="left" valign="top" width="24%"></td></tr><tr><td align="left" valign="top" bgcolor="#E6E6E6"><b>School District</b></td><td align="left" valign="top" bgcolor="#E6E6E6">SD11</td><td align="left" valign="top" bgcolor="#E6E6E6"><b>Exemptions</b></td><td align="left" valign="top" bgcolor="#E6E6E6" /></tr><tr><td align="left" valign="top"><b>Utilities</b></td><td align="left" valign="top">*SEW, PWR, WTR-P</td><td align="left" valign="top"><b>Acres</b></td><td align="left" valign="top">0.05</td></tr><tr><td colspan="5" height="1px" bgcolor="#888888" /></tr><tr><td align="center" colspan="5" bgcolor="#E0FFFF"><b>Improvement 1 Attributes Summary</b></td></tr><tr><td align="left" valign="top"><b>Building Style</b></td><td align="left" valign="top" colspan="4">MISC RESIDENTIAL</td></tr><tr><td align="left" valign="top" width="100px"><b>Year Built</b></td><td align="left" valign="top" width="20%">1980</td><td width="1px" rowspan="6" align="left" valign="top" bgcolor="#888888" /><td align="left" valign="top" bgcolor="#E6E6E6" width="60px"><b>Foundation</b></td><td align="left" valign="top" bgcolor="#E6E6E6" width="30%"></td></tr><tr><td align="left" valign="top" bgcolor="#E6E6E6"><b>Above Grade Living Area</b></td><td align="right" valign="top" bgcolor="#E6E6E6" /><td align="left" valign="top"><b>Exterior Walls</b></td><td align="left" valign="top"></td></tr><tr><td align="left" valign="top"><b>Finished Basement</b></td><td align="right" valign="top" /><td align="left" valign="top" bgcolor="#E6E6E6"><b>Roof Covering</b></td><td align="left" valign="top" bgcolor="#E6E6E6"></td></tr><tr><td align="left" valign="top" bgcolor="#E6E6E6"><b>*Total Living Area</b></td><td align="right" valign="top" bgcolor="#E6E6E6" /><td align="left" valign="top"><b>Heat/Air Conditioning</b></td><td align="left" valign="top"></td></tr><tr><td align="left" valign="top"><b>Unfinished Basement</b></td><td align="right" valign="top" /><td align="left" valign="top" bgcolor="#E6E6E6"><b>Fireplace</b></td><td align="left" valign="top" bgcolor="#E6E6E6"></td></tr><tr><td align="left" valign="top" bgcolor="#E6E6E6"><b>*Total Garage Area</b></td><td align="right" valign="top" bgcolor="#E6E6E6">225  Square Feet    
+                      </td><td align="left" valign="top" bgcolor="#E6E6E6"><b>Bedrooms</b></td><td align="left" valign="top" bgcolor="#E6E6E6"></td></tr><tr><td align="left" valign="top"><b>Bathrooms</b></td><td align="left" valign="top" colspan="4"></td></tr><tr><td colspan="7" style="font-size:11pt;" bgcolor="#fffacd"><b><i>
+                       For additional information on individual segments see Improvements tab
+                    </i></b></td></tr></table><table width="100%" border="0" align="center" cellpadding="3" cellspacing="1"><tr><td>* Assessment Use Code is for assessment administration purposes and has no relation to zoning or allowable land use.</td></tr><tr><td>* Total living area includes above grade living area and finished basement area.</td></tr><tr><td>* Garage square footage includes all garage areas; basement garages, attached garages, detached garages, etc.</td></tr><tr><td><b><i>Assessment data for improvements is based on exterior inspections. Please contact the Assessor's office if the information does not accurately reflect the interior characteristics.</i></b></td></tr></table><br /><table border="0" cellspacing="2" cellpadding="1" width="100%" align="center"><tr><td align="left" /><td align="left" /><td align="left" /><td align="left" /></tr></table></div>
+<input name="ctl00$content$pid" type="hidden" id="content_pid" value="P78875" /> <!-- this id ends up being content_pid -->
+<input name="ctl00$content$lastroad" type="hidden" id="content_lastroad" /> <!-- this id ends up being content_lastroad -->
+<input name="ctl00$content$resultType" type="hidden" id="content_resultType" value="std" />
+
+<input name="ctl00$content$navRoad" type="hidden" id="content_navRoad" />
+<input name="ctl00$content$navCity" type="hidden" id="content_navCity" />
+
+<input name="ctl00$content$action" type="hidden" id="content_action" />
+</form>
+</div> <!-- end for contentWrapper -->
+  
+
+    </div>
+    </td>
+    </tr>
+    </table>
+    </div>
+    <div id="footer_">
+    
+      
+        
+      
+<div id="footer" style="margin-top:6px; padding-bottom:6px; margin-right:20px; font-size:14px">
+  
+  <span style="margin-left:60px;"><a href="#" title="Return to the top of this page">Top</a></span> 
+  
+  <span style="margin-left:30px;"><a href="javascript:history.back(-1)" title="Return to Previous Page">Back</a></span>
+  
+  <span style="margin-left:40px;"><a href="/Departments/Home/main.htm" title="Home Page">Home</a></span>
+  
+  <span style="margin-left:140px;"><a href="/Departments/Home/disclaimer.htm" title="Site Disclaimer Statement">Privacy</a>
+  <a href="/Departments/Home/draftTermsandConditions.htm" title="Legal Use Description of Skagitcounty.net"> 
+  &amp; Terms of Use</a></span>
+
+  <span style="margin-left:130px;">&copy; 2021 Skagit County</span>
+
+</div>
+
+    </div>
+  </div>
+
+</body>
+</html>

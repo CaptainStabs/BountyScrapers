@@ -16,7 +16,7 @@ headers = {
   'Sec-Fetch-Mode': 'navigate',
   'Sec-Fetch-User': '?1',
   'Sec-Fetch-Dest': 'document',
-  'Cookie': 'ASP.NET_SessionId=jif2ft4iolkxeifpsengcvhj; DISCLAIMER=1'
+  'Cookie': 'ASP.NET_SessionId=iped4f1hegf43ioknoq440bq; DISCLAIMER=1'
 }
 
 response = requests.request("POST", url, headers=headers, data=payload)
