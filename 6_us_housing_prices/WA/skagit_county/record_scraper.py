@@ -16,7 +16,7 @@ headers = {
 
 columns = ["state", "physical_address", "county", "property_id", "sale_date", "property_type", "sale_price", "year_built", "source_url", "id"]
 with open(filename, "a", newline="", encoding="utf-8") as f:
-    writer = csv.writer(f, fieldnames=columns)
+    writer = csv.DictWriter(f, fieldnames=columns)
 
     if os.path.exists(filename) and os.stat(filename).st_size >= 1:
         df = pd.read_csv(file_name)
@@ -54,9 +54,10 @@ with open(filename, "a", newline="", encoding="utf-8") as f:
 
             try:
                 parser.xpath('//*[@id="content_pdata"]/div[2]/text()')[0]
-                has_data = True
-            except IndexError:
                 has_data = False
+                
+            except IndexError:
+                has_data = True
 
             if has_data:
                 land_info = {
@@ -72,7 +73,7 @@ with open(filename, "a", newline="", encoding="utf-8") as f:
                     "id": id
                 }
 
-                sale_price = "sale_price": str(parser.xpath('//*[@id="content_pdata"]/table[5]/tbody/tr[2]/td[2]/table/tbody/tr[3]/td[2]/text()')[0]).strip().replace("$", "").replace(",", "").split(".")[0],
+                sale_price = str(parser.xpath('//*[@id="content_pdata"]/table[5]/tbody/tr[2]/td[2]/table/tbody/tr[3]/td[2]/text()')[0]).strip().replace("$", "").replace(",", "").split(".")[0],
 
                 if sale_price:
                     land_info["sale_price"] = sale_price
