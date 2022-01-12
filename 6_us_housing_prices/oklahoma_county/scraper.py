@@ -6,6 +6,9 @@ import usaddress
 import json
 import csv
 from tqdm import tqdm
+from dateutil import parser as dateparser
+import time
+
 
 
 url = "https://docs.oklahomacounty.org/AssessorWP5/SalesSearch.asp"
@@ -32,7 +35,15 @@ with open("data.csv", "a", newline="", encoding="utf-8") as f:
 
     for year in tqdm(range(2015, 2021)):
         payload= f'AccountType=%25&AssessorMap=&BuildingDescription=&City=%25&Deed=%25&SaleDate={year}&fpdbr_4_PagingMove=%20%20%7C%3C%20%20&yes=%25'
-        response = requests.request("POST", url, headers=headers, data=payload)
+        while not request_success or request_tries > 10:
+            try:
+                response = requests.request("POST", url, headers=headers, data=payload)
+                request_success = True
+            except requests.exceptions.ConnectionError:
+                print("  [!] Connection Closed! Retrying in 1...")
+                time.sleep(1)
+                # response = requests.request("GET", url, headers=get_user_agent(), data=payload)
+                request_success = False
 
         # Parse in here
         parser = fromstring(response.text)
@@ -40,7 +51,20 @@ with open("data.csv", "a", newline="", encoding="utf-8") as f:
         for page in tqdm(range(int(page_limit))):
             # print("PAGE:", page)
             payload= f'AccountType=%25&AssessorMap=&BuildingDescription=&City=%25&Deed=%25&SaleDate={year}&fpdbr_4_PagingMove=%20%20%3E%20%20%20&yes=%25'
-            response = requests.request("POST", url, headers=headers, data=payload)
+
+            request_success = False
+            request_tries = 0
+            while not request_success or request_tries > 10:
+                try:
+                    # Get search page
+                    response = requests.request("POST", url, headers=headers, data=payload)
+                    request_success = True
+                except requests.exceptions.ConnectionError:
+                    print("  [!] Connection Closed! Retrying in 1...")
+                    time.sleep(1)
+                    # response = requests.request("GET", url, headers=get_user_agent(), data=payload)
+                    request_success = False
+
 
             parser = fromstring(response.text)
             for row in range(1, 100):
@@ -48,7 +72,7 @@ with open("data.csv", "a", newline="", encoding="utf-8") as f:
                     # Parse in here
                     land_info = {
                         "state":"OK",
-                        "sale_date": str(parser.xpath(f'/html/body/table[4]/tbody/tr[{row}]/td[1]/p/font/text()')[0]).lstrip("\r\n\t\t\t").upper(),
+                        "sale_date": str(dateparser.parse(str(parser.xpath(f'/html/body/table[4]/tbody/tr[{row}]/td[1]/p/font/text()')[0]).lstrip("\r\n\t\t\t").upper())) + " 00:00:00",
                         "map_num": str(parser.xpath(f'/html/body/table[4]/tbody/tr[{row}]/td[2]/p/font/text()')[0]).lstrip("\r\n\t\t\t"),
                         "deed": str(parser.xpath(f'/html/body/table[4]/tbody/tr[{row}]/td[3]/p/font/text()')[0]).lstrip("\r\n\t\t\t"),
                         "property_id": str(parser.xpath(f'/html/body/table[4]/tbody/tr[{row}]/td[4]/p/font/a/text()')[0]).lstrip("\r\n\t\t\t").upper(),
