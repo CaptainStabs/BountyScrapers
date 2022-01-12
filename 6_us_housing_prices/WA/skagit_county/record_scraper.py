@@ -60,7 +60,7 @@ with open(filename, "a", newline="", encoding="utf-8") as f:
 
             if has_data:
                 land_info = {
-                    "state": "WA"
+                    "state": "WA",
                     "physical_address": " ".join(str(parser.xpath('//*[@id="content_pdata"]/table[3]/tbody/tr/td[2]/table/tbody/tr[2]/td/text()')[0]).split()).upper().strip(),
                     "county": " ".join(str(parser.xpath('//*[@id="jurisdiction"]/text()')[0]).split()).upper().strip(),
                     "property_id": str(parser.xpath('//*[@id="content_pdata"]/table[2]/tbody/tr[2]/td[1]/b/text()')[0]).strip(),
