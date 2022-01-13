@@ -1,0 +1,1159 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1"><meta name="copyright" content="Copyright 2001-2017 Aumentum Technologies.  All Rights Reserved." /><meta name="robots" content="NOFOLLOW,NOINDEX" /><link rel="stylesheet" href="../localization/style.css" type="text/css" /><link rel="stylesheet" href="../localization/styleforsearch.css" type="text/css" /><link id="favIcon" rel="Shortcut Icon" href="../favicon.ico" />
+    <title>
+        Search Real Estate Index: Index Detail - Durham NC Web Access
+    </title>
+	<style type="text/css">
+	.PAcontent { width: auto !important; min-width: 1022px !important; }
+	.PAcontent > div { min-width: 1022px !important; }
+	</style>
+
+<link rel="stylesheet" href="../localization/styleFromCounty.css" type="text/css" />
+
+	<script type="text/javascript">
+	    var _helpWin = null;
+	    window.onunload = function () { try { _mstr_closePopupWindow(); } catch (e) { } };
+
+	    function _mstr_closePopupWindow() {
+	        if (_helpWin != null) {
+	            _helpWin.close();
+	        }
+	        try { _mstr_closeImageWindow(); } catch (e) { }
+	    }
+
+	    var _imgWindow = null;
+	    //window.onunload = function () {try{_mstr_closeImageWindow();}catch(e){}};
+	    function _openImgWindow(url) {
+	        if (_imgWindow != null) {
+	            try {
+	                _imgWindow.location.href = url;
+	                try { _imgWindow.focus(); }
+	                catch (e) { }
+	            }
+	            catch (e) { _imgWindow = null; }
+	        }
+	        if (_imgWindow == null) {
+	            var h = screen.height - 70;
+	            var w = screen.width;
+	            var l = w - 980;
+	            if (h > 730) h = 730;
+	            if (l < 10) l = 10;
+	            if (w > 950) w = 950;
+	            var optns = "height=" + h.toString() + ",width=" + w.toString() + ",left=" + l.toString() + ",top=10,location=no,menubar=no,toolbar=no,resizable=yes";
+	            //alert(optns);
+	            _imgWindow = window.open(url, "", optns, true);
+	        }
+	        //
+	    }
+	    function _mstr_closeImageWindow() {
+	        if (_imgWindow != null) {
+	            _imgWindow.close();
+	            _imgWindow = null;
+	        }
+	    }
+	</script>
+
+
+	<script type="text/javascript" id="igClientScript1">
+	<!--
+	    function showSelectRange(sender, e) {
+	        var x = e.clientX; //0;
+	        var y = e.clientY; //0;
+	        //        try {
+	        //            y = SumOffsetTop(oToolbar.Element) + 9; //oToolbar.Elementment.offsetTop;
+	        //            x = SumOffsetLeft(oButton.Element) + 6; //.offsetLeft;
+	        //        }
+	        //        catch (e) { }
+	        var mnu = $IG.WebDataMenu.find('RangeContextMenu');
+	        if (mnu == null) { alert("no menu"); return; }
+	        if (x != null && x > 0)
+	            mnu.showAt(x, y, e);
+	        else
+	            mnu.showAt(600, 200, e);
+	    }
+
+	    var dteRngFromClientID, dteRngToClientID;
+
+	    function showSelectRange(sender, e, rngFromId, rngToId) {
+	        dteRngFromClientID = rngFromId;
+	        dteRngToClientID = rngToId;
+	        var x = e.clientX; //0;
+	        var y = e.clientY; //0;
+	        //        try {
+	        //            y = SumOffsetTop(oToolbar.Element) + 9; //oToolbar.Elementment.offsetTop;
+	        //            x = SumOffsetLeft(oButton.Element) + 6; //.offsetLeft;
+	        //        }
+	        //        catch (e) { }
+	        var mnu = $IG.WebDataMenu.find('RangeContextMenu');
+	        if (mnu == null) { alert("no menu"); return; }
+	        if (x != null && x > 0)
+	            mnu.showAt(x, y, e);
+	        else
+	            mnu.showAt(600, 200, e);
+	    }
+
+
+
+	    function RangeContextMenu_ItemClick(sender, eventArgs) {
+	        ///<summary>
+	        ///
+	        ///</summary>
+	        ///<param name="sender" type="Infragistics.Web.UI.WebDataMenu"></param>
+	        ///<param name="eventArgs" type="Infragistics.Web.UI.DataMenuItemCancelEventArgs"></param>
+
+	        //Add code to handle your event here.
+	        var dte1, dte2;
+	        dte1 = $find(dteRngFromClientID);
+	        dte2 = $find(dteRngToClientID);
+	        if (dte1 == null || dte2 == null) return;
+
+
+	        if (dte1 != null && dte2 != null) {
+	            switch (sender._selectedItem.get_key()) {
+	                case "TODAY":
+	                    dte1.set_value(new Date(_today));
+	                    dte2.set_value(new Date(_today));
+	                    break;
+	                case "YESTERDAY":
+	                    dte1.set_value(new Date(_yesterday));
+	                    dte2.set_value(new Date(_yesterday));
+	                    break;
+	                case "THISWEEK":
+	                    dte1.set_value(new Date(_startwk1));
+	                    dte2.set_value(new Date(_today));
+	                    break;
+	                case "LASTWEEK":
+	                    dte1.set_value(new Date(_startwk2));
+	                    dte2.set_value(new Date(_endwk2));
+	                    break;
+	                case "THISMONTH":
+	                    dte1.set_value(new Date(_startmth1));
+	                    dte2.set_value(new Date(_today));
+	                    break;
+	                case "LASTMONTH":
+	                    dte1.set_value(new Date(_startmth2));
+	                    dte2.set_value(new Date(_endmth2));
+	                    break;
+	            }
+	        }
+	    }// -->
+	</script>
+
+	<script type="text/javascript">
+	    function showOptionWindow(url, w) {
+	        var o = document.getElementById('ifrOptionWindow');
+	        if (o == null) {
+	            alert('Error: search frame not found!');
+	        }
+	        else {
+	            o.src = url; // "Controls/SearchNadr.aspx?docId=" + escape(docId) + "&idx=" + escape(idx) + "&type=" + escape(itemType);
+	        }
+
+	        var wdw = $find('dlgOptionWindow');
+	        wdw.set_width(w.toString() + 'px');
+	        wdw.set_windowState(0);
+	        //wdw.set_left('360px');
+	        //wdw.set_top('150px');
+
+	        return false;
+	    }
+	    function closeOptionDialog() {
+	        var wdw = $find('dlgOptionWindow');
+	        wdw.set_windowState(3);
+	        var o = document.getElementById('ifrOptionWindow');
+	        if (o != null) o.src = "";
+	    }
+	    function dlgOptionWindow_WindowStateChanged(sender, eventArgs) {
+	        //alert(sender.get_windowState());
+	        if (sender.get_windowState() == 3) {
+	            var o = document.getElementById('ifrOptionWindow');
+	            if (o != null) { o.src = ""; }
+	        }
+	    }
+	</script>
+
+	<script type="text/javascript">
+		function _mstr_getIFrContentDoc(ifrObj) {
+			var retVal = (ifrObj.contentDocument != null ? ifrObj.contentWindow : document.frames[ifrObj.id].window);
+			return retVal;
+		}
+
+		function _mstr_checkKey(event, mode) {
+			var key;
+			if (window.event) {
+				key = window.event.keyCode;
+			}
+			else {
+				key = event.which;
+			}
+			switch (mode) {
+				case 1: //page range
+					if (key < 48 || (key > 57)) {
+						if (key != 32 && key != 44 && key != 45) {
+							return false;
+						}
+					}
+					break;
+				case 2: //numeric
+					if (key < 48 || (key > 57)) {
+						return false;
+					}
+					break;
+			}
+			return true;
+		}
+
+		function _mstr_checkIfSearch(btnId, event) {
+			var key;
+			if (window.event) {
+				key = window.event.keyCode;
+			}
+			else {
+				key = event.which;
+			}
+			if (key == 13) {
+				var btn = ig_getWebControlById(btnId);
+				if (btn != null) {
+					//alert('no button ' + btnId); return;
+					//btn.set_postBack(1);
+					document.getElementById("__EVENTTARGET").value = escape(btnId).replace(/_/g, "$");
+					document.getElementById("__EVENTARGUMENT").value = "0";
+					document.forms[0].submit();
+					return false;
+				}
+			}
+			return true;
+		}
+	</script>
+<title>
+	: Index Detail
+</title></head>
+
+<body>
+
+    <div style="display:none;"><a name="maincontent" title="skip to the main content area of this page">skip to the main content area of this page</a></div>
+    
+<div style="height:105px; border-bottom: 2px solid black; background-color:White; ">
+<Table border="0">
+	<tr>
+		<td vAlign="top" colSpan="1"><img id="County1_Image1" src="../localization/CountySeal.gif" height="100" /></td>
+		<td style="padding-left:10px;"><div style="font-size:22pt;font-weight:bold;">Durham County North Carolina 
+		</div><div style="font-size:16pt;font-weight:bold;">Register of Deeds Public Records Search</div></td><!---->
+	</tr>
+</Table>
+
+</div>
+
+    <div id="_countyFrame">
+    <form method="post" action="./SearchDetail.aspx?bk=5923&amp;pg=600&amp;type=BkPg" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTI5Nzk4OTk4MQ9kFgJmD2QWAgICD2QWCgIDD2QWBgIEDw8WAh4EVGV4dGVkZAIHDxYDFgcPFgIeDl9kYXRhS2V5RmllbGRzZWRkZGRkFwAWAGRkZAIJDw8WAh8ABRtSZWFsIEVzdGF0ZSBEb2N1bWVudCBBY2Nlc3NkZAIHD2QWBAIDDw8WAh4IUGFnZVR5cGULKX5IYXJ0SUMuV2ViVUkuQ2xpZW50RnJhbWV3b3JrLlBhZ2VUeXBlLCBIYXJ0SUMuV2ViVUkuQ2xpZW50RnJhbWV3b3JrLCBWZXJzaW9uPTIwMjAuMS4wLjE1LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwDZBYSZg9kFggCAQ8PFgIeB1Zpc2libGVnZGQCAw8PFgQfAAULVGhpcyBEZXRhaWwfA2dkZAIFDw8WAh8ABRdUaGlzIEltYWdlIChVbm9mZmljaWFsKWRkAgkPDxYEHwAFGFRoaXMgSW1hZ2UgKFByaW50IEltYWdlKR8DZ2RkAgEPDxYCHwNoZBYGAgMPDxYCHwAFC1RoaXMgRGV0YWlsZGQCBQ8PFgIfAAUXVGhpcyBJbWFnZSAoVW5vZmZpY2lhbClkZAIJDw8WAh8ABRhUaGlzIEltYWdlIChQcmludCBJbWFnZSlkZAICDxYCHwNnZAIHDw8WAh4NT25DbGllbnRDbGljawVAcmV0dXJuIHByZXBTZWxlY3RlZCgnY3BoTm9NYXJnaW5fT3B0aW9uc0JhcjFfdHh0U2VsZWN0ZWRJdGVtcycpO2RkAggPDxYCHwQFQHJldHVybiBwcmVwU2VsZWN0ZWQoJ2NwaE5vTWFyZ2luX09wdGlvbnNCYXIxX3R4dFNlbGVjdGVkSXRlbXMnKTtkZAIJDw8WAh8EBUByZXR1cm4gcHJlcFNlbGVjdGVkKCdjcGhOb01hcmdpbl9PcHRpb25zQmFyMV90eHRTZWxlY3RlZEl0ZW1zJyk7ZGQCCw8PFgIfA2dkFgJmDxAPFgYeDkRhdGFWYWx1ZUZpZWxkBQZfdmFsdWUeDURhdGFUZXh0RmllbGQFC0Rpc3BsYXlUZXh0HgtfIURhdGFCb3VuZGcWAh4Ib25jaGFuZ2UFEGl0ZW1DaGFuZ2UodGhpcykQFQENICAgMjAwODAxNDUwNBUBDDA7T1BSNjI0MzczMBQrAwFnFgFmZAIMDw8WAh8DaGQWAgICDxAPZBYCHwgFEWNoYW5nZVNvcnQodGhpcyk7ZBYBZmQCDQ8WAh8ABQZEZXRhaWxkAgcPZBYEAgEPDxYCHwAFDSAgIDIwMDgwMTQ1MDRkZAIDDw8WAh4HaW1hZ2VJRCgpWVN5c3RlbS5JbnQ2NCwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BzE2MTA3NDJkFghmDw8WAh8DaGRkAgEPDxYCHwNnZGQCAg8PFgIfA2hkFgICAw8PFgIfA2hkFgICAg9kFgQCAg9kFgICAw8QZBAVABUAFCsDABYAZAIDD2QWFAIDDzwrAAUBAhQrAAIWAh4LY2xpZW50U3RhdGUUKwABZGRkAgkPPCsABQECFCsAAhYCHwoUKwABZGRkAg8PPCsABQECFCsAAhYCHwoUKwABZGRkAhcPPCsABQECFCsAAhYCHwoUKwABZGRkAh8PEGRkFgFmZAIjDzwrAAUBAhQrAAIWAh8KFCsAAWRkZAIlDzwrAAUBAhQrAAIWAh8KFCsAAWRkZAIpDzwrAAUBAhQrAAIWAh8KFCsAAWRkZAIrDxBkZBYBZmQCLw88KwAFAQIUKwACFgIfChQrAAFkZGQCAw9kFgICAw8WAh4Dc3JjBRcvQ29udHJvbHMvTFRWaWV3ZXIuYXNweGQCCw9kFgRmDxQrAAJkZGQCAQ8UKwAEFCsAAmRkZGQWAh4BdmdkAg0PFgMWBGRkFCsAAhYCHhBjb2xsZWN0aW9uc1N0YXRlBasLW3snMCc6W1tudWxsLG51bGwsbnVsbCxudWxsLCJUb2RheSIsbnVsbCwiVE9EQVkiLCIiLCIiLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbF1dLCcxJzpbW251bGwsbnVsbCxudWxsLG51bGwsIlllc3RlcmRheSIsbnVsbCwiWUVTVEVSREFZIiwiIiwiIixudWxsLG51bGwsbnVsbCxudWxsLG51bGxdXSwnMic6W1tudWxsLG51bGwsbnVsbCxudWxsLCJUaGlzIFdlZWsiLG51bGwsIlRISVNXRUVLIiwiIiwiIixudWxsLG51bGwsbnVsbCxudWxsLG51bGxdXSwnMyc6W1tudWxsLG51bGwsbnVsbCxudWxsLCJMYXN0IFdlZWsiLG51bGwsIkxBU1RXRUVLIiwiIiwiIixudWxsLG51bGwsbnVsbCxudWxsLG51bGxdXSwnNCc6W1tudWxsLG51bGwsbnVsbCxudWxsLCJUaGlzIE1vbnRoIixudWxsLCJUSElTTU9OVEgiLCIiLCIiLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbF1dLCc1JzpbW251bGwsbnVsbCxudWxsLG51bGwsIkxhc3QgTW9udGgiLG51bGwsIkxBU1RNT05USCIsIiIsIiIsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsXV19LHsnLTEnOltbbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsIi0xIl1dLCcwJzpbW251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLCIwIl1dLCcxJzpbW251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLCIxIl1dLCcyJzpbW251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLCIyIl1dLCczJzpbW251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLCIzIl1dLCc0JzpbW251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLCI0Il1dLCc1JzpbW251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLCI1Il1dfV1kZA9kFgYPZhQrAAIUKwACFgQeAk4xZR4CTjllZGQPAgEUKwACFCsAAhYEHw5lHw9lZGQPAgIUKwACFCsAAhYEHw5lHw9lZGQPAgMUKwACFCsAAhYEHw5lHw9lZGQPAgQUKwACFCsAAhYEHw5lHw9lZGQPAgUUKwACFCsAAhYEHw5lHw9lZGRkZAIPD2QWBgICDw8WAh4BRWVkZAIKD2QWAgICD2QWBAICD2QWAgIDDxBkZBYAZAIDD2QWFAIDDzwrAAUBAhQrAAIWAh8KFCsAAWRkZAIJDzwrAAUBAhQrAAIWAh8KFCsAAWRkZAIPDzwrAAUBAhQrAAIWAh8KFCsAAWRkZAIXDzwrAAUBAhQrAAIWAh8KFCsAAWRkZAIfDxBkZBYBZmQCIw88KwAFAQIUKwACFgIfChQrAAFkZGQCJQ88KwAFAQIUKwACFgIfChQrAAFkZGQCKQ88KwAFAQIUKwACFgIfChQrAAFkZGQCKw8QZGQWAWZkAi8PPCsABQECFCsAAhYCHwoUKwABZGRkAgsPZBYCAgIPFgkWAhYHDxYEHhVjb2x1bW5zSW50ZXJuYWxJbml0ZWRoHwFlZGQUKwACFgQfCjwrAAQAHw0FLVt7fSx7JzAnOltbImdyaWRCYXNrZXRfRHJvcERvd25Qcm92aWRlcjEiXV19XWRkZBcAFgUWAmgWBB4GREZOYW1lBQ5faW1nX01PRFVMRV9JRB4GREZUeXBlBVpTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkWAmgWBB8SBRJfaW1nX0RPQ1VNRU5UX1RZUEUfEwVaU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5FgJoFgQfEgUSX2ltZ19TRU5UX1RPX1FVRVVFHxMFWlN5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4ORYCaBYEHxIFCEZFRVZBTFVFHxMFWlN5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4ORYCaBYEHxIFBU5vdGVzHxMFWlN5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OWQPZBYZD2YWAhYDFg4eAkYwBQ1BMl9TRVNTSU9OX0lEHgRCREYzBQxTeXN0ZW0uSW50MzIeBEJERjAFDUEyX1NFU1NJT05fSUQeA0dGMRsAAAAAAIBRQAEAAAAeDmhpZGRlbkludGVybmFsCymKAUluZnJhZ2lzdGljcy5XZWIuVUkuRGVmYXVsdGFibGVCb29sZWFuLCBJbmZyYWdpc3RpY3M0LldlYi52MTMuMiwgVmVyc2lvbj0xMy4yLjIwMTMyLjIyOTQsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49N2RkNWMzMTYzZjJjZDBjYgEeD3Jvd1NwYW5JbnRlcm5hbGYeFmhpZGRlbkJ5UGFyZW50SW50ZXJuYWxoFgJkBQlTZXNzaW9uICMWAmRlZA8CARYCFgMWEB8UBQhCQVRDSF9JRB8VBQxTeXN0ZW0uSW50MzIfFgUIQkFUQ0hfSUQeA0dGMAUMY2VudGVyZWRDZWxsHxcbAAAAAACAUUABAAAAHxgLKwYAHxlmHxpoFgJkBQlSZXF1ZXN0ICMWAmRlZA8CAhYCFgMWEh8VBQ9TeXN0ZW0uRGF0ZVRpbWUeBEZHRjAFF3swOk1NL2RkL3l5eXkgaGg6bW0gdHR9HxpoHxQFC0FDVElPTl9USU1FHxgLKwYAHxcbAAAAAABAYEABAAAAHxYFC0FDVElPTl9USU1FHxlmHxsFDGNlbnRlcmVkQ2VsbBYCZAUKRGF0ZSBBZGRlZBYCZGVkDwIDFgIWAxYMHxQFCU1PRFVMRV9JRB8WBQlNT0RVTEVfSUQfFxsAAAAAAABpQAEAAAAfGAsrBgEfGWYfGmgWAmQFCU1vZHVsZSBJZBYCZGVkDwIEFgIWAxYMHxQFDURPQ1VNRU5UX1RZUEUfFgUNRE9DVU1FTlRfVFlQRR8XGwAAAAAAAGlAAQAAAB8YCysGAR8ZZh8aaBYCZAULQWN0aW9uIFR5cGUWAmRlZA8CBRYCFgMWDB8UBQ1TRU5UX1RPX1FVRVVFHxYFDVNFTlRfVE9fUVVFVUUfFxsAAAAAAABUQAEAAAAfGAsrBgEfGWYfGmgWAmQFC0Rlc3RpbmF0aW9uFgJkZWQPAgYWAxYKHxQFDl9pbWdfTU9EVUxFX0lEHxcbAAAAAAAAPkABAAAAHxgLKwYBHxlmHxpoFgJkZRYCZGUPAgcWAxYKHxQFEl9pbWdfRE9DVU1FTlRfVFlQRR8XGwAAAAAAAD5AAQAAAB8YCysGAR8ZZh8aaBYCZGUWAmRlDwIIFgMWCh8UBRJfaW1nX1NFTlRfVE9fUVVFVUUfFxsAAAAAAAA+QAEAAAAfGAsrBgEfGWYfGmgWAmRlFgJkZQ8CCRYCFgMWDB8UBRFJTlNUUlVNRU5UX05VTUJFUh8WBRFJTlNUUlVNRU5UX05VTUJFUh8XGwAAAAAAAFlAAQAAAB8YCysGAB8ZZh8aaBYCZAULUmVmZXJlbmNlICMWAmRlZA8CChYCFgMWDB8UBQ9ET0NfREVTQ1JJUFRJT04fFgUPRE9DX0RFU0NSSVBUSU9OHxcbAAAAAAAAaUABAAAAHxgLKwYAHxlmHxpoFgJkBRBJdGVtIERlc2NyaXB0aW9uFgJkZWQPAgsWAhYDFhAfFAUITk9fUEFHRVMfFQUMU3lzdGVtLkludDMyHxYFCE5PX1BBR0VTHxsFDGNlbnRlcmVkQ2VsbB8XGwAAAAAAAE5AAQAAAB8YCysGAB8ZZh8aaBYCZAUHIyBQYWdlcxYCZGVkDwIMFgIWAxYSHxUFDlN5c3RlbS5EZWNpbWFsHxwFBXswOmN9HxpoHxQFA0ZFRR8YCysGAR8XGwAAAAAAAE5AAQAAAB8WBQNGRUUfGWYfGwUMY2VudGVyZWRDZWxsFgJkBQNGZWUWAmRlZA8CDRYDFgwfFAUIRkVFVkFMVUUfGwUOY2VudGVyZWRDb2x1bW4fFxsAAAAAAABOQAEAAAAfGAsrBgAfGWYfGmgWAmQFA0ZlZRYCZGUPAg4WAhYDFgwfFAULRE9DVU1FTlRfSUQfFgULRE9DVU1FTlRfSUQfFxsAAAAAAABbQAEAAAAfGAsrBgEfGWYfGmgWAmQFCkRvY3VtZW50ICMWAmRlZA8CDxYCFgMWDB8UBQhRVUFOVElUWR8WBQhRVUFOVElUWR8XGwAAAAAAQGBAAQAAAB8YCysGAR8ZZh8aaBYCZAUIUXVhbnRpdHkWAmRlZA8CEBYCFgMWDB8UBQlHTE9CQUxfSUQfFgUJR0xPQkFMX0lEHxcbAAAAAAAAaUABAAAAHxgLKwYBHxlmHxpoFgJkBQlHbG9iYWwgSWQWAmRlZA8CERYCFgMWDh8UBQpSRVFVRVNUX0lEHxUFDFN5c3RlbS5JbnQzMh8WBQpSRVFVRVNUX0lEHxcbAAAAAAAAVEABAAAAHxgLKwYBHxlmHxpoFgJkBQlSZXF1ZXN0ICMWAmRlZA8CEhYCFgMWDB8UBQlSRVFVRVNUT1IfFgUJUkVRVUVTVE9SHxcbAAAAAAAAaUABAAAAHxgLKwYBHxlmHxpoFgJkBQlSZXF1ZXN0b3IWAmRlZA8CExYCFgMWCh8UBQdSRU1BUktTHxYFB1JFTUFSS1MfGAsrBgEfGWYfGmgWAmQFB1JlbWFya3MWAmRlZA8CFBYCFgMWCh8UBQ5BQ1RJVkVfUkVRVUVTVB8WBQ5BQ1RJVkVfUkVRVUVTVB8YCysGAR8ZZh8aaBYCZAUOQWN0aXZlIFJlcXVlc3QWAmRlZA8CFRYCFgMWCh8UBQ9fUHJldmVudFJlbW92YWwfFgUPX1ByZXZlbnRSZW1vdmFsHxgLKwYBHxlmHxpoFgJkBQ5wcmV2ZW50cmVtb3ZhbBYCZGVkDwIWFgIWAxYKHxQFDV9BY2Nlc3NEZW5pZWQfFgUNX0FjY2Vzc0RlbmllZB8YCysGAR8ZZh8aaBYCZAUMYWNjZXNzZGVuaWVkFgJkZWQPAhcWAxYKHxQFBkFjdGlvbh8XGwAAAAAAAFlAAQAAAB8YCysGAB8ZZh8aaBYCZAUGQWN0aW9uFgJkZQ8CGBYDFggfFAUFTm90ZXMfGAsrBgAfGWYfGmgWAmQFBU5vdGVzFgJkZQ9kFgQPZhYCFgIWAh8KFCsAAwUKQWN0aXZhdGlvbmRkZGQPAgEWAhYCZGQPZBYDD2YWAh4FQ1NfQ0sFDl9pbWdfTU9EVUxFX0lEDwIBFgIfHQUSX2ltZ19ET0NVTUVOVF9UWVBFDwICFgIfHQUSX2ltZ19TRU5UX1RPX1FVRVVFDwICFgIWAh8KPCsACAIABQlTZWxlY3Rpb24BCymUAUluZnJhZ2lzdGljcy5XZWIuVUkuR3JpZENvbnRyb2xzLkNlbGxDbGlja0FjdGlvbiwgSW5mcmFnaXN0aWNzNC5XZWIudjEzLjIsIFZlcnNpb249MTMuMi4yMDEzMi4yMjk0LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTdkZDVjMzE2M2YyY2QwY2IBZA8CAxYCFgIWAh8KFCsAAQULRWRpdGluZ0NvcmVkD2QWAQ9mFgIWAhYCHwoUKwABBQtDZWxsRWRpdGluZ2QPZBYBD2YWBh8dBQ1ET0NVTUVOVF9UWVBFHgNDRTAFHGdyaWRCYXNrZXRfRHJvcERvd25Qcm92aWRlcjEfChQrAAFkZA9kFgEPZhYCHwoUKwABBRxncmlkQmFza2V0X0Ryb3BEb3duUHJvdmlkZXIxZGRkZBYCZg8WAhYHDxYCHwFlZGQUKwABFCsAAhYEHwo8KwAzBQELKZgBSW5mcmFnaXN0aWNzLldlYi5VSS5MaXN0Q29udHJvbHMuRHJvcERvd25EaXNwbGF5TW9kZSwgSW5mcmFnaXN0aWNzNC5XZWIudjEzLjIsIFZlcnNpb249MTMuMi4yMDEzMi4yMjk0LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTdkZDVjMzE2M2YyY2QwY2ICAgLIARcFA3R4dCdoKmgfDQVBW3snMCc6W1tudWxsLG51bGwsbnVsbCxudWxsLG51bGwsInR4dCIsInZhbCIsMCxudWxsLG51bGwsbnVsbF1dfV1kZGQXABYAD2QWAQ9mFCsAAhYCHwoUKwALZGRkZGQFA3R4dAUDdmFsaGRkZGRkGAQFFmN0bDAwJFJhbmdlQ29udGV4dE1lbnUPZWQFKWN0bDAwJExvZ2luRm9ybTEkQmFza2V0MSRncmlkQmFza2V0JGN0bDAwDxQrAAQFA3R4dGYC/////w8C/////w9kBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WDQUUY3RsMDAkSGVhZGVyMSRXZWJIRFMFGmN0bDAwJEhlYWRlcjEkV2ViRGF0YU1lbnUxBRpjdGwwMCRjcGhOb01hcmdpbiRmJG9wclRhYgUVY3RsMDAkZGxnT3B0aW9uV2luZG93BRZjdGwwMCRSYW5nZUNvbnRleHRNZW51BR1jdGwwMCRMb2dpbkZvcm0xJHR4dExvZ29uTmFtZQUcY3RsMDAkTG9naW5Gb3JtMSR0eHRQYXNzd29yZAUaY3RsMDAkTG9naW5Gb3JtMSRyZG9QdWJDcHUFGmN0bDAwJExvZ2luRm9ybTEkcmRvUHZ0Q3B1BRpjdGwwMCRMb2dpbkZvcm0xJHJkb1B2dENwdQUZY3RsMDAkTG9naW5Gb3JtMSRidG5Mb2dvbgUSY3RsMDAkX2lnX2RlZl9lcF9uBRJjdGwwMCRfaWdfZGVmX2VwX2QFGmN0bDAwJEhlYWRlcjEkV2ViRGF0YU1lbnUxDwUBNmTPvUG3hfCphpQQO4KchUdHolI9ygb3t8btLmJUxEzoKQ==" />
+
+<SCRIPT type='text/javascript' src='/ClientScript/Entry.js'></script><script>var _today = '1/13/2022'; var _yesterday = '1/12/2022'; 
+	    var _startwk1 = '1/9/2022'; var _startwk2 = '1/2/2022'; var _endwk2 = '1/8/2022';
+	    var _startmth1 = '1/1/2022'; var _startmth2 = '12/1/2021'; var _endmth2 = '12/31/2021';</script>
+<link href="../ig_res/Default/ig_shared.css" type="text/css" rel="stylesheet" />
+<link href="../ig_res/ElectricBlue/ig_shared.css" type="text/css" rel="stylesheet" />
+<link href="../ig_res/ElectricBlue/ig_datamenu.css" type="text/css" rel="stylesheet" />
+<link href="../ig_res/ElectricBlue/ig_dialogwindow.css" type="text/css" rel="stylesheet" />
+<link href="../ig_res/Default/ig_datamenu.css" type="text/css" rel="stylesheet" />
+<link href="../ig_res/Default/ig_texteditor.css" type="text/css" rel="stylesheet" />
+<link href="../ig_res/ElectricBlue/ig_webtab.css" type="text/css" rel="stylesheet" />
+<script src="/ScriptResource.axd?d=rBULpXYICP7EWvI0uZobQO6T_8qPoemJDV29mNS2Q5gwGX8j9e432yp0F6mbk3CwsyNatQ474l2xEh-DXRnXIobzxNnBJcv1jd6AQ4lfb6ju6cfA7oyh4F361Pa9ec1AIUJj1OwpUT50nKxfkqSeMBYKctiKJ_qkdSXo1WphOSs1&amp;t=363be08" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=FzLwN-lUaTRILhhJ0gagGc54nI4VYXp1nRFVxbNeXHIefVqcHQqszi1GPZTYsqKcQ8eRvukw89rJCGp3VEZwBJs3jFmuBS82qv9Igs9LvpNAGi7D69donhZusS39USJfATqYGTkHOgzbFDfOtwiC-FerfZv1XNkLMObRw3VT2zk1&amp;t=ffffffffcb0b3192" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=oUrtIpcxlLJiflT3sdbt8DUrn0huMyhTalG-wuS4J6F-VgziklxpejzyIfBAT1hqKchChymC5SdLMgfM4DcCzWxDyIqzKSBIyGRrmBLragsOvMxyYgsecQ8byInnHqpYS-wQjcUcdOtV1gdqDQ7PEELImeBu3Ggm9GI3NaKY7EgHplo6svG5qLhuLmNB9gto0&amp;t=ffffffffcb0b3192" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=vEAaIWP-A-4r4Kl8BIqADQdrY_Yaa0ywDjAVXFtu6--RKMfdWhHu7QgJLF0t4lqXwxzG2O1Hv9Y4vAecmf2tWh9rPq-QHDCfj4-MvFsBmvvpGmZu4mUU_m2Sm1j4q46W6aU5FjfuPaMEOOpEvldaq00ipbXEtgpl9c1rSAfE8O2-YU01oyppNm0e_TtO14suzkFJMUjX5NtR5PU6sZ_hDQ2&amp;t=ffffffffcb0b3192" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Lm-7cQO68EZFuumbsNctYEt6BCwhgr0PED-8AHnQvSJOVYjbj4oof_1dL2de9bSU9Jet2zZrkl9d3YhAg5_3Er1D-lG-d9T0MKXMaPf7-Wb2a6d-KpZnYr19RPPggvoyz8UcTwkd7HGidgRxENolIR5qdv7rnLqPc3L5y6GP5ELKUu0nVypZAxTjHi5BeqK3ZmV4xmPILbUg7nZPpQ3dqA2&amp;t=ffffffffcb0b3192" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=8emhNxG3WhdigI2x9dnpJBreAfOE_rTChfXcqNpsjgAEASDiRvRKvdxo_v0VS2Kb1CU4abST_A9DHVDg_ROzGvlDXLk1zdpGiWO0x24C6pnK3i-SU_aY2LkHExwmgtetm3Yq-jwqhs9_9X2hleZ5qifRQBT1NHenieRjNtCUffoFiVzO-rS5MPk-HD9tL0g70&amp;t=ffffffffcb0b3192" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=yO-qq8LZFBZAXH7It714A96hDD9R9NEZ7zxxMsRqkA9oRuoPsnnHDW057q53OcKNqUWftE-sA-R-fSPntpJvnjZh2xBSa0LgHcmj7MbLs7hWMc_cq3u5O8zEgD3n-fijlu6CWZ4S5_Qb8U2SHrbV8lBBkghDG9CEwqnPsgbseENpJPOdE49aBGpvfmoAid6m0&amp;t=ffffffffcb0b3192" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=-FIpOcAksfRF4OO_EUurFdgp8Ff3ABoH5bOKhnJb4cPwv6MfB-Fst27uIvVVhuHxbWAf-TYSX-0KqWZd-E6kJNmv2UoclbjWSjWQqWcuiNDptaYX7PIuiGC7GR5yYSGTIH2sebSsfWfoer9IuyV0098-hp17QmAa37nNfDGGyaCGWbzfOZXMEOtmndmuzhWV0&amp;t=ffffffffcb0b3192" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=-i089Xcj7Ah2yslNpUg3kvlUKHuqUk3VThIy0PPpfyVExa0e0aT6FH-m0FuuOnF43iVUI_UVn8q_o93eIWKtxc8Fo4J5nwlfsFPpN_tAvKX0j8opcs1Z1ses80QOqwNx5FeWvzShBHZSuxJrsMfSLA3xmAp4nm6Cagv9fgLhRWWS2CUU2dF_0_0fAxVxNLgf7xsFKzwiVfUlkPiKAEOMrA2&amp;t=ffffffffcb0b3192" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=nQ9mvQrbV7MrvrhPFhRk5uyLjxzcGrHle5oH6lkxHXG1YrprvHM8RrhnuhAiYw-Rm8I4uRkHOC-qpUcG-wzbKfT4tLs1PkelNkjzu-a2NyM9t4euup6AQPmKU9PbWOz2xQn7ipSCQPXyZpdsNDdj511Zd7idYiGp7B4cQaaPBT98OWGeAOfxISu6TncFMAaKNHd1Jv9kEUKh-Gm-MyVgLQ2&amp;t=ffffffffcb0b3192" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (document.head || (document.getElementsByTagName && document.getElementsByTagName('head') && document.getElementsByTagName('head').length > 0)) { 
+var docHead = (document.head ? document.head : document.getElementsByTagName('head')[0]); 
+var style = document.createElement('style'); 
+style.id ="igStyles";
+style.type = 'text/css';
+var __ig_css = "";
+if (style.styleSheet) { style.styleSheet.cssText =__ig_css;}
+else { style.appendChild(document.createTextNode(__ig_css));}
+docHead.appendChild(style);
+} 
+//]]>
+</script>
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="5A287109" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAbqFt5kibHoK9jd+hcLvEjfQmsgqDqL81eCnKcbqWuBxB1K090xIGQ8DJDBvnFrS4Xpac6rrxv2BVhK3C7tAdcP0V+L6J3iOFTsTJTmz8M1FIjmZJadGc2LXjlsN9ouIISpymoTmJUKmKRC9CuIAOJk0Xw8EP14IwjxrleLl2JMGw==" />
+        
+        <div style="width:1022px;margin: 0px 0px 0px;" class="PAcontent">
+            
+
+
+<div style="width:100%;">
+
+<div style="font-size:10pt;width:100%;position:relative; top:-2px; ">
+    <!-- user login/basket -->
+    <div style="float:left;margin-left:20px;padding-top:1px; ">
+    
+    <div id="Header1_pnlWelcomeVisitor">
+	
+    Welcome Visitor. 
+    
+</div>
+    </div>
+    <div id="topRightBar" style="float:right;margin-right:10px; width:75%; text-align:right; padding-bottom:3px; ">
+        <table style="float:right;text-align:left;" border="0" cellpadding="0" cellspacing="0" ><tr>
+        <td style="max-width:800px; width:auto; text-align:center;">
+            <div style="padding-right:10px; ">
+            
+            
+            </div>
+        </td>
+        <td>
+            <div id="Header1_pnlLogin">
+	
+                <span id="Header1_lnkLogin" class="staticLink" onclick="displayLoginWindow();">Login</span>
+                
+                &nbsp;|&nbsp;&nbsp;
+            
+</div>
+        </td>
+        <td id="clearunderline">
+            <a id="Header1_lnkBasket" href="../users/basket.aspx"><span style=" position:relative; top:3px;"><img title="shopping cart" border="0" src="../images/icons/cart.gif" height="16" width="16" /></span> <span class="staticLink" style="position:relative; top:-1px;">View Basket<span id="_numBasketItems"></span></span></a>
+        </td></tr></table>
+    </div>
+
+</div>
+
+<input type="hidden" id="Header1_WebHDS_clientState" name="Header1_WebHDS_clientState" />
+<input type="hidden" id="Header1_WebDataMenu1_clientState" name="Header1_WebDataMenu1_clientState" /><div class="ig_ElectricBlueControl igdm_ElectricBlueControlHorizontal" id="Header1_WebDataMenu1" style="display:none;">
+	<div class="igdm_ElectricBlueMenuScrollContainer igdm_ElectricBlueMenuScrollContainerRootHorizontal" data-ig="x:273746300.0:mkr:sd">
+		<a class="igdm_ElectricBlueMenuScrollButton igdm_ElectricBlueMenuScrollerLeft" title="Scroll left" href="javascript:void(0)" tabindex="-1" data-ig="x:273746300.1:mkr:sb" style="display:none;"><span class="igdm_ElectricBlueMenuScrollIcon igdm_ElectricBlueMenuScrollIconLeft" data-ig="x:273746300.2:mkr:si" unselectable="on"></span></a><ul class="igdm_ElectricBlueMenuGroupHorizontalRoot " style="display:block;">
+			<li data-ig="x:273746300.3:adr:0" class="igdm_ElectricBlueMenuItemHorizontalRoot mainMenuItem" unselectable="on"><a accesskey="" href="/" tabindex="-1" class="igdm_ElectricBlueMenuItemHorizontalRootLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Welcome</span></a></li><li class="igdm_ElectricBlueMenuItemHorizontalSeparator " data-ig="x:273746300.4:adr:1:mkr:sep"></li><li data-ig="x:273746300.5:adr:2" class="igdm_ElectricBlueMenuItemHorizontalRoot igdm_ElectricBlueMenuItemHorizontalParent mainMenuItem" unselectable="on"><a href="#" tabindex="-1" class="igdm_ElectricBlueMenuItemHorizontalRootLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Marriage</span></a><div class="igdm_ElectricBlueMenuScrollContainer igdm_ElectricBlueMenuScrollContainerVertical" data-ig="x:273746300.6:mkr:sd" style="display:none;">
+				<a class="igdm_ElectricBlueMenuScrollButton igdm_ElectricBlueMenuScrollerTop" title="Scroll up" href="javascript:void(0)" tabindex="-1" data-ig="x:273746300.7:mkr:sb" style="display:none;"><span class="igdm_ElectricBlueMenuScrollIcon igdm_ElectricBlueMenuScrollIconTop" data-ig="x:273746300.8:mkr:si" unselectable="on"></span></a><ul class="igdm_ElectricBlueMenuGroupScrollingVertical " style="display:block;">
+					<li data-ig="x:273746300.9:adr:2.0" class="igdm_ElectricBlueMenuItemVertical mainMenuItem" unselectable="on"><a href="/Marriage/MarriageApplication.aspx" tabindex="-1" class="igdm_ElectricBlueMenuItemVerticalLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Online Marriage App</span></a></li>
+				</ul><a class="igdm_ElectricBlueMenuScrollButton igdm_ElectricBlueMenuScrollerBottom" title="Scroll down" href="javascript:void(0)" tabindex="-1" data-ig="x:273746300.10:mkr:sb" style="display:none;"><span class="igdm_ElectricBlueMenuScrollIcon igdm_ElectricBlueMenuScrollIconBottom" data-ig="x:273746300.11:mkr:si" unselectable="on"></span></a>
+			</div></li><li class="igdm_ElectricBlueMenuItemHorizontalSeparator " data-ig="x:273746300.12:adr:3:mkr:sep"></li><li data-ig="x:273746300.13:adr:4" class="igdm_ElectricBlueMenuItemHorizontalRoot igdm_ElectricBlueMenuItemHorizontalParent mainMenuItem" unselectable="on"><a href="#" tabindex="-1" class="igdm_ElectricBlueMenuItemHorizontalRootLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Old Index Book</span></a><div class="igdm_ElectricBlueMenuScrollContainer igdm_ElectricBlueMenuScrollContainerVertical" data-ig="x:273746300.14:mkr:sd" style="display:none;">
+				<a class="igdm_ElectricBlueMenuScrollButton igdm_ElectricBlueMenuScrollerTop" title="Scroll up" href="javascript:void(0)" tabindex="-1" data-ig="x:273746300.15:mkr:sb" style="display:none;"><span class="igdm_ElectricBlueMenuScrollIcon igdm_ElectricBlueMenuScrollIconTop" data-ig="x:273746300.16:mkr:si" unselectable="on"></span></a><ul class="igdm_ElectricBlueMenuGroupScrollingVertical " style="display:block;">
+					<li data-ig="x:273746300.17:adr:4.0" class="igdm_ElectricBlueMenuItemVertical mainMenuItem" unselectable="on"><a href="/IndexBook/SearchEntry.aspx" tabindex="-1" class="igdm_ElectricBlueMenuItemVerticalLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Search Old Index Book</span></a></li>
+				</ul><a class="igdm_ElectricBlueMenuScrollButton igdm_ElectricBlueMenuScrollerBottom" title="Scroll down" href="javascript:void(0)" tabindex="-1" data-ig="x:273746300.18:mkr:sb" style="display:none;"><span class="igdm_ElectricBlueMenuScrollIcon igdm_ElectricBlueMenuScrollIconBottom" data-ig="x:273746300.19:mkr:si" unselectable="on"></span></a>
+			</div></li><li class="igdm_ElectricBlueMenuItemHorizontalSeparator " data-ig="x:273746300.20:adr:5:mkr:sep"></li><li data-ig="x:273746300.21:adr:6" class="igdm_ElectricBlueMenuItemHorizontalRoot igdm_ElectricBlueMenuItemHorizontalRootSelected igdm_ElectricBlueMenuItemHorizontalParent mainMenuItem currentToolbarItem" unselectable="on"><a href="#" tabindex="-1" class="igdm_ElectricBlueMenuItemHorizontalRootLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Real Estate</span></a><div class="igdm_ElectricBlueMenuScrollContainer igdm_ElectricBlueMenuScrollContainerVertical" data-ig="x:273746300.22:mkr:sd" style="display:none;">
+				<a class="igdm_ElectricBlueMenuScrollButton igdm_ElectricBlueMenuScrollerTop" title="Scroll up" href="javascript:void(0)" tabindex="-1" data-ig="x:273746300.23:mkr:sb" style="display:none;"><span class="igdm_ElectricBlueMenuScrollIcon igdm_ElectricBlueMenuScrollIconTop" data-ig="x:273746300.24:mkr:si" unselectable="on"></span></a><ul class="igdm_ElectricBlueMenuGroupScrollingVertical " style="display:block;">
+					<li data-ig="x:273746300.25:adr:6.0" class="igdm_ElectricBlueMenuItemVertical mainMenuItem" unselectable="on"><a href="/RealEstate/ListOfParties.aspx" tabindex="-1" class="igdm_ElectricBlueMenuItemVerticalLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Party List</span></a></li><li data-ig="x:273746300.26:adr:6.1" class="igdm_ElectricBlueMenuItemVertical mainMenuItem" unselectable="on"><a href="/RealEstate/Map/SearchEntry.aspx" tabindex="-1" class="igdm_ElectricBlueMenuItemVerticalLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Search Map/Plat Index</span></a></li><li data-ig="x:273746300.27:adr:6.2" class="igdm_ElectricBlueMenuItemVertical mainMenuItem" unselectable="on"><a href="/RealEstate/SearchEntry.aspx" tabindex="-1" class="igdm_ElectricBlueMenuItemVerticalLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Search Real Estate Index</span></a></li>
+				</ul><a class="igdm_ElectricBlueMenuScrollButton igdm_ElectricBlueMenuScrollerBottom" title="Scroll down" href="javascript:void(0)" tabindex="-1" data-ig="x:273746300.28:mkr:sb" style="display:none;"><span class="igdm_ElectricBlueMenuScrollIcon igdm_ElectricBlueMenuScrollIconBottom" data-ig="x:273746300.29:mkr:si" unselectable="on"></span></a>
+			</div></li><li class="igdm_ElectricBlueMenuItemHorizontalSeparator " data-ig="x:273746300.30:adr:7:mkr:sep"></li><li data-ig="x:273746300.31:adr:8" class="igdm_ElectricBlueMenuItemHorizontalRoot igdm_ElectricBlueMenuItemHorizontalParent mainMenuItem" unselectable="on"><a href="#" tabindex="-1" class="igdm_ElectricBlueMenuItemHorizontalRootLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Uniform Commercial Code</span></a><div class="igdm_ElectricBlueMenuScrollContainer igdm_ElectricBlueMenuScrollContainerVertical" data-ig="x:273746300.32:mkr:sd" style="display:none;">
+				<a class="igdm_ElectricBlueMenuScrollButton igdm_ElectricBlueMenuScrollerTop" title="Scroll up" href="javascript:void(0)" tabindex="-1" data-ig="x:273746300.33:mkr:sb" style="display:none;"><span class="igdm_ElectricBlueMenuScrollIcon igdm_ElectricBlueMenuScrollIconTop" data-ig="x:273746300.34:mkr:si" unselectable="on"></span></a><ul class="igdm_ElectricBlueMenuGroupScrollingVertical " style="display:block;">
+					<li data-ig="x:273746300.35:adr:8.0" class="igdm_ElectricBlueMenuItemVertical mainMenuItem" unselectable="on"><a href="/UCC/SearchEntry.aspx" tabindex="-1" class="igdm_ElectricBlueMenuItemVerticalLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Search UCC Index</span></a></li>
+				</ul><a class="igdm_ElectricBlueMenuScrollButton igdm_ElectricBlueMenuScrollerBottom" title="Scroll down" href="javascript:void(0)" tabindex="-1" data-ig="x:273746300.36:mkr:sb" style="display:none;"><span class="igdm_ElectricBlueMenuScrollIcon igdm_ElectricBlueMenuScrollIconBottom" data-ig="x:273746300.37:mkr:si" unselectable="on"></span></a>
+			</div></li><li class="igdm_ElectricBlueMenuItemHorizontalSeparator " data-ig="x:273746300.38:adr:9:mkr:sep"></li><li data-ig="x:273746300.39:adr:10" class="igdm_ElectricBlueMenuItemHorizontalRoot mainMenuItem" unselectable="on"><a href="/localization/faq.aspx" tabindex="-1" class="igdm_ElectricBlueMenuItemHorizontalRootLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">FAQ</span></a></li>
+		</ul><a class="igdm_ElectricBlueMenuScrollButton igdm_ElectricBlueMenuScrollerRight" title="Scroll right" href="javascript:void(0)" tabindex="-1" data-ig="x:273746300.40:mkr:sb" style="display:none;"><span class="igdm_ElectricBlueMenuScrollIcon igdm_ElectricBlueMenuScrollIconRight" data-ig="x:273746300.41:mkr:si" unselectable="on"></span></a>
+	</div>
+</div>
+<div class="messageBar">
+<span style="margin:2px;"><span id="Header1_menuMsg">Real Estate Document Access</span>
+</span>
+</div>
+</div>
+
+
+
+
+
+
+
+            <a name="maincontent" id="A1"></a>
+            <div class="mainContent">
+	        
+            
+            </div>
+            <div class="mainContentNoMargin">
+	        
+    <table id="Table1" style="height:100%;width:100%" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            <td align="center">
+                <table id="cphNoMargin_tblValidations" class="Warning">
+
+</table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+
+<div class="optionsBackground">
+<table border="0" cellpadding="2" cellspacing="0" >
+<tr valign="top">
+<td class="freePrintOptns" style="max-width:250px; width:auto; min-width:0px;">
+    <div id="cphNoMargin_OptionsBar1_pnlFreePrintOptns">
+	
+    Get a Free Copy
+    <div style="padding-left:10px; padding-right:10px;">
+        <a id="cphNoMargin_OptionsBar1_lnkResults" class="staticLink blockElm" onclick="linkClick(this, &#39;R&#39;);return false;">Results List</a>
+        <a id="cphNoMargin_OptionsBar1_lnkDetail" class="staticLink blockElm" onclick="linkClick(this, &#39;D&#39;);return false;">This Detail</a>
+        
+        
+        <a id="cphNoMargin_OptionsBar1_lnkImage" class="staticLink blockElm" onclick="linkClick(this, &#39;P&#39;);return false;">This Image (Print Image)</a>
+        
+    </div>
+    
+</div>
+</td>
+<td class="payPrintOptns" style="max-width:250px; width:auto; min-width:0px;">
+    
+</td>
+<td class="commonOptns">
+    Other Options
+    <div style="padding-left:10px; padding-right:10px;">
+        <a href="SearchEntry.aspx" class="staticLink">New Search</a><br />
+        <a href="SearchEntry.aspx?NewSearch=false" class="staticLink">Refine Search</a><br />
+		<a href="SearchResults.aspx" class="staticLink">Back to Results</a>
+    </div>
+</td>
+<td class="commonOptns">
+	&nbsp;<br />
+		
+		
+		
+		
+</td>
+<td class="commonOptns">
+	&nbsp;<br />
+	<br />
+	<br />
+	<br />
+		<input type="hidden" name="ctl00$cphNoMargin$OptionsBar1$txtSelectedItems" id="cphNoMargin_OptionsBar1_txtSelectedItems" />
+		
+</td>
+<td class="commonOptns">
+    <table border="0" cellpadding="2" cellspacing="0"><tr><td>
+    <div id="cphNoMargin_OptionsBar1_pnlResultListOptns">
+	
+        <!--<div id="listBar" style="width:290px;">-->
+		<table border="0" cellpadding="0" cellspacing="0" id="listBar" style="width:270px;" ><tr><td>
+			<input type="image" id="OptionsBar1_imgFirst" title="First" src='/images/toolbaricons/firstsmall.gif' onclick="changeSelect(0);return false;" value="" />
+            <input type="image" id="OptionsBar1_imgPrev" title="Previous" src='/images/toolbaricons/previoussmall.gif' onclick="changeSelect(-1);return false;" value=""  />
+            <select name="ctl00$cphNoMargin$OptionsBar1$ItemList" id="cphNoMargin_OptionsBar1_ItemList" onchange="itemChange(this)">
+		<option selected="selected" value="0;OPR6243730">   2008014504</option>
+
+	</select> 
+            <input type="image" id="OptionsBar1_imgNext" title="Next" src='/images/toolbaricons/nextsmall.gif' onclick="changeSelect(1);return false;"  value="" />
+            <input type="image" id="OptionsBar1_imgLast" title="Last" src='/images/toolbaricons/lastsmall.gif' onclick="changeSelect(99);return false;"  value="" />
+			</td><td>
+			
+        <!--</div>-->
+		</td></tr></table>
+    
+</div>
+        </td><td>
+		
+        </td></tr></table>
+</td>
+
+</tr>
+</table>
+</div>
+
+<script type="text/javascript">
+	var pageType = 'Detail';
+	var ddlId = "cphNoMargin_OptionsBar1_ItemList";
+	var ddl = document.getElementById(ddlId);
+
+	var isEnabled;
+	if (ddl != null) {
+		isEnabled = ddl.options.length > 0 && ddl.selectedIndex > 0;
+		var img;
+		if (!isEnabled){
+			img = document.getElementById("OptionsBar1_imgFirst");
+			img.src = img.src.replace("icons/", "icons/disabled/");
+			img.disabled = true;
+			img.readOnly = true;
+			img = document.getElementById("OptionsBar1_imgPrev");
+			img.src = img.src.replace("icons/", "icons/disabled/");
+			img.disabled = true;
+			img.readOnly = true;
+		}
+
+		isEnabled = ddl.options.length > 0 && ddl.selectedIndex != (ddl.options.length - 1);
+		if (!isEnabled){
+			img = document.getElementById("OptionsBar1_imgNext");
+			img.src = img.src.replace("icons/", "icons/disabled/");
+			img.disabled = true;
+			img.readOnly = true;
+			img = document.getElementById("OptionsBar1_imgLast");
+			img.src = img.src.replace("icons/", "icons/disabled/");
+			img.disabled = true;
+			img.readOnly = true;
+		}
+	}
+
+    function linkClick(o, which) {
+    	var w = 700;
+    	//if (which == 'R') w = 400;
+    	if (pageType != "Detail") {
+    		if (which != 'R' && !_mstr_checkAll && _mstr_getCheckedItems().length == 0) {
+    			alert('Please select the items you wish to process by marking appropriate checkboxes.');
+    			return false;
+    		}
+    		showOptionWindow('/Controls/OptionsWindow.aspx?t=' + escape(which) + "&itms=" + escape(_mstr_checkAll ? "all" : _mstr_getCheckedItems()) + "&rnd=" + _mstr_todaysRnd, w);
+        }
+        else if (pageType == "Detail") {
+            showOptionWindow('/Controls/OptionsWindow.aspx?t=' + escape(which) + "&itms=" + escape(ddl.selectedIndex + 1) + "&rnd=" + Math.random().toString() + "&isDetail=true", w);
+        }
+    	else {
+    		showOptionWindow('/Controls/OptionsWindow.aspx?t=' + escape(which) + "&itms=" + escape(ddl.selectedIndex + 1) + "&rnd=" + Math.random().toString(), w);
+    	}
+        return false;
+    }
+    function itemChange(o) {
+        //alert(o.value);
+        if (pageType == "Detail") {
+            //    window.location.href = "SearchResults.aspx?sel=" + o.value + "&GLOBAL_ID=idx&type=dtl";
+        }
+        else {
+            window.location.href = "SearchResults.aspx?pg=" + o.value;
+        }
+    }
+    function changeSelect(idx) {
+        switch (idx) {
+            case 99:
+                ddl.selectedIndex = ddl.options.length - 1;
+                break;
+            case 0:
+                ddl.selectedIndex = 0;
+                break;
+            case -8: //more
+				var nextPg = new Number(ddl.options[ddl.options.length - 1].value) + 1;
+				var opn = new Option(nextPg, nextPg);
+               	ddl.options.add(opn);
+               	opn.selected = true;
+               	break;
+            case -9: //final
+            	var opn = new Option("-9", -9);
+            	opn.selected = true;
+            	ddl.options.add(opn);
+            	break;
+            default:
+                if ((idx < 0 && ddl.selectedIndex + idx > -1) || (idx > 0 && ddl.selectedIndex + idx < ddl.options.length)) ddl.selectedIndex += idx;
+                break;
+        }
+        if (pageType == "Detail") {
+            ddl.onchange();
+        }
+        else {
+            itemChange(ddl);
+        }
+    }
+    function changeSort(o) {
+        window.location.href = "SearchResults.aspx?sort=" + o.value;
+    }
+
+    function prepSelected(id) {
+    	var items = '';
+    	if (pageType == "Detail") {
+    		items = (ddl.selectedIndex + 1).toString();
+    	}
+    	else {
+    		items = _mstr_getCheckedItems();
+    	}
+    	if (items.length == 0) {
+    		alert('Please select the items you wish to process by marking appropriate checkboxes.');
+    		return false;
+    	}
+    	var txt = document.getElementById(id);
+		if (txt!= null) txt.value = items;
+    	return true;
+    }
+</script>
+
+
+            </td>
+        </tr>
+        <tr valign="top" style="height:95%">
+            <td style="padding-left:2px;">
+                <table border="0" style="height:100%; width: 100%;">
+                    <tr>
+                        <td id="cphNoMargin_TDDetails" class="TDDetails" valign="top" height="1" style="min-width:350px; max-width:350px;">
+                        
+
+
+<table class="SearchDetailTable" cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tr>
+        <td>
+            <div class="ig_ElectricBlueControl igtab_ElectricBlueTHControl :=CtlMain:layout" id="cphNoMargin_f_oprTab">
+	<span class="igtab_ElectricBlueTHHolder" data-ig="x:459752719.0:mkr:head"><input type="hidden" id="cphNoMargin_f_oprTab_clientState" name="cphNoMargin_f_oprTab_clientState" /><input id="cphNoMargin_f_oprTab.i" name="cphNoMargin_f_oprTab.i" value="0" readonly /><label for="cphNoMargin_f_oprTab.i">&nbsp;</label><span class="igtab_ElectricBlueTHHolderNoScroll"><span class="igtab_ElectricBlueTHTab igtab_ElectricBlueTHTabSel" data-ig="x:459752719.1:mkr:ti0"><span class="igtab_ElectricBlueTHTail igtab_ElectricBlueTHTailSel"><span class="igtab_ElectricBlueTHCenter igtab_ElectricBlueTHCenterSel"><span class="igtab_ElectricBlueTHText igtab_ElectricBlueTHTextSel">General</span></span></span></span><span class="igtab_ElectricBlueTHTab" data-ig="x:459752719.2:mkr:ti1"><span class="igtab_ElectricBlueTHTail"><span class="igtab_ElectricBlueTHCenter"><span class="igtab_ElectricBlueTHText">Legal Description</span></span></span></span><span class="igtab_ElectricBlueTHTab" data-ig="x:459752719.3:mkr:ti2"><span class="igtab_ElectricBlueTHTail"><span class="igtab_ElectricBlueTHCenter"><span class="igtab_ElectricBlueTHText">Related Documents</span></span></span></span></span></span><div class="igtab_ElectricBlueTHContentHolder" data-ig="x:459752719.4:mkr:cph">
+		<div class="igtab_ElectricBlueTHContent" data-ig="x:459752719.5:adr:0:mkr:c0">
+			
+                            <table id="Table1" cellspacing="0" cellpadding="5" width="100%" border="0">
+                                <tr>
+                                    <td align="center">
+                                        <span id="ctl00_cphNoMargin_f_oprTab_tmpl0_Label1" class="Heading" style="display:inline-block;">Document Detail</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList" cellspacing="0">
+				<tr>
+					<td align="right"><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_lblInstrumentNo" class="SearchDetailLabel">Instrument #:</span></td><td><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_txtInstrumentNo" class="SearchDetailField">2008014504</span></td>
+				</tr><tr>
+					<td align="right"><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_Label3" class="SearchDetailLabel">Multi Seq:</span></td><td><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_Datalabel4" class="SearchDetailField">0</span></td>
+				</tr><tr>
+					<td align="right" nowrap=""><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_lblDocDate" class="SearchDetailLabel">Document Date:</span></td><td><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_txtDocDate" class="SearchDetailField"></span></td>
+				</tr><tr>
+					<td align="right"><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_Label2" class="SearchDetailLabel">Date Filed:</span></td><td><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_DataLabel3" class="SearchDetailField">04/11/2008 09:58:35 AM</span></td>
+				</tr><tr>
+					<td align="right" nowrap=""><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_Label7" class="SearchDetailLabel">Document Type:</span></td><td><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_Datalabel2" class="SearchDetailField">DEED</span></td>
+				</tr><tr>
+					<td align="right"><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_Label4" class="SearchDetailLabel">Book:</span></td><td><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_DataLabel5" class="SearchDetailField">5923</span></td>
+				</tr><tr>
+					<td align="right"><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_Label5" class="SearchDetailLabel">Page:</span></td><td><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_DataLabel6" class="SearchDetailField">600</span></td>
+				</tr><tr>
+					<td align="right" valign="top"><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_Label6" class="SearchDetailLabel">Remarks:</span></td><td><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_DataLabel7" class="SearchDetailField"></span></td>
+				</tr><tr>
+					<td align="right"><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_Label44" class="SearchDetailLabel"># Pages in Image:</span></td><td><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_DataLabel40" class="SearchDetailField">4</span></td>
+				</tr><tr>
+					<td align="right"><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_Label8" class="SearchDetailLabel">Image:</span></td><td><a id="ctl00_cphNoMargin_f_oprTab_tmpl0_documentInfoList_ctl00_DataHyperlink1" href="javascript:_openImgWindow(&#39;./SearchImage.aspx?global_id=OPR6243730&amp;type=img&#39;);"><img src="../images/icons/paper.gif" alt="Image" /></a></td>
+				</tr>
+			</table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <span id="ctl00_cphNoMargin_f_oprTab_tmpl0_Label11" class="Heading" style="display:inline-block;">Grantors</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table id="ctl00_cphNoMargin_f_oprTab_tmpl0_DataList11" cellspacing="0">
+				<tr>
+					<td width="30"><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_DataList11_ctl00_lblGrantorNameSeq" class="SearchDetailField">1</span></td><td width="200"><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_DataList11_ctl00_lblGrantorLastName" class="SearchDetailField">STERLING GROUP OF CHAPEL HILL LLC</span>
+                                                            &nbsp;
+                                                            <span id="ctl00_cphNoMargin_f_oprTab_tmpl0_DataList11_ctl00_lblGrantorFirstName" class="SearchDetailField"></span></td><td width="200">
+                                                            &nbsp;&nbsp;
+                                                            <span id="ctl00_cphNoMargin_f_oprTab_tmpl0_DataList11_ctl00_lblGrantorRelator" class="SearchDetailField"></span></td>
+				</tr>
+			</table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <span id="ctl00_cphNoMargin_f_oprTab_tmpl0_Label12" class="Heading" style="display:inline-block;">Grantees</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table id="ctl00_cphNoMargin_f_oprTab_tmpl0_Datalist1" cellspacing="0">
+				<tr>
+					<td width="30"><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_Datalist1_ctl00_lblGranteeNameSeq" class="SearchDetailField">1</span></td><td width="200"><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_Datalist1_ctl00_lblGranteeLastName" class="SearchDetailField">DARD PROPERTY VENTURES LLC</span>
+                                                            &nbsp;
+                                                            <span id="ctl00_cphNoMargin_f_oprTab_tmpl0_Datalist1_ctl00_lblGranteeFirstName" class="SearchDetailField"></span></td><td width="200">
+                                                            &nbsp;&nbsp;
+                                                            <span id="ctl00_cphNoMargin_f_oprTab_tmpl0_Datalist1_ctl00_lblGranteeRelator" class="SearchDetailField"></span></td>
+				</tr>
+			</table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <span id="ctl00_cphNoMargin_f_oprTab_tmpl0_Label32" class="Heading" style="display:inline-block;">Returnee</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table id="ctl00_cphNoMargin_f_oprTab_tmpl0_DataList2" cellspacing="0">
+				<tr>
+					<td align="right"><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_DataList2_ctl00_Label13" class="SearchDetailLabel">Name:</span></td><td><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_DataList2_ctl00_Datalabel12" class="SearchDetailField">DARD PROPERTY VENTURES LLC</span>
+                                                            &nbsp;
+                                                            <span id="ctl00_cphNoMargin_f_oprTab_tmpl0_DataList2_ctl00_Datalabel13" class="SearchDetailField"></span></td>
+				</tr><tr>
+					<td align="right"><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_DataList2_ctl00_Label15" class="SearchDetailLabel">Address:</span></td><td><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_DataList2_ctl00_Datalabel14" class="SearchDetailField">803 BELL ARBOR CT</span></td>
+				</tr><tr>
+					<td align="right"></td><td><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_DataList2_ctl00_Datalabel15" class="SearchDetailField"></span></td>
+				</tr><tr>
+					<td align="right"><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_DataList2_ctl00_Label16" class="SearchDetailLabel">City, State, Zip:</span></td><td><span id="ctl00_cphNoMargin_f_oprTab_tmpl0_DataList2_ctl00_Datalabel16" class="SearchDetailField">CARY</span>&nbsp;
+                                                            <span id="ctl00_cphNoMargin_f_oprTab_tmpl0_DataList2_ctl00_Datalabel17" class="SearchDetailField">NC</span>&nbsp;
+                                                            <span id="ctl00_cphNoMargin_f_oprTab_tmpl0_DataList2_ctl00_Datalabel18" class="SearchDetailField">27519</span></td>
+				</tr>
+			</table>
+                                    </td>
+                                </tr>
+                            </table>
+                        
+		</div><div class="igtab_ElectricBlueTHContent" data-ig="x:459752719.6:adr:1:mkr:c1" style="display:none;">
+			
+                            <table id="Table7" cellspacing="0" cellpadding="5" width="100%" border="0">
+                                <tr>
+                                    <td align="center">
+                                        <span id="ctl00_cphNoMargin_f_oprTab_tmpl1_Label9" class="Heading" style="display:inline-block;">Combined Legals</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table id="ctl00_cphNoMargin_f_oprTab_tmpl1_ComboLegals" cellspacing="0" cellpadding="2">
+				<tr>
+					<td colspan="9">
+															<hr>
+                                                        </td>
+				</tr><tr>
+					<td align="right"><span id="ctl00_cphNoMargin_f_oprTab_tmpl1_ComboLegals_ctl01_Label56" class="SearchDetailLabel">Subdivision:</span></td><td colspan="7"><span id="ctl00_cphNoMargin_f_oprTab_tmpl1_ComboLegals_ctl01_Datalabel41" class="SearchDetailField"></span></td>
+				</tr><tr>
+					<td align="right"><span id="ctl00_cphNoMargin_f_oprTab_tmpl1_ComboLegals_ctl01_Label53" class="SearchDetailLabel">Lot:</span></td><td colspan="7"><span id="ctl00_cphNoMargin_f_oprTab_tmpl1_ComboLegals_ctl01_Datalabel38" class="SearchDetailField">9</span></td>
+				</tr><tr>
+					<td align="right"><span id="ctl00_cphNoMargin_f_oprTab_tmpl1_ComboLegals_ctl01_Label54" class="SearchDetailLabel">Block:</span></td><td colspan="7"><span id="ctl00_cphNoMargin_f_oprTab_tmpl1_ComboLegals_ctl01_Datalabel39" class="SearchDetailField">15</span></td>
+				</tr><tr>
+					<td align="right"><span id="ctl00_cphNoMargin_f_oprTab_tmpl1_ComboLegals_ctl01_Label45" class="SearchDetailLabel">Section:</span></td><td colspan="7"><span id="ctl00_cphNoMargin_f_oprTab_tmpl1_ComboLegals_ctl01_Datalabel26" class="SearchDetailField"></span></td>
+				</tr><tr>
+					<td align="right"><span id="ctl00_cphNoMargin_f_oprTab_tmpl1_ComboLegals_ctl01_Label43" class="SearchDetailLabel">Acreage:</span></td><td colspan="7"><span id="ctl00_cphNoMargin_f_oprTab_tmpl1_ComboLegals_ctl01_Datalabel9" class="SearchDetailField"></span></td>
+				</tr><tr>
+					<td align="right"><span id="ctl00_cphNoMargin_f_oprTab_tmpl1_ComboLegals_ctl01_Label44" class="SearchDetailLabel">Abstract:</span></td><td colspan="7"><span id="ctl00_cphNoMargin_f_oprTab_tmpl1_ComboLegals_ctl01_Datalabel11" class="SearchDetailField"></span></td>
+				</tr><tr>
+					<td align="right"><span id="ctl00_cphNoMargin_f_oprTab_tmpl1_ComboLegals_ctl01_Label59" class="SearchDetailLabel">Freeform Legal:</span></td><td colspan="7"><span id="ctl00_cphNoMargin_f_oprTab_tmpl1_ComboLegals_ctl01_Datalabel46" class="SearchDetailField">914 LANCASTER STREET</span></td>
+				</tr>
+			</table>
+                                        
+                                        
+                                        
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        
+		</div><div class="igtab_ElectricBlueTHContent" data-ig="x:459752719.7:adr:2:mkr:c2" style="display:none;">
+			
+                            
+                        
+		</div>
+	</div>
+</div>
+        </td>
+    </tr>
+</table>
+</td>
+
+                        <td id="cphNoMargin_TDImage" class="TDImage" height="100%" valign="top">
+							<span id="cphNoMargin_lblDtlDocInfo" class="DocInfo">   2008014504</span>
+                            
+
+<div id="cphNoMargin_ImageViewer1_pnlResizeScript_Detail">
+	
+<script type="text/javascript">
+	function winResize() {
+		var w, h;
+		if (document.body && document.body.offsetWidth) {
+			w = document.body.offsetWidth;
+			h = document.body.offsetHeight;
+			if (h > screen.height) h = screen.height - 100;
+			if (w > screen.width) w = screen.width;
+		}
+		if (window.innerWidth && window.innerHeight) {
+			w = window.innerWidth;
+			h = window.innerHeight;
+		}
+		if (w < 900) return;
+		var txt = "Window size: width=" + w + ", height=" + h;
+		//document.getElementById("size").innerHTML = txt;
+		var pnl = document.getElementById("cphNoMargin_ImageViewer1_leadViewer");
+		if (h > 500 && pnl != null) pnl.style.height = h.toString() + "px";
+		if (w > 1024 && pnl != null) {  //1024 = tablet width, bugger screen - adjust right edge
+			pnl.style.width = (w - 395).toString() + "px";
+		}
+		else if (w > 350 && pnl != null) {
+			pnl.style.width = (w - 375).toString() + "px";
+		}
+		var ifr = document.getElementById("cphNoMargin_ImageViewer1_ifrLTViewer");
+		if (ifr != null) ifr.contentWindow.LTViewResize(h, w, true);
+	}
+	if (window.addEventListener) {
+		window.addEventListener('resize', winResize, false);
+		window.addEventListener('load', winResize, false);
+	}
+	else if (window.attachEvent) {
+		window.attachEvent('onresize', winResize);
+		window.attachEvent('onload', winResize);
+	}
+</script>
+
+<div id="size"></div>
+
+</div>
+
+
+
+<div id="cphNoMargin_ImageViewer1_leadViewer">
+	
+	
+    <iframe src="/Controls/LTViewer.aspx" id="cphNoMargin_ImageViewer1_ifrLTViewer" frameborder="0" height="100%" width="100%" scrolling="no"></iframe>
+
+</div>
+
+
+
+
+       <div id="openModal" class="modalDialog"  >
+        <div>
+            <h2>Session Timeout Warning</h2>
+            <p >Your session will end in approximately one minute unless you click "Keep Working" to continue.<br />Or you may click "End Session" if you are done.</p>
+           <p style="text-align: right;">  <a href="#close" id="EndSession" class="btn-modal" onclick="closeSession();"> End Session</a>
+           &nbsp;&nbsp;&nbsp;<a href="#close" id="KeepWorking" class="btn-modal" onclick="clearSessionWarning();"> Keep Working</a>   </p>
+        </div>
+        <script type="text/javascript">
+            try{
+                //window.setTimeout("displaySessionWarning();", 9838200);
+            }
+            catch (e){{document.write('<!-- init timeout failed-->');}}
+            //var dialogTO;
+            function displaySessionWarning() {
+                //dialogTO = window.setTimeout("closeSession();", 59000);
+                //let main window hanlde the timeout
+                var obj = document.getElementById("openModal");
+                obj.style.opacity = 100;
+                obj.style.pointerEvents = "all";
+            }
+            function clearSessionWarning() {
+                //call main window
+                var obj = parent.opener;
+                if (obj == null) obj = parent.parent;
+                obj.clearSessionWarning();
+                var obj = document.getElementById("openModal");
+                obj.style.opacity = 0;
+                obj.style.pointerEvents = "none";
+            }
+            function closeSession() {
+                //call main window
+                var obj = parent.opener;
+                if (obj == null) obj = parent.parent;
+                obj.closeSession();
+            }
+        </script>
+        </div>
+                        </td>
+
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+
+
+            </div>
+
+            <div class="footer" >
+                
+<table id="tblFooter" width="100%" border="0">
+	<tbody>
+		<tr>
+			<td align="center" style="font-weight:normal; font-size:8pt; color:black; font-family:Arial">
+				<div id="Footer1_pnlFooterMessage">
+
+</div>Aumentum Recorder - Public 
+				Access Web UI,
+				<span id="Footer1_version" title="2020.1.0.15 Built 05/21/2020 04:49:40 AM">Version 2020.1.0</span>
+				<br />
+				Copyright © 2001 -
+				<span id="Footer1_thisYear">2022</span>
+				&nbsp;<a class="HartLink" href=" https://www.aumentumtech.com/" target="_blank">Aumentum Technologies.</a> All Rights Reserved
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+            </div>
+
+			<input type="hidden" id="dlgOptionWindow_clientState" name="dlgOptionWindow_clientState" /><div class="ig_ElectricBlueControl igdw_ElectricBlueControl :=CtlMain:layout" id="dlgOptionWindow" style="display:none;">
+	<div data-ig="x:797756677.0:obj:header" class="ig_ElectricBlueHeader igdw_ElectricBlueHeaderArea">
+		<table cellpadding="0" cellspacing="0" width="100%" height="100%">
+			<tr>
+				<td data-ig="x:797756677.1:mkr:8" class="igdw_ElectricBlueHeaderCornerLeft">&nbsp;</td><td data-ig="x:797756677.2:mkr:7" class="igdw_ElectricBlueHeaderContent" nowrap="nowrap"><span data-ig="x:797756677.3:mkr:1" class="igdw_ElectricBlueHeaderCaption">Copy Options</span></td><td class="igdw_ElectricBlueHeaderContent igdw_ElectricBlueHeaderButtonArea" width="15" align="right" nowrap="nowrap"><img alt="Close" data-ig="x:797756677.4:mkr:Close" src="../ig_res/ElectricBlue/images/igdw_Close.gif" /></td><td data-ig="x:797756677.5:mkr:9" class="igdw_ElectricBlueHeaderCornerRight">&nbsp;</td>
+			</tr>
+		</table>
+	</div><div data-ig="x:797756677.6:obj:body">
+		<table cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td data-ig="x:797756677.7:mkr:10" class="igdw_ElectricBlueBodyEdgeLeft">&nbsp;</td><td data-ig="x:797756677.8:mkr:11" class="igdw_ElectricBlueBodyContentArea"><div class="igdw_ElectricBlueBodyContent" data-ig="x:797756677.9:mkr:16">
+					
+						<iframe id="ifrOptionWindow"  allowtransparency="true" style="height:99%; width:685px;" frameborder="0" ></iframe>
+					
+				</div></td><td data-ig="x:797756677.10:mkr:12" class="igdw_ElectricBlueBodyEdgeRight">&nbsp;</td>
+			</tr><tr>
+				<td data-ig="x:797756677.11:mkr:13" class="igdw_ElectricBlueBodyCornerBottomLeft">&nbsp;</td><td data-ig="x:797756677.12:mkr:14" class="igdw_ElectricBlueBodyEdgeBottom">&nbsp;</td><td data-ig="x:797756677.13:mkr:15" class="igdw_ElectricBlueBodyCornerBottomRight">&nbsp;</td>
+			</tr>
+		</table>
+	</div>
+</div>
+        </div>                
+        <input type="hidden" id="RangeContextMenu_clientState" name="RangeContextMenu_clientState" /><div class="ig_Control igdm_ControlVertical" id="RangeContextMenu" style="display:block;">
+	<div class="igdm_MenuScrollContainer igdm_MenuScrollContainerRootVertical" data-ig="x:1944750471.0:mkr:sd">
+		<a class="igdm_MenuScrollButton igdm_MenuScrollerTop" title="Scroll up" href="javascript:void(0)" tabindex="-1" data-ig="x:1944750471.1:mkr:sb" style="display:none;"><span class="igdm_MenuScrollIcon igdm_MenuScrollIconTop" data-ig="x:1944750471.2:mkr:si" unselectable="on"></span></a><ul class="igdm_MenuGroupVerticalRoot " style="display:block;">
+			<li data-ig="x:1944750471.3:adr:0" class="igdm_MenuItemVerticalRoot" unselectable="on"><a accesskey="" href="#" tabindex="-1" class="igdm_MenuItemVerticalRootLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Today</span></a></li><li data-ig="x:1944750471.4:adr:1" class="igdm_MenuItemVerticalRoot" unselectable="on"><a href="#" tabindex="-1" class="igdm_MenuItemVerticalRootLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Yesterday</span></a></li><li data-ig="x:1944750471.5:adr:2" class="igdm_MenuItemVerticalRoot" unselectable="on"><a href="#" tabindex="-1" class="igdm_MenuItemVerticalRootLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">This Week</span></a></li><li data-ig="x:1944750471.6:adr:3" class="igdm_MenuItemVerticalRoot" unselectable="on"><a href="#" tabindex="-1" class="igdm_MenuItemVerticalRootLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Last Week</span></a></li><li data-ig="x:1944750471.7:adr:4" class="igdm_MenuItemVerticalRoot" unselectable="on"><a href="#" tabindex="-1" class="igdm_MenuItemVerticalRootLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">This Month</span></a></li><li data-ig="x:1944750471.8:adr:5" class="igdm_MenuItemVerticalRoot" unselectable="on"><a href="#" tabindex="-1" class="igdm_MenuItemVerticalRootLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Last Month</span></a></li>
+		</ul><a class="igdm_MenuScrollButton igdm_MenuScrollerBottom" title="Scroll down" href="javascript:void(0)" tabindex="-1" data-ig="x:1944750471.9:mkr:sb" style="display:none;"><span class="igdm_MenuScrollIcon igdm_MenuScrollIconBottom" data-ig="x:1944750471.10:mkr:si" unselectable="on"></span></a>
+	</div>
+</div>
+
+
+        <div id="loginWindow" class="modalDialogLight" >
+            <div>
+                <h2>Login</h2>
+                
+
+<div id="loginPane" class="loginPaneNew" style="padding:4px; width: 100%; "  onkeypress="setLogin(event)">
+    <span onclick="closeLoginWindow();" title="Close"
+        style="color:#666666; text-decoration:none; font-weight: bold; cursor: pointer; position:absolute; top: 2px; right:6px; font-size:10pt;">X</span>
+    <script type="text/javascript">
+        function setLoginFocus() {
+            var obj = $find('LoginForm1_txtLogonName');
+            //alert(obj);
+            if (obj != null) obj.focus(100);
+        }
+        function setLogin(e) {
+            var input = ig_getWebControlById('LoginForm1_btnLogon');
+              if (e.keyCode == 13 && input != null ) {
+                  input.setFocus();
+                  input.click();
+                  e.preventDefault();
+                  return;
+            }
+        }
+
+    </script>
+    <table width="100%"><tr><td>
+        <div style="width:110px; text-align:right; float:left; margin-bottom:2px;"><span style="color:red">*</span> Logon Name:</div>
+        <span style="padding-left:7px;">
+            <input type="hidden" id="LoginForm1_txtLogonName_clientState" name="LoginForm1_txtLogonName_clientState" /><input title="{0}" id="LoginForm1_txtLogonName" onkeyup="SetBackGroundColor(this, &#39;White&#39;, &#39;Yellow&#39;);" readonly="readonly" name="LoginForm1_txtLogonName" class="igte_Edit" type="text" align="notset" />
+			&nbsp;
+        </span>
+    </td></tr>
+    <tr><td>
+        <div style="width:110px; text-align:right;float:left; margin-bottom:2px;"><span style="color:red">*</span> Password:</div>
+        <span style="padding-left:7px;">
+            <input type="hidden" id="LoginForm1_txtPassword_clientState" name="LoginForm1_txtPassword_clientState" /><input id="LoginForm1_txtPassword" onkeyup="SetBackGroundColor(this, &#39;White&#39;, &#39;Yellow&#39;);" readonly="readonly" name="LoginForm1_txtPassword" class="igte_Edit" type="password" align="notset" />
+			&nbsp;
+        </span>
+    </td></tr>
+    <tr><td  >
+        <div style="width:322px; text-align:right;">
+            <div style="float:right; padding-left:5px; text-align:left;">
+            <input id="LoginForm1_rdoPubCpu" type="radio" name="ctl00$LoginForm1$logonType" value="rdoPubCpu" checked="checked" /><label for="LoginForm1_rdoPubCpu">This is a Public Computer</label><br />
+            <input id="LoginForm1_rdoPvtCpu" type="radio" name="ctl00$LoginForm1$logonType" value="rdoPvtCpu" /><label for="LoginForm1_rdoPvtCpu">This is a Private Computer</label>
+                </div>
+        </div>
+    </td></tr>
+    <tr><td align="center">
+        
+    </td></tr>
+    <tr><td align="center" >
+       
+<input id="LoginForm1_btnLogon" type="submit" style="width:120px;" name="ctl00$LoginForm1$btnLogon" value="Logon" accesskey="L" alt="" />
+
+        <div style="width:267px; text-align:right;">
+         </div>
+    </td></tr>
+    <tr><td align="center">
+        
+    </td></tr>
+    <tr><td align="center">
+        
+    </td></tr></table>
+</div>
+
+
+
+
+                
+
+            </div> 
+            <script type="text/javascript">
+                function displayLoginWindow() {
+                    var obj = document.getElementById("loginWindow");
+                    obj.style.opacity = 100;
+                    obj.style.pointerEvents = "all";
+                    setLoginFocus();
+                }
+                function closeLoginWindow() {
+                    var obj = document.getElementById("loginWindow");
+                    obj.style.opacity = 0;
+                    obj.style.pointerEvents = "none";
+                }
+
+            </script>
+            <br />
+        </div>
+
+    <input type="hidden" name="ctl00$_IG_CSS_LINKS_" id="_IG_CSS_LINKS_" value="~/localization/style.css|~/localization/styleforsearch.css|~/favicon.ico|~/localization/styleFromCounty.css|../ig_res/ElectricBlue/ig_webtab.css|../ig_res/Default/ig_texteditor.css|../ig_res/Default/ig_datamenu.css|../ig_res/ElectricBlue/ig_dialogwindow.css|../ig_res/ElectricBlue/ig_datamenu.css|../ig_res/ElectricBlue/ig_shared.css|../ig_res/Default/ig_shared.css" />
+<script language='javascript'><!--
+					var _sessTOID = -1;
+					var _isLoggedOn = false;
+					function _mainSetSessTimeout(){
+					try{
+						window.clearTimeout(_sessTOID);
+					}
+					catch (e){}
+					try{
+						_sessTOID = window.setTimeout('displaySessionWarning();', 9841300);
+					}
+					catch (e){window.status = 'init timeout failed';}
+					}
+					_mainSetSessTimeout();
+					//-->
+					</script>
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Infragistics.Web.UI.WebDataMenu, {"id":"Header1_WebDataMenu1","name":"WebDataMenu1","props":[[[,,,,,],{"c":{"mihIcon":"igdm_ElectricBlueMenuItemHorizontalIcon","miv":"igdm_ElectricBlueMenuItemVertical","mivSelected":"igdm_ElectricBlueMenuItemVerticalSelected","mivIcon":"igdm_ElectricBlueMenuItemVerticalIcon","mgv":"igdm_ElectricBlueMenuGroupVertical","mivRootSelected":"igdm_ElectricBlueMenuItemVerticalRootSelected","mivParent":"igdm_ElectricBlueMenuItemVerticalParent","ocs":1,"mivRootLink":"igdm_ElectricBlueMenuItemVerticalRootLink","mihRootActive":"igdm_ElectricBlueMenuItemHorizontalRootActive","vse":0,"mihRoot":"igdm_ElectricBlueMenuItemHorizontalRoot","mgh":"igdm_ElectricBlueMenuGroupHorizontal","mihRootDisabled":"igdm_ElectricBlueMenuItemHorizontalRootDisabled","cmonc":true,"mivRootActive":"igdm_ElectricBlueMenuItemVerticalRootActive","aoh":false,"mivParentLink":"igdm_ElectricBlueMenuItemVerticalParentLink","subMenuClosingDelay":0,"mivRoot":"igdm_ElectricBlueMenuItemVerticalRoot","enableScrolling":true,"enabled":true,"uid":"ctl00$Header1$WebDataMenu1","mihActive":"igdm_ElectricBlueMenuItemHorizontalActive","mihRootLink":"igdm_ElectricBlueMenuItemHorizontalRootLink","pi":"[]","tabIndex":"0","mhDisabled":"igdm_ElectricBlueControlHorizontalDisabled","mivRootDisabled":"igdm_ElectricBlueMenuItemVerticalRootDisabled","mihParentLink":"igdm_ElectricBlueMenuItemHorizontalParentLink","mivActive":"igdm_ElectricBlueMenuItemVerticalActive","subMenuOpeningDelay":0,"mihRootHover":"igdm_ElectricBlueMenuItemHorizontalRootHover","mvDisabled":"igdm_ElectricBlueControlVerticalDisabled","mghRoot":"igdm_ElectricBlueMenuGroupHorizontalRoot","_pi":"[\"../ig_res/Default/images/ig_ajaxIndicator.gif\",,,\"ig_AjaxIndicator\",,1,,,,\"ig_AjaxIndicatorBlock\",,3,,3,\"Async post\"]","selectedItemAdr":"6","mihHover":"igdm_ElectricBlueMenuItemHorizontalHover","mihRootSelected":"igdm_ElectricBlueMenuItemHorizontalRootSelected","mih":"igdm_ElectricBlueMenuItemHorizontal","mvActive":"igdm_ElectricBlueControlVerticalActive","mivRootHover":"igdm_ElectricBlueMenuItemVerticalRootHover","mivDisabled":"igdm_ElectricBlueMenuItemVerticalDisabled","mivLink":"igdm_ElectricBlueMenuItemVerticalLink","mihParent":"igdm_ElectricBlueMenuItemHorizontalParent","mgvRoot":"igdm_ElectricBlueMenuGroupVerticalRoot","mihDisabled":"igdm_ElectricBlueMenuItemHorizontalDisabled","mhActive":"igdm_ElectricBlueControlHorizontalActive","mihSelected":"igdm_ElectricBlueMenuItemHorizontalSelected","mivHover":"igdm_ElectricBlueMenuItemVerticalHover","mihLink":"igdm_ElectricBlueMenuItemHorizontalLink"}}],[[[[,,,,,,,,,,,,,,,,,,,,,,,,,"mainMenuItem",,,,,,,]],,]],[{'0':[[,,,,"Welcome","9997","_welcome","~/","",,,,,]],'1':[[,,,,"",,,"","",,,,1,]],'2':[[,,,,"Marriage","9998","MARRIAGE","","",,,,,]],'2.0':[[,,,,"Online Marriage App","9998","MARRIAGE43","~/Marriage/MarriageApplication.aspx","",,,,,]],'3':[[,,,,"",,,"","",,,,1,]],'4':[[,,,,"Old Index Book","9998","COTT","","",,,,,]],'4.0':[[,,,,"Search Old Index Book","9998","COTTSEARCH_INDEX","~/IndexBook/SearchEntry.aspx","",,,,,]],'5':[[,,,,"",,,"","",,,,1,]],'6':[[327889,,,,"Real Estate","9998","OPR","","",,,,,]],'6.0':[[,,,,"Party List","9998","OPRPARTY_LIST","~/RealEstate/ListOfParties.aspx","",,,,,]],'6.1':[[,,,,"Search Map/Plat Index","9998","OPRSEARCH_MAP_INDEX","~/RealEstate/Map/SearchEntry.aspx","",,,,,]],'6.2':[[,,,,"Search Real Estate Index","9998","OPRSEARCH_INDEX","~/RealEstate/SearchEntry.aspx","",,,,,]],'7':[[,,,,"",,,"","",,,,1,]],'8':[[,,,,"Uniform Commercial Code","9998","UCC","","",,,,,]],'8.0':[[,,,,"Search UCC Index","9998","UCCSEARCH_INDEX","~/UCC/SearchEntry.aspx","",,,,,]],'9':[[,,,,"",,,"","",,,,1,]],'10':[[,,,,"FAQ","9999","_faq","~/localization/faq.aspx","",,,,,]]},{'-1':[[,,,,,,,,,,,,,,,,,"1022px",0,,,,,,"-1"]],'0':[[,,,,,,,,,,,,,,,,,,,,,,,,"0"]],'1':[[,,,,,,,,,,,,,,,,,,,,,,,,"1"]],'2':[[,,,,,,,,,,,,,,,,,,,,,,,,"2"]],'2.0':[[,,,,,,,,,,,,,,,,,,,,,,,,"2.0"]],'3':[[,,,,,,,,,,,,,,,,,,,,,,,,"3"]],'4':[[,,,,,,,,,,,,,,,,,,,,,,,,"4"]],'4.0':[[,,,,,,,,,,,,,,,,,,,,,,,,"4.0"]],'5':[[,,,,,,,,,,,,,,,,,,,,,,,,"5"]],'6':[[,,,,,,,,,,,,,,,,,,,,,,,,"6"]],'6.0':[[,,,,,,,,,,,,,,,,,,,,,,,,"6.0"]],'6.1':[[,,,,,,,,,,,,,,,,,,,,,,,,"6.1"]],'6.2':[[,,,,,,,,,,,,,,,,,,,,,,,,"6.2"]],'7':[[,,,,,,,,,,,,,,,,,,,,,,,,"7"]],'8':[[,,,,,,,,,,,,,,,,,,,,,,,,"8"]],'8.0':[[,,,,,,,,,,,,,,,,,,,,,,,,"8.0"]],'9':[[,,,,,,,,,,,,,,,,,,,,,,,,"9"]],'10':[[,,,,,,,,,,,,,,,,,,,,,,,,"10"]]}],[]]}, null, null, $get("Header1_WebDataMenu1"));
+});
+Sys.Application.add_init(function() {
+    $create(Infragistics.Web.UI.WebTab, {"id":"cphNoMargin_f_oprTab","name":"cphNoMargin_f_oprTab","props":[[[,,,,,,,,],{"c":{"tc":"igtab_ElectricBlueTHTab|igtab_ElectricBlueTHTail|igtab_ElectricBlueTHCenter|igtab_ElectricBlueTHText|||igtab_ElectricBlueTHTabHov|igtab_ElectricBlueTHTailHov|igtab_ElectricBlueTHCenterHov|igtab_ElectricBlueTHTextHov|||igtab_ElectricBlueTHTabSel|igtab_ElectricBlueTHTailSel|igtab_ElectricBlueTHCenterSel|igtab_ElectricBlueTHTextSel|||||||||igtab_ElectricBlueTHTabDis|igtab_ElectricBlueTHTailDis|igtab_ElectricBlueTHCenterDis|igtab_ElectricBlueTHTextDis||","pi":"[]","p":"0|0|0|||||||0|||1||0|igtab_ElectricBlueTHCloseSize|../ig_res/ElectricBlue/images/igtab_closeHov.gif||","vse":0,"uid":"ctl00$cphNoMargin$f$oprTab","cp":"0|0|0|0|0"}}],,[{'0':[[,,,,,,"General",,,,,,"general"]],'1':[[,,,,,,"Legal Description",,,,,,"legal"]],'2':[[,,,,,,"Related Documents",,,,,,"relatedDocuments"]]}],[]]}, null, null, $get("cphNoMargin_f_oprTab"));
+});
+Sys.Application.add_init(function() {
+    $create(Infragistics.Web.UI.WebDialogWindow, {"id":"dlgOptionWindow","name":"dlgOptionWindow","props":[[[,3,,,"700px","550px",1,1,0,0,,0],{"c":{"uid":"ctl00$dlgOptionWindow","mbc":"igdw_ElectricBlueModalBackground"}}],[[[[,"Copy Options",,]],[[[[],{"c":{"h":"../ig_res/ElectricBlue/images/igdw_CloseHover.gif","i":"../ig_res/ElectricBlue/images/igdw_Close.gif","s":"i","a":"Close","p":"../ig_res/ElectricBlue/images/igdw_CloseMouseDown.gif"}}],,],[[[]],,],[[[]],,]],],[[[,,,,]],,]],,["WindowStateChanged:dlgOptionWindow_WindowStateChanged"]]}, null, null, $get("dlgOptionWindow"));
+});
+Sys.Application.add_init(function() {
+    $create(Infragistics.Web.UI.WebDataMenu, {"id":"RangeContextMenu","name":"RangeContextMenu","props":[[[,,,,1,],{"c":{"mihIcon":"igdm_MenuItemHorizontalIcon","miv":"igdm_MenuItemVertical","mivSelected":"igdm_MenuItemVerticalSelected","mivIcon":"igdm_MenuItemVerticalIcon","mgv":"igdm_MenuGroupVertical","mivRootSelected":"igdm_MenuItemVerticalRootSelected","mivParent":"igdm_MenuItemVerticalParent","ocs":1,"mivRootLink":"igdm_MenuItemVerticalRootLink","mihRootActive":"igdm_MenuItemHorizontalRootActive","mihRoot":"igdm_MenuItemHorizontalRoot","mgh":"igdm_MenuGroupHorizontal","mihRootDisabled":"igdm_MenuItemHorizontalRootDisabled","cmonc":true,"mivRootActive":"igdm_MenuItemVerticalRootActive","aoh":true,"mivParentLink":"igdm_MenuItemVerticalParentLink","subMenuClosingDelay":0,"mivRoot":"igdm_MenuItemVerticalRoot","enableScrolling":true,"enabled":true,"uid":"ctl00$RangeContextMenu","mihActive":"igdm_MenuItemHorizontalActive","mihRootLink":"igdm_MenuItemHorizontalRootLink","pi":"[]","tabIndex":"0","mhDisabled":"igdm_ControlHorizontalDisabled","mivRootDisabled":"igdm_MenuItemVerticalRootDisabled","mihParentLink":"igdm_MenuItemHorizontalParentLink","mivActive":"igdm_MenuItemVerticalActive","subMenuOpeningDelay":0,"mihRootHover":"igdm_MenuItemHorizontalRootHover","mvDisabled":"igdm_ControlVerticalDisabled","mghRoot":"igdm_MenuGroupHorizontalRoot","mihHover":"igdm_MenuItemHorizontalHover","mihRootSelected":"igdm_MenuItemHorizontalRootSelected","mih":"igdm_MenuItemHorizontal","mvActive":"igdm_ControlVerticalActive","mivRootHover":"igdm_MenuItemVerticalRootHover","mivDisabled":"igdm_MenuItemVerticalDisabled","mivLink":"igdm_MenuItemVerticalLink","mihParent":"igdm_MenuItemHorizontalParent","mgvRoot":"igdm_MenuGroupVerticalRoot","mihDisabled":"igdm_MenuItemHorizontalDisabled","mhActive":"igdm_ControlHorizontalActive","mihSelected":"igdm_MenuItemHorizontalSelected","mivHover":"igdm_MenuItemVerticalHover","mihLink":"igdm_MenuItemHorizontalLink"}}],[[[[,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,]],,]],[{'0':[[,,,,"Today",,"TODAY","","",,,,,]],'1':[[,,,,"Yesterday",,"YESTERDAY","","",,,,,]],'2':[[,,,,"This Week",,"THISWEEK","","",,,,,]],'3':[[,,,,"Last Week",,"LASTWEEK","","",,,,,]],'4':[[,,,,"This Month",,"THISMONTH","","",,,,,]],'5':[[,,,,"Last Month",,"LASTMONTH","","",,,,,]]},{'-1':[[,,,,,,,,,,,,,,,,,,,,,,,,"-1"]],'0':[[,,,,,,,,,,,,,,,,,,,,,,,,"0"]],'1':[[,,,,,,,,,,,,,,,,,,,,,,,,"1"]],'2':[[,,,,,,,,,,,,,,,,,,,,,,,,"2"]],'3':[[,,,,,,,,,,,,,,,,,,,,,,,,"3"]],'4':[[,,,,,,,,,,,,,,,,,,,,,,,,"4"]],'5':[[,,,,,,,,,,,,,,,,,,,,,,,,"5"]]}],["ItemClick:RangeContextMenu_ItemClick"]]}, null, null, $get("RangeContextMenu"));
+});
+Sys.Application.add_init(function() {
+    $create(Infragistics.Web.UI.WebTextEditor, {"id":"LoginForm1_txtLogonName","name":"LoginForm1_txtLogonName","props":[[[],{"c":{"prop":"1,64,,0,1,1,,,3,1,,,,6,,200,,2038:2040:2032,igte_Focus,igte_Hover,igte_NullText,","prop1":"","uid":"ctl00$LoginForm1$txtLogonName"}}],,,[]]}, null, null, $get("LoginForm1_txtLogonName"));
+});
+Sys.Application.add_init(function() {
+    $create(Infragistics.Web.UI.WebTextEditor, {"id":"LoginForm1_txtPassword","name":"LoginForm1_txtPassword","props":[[[],{"c":{"prop":"1,64,,0,1,1,,,3,1,,,,6,,200,,2038:2040:2032,igte_Focus,igte_Hover,igte_NullText,","prop1":"","uid":"ctl00$LoginForm1$txtPassword"}}],,,[]]}, null, null, $get("LoginForm1_txtPassword"));
+});
+//]]>
+</script>
+</form>
+    </div>
+
+    <div id="searchNotice" class="modalDialog">
+        <div>
+            <h2>Searching for records...</h2>
+            <div style="width:100%; text-align:center;"><img id="_progInd" src="../images/progressIndTrans.gif" /></div>
+            <br />
+            To cancel, click 'Cancel', or press the 'Escape(ESC)' key.
+           <p style="text-align: right;">  <a href="#close" id="endSearch" class="btn-modal" onclick="clearSearchIndicator(event);">Cancel</a></p>
+
+        </div>
+        <script type="text/javascript">
+            /*if (window.addEventListener) {
+                window.addEventListener('stop', clearSearchIndicator, false);
+            }
+            else if (window.attachEvent) {
+                window.attachEvent('onstop', clearSearchIndicator);
+            }
+            document.onstop = clearSearchIndicator;*/
+
+            function checkForEsc(event) {
+                var key;
+                if (window.event) {
+                    key = window.event.keyCode;
+                }
+                else {
+                    key = event.which;
+                }
+                if (key == 27) {
+                    clearSearchIndicator();
+                }
+            }
+            function displaySearchIndicator() {
+                var obj = document.getElementById("searchNotice");
+                obj.style.opacity = 100;
+                obj.style.pointerEvents = "all";
+                if (window.addEventListener) {
+                    window.addEventListener('keyup', checkForEsc, false);
+                }
+                else if (window.attachEvent) {
+                    window.attachEvent('onkeyup', checkForEsc);
+                }
+
+            }
+            function clearSearchIndicator(e) {
+                var obj = document.getElementById("searchNotice");
+                obj.style.opacity = 0;
+                obj.style.pointerEvents = "none";
+                stopWindow();
+                if (window.removeEventListener) {
+                    window.removeEventListener('keyup', checkForEsc, false);
+                }
+                else if (window.detachEvent) {
+                    window.detachEvent('onkeyup', checkForEsc);
+                }
+            }
+            function stopWindow() {
+                if (window.stop) {
+                    window.stop();
+                }
+                else {
+                    try { document.execCommand("Stop"); } catch (e) { };
+                    var e = document.createEvent("KeyboardEvent"); 
+                    e.initKeyboardEvent("keydown", true, true, window, "27", 0, "", false, "");
+                    document.dispatchEvent(e); 
+                }
+            }
+            function NewSearch_Click(oButton, oEvent) {
+                window.setTimeout("displaySearchIndicator();", 450);
+                var o = document.getElementById("_progInd");
+                window.setTimeout("document.getElementById('_progInd').src='" + o.src + "';", 200);
+                try { return Search_Click(oButton, oEvent); }
+                catch (e) { }
+            }
+        </script>
+    </div>
+
+    <div id="openModal" class="modalDialog">
+        <div>
+            <h2>Session Timeout Warning</h2>
+            <p >Your session will end in approximately one minute unless you click "Keep Working" to continue.<br />Or you may click "End Session" if you are done.</p>
+           <p style="text-align: right;">  <a href="#close" id="EndSession" class="btn-modal" onclick="closeSession();"> End Session</a>
+           &nbsp;&nbsp;&nbsp;<a href="#close" id="KeepWorking" class="btn-modal" onclick="clearSessionWarning();"> Keep Working</a>   </p>
+        </div>
+            <iframe id="ifrKeepAlive"  allowtransparency="true" style="height:0px; width:0px;" frameborder="0" ></iframe>
+
+        <script type="text/javascript">
+            try{
+                //window.setTimeout("displaySessionWarning();", 9838200);
+            }
+            catch (e){{document.write('<!-- init timeout failed-->');}}
+            var dialogTO;
+            function displaySessionWarning() {
+                dialogTO = window.setTimeout("closeSession();", 59000);
+                var obj = document.getElementById("openModal");
+                obj.style.opacity = 100;
+                obj.style.pointerEvents = "all";
+                if (_imgWindow == null){
+                    //alert('no img');
+                }
+                else {
+                    _imgWindow.displaySessionWarning();
+                }
+            }
+            function clearSessionWarning() {
+                _mainSetSessTimeout();
+                window.clearTimeout(dialogTO);
+                var obj = document.getElementById("openModal");
+                obj.style.opacity = 0;
+                obj.style.pointerEvents = "none";
+                var obj = document.getElementById("ifrKeepAlive");
+                obj.src = "/users/default.aspx?m=act&rnd=" + Math.random().toString();
+            }
+            function closeSession(){
+                _mainSetSessTimeout();
+                window.clearTimeout(dialogTO);
+                try{closePopup();}catch(e){}
+                if (_isLoggedOn){
+                    document.location.href="/logout.aspx";
+                }
+                else {
+                    document.location.href="/?session+timeout+2";
+                }
+            }
+        </script>
+    </div>
+
+
+</body>
+</html>
+

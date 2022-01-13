@@ -2,6 +2,7 @@ import requests
 import jmespath
 import json
 from dateutil import parser
+from deed_scraper import get_deed
 
 url = "https://property.spatialest.com/nc/durham/data/propertycard"
 
@@ -23,16 +24,20 @@ for parcel_id in range(100005, 293000):
     if json_data['found']:
         parcel = json_data['parcel']
         sale_date = parcel["keyinfo"][10]["value"]
-        if sale_date != "-" and parcel["keyinfo"][11]["value"] != "-":
+        sale_price =  parcel["keyinfo"][11]["value"]
+        if sale_date != "-" and sale_price != "-":
+            book = parcel["keyinfo"][8]["value"].split(" / ")[0]
+            page =  parcel["keyinfo"][8]["value"].split(" / ")[1]
+
+            deed_info = get_deed(book, page)
 
             land_info = {
                 "state":"NC",
                 "county":"DURHAM",
                 "physical_address": str(parcel["header"]["location"]["value"]).upper().strip(),
                 "property_type": " ".join(parcel["keyinfo"][5]["value"].split()).strip().upper(),
-                "book": parcel["keyinfo"][8]["value"].split(" / ")[0],
-                "page": parcel["keyinfo"][8]["value"].split(" / ")[1],
-                "sale_date": parser.parse(sale_date),
+                "book": book,
+                "page": page,
                 "sale_price": parcel["keyinfo"][11]["value"],
                 "property_id": json_data["id"]
             }

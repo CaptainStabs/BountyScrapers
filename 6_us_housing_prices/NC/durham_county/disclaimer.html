@@ -1,0 +1,697 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1"><meta name="copyright" content="Copyright 2001-2017 Aumentum Technologies.  All Rights Reserved." /><meta name="robots" content="NOFOLLOW,NOINDEX" /><link rel="stylesheet" href="localization/style.css" type="text/css" /><link rel="stylesheet" href="localization/styleforsearch.css" type="text/css" /><link id="favIcon" rel="Shortcut Icon" href="favicon.ico" />
+<title>Welcome - Durham NC Web Access</title>
+<link rel="stylesheet" href="localization/styleFromCounty.css" type="text/css" />
+
+	<script type="text/javascript">
+	    var _helpWin = null;
+	    window.onunload = function () { try { _mstr_closePopupWindow(); } catch (e) { } };
+
+	    function _mstr_closePopupWindow() {
+	        if (_helpWin != null) {
+	            _helpWin.close();
+	        }
+	        try { _mstr_closeImageWindow(); } catch (e) { }
+	    }
+
+	    var _imgWindow = null;
+	    //window.onunload = function () {try{_mstr_closeImageWindow();}catch(e){}};
+	    function _openImgWindow(url) {
+	        if (_imgWindow != null) {
+	            try {
+	                _imgWindow.location.href = url;
+	                try { _imgWindow.focus(); }
+	                catch (e) { }
+	            }
+	            catch (e) { _imgWindow = null; }
+	        }
+	        if (_imgWindow == null) {
+	            var h = screen.height - 70;
+	            var w = screen.width;
+	            var l = w - 980;
+	            if (h > 730) h = 730;
+	            if (l < 10) l = 10;
+	            if (w > 950) w = 950;
+	            var optns = "height=" + h.toString() + ",width=" + w.toString() + ",left=" + l.toString() + ",top=10,location=no,menubar=no,toolbar=no,resizable=yes";
+	            //alert(optns);
+	            _imgWindow = window.open(url, "", optns, true);
+	        }
+	        //
+	    }
+	    function _mstr_closeImageWindow() {
+	        if (_imgWindow != null) {
+	            _imgWindow.close();
+	            _imgWindow = null;
+	        }
+	    }
+	</script>
+
+
+	<script type="text/javascript" id="igClientScript1">
+	<!--
+	    function showSelectRange(sender, e) {
+	        var x = e.clientX; //0;
+	        var y = e.clientY; //0;
+	        //        try {
+	        //            y = SumOffsetTop(oToolbar.Element) + 9; //oToolbar.Elementment.offsetTop;
+	        //            x = SumOffsetLeft(oButton.Element) + 6; //.offsetLeft;
+	        //        }
+	        //        catch (e) { }
+	        var mnu = $IG.WebDataMenu.find('RangeContextMenu');
+	        if (mnu == null) { alert("no menu"); return; }
+	        if (x != null && x > 0)
+	            mnu.showAt(x, y, e);
+	        else
+	            mnu.showAt(600, 200, e);
+	    }
+
+	    var dteRngFromClientID, dteRngToClientID;
+
+	    function showSelectRange(sender, e, rngFromId, rngToId) {
+	        dteRngFromClientID = rngFromId;
+	        dteRngToClientID = rngToId;
+	        var x = e.clientX; //0;
+	        var y = e.clientY; //0;
+	        //        try {
+	        //            y = SumOffsetTop(oToolbar.Element) + 9; //oToolbar.Elementment.offsetTop;
+	        //            x = SumOffsetLeft(oButton.Element) + 6; //.offsetLeft;
+	        //        }
+	        //        catch (e) { }
+	        var mnu = $IG.WebDataMenu.find('RangeContextMenu');
+	        if (mnu == null) { alert("no menu"); return; }
+	        if (x != null && x > 0)
+	            mnu.showAt(x, y, e);
+	        else
+	            mnu.showAt(600, 200, e);
+	    }
+
+
+
+	    function RangeContextMenu_ItemClick(sender, eventArgs) {
+	        ///<summary>
+	        ///
+	        ///</summary>
+	        ///<param name="sender" type="Infragistics.Web.UI.WebDataMenu"></param>
+	        ///<param name="eventArgs" type="Infragistics.Web.UI.DataMenuItemCancelEventArgs"></param>
+
+	        //Add code to handle your event here.
+	        var dte1, dte2;
+	        dte1 = $find(dteRngFromClientID);
+	        dte2 = $find(dteRngToClientID);
+	        if (dte1 == null || dte2 == null) return;
+
+
+	        if (dte1 != null && dte2 != null) {
+	            switch (sender._selectedItem.get_key()) {
+	                case "TODAY":
+	                    dte1.set_value(new Date(_today));
+	                    dte2.set_value(new Date(_today));
+	                    break;
+	                case "YESTERDAY":
+	                    dte1.set_value(new Date(_yesterday));
+	                    dte2.set_value(new Date(_yesterday));
+	                    break;
+	                case "THISWEEK":
+	                    dte1.set_value(new Date(_startwk1));
+	                    dte2.set_value(new Date(_today));
+	                    break;
+	                case "LASTWEEK":
+	                    dte1.set_value(new Date(_startwk2));
+	                    dte2.set_value(new Date(_endwk2));
+	                    break;
+	                case "THISMONTH":
+	                    dte1.set_value(new Date(_startmth1));
+	                    dte2.set_value(new Date(_today));
+	                    break;
+	                case "LASTMONTH":
+	                    dte1.set_value(new Date(_startmth2));
+	                    dte2.set_value(new Date(_endmth2));
+	                    break;
+	            }
+	        }
+	    }// -->
+	</script>
+
+	<script type="text/javascript">
+	    function showOptionWindow(url, w) {
+	        var o = document.getElementById('ifrOptionWindow');
+	        if (o == null) {
+	            alert('Error: search frame not found!');
+	        }
+	        else {
+	            o.src = url; // "Controls/SearchNadr.aspx?docId=" + escape(docId) + "&idx=" + escape(idx) + "&type=" + escape(itemType);
+	        }
+
+	        var wdw = $find('dlgOptionWindow');
+	        wdw.set_width(w.toString() + 'px');
+	        wdw.set_windowState(0);
+	        //wdw.set_left('360px');
+	        //wdw.set_top('150px');
+
+	        return false;
+	    }
+	    function closeOptionDialog() {
+	        var wdw = $find('dlgOptionWindow');
+	        wdw.set_windowState(3);
+	        var o = document.getElementById('ifrOptionWindow');
+	        if (o != null) o.src = "";
+	    }
+	    function dlgOptionWindow_WindowStateChanged(sender, eventArgs) {
+	        //alert(sender.get_windowState());
+	        if (sender.get_windowState() == 3) {
+	            var o = document.getElementById('ifrOptionWindow');
+	            if (o != null) { o.src = ""; }
+	        }
+	    }
+	</script>
+
+	<script type="text/javascript">
+		function _mstr_getIFrContentDoc(ifrObj) {
+			var retVal = (ifrObj.contentDocument != null ? ifrObj.contentWindow : document.frames[ifrObj.id].window);
+			return retVal;
+		}
+
+		function _mstr_checkKey(event, mode) {
+			var key;
+			if (window.event) {
+				key = window.event.keyCode;
+			}
+			else {
+				key = event.which;
+			}
+			switch (mode) {
+				case 1: //page range
+					if (key < 48 || (key > 57)) {
+						if (key != 32 && key != 44 && key != 45) {
+							return false;
+						}
+					}
+					break;
+				case 2: //numeric
+					if (key < 48 || (key > 57)) {
+						return false;
+					}
+					break;
+			}
+			return true;
+		}
+
+		function _mstr_checkIfSearch(btnId, event) {
+			var key;
+			if (window.event) {
+				key = window.event.keyCode;
+			}
+			else {
+				key = event.which;
+			}
+			if (key == 13) {
+				var btn = ig_getWebControlById(btnId);
+				if (btn != null) {
+					//alert('no button ' + btnId); return;
+					//btn.set_postBack(1);
+					document.getElementById("__EVENTTARGET").value = escape(btnId).replace(/_/g, "$");
+					document.getElementById("__EVENTARGUMENT").value = "0";
+					document.forms[0].submit();
+					return false;
+				}
+			}
+			return true;
+		}
+	</script>
+<title>
+	
+</title></head>
+
+<body>
+
+    <div style="display:none;"><a name="maincontent" title="skip to the main content area of this page">skip to the main content area of this page</a></div>
+    
+<div style="height:105px; border-bottom: 2px solid black; background-color:White; ">
+<Table border="0">
+	<tr>
+		<td vAlign="top" colSpan="1"><img id="County1_Image1" src="localization/CountySeal.gif" height="100" /></td>
+		<td style="padding-left:10px;"><div style="font-size:22pt;font-weight:bold;">Durham County North Carolina 
+		</div><div style="font-size:16pt;font-weight:bold;">Register of Deeds Public Records Search</div></td><!---->
+	</tr>
+</Table>
+
+</div>
+
+    <div id="_countyFrame">
+    <form method="post" action="./" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTkzMzM0NzE2OA9kFgJmD2QWAgICD2QWCgIDDw8WAh4HVmlzaWJsZWhkFgICBw8WAxYHDxYCHg5fZGF0YUtleUZpZWxkc2VkZBQrAAIWAh4LY2xpZW50U3RhdGUUKwABZGRkZBcAFgBkZGQCBQ9kFgICBQ8PFgIfAGhkZAILD2QWBGYPFCsAAmRkZAIBDxQrAAQUKwACZGRkZBYCHgF2Z2QCDQ8WAxYEZGQUKwACFgIeEGNvbGxlY3Rpb25zU3RhdGUFqwtbeycwJzpbW251bGwsbnVsbCxudWxsLG51bGwsIlRvZGF5IixudWxsLCJUT0RBWSIsIiIsIiIsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsXV0sJzEnOltbbnVsbCxudWxsLG51bGwsbnVsbCwiWWVzdGVyZGF5IixudWxsLCJZRVNURVJEQVkiLCIiLCIiLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbF1dLCcyJzpbW251bGwsbnVsbCxudWxsLG51bGwsIlRoaXMgV2VlayIsbnVsbCwiVEhJU1dFRUsiLCIiLCIiLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbF1dLCczJzpbW251bGwsbnVsbCxudWxsLG51bGwsIkxhc3QgV2VlayIsbnVsbCwiTEFTVFdFRUsiLCIiLCIiLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbF1dLCc0JzpbW251bGwsbnVsbCxudWxsLG51bGwsIlRoaXMgTW9udGgiLG51bGwsIlRISVNNT05USCIsIiIsIiIsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsXV0sJzUnOltbbnVsbCxudWxsLG51bGwsbnVsbCwiTGFzdCBNb250aCIsbnVsbCwiTEFTVE1PTlRIIiwiIiwiIixudWxsLG51bGwsbnVsbCxudWxsLG51bGxdXX0seyctMSc6W1tudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCwiLTEiXV0sJzAnOltbbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsIjAiXV0sJzEnOltbbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsIjEiXV0sJzInOltbbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsIjIiXV0sJzMnOltbbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsIjMiXV0sJzQnOltbbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsIjQiXV0sJzUnOltbbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsIjUiXV19XWRkD2QWBg9mFCsAAhQrAAIWBB4CTjFlHgJOOWVkZA8CARQrAAIUKwACFgQfBWUfBmVkZA8CAhQrAAIUKwACFgQfBWUfBmVkZA8CAxQrAAIUKwACFgQfBWUfBmVkZA8CBBQrAAIUKwACFgQfBWUfBmVkZA8CBRQrAAIUKwACFgQfBWUfBmVkZGRkAg8PZBYGAgIPDxYCHgFFZWRkAgoPZBYCAgIPZBYEAgIPZBYCAgMPEGRkFgBkAgMPZBYUAgMPPCsABQECFCsAAhYCHwIUKwABZGRkAgkPPCsABQECFCsAAhYCHwIUKwABZGRkAg8PPCsABQECFCsAAhYCHwIUKwABZGRkAhcPPCsABQECFCsAAhYCHwIUKwABZGRkAh8PEGRkFgFmZAIjDzwrAAUBAhQrAAIWAh8CFCsAAWRkZAIlDzwrAAUBAhQrAAIWAh8CFCsAAWRkZAIpDzwrAAUBAhQrAAIWAh8CFCsAAWRkZAIrDxBkZBYBZmQCLw88KwAFAQIUKwACFgIfAhQrAAFkZGQCCw9kFgICAg8WCRYCFgcPFgQeFWNvbHVtbnNJbnRlcm5hbEluaXRlZGgfAWVkZBQrAAIWBB8CPCsABAAfBAUtW3t9LHsnMCc6W1siZ3JpZEJhc2tldF9Ecm9wRG93blByb3ZpZGVyMSJdXX1dZGRkFwAWBRYCaBYEHgZERk5hbWUFDl9pbWdfTU9EVUxFX0lEHgZERlR5cGUFWlN5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4ORYCaBYEHwkFEl9pbWdfRE9DVU1FTlRfVFlQRR8KBVpTeXN0ZW0uU3RyaW5nLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkWAmgWBB8JBRJfaW1nX1NFTlRfVE9fUVVFVUUfCgVaU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5FgJoFgQfCQUIRkVFVkFMVUUfCgVaU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5FgJoFgQfCQUFTm90ZXMfCgVaU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5ZA9kFhkPZhYCFgMWDh4CRjAFDUEyX1NFU1NJT05fSUQeBEJERjMFDFN5c3RlbS5JbnQzMh4EQkRGMAUNQTJfU0VTU0lPTl9JRB4DR0YxGwAAAAAAgFFAAQAAAB4OaGlkZGVuSW50ZXJuYWwLKYoBSW5mcmFnaXN0aWNzLldlYi5VSS5EZWZhdWx0YWJsZUJvb2xlYW4sIEluZnJhZ2lzdGljczQuV2ViLnYxMy4yLCBWZXJzaW9uPTEzLjIuMjAxMzIuMjI5NCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj03ZGQ1YzMxNjNmMmNkMGNiAR4Pcm93U3BhbkludGVybmFsZh4WaGlkZGVuQnlQYXJlbnRJbnRlcm5hbGgWAmQFCVNlc3Npb24gIxYCZGVkDwIBFgIWAxYQHwsFCEJBVENIX0lEHwwFDFN5c3RlbS5JbnQzMh8NBQhCQVRDSF9JRB4DR0YwBQxjZW50ZXJlZENlbGwfDhsAAAAAAIBRQAEAAAAfDwsrBAAfEGYfEWgWAmQFCVJlcXVlc3QgIxYCZGVkDwICFgIWAxYSHwwFD1N5c3RlbS5EYXRlVGltZR4ERkdGMAUXezA6TU0vZGQveXl5eSBoaDptbSB0dH0fEWgfCwULQUNUSU9OX1RJTUUfDwsrBAAfDhsAAAAAAEBgQAEAAAAfDQULQUNUSU9OX1RJTUUfEGYfEgUMY2VudGVyZWRDZWxsFgJkBQpEYXRlIEFkZGVkFgJkZWQPAgMWAhYDFgwfCwUJTU9EVUxFX0lEHw0FCU1PRFVMRV9JRB8OGwAAAAAAAGlAAQAAAB8PCysEAR8QZh8RaBYCZAUJTW9kdWxlIElkFgJkZWQPAgQWAhYDFgwfCwUNRE9DVU1FTlRfVFlQRR8NBQ1ET0NVTUVOVF9UWVBFHw4bAAAAAAAAaUABAAAAHw8LKwQBHxBmHxFoFgJkBQtBY3Rpb24gVHlwZRYCZGVkDwIFFgIWAxYMHwsFDVNFTlRfVE9fUVVFVUUfDQUNU0VOVF9UT19RVUVVRR8OGwAAAAAAAFRAAQAAAB8PCysEAR8QZh8RaBYCZAULRGVzdGluYXRpb24WAmRl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NWMzMTYzZjJjZDBjYgFkDwIDFgIWAhYCHwIUKwABBQtFZGl0aW5nQ29yZWQPZBYBD2YWAhYCFgIfAhQrAAEFC0NlbGxFZGl0aW5nZA9kFgEPZhYGHxQFDURPQ1VNRU5UX1RZUEUeA0NFMAUcZ3JpZEJhc2tldF9Ecm9wRG93blByb3ZpZGVyMR8CFCsAAWRkD2QWAQ9mFgIfAhQrAAEFHGdyaWRCYXNrZXRfRHJvcERvd25Qcm92aWRlcjFkZGRkFgJmDxYCFgcPFgIfAWVkZBQrAAEUKwACFgQfAjwrADMFAQspmAFJbmZyYWdpc3RpY3MuV2ViLlVJLkxpc3RDb250cm9scy5Ecm9wRG93bkRpc3BsYXlNb2RlLCBJbmZyYWdpc3RpY3M0LldlYi52MTMuMiwgVmVyc2lvbj0xMy4yLjIwMTMyLjIyOTQsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49N2RkNWMzMTYzZjJjZDBjYgICAsgBFwUDdHh0J2gqaB8EBUFbeycwJzpbW251bGwsbnVsbCxudWxsLG51bGwsbnVsbCwidHh0IiwidmFsIiwwLG51bGwsbnVsbCxudWxsXV19XWRkZBcAFgAPZBYBD2YUKwACFgIfAhQrAAtkZGRkZAUDdHh0BQN2YWxoZGRkZGQYBAUaY3RsMDAkSGVhZGVyMSRXZWJEYXRhTWVudTEPZWQFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYKBRVjdGwwMCRkbGdPcHRpb25XaW5kb3cFFmN0bDAwJFJhbmdlQ29udGV4dE1lbnUFHWN0bDAwJExvZ2luRm9ybTEkdHh0TG9nb25OYW1lBRxjdGwwMCRMb2dpbkZvcm0xJHR4dFBhc3N3b3JkBRpjdGwwMCRMb2dpbkZvcm0xJHJkb1B1YkNwdQUaY3RsMDAkTG9naW5Gb3JtMSRyZG9QdnRDcHUFGmN0bDAwJExvZ2luRm9ybTEkcmRvUHZ0Q3B1BRljdGwwMCRMb2dpbkZvcm0xJGJ0bkxvZ29uBRJjdGwwMCRfaWdfZGVmX2VwX24FEmN0bDAwJF9pZ19kZWZfZXBfZAUpY3RsMDAkTG9naW5Gb3JtMSRCYXNrZXQxJGdyaWRCYXNrZXQkY3RsMDAPFCsABAUDdHh0ZgL/////DwL/////D2QFFmN0bDAwJFJhbmdlQ29udGV4dE1lbnUPZWST3Xi5ZjsUak5849aNWE8X64E9ashyLwtieZCaccSOag==" />
+
+<SCRIPT type='text/javascript' src='/ClientScript/Entry.js'></script><script>var _today = '1/13/2022'; var _yesterday = '1/12/2022'; 
+	    var _startwk1 = '1/9/2022'; var _startwk2 = '1/2/2022'; var _endwk2 = '1/8/2022';
+	    var _startmth1 = '1/1/2022'; var _startmth2 = '12/1/2021'; var _endmth2 = '12/31/2021';</script>
+<link href="ig_res/Default/ig_shared.css" type="text/css" rel="stylesheet" />
+<link href="ig_res/ElectricBlue/ig_shared.css" type="text/css" rel="stylesheet" />
+<link href="ig_res/ElectricBlue/ig_dialogwindow.css" type="text/css" rel="stylesheet" />
+<link href="ig_res/Default/ig_datamenu.css" type="text/css" rel="stylesheet" />
+<link href="ig_res/Default/ig_texteditor.css" type="text/css" rel="stylesheet" />
+<script src="/ScriptResource.axd?d=rBULpXYICP7EWvI0uZobQO6T_8qPoemJDV29mNS2Q5gwGX8j9e432yp0F6mbk3CwsyNatQ474l2xEh-DXRnXIobzxNnBJcv1jd6AQ4lfb6ju6cfA7oyh4F361Pa9ec1AIUJj1OwpUT50nKxfkqSeMBYKctiKJ_qkdSXo1WphOSs1&amp;t=363be08" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=FzLwN-lUaTRILhhJ0gagGc54nI4VYXp1nRFVxbNeXHIefVqcHQqszi1GPZTYsqKcQ8eRvukw89rJCGp3VEZwBJs3jFmuBS82qv9Igs9LvpNAGi7D69donhZusS39USJfATqYGTkHOgzbFDfOtwiC-FerfZv1XNkLMObRw3VT2zk1&amp;t=ffffffffcb0b3192" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=8emhNxG3WhdigI2x9dnpJBreAfOE_rTChfXcqNpsjgAEASDiRvRKvdxo_v0VS2Kb1CU4abST_A9DHVDg_ROzGvlDXLk1zdpGiWO0x24C6pnK3i-SU_aY2LkHExwmgtetm3Yq-jwqhs9_9X2hleZ5qifRQBT1NHenieRjNtCUffoFiVzO-rS5MPk-HD9tL0g70&amp;t=ffffffffcb0b3192" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=-FIpOcAksfRF4OO_EUurFdgp8Ff3ABoH5bOKhnJb4cPwv6MfB-Fst27uIvVVhuHxbWAf-TYSX-0KqWZd-E6kJNmv2UoclbjWSjWQqWcuiNDptaYX7PIuiGC7GR5yYSGTIH2sebSsfWfoer9IuyV0098-hp17QmAa37nNfDGGyaCGWbzfOZXMEOtmndmuzhWV0&amp;t=ffffffffcb0b3192" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=-i089Xcj7Ah2yslNpUg3kvlUKHuqUk3VThIy0PPpfyVExa0e0aT6FH-m0FuuOnF43iVUI_UVn8q_o93eIWKtxc8Fo4J5nwlfsFPpN_tAvKX0j8opcs1Z1ses80QOqwNx5FeWvzShBHZSuxJrsMfSLA3xmAp4nm6Cagv9fgLhRWWS2CUU2dF_0_0fAxVxNLgf7xsFKzwiVfUlkPiKAEOMrA2&amp;t=ffffffffcb0b3192" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=oUrtIpcxlLJiflT3sdbt8DUrn0huMyhTalG-wuS4J6F-VgziklxpejzyIfBAT1hqKchChymC5SdLMgfM4DcCzWxDyIqzKSBIyGRrmBLragsOvMxyYgsecQ8byInnHqpYS-wQjcUcdOtV1gdqDQ7PEELImeBu3Ggm9GI3NaKY7EgHplo6svG5qLhuLmNB9gto0&amp;t=ffffffffcb0b3192" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=vEAaIWP-A-4r4Kl8BIqADQdrY_Yaa0ywDjAVXFtu6--RKMfdWhHu7QgJLF0t4lqXwxzG2O1Hv9Y4vAecmf2tWh9rPq-QHDCfj4-MvFsBmvvpGmZu4mUU_m2Sm1j4q46W6aU5FjfuPaMEOOpEvldaq00ipbXEtgpl9c1rSAfE8O2-YU01oyppNm0e_TtO14suzkFJMUjX5NtR5PU6sZ_hDQ2&amp;t=ffffffffcb0b3192" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Lm-7cQO68EZFuumbsNctYEt6BCwhgr0PED-8AHnQvSJOVYjbj4oof_1dL2de9bSU9Jet2zZrkl9d3YhAg5_3Er1D-lG-d9T0MKXMaPf7-Wb2a6d-KpZnYr19RPPggvoyz8UcTwkd7HGidgRxENolIR5qdv7rnLqPc3L5y6GP5ELKUu0nVypZAxTjHi5BeqK3ZmV4xmPILbUg7nZPpQ3dqA2&amp;t=ffffffffcb0b3192" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=nQ9mvQrbV7MrvrhPFhRk5uyLjxzcGrHle5oH6lkxHXG1YrprvHM8RrhnuhAiYw-Rm8I4uRkHOC-qpUcG-wzbKfT4tLs1PkelNkjzu-a2NyM9t4euup6AQPmKU9PbWOz2xQn7ipSCQPXyZpdsNDdj511Zd7idYiGp7B4cQaaPBT98OWGeAOfxISu6TncFMAaKNHd1Jv9kEUKh-Gm-MyVgLQ2&amp;t=ffffffffcb0b3192" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (document.head || (document.getElementsByTagName && document.getElementsByTagName('head') && document.getElementsByTagName('head').length > 0)) { 
+var docHead = (document.head ? document.head : document.getElementsByTagName('head')[0]); 
+var style = document.createElement('style'); 
+style.id ="igStyles";
+style.type = 'text/css';
+var __ig_css = "";
+if (style.styleSheet) { style.styleSheet.cssText =__ig_css;}
+else { style.appendChild(document.createTextNode(__ig_css));}
+docHead.appendChild(style);
+} 
+//]]>
+</script>
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAUYPJI1/Hoeqom9Pc4d+qhf4K3DppXWfyM2jA5SVFnKZelpzquvG/YFWErcLu0B1w/RX4voneI4VOxMlObPwzUUiOZklp0ZzYteOWw32i4ghEKeow+t5ueZ7EuE74SYE/qk3ljWITIiPfKxs9HxN8W7" />
+        
+        <div style="width:1022px;margin: 0px 0px 0px;" class="PAcontent">
+            
+
+            <a name="maincontent" id="A1"></a>
+            <div class="mainContent">
+	        
+    <div id="cph1_pnlWelcomeMessage" class="welcomeMessage">
+
+</div>
+	
+    
+
+    <div id="cph1_pnlAccept" class="homePageLinkButton">
+	
+    <a id="cph1_lnkAccept" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$cph1$lnkAccept&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Click here to acknowledge the disclaimer and enter the site.</a>
+    
+</div>
+<!--    <div class="homePageLinkButton">
+    <a href="localization/browsertest.aspx">Click here to test your browser for site requirements.</a>
+    </div>-->
+
+    <div id="cph1_pnlCustom" class="disclamerBox">
+	
+<P align="center">
+<font color="black">
+This web site is provided as a public service by the Office of Register of Deeds, Durham County, North Carolina. 
+Information available on this web site is collected, maintained, and provided solely for the convenience of the public users. 
+While every effort is made to assure that this information is accurate and current, the Register of Deeds does not certify the 
+authenticity of the information contained herein. The Register of Deeds shall under no circumstance be responsible for any error or 
+omissions which may occur in these records, nor liable for any actions taken as a result of reliance upon any information contained 
+within this web site from whatever source, or any other consequence from such reliance.  
+
+Images may be unavailable while system backups are in progress and the Registrar has no duty to notify the public of these 
+backups or any other system interruptions.   
+
+Due to the malware attack on Durham County, documents filed on March 6, 2020 might not be displayed.  If you have questions, please call the Register of Deeds office at 919-560-0481.
+
+
+<P align="left">
+<font color="red">
+<b><u>ATTENTION: New Plat Disclaimer</u></b><br />
+</font>
+</P>
+
+<P align="left">
+<font color="black">
+<b>PLEASE NOTE:</u></b><br />
+</font>
+</P>
+<P align="left">
+<font color="black">
+<b>That the following Plat Books are split into A and B search criteria:</u></b><br />
+</font>
+</P>
+<P align="left">
+<font color="black">
+<b>Book 1A, Pages 1-130, / Book 1B, Pages 131-261</u></b><br />
+</font>
+</P>
+<P align="left">
+<font color="black">
+<b>Book 3A, Pages 1-95 / Book 3B, Pages 96-195</u></b><br />
+</font>
+</P>
+<P align="left">
+<font color="black">
+<b>Book 5A, Pages 1-100 / Book 5B, Pages 101-195</u></b><br />
+</font>
+</P>
+<P align="left">
+<font color="black">
+<b>Book 6A, Pages 1-106 / Book 6B, Pages 107-208</u></b><br />
+</font>
+</P>
+<P align="left">
+<font color="black">
+<b>Book 18A, All images for this book are listed in 18A / There is no Book 18B</u></b><br />
+</font>
+</P>
+<P align="left">
+<font color="black">
+<b>Book 28A, Pages 1-56 / Book 28B, Pages 57-111</u></b><br />
+</font>
+</P>
+<P align="left">
+<font color="black">
+<b>Book 31A, Pages 1-56 / Book 31B, Pages 57-112</u></b><br />
+</font>
+</P>           
+<P align="left">
+<font color="black">
+<b>For example if you are looking up Plat Book 1 page 152. You would search Plat book 1B Page 152.</u></b><br />
+</font>
+</P>
+
+
+</P>
+<P align="left">
+<font color="red">
+<b><u>ATTENTION</u></b><br />
+
+This website has been upgraded. If you have any issues with this new website, please email with the specific details.<br />
+Email address: regdeeds@dconc.gov<mailto:regdeeds@dconc.gov>
+</font>
+</P>
+
+</P>
+<P align="left">
+<font color="red">
+<b><u>BROWSER INFORMATION</u></b><br />
+
+This web site has been tested with major browsers such as Internet Explorer, Firefox, Safari, and Chrome on desktops and tablets, but be aware bugs may exist in newly released (or unpatched) versions that may cause problems accessing this site. 
+</font>
+</P>
+
+
+</div>
+
+
+            </div>
+            <div class="mainContentNoMargin">
+	        
+            
+            </div>
+
+            <div class="footer" >
+                
+<table id="tblFooter" width="100%" border="0">
+	<tbody>
+		<tr>
+			<td align="center" style="font-weight:normal; font-size:8pt; color:black; font-family:Arial">
+				<div id="Footer1_pnlFooterMessage">
+
+</div>Aumentum Recorder - Public 
+				Access Web UI,
+				<span id="Footer1_version" title="2020.1.0.15 Built 05/21/2020 04:49:40 AM">Version 2020.1.0</span>
+				<br />
+				Copyright © 2001 -
+				<span id="Footer1_thisYear">2022</span>
+				&nbsp;<a class="HartLink" href=" https://www.aumentumtech.com/" target="_blank">Aumentum Technologies.</a> All Rights Reserved
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+            </div>
+
+			<input type="hidden" id="dlgOptionWindow_clientState" name="dlgOptionWindow_clientState" /><div class="ig_ElectricBlueControl igdw_ElectricBlueControl :=CtlMain:layout" id="dlgOptionWindow" style="display:none;">
+	<div data-ig="x:797756677.0:obj:header" class="ig_ElectricBlueHeader igdw_ElectricBlueHeaderArea">
+		<table cellpadding="0" cellspacing="0" width="100%" height="100%">
+			<tr>
+				<td data-ig="x:797756677.1:mkr:8" class="igdw_ElectricBlueHeaderCornerLeft">&nbsp;</td><td data-ig="x:797756677.2:mkr:7" class="igdw_ElectricBlueHeaderContent" nowrap="nowrap"><span data-ig="x:797756677.3:mkr:1" class="igdw_ElectricBlueHeaderCaption">Copy Options</span></td><td class="igdw_ElectricBlueHeaderContent igdw_ElectricBlueHeaderButtonArea" width="15" align="right" nowrap="nowrap"><img alt="Close" data-ig="x:797756677.4:mkr:Close" src="ig_res/ElectricBlue/images/igdw_Close.gif" /></td><td data-ig="x:797756677.5:mkr:9" class="igdw_ElectricBlueHeaderCornerRight">&nbsp;</td>
+			</tr>
+		</table>
+	</div><div data-ig="x:797756677.6:obj:body">
+		<table cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td data-ig="x:797756677.7:mkr:10" class="igdw_ElectricBlueBodyEdgeLeft">&nbsp;</td><td data-ig="x:797756677.8:mkr:11" class="igdw_ElectricBlueBodyContentArea"><div class="igdw_ElectricBlueBodyContent" data-ig="x:797756677.9:mkr:16">
+					
+						<iframe id="ifrOptionWindow"  allowtransparency="true" style="height:99%; width:685px;" frameborder="0" ></iframe>
+					
+				</div></td><td data-ig="x:797756677.10:mkr:12" class="igdw_ElectricBlueBodyEdgeRight">&nbsp;</td>
+			</tr><tr>
+				<td data-ig="x:797756677.11:mkr:13" class="igdw_ElectricBlueBodyCornerBottomLeft">&nbsp;</td><td data-ig="x:797756677.12:mkr:14" class="igdw_ElectricBlueBodyEdgeBottom">&nbsp;</td><td data-ig="x:797756677.13:mkr:15" class="igdw_ElectricBlueBodyCornerBottomRight">&nbsp;</td>
+			</tr>
+		</table>
+	</div>
+</div>
+        </div>                
+        <input type="hidden" id="RangeContextMenu_clientState" name="RangeContextMenu_clientState" /><div class="ig_Control igdm_ControlVertical" id="RangeContextMenu" style="display:block;">
+	<div class="igdm_MenuScrollContainer igdm_MenuScrollContainerRootVertical" data-ig="x:1944750471.0:mkr:sd">
+		<a class="igdm_MenuScrollButton igdm_MenuScrollerTop" title="Scroll up" href="javascript:void(0)" tabindex="-1" data-ig="x:1944750471.1:mkr:sb" style="display:none;"><span class="igdm_MenuScrollIcon igdm_MenuScrollIconTop" data-ig="x:1944750471.2:mkr:si" unselectable="on"></span></a><ul class="igdm_MenuGroupVerticalRoot " style="display:block;">
+			<li data-ig="x:1944750471.3:adr:0" class="igdm_MenuItemVerticalRoot" unselectable="on"><a accesskey="" href="#" tabindex="-1" class="igdm_MenuItemVerticalRootLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Today</span></a></li><li data-ig="x:1944750471.4:adr:1" class="igdm_MenuItemVerticalRoot" unselectable="on"><a href="#" tabindex="-1" class="igdm_MenuItemVerticalRootLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Yesterday</span></a></li><li data-ig="x:1944750471.5:adr:2" class="igdm_MenuItemVerticalRoot" unselectable="on"><a href="#" tabindex="-1" class="igdm_MenuItemVerticalRootLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">This Week</span></a></li><li data-ig="x:1944750471.6:adr:3" class="igdm_MenuItemVerticalRoot" unselectable="on"><a href="#" tabindex="-1" class="igdm_MenuItemVerticalRootLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Last Week</span></a></li><li data-ig="x:1944750471.7:adr:4" class="igdm_MenuItemVerticalRoot" unselectable="on"><a href="#" tabindex="-1" class="igdm_MenuItemVerticalRootLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">This Month</span></a></li><li data-ig="x:1944750471.8:adr:5" class="igdm_MenuItemVerticalRoot" unselectable="on"><a href="#" tabindex="-1" class="igdm_MenuItemVerticalRootLink " onclick="{return false;}"><span tabindex="-1" unselectable="on">Last Month</span></a></li>
+		</ul><a class="igdm_MenuScrollButton igdm_MenuScrollerBottom" title="Scroll down" href="javascript:void(0)" tabindex="-1" data-ig="x:1944750471.9:mkr:sb" style="display:none;"><span class="igdm_MenuScrollIcon igdm_MenuScrollIconBottom" data-ig="x:1944750471.10:mkr:si" unselectable="on"></span></a>
+	</div>
+</div>
+
+
+        <div id="loginWindow" class="modalDialogLight" >
+            <div>
+                <h2>Login</h2>
+                
+
+<div id="loginPane" class="loginPaneNew" style="padding:4px; width: 100%; "  onkeypress="setLogin(event)">
+    <span onclick="closeLoginWindow();" title="Close"
+        style="color:#666666; text-decoration:none; font-weight: bold; cursor: pointer; position:absolute; top: 2px; right:6px; font-size:10pt;">X</span>
+    <script type="text/javascript">
+        function setLoginFocus() {
+            var obj = $find('LoginForm1_txtLogonName');
+            //alert(obj);
+            if (obj != null) obj.focus(100);
+        }
+        function setLogin(e) {
+            var input = ig_getWebControlById('LoginForm1_btnLogon');
+              if (e.keyCode == 13 && input != null ) {
+                  input.setFocus();
+                  input.click();
+                  e.preventDefault();
+                  return;
+            }
+        }
+
+    </script>
+    <table width="100%"><tr><td>
+        <div style="width:110px; text-align:right; float:left; margin-bottom:2px;"><span style="color:red">*</span> Logon Name:</div>
+        <span style="padding-left:7px;">
+            <input type="hidden" id="LoginForm1_txtLogonName_clientState" name="LoginForm1_txtLogonName_clientState" /><input title="{0}" id="LoginForm1_txtLogonName" onkeyup="SetBackGroundColor(this, &#39;White&#39;, &#39;Yellow&#39;);" readonly="readonly" name="LoginForm1_txtLogonName" class="igte_Edit" type="text" align="notset" />
+			&nbsp;
+        </span>
+    </td></tr>
+    <tr><td>
+        <div style="width:110px; text-align:right;float:left; margin-bottom:2px;"><span style="color:red">*</span> Password:</div>
+        <span style="padding-left:7px;">
+            <input type="hidden" id="LoginForm1_txtPassword_clientState" name="LoginForm1_txtPassword_clientState" /><input id="LoginForm1_txtPassword" onkeyup="SetBackGroundColor(this, &#39;White&#39;, &#39;Yellow&#39;);" readonly="readonly" name="LoginForm1_txtPassword" class="igte_Edit" type="password" align="notset" />
+			&nbsp;
+        </span>
+    </td></tr>
+    <tr><td  >
+        <div style="width:322px; text-align:right;">
+            <div style="float:right; padding-left:5px; text-align:left;">
+            <input id="LoginForm1_rdoPubCpu" type="radio" name="ctl00$LoginForm1$logonType" value="rdoPubCpu" checked="checked" /><label for="LoginForm1_rdoPubCpu">This is a Public Computer</label><br />
+            <input id="LoginForm1_rdoPvtCpu" type="radio" name="ctl00$LoginForm1$logonType" value="rdoPvtCpu" /><label for="LoginForm1_rdoPvtCpu">This is a Private Computer</label>
+                </div>
+        </div>
+    </td></tr>
+    <tr><td align="center">
+        
+    </td></tr>
+    <tr><td align="center" >
+       
+<input id="LoginForm1_btnLogon" type="submit" style="width:120px;" name="ctl00$LoginForm1$btnLogon" value="Logon" accesskey="L" alt="" />
+
+        <div style="width:267px; text-align:right;">
+         </div>
+    </td></tr>
+    <tr><td align="center">
+        
+    </td></tr>
+    <tr><td align="center">
+        
+    </td></tr></table>
+</div>
+
+
+
+
+                
+
+            </div> 
+            <script type="text/javascript">
+                function displayLoginWindow() {
+                    var obj = document.getElementById("loginWindow");
+                    obj.style.opacity = 100;
+                    obj.style.pointerEvents = "all";
+                    setLoginFocus();
+                }
+                function closeLoginWindow() {
+                    var obj = document.getElementById("loginWindow");
+                    obj.style.opacity = 0;
+                    obj.style.pointerEvents = "none";
+                }
+
+            </script>
+            <br />
+        </div>
+
+    <input type="hidden" name="ctl00$_IG_CSS_LINKS_" id="_IG_CSS_LINKS_" value="~/localization/style.css|~/localization/styleforsearch.css|~/favicon.ico|~/localization/styleFromCounty.css|ig_res/Default/ig_texteditor.css|ig_res/Default/ig_datamenu.css|ig_res/ElectricBlue/ig_dialogwindow.css|ig_res/ElectricBlue/ig_shared.css|ig_res/Default/ig_shared.css" />
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Infragistics.Web.UI.WebDialogWindow, {"id":"dlgOptionWindow","name":"dlgOptionWindow","props":[[[,3,,,"700px","550px",1,1,0,0,,0],{"c":{"uid":"ctl00$dlgOptionWindow","mbc":"igdw_ElectricBlueModalBackground"}}],[[[[,"Copy Options",,]],[[[[],{"c":{"h":"ig_res/ElectricBlue/images/igdw_CloseHover.gif","i":"ig_res/ElectricBlue/images/igdw_Close.gif","s":"i","a":"Close","p":"ig_res/ElectricBlue/images/igdw_CloseMouseDown.gif"}}],,],[[[]],,],[[[]],,]],],[[[,,,,]],,]],,["WindowStateChanged:dlgOptionWindow_WindowStateChanged"]]}, null, null, $get("dlgOptionWindow"));
+});
+Sys.Application.add_init(function() {
+    $create(Infragistics.Web.UI.WebDataMenu, {"id":"RangeContextMenu","name":"RangeContextMenu","props":[[[,,,,1,],{"c":{"mihIcon":"igdm_MenuItemHorizontalIcon","miv":"igdm_MenuItemVertical","mivSelected":"igdm_MenuItemVerticalSelected","mivIcon":"igdm_MenuItemVerticalIcon","mgv":"igdm_MenuGroupVertical","mivRootSelected":"igdm_MenuItemVerticalRootSelected","mivParent":"igdm_MenuItemVerticalParent","ocs":1,"mivRootLink":"igdm_MenuItemVerticalRootLink","mihRootActive":"igdm_MenuItemHorizontalRootActive","mihRoot":"igdm_MenuItemHorizontalRoot","mgh":"igdm_MenuGroupHorizontal","mihRootDisabled":"igdm_MenuItemHorizontalRootDisabled","cmonc":true,"mivRootActive":"igdm_MenuItemVerticalRootActive","aoh":true,"mivParentLink":"igdm_MenuItemVerticalParentLink","subMenuClosingDelay":0,"mivRoot":"igdm_MenuItemVerticalRoot","enableScrolling":true,"enabled":true,"uid":"ctl00$RangeContextMenu","mihActive":"igdm_MenuItemHorizontalActive","mihRootLink":"igdm_MenuItemHorizontalRootLink","pi":"[]","tabIndex":"0","mhDisabled":"igdm_ControlHorizontalDisabled","mivRootDisabled":"igdm_MenuItemVerticalRootDisabled","mihParentLink":"igdm_MenuItemHorizontalParentLink","mivActive":"igdm_MenuItemVerticalActive","subMenuOpeningDelay":0,"mihRootHover":"igdm_MenuItemHorizontalRootHover","mvDisabled":"igdm_ControlVerticalDisabled","mghRoot":"igdm_MenuGroupHorizontalRoot","_pi":"[\"ig_res/Default/images/ig_ajaxIndicator.gif\",,,\"ig_AjaxIndicator\",,1,,,,\"ig_AjaxIndicatorBlock\",,3,,3,\"Async post\"]","mihHover":"igdm_MenuItemHorizontalHover","mihRootSelected":"igdm_MenuItemHorizontalRootSelected","mih":"igdm_MenuItemHorizontal","mvActive":"igdm_ControlVerticalActive","mivRootHover":"igdm_MenuItemVerticalRootHover","mivDisabled":"igdm_MenuItemVerticalDisabled","mivLink":"igdm_MenuItemVerticalLink","mihParent":"igdm_MenuItemHorizontalParent","mgvRoot":"igdm_MenuGroupVerticalRoot","mihDisabled":"igdm_MenuItemHorizontalDisabled","mhActive":"igdm_ControlHorizontalActive","mihSelected":"igdm_MenuItemHorizontalSelected","mivHover":"igdm_MenuItemVerticalHover","mihLink":"igdm_MenuItemHorizontalLink"}}],[[[[,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,]],,]],[{'0':[[,,,,"Today",,"TODAY","","",,,,,]],'1':[[,,,,"Yesterday",,"YESTERDAY","","",,,,,]],'2':[[,,,,"This Week",,"THISWEEK","","",,,,,]],'3':[[,,,,"Last Week",,"LASTWEEK","","",,,,,]],'4':[[,,,,"This Month",,"THISMONTH","","",,,,,]],'5':[[,,,,"Last Month",,"LASTMONTH","","",,,,,]]},{'-1':[[,,,,,,,,,,,,,,,,,,,,,,,,"-1"]],'0':[[,,,,,,,,,,,,,,,,,,,,,,,,"0"]],'1':[[,,,,,,,,,,,,,,,,,,,,,,,,"1"]],'2':[[,,,,,,,,,,,,,,,,,,,,,,,,"2"]],'3':[[,,,,,,,,,,,,,,,,,,,,,,,,"3"]],'4':[[,,,,,,,,,,,,,,,,,,,,,,,,"4"]],'5':[[,,,,,,,,,,,,,,,,,,,,,,,,"5"]]}],["ItemClick:RangeContextMenu_ItemClick"]]}, null, null, $get("RangeContextMenu"));
+});
+Sys.Application.add_init(function() {
+    $create(Infragistics.Web.UI.WebTextEditor, {"id":"LoginForm1_txtLogonName","name":"LoginForm1_txtLogonName","props":[[[],{"c":{"prop":"1,64,,0,1,1,,,3,1,,,,6,,200,,2038:2040:2032,igte_Focus,igte_Hover,igte_NullText,","prop1":"","uid":"ctl00$LoginForm1$txtLogonName"}}],,,[]]}, null, null, $get("LoginForm1_txtLogonName"));
+});
+Sys.Application.add_init(function() {
+    $create(Infragistics.Web.UI.WebTextEditor, {"id":"LoginForm1_txtPassword","name":"LoginForm1_txtPassword","props":[[[],{"c":{"prop":"1,64,,0,1,1,,,3,1,,,,6,,200,,2038:2040:2032,igte_Focus,igte_Hover,igte_NullText,","prop1":"","uid":"ctl00$LoginForm1$txtPassword"}}],,,[]]}, null, null, $get("LoginForm1_txtPassword"));
+});
+//]]>
+</script>
+</form>
+    </div>
+
+    <div id="searchNotice" class="modalDialog">
+        <div>
+            <h2>Searching for records...</h2>
+            <div style="width:100%; text-align:center;"><img id="_progInd" src="images/progressIndTrans.gif" /></div>
+            <br />
+            To cancel, click 'Cancel', or press the 'Escape(ESC)' key.
+           <p style="text-align: right;">  <a href="#close" id="endSearch" class="btn-modal" onclick="clearSearchIndicator(event);">Cancel</a></p>
+
+        </div>
+        <script type="text/javascript">
+            /*if (window.addEventListener) {
+                window.addEventListener('stop', clearSearchIndicator, false);
+            }
+            else if (window.attachEvent) {
+                window.attachEvent('onstop', clearSearchIndicator);
+            }
+            document.onstop = clearSearchIndicator;*/
+
+            function checkForEsc(event) {
+                var key;
+                if (window.event) {
+                    key = window.event.keyCode;
+                }
+                else {
+                    key = event.which;
+                }
+                if (key == 27) {
+                    clearSearchIndicator();
+                }
+            }
+            function displaySearchIndicator() {
+                var obj = document.getElementById("searchNotice");
+                obj.style.opacity = 100;
+                obj.style.pointerEvents = "all";
+                if (window.addEventListener) {
+                    window.addEventListener('keyup', checkForEsc, false);
+                }
+                else if (window.attachEvent) {
+                    window.attachEvent('onkeyup', checkForEsc);
+                }
+
+            }
+            function clearSearchIndicator(e) {
+                var obj = document.getElementById("searchNotice");
+                obj.style.opacity = 0;
+                obj.style.pointerEvents = "none";
+                stopWindow();
+                if (window.removeEventListener) {
+                    window.removeEventListener('keyup', checkForEsc, false);
+                }
+                else if (window.detachEvent) {
+                    window.detachEvent('onkeyup', checkForEsc);
+                }
+            }
+            function stopWindow() {
+                if (window.stop) {
+                    window.stop();
+                }
+                else {
+                    try { document.execCommand("Stop"); } catch (e) { };
+                    var e = document.createEvent("KeyboardEvent"); 
+                    e.initKeyboardEvent("keydown", true, true, window, "27", 0, "", false, "");
+                    document.dispatchEvent(e); 
+                }
+            }
+            function NewSearch_Click(oButton, oEvent) {
+                window.setTimeout("displaySearchIndicator();", 450);
+                var o = document.getElementById("_progInd");
+                window.setTimeout("document.getElementById('_progInd').src='" + o.src + "';", 200);
+                try { return Search_Click(oButton, oEvent); }
+                catch (e) { }
+            }
+        </script>
+    </div>
+
+    <div id="openModal" class="modalDialog">
+        <div>
+            <h2>Session Timeout Warning</h2>
+            <p >Your session will end in approximately one minute unless you click "Keep Working" to continue.<br />Or you may click "End Session" if you are done.</p>
+           <p style="text-align: right;">  <a href="#close" id="EndSession" class="btn-modal" onclick="closeSession();"> End Session</a>
+           &nbsp;&nbsp;&nbsp;<a href="#close" id="KeepWorking" class="btn-modal" onclick="clearSessionWarning();"> Keep Working</a>   </p>
+        </div>
+            <iframe id="ifrKeepAlive"  allowtransparency="true" style="height:0px; width:0px;" frameborder="0" ></iframe>
+
+        <script type="text/javascript">
+            try{
+                //window.setTimeout("displaySessionWarning();", 9838200);
+            }
+            catch (e){{document.write('<!-- init timeout failed-->');}}
+            var dialogTO;
+            function displaySessionWarning() {
+                dialogTO = window.setTimeout("closeSession();", 59000);
+                var obj = document.getElementById("openModal");
+                obj.style.opacity = 100;
+                obj.style.pointerEvents = "all";
+                if (_imgWindow == null){
+                    //alert('no img');
+                }
+                else {
+                    _imgWindow.displaySessionWarning();
+                }
+            }
+            function clearSessionWarning() {
+                _mainSetSessTimeout();
+                window.clearTimeout(dialogTO);
+                var obj = document.getElementById("openModal");
+                obj.style.opacity = 0;
+                obj.style.pointerEvents = "none";
+                var obj = document.getElementById("ifrKeepAlive");
+                obj.src = "/users/default.aspx?m=act&rnd=" + Math.random().toString();
+            }
+            function closeSession(){
+                _mainSetSessTimeout();
+                window.clearTimeout(dialogTO);
+                try{closePopup();}catch(e){}
+                if (_isLoggedOn){
+                    document.location.href="/logout.aspx";
+                }
+                else {
+                    document.location.href="/?session+timeout+2";
+                }
+            }
+        </script>
+    </div>
+
+
+</body>
+</html>
+
