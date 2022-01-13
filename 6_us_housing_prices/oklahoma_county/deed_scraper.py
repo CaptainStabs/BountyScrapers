@@ -11,7 +11,7 @@ import traceback as tb
 from dateutil import parser as dateparser
 import time
 
-# import heartrate; heartrate.trace(browser=True, daemon=True)
+import heartrate; heartrate.trace(browser=True, daemon=True)
 
 class KeyboardInterruptError(Exception):
     pass
