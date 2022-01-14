@@ -29,7 +29,7 @@ for parcel_id in range(100005, 293000):
             book = parcel["keyinfo"][8]["value"].split(" / ")[0]
             page =  parcel["keyinfo"][8]["value"].split(" / ")[1]
 
-            deed_info = get_deed(book, page)
+            # deed_info = get_deed(book, page)
 
             land_info = {
                 "state":"NC",
@@ -38,8 +38,10 @@ for parcel_id in range(100005, 293000):
                 "property_type": " ".join(parcel["keyinfo"][5]["value"].split()).strip().upper(),
                 "book": book,
                 "page": page,
-                "sale_price": parcel["keyinfo"][11]["value"],
-                "property_id": json_data["id"]
+                "sale_price": sale_price.lstrip("$").replace(",", ""),
+                "sale_date": parser.parse(sale_date),
+                "property_id": json_data["id"],
+                "source_url": f"https://property.spatialest.com/nc/durham/#/property/{parcel_id}"
             }
 
             try:

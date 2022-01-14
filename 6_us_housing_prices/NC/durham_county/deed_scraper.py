@@ -6,8 +6,7 @@ def get_deed(book, page):
     s = requests.Session()
 
     headers = {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Cookie': 'ASP.NET_SessionId=egggbv3gtu4lztuwve0ytdlv'
+      'Cookie': 'ASP.NET_SessionId=wafpmo5gv5chhd5ruhm31xxp'
     }
 
     s.headers.update(headers)
@@ -17,7 +16,6 @@ def get_deed(book, page):
 
 
     if "Click here to acknowledge the disclaimer and enter the site." in response.text:
-        print("AAA")
         parser = fromstring(response.text)
 
         # Get the aspx validators from the html response
@@ -29,9 +27,19 @@ def get_deed(book, page):
         payload= f'__EVENTARGUMENT=&__EVENTTARGET=ctl00%24cph1%24lnkAccept&__EVENTVALIDATION={event_validation}&__VIEWSTATE={view_state}&__VIEWSTATEGENERATOR={view_state_generator}'
 
         # Send the payload to the server, accepting the disclaimer
-        response = s.request("POST", deed_url, data=payload)
-        # print(response.headers)
 
+        headers = {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        }
+        s.headers.update(headers)
+
+        response = s.request("POST", deed_url, data=payload)
+        print(response.cookies)
+        # with open("a.html", "w") as f:
+        #     f.write(response.text)
+    #
+    # with open("b.html", "w") as f:
+    #     f.write(response.text)
     parser = fromstring(response.text)
 
     deed_info = {
