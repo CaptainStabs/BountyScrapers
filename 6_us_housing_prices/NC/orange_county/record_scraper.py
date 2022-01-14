@@ -14,6 +14,8 @@ response = requests.request("GET", url, headers=headers, data=payload)
 cleaned_response = str(response.text).replace("\\", "").strip('"')
 json_data = json.loads(cleaned_response)
 
+print(json.dumps(json_data, indent=2))
+
 sale_data = parcel["sections"][3][0][0]
 
 land_info = {
