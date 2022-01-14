@@ -29,7 +29,19 @@ with open("AccountPublicExtractForWeb.csv", "r") as input_csv:
             # concat the street parts filtering out blank parts
             land_info["physical_address"] = ' '.join(str(' '.join(filter(None, street_list)).upper()).split())
 
-            num_units = int(row["Residential Building Count"]) + int(row["Commercial Building Count"])
+
+            res_count = row["Residential Building Count"]
+            com_count = row["Commercial Building Count"]
+
+            if res_count == "" and com_count != "":
+                num_units = int(row["Commercial Building Count"])
+
+            elif res_count != "" and com_count == "":
+                num_units = int(row["Residential Building Count"])
+
+            if res_count != "" and com_count != "":
+                num_units = int(row["Residential Building Count"]) + int(row["Commercial Building Count"])
+
 
             if num_units:
                 land_info["num_units"] = num_units
@@ -43,7 +55,7 @@ with open("AccountPublicExtractForWeb.csv", "r") as input_csv:
             else:
                 land_info["property_id"] = row["Parcel Number"]
 
-
+            land_info["source_url"] = "https://www.eaglecounty.us/assessor/propertyrecordsearch"
             for i in range(1, 10):
                 if row[f"Sale Date {i}"]:
                     try:
