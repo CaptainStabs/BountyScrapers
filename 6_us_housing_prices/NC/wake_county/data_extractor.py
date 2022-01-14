@@ -11,7 +11,7 @@ with open("tabula-CodeDescriptions.csv", "r") as f:
     # print(json.dumps(building_type, indent=2))
 
 
-columns = ["state", "physical_address", "sale_date", "book", "page", "property_type"]
+columns = ["state", "zip5", "physical_address", "sale_date", "sale_price", "book", "page", "property_type", "property_id", "city", "year_built", "source_url", "county", "seller_name"]
 with open("RealEstData01122022.csv", "r", newline="") as input_csv:
     line_count = 0
     # Count lines in file
@@ -40,16 +40,28 @@ with open("RealEstData01122022.csv", "r", newline="") as input_csv:
 
 
             if row["Land_Sale_Date"] and row["Total_Sale_Date"]:
-                land_info["sale_date"] = parser.parse(str(row["Total_Sale_Date"]))
+                land_info["sale_date"] = str(parser.parse(str(row["Total_Sale_Date"]))) #+ "00:00:00"
+                land_info["sale_price"] = str(row["Total_sale_Price"]).replace(",", "")
 
             elif row["Land_Sale_Date"] and not row["Total_Sale_Date"]:
-                land_info['sale_date'] = parser.parse(str(row["Land_Sale_Date"]))
+                land_info['sale_date'] = str(parser.parse(str(row["Land_Sale_Date"]))) #+ "00:00:00"
+                land_info["sale_price"] = str(row["Land_Sale_Price"]).replace(",", "")
 
             elif row["Total_Sale_Date"] and not row["Land_Sale_Date"]:
-                land_info['sale_date'] = parser.parse(str(row["Total_Sale_Date"]))
+                land_info['sale_date'] = str(parser.parse(str(row["Total_Sale_Date"])))# + "00:00:00"
+                land_info["sale_price"] = str(row["Total_sale_Price"]).replace(",", "")
+
 
             land_info["book"] = row["DEED_BOOK"]
             land_info["page"] = row["DEED_PAGE"]
+            land_info["zip5"] = row["PHYSICAL_ZIP_CODE"]
+            land_info["city"] = row["PHYSICAL_CITY"]
+            land_info["property_id"] = row["Parcel_Identification"]
+            land_info["county"] = "WAKE COUNTY"
+            land_info["source_url"] = "https://www.wakegov.com/departments-government/tax-administration/data-files-statistics-and-reports/real-estate-property-data-files"
+
+            if row["Year_Built"] != 0 and row["Year_Built"] != "0":
+                land_info["year_built"] = row["Year_Built"]
 
             if row["TYPE_AND_USE"]:
                 try:
@@ -57,5 +69,9 @@ with open("RealEstData01122022.csv", "r", newline="") as input_csv:
                 except KeyError:
                     pass
 
+            try:
+                if land_info["sale_date"] and land_info["sale_price"]:
+                    writer.writerow(land_info)
 
-            writer.writerow(land_info)
+            except KeyError:
+                pass
