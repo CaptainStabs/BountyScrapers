@@ -6,6 +6,7 @@ from dateutil import parser as dateparser
 import pandas as pd
 import os
 import time
+import heartrate; heartrate.trace(browser=True, daemon=True)
 
 
 filename = "records.csv"
@@ -33,7 +34,7 @@ with open(filename, "a", newline="", encoding="utf-8") as f:
     #     writer.writeheader()
 
     # Believe it ends at 99992, but I'll just end at 999999 just in case
-    last_id = 19666
+    last_id = 35788
     for id in tqdm(range(last_id, 135909)):
         id = "P" + str(id)
         url = f"https://skagitcounty.net/Search/Property/?id={id}"
@@ -81,7 +82,7 @@ with open(filename, "a", newline="", encoding="utf-8") as f:
 
                     do_save = True
                     try:
-                        land_info["year_built"] = str(parser.xpath('//*[@id="content_pdata"]/table[7]/tr[7]/td[2]/text()')).strip()
+                        land_info["year_built"] = str(parser.xpath('//*[@id="content_pdata"]/table[7]/tr[7]/td[2]/text()')[0]).strip()
 
                     except IndexError:
                         pass
