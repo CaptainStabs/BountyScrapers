@@ -19,22 +19,22 @@ columns = ["state", "physical_address", "county", "property_id", "sale_date", "p
 with open(filename, "a", newline="", encoding="utf-8") as f:
     writer = csv.DictWriter(f, fieldnames=columns)
 
-    # if os.path.exists(filename) and os.stat(filename).st_size > 3:
-    #     df = pd.read_csv(filename)
-    #     df_columns = list(df.columns)
-    #     data_columns = ",".join(map(str, df_columns))
-    #
-    #     # Get the last row from df
-    #     last_row = df.tail(1)
-    #     # Access the corp_id
-    #     last_id = int(str(last_row["id"].values[0]).lstrip("P"))
-    #     last_id += 1
-    # else:
-    #     last_id = 0
-    #     writer.writeheader()
+    if os.path.exists(filename) and os.stat(filename).st_size > 3:
+        df = pd.read_csv(filename)
+        df_columns = list(df.columns)
+        data_columns = ",".join(map(str, df_columns))
+
+        # Get the last row from df
+        last_row = df.tail(1)
+        # Access the corp_id
+        last_id = int(str(last_row["id"].values[0]).lstrip("P"))
+        last_id += 1
+    else:
+        last_id = 0
+        writer.writeheader()
 
     # Believe it ends at 99992, but I'll just end at 999999 just in case
-    last_id = 35788
+    # last_id = 35788
     for id in tqdm(range(last_id, 135909)):
         id = "P" + str(id)
         url = f"https://skagitcounty.net/Search/Property/?id={id}"
