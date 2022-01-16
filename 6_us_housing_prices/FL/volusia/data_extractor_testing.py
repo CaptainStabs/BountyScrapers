@@ -1,8 +1,22 @@
 import pyodbc
 import csv
 from tqdm import tqdm
+import argparse
 
-conn = pyodbc.connect(r'Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=C:\\Users\\adria\\github\\BountyScrapers\\6_us_housing_prices\\_Downloads\\CAMA_DATA_EXPORT_WEB.accdb;')
+
+# def data_extractor(year, dbq):
+
+# dbq = f"F:\\__volusia\\databases\\CAMA_DATA_EXPORT{year}F\\CAMA_DATA_EXPORT_WEB.accdb;"
+
+parser = argparse.ArgumentParser()
+parser.add_argument('year', type=str)
+parser.add_argument('dbq', type=str)
+args = parser.parse_args()
+
+year = args.year
+dbq = args.dbq
+
+conn = pyodbc.connect(r'Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=' + dbq)
 cursor = conn.cursor()
 
 columns = ["state", "property_id", "sale_date", "book", "page", "sale_price", "physical_address", "city", "zip5", "source_url"]
@@ -11,7 +25,7 @@ cursor.execute("select PARID, SALEDT, BOOK, PAGE, PRICE from VCPA_CAMA_SALES")
 rows = cursor.fetchall()
 
 
-with open("2022_extracted_data.csv", "a", newline="") as output_csv:
+with open(f"F:\\__volusia\\{year}_extracted_data.csv", "a", newline="") as output_csv:
     writer = csv.DictWriter(output_csv, fieldnames=columns)
     writer.writeheader()
 
