@@ -48,8 +48,6 @@ with open("VD_PARCELDATA.dat", "r") as input_csv:
                 land_info["year_built"] = row["RES_YRBUILT"]
             elif row["COMM_YRBUILT"]:
                 land_info["year_built"] = row["COMM_YRBUILT"]
-            else:
-                print("Both res and com")
 
             street_list = [str(row["SITE_ADRNO"]).strip(), str(row["SITE_ADRDIR"]).strip(), str(row["SITE_ADRSTR"]).strip(), str(row["SITE_ADRSUF"]).strip(), str(row["SITE_ADRSUF2"]).strip(), str(row["SITE_UNITNO"]).strip()]
 
