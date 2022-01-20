@@ -28,7 +28,7 @@ with open("GovernmaxExtract.txt", "r") as input_csv:
                 "zip5": re.match('[0-9]{5}', row["mlocZipCode"]),
                 "sale_price": row["SaleAmount"].strip(),
                 "source_url": "https://www.portagecounty-oh.gov/geographic-information-systems/pages/data-downloads",
-                "buyer_name": row["DeededOwner"].strip()
+                "buyer_name": " ".join(str(row["DeededOwner"].strip().split()))
             }
             # Add street parts to list
             street_list = [str(row["mlocStrDir"]).strip(), str(row["mlocStrNo"]).strip(), str(row["mlocStrNo2"]).strip(), str(row["mlocStrName"]).strip(), str(row["mlocStrSuffix"]).strip(), str(row["mlocStrSuffixDir"]).strip()]
