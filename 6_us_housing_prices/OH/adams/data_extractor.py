@@ -1,7 +1,7 @@
 import csv
 from dateutil import parser
 
-columns = ["property_id", "physical_address", "city", "state", "zip5", "sale_date", "sale_price", "num_units", "source_url"]
+columns = ["property_id", "physical_address", "city", "state", "zip5", "sale_date", "sale_price", "num_units", "source_url", "county"]
 with open("GovernmaxExtract.csv", "r") as input_csv:
     reader = csv.DictReader(input_csv)
 
@@ -17,7 +17,8 @@ with open("GovernmaxExtract.csv", "r") as input_csv:
                 "state": row["mlocState"],
                 "zip5": row["mlocZipCode"],
                 "sale_price": row["SaleAmount"],
-                "source_url": "https://adamscountyauditor.org/"
+                "source_url": "https://adamscountyauditor.org/",
+                "county": "Adams"
 
             }
 
@@ -34,6 +35,13 @@ with open("GovernmaxExtract.csv", "r") as input_csv:
 
             except:
                 pass
+
+            try:
+                if land_info["num_units"] == 0:
+                    land_info["num_units"] = ""
+            except KeyError:
+                continue
+
 
             try:
                 if land_info["sale_date"] and land_info["state"] and land_info["physical_address"]:
