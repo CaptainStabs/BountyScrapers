@@ -2,6 +2,7 @@ import requests
 from lxml.html import fromstring
 
 
+
 headers = {
     'Cookie': '.ASPXANONYMOUS=wxVoOcpA2AEkAAAAZDM3M2YwNTQtNThjMC00MTViLTg2ZWEtOTM2MWRmM2UxNzM50; ASP.NET_SessionId=q1hxvc45vlldco55p03jnw55; DotNetNukeAnonymous=a23253f0-aa99-4557-9dc8-7dbac4c50061; ViewHistory1397=R7049 314; cSearchFor1397=R7049 314; language=en-US; search-view1397=s'
 }
@@ -20,6 +21,7 @@ for id in range(52060324, 52060325):
 
 
     response = requests.request("GET", url, headers=headers)
+    
     land_info = {
         "state": "GA",
         "county": "GWINNETT",
