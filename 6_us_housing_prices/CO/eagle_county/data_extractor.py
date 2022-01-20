@@ -63,7 +63,8 @@ with open("AccountPublicExtractForWeb.csv", "r") as input_csv:
                         land_info["sale_price"] = row[f"Sale Price {i}"]
                         land_info["seller_name"] = " ".join(str(row[f"Grantee {i}"]).strip().split())
                         land_info["buyer_name"] = " ".join(str(row[f"Grantor {i}"]).strip().split())
-                        writer.writerow(land_info)
+                        if land_info["physical_address"] and land_info["sale_date"]:
+                            writer.writerow(land_info)
                     except parser._parser.ParserError:
                         # print(row[f"Sale Date {i}"])
                         pass
