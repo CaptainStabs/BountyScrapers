@@ -32,33 +32,42 @@ with open("VD_PARCELDATA.dat", "r") as input_csv:
         writer.writeheader()
 
         for row in tqdm(reader, total=line_count):
-            land_info = {
-                "state": "PA",
-                "county": "Citrus",
-                "source_url": "https://www.citruspa.org/_dnn/Downloads",
-                "property_id": row["PARCELID"],
-                "city": row["SITE_ADRCITY"],
-                "zip5": row["SITE_ZIP"]
-            }
+            try:
+                land_info = {
+                    "state": "PA",
+                    "county": "Citrus",
+                    "source_url": "https://www.citruspa.org/_dnn/Downloads",
+                    "property_id": row["PARCELID"],
+                    "city": row["SITE_ADRCITY"],
+                    "zip5": row["SITE_ZIP"]
+                }
 
-            if int(row["NUMBLDG"]):
-                land_info["num_units"] = int(row["NUMBLDG"])
+                if int(row["NUMBLDG"]):
+                    land_info["num_units"] = int(row["NUMBLDG"])
 
-            if row["RES_YRBUILT"]:
-                land_info["year_built"] = row["RES_YRBUILT"]
-            elif row["COMM_YRBUILT"]:
-                land_info["year_built"] = row["COMM_YRBUILT"]
+                if row["RES_YRBUILT"]:
+                    land_info["year_built"] = row["RES_YRBUILT"]
+                elif row["COMM_YRBUILT"]:
+                    land_info["year_built"] = row["COMM_YRBUILT"]
 
-            street_list = [str(row["SITE_ADRNO"]).strip(), str(row["SITE_ADRDIR"]).strip(), str(row["SITE_ADRSTR"]).strip(), str(row["SITE_ADRSUF"]).strip(), str(row["SITE_ADRSUF2"]).strip(), str(row["SITE_UNITNO"]).strip()]
+                street_list = [str(row["SITE_ADRNO"]).strip(), str(row["SITE_ADRDIR"]).strip(), str(row["SITE_ADRSTR"]).strip(), str(row["SITE_ADRSUF"]).strip(), str(row["SITE_ADRSUF2"]).strip(), str(row["SITE_UNITNO"]).strip()]
 
-            # concat the street parts filtering out blank parts
-            land_info["physical_address"] = ' '.join(filter(None, street_list)).upper()
+                # concat the street parts filtering out blank parts
+                land_info["physical_address"] = ' '.join(filter(None, street_list)).upper()
 
-            for results in cur.execute(f'SELECT * FROM sales WHERE ALTKEY = {row["ALTKEY"]};'):
-                land_info["sale_date"] = str(parser.parse(results[1]))
-                land_info["sale_price"] = int(results[2])
-                land_info["book"] = results[3]
-                land_info["page"] = results[4]
+                for results in cur.execute(f'SELECT * FROM sales WHERE ALTKEY = {row["ALTKEY"]};'):
+                    sale_date = str(parser.parse(results[1]))
+                    year = sale_date.split("-")[0]
 
-                if land_info["physical_address"] and land_info["sale_date"]:
-                    writer.writerow(land_info)
+                    if int(year) > 2022:
+                        year = sale_date.split("-")[0]
+                        sale_date = "19" + str(year)[2:] + sale_date.replace(year, "")
+                    land_info["sale_date"] = str(parser.parse(results[1]))
+                    land_info["sale_price"] = int(results[2])
+                    land_info["book"] = results[3]
+                    land_info["page"] = results[4]
+
+                    if land_info["physical_address"] and land_info["sale_date"]:
+                        writer.writerow(land_info)
+            except Exception as e:
+                print(e)
