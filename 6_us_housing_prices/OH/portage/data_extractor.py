@@ -4,7 +4,7 @@ import re
 from tqdm import tqdm
 
 
-columns = ["property_id", "physical_address", "city", "county", "state", "zip5", "book", "page", "sale_date", "sale_price", "num_units", "source_url"]
+columns = ["property_id", "physical_address", "city", "county", "state", "zip5", "book", "page", "sale_date", "sale_price", "num_units", "source_url", "buyer_name"]
 with open("GovernmaxExtract.txt", "r") as input_csv:
     line_count = 0
     # Count lines in file
@@ -28,6 +28,7 @@ with open("GovernmaxExtract.txt", "r") as input_csv:
                 "zip5": re.match('[0-9]{5}', row["mlocZipCode"]),
                 "sale_price": row["SaleAmount"].strip(),
                 "source_url": "https://www.portagecounty-oh.gov/geographic-information-systems/pages/data-downloads",
+                "buyer_name": row["DeededOwner"].strip()
             }
             # Add street parts to list
             street_list = [str(row["mlocStrDir"]).strip(), str(row["mlocStrNo"]).strip(), str(row["mlocStrNo2"]).strip(), str(row["mlocStrName"]).strip(), str(row["mlocStrSuffix"]).strip(), str(row["mlocStrSuffixDir"]).strip()]
