@@ -18,7 +18,7 @@ with open("VCPA_CAMA_SALES.csv", "r") as input_csv:
 
     reader = csv.DictReader(input_csv)
 
-    with open("2022_extracted_data.csv", "a", newline="") as output_csv:
+    with open("F:\\__volusia\\2022_extracted_data.csv", "a", newline="") as output_csv:
         writer = csv.DictWriter(output_csv, fieldnames=columns)
         writer.writeheader()
 

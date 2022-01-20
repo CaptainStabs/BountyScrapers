@@ -2,6 +2,7 @@ import pyodbc
 import csv
 from tqdm import tqdm
 import argparse
+from os import system
 
 
 # def data_extractor(year, dbq):
@@ -10,12 +11,28 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument('year', type=str)
-parser.add_argument('dbq', type=str)
+parser.add_argument('dbq_type', type=int)
+parser.add_argument('--custom_name', default=False, type=str)
 args = parser.parse_args()
 
 year = args.year
-dbq = args.dbq
+dbq_type = args.dbq_type
 
+system("title " + year)
+
+if dbq_type == 0:
+    dbq = f"F:\\__volusia\\databases\\CAMA_DATA_EXPORT{year}F\\CAMA_DATA_EXPORT_WEB.accdb;"
+
+elif dbq_type == 1:
+    dbq = f"F:\\__volusia\databases\\VOLIS-ACCESS-{year} FTR\\VOLIS-ACCESS-{year} FTR.accdb;"
+
+elif dbq_type == 2:
+    dbq = f"F:\\__volusia\\databases\\CAMA_DATA_EXPORT{year}F\\CAMA_DATA_EXPORT{year}F.accdb;"
+
+if args.custom_name:
+    dbq = args.custom_name
+
+print(dbq)
 conn = pyodbc.connect(r'Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=' + dbq)
 cursor = conn.cursor()
 
