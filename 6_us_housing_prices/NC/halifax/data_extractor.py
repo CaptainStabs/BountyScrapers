@@ -21,27 +21,37 @@ with open("halifax_co_nc_parcels_2021_final_map.csv", "r") as input_csv:
 
             if row["DATE_RECOR"]:
                 land_info["sale_date"] = parser.parse(row["DATE_RECOR"])
-                if row["\u00ef\u00bb\u00bfPIN83"]:
-                    land_info["property_id"] = row["\u00ef\u00bb\u00bfPIN83"].strip()
+
+                if int(str(land_info["sale_date"]).split("-")[0]) <= 2022:
+                    if row["\u00ef\u00bb\u00bfPIN83"]:
+                        land_info["property_id"] = row["\u00ef\u00bb\u00bfPIN83"].strip()
+
+                    else:
+                        land_info["PARID"]
+
+                    if row["BK_PG"]:
+                        book = row["BK_PG"].split("/")[0].strip()
+                        page = row["BK_PG"].split("/")[1].strip()
+
+                        try:
+                            if int(book) != 0 and int(page) != 0:
+                                land_info["book"] = book
+                                land_info["page"] = page
+
+                        except ValueError:
+                            continue
+                            # print(book, page)
+
+                    land_info["sale_price"] = row["SALE_PRICE"].split(".")[0]
+
+                    land_info["physical_address"] = " ".join(str(row["PARCEL_ADD"]).strip().upper().split())
+                    land_info["property_type"] = row["USE_DESC"]
+
+                    if row["YEAR_BUILT"].split(".")[0] != "0":
+                        land_info["year_built"] = row["YEAR_BUILT"].split(".")[0]
+
+                    if land_info["physical_address"]:
+                        writer.writerow(land_info)
 
                 else:
-                    land_info["PARID"]
-
-                if row["BK_PG"]:
-                    book = row["BK_PG"].split("/")[0].strip()
-                    page = row["BK_PG"].split("/")[1].strip()
-
-                    if book != "0" and page != "0":
-                        land_info["book"] = book
-                        land_info["page"] = page
-
-                land_info["sale_price"] = row["SALE_PRICE"].split(".")[0]
-
-                land_info["physical_address"] = " ".join(str(row["PARCEL_ADD"]).strip().upper().split())
-                land_info["property_type"] = row["USE_DESC"]
-
-                if row["YEAR_BUILT"].split(".")[0] != "0":
-                    land_info["year_built"] = row["YEAR_BUILT"].split(".")[0]
-
-                if land_info["physical_address"]:
-                    writer.writerow(land_info)
+                    print(land_info["sale_date"])
