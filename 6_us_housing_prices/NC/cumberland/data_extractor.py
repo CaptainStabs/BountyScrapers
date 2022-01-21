@@ -50,7 +50,7 @@ with open("Parcels.csv", "r", encoding="utf-8") as input_csv:
                 if row["YEAR_BUILT"] != "0":
                     land_info["year_built"] = row["YEAR_BUILT"]
 
-                if land_info["physical_address"] and land_info["sale_date"]:
+                if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "":
                     writer.writerow(land_info)
                 # else:
                 #     import json
