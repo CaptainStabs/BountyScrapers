@@ -23,14 +23,4 @@ with open("PARCEL.csv", "r", encoding="utf-8") as input_csv:
             }
 
             # If neither pkg_sale_date nor land_sale, try deed_date
-
-            if not row["PKG_SALE_D"] and not row["LAND_SALE_"] and row["DEED_DATE"]:
-                land_info["sale_date"] = parser.parse(row["DEED_DATE"])
-
-            if row["LAND_SALE_"] and not row["PKG_SALE_D"]:
-                land_info["sale_date"] = parser.parse(row["LAND_SALE_"])
-                land_info["sale_price"] = row["LAND_SALE1"]
-
-            elif not row["LAND_SALE_"] and row["PKG_SALE_D"]:
-                land_info["sale_date"] = parser.parse(row["PKG_SALE_D"])
-                land_info["sale_price"] = row["PKG_SALE_P"]
+            
