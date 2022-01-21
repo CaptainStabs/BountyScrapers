@@ -30,20 +30,30 @@ with open("PARCEL.csv", "r", encoding="utf-8") as input_csv:
                 }
 
                 # If neither pkg_sale_date nor land_sale, try deed_date
-                land_info["sale_date"] = parser.parse(row["DEED_DATE"])
+                land_info["sale_date"] = str(parser.parse(row["DEED_DATE"]))
                 land_info["sale_price"] = row["REVENUE_ST"]
 
                 book = row["DEED_BOOK"]
                 page = row["DEED_PAGE"]
 
-                if book != "0" and page != "0" and book is not None and page is not None:
-                    land_info["book"] = book
-                    land_info["page"] = page
+                # For some reason this prevents some rows from saving, but I have no idea why
+                try:
+                    if int(book) != 0 and int(page) != 0:
+                        land_info["book"] = book
+                        land_info["page"] = page
+                except ValueError:
+                    continue
+                except Exception as e:
+                    print(e)
 
-                if land_info["zip5"] = "00000":
+                if land_info["zip5"] == "00000":
                     land_info["zip5"] = ""
 
                 if land_info["physical_address"] and land_info["sale_date"]:
                     writer.writerow(land_info)
+                # else:
+                #     import json
+                #     print(json.dumps(land_info, indent=2))
+
             except parser._parser.ParserError:
                 continue
