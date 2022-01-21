@@ -46,7 +46,7 @@ with open("PARCEL.csv", "r", encoding="utf-8") as input_csv:
                 except Exception as e:
                     print(e)
 
-                if land_info["zip5"] == "00000":
+                if land_info["zip5"] == "00000" or land_info["zip5"] == "0":
                     land_info["zip5"] = ""
 
                 if land_info["physical_address"] and land_info["sale_date"]:
