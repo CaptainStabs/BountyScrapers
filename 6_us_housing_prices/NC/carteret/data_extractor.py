@@ -44,7 +44,9 @@ with open("Tax_Parcel_Data.csv", "r") as input_csv:
                 except ValueError:
                     continue
 
-                if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "":
+                year = land_info["sale_date"].split("-")[0]
+
+                if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "" and int(year) <= 2022:
                     writer.writerow(land_info)
 
             except parser._parser.ParserError:
