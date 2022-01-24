@@ -17,7 +17,7 @@ with open("TaxParcels.csv", "r") as input_csv:
             try:
                 land_info = {
                     "property_id": str(row["PIN"]).split(".")[0],
-                    "sale_date": str(parser.parse((str(row["SaleMonth"]) + "/01/" + str(row["SaleYear"])))),
+                    "sale_date": str(parser.parse(row["DeedDate"])),
                     "sale_price": row["SalePrice"],
                     "property_type": " ".join(str(row["ParcelType"]).upper().strip().split()),
                     "city": str(row["ParCity"]).upper(),
