@@ -36,7 +36,7 @@ with open("TaxParcels.csv", "r") as input_csv:
                         land_info["page"] = page
 
                 except ValueError:
-                    continue
+                    pass
 
                 # Delete if no year_built
                 try:
@@ -44,7 +44,7 @@ with open("TaxParcels.csv", "r") as input_csv:
                         land_info["year_built"] = row["YEARBLT"]
 
                 except ValueError:
-                    continue
+                    pass
 
                 # Delete if no zip5
                 if land_info["zip5"] == "00000" or land_info["zip5"] == "0" or len(land_info["zip5"]) != 5:
@@ -61,4 +61,4 @@ with open("TaxParcels.csv", "r") as input_csv:
                     writer.writerow(land_info)
 
             except parser._parser.ParserError:
-                continue
+                pass
