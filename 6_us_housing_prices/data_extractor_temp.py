@@ -47,7 +47,7 @@ with open("TaxParcels.csv", "r") as input_csv:
                     continue
 
                 # Delete if no zip5
-                if land_info["zip5"] == "00000" or land_info["zip5"] == "0":
+                if land_info["zip5"] == "00000" or land_info["zip5"] == "0" or len(land_info["zip5"]) != 5:
                     land_info["zip5"] = ""
 
                 # Delete if no unit count

@@ -16,7 +16,7 @@ with open("TaxParcels.csv", "r") as input_csv:
         for row in tqdm(reader, total=line_count):
             try:
                 land_info = {
-                    "property_id": row["PIN"],
+                    "property_id": str(row["PIN"]).split(".")[0],
                     "sale_date": str(parser.parse((str(row["SaleMonth"]) + "/01/" + str(row["SaleYear"])))),
                     "sale_price": row["SalePrice"],
                     "property_type": " ".join(str(row["ParcelType"]).upper().strip().split()),
@@ -55,7 +55,7 @@ with open("TaxParcels.csv", "r") as input_csv:
                 except ValueError:
                     continue
 
-                if land_info["zip5"] == "00000" or land_info["zip5"] == "0":
+                if land_info["zip5"] == "00000" or land_info["zip5"] == "0" or len(land_info["zip5"]) != 5:
                     land_info["zip5"] = ""
 
 
