@@ -25,29 +25,27 @@ with open("MyFile_20220124110904.csv", "r") as input_csv:
                     "source_url": "http://gis.guilfordcountync.gov/DataMining/default.aspx"
                 }
 
-                # If address is in separate fields
-                street_list = [str(row["Street#"]).strip(), str(row["Direction"]).strip()]
-
-                # concat the street parts filtering out blank parts
-                land_info["physical_address"] = ' '.join(filter(None, street_list)).upper()
 
                 # Delete if no book
                 # Update field
-                book = row["DEED_BK_PG_NUM"].split("-")[0]
-                page = row["DEED_BK_PG_NUM"].split("-")[1]
-
                 try:
-                    if int(book) != 0 and int(page) != 0:
-                        land_info["book"] = book
-                        land_info["page"] = page
+                    book = row["DEED_BK_PG_NUM"].split("-")[0]
+                    page = row["DEED_BK_PG_NUM"].split("-")[1]
 
-                except ValueError:
+                    try:
+                        if int(book) != 0 and int(page) != 0:
+                            land_info["book"] = book
+                            land_info["page"] = page
+
+                    except ValueError:
+                        continue
+                except IndexError:
                     continue
 
                 # Delete if no year_built
                 try:
-                    if int(row["year_built"]) != 0 and int(row["year_built"]) <= 2022:
-                        land_info["year_built"] = row["year_built"]
+                    if int(row["YEAR_BUILT"]) != 0 and int(row["YEAR_BUILT"]) <= 2022:
+                        land_info["year_built"] = row["YEAR_BUILT"]
 
                 except ValueError:
                     continue
@@ -57,8 +55,12 @@ with open("MyFile_20220124110904.csv", "r") as input_csv:
                     land_info["zip5"] = ""
 
                 # Delete if no unit count
-                if int(row["TOTAL_UNITS"]) != 0:
-                    land_info["num_units"] = row["TOTAL_UNITS"]
+                try:
+                    if int(row["TOTAL_UNITS"]) != 0:
+                        land_info["num_units"] = row["TOTAL_UNITS"]
+
+                except ValueError:
+                    continue
 
                 if row["PKG_SALE_DATE"] and row["LAND_SALE_DATE"]:
                     for i in range(2):
@@ -80,7 +82,7 @@ with open("MyFile_20220124110904.csv", "r") as input_csv:
                     land_info["sale_date"] = str(parser.parse(row["PKG_SALE_DATE"]))
                     land_info["sale_price"] = row["PKG_SALE_PRICE"]
 
-
+                    year = land_info["sale_date"].split("-")[0]
                     if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "" and int(year) <= 2022:
                         writer.writerow(land_info)
 
@@ -88,6 +90,7 @@ with open("MyFile_20220124110904.csv", "r") as input_csv:
                     land_info["sale_date"] = str(parser.parse(row["LAND_SALE_DATE"]))
                     land_info["sale_price"] = row["LAND_SALE_PRICE"]
 
+                    year = land_info["sale_date"].split("-")[0]
                     if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "" and int(year) <= 2022:
                         writer.writerow(land_info)
 
