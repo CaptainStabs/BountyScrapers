@@ -31,8 +31,8 @@ with open("Parcels.csv", "r") as input_csv:
 
                 try:
                     if int(book) != 0 and int(page) != 0:
-                        land_info["book"] = book
-                        land_info["page"] = page
+                        land_info["book"] = int(book)
+                        land_info["page"] = int(page)
 
                 except ValueError:
                     continue
