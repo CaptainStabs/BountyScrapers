@@ -38,9 +38,9 @@ with open("MyFile_20220124110904.csv", "r") as input_csv:
                             land_info["page"] = page
 
                     except ValueError:
-                        continue
+                        pass
                 except IndexError:
-                    continue
+                    pass
 
                 # Delete if no year_built
                 try:
@@ -48,7 +48,7 @@ with open("MyFile_20220124110904.csv", "r") as input_csv:
                         land_info["year_built"] = row["YEAR_BUILT"]
 
                 except ValueError:
-                    continue
+                    pass
 
                 # Delete if no zip5
                 if land_info["zip5"] == "00000" or land_info["zip5"] == "0" or len(land_info["zip5"]) != 5:
@@ -60,7 +60,7 @@ with open("MyFile_20220124110904.csv", "r") as input_csv:
                         land_info["num_units"] = row["TOTAL_UNITS"]
 
                 except ValueError:
-                    continue
+                    pass
 
                 if row["PKG_SALE_DATE"] and row["LAND_SALE_DATE"]:
                     for i in range(2):
@@ -96,4 +96,4 @@ with open("MyFile_20220124110904.csv", "r") as input_csv:
 
 
             except parser._parser.ParserError:
-                continue
+                pass

@@ -36,7 +36,7 @@ with open("DevNetCAMA.csv", "r") as input_csv:
                         land_info["page"] = page
 
                 except ValueError:
-                    continue
+                    pass
 
                 if int(row["YEARBLT"]) != 0 and int(row["YEARBLT"]) <= 2022:
                     land_info["year_built"] = row["YEARBLT"]

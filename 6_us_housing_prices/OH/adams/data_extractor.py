@@ -40,7 +40,7 @@ with open("GovernmaxExtract.csv", "r") as input_csv:
                 if land_info["num_units"] == 0:
                     land_info["num_units"] = ""
             except KeyError:
-                continue
+                pass
 
 
             try:

@@ -22,7 +22,7 @@ with open("PARCEL.csv", "r", encoding="utf-8") as input_csv:
                     "property_id": row["PIN"],
                     "physical_address": " ".join(str(row["LOCATION_A"]).upper().strip().split()).strip(),
                     "city": " ".join(row["PHYADDR_CI"].upper().split()).strip(),
-                    "county": "Burken",
+                    "county": "Burke",
                     "state": "NC",
                     "zip5": row["PHYADDR_ZI"],
                     "source_url": "https://www.burkenc.org/2495/Data-Sets",
@@ -42,14 +42,16 @@ with open("PARCEL.csv", "r", encoding="utf-8") as input_csv:
                         land_info["book"] = book
                         land_info["page"] = page
                 except ValueError:
-                    continue
+                    pass
                 except Exception as e:
                     print(e)
 
                 if land_info["zip5"] == "00000" or land_info["zip5"] == "0":
                     land_info["zip5"] = ""
 
-                if land_info["physical_address"] and land_info["sale_date"]:
+                year = land_info["sale_date"].split("-")[0]
+
+                if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "" and int(year) <= 2022:
                     writer.writerow(land_info)
                 # else:
                 #     import json

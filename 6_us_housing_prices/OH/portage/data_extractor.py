@@ -48,19 +48,23 @@ with open("GovernmaxExtract.txt", "r") as input_csv:
                         land_info["page"] =  str(row["mdeedPage"]).strip()
 
                 except:
-                    continue
+                    pass
             try:
                 land_info["sale_date"] = parser.parse(row["SaleDate"].strip())
 
             except:
-                continue
+                pass
 
             try:
                 if int(row["NumberOfPropertiesInSale"]) > 0:
                     land_info["num_units"] = int(row["NumberOfPropertiesInSale"])
 
             except:
-                continue
+                pass
 
-            if land_info["physical_address"] and land_info["state"] and land_info["sale_date"]:
-                writer.writerow(land_info)
+            try:
+                if land_info["physical_address"] and land_info["state"] and land_info["sale_date"]:
+                    writer.writerow(land_info)
+
+            except KeyError:
+                pass

@@ -42,7 +42,7 @@ with open("Parcels.csv", "r") as input_csv:
                         land_info["page"] = page
 
                 except ValueError:
-                    continue
+                    pass
 
 
                 year = row["SaleYear"]
@@ -51,4 +51,4 @@ with open("Parcels.csv", "r") as input_csv:
                     writer.writerow(land_info)
 
             except parser._parser.ParserError:
-                continue
+                pass

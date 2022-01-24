@@ -42,7 +42,7 @@ with open("Tax_Parcel_Data.csv", "r") as input_csv:
                         land_info["page"] = page
 
                 except ValueError:
-                    continue
+                    pass
 
                 year = land_info["sale_date"].split("-")[0]
 

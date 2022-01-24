@@ -35,7 +35,7 @@ with open("Parcels.csv", "r") as input_csv:
                         land_info["page"] = int(page)
 
                 except ValueError:
-                    continue
+                    pass
 
                 year = land_info["sale_date"].split("-")[0]
 
@@ -43,4 +43,4 @@ with open("Parcels.csv", "r") as input_csv:
                     writer.writerow(land_info)
 
             except parser._parser.ParserError:
-                continue
+                pass

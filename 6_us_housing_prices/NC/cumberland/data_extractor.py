@@ -40,7 +40,7 @@ with open("Parcels.csv", "r", encoding="utf-8") as input_csv:
                         land_info["book"] = book
                         land_info["page"] = page
                 except ValueError:
-                    continue
+                    pass
                 except Exception as e:
                     print(e)
 
@@ -57,4 +57,4 @@ with open("Parcels.csv", "r", encoding="utf-8") as input_csv:
                 #     print(json.dumps(land_info, indent=2))
 
             except parser._parser.ParserError:
-                continue
+                pass

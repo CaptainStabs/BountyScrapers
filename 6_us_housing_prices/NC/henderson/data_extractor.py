@@ -22,5 +22,5 @@ with open("sale_denali.csv", "r") as input_csv:
             try:
                 land_info["year_built"] = int(row["YEAR_BUILT"].strip("'"))
             except:
-                pass
+                continue
             writer.writerow(land_info)

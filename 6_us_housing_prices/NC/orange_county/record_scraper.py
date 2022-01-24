@@ -131,7 +131,7 @@ def scraper(filename, start_num, end_num):
         pass
 
 if __name__ == '__main__':
-    scraper("land_info.csv", 9799995146, 9990956954)
+    scraper("land_info.csv", 9799995346, 9990956954)
 
 # Total is 9990956954
 

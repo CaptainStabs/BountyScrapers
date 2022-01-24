@@ -74,4 +74,4 @@ with open("RealEstData01122022.csv", "r", newline="") as input_csv:
                     writer.writerow(land_info)
 
             except KeyError:
-                pass
+                continue

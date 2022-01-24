@@ -37,17 +37,17 @@ with open("Chatham_County.csv", "r") as input_csv:
                         land_info["book"] = str(row["DeedBook"]).strip()
                         land_info["page"] = str(row["DeedPage"]).strip()
                 except ValueError:
-                    continue
+                    pass
 
                 try:
                     if int(row["MultipleImprovements"]) != 0:
                         land_info["num_units"] = row["MultipleImprovements"]
 
                 except ValueError:
-                    continue
+                    pass
 
                 if land_info["sale_date"] and land_info["physical_address"]:
                     writer.writerow(land_info)
 
             except parser._parser.ParserError:
-                continue
+                pass

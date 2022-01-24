@@ -41,7 +41,7 @@ with open("TaxParcels.csv", "r") as input_csv:
                         land_info["num_units"] = row["BuildingCo"]
 
                 except ValueError:
-                    continue
+                    pass
 
 
                 book = row["DeedBook"]
@@ -53,7 +53,7 @@ with open("TaxParcels.csv", "r") as input_csv:
                         land_info["page"] = page
 
                 except ValueError:
-                    continue
+                    pass
 
                 if land_info["zip5"] == "00000" or land_info["zip5"] == "0" or len(land_info["zip5"]) != 5:
                     land_info["zip5"] = ""
@@ -65,4 +65,4 @@ with open("TaxParcels.csv", "r") as input_csv:
                     writer.writerow(land_info)
 
             except parser._parser.ParserError:
-                continue
+                pass

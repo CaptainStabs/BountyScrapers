@@ -39,7 +39,7 @@ with open("halifax_co_nc_parcels_2021_final_map.csv", "r") as input_csv:
                                 land_info["page"] = page
 
                         except ValueError:
-                            continue
+                            pass
                             # print(book, page)
 
                     land_info["sale_price"] = row["SALE_PRICE"].split(".")[0]
