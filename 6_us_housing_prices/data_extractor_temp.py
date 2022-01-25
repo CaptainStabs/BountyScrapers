@@ -4,7 +4,7 @@ from dateutil import parser
 
 #
 columns = ["county", "state", "source_url"]
-with open("TaxParcels.csv", "r") as input_csv:
+with open("Parcels.csv", "r") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
     reader = csv.DictReader(input_csv)
