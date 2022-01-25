@@ -26,16 +26,20 @@ for file in os.listdir(directory):
                     land_info = {
                         "property_id": row["Parid"],
                         "sale_date": str(parser.parse(row["Saledt"])),
-                        "sale_price": str(row["Price"]).strip(".")[0],
-                        "property_type": " ".join(str(row["Unitdesc"]).strip().split()),
+                        "sale_price": str(row["Price"]).strip(".")[0].replace(",", ""),
                         "county": "Lee",
                         "state": "NC",
                         "source_url": "https://leecountync.gov/Departments/GISStrategicServices/SalesData"
                     }
 
+                    try:
+                        land_info["property_type"] = " ".join(str(row["Unitdesc"]).strip().split())
+                    except KeyError:
+                        pass
+
                     # If address is in separate fields
                     try:
-                        street_list = [str(row["Adrno"]).strip(), str(row["Adrdir"]).strip(), str(row["Adrstr"]).strip(), str(row["Adrsuf"]).strip()]
+                        street_list = [str(row["Adrno"]).strip().split(".")[0], str(row["Adrdir"]).strip(), str(row["Adrstr"]).strip(), str(row["Adrsuf"]).strip()]
 
                     except KeyError:
                         street_list = [str(row["Adrno"]).strip(), str(row["Adrstr"]).strip(), str(row["Adrsuf"]).strip()]
