@@ -1,0 +1,19 @@
+,Parid,Saledt,Price,Book,Page,Own1,Own2,Adrno,Adrdir,Adrstr,Adrsuf,Acres,Class,Unitdesc,Luc,Zoning,Saledt Year,Taxyr
+,Parid,Saledt,Price,Book,Page,Own1,Own2,Adrno,Adrdir,Adrstr,Adrsuf,Acres,Class,Unitdesc,Luc,Zoning,Saledt Year,Taxyr
+,Parid,Saledt,Book,Page,Price,Own1,Own2,Adrno,Adrdir,Adrstr,Adrsuf,Acres,Class,Luc,Unitdesc,Zoning,Saledt Year,Taxyr
+,Parid,Saledt,Price,Book,Page,Own1,Own2,Adrno,Adrdir,Adrstr,Adrsuf,Acres,Class,Luc,Unitdesc,Zoning,Saledt Year,Taxyr
+,Parid,Saledt Year,Saledt,Book,Page,Price,Own1,Own2,Adrno,Adrstr,Adrsuf,Acres,Class,Luc,Unitdesc,Zoning,Taxyr
+,Parid,Saledt,Price,Book,Page,Own1,Own2,Adrno,Adrdir,Adrstr,Adrsuf,Acres,Class,Luc,Unitdesc,Zoning,Saledt Year,Taxyr
+,ID,Parid,Saledt,Price,Book,Page,Own1,Own2,Adrno,Adrdir,Adrstr,Adrsuf,Unitdesc,Class,Luc,Acres,Zoning,Saledt Year,Taxyr
+,ID,Parid,Saledt,Price,Book,Page,Own1,Own2,Adrno,Adrstr,Adrdir,Adrsuf,Acres,Zoning,Class,Luc,Subdiv,Subblck,Sublot,Saledt Year,Taxyr
+,Parid,Saledt,Price,Book,Page,Own1,Own2,Adrno,Adrstr,Adrdir,Adrsuf,Acres,Zoning,Class,Unitdesc,Luc,Subdiv,Subblck,Sublot,Saledt Year,Taxyr
+,Parid,Saledt,Own1,Own2,Book,Page,Price,Adrno,Adrdir,Adrstr,Adrsuf,Luc,Acres,Class,Zoning,Saledt Year,Taxyr
+,ID,Parid,Saledt,Price,Book,Page,Own1,Own2,Adrno,Adrstr,Adrdir,Adrsuf,Acres,Zoning,Class,Unitdesc,Luc,Subdiv,Subblck,Sublot,Saledt Year,Taxyr
+,Parid,Saledt,Own1,Own2,Book,Page,Price,Adrno,Adrdir,Adrstr,Adrsuf,Luc,Acres,Class,Zoning,Saledt Year,Taxyr
+,#,Parid,Saledt,Price,Book,Page,OWN1,OWN2,Adrno,Adrdir,Adrstr,Adrsuf,ACRES,ZONING,CLASS,Unitdesc,LUC,TAXDIST,SUBDIV,SUBBLCK,SUBLOT,TAXYR
+,#,Parid,Saledt,Price,Book,Page,OWN1,OWN2,Adrno,Adrdir,Adrstr,Adrsuf,ACRES,ZONING,CLASS,Unitdesc,LUC,TAXDIST,SUBDIV,SUBBLCK,SUBLOT,TAXYR
+,#,Parid,Saledt,Price,Book,Page,OWN1,OWN2,Adrno,Adrdir,Adrstr,Adrsuf,ACRES,ZONING,CLASS,Unitdesc,LUC,TAXDIST,SUBDIV,SUBBLCK,SUBLOT,TAXYR
+,#,Parid,Saledt,Price,Book,Page,OWN1,OWN2,Adrno,Adrdir,Adrstr,Adrsuf,ACRES,ZONING,CLASS,Unitdesc,LUC,TAXDIST,SUBDIV,SUBBLCK,SUBLOT,TAXYR
+,#,Parid,Saledt,Price,Book,Page,OWN1,OWN2,Adrno,Adrdir,Adrstr,Adrsuf,ACRES,ZONING,CLASS,Unitdesc,LUC,TAXDIST,SUBDIV,SUBBLCK,SUBLOT,TAXYR
+,#,Parid,Saledt,Price,Book,Page,OWN1,OWN2,Adrno,Adrdir,Adrstr,Adrsuf,ACRES,ZONING,CLASS,Unitdesc,LUC,TAXDIST,SUBDIV,SUBBLCK,SUBLOT,TAXYR
+,#,Parid,Saledt,Price,Book,Page,OWN1,OWN2,Adrno,Adrdir,Adrstr,Adrsuf,ACRES,ZONING,CLASS,Unitdesc,LUC,TAXDIST,SUBDIV,SUBBLCK,SUBLOT,TAXYR
