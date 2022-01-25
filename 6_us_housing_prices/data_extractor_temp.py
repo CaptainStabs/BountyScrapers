@@ -50,10 +50,12 @@ with open("Parcels.csv", "r") as input_csv:
                 if land_info["zip5"] == "00000" or land_info["zip5"] == "0" or len(land_info["zip5"]) != 5:
                     land_info["zip5"] = ""
 
-                # Delete if no unit count
-                if int(row["TOTAL_UNITS"]) != 0:
-                    land_info["num_units"] = row["TOTAL_UNITS"]
-
+                try:
+                    # Delete if no unit count
+                    if int(row["TOTAL_UNITS"]) != 0:
+                        land_info["num_units"] = row["TOTAL_UNITS"]
+                except ValueError:
+                    pass
 
                 year = land_info["sale_date"].split("-")[0]
 
