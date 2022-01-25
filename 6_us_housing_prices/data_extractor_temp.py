@@ -27,13 +27,13 @@ with open("Parcels.csv", "r") as input_csv:
 
                 # Delete if no book
                 # Update field
-                book = row["DEED_BOOK"]
-                page = row["DEED_PAGE"]
+                book = str(row["DWBook"]).strip()
+                page = str(row["DWPage"]).strip()
 
                 try:
                     if int(book) != 0 and int(page) != 0:
-                        land_info["book"] = book
-                        land_info["page"] = page
+                        land_info["book"] = int(book)
+                        land_info["page"] = int(page)
 
                 except ValueError:
                     pass
