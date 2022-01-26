@@ -1,6 +1,6 @@
 total_cells = 0
 total_rows = 0
-with open("Parcels.csv", "r") as f:
+with open("extracted_data.csv", "r") as f:
     for i, line in enumerate(f.readlines()):
         if i == 0:
             continue
