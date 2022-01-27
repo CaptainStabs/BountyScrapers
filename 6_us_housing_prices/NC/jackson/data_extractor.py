@@ -3,7 +3,7 @@ from tqdm import tqdm
 from dateutil import parser
 
 #PIN,PropAddr,SaleDate_UTC,SalePrice,Prc_Url,
-columns = ["property_id", "physical_address", "sale_date", "sale_price", "county", "state", "source_url"]
+columns = ["property_id", "physical_address", "sale_date", "sale_price", "city", "county", "state", "source_url"]
 with open("Jackson_County_Parcels.csv", "r") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
@@ -21,7 +21,8 @@ with open("Jackson_County_Parcels.csv", "r") as input_csv:
                     "sale_date": str(parser.parse(str(row["SaleDate_UTC"]).replace("+00", ""))),
                     "county": "Jackson",
                     "state": "NC",
-                    "source_url": row["Prc_Url"]
+                    "source_url": row["Prc_Url"],
+                    "city": row["Township"].strip()
                 }
 
                 if row["SalePrice"] == "":
