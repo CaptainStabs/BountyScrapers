@@ -69,6 +69,8 @@ with open("tax_parcels.csv", "r", encoding="utf-8") as input_csv:
                         request_tries += 1
 
                 parser = fromstring(response.text)
+                print(parser.xpath('/html/body/form/table[2]/tr/td/table[3]/tr/td[2]/table[2]/tr[13]/td[2]/div/font/font/strong/text()')[0])
+
                 try:
                     land_info["sale_date"] = str(dateparser.parse(str(parser.xpath('/html/body/form/table[2]/tr/td/table[3]/tr/td[2]/table[2]/tr[13]/td[2]/div/font/font/strong/text()')[0])))
                     land_info["seller_name"] = " ".join(str(parser.xpath('/html/body/form/table[2]/tr/td/table[3]/tr/td[2]/table[2]/tr[11]/td[2]/div/font/strong/text()')[0]).split())
@@ -80,5 +82,5 @@ with open("tax_parcels.csv", "r", encoding="utf-8") as input_csv:
                 if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "" and int(year) <= 2022:
                     writer.writerow(land_info)
 
-            except parser._parser.ParserError:
+            except dateparser._parser.ParserError:
                 pass
