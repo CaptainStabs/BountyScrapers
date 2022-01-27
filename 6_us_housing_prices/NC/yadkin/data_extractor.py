@@ -76,6 +76,7 @@ with open("tax_parcels.csv", "r", encoding="utf-8") as input_csv:
                     land_info["seller_name"] = " ".join(str(parser.xpath('/html/body/form/table[2]/tr/td/table[3]/tr/td[2]/table[2]/tr[11]/td[2]/div/font/strong/text()')[0]).split())
                 except IndexError:
                     raise IndexError
+                    continue
 
                 year = land_info["sale_date"].split("-")[0]
 
