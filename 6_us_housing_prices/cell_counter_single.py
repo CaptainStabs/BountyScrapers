@@ -4,9 +4,7 @@ with open("extracted_data.csv", "r") as f:
     for i, line in enumerate(f.readlines()):
         if i == 0:
             continue
-
-        cell_count = len(str(",".join(filter(None, line.split(",")))).split(","))
-        total_cells += cell_count
+        total_cells += len(str(",".join(filter(None, [x for x in line.split(",") if x != "\n"]))).split(","))
         total_rows += 1
 
 print("Total Rows:", total_rows)
