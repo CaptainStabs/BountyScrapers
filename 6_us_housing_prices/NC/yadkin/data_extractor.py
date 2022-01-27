@@ -20,6 +20,9 @@ with open("tax_parcels.csv", "r", encoding="utf-8") as input_csv:
     with open("extracted_data.csv", "a", newline="") as output_csv:
         writer = csv.DictWriter(output_csv, fieldnames=columns)
         writer.writeheader()
+        
+        s = requests.Session()
+        s.headers.update(headers)
 
         for row in tqdm(reader, total=line_count):
             try:
@@ -59,7 +62,7 @@ with open("tax_parcels.csv", "r", encoding="utf-8") as input_csv:
 
                 while not request_success and request_tries < 10:
                     try:
-                        response = requests.request("GET", "https://" + str(land_info["source_url"]), headers=headers)
+                        response = s.request("GET", "https://" + str(land_info["source_url"]))
                         request_success = True
                     except requests.exceptions.ConnectionError:
                         print("  [!] Connection Closed! Retrying in 1...")
