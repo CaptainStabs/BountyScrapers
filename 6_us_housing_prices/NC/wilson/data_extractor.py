@@ -16,14 +16,17 @@ with open("Tax_Parcels.csv", "r") as input_csv:
         for row in tqdm(reader, total=line_count):
             try:
                 land_info = {
-                    "property_id": str(row["PIN"]).strip(),
+                    "property_id": str(row["PIN"]).strip().replace(".000", ""),
                     "sale_price":str(row["SalesAmount"]).strip(),
                     "property_type": str(row["Description1"]).strip(),
                     "physical_address": " ".join(str(row["PhysicalStreetAddress"]).upper().split()),
                     "city": str(row["CityCodeDesc"]).strip(),
                     "seller_name": ", ".join([" ".join(row[f"GrantorName{i}"].split()) for i in range(1,3) if row[f"GrantorName{i}"]]),
                     # "seller_name": " ".join(" ".join([row[f"GrantorName{i}"] for i in range(1,3) if row[f"GrantorName{i}"]]).split()),
-                    "sale_date": str(parser.parse(str(row["SaleDate"]).strip()))
+                    "sale_date": str(parser.parse(str(row["SaleDate"]).strip())).replace("+00:00", ""),
+                    "county": "Wilson",
+                    "state": "NC",
+                    "source_url": "https://county-data-wilsoncounty.opendata.arcgis.com/datasets/tax-parcels"
                 }
 
                 # Delete if no book
