@@ -1,6 +1,6 @@
 import csv
 from tqdm import tqdm
-from dateutil import parser
+from dateutil import parser as dateparser
 import requests
 import time
 from lxml.html import fromstring
@@ -68,7 +68,7 @@ with open("tax_parcels.csv", "r", encoding="utf-8") as input_csv:
 
                 parser = fromstring(response.text)
 
-                land_info["sale_date"] = str(parser.parse(parser.xpath('/html/body/form/table[2]/tbody/tr/td/table[3]/tbody/tr/td[2]/table[2]/tbody/tr[13]/td[2]/div/font/font/strong/text()')))
+                land_info["sale_date"] = str(dateparser.parse(parser.xpath('/html/body/form/table[2]/tbody/tr/td/table[3]/tbody/tr/td[2]/table[2]/tbody/tr[13]/td[2]/div/font/font/strong/text()')))
                 land_info["seller_name"] = " ".join(str(parser.xpath('/html/body/form/table[2]/tbody/tr/td/table[3]/tbody/tr/td[2]/table[2]/tbody/tr[11]/td[2]/div/font/strong/text()')).split())
 
                 year = land_info["sale_date"].split("-")[0]
