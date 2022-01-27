@@ -11,7 +11,7 @@ headers = {
 }
 
 # PIN,DEED_BOOK,DEED_PAGE,,STREET_ADD,SALES_AMT,YEAR_BUILT,DESCRIPTIO,,DEEDLINK,
-columns = ["pin", "book", "page", "physical_address", "sale_price", "sale_date", "seller_name", "county", "state", "source_url"]
+columns = ["property_id", "book", "page", "physical_address", "sale_price", "sale_date", "seller_name", "property_type", "county", "state", "source_url"]
 with open("tax_parcels.csv", "r", encoding="utf-8") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
@@ -28,7 +28,9 @@ with open("tax_parcels.csv", "r", encoding="utf-8") as input_csv:
                     "physical_address": " ".join(str(row["STREET_ADD"]).upper().split()),
                     "sale_price": row["SALES_AMT"],
                     "property_type": row["DESCRIPTIO"].strip(),
-                    "source_url": row["TAXCARD"]
+                    "source_url": row["TAXCARD"],
+                    "county": "Yadkin",
+                    "state": "NC"
                 }
 
                 # Delete if no book
@@ -67,9 +69,11 @@ with open("tax_parcels.csv", "r", encoding="utf-8") as input_csv:
                         request_tries += 1
 
                 parser = fromstring(response.text)
-
-                land_info["sale_date"] = str(dateparser.parse(parser.xpath('/html/body/form/table[2]/tbody/tr/td/table[3]/tbody/tr/td[2]/table[2]/tbody/tr[13]/td[2]/div/font/font/strong/text()')))
-                land_info["seller_name"] = " ".join(str(parser.xpath('/html/body/form/table[2]/tbody/tr/td/table[3]/tbody/tr/td[2]/table[2]/tbody/tr[11]/td[2]/div/font/strong/text()')).split())
+                try:
+                    land_info["sale_date"] = str(dateparser.parse(str(parser.xpath('/html/body/form/table[2]/tr/td/table[3]/tr/td[2]/table[2]/tr[13]/td[2]/div/font/font/strong/text()')[0])))
+                    land_info["seller_name"] = " ".join(str(parser.xpath('/html/body/form/table[2]/tr/td/table[3]/tr/td[2]/table[2]/tr[11]/td[2]/div/font/strong/text()')[0]).split())
+                except IndexError:
+                    raise IndexError
 
                 year = land_info["sale_date"].split("-")[0]
 
