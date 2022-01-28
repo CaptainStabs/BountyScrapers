@@ -44,7 +44,7 @@ with open("real_master.csv", "r", encoding='utf-8') as input_csv:
                 }
 
                 if row["LandUseCodeDescription"] != "Cnty other than prev cvrd":
-                    land_info["property_type"] = str(row["LandUseCodeDescription"].replace(str(row["LandUseCode"]), "")).strip().upper(),
+                    land_info["property_type"] = str(row["LandUseCodeDescription"].replace(str(row["LandUseCode"]), "")).upper().strip()
                 # Delete if no year_built
                 try:
                     if int(row["YearBuilt"]) != 0 and int(row["YearBuilt"]) <= 2022:
