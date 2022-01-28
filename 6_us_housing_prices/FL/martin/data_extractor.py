@@ -79,7 +79,7 @@ with open("real_master.csv", "r", encoding='utf-8') as input_csv:
                         pass
 
                     try:
-                        if results[5] != "BUYER - see file for name"] and results[4] != "None":
+                        if results[5] != "BUYER - see file for name" and results[4] != "None":
                             land_info["buyer_name"] = " ".join(str(results[5]).split())
                     except:
                         pass
