@@ -10,14 +10,13 @@ import json
 
 # Transfer file
 # ParcelID|SaleDate|RecordedDate|SalePrice|Book|Page||GrantorName|GranteeName
-columns = ["property_id", "property_type", "physical_address", "city", "sale_date", "sale_price", "book", "page", "seller_name", "buyer_name"]
+columns = ["property_id", "property_type", "physical_address", "city", "sale_date", "sale_price", "book", "page", "seller_name", "buyer_name", "year_built", "county", "state", "source_url"]
 
 conn = sqlite3.connect(':memory:')
 
 csv_data = pd.read_csv("real_transfers.csv")
 csv_data.to_sql('sales', conn, if_exists="replace", index=False)
 cur = conn.cursor()
-
 
 with open("real_master.csv", "r", encoding='utf-8') as input_csv:
     line_count = 0
@@ -28,9 +27,9 @@ with open("real_master.csv", "r", encoding='utf-8') as input_csv:
     # Seek back to 0 to allow csv to read full file
     input_csv.seek(0)
 
-    reader = csv.DictReader(input_csv, delimiter="|")
+    reader = csv.DictReader(input_csv)
 
-    with open("C:\\Users\\adria\\github\\BountyScrapers\\6_us_housing_prices\\GA\\atlanta\\extracted_data.csv", "a") as output_csv:
+    with open("extracted_data.csv", "a") as output_csv:
         writer = csv.DictWriter(output_csv, fieldnames=columns)
         writer.writeheader()
         for row in tqdm(reader, total=line_count):
@@ -40,6 +39,9 @@ with open("real_master.csv", "r", encoding='utf-8') as input_csv:
                     "property_type": str(row["LandUseCodeDescription"].replace(str(row["LandUseCode"]), "")).strip(),
                     "physical_address": " ".join(str(row["Situs Address"]).upper().split()),
                     "city": row["Situs City"].strip(),
+                    "county": "MARTIN",
+                    "state": "FL",
+                    "source_url": "https://www.pa.martin.fl.us/tools-downloads/data-downloads/real-transfers/download"
                 }
 
 
