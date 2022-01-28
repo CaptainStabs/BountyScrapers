@@ -14,7 +14,7 @@ columns = ["property_id", "property_type", "physical_address", "city", "sale_dat
 
 conn = sqlite3.connect(':memory:')
 
-csv_data = pd.read_csv("tax_transfers.csv")
+csv_data = pd.read_csv("real_transfers.csv")
 csv_data.to_sql('sales', conn, if_exists="replace", index=False)
 cur = conn.cursor()
 
