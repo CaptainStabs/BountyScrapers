@@ -36,7 +36,6 @@ with open("real_master.csv", "r", encoding='utf-8') as input_csv:
             try:
                 land_info = {
                     "property_id": str(row["ParcelID"]).strip(),
-                    "property_type": str(row["LandUseCodeDescription"].replace(str(row["LandUseCode"]), "")).strip(),
                     "physical_address": " ".join(str(row["Situs Address"]).upper().split()),
                     "city": row["Situs City"].strip(),
                     "county": "MARTIN",
@@ -44,7 +43,8 @@ with open("real_master.csv", "r", encoding='utf-8') as input_csv:
                     "source_url": "https://www.pa.martin.fl.us/tools-downloads/data-downloads/real-transfers/download"
                 }
 
-
+                if row["LandUseCodeDescription"] != "Cnty other than prev cvrd":
+                    land_info["property_type"] = str(row["LandUseCodeDescription"].replace(str(row["LandUseCode"]), "")).strip().upper(),
                 # Delete if no year_built
                 try:
                     if int(row["YearBuilt"]) != 0 and int(row["YearBuilt"]) <= 2022:
@@ -73,12 +73,14 @@ with open("real_master.csv", "r", encoding='utf-8') as input_csv:
 
 
                     try:
-                        land_info["seller_name"] = " ".join(str(results[4]).split())
+                        if results[4] != "SELLER - see file for name":
+                            land_info["seller_name"] = " ".join(str(results[4]).split())
                     except:
                         pass
 
                     try:
-                        land_info["buyer_name"] = " ".join(str(results[5]).split())
+                        if results[5] != "BUYER - see file for name"]:
+                            land_info["buyer_name"] = " ".join(str(results[5]).split())
                     except:
                         pass
 
