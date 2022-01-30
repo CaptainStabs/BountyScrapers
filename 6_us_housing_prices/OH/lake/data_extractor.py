@@ -3,7 +3,7 @@ from tqdm import tqdm
 from dateutil import parser
 # ,,,,,,,,mdeedVolum,
 #﻿PIN,mdeedPage,DeededOwne,SaleDate,SaleAmount,
-columns = ["property_id", "physical_address", "book", "page", "buyer_name", "sale_date", "sale_price", "county", "state", "source_url"]
+columns = ["property_id", "physical_address", "book", "page", "buyer_name", "seller_name", "sale_date", "sale_price", "county", "state", "source_url"]
 with open("Parcels.csv", "r", encoding="utf-8") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
@@ -17,7 +17,8 @@ with open("Parcels.csv", "r", encoding="utf-8") as input_csv:
             try:
                 land_info = {
                     "property_id": row["\ufeffPIN"].strip(),
-                    "buyer_name": " ".join(str(row["DeededOwne"]).split()),
+                    "seller_name": " ".join(str(row["DeededOwne"]).split()),
+                    "buyer_name": "",
                     "sale_date": str(parser.parse(row["SaleDate"])),
                     "sale_price": row["SaleAmount"],
                     "county": "LAKE",
