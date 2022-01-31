@@ -21,7 +21,7 @@ with open("Parcels.csv", "r") as input_csv:
                     "buyer_name": " ".join(str(row["grantee"]).upper().split()),
                     "sale_price": str(row["price"]).strip(),
                     "sale_date": str(parser.parse(row["dos"])),
-                    "zip5": str(row["zip"]).strip(),
+                    "zip5": str(row["zip"]).strip().split("-")[0],
                     "city": " ".join(str(row["city"]).upper().split()),
                     "property_id": str(row["strap"]).strip(),
                     "property_type": " ".join(str(row["dscr"]).upper().split()),
