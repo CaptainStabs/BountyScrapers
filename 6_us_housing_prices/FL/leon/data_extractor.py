@@ -4,12 +4,12 @@ from dateutil import parser
 
 # PARCEL_ID,LOCATION,,YRBLT,PROPERTY USE,SALE_DATE,SALE_PRICE,BOOK,PAGE,,GRANTOR,GRANTEE
 columns = ["property_id", "physical_address", "year_built", "property_type", "sale_date", "sale_price", "book", "page", "seller_name", "buyer_name", "county", "state", "source_url"]
-with open("SalesData_2020.csv", "r") as input_csv:
+with open("SalesData.csv", "r") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
     reader = csv.DictReader(input_csv)
 
-    with open("extracted_data.csv", "a", newline="") as output_csv:
+    with open("extracted_data_2022.csv", "a", newline="") as output_csv:
         writer = csv.DictWriter(output_csv, fieldnames=columns)
         writer.writeheader()
 
@@ -25,7 +25,7 @@ with open("SalesData_2020.csv", "r") as input_csv:
                     "buyer_name": " ".join(str(row["GRANTEE"]).upper().split()),
                     "county": "LEON",
                     "state": "FL",
-                    "source_url": "ftp://ftp.leonpa.org/SalesData_2020.csv"
+                    "source_url": "ftp://ftp.leonpa.org/SalesData.csv"
                 }
 
                 # Delete if no book
