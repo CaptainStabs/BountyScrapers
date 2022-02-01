@@ -1,0 +1,10 @@
+Sources:
+[https://www.polkpa.org/FTPPage/downloader.ashx?filename=ftp_parcel.zip&dir=%5CAppraisalData%5C](https://www.polkpa.org/FTPPage/downloader.ashx?filename=ftp_parcel.zip&dir=%5CAppraisalData%5C)
+[https://www.polkpa.org/FTPPage/downloader.ashx?filename=ftp_sales.zip&dir=%5CAppraisalData%5C](https://www.polkpa.org/FTPPage/downloader.ashx?filename=ftp_sales.zip&dir=%5CAppraisalData%5C)
+[https://www.polkpa.org/FTPPage/downloader.ashx?filename=ftp_site.zip&dir=%5CAppraisalData%5C](https://www.polkpa.org/FTPPage/downloader.ashx?filename=ftp_site.zip&dir=%5CAppraisalData%5C)
+
+Joined using the following SQL:
+```
+SELECT Ftp_sales.PARCEL_ID, Ftp_sales.SALEDT, Ftp_sales.PRICE, Ftp_sales.BOOK, Ftp_sales.PAGE, Ftp_sales.GRANTOR, Ftp_sales.GRANTEE, Ftp_site.LN_NUM, Ftp_site.BLD_NUM, Ftp_site.STR_PFX, Ftp_site.STR, Ftp_site.STR_NUM, Ftp_site.STR_NUM_SFX, Ftp_site.STR_SFX_DIR, Ftp_site.STR_UNIT, Ftp_site.ZIP, Ftp_site.CITY, Ftp_parcel.DORDESC, Ftp_parcel.YR_IMPROVED
+FROM (Ftp_sales INNER JOIN Ftp_site ON Ftp_sales.PARCEL_ID = Ftp_site.PARCEL_ID) INNER JOIN Ftp_parcel ON Ftp_sales.PARCEL_ID = Ftp_parcel.PARCEL_ID;
+```
