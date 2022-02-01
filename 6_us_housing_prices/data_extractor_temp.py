@@ -16,7 +16,9 @@ with open("Parcels.csv", "r") as input_csv:
         for row in tqdm(reader, total=line_count):
             try:
                 land_info = {
-
+                    "county": ,
+                    "state": ,
+                    "source_url": ,
                 }
 
                 # If address is in separate fields
