@@ -17,43 +17,44 @@ with open("Parcels.csv", "r") as input_csv:
         for row in tqdm(reader, total=line_count):
             try:
                 temp_timestamp = int(row["DEEDDATE"])
-                if temp_timestamp < 0:
-                    timestamp = datetime.datetime(1970, 1, 1) + datetime.timedelta(seconds=temp_timestamp/1000)
-                    print(timestamp)
-                else:
-                    timestamp = temp_timestamp
+                if temp_timestamp != -6847804800000:
+                    if temp_timestamp < 0:
+                        timestamp = datetime.datetime(1970, 1, 1) + datetime.timedelta(seconds=temp_timestamp/1000)
+                        # print(timestamp)
+                    else:
+                        timestamp = datetime.datetime.fromtimestamp((temp_timestamp/1000))
 
-                land_info = {
-                    "property_id": str(row["NEWPIN"]).strip(),
-                    "sale_date": datetime.datetime.fromtimestamp((timestamp/1000)),
-                    "sale_price": row["SALE_PRICE"],
-                    "physical_address": " ".join(str(row["SITUS_ADDRESS"]).upper().split()),
-                    "county": "WARREN",
-                    "state": "NC",
-                    "source_url": "https://arcgis5.roktech.net/arcgis/rest/services/Warren/RokMap/MapServer/3",
-                }
+                    land_info = {
+                        "property_id": str(row["NEWPIN"]).strip(),
+                        "sale_date": timestamp,
+                        "sale_price": row["SALE_PRICE"],
+                        "physical_address": " ".join(str(row["SITUS_ADDRESS"]).upper().split()),
+                        "county": "WARREN",
+                        "state": "NC",
+                        "source_url": "https://arcgis5.roktech.net/arcgis/rest/services/Warren/RokMap/MapServer/3",
+                    }
 
 
-                # Delete if no book
-                # Update field
-                book = str(row["DEEDBOOK"]).strip()
-                page = str(row["DEEDPAGE"]).strip()
+                    # Delete if no book
+                    # Update field
+                    book = str(row["DEEDBOOK"]).strip()
+                    page = str(row["DEEDPAGE"]).strip()
 
-                try:
-                    if int(book) != 0 and int(page) != 0:
-                        land_info["book"] = int(book)
-                        land_info["page"] = int(page)
+                    try:
+                        if int(book) != 0 and int(page) != 0:
+                            land_info["book"] = int(book)
+                            land_info["page"] = int(page)
 
-                except ValueError:
-                    pass
+                    except ValueError:
+                        pass
 
-                year = land_info["sale_date"].year
+                    year = land_info["sale_date"].year
 
-                if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "" and int(year) <= 2022:
-                    writer.writerow(land_info)
+                    if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "" and int(year) <= 2022:
+                        writer.writerow(land_info)
 
             except ValueError as e:
-                print(e)
+                # print(e)
                 pass
             except Exception as e:
                 # tb.print_exc()
