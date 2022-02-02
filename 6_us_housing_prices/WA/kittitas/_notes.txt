@@ -1,5 +1,5 @@
 Sources:
-[BuildingCharacteristics.zip](https://gis.co.kittitas.wa.us/data/BuildingCharacteristics.zip): `CommercialCharacteristics.csv`, `MiscImprovementCharacteristics.csv`, `ResidentialCharacteristics.csv`
+[BuildingCharacteristics.zip](https://gis.co.kittitas.wa.us/data/BuildingCharacteristics.zip): `CommercialCharacteristics.csv`, `ResidentialCharacteristics.csv`
 [ParcelFile.zip](https://gis.co.kittitas.wa.us/data/ParcelFile.zip)
 [Sales.zip](https://gis.co.kittitas.wa.us/data/Sales.zip)
 
@@ -21,11 +21,4 @@ Commercial join:
 SELECT Query2.ParcelNumber, Query2.SaleDate, Query2.OriginalSalePrice, Query2.Grantor, Query2.Grantee, Query2.DepartmentOfRevenueCode, Query2.Situs, CommercialCharacteristics.StateCode, CommercialCharacteristics.Style, CommercialCharacteristics.YearBuilt
 FROM Query2 INNER JOIN CommercialCharacteristics ON Query2.ParcelNumber = CommercialCharacteristics.ParcelNumber
 GROUP BY Query2.ParcelNumber, Query2.SaleDate, Query2.OriginalSalePrice, Query2.Grantor, Query2.Grantee, Query2.DepartmentOfRevenueCode, Query2.Situs, CommercialCharacteristics.StateCode, CommercialCharacteristics.Style, CommercialCharacteristics.YearBuilt;
-```
-
-Misc join:
-```
-SELECT Query2.ParcelNumber, Query2.SaleDate, Query2.OriginalSalePrice, Query2.Grantor, Query2.Grantee, Query2.DepartmentOfRevenueCode, Query2.Situs, MiscImprovementCharacteristics.DORCode, MiscImprovementCharacteristics.MiscImp, MiscImprovementCharacteristics.NumberOfUnits
-FROM Query2 INNER JOIN MiscImprovementCharacteristics ON Query2.ParcelNumber = MiscImprovementCharacteristics.ParcelNumber
-GROUP BY Query2.ParcelNumber, Query2.SaleDate, Query2.OriginalSalePrice, Query2.Grantor, Query2.Grantee, Query2.DepartmentOfRevenueCode, Query2.Situs, MiscImprovementCharacteristics.DORCode, MiscImprovementCharacteristics.MiscImp, MiscImprovementCharacteristics.NumberOfUnits;
 ```

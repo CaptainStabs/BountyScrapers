@@ -24,6 +24,7 @@ with open(".\\input_data\\Misc.csv", "r") as input_csv:
                             "seller_name": " ".join(str(row["Grantor"]).upper().split()),
                             "buyer_name": " ".join(str(row["Grantee"]).upper().split()),
                             "physical_address": " ".join(str(row["Situs"]).upper().split()),
+                            "property_type": " ".join(str(row["DORCode"]).upper().split()),
                             "county": "KITTITAS",
                             "state": "WA",
                             "source_url": "https://data-kitcogis.opendata.arcgis.com/search?q=parcel",
@@ -31,10 +32,6 @@ with open(".\\input_data\\Misc.csv", "r") as input_csv:
 
                         # If address is in separate fields
                         type_list = [str(row["DORCode"]).strip(), str(row["MiscImp"]).strip()]
-
-                        # concat the street parts filtering out blank parts
-                        # land_info["property_type"] = '; '.join(filter(None, type_list)).upper()
-                        land_info["property_type"] = " ".join(str('; '.join(filter(None, type_list)).upper()).split())
 
                         try:
                             # Delete if no unit count
