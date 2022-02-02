@@ -1,0 +1,31 @@
+Sources:
+[BuildingCharacteristics.zip](https://gis.co.kittitas.wa.us/data/BuildingCharacteristics.zip): `CommercialCharacteristics.csv`, `MiscImprovementCharacteristics.csv`, `ResidentialCharacteristics.csv`
+[ParcelFile.zip](https://gis.co.kittitas.wa.us/data/ParcelFile.zip)
+[Sales.zip](https://gis.co.kittitas.wa.us/data/Sales.zip)
+
+`Query1` SQL:
+```
+SELECT Sales.ParcelNumber, Sales.SaleDate, Sales.OriginalSalePrice, Sales.Grantor, Sales.Grantee, ParcelFile.DepartmentOfRevenueCode, ParcelFile.Situs
+FROM Sales INNER JOIN ParcelFile ON Sales.ParcelNumber = ParcelFile.ParcelNumber;
+```
+
+Residential join:
+```
+SELECT Query2.ParcelNumber, Query2.SaleDate, Query2.OriginalSalePrice, Query2.Grantor, Query2.Grantee, Query2.DepartmentOfRevenueCode, Query2.Situs, ResidentialCharacteristics.StateCode, ResidentialCharacteristics.ObjectType, ResidentialCharacteristics.Style, ResidentialCharacteristics.YearBuilt
+FROM Query2 INNER JOIN ResidentialCharacteristics ON Query2.ParcelNumber = ResidentialCharacteristics.ParcelNumber
+GROUP BY Query2.ParcelNumber, Query2.SaleDate, Query2.OriginalSalePrice, Query2.Grantor, Query2.Grantee, Query2.DepartmentOfRevenueCode, Query2.Situs, ResidentialCharacteristics.StateCode, ResidentialCharacteristics.ObjectType, ResidentialCharacteristics.Style, ResidentialCharacteristics.YearBuilt;
+```
+
+Commercial join:
+```
+SELECT Query2.ParcelNumber, Query2.SaleDate, Query2.OriginalSalePrice, Query2.Grantor, Query2.Grantee, Query2.DepartmentOfRevenueCode, Query2.Situs, CommercialCharacteristics.StateCode, CommercialCharacteristics.Style, CommercialCharacteristics.YearBuilt
+FROM Query2 INNER JOIN CommercialCharacteristics ON Query2.ParcelNumber = CommercialCharacteristics.ParcelNumber
+GROUP BY Query2.ParcelNumber, Query2.SaleDate, Query2.OriginalSalePrice, Query2.Grantor, Query2.Grantee, Query2.DepartmentOfRevenueCode, Query2.Situs, CommercialCharacteristics.StateCode, CommercialCharacteristics.Style, CommercialCharacteristics.YearBuilt;
+```
+
+Misc join:
+```
+SELECT Query2.ParcelNumber, Query2.SaleDate, Query2.OriginalSalePrice, Query2.Grantor, Query2.Grantee, Query2.DepartmentOfRevenueCode, Query2.Situs, MiscImprovementCharacteristics.DORCode, MiscImprovementCharacteristics.MiscImp, MiscImprovementCharacteristics.NumberOfUnits
+FROM Query2 INNER JOIN MiscImprovementCharacteristics ON Query2.ParcelNumber = MiscImprovementCharacteristics.ParcelNumber
+GROUP BY Query2.ParcelNumber, Query2.SaleDate, Query2.OriginalSalePrice, Query2.Grantor, Query2.Grantee, Query2.DepartmentOfRevenueCode, Query2.Situs, MiscImprovementCharacteristics.DORCode, MiscImprovementCharacteristics.MiscImp, MiscImprovementCharacteristics.NumberOfUnits;
+```
