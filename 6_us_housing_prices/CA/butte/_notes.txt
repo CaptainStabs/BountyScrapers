@@ -1,0 +1,5 @@
+Source:
+[http://gis.buttecounty.net/Public/index.html?viewer=dssearch](http://gis.buttecounty.net/Public/index.html?viewer=dssearch)
+[Year3](http://gis.buttecounty.net/arcgis/rest/services/Internal/AssesorsSalesAssessment/MapServer/6)
+[Year2](http://gis.buttecounty.net/arcgis/rest/services/Internal/AssesorsSalesAssessment/MapServer/7)
+[Year1](http://gis.buttecounty.net/arcgis/rest/services/Internal/AssesorsSalesAssessment/MapServer/8)
