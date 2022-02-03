@@ -1,0 +1,9 @@
+Source:
+[parcels.dbf](https://ftp.co.kitsap.wa.us/data/gis/datacd/arcview/layers/atsinfo/sale.zip)
+[siteaddr.dbf](https://ftp.co.kitsap.wa.us/data/gis/datacd/arcview/layers/parcel/siteaddr.zip)
+
+Join query:
+```
+SELECT Sale.RP_ACCT_ID, Sale.SALE_DATE, Sale.PRICE, Siteaddr.FULL_ADDR, Siteaddr.CITY, Siteaddr.STATE, Siteaddr.ZIP_CODE, Siteaddr.USE_CLASS
+FROM Sale INNER JOIN Siteaddr ON Sale.RP_ACCT_ID = Siteaddr.LD_ACCT_ID;
+```
