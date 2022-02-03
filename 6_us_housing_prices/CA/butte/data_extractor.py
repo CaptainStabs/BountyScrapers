@@ -1,10 +1,12 @@
 import csv
 from tqdm import tqdm
 from dateutil import parser
+import datetime
+import usaddress
 
-# APN,Sales_Value,Land_Value,Structure_Value,TaxCode,LandUse,Appraisal_Code,Quality_Class,TRA_NUM,ACRES,SITUS,Square_Feet,Year_Built,Bedrooms,Full_Bathrooms,Half_Bathrooms,Attached_Garage,Detached_Garage,Event_Date,Effective_Year,Year_,OBJECTID
-columns = ["county", "state", "source_url"]
-with open("Parcels.csv", "r") as input_csv:
+# APN,Sales_Value,,SITUS,,Year_Built,,Event_Date,
+columns = ["property_id", "sale_price", "physical_address", "city", "zip5", "year_built", "sale_date", "county", "state", "source_url"]
+with open("year1.csv", "r") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
     reader = csv.DictReader(input_csv)
@@ -15,54 +17,65 @@ with open("Parcels.csv", "r") as input_csv:
 
         for row in tqdm(reader, total=line_count):
             try:
+                timestamp = datetime.datetime.fromtimestamp((int(row["Event_Date"])/1000))
                 land_info = {
-                    "county": ,
-                    "state": ,
-                    "source_url": ,
+                    "property_id": row["APN"],
+                    "sale_price": row["Sales_Value"],
+                    "sale_date": timestamp,
+                    "county": "BUTTE",
+                    "state": "CA",
+                    "source_url": "http://gis.buttecounty.net/Public/index.html?viewer=dssearch",
                 }
 
-                # If address is in separate fields
-                street_list = [str(row["Street#"]).strip(), str(row["Direction"]).strip()]
+                physical_address = " ".join(str(row["SITUS"]).upper().split())
+                if physical_address != "NO ADDRESS AVAILABLE":
+                    try:
+                        parsed_address = usaddress.tag(physical_address)
+                        parse_success = True
 
-                # concat the street parts filtering out blank parts
-                land_info["physical_address"] = ' '.join(filter(None, street_list)).upper()
+                    except usaddress.RepeatedLabelError as e:
+                        print(e)
+                        parse_success = False
+                else:
+                    land_info["physical_address"] = "NO ADDRESS AVAILABLE"
 
-                # Delete if no book
-                # Update field
-                book = str(row["DWBook"]).strip()
-                page = str(row["DWPage"]).strip()
+                if parse_success:
+                    try:
+                        # Split the address at the city to get the street
+                        street_physical = str(physical_address.split(parsed_address[0]["PlaceName"])[0]).strip(",").strip()
+                        street_physical = street_physical.strip(",")
+                        land_info["physical_address"] = street_physical.replace('"', '').strip(",")
 
-                try:
-                    if int(book) != 0 and int(page) != 0:
-                        land_info["book"] = int(book)
-                        land_info["page"] = int(page)
+                        try:
+                            land_info["city"] = parsed_address[0]["PlaceName"]
+                        except KeyError:
+                            raise
 
-                except ValueError:
-                    pass
+                        try:
+                            land_info["zip5"] = str(parsed_address[0]["ZipCode"]).replace('"', '').strip()
+                        except KeyError:
+                            raise
+                            # print(physical_address)
 
-                # Delete if no year_built
-                try:
-                    if int(row["YEARBLT"]) != 0 and int(row["YEARBLT"]) <= 2022:
-                        land_info["year_built"] = row["YEARBLT"]
+                    except KeyError:
+                        print("\n" + str(physical_address))
+                    # Delete if no year_built
+                    try:
+                        if int(row["Year_Built"]) >= 1690 and int(row["Year_Built"]) <= 2022:
+                            land_info["year_built"] = row["Year_Built"]
 
-                except ValueError:
-                    pass
+                    except ValueError:
+                        pass
 
-                # Delete if no zip5
-                if land_info["zip5"] == "00000" or land_info["zip5"] == "0" or len(land_info["zip5"]) != 5:
-                    land_info["zip5"] = ""
+                    # Delete if no zip5
+                    if land_info["zip5"] == "00000" or land_info["zip5"] == "0" or len(land_info["zip5"]) != 5:
+                        land_info["zip5"] = ""
 
-                try:
-                    # Delete if no unit count
-                    if int(row["TOTAL_UNITS"]) != 0:
-                        land_info["num_units"] = row["TOTAL_UNITS"]
-                except ValueError:
-                    pass
+                    year = land_info["sale_date"].year
 
-                year = land_info["sale_date"].split("-")[0]
+                    if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "" and int(year) <= 2022:
+                        writer.writerow(land_info)
 
-                if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "" and int(year) <= 2022:
-                    writer.writerow(land_info)
-
-            except parser._parser.ParserError:
+            except Exception as e:
+                raise e
                 pass
