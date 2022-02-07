@@ -71,17 +71,19 @@ with open("Parcels.csv", "r") as input_csv:
 
                         except ValueError:
                             pass
+
+                        year = land_info["sale_date"].split("-")[0]
+                        month = land_info["sale_date"].split("-")[1]
+
+                        if int(year) < 2022:
+                            if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "":
+                                writer.writerow(land_info)
+                        elif land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "" and int(year) == 2022 and int(month) <= 3:
+                            writer.writerow(land_info)
+
                     except parser._parser.ParserError:
                         continue
 
-                    year = land_info["sale_date"].split("-")[0]
-                    month = land_info["sale_date"].split("-")[1]
-
-                    if int(year) < 2022:
-                        if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "":
-                            writer.writerow(land_info)
-                    elif land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "" and int(year) == 2022 and int(month) <= 3:
-                        writer.writerow(land_info)
 
             except parser._parser.ParserError:
                 pass
