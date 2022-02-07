@@ -7,7 +7,7 @@ from dateutil import parser
 # year_built,improve_eff_year_built,,
 # situs_addr_city,situs_addr_line_1,situs_addr_line_2,,situs_addr_state_legdat,situs_addr_zip_legdat
 #,PIN,,,,,,,,,,,, ,oby_yrblt1,style_desc
-#                d            d                 d        d           d          d                   d           d      d                   
+#                d            d                 d        d           d          d                   d           d      d
 columns = ["property_id", "year_built", "sale_price", "sale_date", "city", "physical_address", "num_units", "zip5", "property_type", "county", "state", "source_url"]
 with open("Parcels.csv", "r") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
@@ -71,14 +71,15 @@ with open("Parcels.csv", "r") as input_csv:
                     try:
                         land_info["sale_date"] = str(parser.parse(row[f"sale_date{i}"]))
                         land_info["sale_price"] = row[f"sale_amt{i}"]
+                        year = land_info["sale_date"].split("-")[0]
+
+                        if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "" and int(year) <= 2022:
+                            writer.writerow(land_info)
 
                     except parser._parser.ParserError:
-                        continue
+                        pass
 
-                    year = land_info["sale_date"].split("-")[0]
 
-                    if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "" and int(year) <= 2022:
-                        writer.writerow(land_info)
 
             except parser._parser.ParserError:
                 pass
