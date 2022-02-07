@@ -59,7 +59,7 @@ with open("Parcels.csv", "r", encoding="utf-8") as input_csv:
 
                     # Delete if no year_built
                     try:
-                        if int(row["RESYRBLT"]) != 0 and int(row["RESYRBLT"]) <= 2022:
+                        if int(row["RESYRBLT"]) >= 1690 and int(row["RESYRBLT"]) <= 2022:
                             land_info["year_built"] = row["RESYRBLT"]
 
                     except ValueError:
