@@ -50,13 +50,13 @@ with open("Parcels.csv", "r", encoding="utf-8") as input_csv:
                     try:
                         land_info["sale_date"] = str(parser.parse(row[f"S_{i}DATE"]))
                         land_info["sale_price"] = str(row[f"S_{i}AMOUNT"]).split(".")[0]
+                        year = land_info["sale_date"].split("-")[0]
+
+                        if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "" and int(year) <= 2022:
+                            writer.writerow(land_info)
                     except parser._parser.ParserError:
-                        continue
+                        pass
 
-                    year = land_info["sale_date"].split("-")[0]
-
-                    if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "" and int(year) <= 2022:
-                        writer.writerow(land_info)
 
             except parser._parser.ParserError:
                 pass
