@@ -1,0 +1,3 @@
+Sources:
+[Map](https://www.hernandocountygis-fl.us/centralgismap/)
+[Sale data](https://www.hernandocountygis-fl.us/arcgis10_3/rest/services/Parcels_Addresses_All/MapServer/5)
