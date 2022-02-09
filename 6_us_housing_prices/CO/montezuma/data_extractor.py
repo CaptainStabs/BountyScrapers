@@ -1,9 +1,17 @@
 import csv
 from tqdm import tqdm
 from dateutil import parser
+from pathlib import Path
+import sys
+
+p = Path(__file__).resolve().parents[2]
+sys.path.insert(1, str(p))
+
+from _sale_type.sale_type import sale_type
+unknown_type = []
 
 # PID,WebSiteLin,LASTSALEDA,GRANTEE,GRANTOR,SALEP,LANDTYPE,LOCATIONAD,,LOCATIONCI,LOCATIONZI,
-columns = ["property_id", "sale_date", "buyer_name", "seller_name", "sale_price", "property_type", "physical_address", "city", "zip5", "county", "state", "source_url"]
+columns = ["property_id", "sale_date", "buyer_name", "seller_name", "sale_price", "sale_type", "property_type", "physical_address", "city", "zip5", "county", "state", "source_url"]
 with open("Parcels.csv", "r") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
@@ -30,6 +38,15 @@ with open("Parcels.csv", "r") as input_csv:
                     "source_url": row["WebSiteLin"],
                 }
 
+                try:
+                    land_info["sale_type"] = sale_type[row["DEEDTYPE"].upper().replace("_", "").strip()]
+
+                except KeyError:
+                    fail_type = str(row["DEEDTYPE"].upper().replace("_", "").strip())
+                    if fail_type not in unknown_type:
+                        unknown_type.append(fail_type)
+
+
                 # Delete if no zip5
                 if land_info["zip5"] == "00000" or land_info["zip5"] == "0" or len(land_info["zip5"]) != 5:
                     land_info["zip5"] = ""
@@ -41,3 +58,7 @@ with open("Parcels.csv", "r") as input_csv:
 
             except parser._parser.ParserError:
                 pass
+
+with open("unknown_types.txt", "a") as f:
+    for fails in unknown_type:
+        f.write(str(fails) + "\n")
