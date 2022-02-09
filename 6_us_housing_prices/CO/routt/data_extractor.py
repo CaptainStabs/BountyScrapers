@@ -1,10 +1,10 @@
 import csv
 from tqdm import tqdm
 from dateutil import parser
-import heartrate; heartrate.trace(browser=True, daemon=True)
+# import heartrate; heartrate.trace(browser=True, daemon=True)
 
 # ,PIN,,propUse,saleDate,salePrice,deedType,BldgCount,locCity,theAddress,
-columns = ["property_id", "property_type", "sale_date", "sale_price", "num_units", "city", "physical_address", "county", "state", "source_url"]
+columns = ["property_id", "property_type", "sale_date", "sale_price", "num_units", "city", "physical_address", "sale_type", "county", "state", "source_url"]
 with open("Parcels.csv", "r") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
@@ -22,12 +22,16 @@ with open("Parcels.csv", "r") as input_csv:
                     "property_type": " ".join(str(row["propUse"]).upper().split()),
                     "sale_date": str(parser.parse(row["saleDate"])),
                     "sale_price": row["salePrice"],
+                    "sale_type": row["deedType"].upper().strip(),
                     "city": " ".join(str(row["locCity"]).upper().split()),
                     "physical_address": " ".join(str(row["theAddress"]).upper().split()),
                     "county": "ROUTT",
                     "state": "CO",
                     "source_url": "https://data-routtgis.opendata.arcgis.com/datasets/parcels/",
                 }
+
+                if land_info["sale_type"] == "DEED":
+                    land_info["sale_type"] = ""
 
                 try:
                     # Delete if no unit count
