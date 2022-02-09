@@ -24,18 +24,19 @@ with open("F:\\___FL\\Parcels.csv", "r") as input_csv:
                     "property_id": row["PARCEL_ID"],
                     "physical_address": " ".join(str(row["PHY_ADDR1"]).upper().split()),
                     "city": " ".join(str(row["PHY_CITY"]).upper().split()),
-                    "zip5": row["PHY_ZIPCD"],
+                    "zip5": row["PHY_ZIPCD"].split(".")[0],
                     "state": "FL",
                     "source_url": "ftp://sdrftp03.dor.state.fl.us/Tax%20Roll%20Data%20Files/2021%20Final%20NAL%20-%20SDF%20DBF%20Files/",
                 }
 
                 try:
-                    land_info["county"] = zips[row["PHY_ZIPCD"]].strip().upper()
+                    land_info["county"] = zips[land_info["zip5"]].strip().upper()
                 except KeyError:
+                    # tb.print_exc()
                     pass
 
-                except:
-                    tb.print_exc()
+                # except:
+                #     tb.print_exc()
 
                 # Delete if no year_built
                 try:
@@ -47,12 +48,13 @@ with open("F:\\___FL\\Parcels.csv", "r") as input_csv:
 
                 # Delete if no zip5
                 if land_info["zip5"] == "00000" or land_info["zip5"] == "0" or len(land_info["zip5"]) != 5:
+                    # print(land_info["zip5"])
                     land_info["zip5"] = ""
 
                 try:
                     # Delete if no unit count
                     if int(row["NO_BULDNG"]) != 0:
-                        land_info["num_units"] = row["NO_BULDNG"]
+                        land_info["num_units"] = int(row["NO_BULDNG"])
                 except ValueError:
                     pass
 
@@ -71,14 +73,13 @@ with open("F:\\___FL\\Parcels.csv", "r") as input_csv:
                         pass
                 # date_list = [str(row[f"Sale{x}D"]).strip() for x in range(1,4)]
                     try:
-                        land_info["sale_date"] = str(parser.parse(str(row[f"SALE_MO{i}"]).strip() + "/15/" + str(int(row[f"SALE_YR{i}"]))))
-                        land_info["sale_price"] = row[f"SALE_PRC{i}"]
+                        land_info["sale_date"] = str(parser.parse(str(row[f"SALE_MO{i}"]).strip() + "/15/" + str(row[f"SALE_YR{i}"]).split(".")[0]))
+                        land_info["sale_price"] = row[f"SALE_PRC{i}"].split(".")[0]
                         year = land_info["sale_date"].split("-")[0]
 
                         if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "" and int(year) <= 2022:
                             writer.writerow(land_info)
-                        else:
-                            print(json.dumps(land_info, indent=2))
+
                     except parser._parser.ParserError:
                         tb.print_exc()
                         pass
