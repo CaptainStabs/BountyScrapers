@@ -1,0 +1,7 @@
+Sources:
+[Can verify easily here](https://gisccweb.charlestoncounty.org/Public_Search/)
+Addresses: [https://gisccapps.charlestoncounty.org/arcgis/rest/services/GIS_VIEWER/Public_Search/MapServer/1](https://gisccapps.charlestoncounty.org/arcgis/rest/services/GIS_VIEWER/Public_Search/MapServer/1)
+Sales: [https://gisccapps.charlestoncounty.org/arcgis/rest/services/ProVal/ParcelMap/MapServer/0/](https://gisccapps.charlestoncounty.org/arcgis/rest/services/ProVal/ParcelMap/MapServer/0/)
+
+Total Rows: 184561
+Cell edits: 1831720

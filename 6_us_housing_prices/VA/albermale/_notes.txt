@@ -1,0 +1,10 @@
+Sources:
+[Sales](https://gisweb.albemarle.org/gisdata/CAMA/GIS_View_Redacted_VisionSales_TXT.zip)
+[Parcels](https://gisweb.albemarle.org/gisdata/CAMA/GIS_View_Redacted_ParcelInfo_TXT.zip)
+[Info](https://gisweb.albemarle.org/gisdata/CAMA/GIS_CardLevelData_new_TXT.zip)
+
+Join Query:
+```
+SELECT Sales.mapblolot, Sales.saledate1, Sales.saleprice, Sales.deedbook, Sales.deedpage, Sales.validitycode, Parcel.PropStreet, Parcel.City, Parcel.Zip, Parcel.LastSalePrice, Parcel.LastSaleDate1, Parcel.LastSaleDate1, Info.YearBuilt, Info.UseCode, Info.HouseStyle
+FROM (Sales INNER JOIN Parcel ON Sales.mapblolot = Parcel.ParcelID) INNER JOIN Info ON Parcel.ParcelID = Info.TMP;
+```
