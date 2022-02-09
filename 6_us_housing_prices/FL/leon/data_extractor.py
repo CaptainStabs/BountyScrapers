@@ -3,7 +3,7 @@ from tqdm import tqdm
 from dateutil import parser
 
 # PARCEL_ID,LOCATION,,YRBLT,PROPERTY USE,SALE_DATE,SALE_PRICE,BOOK,PAGE,,GRANTOR,GRANTEE
-columns = ["property_id", "physical_address", "year_built", "property_type", "sale_date", "sale_price", "book", "page", "seller_name", "buyer_name", "county", "state", "source_url"]
+columns = ["property_id", "physical_address", "year_built", "property_type", "sale_date", "sale_price", "book", "page", "seller_name", "buyer_name", "sale_type", "county", "state", "source_url"]
 with open("SalesData.csv", "r") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
@@ -23,6 +23,7 @@ with open("SalesData.csv", "r") as input_csv:
                     "sale_price": str(row["SALE_PRICE"]).strip(),
                     "seller_name": " ".join(str(row["GRANTOR"]).upper().split()),
                     "buyer_name": " ".join(str(row["GRANTEE"]).upper().split()),
+                    "sale_type": str(row["INSTRUMENT_DESC"]).upper().strip(),
                     "county": "LEON",
                     "state": "FL",
                     "source_url": "ftp://ftp.leonpa.org/SalesData.csv"

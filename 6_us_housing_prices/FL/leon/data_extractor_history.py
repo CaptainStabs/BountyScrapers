@@ -3,7 +3,7 @@ from tqdm import tqdm
 from dateutil import parser
 
 # PARID,LOCATION,ZIP,NUMBER_OF_BLDGS,YRBLT,PROPERTY_USE_DESC,SALE_DATE,SALE_PRICE,BOOK,PAGE,GRANTOR,GRANTEE
-columns = ["property_id", "physical_address", "zip5", "year_built", "property_type", "sale_date", "sale_price", "book", "page", "seller_name", "buyer_name", "num_units", "county", "state", "source_url"]
+columns = ["property_id", "physical_address", "zip5", "year_built", "property_type", "sale_date", "sale_price", "book", "page", "seller_name", "buyer_name", "num_units", "sale_type", "county", "state", "source_url"]
 with open("Combined.csv", "r") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
@@ -24,6 +24,7 @@ with open("Combined.csv", "r") as input_csv:
                     "sale_price": str(row["SALE_PRICE"]).strip(),
                     "seller_name": " ".join(str(row["GRANTOR"]).upper().replace('"', "'").split()),
                     "buyer_name": " ".join(str(row["GRANTEE"]).upper().replace('"', "'").split()),
+                    "sale_type": str(row["INSTRUMENT_DESC"]).upper().strip(),
                     "county": "LEON",
                     "state": "FL",
                     "source_url": "ftp://ftp.leonpa.org/SalesHistory.csv"
