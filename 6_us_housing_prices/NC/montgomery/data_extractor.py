@@ -2,8 +2,16 @@ import csv
 from tqdm import tqdm
 from dateutil import parser
 
+from pathlib import Path
+import sys
+
+p = Path(__file__).resolve().parents[2]
+sys.path.insert(1, str(p))
+
+from _sale_type.sale_type import sale_type
+
 #,PIN,,PhyAddress,,DeedBook,DeedPage,TransDate,SalesAmt,Impr1Desc,YearBuilt,MutipleImp
-columns = ["property_id", "physical_address", "book", "page", "sale_date", "sale_price", "property_type", "year_built", "num_units", "county", "state", "source_url"]
+columns = ["property_id", "physical_address", "book", "page", "sale_date", "sale_price", "property_type", "year_built", "num_units", "sale_type", "county", "state", "source_url"]
 with open("Parcels.csv", "r") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
@@ -26,6 +34,12 @@ with open("Parcels.csv", "r") as input_csv:
                         "state": "NC",
                         "source_url": "https://montnc.maps.arcgis.com/home/item.html?id=c4e8961b34394c61bcd253ced1480693"
                     }
+
+                    try:
+                        land_info["sale_type"] = sale_type[row["SalesInstr"].upper().replace("_", "").strip()]
+
+                    except KeyError:
+                        land_info["sale_type"] = str(row["SalesInstr"])
 
                     # Delete if no book
                     # Update field
