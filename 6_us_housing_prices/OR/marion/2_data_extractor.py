@@ -3,12 +3,18 @@ import csv
 from tqdm import tqdm
 from dateutil import parser
 import usaddress
+from pathlib import Path
+import sys
 
+p = Path(__file__).resolve().parents[2]
+sys.path.insert(1, str(p))
+
+from _sale_type.sale_type import sale_type
 
 directory = ".\\files\\2\\"
 
 # PROPID,SALEPRICE,SALEDATE,SITUSNUMBER,SITUSSTREET,SITUSCITYSTATEZIP,SELLERNAME,BUYERNAME,YEARBUILT,
-columns = ["property_id", "sale_price", "sale_date", "physical_address", "city", "state", "zip5", "seller_name", "buyer_name", "year_built", "source_url"]
+columns = ["property_id", "sale_price", "sale_date", "physical_address", "city", "state", "zip5", "seller_name", "buyer_name", "year_built", "sale_type", "source_url"]
 
 with open(".\\extracted_data\\2_extracted_data.csv", "a", encoding="utf-8", newline="") as output_csv:
     writer = csv.DictWriter(output_csv, fieldnames=columns)
@@ -20,11 +26,16 @@ with open(".\\extracted_data\\2_extracted_data.csv", "a", encoding="utf-8", newl
 
             for row in reader:
                 land_info = {
-                    "property_id": row["ROPID"],
+                    "property_id": row["PROPID"],
                     "seller_name": " ".join(str(row["SELLERNAME"]).upper().strip().split()),
                     "buyer_name": " ".join(str(row["BUYERNAME"]).upper().strip().split()),
                     "source_url": "https://www.co.marion.or.us/AO/Pages/datacenter.aspx"
                 }
+                try:
+                    land_info["sale_type"] = sale_type[row["DEEDTYPE"].upper().replace("_", "").strip()]
+
+                except KeyError:
+                    land_info["sale_type"] = str(row["DEEDTYPE"].upper().replace("_", "").strip())
 
                 if "Missing Situs Address Record" not in row["SITUSSTREET"]:
                     situs_number = row["SITUSNUMBER"]
@@ -54,6 +65,7 @@ with open(".\\extracted_data\\2_extracted_data.csv", "a", encoding="utf-8", newl
                         land_info["state"] = str(parsed_address[0]["StateName"]).upper().strip()
 
                     except KeyError:
+                        land_info["state"] = "OR"
                         # print("Error on state:", city_state_zip)
                         pass
 
