@@ -1,9 +1,16 @@
 import csv
 from tqdm import tqdm
 from dateutil import parser
+from pathlib import Path
+import sys
+
+p = Path(__file__).resolve().parents[2]
+sys.path.insert(1, str(p))
+
+from _sale_type.sale_type import sale_type
 
 #PIN,,DeedBook,DeedPage,DeedDate,SaleMonth,SaleYear,SalePrice,BuildingCo,ParcelType,ParCity,ParZipCode,ParAddress,StreetSuff,StreetType,StreetName,StreetDire,UnitNumber,HouseNumbe,
-columns = ["property_id", "book", "page", "sale_date", "sale_price", "num_units", "property_type", "city", "zip5", "physical_address", "county", "state", "source_url"]
+columns = ["property_id", "book", "page", "sale_date", "sale_price", "num_units", "property_type", "city", "zip5", "physical_address", "sale_type", "county", "state", "source_url"]
 with open("TaxParcels.csv", "r") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
@@ -27,6 +34,11 @@ with open("TaxParcels.csv", "r") as input_csv:
                     "source_url": "https://gis.harnett.org/DataDownloads/Shapefile/TaxParcels.zip"
                 }
 
+                try:
+                    land_info["sale_type"] = sale_type[row["InstrumentType"].upper().replace("_", "").strip()]
+
+                except KeyError:
+                    land_info["sale_type"] = str(row["Instrument"])
 
                 # If address is in separate fields
                 street_list = [ str(row["HouseNumbe"]).strip(), str(row["StreetDire"]).strip(), str(row["StreetName"]).strip(), str(row["StreetType"]).strip(), str(row["StreetSuff"]).strip()]
