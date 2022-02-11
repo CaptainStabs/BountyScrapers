@@ -3,7 +3,7 @@ from dateutil import parser
 from tqdm import tqdm
 
 # MultipleImprovements,,PropertyType,
-columns = ["property_id", "physical_address", "book", "page", "sale_date", "sale_price", "seller_name", "city", "property_type", "num_units", "county", "state", "source_url"]
+columns = ["property_id", "physical_address", "book", "page", "sale_date", "sale_price", "seller_name", "city", "property_type", "num_units", "sale_type", "county", "state", "source_url"]
 
 with open("Chatham_County.csv", "r") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
@@ -23,6 +23,7 @@ with open("Chatham_County.csv", "r") as input_csv:
                     "sale_price": str(row["SaleAmount"]).strip(),
                     "city": " ".join(str(row["CityCodeDescription"]).strip().upper().replace(" ETJ", "").split()),
                     "property_type": str(row["PropertyUseType"]).strip(),
+                    "sale_type": str(row["SaleInstrument"]).upper().strip(),
                     "county": "Chatham",
                     "state": "NC",
                     "source_url": "https://opendata-chathamncgis.opendata.arcgis.com/datasets/ChathamncGIS::chatham-county-parcels-tax-data/about"
