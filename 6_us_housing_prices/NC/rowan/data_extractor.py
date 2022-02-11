@@ -1,9 +1,16 @@
 import csv
 from tqdm import tqdm
 from dateutil import parser
+from pathlib import Path
+import sys
+
+p = Path(__file__).resolve().parents[2]
+sys.path.insert(1, str(p))
+
+from _sale_type.sale_type import sale_type
 
 #DEEDBOOK,DEEDPAGE,DEEDYEAR,SALE_AMT,TOWNSHIP,PROP_ADDRESS,,DATESOLD,PIN,BALDUE
-columns = ["book", "page", "sale_price", "city", "physical_address", "sale_date", "property_id", "county", "state", "source_url"]
+columns = ["book", "page", "sale_price", "city", "physical_address", "sale_date", "property_id", "sale_type", "county", "state", "source_url"]
 with open("Tax_Parcels.csv", "r", newline="", encoding="utf-8") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
@@ -25,6 +32,13 @@ with open("Tax_Parcels.csv", "r", newline="", encoding="utf-8") as input_csv:
                     "state": "NC",
                     "source_url": "https://gisdata-rowancountync.opendata.arcgis.com/datasets/RowanCountyNC::tax-parcels-"
                 }
+
+                try:
+                    land_info["sale_type"] = sale_type[row["SALEINST"].upper().replace("_", "").strip()]
+
+                except KeyError:
+                    land_info["sale_type"] = str(row["SALEINST"]).upper().strip()
+
 
                 book = str(row["DEEDBOOK"]).strip()
                 page = str(row["DEEDPAGE"]).strip()
