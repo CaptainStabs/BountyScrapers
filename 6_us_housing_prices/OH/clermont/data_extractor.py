@@ -3,7 +3,7 @@ from tqdm import tqdm
 from dateutil import parser
  # ,,,,
 # PIN,,PRICE,SALESDATE,,YRBLT,STYLE,HYPERLINK,
-columns = ["property_id", "physical_address", "sale_price", "sale_date", "year_built", "property_type", "county", "state", "source_url"]
+columns = ["property_id", "physical_address", "sale_price", "sale_date", "year_built", "property_type", "sale_type", "county", "state", "source_url"]
 with open("Parcels.csv", "r") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
@@ -20,6 +20,7 @@ with open("Parcels.csv", "r") as input_csv:
                     "sale_price": row["PRICE"],
                     "sale_date": str(parser.parse(row["SALESDATE"])),
                     "property_type": " ".join(str(row["STYLE"]).upper().split()),
+                    "sale_type": str(row["SALETYPE"]).upper().strip(),
                     "county": "CLERMONT",
                     "state": "OH",
                     "source_url": row["HYPERLINK"],
