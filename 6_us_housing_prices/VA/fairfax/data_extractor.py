@@ -27,7 +27,7 @@ with open("Sales_Data.csv", "r") as input_csv:
                     "sale_price": row["PRICE"],
                     "book": row["BOOK"],
                     "page": row["PAGE"],
-                    "sale_type": " ".join(str(row["SALEVAL_DESC"].upper().split()))
+                    "sale_type": " ".join(str(row["SALEVAL_DESC"]).upper().split())
                 }
 
                 cursor.execute(f"select ADDRESS1, CITY, STATE, ZIP from db.property_address where PARID = '{land_info['property_id']}';")
