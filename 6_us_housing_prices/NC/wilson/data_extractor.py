@@ -3,7 +3,7 @@ from tqdm import tqdm
 from dateutil import parser
 
 # PIN,,DeedBook,DeedPage,,SalesAmount,,YearActuallyBuilt1Imp,,,Description1,,PhysicalStreetAddress,CityCodeDesc,,GrantorName1,GrantorName2,,,SaleDate, MultipleImprovements,
-columns = ["property_id", "book", "page", "sale_price", "year_built", "property_type", "physical_address", "city", "seller_name", "sale_date", "num_units", "county", "state", "source_url"]
+columns = ["property_id", "book", "page", "sale_price", "year_built", "property_type", "physical_address", "city", "seller_name", "sale_date", "num_units", "sale_type", "county", "state", "source_url"]
 with open("Tax_Parcels.csv", "r") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
@@ -24,7 +24,8 @@ with open("Tax_Parcels.csv", "r") as input_csv:
                     "seller_name": ", ".join([" ".join(row[f"GrantorName{i}"].split()) for i in range(1,3) if row[f"GrantorName{i}"]]),
                     # "seller_name": " ".join(" ".join([row[f"GrantorName{i}"] for i in range(1,3) if row[f"GrantorName{i}"]]).split()),
                     "sale_date": str(parser.parse(str(row["SaleDate"]).strip())).replace("+00:00", ""),
-                    "county": "Wilson",
+                    "sale_type": str(row["SalesInstrumentDesc"]).upper().strip(),
+                    "county": "WILSON",
                     "state": "NC",
                     "source_url": "https://county-data-wilsoncounty.opendata.arcgis.com/datasets/tax-parcels"
                 }
