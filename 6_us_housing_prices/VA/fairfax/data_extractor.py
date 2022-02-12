@@ -2,7 +2,7 @@ import csv
 import mysql.connector
 from tqdm import tqdm
 
-columns = ["property_id", "sale_date", "sale_price", "book", "page", "physical_address", "city", "state", "zip5"]
+columns = ["property_id", "sale_date", "sale_price", "book", "page", "physical_address", "sale_type", "city", "state", "zip5"]
 with open("Sales_Data.csv", "r") as input_csv:
     line_count = 0
     # Count lines in file
@@ -26,7 +26,8 @@ with open("Sales_Data.csv", "r") as input_csv:
                     "sale_date": row["SALEDT"],
                     "sale_price": row["PRICE"],
                     "book": row["BOOK"],
-                    "page": row["PAGE"]
+                    "page": row["PAGE"],
+                    "sale_type": " ".join(str(row["SALEVAL_DESC"]).upper().split())
                 }
 
                 cursor.execute(f"select ADDRESS1, CITY, STATE, ZIP from db.property_address where PARID = '{land_info['property_id']}';")
