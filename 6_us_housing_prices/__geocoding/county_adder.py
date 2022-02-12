@@ -53,7 +53,7 @@ with open("F:\\us-housing-prices-2\\null_counties.csv", "r") as input_csv:
                             "page": row["page"],
                             "sale_type": row["sale_type"]
                         }
-
+                        success = True
                     else:
                         land_info = {
                             "state": row["state"],
@@ -73,7 +73,7 @@ with open("F:\\us-housing-prices-2\\null_counties.csv", "r") as input_csv:
                             "page": row["page"],
                             "sale_type": row["sale_type"]
                         }
-
+                        success = True
 
 
             elif row["zip5"] and not row["city"]:
@@ -111,7 +111,7 @@ with open("F:\\us-housing-prices-2\\null_counties.csv", "r") as input_csv:
                             "page": row["page"],
                             "sale_type": row["sale_type"]
                         }
-
+                        success = True
                     else:
                         land_info = {
                             "state": row["state"],
@@ -131,12 +131,13 @@ with open("F:\\us-housing-prices-2\\null_counties.csv", "r") as input_csv:
                             "page": row["page"],
                             "sale_type": row["sale_type"]
                         }
-
+                        success = True
             if zip_error:
                 if row["zip5"] not in removed_zips:
                     removed_zips.append(row["zip5"])
 
-            writer.writerow(land_info)
+            if success:
+                writer.writerow(land_info)
             # if zip_error:
             #     break
 
