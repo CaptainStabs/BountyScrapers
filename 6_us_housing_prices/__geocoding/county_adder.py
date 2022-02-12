@@ -8,7 +8,7 @@ with open("geo-data.yaml", "r") as f:
     zip_cty_cnty = yaml.safe_load(f)
     # print(zip_cty_cnty[31419])
 
-with open("F:\\us-housing-prices-2\\t.csv", "r") as input_csv:
+with open("F:\\us-housing-prices-2\\null_counties.csv", "r") as input_csv:
     line_count = 3489716 #len([line for line in input_csv.readlines()])
     input_csv.seek(0)
     reader = csv.DictReader(input_csv)
@@ -25,11 +25,9 @@ with open("F:\\us-housing-prices-2\\t.csv", "r") as input_csv:
                     county = zip_cty_cnty[row["zip5"]]["county"]
                 except KeyError:
                     try:
-                        print("\n1:", int(row["zip5"])+1)
                         county = zip_cty_cnty[str(int(row["zip5"])+1)]["county"]
                     except KeyError:
                         try:
-                            print("\n2:", int(row["zip5"])-1)
                             county = zip_cty_cnty[str(int(row["zip5"])-1)]["county"]
                         except KeyError:
                             zip_error = True
