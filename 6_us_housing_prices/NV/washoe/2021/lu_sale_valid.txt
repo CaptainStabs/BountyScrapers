@@ -1,0 +1,35 @@
+1G,Good Verified Sale
+1GCA,Good - Adjusted
+1GCR,Good Conditional (See Remarks)
+1GLC,Land Use Change After Sale-See Notes for Adj
+1MGA,Multiple Parcel
+1MGH,Good Adjusted Multiple Parcel Sale
+1SVR,Sales Verification Letter
+2D,Sale Price Verified By Declaration of Value
+2F,Valid Sale after Foreclosure
+2MD,Multi Parcel Declaration
+2MF,Multiple Parcel Valid Foreclosure Sale
+2MQC,Multiple Parcel Conditional (mixed use)
+2MSV,Multiple Parcel SVL
+2QC,Verified With Questionable Conditions
+2SVL,Do Not Use This Code
+2TBV,To Be Verified By Appraisal
+2XD,Excluded Sale With Declaration
+3B,Do Not Use This Code
+3BCK,Legal description needs to be checked
+3BCT,Clearing Title (clarifiying vesting, grantor may not have interest)
+3BDS,Do Not Use This Code
+3BEA,Change Of Etals Only (Add Or Delete)
+3BF,Foreclosure
+3BFI,Interest conveyed in the future at owners death
+3BFM,Transfer Between Family Members
+3BGG,Grantee-Grantor the Same
+3BIT,Intermediary Transfer
+3BO,Other Conditions (see remarks)
+3BSP,Describes non existent parcel, split pending
+3MB,Multi Parcel
+3MNT,Multi Parcel No Transfer Tax
+3NTT,No Transfer Tax
+4BV,To Be Verified Transferred RP to Sales
+4MV,To Be Verified Transferred AP To Sales Multi Parcel
+4V,Do Not Use This Code
