@@ -15,8 +15,7 @@ import csv
 import os
 from random import randrange
 from _secrets import binary_path
-#import heartrate
-#heartrate.trace(browser=True)
+import heartrate; heartrate.trace(browser=True, daemon=True)
 
 
 class WebDriver:
@@ -59,9 +58,11 @@ class WebDriver:
             found = False
             times_looped = 0
             time.sleep(1.5)
-            while not found and times_looped < 3000:
+            while not found and times_looped < 1000:
                 try:
-                    address = self.driver.find_element(By.XPATH,'/html/body/div[3]/div[9]/div[8]/div/div[1]/div/div/div[7]/div[1]/button/div[1]/div[2]/div[1]')
+                    address_1 = self.driver.find_element(By.XPATH,'//*[@id="pane"]/div/div[1]/div/div/div[2]/div[1]/div[1]/div[1]/h1/span[1]')
+                    address_2 = self.driver.find_element(By.XPATH,'//*[@id="pane"]/div/div[1]/div/div/div[2]/div[1]/div[1]/h2/span')
+                    address = str(address_1.text) +  ", " + str(address_2.text)
                     print("   [*] times_looped: " + str(times_looped))
                     found = True
                 except Exception as e2:
@@ -69,14 +70,16 @@ class WebDriver:
                     found = False
                     times_looped += 1
 
-            if address.text is None:
-                print("Not address.text: " + str(address.text))
+            if address is None:
+                print("Not address.text: " + str(address))
                 found = False
                 times_looped = 0
                 time.sleep(5)
-                while not found and times_looped < 3000:
+                while not found and times_looped < 1000:
                     try:
-                        address = self.driver.find_element(By.XPATH,'/html/body/div[3]/div[9]/div[8]/div/div[1]/div/div/div[7]/div[1]/button/div[1]/div[2]/div[1]')
+                        address_1 = self.driver.find_element(By.XPATH,'//*[@id="pane"]/div/div[1]/div/div/div[2]/div[1]/div[1]/div[1]/h1/span[1]')
+                        address_2 = self.driver.find_element(By.XPATH,'//*[@id="pane"]/div/div[1]/div/div/div[2]/div[1]/div[1]/h2/span')
+                        address = str(address_1.text) +  ", " + str(address_2.text)
                         print("   [*] times_looped: " + str(times_looped))
                         found = True
                     except Exception as e2:
@@ -84,16 +87,16 @@ class WebDriver:
                         found = False
                         times_looped += 1
 
-                if address.text is None:
+                if address is None:
                     print("   [?] Not found address")
                     self.found_address = False
                 else:
                     print("   [?] Found address")
-                    print("      [*] Address: " + str(address.text))
+                    print("      [*] Address: " + str(address))
                     self.found_address = True
             else:
                 print("      [*] Found Address")
-                print("      [*] Address: " + str(address.text))
+                print("      [*] Address: " + str(address))
                 self.found_address = True
 
             # phone_number = self.driver.find_element_by_css_selector("[data-tooltip='Copy phone number']")
@@ -106,7 +109,7 @@ class WebDriver:
         try:
             # self.location_data["rating"] = avg_rating.text
             # self.location_data["reviews_count"] = total_reviews.text[1:-1]
-            self.location_data["location"] = address.text
+            self.location_data["location"] = address
             # self.location_data["contact"] = phone_number.text
             # self.location_data["website"] = website.text
         except Exception as E:
@@ -141,11 +144,10 @@ class WebDriver:
 
                 for index, row in tqdm(df.iterrows(), total=total):
                     print("Iterating")
-                    school_info = {}
                     physical_address = row["physical_address"]
                     physical_city = row["city"]
                     physical_state = row["state"]
-                    search_query = f"{physical_address}, {school_city}, {school_state}"
+                    search_query = f"{physical_address}, {physical_city}, {physical_state}"
                     print("\n   [?] Search query: " + str(search_query))
 
                     try:
@@ -177,8 +179,8 @@ class WebDriver:
                             print(e)
                             new_address = address_string
                             with open("fails2.txt", "a") as output:
-                                old_address = row["address"]
-                                output.write(f"{school_name}, {school_city}, {school_state}, {old_address}, {new_address}\n")
+                                old_address = row["physical_address"]
+                                output.write(f"{physical_address}, {physical_city}, {physical_state}, {old_address}, {new_address}\n")
                                 parse_success = False
 
 
@@ -190,7 +192,7 @@ class WebDriver:
                             # print("      [?] parsed_address: " + str(parsed_address))
                             # print("      [?] Key selection: " + str(parsed_address[0]["AddressNumber"]))
                             print("      [?] New Address: " + str(address_string))
-                            print("      [?] Old Address: " + str(row["address"]))
+                            print("      [?] Old Address: " + str(row["physical_address"]))
                             try:
                                 parsed_city = str(parsed_address[0]["PlaceName"]).upper()
                                 parsed_state = str(parsed_address[0]["StateName"]).upper()
@@ -203,32 +205,75 @@ class WebDriver:
                                 print("address_string: " + str(address_string))
                                 print(parsed_address)
                                 with open("non-us.csv", "a") as output:
-                                    old_address = row["address"]
-                                    output.write(f"{school_name}, {school_city}, {school_state}, {old_address}\n")
+                                    old_address = row["physical_address"]
+                                    output.write(f"{physical_address}, {physical_city}, {physical_state}, {old_address}\n")
                                 parse_success = False
 
                         # except Exception as e:
                         #     print(e)
                         #     new_address = address_string
                         #     with open("fails2.txt", "a") as output:
-                        #         output.write(f"{school_name}, {school_city}, {school_state}, {old_address}, {new_address}\n")
+                        #         output.write(f"{physical_address}, {physical_city}, {physical_state}, {old_address}, {new_address}\n")
 
                         if parse_success:
-                            if parsed_city == str(school_city) and parsed_state == str(school_state):
-                                print("   [*] Updating Address")
-                                school_info["name"] = row["name"]
-                                school_info["city"] = row["city"]
-                                school_info["state"] = row["state"]
-                                school_info["address"] = street_address
-                                school_info["zip"] = parsed_zip
-                                writer.writerow(school_info)
+                            if physical_city:
+                                if parsed_city == str(physical_city) and parsed_state == str(physical_state):
+                                    print("   [*] Updating Address")
+                                    land_info = {
+                                    "state":row["state"],
+                                    "zip5": parsed_zip,
+                                    "physical_address": row["physical_address"],
+                                    "city": row["city"],
+                                    "county": row["county"],
+                                    "property_id": row["property_id"],
+                                    "sale_date": row["sale_date"],
+                                    "property_type": row["property_type"],
+                                    "sale_price": int(row["sale_price"]),
+                                    "seller_name": row["seller_name"],
+                                    "buyer_name": row["buyer_name"],
+                                    "num_units": int(row["num_units"]),
+                                    "year_built": int(row["year_built"]),
+                                    "source_url": row["source_url"],
+                                    "book": int(row["book"]),
+                                    "page": int(row["page"]),
+                                    "sale_type": row["sale_type"]
+                                    }
+
+                                    # land_info["zip5"] = parsed_zip
+                                    writer.writerow(land_info)
+
+                                else:
+                                    land_info["name"] = row["name"]
+                                    land_info["city"] = row["city"]
+                                    land_info["state"] = row["state"]
+                                    land_info["address"] = street_address
+                                    land_info["zip"] = parsed_zip
 
                             else:
-                                school_info["name"] = row["name"]
-                                school_info["city"] = row["city"]
-                                school_info["state"] = row["state"]
-                                school_info["address"] = street_address
-                                school_info["zip"] = parsed_zip
+                                if parsed_state == str(physical_state):
+                                    land_info = {
+                                    "state":row["state"],
+                                    "zip5": parsed_zip,
+                                    "physical_address": row["physical_address"],
+                                    "city": parsed_city.upper().strip(),
+                                    "county": row["county"],
+                                    "property_id": row["property_id"],
+                                    "sale_date": row["sale_date"],
+                                    "property_type": row["property_type"],
+                                    "sale_price": int(row["sale_price"]),
+                                    "seller_name": row["seller_name"],
+                                    "buyer_name": row["buyer_name"],
+                                    "num_units": int(row["num_units"]),
+                                    "year_built": int(row["year_built"]),
+                                    "source_url": row["source_url"],
+                                    "book": int(row["book"]),
+                                    "page": int(row["page"]),
+                                    "sale_type": row["sale_type"]
+                                    }
+
+                                    # land_info["zip5"] = parsed_zip
+                                    writer.writerow(land_info)
+
 
                             # Not in the time.sleep as i want to print the time to see it
                             sleep_time = randrange(5)
@@ -236,7 +281,7 @@ class WebDriver:
                             time.sleep(sleep_time)
                         else:
                             with open("fails.txt", "a") as f:
-                                f.write(f"{school_name}, {school_city}, {school_state}\n")
+                                f.write(f"{physical_address}, {physical_city}, {physical_state}\n")
                             continue
 
 
@@ -251,10 +296,10 @@ x = WebDriver()
 x.scrape(url)
 
 # for index, row in tqdm(df.iterrows()):
-#     school_name = row["name"]
-#     school_city = row["city"]
-#     school_state = row["state"]
-#     search_query = f"{school_name}, {school_city}, {school_state}"
+#     physical_address = row["name"]
+#     physical_city = row["city"]
+#     physical_state = row["state"]
+#     search_query = f"{physical_address}, {physical_city}, {physical_state}"
 #     print("\nSearch query: " + str(search_query))
 #     x = WebDriver()
 #     location_data = x.scrape(url, search_query)
