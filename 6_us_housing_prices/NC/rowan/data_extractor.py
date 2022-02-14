@@ -28,7 +28,7 @@ with open("Tax_Parcels.csv", "r", newline="", encoding="utf-8") as input_csv:
                     "city": " ".join(str(row["CITY"]).upper().split()),
                     "physical_address": " ".join(str(row["PROP_ADDRESS"]).upper().split()),
                     "property_id": row["PIN"],
-                    "county": "Rowan",
+                    "county": "ROWAN",
                     "state": "NC",
                     "source_url": "https://gisdata-rowancountync.opendata.arcgis.com/datasets/RowanCountyNC::tax-parcels-"
                 }
