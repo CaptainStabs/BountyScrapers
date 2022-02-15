@@ -86,7 +86,8 @@ with open("F:\\us-housing-prices-2\\null_counties.csv", "r") as input_csv:
                             if row["source_url"] not in wrong_state.keys():
                                 wrong_state[row["source_url"]] = [row["zip5"]]
                             else:
-                                wrong_state[row["source_url"]].append(row["zip5"])
+                                if row["zip5"] not in wrong_state[row["source_url"]]:
+                                    wrong_state[row["source_url"]].append(row["zip5"])
 
                         success = True
 
@@ -172,7 +173,8 @@ with open("F:\\us-housing-prices-2\\null_counties.csv", "r") as input_csv:
                                 if row["source_url"] not in wrong_state.keys():
                                     wrong_state[row["source_url"]] = [row["zip5"]]
                                 else:
-                                    wrong_state[row["source_url"]].append(row["zip5"])
+                                    if row["zip5"] not in wrong_state[row["source_url"]]:
+                                        wrong_state[row["source_url"]].append(row["zip5"])
                             success = True
                         else:
                             success = True
