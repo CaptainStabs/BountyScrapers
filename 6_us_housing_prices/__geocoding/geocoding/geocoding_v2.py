@@ -8,7 +8,7 @@ import yaml
 import traceback as tb
 
 # geolocator = Nominatim(user_agent="searchtest", domain="127.0.0.1:8088/search.php")
-
+# Validate zipcodes, make sure they are 5 digits and not a range. if range get first.
 def zipcode_validator(geocoding):
     try:
         zip5 = geocoding["postcode"]
@@ -23,9 +23,11 @@ def zipcode_validator(geocoding):
 url = "http://127.0.0.1:8088/search.php"
 columns = ["state","zip5","physical_address","city","county","property_id","sale_date","property_type","sale_price","seller_name","buyer_name","num_units","year_built","source_url","book","page","sale_type"]
 
+# Load zipcode yaml file into memory
 with open("us_zipcodes.yaml", "r") as f:
     zip_cty_cnty = yaml.safe_load(f)
 
+# Open source data file
 with open("F:\\us-housing-prices-2\\null_zips.csv", "r") as input_csv:
     # line_count = len([line for line in input_csv.readlines()])
     line_count = 20550428
@@ -38,15 +40,16 @@ with open("F:\\us-housing-prices-2\\null_zips.csv", "r") as input_csv:
     # state,zip5,physical_address,city,county,property_id,sale_date,property_type,sale_price,seller_name,buyer_name,num_units,year_built,source_url,book,page,sale_type
         for row in tqdm(reader, total=line_count):
             save = False
+            # Prepare for url format (urlencode didn't work)
             physical_address = str(row["physical_address"]).replace(" ", "+")
             city = str(row["city"]).replace(" ", "+")
             county = str(row["county"]).replace(" ", "+")
             state = row["state"]
 
-            if len(str(row["physical_address"])) > 3:
+            if len(str(row["physical_address"])) >= 3:
                 land_info = {
                     "state": row["state"],
-                    "physical_address": row["physical_address"],
+                    "physical_address": row["physical_address"], # Don't fix bad addresses
                     "property_id": row["property_id"].strip(),
                     "sale_date": row["sale_date"],
                     "property_type": " ".join(str(row["property_type"]).upper().split()),
@@ -60,27 +63,23 @@ with open("F:\\us-housing-prices-2\\null_zips.csv", "r") as input_csv:
                     "page": row["page"],
                     "sale_type": row["sale_type"].strip(),
                 }
-                    # "zip5": row["zip5"],
-                    # "city": " ".join(str(row["city"]).split()).strip(),
-                    # "county": " ".join(str(row["county"]).split()).strip(),
 
+                # Fix books and pages that violate constraints
                 if not land_info["book"] or not land_info["page"]:
                     land_info["book"] = ""
                     land_info["page"] = ""
 
-                # query = url+"?q=" + requests.utils.quote(f"{physical_address},{city},{county},{state},US")
-                # query = url + "?q=" + str(f"{physical_address},{city},{county},{state},US")
-                # print(query)
-                #
-                # print(requests.request("GET", query).text)
+                # Use county and city in the query
                 if row["county"] and row["city"]:
                     save = True
                     response = json.loads(requests.request("GET", f'{url}?street={physical_address}&city={city}&county={county}&state={state}&country=US&addressdetails=1&format=jsonv2').text)
                     if len(response):
                         try:
+                            # Normal response
                             geocoding = response["features"][0]["properties"]["geocoding"]
                         except TypeError:
                             try:
+                                # Alternate response
                                 geocoding = response[0]["address"]
                             except KeyError:
                                 # print(str(row["physical_address"]), "\n")
@@ -89,6 +88,8 @@ with open("F:\\us-housing-prices-2\\null_zips.csv", "r") as input_csv:
                                 # tb.print_exc()
 
                         land_info["zip5"] = zipcode_validator(geocoding)
+
+                # Use only county in query
                 elif row["county"] and not row["city"]:
                     response = json.loads(requests.request("GET", f'{url}?street={physical_address}&county={county}&state={state}&country=US&addressdetails=1&format=jsonv2').text)
                     if len(response):
@@ -106,15 +107,18 @@ with open("F:\\us-housing-prices-2\\null_zips.csv", "r") as input_csv:
                                 # tb.print_exc()
 
                         land_info["zip5"] = zipcode_validator(geocoding)
+
+                        # Try to get the city from the response
                         if "city" in geocoding.keys():
                             land_info["city"] = " ".join(str(geocoding["city"]).upper().split())
                         else:
                             try:
+                                # Try to get the city based on it's zipcode
                                 city = zip_cty_cnty[land_info["zip5"]]["city"].upper()
                             except KeyError:
                                 pass
 
-
+                # Use only city and not county in query
                 elif row["city"] and not row["county"]:
                     response = json.loads(requests.request("GET", f'{url}?street={physical_address}&city={city}&state={state}&country=US&addressdetails=1&format=jsonv2').text)
                     if len(response):
@@ -134,6 +138,7 @@ with open("F:\\us-housing-prices-2\\null_zips.csv", "r") as input_csv:
 
                         land_info["zip5"] = zipcode_validator(geocoding)
 
+                        # Try to get county from response, otherwise try to get it based on zipcode
                         if "county" in geocoding.keys():
                             land_info["county"] = " ".join(str(geocoding["county"]).upper().split())
                         else:
@@ -142,6 +147,7 @@ with open("F:\\us-housing-prices-2\\null_zips.csv", "r") as input_csv:
                             except KeyError:
                                 pass
 
+                # Don't use city or county in query
                 elif not row["city"] and not row["county"]:
                     response = json.loads(requests.request("GET", f'{url}?street={physical_address}&city={city}&state={state}&country=US&addressdetails=1&format=jsonv2').text)
                     if len(response):
@@ -160,6 +166,7 @@ with open("F:\\us-housing-prices-2\\null_zips.csv", "r") as input_csv:
 
                         land_info["zip5"] = zipcode_validator(geocoding)
 
+                        # Try to get county and city from response, otherwise try to get it based on zipcode
                         if "county" in geocoding.keys():
                             land_info["county"] = " ".join(str(geocoding["county"]).upper().split())
                         else:
@@ -177,6 +184,7 @@ with open("F:\\us-housing-prices-2\\null_zips.csv", "r") as input_csv:
                                 pass
 
                 if save:
+                    # Verify zip5 one last time
                     try:
                         if land_info["zip5"] == "00000" or land_info["zip5"] == "0" or len(land_info["zip5"]) != 5:
                             land_info["zip5"] = ""
@@ -185,10 +193,3 @@ with open("F:\\us-housing-prices-2\\null_zips.csv", "r") as input_csv:
                         # print(json.dumps(land_info, indent=2))
 
                     writer.writerow(land_info)
-
-                # print(json.dumps(json.JSONDecoder().decode(response.text), indent=2))
-                # print(response.json)
-                # print(response.text)
-                # print(response.content)
-                # print(location)
-                # break
