@@ -20,27 +20,8 @@ def zipcode_validator(geocoding):
     except KeyError:
         return ""
 
-# headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36"}
-url = "http://127.0.0.1:8088/search.php"
-columns = ["state","zip5","physical_address","city","county","property_id","sale_date","property_type","sale_price","seller_name","buyer_name","num_units","year_built","source_url","book","page","sale_type"]
-
-# Load zipcode yaml file into memory
-with open("us_zipcodes.yaml", "r") as f:
-    zip_cty_cnty = yaml.safe_load(f)
-
-# Open source data file
-with open("F:\\us-housing-prices-2\\null_zips.csv", "r") as input_csv:
-    # line_count = len([line for line in input_csv.readlines()])
-    line_count = 20550428
-    reader = csv.DictReader(input_csv)
-
-    with open("F:\\us-housing-prices-2\\zip5_added_test.csv", "a", newline="") as output_csv:
-        writer = csv.DictWriter(output_csv, fieldnames=columns)
-        writer.writeheader()
-
-        runner(reader, writer, line_count, zip_cty_cnty, columns, url)
-
-def geocode(land_info, row, physical_address, city, county, state, writer, url):
+def geocode(land_info, row, physical_address, city, county, state, writer, url, s):
+    save = False
     # Use county and city in the query
     if row["county"] and row["city"]:
         save = True
@@ -59,7 +40,10 @@ def geocode(land_info, row, physical_address, city, county, state, writer, url):
                         f.write(str(row) + "\n")
                     # tb.print_exc()
 
-            land_info["zip5"] = zipcode_validator(geocoding)
+            try:
+                land_info["zip5"] = zipcode_validator(geocoding)
+            except UnboundLocalError:
+                save = False
 
     # Use only county in query
     elif row["county"] and not row["city"]:
@@ -78,17 +62,20 @@ def geocode(land_info, row, physical_address, city, county, state, writer, url):
                     # print(json.dumps(response, indent=2))
                     # tb.print_exc()
 
-            land_info["zip5"] = zipcode_validator(geocoding)
+            try:
+                land_info["zip5"] = zipcode_validator(geocoding)
 
-            # Try to get the city from the response
-            if "city" in geocoding.keys():
-                land_info["city"] = " ".join(str(geocoding["city"]).upper().split())
-            else:
-                try:
-                    # Try to get the city based on it's zipcode
-                    city = zip_cty_cnty[land_info["zip5"]]["city"].upper()
-                except KeyError:
-                    pass
+                # Try to get the city from the response
+                if "city" in geocoding.keys():
+                    land_info["city"] = " ".join(str(geocoding["city"]).upper().split())
+                else:
+                    try:
+                        # Try to get the city based on it's zipcode
+                        city = zip_cty_cnty[land_info["zip5"]]["city"].upper()
+                    except KeyError:
+                        pass
+            except UnboundLocalError:
+                save = False
 
     # Use only city and not county in query
     elif row["city"] and not row["county"]:
@@ -108,16 +95,19 @@ def geocode(land_info, row, physical_address, city, county, state, writer, url):
                         f.write(str(row) + "\n")
                     # tb.print_exc()
 
-            land_info["zip5"] = zipcode_validator(geocoding)
+            try:
+                land_info["zip5"] = zipcode_validator(geocoding)
 
-            # Try to get county from response, otherwise try to get it based on zipcode
-            if "county" in geocoding.keys():
-                land_info["county"] = " ".join(str(geocoding["county"]).upper().split())
-            else:
-                try:
-                    land_info["county"] = str(zip_cty_cnty[land_info["zip5"]]["county"]).upper()
-                except KeyError:
-                    pass
+                # Try to get county from response, otherwise try to get it based on zipcode
+                if "county" in geocoding.keys():
+                    land_info["county"] = " ".join(str(geocoding["county"]).upper().split())
+                else:
+                    try:
+                        land_info["county"] = str(zip_cty_cnty[land_info["zip5"]]["county"]).upper()
+                    except KeyError:
+                        pass
+            except UnboundLocalError:
+                save = False
 
     # Don't use city or county in query
     elif not row["city"] and not row["county"]:
@@ -136,24 +126,27 @@ def geocode(land_info, row, physical_address, city, county, state, writer, url):
                     # print(json.dumps(response, indent=2))
                     # tb.print_exc()
 
-            land_info["zip5"] = zipcode_validator(geocoding)
+            try:
+                land_info["zip5"] = zipcode_validator(geocoding)
 
-            # Try to get county and city from response, otherwise try to get it based on zipcode
-            if "county" in geocoding.keys():
-                land_info["county"] = " ".join(str(geocoding["county"]).upper().split())
-            else:
-                try:
-                    land_info["county"] = str(zip_cty_cnty[land_info["zip5"]]["county"]).upper()
-                except KeyError:
-                    pass
+                # Try to get county and city from response, otherwise try to get it based on zipcode
+                if "county" in geocoding.keys():
+                    land_info["county"] = " ".join(str(geocoding["county"]).upper().split())
+                else:
+                    try:
+                        land_info["county"] = str(zip_cty_cnty[land_info["zip5"]]["county"]).upper()
+                    except KeyError:
+                        pass
 
-            if "city" in geocoding.keys():
-                land_info["city"] = " ".join(str(geocoding["city"]).upper().split())
-            else:
-                try:
-                    city = str(zip_cty_cnty[land_info["zip5"]]["city"]).upper()
-                except KeyError:
-                    pass
+                if "city" in geocoding.keys():
+                    land_info["city"] = " ".join(str(geocoding["city"]).upper().split())
+                else:
+                    try:
+                        city = str(zip_cty_cnty[land_info["zip5"]]["city"]).upper()
+                    except KeyError:
+                        pass
+            except UnboundLocalError:
+                save = False
 
     if save:
         # Verify zip5 one last time
@@ -173,7 +166,6 @@ def runner(reader, writer, line_count, zip_cty_cnty, columns, url):
 
         # state,zip5,physical_address,city,county,property_id,sale_date,property_type,sale_price,seller_name,buyer_name,num_units,year_built,source_url,book,page,sale_type
         for row in tqdm(reader, total=line_count):
-            save = False
             # Prepare for url format (urlencode didn't work)
             physical_address = str(row["physical_address"]).replace(" ", "+")
             city = str(row["city"]).replace(" ", "+")
@@ -203,4 +195,24 @@ def runner(reader, writer, line_count, zip_cty_cnty, columns, url):
                     land_info["book"] = ""
                     land_info["page"] = ""
 
-                threads.append(executor.submit(geocode(land_info, row, physical_address, city, county, state, writer, url)))
+                threads.append(executor.submit(geocode(land_info, row, physical_address, city, county, state, writer, url, s)))
+
+# headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36"}
+url = "http://127.0.0.1:8088/search.php"
+columns = ["state","zip5","physical_address","city","county","property_id","sale_date","property_type","sale_price","seller_name","buyer_name","num_units","year_built","source_url","book","page","sale_type"]
+
+# Load zipcode yaml file into memory
+with open("us_zipcodes.yaml", "r") as f:
+    zip_cty_cnty = yaml.safe_load(f)
+
+# Open source data file
+with open("F:\\us-housing-prices-2\\null_zips.csv", "r") as input_csv:
+    # line_count = len([line for line in input_csv.readlines()])
+    line_count = 20550428
+    reader = csv.DictReader(input_csv)
+
+    with open("F:\\us-housing-prices-2\\zip5_added_test.csv", "a", newline="") as output_csv:
+        writer = csv.DictWriter(output_csv, fieldnames=columns)
+        writer.writeheader()
+
+        runner(reader, writer, line_count, zip_cty_cnty, columns, url)
