@@ -22,12 +22,25 @@ columns = ["state","zip5","physical_address","city","county","property_id","sale
 with open("us_zipcodes.yaml", "r") as f:
     zip_cty_cnty = yaml.safe_load(f)
 
-with open("test.csv", "r") as input_csv:
-    line_count = len([line for line in input_csv.readlines()])
+with open("F:\\us-housing-prices-2\\null_zips.csv", "r") as input_csv:
+    # line_count = len([line for line in input_csv.readlines()])
+    line_count = 0
+    while True:
+        try:
+            line = input_csv.readline()
+        except UnicodeDecodeError:
+            print(line)
+            pass
+
+        if not line:
+            break
+
+        line_count += 1
+
     input_csv.seek(0)
     reader = csv.DictReader(input_csv)
 
-    with open("zip5_added.csv", "a") as output_csv:
+    with open("F:\\us-housing-prices-2\\zip5_added.csv", "a") as output_csv:
         writer = csv.DictWriter(output_csv, fieldnames=columns)
         writer.writeheader()
 
@@ -120,13 +133,13 @@ with open("test.csv", "r") as input_csv:
                         city = str(zip_cty_cnty[land_info["zip5"]]["city"]).upper()
                     except KeyError:
                         pass
-            
+
 
             if land_info["zip5"] == "00000" or land_info["zip5"] == "0" or len(land_info["zip5"]) != 5:
                 land_info["zip5"] = ""
 
             writer.writerow(land_info)
-            
+
             # print(json.dumps(json.JSONDecoder().decode(response.text), indent=2))
             # print(response.json)
             # print(response.text)
