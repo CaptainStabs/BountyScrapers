@@ -16,7 +16,7 @@ with open("C:\\Users\\adria\\Downloads\\added_counties.csv", "r") as input_csv:
             land_info = {
                 "state": row["state"],
                 "zip5": row["zip5"],
-                "physical_address": row["physical_address"], # Don't fix bad addresses
+                "physical_address": row["physical_address"].strip(), # Don't fix bad addresses
                 "city": " ".join(str(row["city"]).upper().split()).strip(),
                 "property_id": row["property_id"].strip(),
                 "sale_date": row["sale_date"],
@@ -32,17 +32,30 @@ with open("C:\\Users\\adria\\Downloads\\added_counties.csv", "r") as input_csv:
                 "sale_type": row["sale_type"].strip(),
             }
 
-            if not land_info["book"] or not land_info["page"]:
+            try:
+                if not int(land_info["book"]) or not int(land_info["page"]):
+                    land_info["book"] = ""
+                    land_info["page"] = ""
+
+                if not int(land_info["book"]) and int(land_info["page"]):
+                    land_info["book"] = ""
+                    land_info["page"] = ""
+
+                if int(land_info["book"]) and not int(land_info["page"]):
+                    land_info["book"] = ""
+                    land_info["page"] = ""
+            except ValueError:
                 land_info["book"] = ""
                 land_info["page"] = ""
 
-            elif not land_info["book"] and land_info["page"]:
-                land_info["book"] = ""
-                land_info["page"] = ""
 
-            elif land_info["book"] and not land_info["page"]:
-                land_info["book"] = ""
-                land_info["page"] = ""
+            year = int(land_info["sale_date"].split("-")[0])
+            month = int(land_info["sale_date"].split("-")[1])
 
-
-            writer.writerow(land_info)
+            if year < 2022:
+                writer.writerow(land_info)
+            elif year == 2022:
+                if month <= 2:
+                    writer.writerow(land_info)
+            # elif year > 2022:
+            #     continue
