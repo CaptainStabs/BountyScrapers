@@ -65,6 +65,7 @@ with open("F:\\us-housing-prices-2\\null_counties.csv", "r") as input_csv:
                                 "sale_type": row["sale_type"]
                             }
                         else:
+                            # Nullify incorrect zip
                             land_info = {
                                 "state": row["state"],
                                 "zip5": "",
@@ -94,6 +95,7 @@ with open("F:\\us-housing-prices-2\\null_counties.csv", "r") as input_csv:
                         success = True
 
                     else:
+                        # Nullify incorrect zip
                         success = True
                         land_info = {
                             "state": row["state"],
@@ -114,7 +116,7 @@ with open("F:\\us-housing-prices-2\\null_counties.csv", "r") as input_csv:
                             "page": row["page"],
                             "sale_type": row["sale_type"]
                         }
-
+                # If city in source is null
                 elif row["zip5"] and not row["city"]:
                     try:
                         county = zip_cty_cnty[row["zip5"]]["county"]
@@ -156,6 +158,7 @@ with open("F:\\us-housing-prices-2\\null_counties.csv", "r") as input_csv:
                                     "sale_type": row["sale_type"]
                                 }
                             else:
+                                # Nullify incorrect zip
                                 land_info = {
                                     "state": row["state"],
                                     "zip5": "",
@@ -182,6 +185,7 @@ with open("F:\\us-housing-prices-2\\null_counties.csv", "r") as input_csv:
                                         wrong_state[row["source_url"]].append(row["zip5"])
                             success = True
                         else:
+                            # Nullify incorrect zip
                             success = True
                             land_info = {
                                 "state": row["state"],

@@ -3,7 +3,7 @@ from tqdm import tqdm
 
 columns = ["state", "zip5", "physical_address", "city", "county", "property_id", "sale_date", "property_type", "sale_price", "seller_name", "buyer_name", "num_units", "year_built", "source_url", "book", "page", "sale_type"]
 
-with open("C:\\Users\\adria\\Downloads\\added_counties.csv", "r") as input_csv:
+with open("C:\\Users\\adria\\Downloads\\added_counties.csv", "r") as input_csv: # Laptop
     line_count = 3489716 #len([line for line in input_csv.readlines()])
     input_csv.seek(0)
     reader = csv.DictReader(input_csv)
