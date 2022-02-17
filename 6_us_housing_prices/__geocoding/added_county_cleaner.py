@@ -2,10 +2,10 @@ import csv
 from tqdm import tqdm
 
 columns = ["state", "zip5", "physical_address", "city", "county", "property_id", "sale_date", "property_type", "sale_price", "seller_name", "buyer_name", "num_units", "year_built", "source_url", "book", "page", "sale_type"]
-
+num = 0
 with open("C:\\Users\\adria\\Downloads\\added_counties.csv", "r") as input_csv: # Laptop
     line_count = 3489716 #len([line for line in input_csv.readlines()])
-    input_csv.seek(0)
+    # input_csv.seek(0)
     reader = csv.DictReader(input_csv)
 
     with open("C:\\Users\\adria\\Downloads\\cleaned_added_counties.csv", "a", newline="") as output_csv:
@@ -18,6 +18,7 @@ with open("C:\\Users\\adria\\Downloads\\added_counties.csv", "r") as input_csv: 
                 "zip5": row["zip5"],
                 "physical_address": row["physical_address"].strip(), # Don't fix bad addresses
                 "city": " ".join(str(row["city"]).upper().split()).strip(),
+                "county": " ".join(str(row["county"]).upper().split()),
                 "property_id": row["property_id"].strip(),
                 "sale_date": row["sale_date"],
                 "property_type": " ".join(str(row["property_type"]).upper().split()),
@@ -48,6 +49,8 @@ with open("C:\\Users\\adria\\Downloads\\added_counties.csv", "r") as input_csv: 
                 land_info["book"] = ""
                 land_info["page"] = ""
 
+            if "https://data-sagis.opendata.arcgis.com" in row["source_url"]:
+                land_info["property_type"] = ""
 
             year = int(land_info["sale_date"].split("-")[0])
             month = int(land_info["sale_date"].split("-")[1])
