@@ -211,10 +211,10 @@ with open("F:\\us-housing-prices-2\\null_counties.csv", "r") as input_csv:
                     if row["zip5"] not in removed_zips:
                         removed_zips.append(row["zip5"])
 
-                # if success:
-                #     writer.writerow(land_info)
-                # if zip_error:
-                #     break
+                if success:
+                    writer.writerow(land_info)
+                if zip_error:
+                    break
 
 with open("zips_removed.txt", "a") as f:
     f.write(str(removed_zips))
