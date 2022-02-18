@@ -7,6 +7,7 @@ import json
 import yaml
 import traceback as tb
 from concurrent.futures import ThreadPoolExecutor, as_completed
+# import heartrate; heartrate.trace(browser=True, daemon=True)
 
 # geolocator = Nominatim(user_agent="searchtest", domain="127.0.0.1:8088/search.php")
 # Validate zipcodes, make sure they are 5 digits and not a range. if range get first.
@@ -46,7 +47,7 @@ def geocode(land_info, row, physical_address, city, county, state, writer, url, 
                 save = False
 
     # Use only county in query
-    elif row["county"] and not row["city"]:
+    elif not row["city"] and row["county"]:
         response = json.loads(s.request("GET", f'{url}?street={physical_address}&county={county}&state={state}&country=US&addressdetails=1&format=jsonv2').text)
         if len(response):
             save = True
@@ -133,9 +134,11 @@ def geocode(land_info, row, physical_address, city, county, state, writer, url, 
                 if "county" in geocoding.keys():
                     land_info["county"] = " ".join(str(geocoding["county"]).upper().split())
                 else:
+                    # print("no county 1")
                     try:
                         land_info["county"] = str(zip_cty_cnty[land_info["zip5"]]["county"]).upper()
                     except KeyError:
+                        # print("no county")
                         pass
 
                 if "city" in geocoding.keys():
@@ -161,7 +164,7 @@ def geocode(land_info, row, physical_address, city, county, state, writer, url, 
 
 def runner(reader, writer, line_count, zip_cty_cnty, columns, url):
     threads = []
-    with ThreadPoolExecutor(max_workers=40) as executor:
+    with ThreadPoolExecutor(max_workers=16) as executor:
         s = requests.Session()
 
         # state,zip5,physical_address,city,county,property_id,sale_date,property_type,sale_price,seller_name,buyer_name,num_units,year_built,source_url,book,page,sale_type
