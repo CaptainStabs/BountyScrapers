@@ -213,8 +213,9 @@ with open("F:\\us-housing-prices-2\\null_counties.csv", "r") as input_csv:
 
                 if success:
                     writer.writerow(land_info)
-                if zip_error:
-                    break
+
+                # if zip_error:
+                #     break
 
 with open("zips_removed.txt", "a") as f:
     f.write(str(removed_zips))
