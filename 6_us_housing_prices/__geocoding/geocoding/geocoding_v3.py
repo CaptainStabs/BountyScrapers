@@ -7,7 +7,8 @@ import json
 import yaml
 import traceback as tb
 from concurrent.futures import ThreadPoolExecutor, as_completed
-# import heartrate; heartrate.trace(browser=True, daemon=True)
+import heartrate; heartrate.trace(browser=True, daemon=True)
+from us_zipcodes import zip_cty_cnty
 
 # geolocator = Nominatim(user_agent="searchtest", domain="127.0.0.1:8088/search.php")
 # Validate zipcodes, make sure they are 5 digits and not a range. if range get first.
@@ -23,10 +24,15 @@ def zipcode_validator(geocoding):
 
 def geocode(land_info, row, physical_address, city, county, state, writer, url, s):
     save = False
+
     # Use county and city in the query
     if row["county"] and row["city"]:
         save = True
-        response = json.loads(s.request("GET", f'{url}?street={physical_address}&city={city}&county={county}&state={state}&country=US&addressdetails=1&format=jsonv2').text)
+        if row["zip5"]:
+            response = json.loads(s.request("GET", f'{url}?street={physical_address}&city={city}&county={county}&state={state}&postalcode={row["zip5"]}&country=US&addressdetails=1&format=jsonv2').text)
+        else:
+            response = json.loads(s.request("GET", f'{url}?street={physical_address}&city={city}&county={county}&state={state}&country=US&addressdetails=1&format=jsonv2').text)
+
         if len(response):
             try:
                 # Normal response
@@ -48,7 +54,11 @@ def geocode(land_info, row, physical_address, city, county, state, writer, url, 
 
     # Use only county in query
     elif not row["city"] and row["county"]:
-        response = json.loads(s.request("GET", f'{url}?street={physical_address}&county={county}&state={state}&country=US&addressdetails=1&format=jsonv2').text)
+        if row["zip5"]:
+            response = json.loads(s.request("GET", f'{url}?street={physical_address}&county={county}&state={state}&postalcode={row["zip5"]}country=US&addressdetails=1&format=jsonv2').text)
+        else:
+            response = json.loads(s.request("GET", f'{url}?street={physical_address}&county={county}&state={state}&country=US&addressdetails=1&format=jsonv2').text)
+
         if len(response):
             save = True
             try:
@@ -80,7 +90,11 @@ def geocode(land_info, row, physical_address, city, county, state, writer, url, 
 
     # Use only city and not county in query
     elif row["city"] and not row["county"]:
-        response = json.loads(s.request("GET", f'{url}?street={physical_address}&city={city}&state={state}&country=US&addressdetails=1&format=jsonv2').text)
+        if row["zip5"]:
+                response = json.loads(s.request("GET", f'{url}?street={physical_address}&city={city}&state={state}&postalcode={row["zip5"]}&country=US&addressdetails=1&format=jsonv2').text)
+        else:
+            response = json.loads(s.request("GET", f'{url}?street={physical_address}&city={city}&state={state}&country=US&addressdetails=1&format=jsonv2').text)
+
         if len(response):
             save = True
             try:
@@ -112,7 +126,12 @@ def geocode(land_info, row, physical_address, city, county, state, writer, url, 
 
     # Don't use city or county in query
     elif not row["city"] and not row["county"]:
-        response = json.loads(s.request("GET", f'{url}?street={physical_address}&city={city}&state={state}&country=US&addressdetails=1&format=jsonv2').text)
+        if row["zip5"]:
+            response = json.loads(s.request("GET", f'{url}?street={physical_address}&city={city}&state={state}&postalcode={row["zip5"]}&country=US&addressdetails=1&format=jsonv2').text)
+
+        else:
+            response = json.loads(s.request("GET", f'{url}?street={physical_address}&city={city}&state={state}&country=US&addressdetails=1&format=jsonv2').text)
+
         if len(response):
             save = True
             try:
@@ -164,7 +183,7 @@ def geocode(land_info, row, physical_address, city, county, state, writer, url, 
 
 def runner(reader, writer, line_count, zip_cty_cnty, columns, url):
     threads = []
-    with ThreadPoolExecutor(max_workers=16) as executor:
+    with ThreadPoolExecutor(max_workers=30) as executor:
         s = requests.Session()
 
         # state,zip5,physical_address,city,county,property_id,sale_date,property_type,sale_price,seller_name,buyer_name,num_units,year_built,source_url,book,page,sale_type
@@ -175,10 +194,13 @@ def runner(reader, writer, line_count, zip_cty_cnty, columns, url):
             county = str(row["county"]).replace(" ", "+")
             state = row["state"]
 
+
             if len(str(row["physical_address"])) >= 3:
                 land_info = {
                     "state": row["state"],
                     "physical_address": row["physical_address"], # Don't fix bad addresses
+                    "city": " ".join(str(row["city"]).upper().split()),
+                    "county": " ".join(str(row["city"]).upper().split()),
                     "property_id": row["property_id"].strip(),
                     "sale_date": row["sale_date"],
                     "property_type": " ".join(str(row["property_type"]).upper().split()),
@@ -193,11 +215,26 @@ def runner(reader, writer, line_count, zip_cty_cnty, columns, url):
                     "sale_type": row["sale_type"].strip(),
                 }
 
+                if not row["county"] and  "https://portal.assessor.lacounty.gov/" in row["source_url"]:
+                    county = "LOS ANGELES"
+                    land_info["county"] = "LOS ANGELES"
+
                 # Fix books and pages that violate constraints
-                if not land_info["book"] or not land_info["page"]:
+                try:
+                    if not int(land_info["book"]) or not int(land_info["page"]):
+                        land_info["book"] = ""
+                        land_info["page"] = ""
+
+                    if not int(land_info["book"]) and int(land_info["page"]):
+                        land_info["book"] = ""
+                        land_info["page"] = ""
+
+                    if int(land_info["book"]) and not int(land_info["page"]):
+                        land_info["book"] = ""
+                        land_info["page"] = ""
+                except ValueError:
                     land_info["book"] = ""
                     land_info["page"] = ""
-
                 threads.append(executor.submit(geocode(land_info, row, physical_address, city, county, state, writer, url, s)))
 
 # headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36"}
@@ -205,16 +242,28 @@ url = "http://127.0.0.1:8088/search.php"
 columns = ["state","zip5","physical_address","city","county","property_id","sale_date","property_type","sale_price","seller_name","buyer_name","num_units","year_built","source_url","book","page","sale_type"]
 
 # Load zipcode yaml file into memory
-with open("us_zipcodes.yaml", "r") as f:
-    zip_cty_cnty = yaml.safe_load(f)
+# with open("us_zipcodes.yaml", "r") as f:
+#     zip_cty_cnty = yaml.safe_load(f)
 
 # Open source data file
-with open("F:\\us-housing-prices-2\\null_zips.csv", "r") as input_csv:
+# with open("F:\\us-housing-prices-2\\progresses_zips.csv", "r") as input_csv:
+#     # line_count = len([line for line in input_csv.readlines()])
+#     line_count = 13855517
+#     reader = csv.DictReader(input_csv)
+#
+#     with open("F:\\us-housing-prices-2\\zip5_added_2.csv", "a", newline="") as output_csv:
+#         writer = csv.DictWriter(output_csv, fieldnames=columns)
+#         writer.writeheader()
+#
+#         runner(reader, writer, line_count, zip_cty_cnty, columns, url)
+
+
+with open("F:\\us-housing-prices-2\\zip5_added_test.csv", "r") as input_csv:
     # line_count = len([line for line in input_csv.readlines()])
-    line_count = 20550428
+    line_count = 6433664
     reader = csv.DictReader(input_csv)
 
-    with open("F:\\us-housing-prices-2\\zip5_added_test.csv", "a", newline="") as output_csv:
+    with open("F:\\us-housing-prices-2\\zip5_added_2.csv", "a", newline="") as output_csv:
         writer = csv.DictWriter(output_csv, fieldnames=columns)
         writer.writeheader()
 
