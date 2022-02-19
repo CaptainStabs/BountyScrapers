@@ -48,7 +48,7 @@ with open("Southeast-Health-Standard-Charges-2022.csv", "r", encoding="utf-8") a
                 # if float(price_info["price"]) >= 10000000:
                 #     fails["price"] += 1
 
-                if str(price_info["code"]) and str(price_info["payer"]) and str(price_info["internal_revenue_code"]) and float(price_info["price"]) <= 10000000:
+                if str(price_info["payer"]) and float(price_info["price"]) <= 10000000:
                     writer.writerow(price_info)
                 else:
                     import json; print(json.dumps(price_info, indent=2))
