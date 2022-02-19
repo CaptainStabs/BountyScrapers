@@ -1,0 +1,10 @@
+Source:
+
+[Property Info](https://data.deschutes.org/datasets/gis-assessor-account-1/explore)
+[Physical address](https://data.deschutes.org/datasets/gis-improvements-1/explore)
+[Sales](https://data.deschutes.org/datasets/gis-sales-1/explore)
+
+Joined with:
+`SELECT Sales.Taxlot, Sales.Book_Page_1, Sales.Total_Sales_Price_1, Sales.Sales_Date_1, Sales.Seller_1, Sales.Buyer_1, Sales.Book_Page_2, Sales.Total_Sales_Price_2, Sales.Sales_Date_2, Sales.Seller_2, Sales.Buyer_2, Address.Address, Address.City, Address.Unit_Number, Address.City, Address.State, Address.Zip, Info.Year_Built_1, Info.Year_Built_2, Info.Stat_Class_Desc_1
+FROM (Sales INNER JOIN Address ON Sales.Taxlot = Address.TaxLot) INNER JOIN Info ON Address.TaxLot = Info.Taxlot;
+`

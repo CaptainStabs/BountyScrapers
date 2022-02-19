@@ -1,0 +1,3 @@
+cd /srv/nominatim/nominatim-project/nominatim-us
+sudo service postgresql start
+sudo nominatim serve

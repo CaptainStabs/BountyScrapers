@@ -1,0 +1,145 @@
+APA = Armed Forces Americas
+AP = Armed Forces Pacific
+AE = Armed Forces Europe
+
+`39684`: South Korea
+`34058`: APA (not in GA)
+`09112`: Germany
+`96271`: APA
+`96546`: APA
+`09140`: AP
+`96367`: AP
+`06325`: Peru (Nobody did Peru)
+`31434`: Sweden
+`00820`: US Virgin Islands (added by owner zip)
+`98680`: Mexico
+`09173`: France
+`96224`: Germany
+`09354`: AE
+`31236`: Sweden
+`09180`: AE
+`28826`: Indonesia
+`34566`: Mexico
+`09096`: AE
+`09114`: Germany
+`00840`: US Virgin Islands (added by owner zip)
+`40898`: Doesn't exist
+`96376`: AP
+`00908`: Puerto Rico
+`00902`: Puerto Rico
+`09306`: AE/Germany
+`09250`: AE
+`09034`: AE
+`09063`: AE
+`09198`: Spain
+`00773`: Puerto Rico
+`96297`: AP
+`09067`: France
+`96310`: AP
+`00677`: Puerto Rico
+`29957`: Mexico
+`00851`: Virgin Islands
+`96218`: AP
+`39820`: Mexico
+`96266`: AP
+`96338`: AP
+`37610`: Mexico
+
+
+
+
+
+Other zips I didn't manually check:
+[00802, 36895, 09049, 09366, 09434, 09630, 10065, 31394, 09033, 86707, 96336, 28199, 09046, 06476, 96202, 86801, 31439, 62151, 09042, 31842, 10425, 01948, 29270, 31424, 31458, 96251, 79214, 86089, 36963, 09708, 96913, 38970, 33578, 21407, 37004, 09396, 00603, 09853, 96217, 08524, 65931, 21493, 38203, 31265, 09070, 48517, 00823, 09834, 42225, 96260, 34042, 71784, 96915, 55210, 09226, 81906, 00739, 96540, 19871, 09166, 09092, 09075, 09128, 96510, 00662, 28418, 96204, 09342, 49586, 00803, 09011, 33579, 09378, 38971, 29490, 09364, 90391, 73821, 09777, 00822, 09321, 00831, 15576, 09263, 96351, 31428, 09014, 96205, 31919, 71716, 02376, 26549, 67161, 96551, 11114, 03426, 09393, 11525, 00907, 09494, 47825, 09645, 33222, 31507, 96386, 09468, 09459, 00979, 00791, 00830, 96303, 09752, 36216, 83104, 34043, 96517, 33506, 48512, 09123, 92453, 07672, 44354, 09839, 07964, 09620, 33210, 96379, 65191, 37463, 07772, 22704, 39036, 96375, 96257, 10053, 08531, 09821, 09898, 09619, 91056, 31505, 09355, 02819, 34555, 96555, 09139, 09012, 50968, 36836, 34037, 31492, 02387, 00693, 88246, 00901, 31429, 31450, 22323, 32369, 06868, 07534, 31342, 00969, 22563, 00100, 29314, 42508, 02618, 85693, 00911, 09165, 27172, 00676, 53616, 00680, 09347, 09613, 00821, 09464, 31506, 64215, 33216, 28921, 09927, 29977, 21415, 31376, 01920, 09322, 41415, 93085, 31425, 31952, 31335, 02970, 42246, 30191, 31461, 30967, 29012, 09705, 64510, 36246, 00968, 45540, 94225, 09054, 31370, 09751, 31339, 09227, 20985, 07654, 09457, 96620, 29256, 00738, 99999, 46293, 49542, 47153, 45737, 47417, 40655, 00460, 46264, 47310, 46334, 64218, 36217, 64237, 46460, 46838, 47895, 46413, 47276, 02147, 00515, 01591, 02377, 21186, 21725, 21971, 21935, 21941, 31109, 21692, 21707, 21470, 21171, 21096, 21175, 11078, 20821, 21176, 22075, 21126, 89257, 22170, 96328, 21570, 28142, 20960, 20965, 21819, 21361, 21338, 21579, 21179, 26020, 22163, 21949, 21807, 21604, 20801, 21583, 21513, 22177, 21125, 29192, 24662, 21165, 21334, 21615, 20967, 21172, 21859, 22071, 21845, 20822, 21744, 22391, 20977, 21174, 46593, 54679, 46584]
+
+
+Out of state zips:
+```
+
+  "32788": "https://gatewaysdf.ifionline.org/search",
+  "45764": "https://gatewaysdf.ifionline.org/search",
+  "44129": "https://gatewaysdf.ifionline.org/search",
+  "36259": "https://gatewaysdf.ifionline.org/search",
+  "43539": "https://gatewaysdf.ifionline.org/search",
+  "45151": "https://gatewaysdf.ifionline.org/search",
+  "43226": "https://gatewaysdf.ifionline.org/search",
+  "45203": "https://gatewaysdf.ifionline.org/search",
+  "40213": "https://gatewaysdf.ifionline.org/search",
+  "26227": "https://gatewaysdf.ifionline.org/search",
+  "41670": "https://gatewaysdf.ifionline.org/search",
+  "85256": "https://gatewaysdf.ifionline.org/search",
+  "45220": "https://gatewaysdf.ifionline.org/search",
+  "45057": "https://gatewaysdf.ifionline.org/search",
+  "43113": "https://gatewaysdf.ifionline.org/search",
+  "43239": "https://gatewaysdf.ifionline.org/search",
+  "17264": "https://gatewaysdf.ifionline.org/search",
+  "88030": "https://gatewaysdf.ifionline.org/search",
+  "04739": "https://gatewaysdf.ifionline.org/search",
+  "20193": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "26002": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "71280": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "26720": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "81254": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "26707": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "30518": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "25755": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "31701": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "20103": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "16428": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "19355": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "19964": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "12442": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "26505": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "20130": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "20523": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "29121": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "22161": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "29010": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "26220": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "20062": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "11355": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "75080": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "29060": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "24842": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "98584": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "25115": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "26178": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "12310": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "17340": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "26132": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "22443": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "22126": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "93301": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "13040": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "24012": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "92604": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "26537": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "19973": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "17231": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "20174": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "20234": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "31631": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "19720": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "43840": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "20208": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "50310": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "20186": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "17214": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "26171": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "31043": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "20108": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "78550": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "94061": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "22171": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "33330": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "22121": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "12236": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "22044": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "12787": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "22061": "https://data.imap.maryland.gov/datasets/042c633a05df48fa8561f245fccdd750_0/about",
+  "92045": "https://data.norfolk.gov/Real-Estate/Property-Assessment-and-Sales-FY18/yvpm-8aid",
+  "20881": "https://data.norfolk.gov/Real-Estate/Property-Assessment-and-Sales-FY21/8bfx-a5g8",
+  "15480": "https://data.norfolk.gov/Real-Estate/Property-Assessment-and-Sales-FY21/8bfx-a5g8"
+}
+```
+

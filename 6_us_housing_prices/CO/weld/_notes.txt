@@ -1,0 +1,12 @@
+Source:
+[https://www.weldgov.com/Government/Departments/Assessor/Data-Download/All-Data-CSV](https://www.weldgov.com/Government/Departments/Assessor/Data-Download/All-Data-CSV)
+
+Files used:
+1. `AcctCurrentInvntry.csv`
+2. `Sales.csv`
+
+Join with:
+```
+SELECT AcctCurrentInvntry.PARCELNB, Sales.GRANTOR, Sales.GRANTEE, Sales.SALEP, Sales.SALEDT, Sales.DEEDTYPE, AcctCurrentInvntry.BLDGS, AcctCurrentInvntry.OCCCODE1, AcctCurrentInvntry.YRBLT, AcctCurrentInvntry.LANDTYPE, AcctCurrentInvntry.STREETNO, AcctCurrentInvntry.STREETALP, AcctCurrentInvntry.STREETDIR, AcctCurrentInvntry.STREETSUF, AcctCurrentInvntry.STREETNAME, AcctCurrentInvntry.LOCZIP, AcctCurrentInvntry.LOCCITY
+FROM Sales INNER JOIN AcctCurrentInvntry ON Sales.ACCOUNTNO = AcctCurrentInvntry.ACCOUNTNO;
+```

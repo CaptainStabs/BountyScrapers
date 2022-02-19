@@ -1,0 +1,12 @@
+Source:
+[https://hub.arcgis.com/documents/d39100d04be34354b97ad52874f5e7d4/explore](https://hub.arcgis.com/documents/d39100d04be34354b97ad52874f5e7d4/explore)
+
+1. "Owners and Addresses"
+2. Buildings
+3. All sales
+
+
+Joined with:
+```SELECT Sales.strap, Sales.Tdate, Sales.deed_type, Sales.price, Owner_Address.str_num, Owner_Address.str_pfx, Owner_Address.str, Owner_Address.str_sfx, Owner_Address.str_unit, Owner_Address.city, Owner_Address.mailingAddr1, Owner_Address.mailingCity, Owner_Address.mailingState, Owner_Address.mailingZip, Buildings.bldgClassDscr, Buildings.builtYear, Buildings.UnitCount
+FROM (Sales INNER JOIN Owner_Address ON Sales.strap = Owner_Address.strap) INNER JOIN Buildings ON Owner_Address.strap = Buildings.strap;
+```
