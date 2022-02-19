@@ -1,7 +1,7 @@
 import csv
 from tqdm import tqdm
 
-columns = ["property_id", "num_units", "physical_address", "sale_date", "sale_price", "book", "page", "year_built", "zip5", "state", "county", "city", "source_url"]
+columns = ["property_id", "num_units", "physical_address", "sale_date", "sale_price", "book", "page", "year_built", "zip5", "sale_type", "state", "county", "city", "source_url"]
 with open("extracted_data.csv", "r") as input_csv:
     reader = csv.DictReader(input_csv)
 
@@ -19,8 +19,9 @@ with open("extracted_data.csv", "r") as input_csv:
                 "page": row["page"].split(".")[0],
                 "year_built": row["year_built"],
                 "zip5": row["zip5"],
+                "sale_type": row["sale_type"].strip(),
                 "state": row["state"].strip(),
-                "county": row["county"].strip(),
+                "county": row["county"].strip().upper(),
                 "city": row["city"],
                 "source_url": row["source_url"],
             }
@@ -29,7 +30,7 @@ with open("extracted_data.csv", "r") as input_csv:
                     land_info["book"] = ""
             except:
                 land_info["book"] = ""
-                continue
+                pass
 
             if row["book"] == "0000":
                 land_info["book"] = ""
@@ -43,7 +44,7 @@ with open("extracted_data.csv", "r") as input_csv:
 
             except:
                 land_info["page"] = ""
-                continue
+                pass
 
             try:
                 if land_info["book"] and not land_info["page"]:
@@ -52,7 +53,7 @@ with open("extracted_data.csv", "r") as input_csv:
                     land_info["page"] = ""
 
             except KeyError:
-                continue
+                pass
 
             try:
                 sale_date = str(row["sale_date"])
@@ -79,4 +80,4 @@ with open("extracted_data.csv", "r") as input_csv:
 
             except KeyError:
                 # print(land_info)
-                continue
+                pass

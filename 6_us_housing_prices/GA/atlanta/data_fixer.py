@@ -12,20 +12,27 @@ with open("extracted_data.csv", "r") as input_csv:
         writer = csv.DictWriter(output_csv, fieldnames=columns)
         writer.writeheader()
 
-        for row in reader:
+        for row in tqdm(reader, total=line_count):
             land_info = {
                 "property_id": row["property_id"].strip(),
                 "physical_address": row["physical_address"].strip(),
                 "sale_date": str(row["sale_date"]).strip(),
-                "sale_price": row["LAST_SALE_PRICE"].strip(),
-                "property_type": row["property_type"].strip(),
+                "sale_price": row["sale_price"].strip(),
+                "property_type": row["property_type"].strip().upper(),
                 "book": row["book"],
                 "page": row["page"],
                 "zip5": str(row["zip5"]).strip(),
                 "county": row["county"].upper(),
                 "state": row["state"],
                 "source_url": row["source_url"],
-                "seller_name": row["seller_name"]
+                "seller_name": row["seller_name"],
+                "city": row["city"].upper(),
             }
 
-            writer.writerow(land_info)
+            year = land_info["sale_date"].split("-")[0]
+            month = land_info["sale_date"].split("-")[1]
+
+            if int(year) >= 1600 and int(year) <= 2022:
+                if int(year) == 2022 and int(month) > 1:
+                    continue
+                writer.writerow(land_info)

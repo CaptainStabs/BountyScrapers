@@ -7,7 +7,7 @@ import json
 
 #,LASTSALEDT,LASTSALEPRICE,,,RES_YRBUILT,COMM_YRBUILT,SITE_ZIP
 
-columns = ["property_id", "num_units", "physical_address", "sale_date", "sale_price", "book", "page", "year_built", "zip5", "state", "county", "city", "source_url"]
+columns = ["property_id", "num_units", "physical_address", "sale_date", "sale_price", "book", "page", "year_built", "zip5", "state", "county", "city", "sale_type", "source_url"]
 
 conn = sqlite3.connect(':memory:')
 
@@ -54,8 +54,12 @@ with open("VD_PARCELDATA.dat", "r") as input_csv:
 
                 # concat the street parts filtering out blank parts
                 land_info["physical_address"] = ' '.join(filter(None, street_list)).upper()
+                last_sale_date = row["LASTSALEDT"]
 
                 for results in cur.execute(f'SELECT * FROM sales WHERE ALTKEY = {row["ALTKEY"]};'):
+                    if last_sale_date == results[1]:
+                        land_info["sale_type"] = row["INSTR"]
+                        
                     sale_date = str(parser.parse(results[1]))
                     year = sale_date.split("-")[0]
 
