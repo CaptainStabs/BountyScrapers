@@ -8,7 +8,7 @@ from dateutil import parser
 # situs_addr_city,situs_addr_line_1,situs_addr_line_2,,situs_addr_state_legdat,situs_addr_zip_legdat
 #,PIN,,,,,,,,,,,, ,oby_yrblt1,style_desc
 #                d            d                 d        d           d          d                   d           d      d
-columns = ["property_id", "year_built", "sale_price", "sale_date", "city", "physical_address", "num_units", "zip5", "property_type", "county", "state", "source_url"]
+columns = ["property_id", "year_built", "sale_price", "sale_date", "city", "physical_address", "num_units", "zip5", "property_type", "sale_type", "county", "state", "source_url"]
 with open("Parcels.csv", "r") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
@@ -71,6 +71,7 @@ with open("Parcels.csv", "r") as input_csv:
                     try:
                         land_info["sale_date"] = str(parser.parse(row[f"sale_date{i}"]))
                         land_info["sale_price"] = row[f"sale_amt{i}"]
+                        land_info["sale_type"] = str(row[f"deed_type{i}"]).upper().strip()
                         year = land_info["sale_date"].split("-")[0]
 
                         if land_info["physical_address"] and land_info["sale_date"] and land_info["sale_price"] != "" and int(year) <= 2022:
