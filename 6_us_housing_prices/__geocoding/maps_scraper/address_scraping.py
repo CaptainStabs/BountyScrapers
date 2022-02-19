@@ -119,7 +119,7 @@ class WebDriver:
 
     def scrape(self, url):
         print("Scraping")
-        input_source = "test.csv"
+        input_source = "F:\\us-housing-prices-2\\null_zips.csv"
         df = pd.read_csv(input_source)
         df_columns = list(df.columns)
         data_columns = ",".join(map(str, df_columns))
