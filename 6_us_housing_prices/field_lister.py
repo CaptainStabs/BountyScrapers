@@ -21,8 +21,8 @@ def field_extractor(directory):
                     # if first_line not in fields:
                     fields.append(first_line.replace('"', "").upper().strip().replace(" ", "_"))
 
-    with open("fields.txt", "a") as save_fields:
+    with open("fields2.txt", "a") as save_fields:
         for field in fields:
             save_fields.write(f"{field}\n")
 
-field_extractor("./")
+field_extractor("F:\\.TEMP\\")
