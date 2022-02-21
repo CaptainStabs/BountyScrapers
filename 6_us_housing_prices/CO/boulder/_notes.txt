@@ -10,3 +10,5 @@ Joined with:
 ```SELECT Sales.strap, Sales.Tdate, Sales.deed_type, Sales.price, Owner_Address.str_num, Owner_Address.str_pfx, Owner_Address.str, Owner_Address.str_sfx, Owner_Address.str_unit, Owner_Address.city, Owner_Address.mailingAddr1, Owner_Address.mailingCity, Owner_Address.mailingState, Owner_Address.mailingZip, Buildings.bldgClassDscr, Buildings.builtYear, Buildings.UnitCount
 FROM (Sales INNER JOIN Owner_Address ON Sales.strap = Owner_Address.strap) INNER JOIN Buildings ON Owner_Address.strap = Buildings.strap;
 ```
+
+`zip5` is from `mailingZip` ONLY if `mailingAddr1` == `physical_address`
