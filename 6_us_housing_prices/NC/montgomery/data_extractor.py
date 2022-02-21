@@ -30,7 +30,7 @@ with open("Parcels.csv", "r") as input_csv:
                         "sale_date": str(parser.parse(row["TransDate"])),
                         "sale_price": row["SalesAmt"],
                         "property_type": " ".join(str(row["Impr1Desc"]).strip().split()),
-                        "county": "Montgomery",
+                        "county": "MONTGOMERY",
                         "state": "NC",
                         "source_url": "https://montnc.maps.arcgis.com/home/item.html?id=c4e8961b34394c61bcd253ced1480693"
                     }
