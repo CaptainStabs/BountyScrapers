@@ -40,41 +40,45 @@ with open(f"extracted_data.csv", "a", newline="") as output_csv:
 
                 for row in tqdm(reader, total=line_count):
                     try:
-                        if str(row["CPT HCPCS Code"]).strip() and str(row["CPT HCPCS Code"]) != "NA":
-                            price_info = {
-                                "cms_certification_num": cms_num[(file.replace(".csv", "").upper())],
-                                "internal_revenue_code": row["Procedure Code"],
-                                "code": str(row["CPT HCPCS Code"]).upper(),
-                                "description": " ".join(str(row["Procedure Description"]).upper().split()),
-                            }
+                        price_info = {
+                            "cms_certification_num": cms_num[(file.replace(".csv", "").upper())],
+                            "internal_revenue_code": row["Revenue Code"],
+                            # "code": str(row["CPT HCPCS Code"]).upper(),
+                            "description": " ".join(str(row["Procedure Description"]).upper().split()),
+                        }
 
-                            inpatient_outpatient = str(row["Price Tier"]).upper()
-                            if "INPATIENT" in inpatient_outpatient:
-                                price_info["inpatient_outpatient"] = "INPATIENT"
-                            elif "OUTPATIENT" in inpatient_outpatient:
-                                price_info["inpatient_outpatient"] = "OUTPATIENT"
+                        if not str(row["CPT HCPCS Code"]).strip() or str(row["CPT HCPCS Code"]) != "NA":
+                            price_info["code"] = "NONE"
+                        else:
+                            price_info["code"] = str(row["CPT HCPCS Code"]).upper(),
 
-                            for payer in insurances:
-                                if "Discounted" not in payer:
-                                    price_info["price"] = str(row[payer]).replace(",", "")
-                                    if "_EFF_" in payer:
-                                        payer = payer.split("_EFF_")[0].strip()
-                                    if "minimum" in payer:
-                                        payer = "MIN"
+                        inpatient_outpatient = str(row["Price Tier"]).upper()
+                        if "INPATIENT" in inpatient_outpatient:
+                            price_info["inpatient_outpatient"] = "INPATIENT"
+                        elif "OUTPATIENT" in inpatient_outpatient:
+                            price_info["inpatient_outpatient"] = "OUTPATIENT"
 
-                                    if "maximum" in payer:
-                                        payer = "MAX"
-                                    price_info["payer"] = str(payer).upper().replace("_", " ").replace("-", "").strip()
+                        for payer in insurances:
+                            if "Discounted" not in payer:
+                                price_info["price"] = str(row[payer]).replace(",", "")
+                                if "_EFF_" in payer:
+                                    payer = payer.split("_EFF_")[0].strip()
+                                if "minimum" in payer:
+                                    payer = "MIN"
 
-                                    if price_info["price"] != "N/A":
-                                        if price_info["payer"] == "SELF PAY":
-                                            price_info["payer"] = "CASH PRICE"
+                                if "maximum" in payer:
+                                    payer = "MAX"
+                                price_info["payer"] = str(payer).upper().replace("_", " ").replace("-", "").strip()
 
-                                        if str(price_info["payer"]) and float(price_info["price"]) <= 10000000:
-                                            writer.writerow(price_info)
-                                            # a = "s"
-                                        else:
-                                            import json; print(json.dumps(price_info, indent=2))
+                                if price_info["price"] != "N/A":
+                                    if price_info["payer"] == "SELF PAY":
+                                        price_info["payer"] = "CASH PRICE"
+
+                                    if str(price_info["payer"]) and float(price_info["price"]) <= 10000000:
+                                        writer.writerow(price_info)
+                                        # a = "s"
+                                    else:
+                                        import json; print(json.dumps(price_info, indent=2))
                     except ValueError:
                         print(row)
                         tb.print_exc()
