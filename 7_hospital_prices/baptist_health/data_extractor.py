@@ -47,16 +47,25 @@ with open(f"extracted_data.csv", "a", newline="") as output_csv:
                             "description": " ".join(str(row["Procedure Description"]).upper().split()),
                         }
 
-                        if not str(row["CPT HCPCS Code"]).strip() or str(row["CPT HCPCS Code"]) != "NA":
+                        if not str(row["CPT HCPCS Code"]).strip() or str(row["CPT HCPCS Code"]) == "NA":
                             price_info["code"] = "NONE"
                         else:
-                            price_info["code"] = str(row["CPT HCPCS Code"]).upper(),
+                            price_info["code"] = str(row["CPT HCPCS Code"]).strip()
 
                         inpatient_outpatient = str(row["Price Tier"]).upper()
                         if "INPATIENT" in inpatient_outpatient:
                             price_info["inpatient_outpatient"] = "INPATIENT"
                         elif "OUTPATIENT" in inpatient_outpatient:
                             price_info["inpatient_outpatient"] = "OUTPATIENT"
+
+                        elif "AMBULATORY" in inpatient_outpatient:
+                            price_info["inpatient_outpatient"] = "OUTPATIENT"
+
+                        elif "OBSERVATION" in inpatient_outpatient:
+                            price_info["inpatient_outpatient"] = "OUTPATIENT"
+
+                        else:
+                            price_info["inpatient_outpatient"] = "UNSPECIFIED"
 
                         for payer in insurances:
                             if "Discounted" not in payer:
