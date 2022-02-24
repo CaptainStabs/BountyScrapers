@@ -31,6 +31,8 @@ with open("Southeast-Health-Standard-Charges-2022.csv", "r", encoding="utf-8") a
                     price_info["inpatient_outpatient"] = "OUTPATIENT"
                 elif "INPATIENT" in inpatient_outpatient and "OUTPATIENT" not in inpatient_outpatient:
                     price_info["inpatient_outpatient"] = "INPATIENT"
+                else:
+                    price_info["inpatient_outpatient"] = "UNSPECIFIED"
 
                 # fails = {
                 #     "code": 0,
