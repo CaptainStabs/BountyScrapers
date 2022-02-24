@@ -44,6 +44,7 @@ with open(f"extracted_data.csv", "a", newline="", encoding="utf-8") as output_cs
 
 
                 for row in tqdm(reader, total=line_count):
+                    # if row["code_disambiguator"].replace("IP", "").replace("OP", ""):
                     try:
                         if str(row["CPT"]).strip() and str(row["CPT"]) != "NA":
                             price_info = {
