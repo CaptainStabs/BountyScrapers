@@ -18,21 +18,21 @@ cms_certification_num,name,address,city,state,zip5,beds,phone_number,homepage_ur
 050772,KAISER FOUNDATION HOSPITAL - ROSEVILLE,1600 EUREKA ROAD,ROSEVILLE,CA,95661,340,9167844000,https://healthy.kaiserpermanente.org/northern-california/facilities/roseville-medical-center-100331,https://healthy.kaiserpermanente.org/northern-california/doctors-locations/standard-charges,captainstabs
 050777,KAISER FOUNDATION HOSPITAL - SAN LEANDRO,2500 MERCED STREET,SAN LEANDRO,CA,94577,108,5104541000,https://healthy.kaiserpermanente.org/northern-california/facilities/san-leandro-medical-center-301981,https://healthy.kaiserpermanente.org/northern-california/doctors-locations/standard-charges,captainstabs
 054150,KAISER PERMANENTE PSYCHIATRIC HEALTH FACILITY-SANT,3840 HOMESTEAD ROAD,SANTA CLARA,CA,95051,24,4088514850,,,
-050137,KAISER FOUNDATION HOSPITAL - PANORAMA CITY,13652 CANTARA ST,PANORAMA CITY,CA,91402,325,8183753333,,,
-050138,KAISER FOUNDATION HOSPITAL - LOS ANGELES,4867 SUNSET BLVD,LOS ANGELES,CA,90027,507,3237834011,,,
-050139,KAISER FOUNDATION HOSPITAL - DOWNEY,9333 IMPERIAL HIGHWAY,DOWNEY,CA,90242,352,5624616007,,,
-050140,KAISER FOUNDATION HOSPITAL FONTANA,9961 SIERRA AVE,FONTANA,CA,92335,438,9094275500,,,
-050411,KAISER FOUNDATION HOSPITAL - SOUTH BAY,25825 SOUTH VERMONT AVENUE,HARBOR CITY,CA,90710,251,3103255111,,,
+050137,KAISER FOUNDATION HOSPITAL - PANORAMA CITY,13652 CANTARA ST,PANORAMA CITY,CA,91402,325,8183753333,https://healthy.kaiserpermanente.org/southern-california/facilities/Panorama-City-Medical-Center-100071,https://healthy.kaiserpermanente.org/southern-california/doctors-locations/standard-charges,captainstabs
+050138,KAISER FOUNDATION HOSPITAL - LOS ANGELES,4867 SUNSET BLVD,LOS ANGELES,CA,90027,507,3237834011,https://healthy.kaiserpermanente.org/southern-california/facilities/Los-Angeles-Medical-Center-100099,https://healthy.kaiserpermanente.org/southern-california/doctors-locations/standard-charges,captainstabs
+050139,KAISER FOUNDATION HOSPITAL - DOWNEY,9333 IMPERIAL HIGHWAY,DOWNEY,CA,90242,352,5624616007,https://thrive.kaiserpermanente.org/care-near-you/southern-california/downey/locations/downey-medical-center/,https://healthy.kaiserpermanente.org/southern-california/doctors-locations/standard-charges,captainstabs
+050140,KAISER FOUNDATION HOSPITAL FONTANA,9961 SIERRA AVE,FONTANA,CA,92335,438,9094275500,https://healthy.kaiserpermanente.org/southern-california/facilities/fontana-medical-center-100127,https://healthy.kaiserpermanente.org/southern-california/doctors-locations/standard-charges,captainstabs
+050411,KAISER FOUNDATION HOSPITAL - SOUTH BAY,25825 SOUTH VERMONT AVENUE,HARBOR CITY,CA,90710,251,3103255111,https://healthy.kaiserpermanente.org/southern-california/facilities/South-Bay-Medical-Center-100049,https://healthy.kaiserpermanente.org/southern-california/doctors-locations/standard-charges,captainstabs
 050515,KAISER FOUNDATION HOSPITAL - ZION,4647 ZION AVE,SAN DIEGO,CA,92120,659,6195285000,,,
 050561,KAISER FOUNDATION HOSPITAL - WEST LA,6041 CADILLAC AVE,LOS ANGELES,CA,90034,293,2138572201,,,
-050609,KAISER FOUNDATION HOSPITAL - ORANGE COUNTY - ANAHE,3440 E LA PALMA AVE,ANAHEIM,CA,92806,262,7142794000,,,
-050677,KAISER FOUNDATION HOSPITAL - WOODLAND HILLS,5601 DE SOTO AVENUE,WOODLAND HILLS,CA,91367,218,8187193800,,,
-050686,"KAISER FOUNDATION HOSPITAL, RIVERSIDE",10800 MAGNOLIA AVENUE,RIVERSIDE,CA,92505,226,9513532000,,,
-050723,KAISER FOUNDATION HOSPITAL - BALDWIN PARK,1011 BALDWIN PARK BLVD,BALDWIN PARK,CA,91706,269,6268511011,,,
+050609,KAISER FOUNDATION HOSPITAL - ORANGE COUNTY - ANAHE,3440 E LA PALMA AVE,ANAHEIM,CA,92806,262,7142794000,https://thrive.kaiserpermanente.org/care-near-you/southern-california/orange-county/locations/orange-county-anaheim-medical-center/,https://healthy.kaiserpermanente.org/southern-california/doctors-locations/standard-charges,captainstabs
+050677,KAISER FOUNDATION HOSPITAL - WOODLAND HILLS,5601 DE SOTO AVENUE,WOODLAND HILLS,CA,91367,218,8187193800,https://healthy.kaiserpermanente.org/southern-california/facilities/Woodland-Hills-Medical-Center-100045,https://healthy.kaiserpermanente.org/southern-california/doctors-locations/standard-charges,captainstabs
+050686,"KAISER FOUNDATION HOSPITAL, RIVERSIDE",10800 MAGNOLIA AVENUE,RIVERSIDE,CA,92505,226,9513532000,https://healthy.kaiserpermanente.org/southern-california/facilities/Riverside-Medical-Center-100062,https://healthy.kaiserpermanente.org/southern-california/doctors-locations/standard-charges,captainstabs
+050723,KAISER FOUNDATION HOSPITAL - BALDWIN PARK,1011 BALDWIN PARK BLVD,BALDWIN PARK,CA,91706,269,6268511011,https://healthy.kaiserpermanente.org/southern-california/facilities/Baldwin-Park-Medical-Center-100167,https://healthy.kaiserpermanente.org/southern-california/doctors-locations/standard-charges,captainstabs
 050748,KAISER FOUNDATION HOSPITAL MANTECA,1777 WEST YOSEMITE AVE,MANTECA,CA,95337,224,2098253700,,,
-050765,KAISER FOUNDATION HOSPITAL-MORENO VALLEY,27300 IRIS AVENUE,MORENO VALLEY,CA,92555,101,9512516000,,,
-120011,KAISER FOUNDATION HOSPITAL,3288 MOANALUA RD,HONOLULU,HI,96819,250,8084320000,,,
+050765,KAISER FOUNDATION HOSPITAL-MORENO VALLEY,27300 IRIS AVENUE,MORENO VALLEY,CA,92555,101,9512516000,https://healthy.kaiserpermanente.org/georgia/clinicians/Ricardo-Moreno-0673893,https://healthy.kaiserpermanente.org/southern-california/doctors-locations/standard-charges,captainstabs
+120011,KAISER FOUNDATION HOSPITAL,3288 MOANALUA RD,HONOLULU,HI,96819,250,8084320000,https://healthy.kaiserpermanente.org/hawaii/facilities/kaiser-permanente-moanalua-medical-center-100434,https://healthy.kaiserpermanente.org/hawaii/doctors-locations/standard-charges,captainstabs
 380091,KAISER SUNNYSIDE MEDICAL CENTER,10180 SE SUNNYSIDE ROAD,CLACKAMAS,OR,97015,329,5036522880,,,
 380103,KAISER FOUNDATION HOSPITAL - WESTSIDE,2875 NW STUCKI AVE,HILLSBORO,OR,97124,122,9713101000,,,
-500052,KAISER PERMANENTE CENTRAL HOSPITAL,201 - 16TH AVENUE EAST,SEATTLE,WA,98112,346,2063263000,,,
+500052,KAISER PERMANENTE CENTRAL HOSPITAL,201 - 16TH AVENUE EAST,SEATTLE,WA,98112,346,2063263000,https://healthy.kaiserpermanente.org/washington/facilities/Capitol-Hill-South-Building-338951,https://healthy.kaiserpermanente.org/washington/doctors-locations/standard-charges,captainstabs
 451364,OTTO KAISER MEMORIAL HOSPITAL,3349 S HIGHWAY 181,KENEDY,TX,78119,25,8305833401,,,

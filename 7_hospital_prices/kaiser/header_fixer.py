@@ -18,7 +18,7 @@ def header_fixer(directory, output_dir, header, lines_to_header, fix_header=Fals
 
                     out_f.write(line)
 
-header_fixer(directory, output_dir, "A", 4)
+header_fixer(directory, output_dir, 1, 4)
 
 # if __name__ == '__main__':
 #     parser = argparse.ArgumentParser()
