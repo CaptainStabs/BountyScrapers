@@ -35,7 +35,7 @@ def parse_row(in_directory, file, writer, columns):
         line_count = len([line for line in input_csv.readlines()])
         input_csv.seek(0)
         header = input_csv.readline().split(",")
-        insurance = header[(header.index("Gross Charge")):]
+        insurance = header[(header.index("Gross Charge")):-1]
         insurances = [x.replace("\n", "") for x in insurance]
         input_csv.seek(0)
 
@@ -63,13 +63,22 @@ def parse_row(in_directory, file, writer, columns):
                 # else:
                 #     price_info["code"] = str(row["Procedure Code (CPT / HCPCS)"]).strip()
 
-                if str(price_info["price"]) and str(price_info["price"]) != "None":
-                    if str(price_info["payer"]) and float(price_info["price"]) <= 10000000:
-                        writer.writerow(price_info)
-
-                        # a = "s"
+                for payer in insurance:
+                    price_info["price"] = row[payer]
+                    if "Discounted" in payer:
+                        price_info["payer"] = "CASH PRICE"
+                    elif payer == "Gross Charge":
+                        price_info["payer"] = "GROSS CHARGE"
                     else:
-                        import json; print(json.dumps(price_info, indent=2))
+                        continue
+
+                    if str(price_info["price"]) and str(price_info["price"]) != "None":
+                        if str(price_info["payer"]) and float(price_info["price"]) <= 10000000:
+                            writer.writerow(price_info)
+
+                            # a = "s"
+                        else:
+                            import json; print(json.dumps(price_info, indent=2))
             except ValueError:
                 print(row)
                 tb.print_exc()
