@@ -1,24 +1,35 @@
 import requests
 from tqdm import tqdm
-from concurrent.futures import ThreadPoolExecutor, as_complete
-
+from concurrent.futures import ProcessPoolExecutor, as_completed
+import json
+from base64 import b64decode
 
 def download_file(url):
-    headers = {'Cookie': 'ApplicationGatewayAffinity=28d3f836d72c113f3c64ba238c7a7bbf4d64bf76b299fd91f5fc559d5a278bd6; ApplicationGatewayAffinityCORS=28d3f836d72c113f3c64ba238c7a7bbf4d64bf76b299fd91f5fc559d5a278bd6'}
     hash = url.split('/')[-1].strip('"')
     url = f"https://apim.services.craneware.com/api-pricing-transparency/api/public/{hash}/metadata/cdmFile"
-    file = requests.get(url, headers=headers)
-    filename = file.text["fileDownloadName"]
+    file = json.loads(requests.get(url).text)
+    try:
+        filename = file["fileDownloadName"]
+        print(filename)
 
-    with open(f"./input_files/{filename}.csv", 'w') as f:
-        f.write(file.text["contentBytes"].decode('utf-8'))
+        with open(f"./input_files/{filename}", 'wb') as f:
+            f.write(b64decode(file["contentBytes"]))
+        return "Success"
+    except KeyError:
+        print(file)
 
 
 if __name__ == "__main__":
-   threads = []
-   with open("banner_urls.csv", "r") as f:
-       with ThreadPoolExecutor(max_workers=10) as executor:
+    threads = []
+    url_list = []
+    with open("banner_urls.csv", "r") as f:
         for row in tqdm(f):
-            url = row.strip().split(",")[1]
+            url_list.append(row.strip().split(",")[1])
+    
+    with ProcessPoolExecutor(max_workers=10) as executor:
+        for url in tqdm(url_list):
             threads.append(executor.submit(download_file, url))
+
+        for task in tqdm(as_completed(threads)):
+            print(task.result())
 
