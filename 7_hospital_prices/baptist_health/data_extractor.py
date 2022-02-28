@@ -19,7 +19,7 @@ cms_num = {
 }
 
 # Type,Chargecode_DRG_CPT,Description,CPT,_1_1_21_Fee,
-columns = ["cms_certification_num", "internal_revenue_code", "description", "code", "price", "inpatient_outpatient", "payer"]
+columns = ["cms_certification_num", "internal_revenue_code", "description", "code", "price", "inpatient_outpatient", "payer", "code_disambiguator"]
 in_directory = "./data/"
 with open(f"extracted_data.csv", "a", newline="") as output_csv:
     writer = csv.DictWriter(output_csv, fieldnames=columns)
@@ -45,6 +45,7 @@ with open(f"extracted_data.csv", "a", newline="") as output_csv:
                             "internal_revenue_code": row["Revenue Code"],
                             # "code": str(row["CPT HCPCS Code"]).upper(),
                             "description": " ".join(str(row["Procedure Description"]).upper().split()),
+                            "code_disambiguator": row["Procedure Code"]
                         }
 
                         if not str(row["CPT HCPCS Code"]).strip() or str(row["CPT HCPCS Code"]) == "NA":
