@@ -67,16 +67,6 @@ def parse_row(in_directory, file, writer, columns):
                 code = str(price_info["code"])
                 internal_revenue_code = str(price_info["internal_revenue_code"])
 
-                if not price_info["code"] or price_info["code"] == "NONE":
-                    price_info["code"] = "NONE"
-                    if price_info["description"]:
-                        price_info["code_disambiguator"] = price_info["description"] + " " + str(price_info["price"])
-                    else:
-                        price_info["code_disambiguator"] = set_disamb_price = True
-
-                else:
-                    price_info["code_disambiguator"] = price_info["description"]
-
                 for payer in insurances:
                     bad_prices = ["**", "N/A", "-"]
                     price_info["price"] = row[payer].replace("$", "").replace(",", "")
@@ -96,6 +86,15 @@ def parse_row(in_directory, file, writer, columns):
                         price_info["payer"] = "MAX"
                     else:
                         price_info["payer"] = payer.strip()
+
+                    if not price_info["code"] or price_info["code"] == "NONE":
+                        price_info["code"] = "NONE"
+
+                    if price_info["description"]:
+                        price_info["code_disambiguator"] = price_info["description"] + " " + str(price_info["price"])
+                    else:
+                        price_info["code_disambiguator"] = str(price_info["price"])
+
 
                     if str(price_info["price"]) and str(price_info["price"]) != "None":
                         if str(price_info["payer"]) and float(price_info["price"]) <= 10000000:
