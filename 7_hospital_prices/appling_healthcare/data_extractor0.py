@@ -4,12 +4,12 @@ import traceback as tb
 import os
 
 # CPT,Description,Charges,Discounted Cash Price,Min Negotiated,Max Negotiated,Medicare,Uhc,Caresource,Medicaid,Wellcare,Humana,Amerigroup,Umr,Aetna,Tricare,Veterans admin,Peach state,Blue cross
-columns = ["cms_certification_num", "internal_revenue_code", "description", "code", "price", "inpatient_outpatient", "payer"]
+columns = ["cms_certification_num", "internal_revenue_code", "description", "code", "price", "payer"]
 with open(f"drugs.csv", "r") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
     header = input_csv.readline().split(",")
-    insurance = header[(header.index("Discounted Cash Price")+1):]
+    insurance = header[(header.index("Charges")):]
     insurances = [x.replace("\n", "") for x in insurance]
     input_csv.seek(0)
 
@@ -34,10 +34,14 @@ with open(f"drugs.csv", "r") as input_csv:
 
                         if payer == "Discounted Cash Price":
                             payer = "CASH PRICE"
+
+                        elif payer == "Charges":
+                            payer = "GROSS CHARGE"
                         elif payer == "Min Negotiated":
                             payer = "MIN"
                         elif payer == "Max Negotiated":
                             payer = "MAX"
+
                         price_info["payer"] = str(payer).upper().replace("_", " ").replace("-", "")
 
                         if price_info["payer"] == "SELF PAY":
