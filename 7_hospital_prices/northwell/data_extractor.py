@@ -44,7 +44,7 @@ with open(f"extracted_data.csv", "a", newline="") as output_csv:
                     price_info["code"] = str(row["Code_TXT"]).strip()
 
 
-                price_info["price"] = str(row["Rate"]).replace(",", "")
+                price_info["price"] = str(row["Rate"]).replace(",", "").strip()
 
                 try:
                     if str(price_info["payer"]) and float(price_info["price"]) <= 10000000:
