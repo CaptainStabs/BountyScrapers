@@ -32,7 +32,7 @@ cms_num = {
     "UPMC Kane ": "390104",
     "UPMC LITITZ": "390068",
     "UPMC MEMORIAL": "390101",
-    "UPMC PINNACLE HARRISBURG ": "392039"
+    "UPMC PINNACLE HARRISBURG ": "390067"
 
 }
 

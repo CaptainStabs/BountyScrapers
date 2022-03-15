@@ -17,7 +17,7 @@ with open("./input_files/converted/73-1678377_Select_Specialty_Hospital-Pittsbur
         for row in tqdm(reader, total=line_count):
             try:
                 price_info = {
-                    "cms_certification_num": "210027",
+                    "cms_certification_num": "392044",
                     "payer": "GROSS CHARGE",
                     "description": " ".join(str(row["CHARGE_DESCRIPTION"]).upper().split()),
                     "price": row["CHARGE"],

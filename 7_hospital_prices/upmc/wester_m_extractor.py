@@ -20,13 +20,26 @@ with open("./input_files/converted/western maryland.csv", "r") as input_csv:
                     "description": " ".join(str(row["Description"]).upper().split()),
                     "price": row["Gross Charge"],
                     "units": row["RxQuantity"],
-                    "code_disambiguator": " ".join([row["Type"], row["Category"], row["RxQuantity"]])
+                    "code_disambiguator": " ".join([row["Description"], row["RxQuantity"]])
                 }
 
-                if str(row["CPT/HCPCS"]).strip():
-                    price_info["code"] = row["CPT/HCPCS"]
-                elif str(row["NDC"]).strip():
+                if "/" in str(row["CPT/HCPCS"]):
+                    price_info["code"] = str(row["CPT/HCPCS"]).split("/")[0]
+                    price_info["code_disambiguator"] = " ".join([price_info["code_disambiguator"], str(row["CPT/HCPCS"]).split("/")[1]])
+
+                if str(row["CPT/HCPCS"]).strip() and str(row["NDC"]).strip():
+                    if "code" not in price_info:
+                        price_info["code"] = row["CPT/HCPCS"]
+
+                    price_info["code_disambiguator"] = " ".join([str(price_info["code_disambiguator"]), str(row["NDC"])])
+
+                elif str(row["CPT/HCPCS"]).strip() and not str(row["NDC"]).strip():
+                    if "code" not in price_info:
+                        price_info["code"] = row["CPT/HCPCS"]
+
+                elif str(row["NDC"]).strip() and not str(row["CPT/HCPCS"]):
                     price_info["code"] = row["NDC"]
+
                 else:
                     price_info["code"] = "NONE"
 
