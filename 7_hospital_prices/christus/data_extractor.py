@@ -14,6 +14,7 @@ def parse_row(in_directory, file, writer, columns):
         insurance = header[(header.index("gross charge")):-1]
         # print(insurance)
         insurances = [x.replace("\n", "") for x in insurance]
+        insurances.append("discounted cash price")
         input_csv.seek(0)
 
         reader = csv.DictReader(input_csv)
