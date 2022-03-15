@@ -38,7 +38,7 @@ with open(f"extracted_data.csv", "a", newline="") as output_csv:
 
                 }
 
-                if price_info["payer"] == "DICOUNTED CASH PRICE":
+                if price_info["payer"] == "DISCOUNTED CASH PRICE":
                     price_info["payer"] = "CASH PRICE"
                 if not str(row["Code_TXT"]).strip() or str(row["Code_TXT"]) == "NA":
                     price_info["code"] = "NONE"
