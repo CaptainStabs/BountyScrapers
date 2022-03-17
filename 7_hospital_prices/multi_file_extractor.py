@@ -11,7 +11,7 @@ cms_num = {
 
 def parse_row(in_directory, file, writer, columns):
     with open(f"{in_directory}{file}", "r") as input_csv:
-        line_count = len([line for line in input_csv.readlines()])
+        line_count = len([line for line in input_csv.readlines()]) - 1
         input_csv.seek(0)
         header = input_csv.readline().split(",")
         insurance = header[(header.index("Gross Charge")):-1]
@@ -34,10 +34,9 @@ def parse_row(in_directory, file, writer, columns):
                     "inpatient_outpatient": str(row["Hospital Inpatient / Outpatient / Both"]).upper().strip().replace("None", "UNSPECIFIED")
                 }
 
-                code = str(price_info["code"])
                 internal_revenue_code = str(price_info["internal_revenue_code"])
 
-                if not str(row["Procedure Code (CPT / HCPCS)"]).strip() or str(row["Procedure Code (CPT / HCPCS)"]) == "NA":
+                if not str(code).strip() or str(code).strip() == "NA":
                     price_info["code"] = "NONE"
 
                 for payer in insurances:
