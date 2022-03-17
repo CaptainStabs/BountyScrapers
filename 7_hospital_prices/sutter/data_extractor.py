@@ -24,7 +24,7 @@ cms_num = {
 
 }
 #  ID,SERVICE_SETTING,DESCRIPTION,CPT,NDC,REVENUE_CODE,
-columns = ["cms_certification_num", "internal_revenue_code", "description", "code", "price", "inpatient_outpatient", "payer", "code_disambiguator"]
+columns = ["cms_certification_num", "internal_revenue_code", "description", "code", "price", "inpatient_outpatient", "payer"]
 in_directory = "./input_files/"
 with open(f"extracted_data.csv", "a", newline="", encoding="utf-8") as output_csv:
     writer = csv.DictWriter(output_csv, fieldnames=columns)
@@ -63,14 +63,14 @@ with open(f"extracted_data.csv", "a", newline="", encoding="utf-8") as output_cs
                         else:
                             continue
 
-                        try:
-                            price_info["code_disambiguator"] = row["ID"]
-                        except KeyError:
-                            # Some invisible character is messing it up
-                            try:
-                                price_info["code_disambiguator"] = row["ï»¿ID"]
-                            except KeyError:
-                                print(row)
+                        # try:
+                        #     price_info["code_disambiguator"] = row["ID"]
+                        # except KeyError:
+                        #     # Some invisible character is messing it up
+                        #     try:
+                        #         price_info["code_disambiguator"] = row["ï»¿ID"]
+                        #     except KeyError:
+                        #         print(row)
 
                         if not str(row["REVENUE_CODE"]):
                             price_info["internal_revenue_code"] = "NONE"
