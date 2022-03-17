@@ -16,10 +16,10 @@ with open("Southeast-Health-Standard-Charges-2022.csv", "r") as input_csv:
             try:
                 price_info = {
                     "cms_certification_num": "010001",
-                    "payer": " ".join(str(row["Payer"]).upper().strip().split()),
-                    "code": str(row["Code"]).upper(),
+                    "payer": str(row["Payer"]).strip(),
+                    "code": str(row["Code"]),
                     "internal_revenue_code": row["﻿Procedure"],
-                    "description": " ".join(str(row["Procedure Description"]).upper().split()),
+                    "description": " ".join(str(row["Procedure Description"]).split()),
                     "price": row["IP Price"]
                 }
 
