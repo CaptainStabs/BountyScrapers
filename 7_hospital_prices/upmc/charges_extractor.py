@@ -13,12 +13,12 @@ cms_num = {
     "UPMC East Hospital": "390328",
     "UPMC Hamot Hospital": "390063",
     "UPMC Horizon Hospital": "390178",
-    "UPMC Jameson Hospital": "390016",
-    "UPMC Lockhaven": "390071",
+    # "UPMC Jameson Hospital": "390016",
+    # "UPMC Lockhaven": "390071",
     "UPMC Lock Haven Hospital": "390071",
     "UPMC Magee Womens Hospital": "390114",
     "UPMC McKeesport Hospital": "390002",
-    "UPMC Mercy Hospital": "390028",
+    # "UPMC Mercy Hospital": "390028",
     "UPMC Muncy Valley Hospital": "391301",
     "UPMC Northwest Hospital": "390091",
     "UPMC Passavant Hospital": "390107",
@@ -69,7 +69,7 @@ def parse_row(in_directory, file, writer, columns):
                 pass
             except KeyError:
                 print(file)
-                raise KeyError
+                # raise KeyError
 
 if __name__ == "__main__":
     threads = []
