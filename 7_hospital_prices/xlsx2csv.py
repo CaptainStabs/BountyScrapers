@@ -14,7 +14,6 @@ for file in os.listdir("./"):
         filename = file.replace(".xlsx", "")
 
         # select the active sheet
-        print(dir(excel))
         sheet = excel.active
 
         # writer object is created
