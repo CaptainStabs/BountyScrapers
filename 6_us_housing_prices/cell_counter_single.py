@@ -1,7 +1,9 @@
+from tqdm import tqdm
+
 total_cells = 0
 total_rows = 0
 with open("extracted_data2.csv", "r") as f:
-    for i, line in enumerate(f.readlines()):
+    for i, line in tqdm(enumerate(f)):
         if i == 0:
             continue
         total_cells += len(str(",".join(filter(None, [x for x in line.split(",") if x != "\n"]))).split(","))
