@@ -52,7 +52,7 @@ def parse_row(in_directory, file, writer, columns):
         line_count = len([line for line in input_csv.readlines()]) - 1
         input_csv.seek(0)
         header = input_csv.readline().split("|")
-        insurance = header[(header.index('"Inpatient Expected Reimbursement"')):-1]
+        insurance = header[(header.index('"Inpatient Gross Charges"')):-1]
         # print(insurance)
         insurances = [x.replace("\n", "").replace('"', "") for x in insurance]
         input_csv.seek(0)
@@ -114,7 +114,7 @@ def parse_row(in_directory, file, writer, columns):
 
                     if price_info["inpatient_outpatient"] == "INPATIENT":
                         print("A")
-                        
+
                     if str(price_info["price"]) and str(price_info["price"]) != "None":
                         if str(price_info["payer"]) and float(price_info["price"]) <= 10000000:
                             # print("A")
