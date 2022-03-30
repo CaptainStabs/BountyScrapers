@@ -29,7 +29,7 @@ def parse_row(in_directory, file, writer, columns):
 
         for row in tqdm(reader, total=line_count):
             header = list(row.keys())
-            insurance = header[(header.index("GROSS_CHARGE")):-1]
+            insurance = header[(header.index("GROSS_CHARGE")):]
             insurances = [x.replace("\n", "") for x in insurance]
             try:
                 price_info = {
@@ -41,9 +41,13 @@ def parse_row(in_directory, file, writer, columns):
                 }
 
                 internal_revenue_code = str(price_info["internal_revenue_code"])
+                multi_rev = False
 
                 if internal_revenue_code == "250":
                     price_info["code_disambiguator"] = price_info["description"]
+                elif internal_revenue_code == "118; 120; 128; 138; 148; 158":
+                    price_info["code_disambiguator"] = price_info["description"]
+                    multi_rev = True
 
                 pat_type = row["PATIENT_TYPE"].upper()
                 if "INPATIENT" and "OUTPATIENT" in pat_type:
@@ -56,26 +60,53 @@ def parse_row(in_directory, file, writer, columns):
                     price_info["inpatient_outpatient"] = "UNSPECIFIED"
 
 
-                for payer in insurances:
-                    if "NO" in row[payer]:
-                        continue
+                if not multi_rev:
+                    for payer in insurances:
+                        if "NO" in row[payer]:
+                            continue
 
-                    price_info["price"] =   Decimal(sub(r'[^\d.]', '', row[payer]))
+                        price_info["price"] =   Decimal(sub(r'[^\d.]', '', row[payer]))
 
-                    try:
-                        price_info["payer"] = payers[payer]
-                    except KeyError:
-                        price_info["payer"] = payer.replace(" negotiated charge", "").strip()
+                        try:
+                            price_info["payer"] = payers[payer]
+                        except KeyError:
+                            price_info["payer"] = payer.replace(" negotiated charge", "").strip()
 
 
-                    if str(price_info["price"]) and str(price_info["price"]) != "None":
-                        if str(price_info["payer"]) and float(price_info["price"]) <= 10000000:
-                            # print("A")
-                            writer.writerow(price_info)
-                    else:
-                        print(file)
-                        import json; print(json.dumps(row, indent=2))
-                        break
+                        if str(price_info["price"]) and str(price_info["price"]) != "None":
+                            if str(price_info["payer"]) and float(price_info["price"]) <= 10000000:
+                                # print("A")
+                                writer.writerow(price_info)
+                        else:
+                            print(file)
+                            import json; print(json.dumps(row, indent=2))
+                            break
+                else:
+                    for rev_code in internal_revenue_code.split("; "):
+                        price_info["internal_revenue_code"] = rev_code
+                        price_info["code_disambiguator"] = price_info["description"]
+
+                        for payer in insurances:
+                            if "NO" in row[payer]:
+                                continue
+
+                            price_info["price"] =   Decimal(sub(r'[^\d.]', '', row[payer]))
+
+                            try:
+                                price_info["payer"] = payers[payer]
+                            except KeyError:
+                                price_info["payer"] = payer.replace(" negotiated charge", "").strip()
+
+
+                            if str(price_info["price"]) and str(price_info["price"]) != "None":
+                                if str(price_info["payer"]) and float(price_info["price"]) <= 10000000:
+                                    # print("A")
+                                    writer.writerow(price_info)
+                            else:
+                                print(file)
+                                import json; print(json.dumps(row, indent=2))
+                                break
+
 
             except ValueError:
                 print(row)

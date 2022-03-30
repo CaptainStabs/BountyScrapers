@@ -14,7 +14,7 @@ def parse_row(in_directory, file, writer, columns):
         line_count = len([line for line in input_csv.readlines()]) - 1
         input_csv.seek(0)
         header = input_csv.readline().split(",")
-        insurance = header[(header.index("Gross Charge")):-1]
+        insurance = header[(header.index("Gross Charge")):]
         # print(insurance)
         insurances = [x.replace("\n", "") for x in insurance]
         input_csv.seek(0)
