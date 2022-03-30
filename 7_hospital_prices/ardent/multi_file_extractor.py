@@ -36,6 +36,17 @@ cms_num = {
     "UTHEALTHTYLERHOSPITAL": "450083"
 }
 
+payers = {
+    "Inpatient Gross Charges": "INPATIENT",
+    "Inpatient Max Reimbursement": "INPATIENT",
+    "Inpatient Minimal Reimbursement": "INPATIENT",
+    "Inpatient Expected Reimbursement": "INPATIENT",
+    "Outpatient Gross Charges": "OUTPATIENT",
+    "Outpatient Expected Reimbursement": "OUTPATIENT",
+    "Outpatient Max Reimbursement": "OUTPATIENT",
+    "Outpatient Minimal Reimbursement": "OUTPATIENT"
+}
+
 def parse_row(in_directory, file, writer, columns):
     with open(f"{in_directory}{file}", "r") as input_csv:
         line_count = len([line for line in input_csv.readlines()]) - 1
@@ -66,8 +77,19 @@ def parse_row(in_directory, file, writer, columns):
                 if not str(row["Revenue Code"]):
                     price_info["internal_revenue_code"] = "NONE"
 
-
                 for payer in insurances:
+                    try:
+                        price_info["inpatient_outpatient"] = payers[payer]
+                    except KeyError:
+                        print(payer)
+                        price_info["inpatient_outpatient"] = "UNSPECIFIED"
+
+
+                        # print(payer)
+                    # else:
+                    #     price_info["inpatient_outpatient"] = "UNSPECIFIED"
+
+
                     price = row[payer].replace(",","")
                     if not str(price).strip():
                         continue
@@ -90,13 +112,9 @@ def parse_row(in_directory, file, writer, columns):
                         print("AAA")
                         # price_info["payer"] = " ".join([row["Plan"].strip(), payer.strip()])
 
-                    if "Inpatient" in payer:
-                        price_info["inpatient_outpatient"] = "INPATIENT"
-                    elif "Outpatient" in payer:
-                        price_info["inpatient_outpatient"] = "OUTPATIENT"
-                    else:
-                        price_info["inpatient_outpatient"] = "UNSPECIFIED"
-
+                    if price_info["inpatient_outpatient"] == "INPATIENT":
+                        print("A")
+                        
                     if str(price_info["price"]) and str(price_info["price"]) != "None":
                         if str(price_info["payer"]) and float(price_info["price"]) <= 10000000:
                             # print("A")
@@ -115,7 +133,7 @@ if __name__ == "__main__":
     threads = []
     # "Charge # (Px Code)",Procedure Name,Procedure Code (CPT / HCPCS),Default Modifier,Gross Charge,Discounted Cash Charge,Hospital Inpatient / Outpatient / Both(Px Code)",Procedure Name,Procedure Code (CPT / HCPCS),Default Modifier,Gross Charge,Discounted Cash Charge,Hospital Inpatient / Outpatient / Both
     columns = ["cms_certification_num", "code","description", "payer", "price", "inpatient_outpatient", "code_disambiguator", "internal_revenue_code", "units"]
-    in_directory = "./downloads/"
+    in_directory = "./fixed/"
     with open(f"extracted_data.csv", "a", newline="") as output_csv:
         writer = csv.DictWriter(output_csv, fieldnames=columns)
         writer.writeheader()
