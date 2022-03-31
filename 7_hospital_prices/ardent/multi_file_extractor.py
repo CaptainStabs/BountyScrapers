@@ -110,10 +110,13 @@ def parse_row(in_directory, file, writer, columns):
 
                     else:
                         print("AAA")
+
+                    if price_info["payer"] == "Self-pay Self-pay":
+                        price_info["payer"] = "CASH PRICE"
                         # price_info["payer"] = " ".join([row["Plan"].strip(), payer.strip()])
 
-                    if price_info["inpatient_outpatient"] == "INPATIENT":
-                        print("A")
+                    # if price_info["inpatient_outpatient"] == "INPATIENT":
+                    #     print("A")
 
                     if str(price_info["price"]) and str(price_info["price"]) != "None":
                         if str(price_info["payer"]) and float(price_info["price"]) <= 10000000:
@@ -141,7 +144,7 @@ if __name__ == "__main__":
             if file.endswith(".txt"):
                 print(file)
                 parse_row(in_directory, file, writer, columns)
-        # with ThreadPoolExecutor(max_workers=1) as executor:
+        # with ThreadPoolExecutor(max_workers=5) as executor:
         #     for file in tqdm(os.listdir(in_directory)):
         #         if file.endswith(".txt"):
         #             print(file)
