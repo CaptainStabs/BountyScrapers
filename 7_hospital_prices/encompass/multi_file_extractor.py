@@ -5,6 +5,7 @@ import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from re import sub
 from decimal import Decimal
+import decimal
 # import heartrate; heartrate.trace(browser=True, daemon=True)
 
 payers = {
@@ -65,7 +66,11 @@ def parse_row(in_directory, file, writer, columns):
                         if "NO" in row[payer]:
                             continue
 
-                        price_info["price"] =   Decimal(sub(r'[^\d.]', '', row[payer]))
+                        try:
+                            price_info["price"] =   Decimal(sub(r'[^\d.]', '', row[payer]))
+                        except decimal.InvalidOperation:
+                            # print(row[payer])
+                            continue
 
                         try:
                             price_info["payer"] = payers[payer]
@@ -90,7 +95,11 @@ def parse_row(in_directory, file, writer, columns):
                             if "NO" in row[payer]:
                                 continue
 
-                            price_info["price"] =   Decimal(sub(r'[^\d.]', '', row[payer]))
+                            try:
+                                price_info["price"] =   Decimal(sub(r'[^\d.]', '', row[payer]))
+                            except decimal.InvalidOperation:
+                                # print(row[payer])
+                                continue
 
                             try:
                                 price_info["payer"] = payers[payer]
@@ -118,7 +127,7 @@ if __name__ == "__main__":
     # "Charge # (Px Code)",Procedure Name,Procedure Code (CPT / HCPCS),Default Modifier,Gross Charge,Discounted Cash Charge,Hospital Inpatient / Outpatient / Both(Px Code)",Procedure Name,Procedure Code (CPT / HCPCS),Default Modifier,Gross Charge,Discounted Cash Charge,Hospital Inpatient / Outpatient / Both
     columns = ["cms_certification_num", "code","description", "internal_revenue_code", "payer", "price", "inpatient_outpatient", "code_disambiguator"]
     in_directory = "./output_files/"
-    with open(f"F:/hospital-price-transparency-v4/hospital_extracted_data.csv", "a", newline="") as output_csv:
+    with open(f"F:/hospital-price-transparency-v4/2hospital_extracted_data.csv", "a", newline="") as output_csv:
         writer = csv.DictWriter(output_csv, fieldnames=columns)
         writer.writeheader()
         # with ThreadPoolExecutor(max_workers=5) as executor:
