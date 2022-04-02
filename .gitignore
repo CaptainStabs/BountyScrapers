@@ -5,8 +5,13 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Csvs
 7_hospital_prices/encompass/output_files/*.csv
 7_hospital_prices/encompass/input_files/*.csv
+7_hospital_prices/*/input_files/*.csv
+7_hospital_prices/*/output_files/*.csv
+7_hospital_prices/*/converted/*.csv
+7_hospital_prices/*/downloads/*.csv
 
 # C extensions
 *.so
