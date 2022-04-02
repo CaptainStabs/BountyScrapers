@@ -1,4 +1,9 @@
 import pandas as pd
+import os
+from tqdm import tqdm
 
-df = pd.read_json("Northwell_Health_Machine_Readable_File.json", orient='records', dtype=str)
-df.to_csv('mrf.csv', index=False)
+in_dir = "./downloads/"
+out_dir = "./output_files/"
+for file in tqdm(os.listdir(in_dir)):
+    df = pd.read_json(os.path.join(in_dir, file), orient='records', dtype=str)
+    df.to_csv(os.path.join(out_dir, file.split(".")[0] + ".csv"), index=False)
