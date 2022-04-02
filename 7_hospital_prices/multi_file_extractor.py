@@ -69,11 +69,15 @@ if __name__ == "__main__":
     threads = []
     # "Charge # (Px Code)",Procedure Name,Procedure Code (CPT / HCPCS),Default Modifier,Gross Charge,Discounted Cash Charge,Hospital Inpatient / Outpatient / Both(Px Code)",Procedure Name,Procedure Code (CPT / HCPCS),Default Modifier,Gross Charge,Discounted Cash Charge,Hospital Inpatient / Outpatient / Both
     columns = ["cms_certification_num", "code","description", "payer", "price", "inpatient_outpatient"]
-    in_directory = "./output_files/CDM/"
-    with open(f"CDM_extracted_data.csv", "a", newline="") as output_csv:
+    in_directory = "./output_files/"
+    with open(f"extracted_data.csv", "a", newline="") as output_csv:
         writer = csv.DictWriter(output_csv, fieldnames=columns)
         writer.writeheader()
-        with ThreadPoolExecutor(max_workers=1) as executor:
-            for file in os.listdir(in_directory):
-                if file.endswith(".csv"):
-                    threads.append(executor.submit(parse_row, in_directory, file, writer, columns))
+        # with ThreadPoolExecutor(max_workers=1) as executor:
+        #     for file in os.listdir(in_directory):
+        #         if file.endswith(".csv"):
+        #             threads.append(executor.submit(parse_row, in_directory, file, writer, columns))
+
+        for file in os.listdir(in_directory):
+            if file.endswith(".csv"):
+                threads.append(executor.submit(parse_row, in_directory, file, writer, columns))
