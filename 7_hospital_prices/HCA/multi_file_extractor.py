@@ -77,6 +77,8 @@ def parse_row(file, writer, columns):
 
                     if "," in code:
                         for c in code.split(",").strip("-"):
+                            if c[0] = "0" and len(c) = 4:
+                                is_rev = True
                             if "-" in c:
                                 prepend = ""
                                 end_pend = ""
@@ -117,16 +119,32 @@ def parse_row(file, writer, columns):
                                             price_info["code"] = "".join([prepend, "{:.2f}".format(codes), end_pend]))
 
                                     write_data(price_info, writer, file, row)
+                                else:
+                                    for codes in np.arange(parse_str(x),parse_str(y)):
+                                        if is_rev:
+                                            price_info["internal_revenue_code"] = str(codes)
+                                            price_info["code"] = "NONE"
+                                            # print(str(codes))
+                                        else:
+                                            price_info["code"] = str(codes).zfill(3).strip(";")
+                                            print(str(codes).zfill(3).strip(";"))
+
+                                        if prepend or end_pend:
+                                            print("".join([prepend, str(codes), end_pend]))
                             else:
                                 if not str(c).strip() or str(c).strip() == "N/A" or str(c) == "	":
                                     price_info["code"] = "NONE"
                                 else:
+                                    if
                                     if is_rev:
                                         price_info["internal_revenue_code"] = c.strip().strip(";")
                                     else:
                                         price_info["code"] = c.strip().strip(";")
                                 write_data(price_info, writer, file, row)
                     else:
+                        if code[0] = "0" and len(code) == 4:
+                            price_info["code"] = "NONE"
+                            price_info["internal_revenue_code"] = code
                         write_data(price_info, writer, file, row)
 
             except ValueError:
@@ -134,7 +152,7 @@ def parse_row(file, writer, columns):
                 tb.print_exc()
                 pass
 def d_split(c, price_info, writer, file, row):
-    
+
 if __name__ == "__main__":
     threads = []
     # "Charge # (Px Code)",Procedure Name,Procedure Code (CPT / HCPCS),Default Modifier,Gross Charge,Discounted Cash Charge,Hospital Inpatient / Outpatient / Both(Px Code)",Procedure Name,Procedure Code (CPT / HCPCS),Default Modifier,Gross Charge,Discounted Cash Charge,Hospital Inpatient / Outpatient / Both
