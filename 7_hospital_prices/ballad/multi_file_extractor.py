@@ -63,7 +63,7 @@ def parse_row(in_directory, file, writer, columns):
 
                 cpt = str(row["CPT"]).strip()
                 ndc = str(row["NDC"]).strip()
-                mcr = ""
+                mcr = " "
 
                 if price_info["cms_certification_num"] == "490053":
                     mcr = str(row["MCR"]).strip()
