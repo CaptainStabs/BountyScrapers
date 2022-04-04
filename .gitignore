@@ -12,6 +12,7 @@ __pycache__/
 7_hospital_prices/*/output_files/*.csv
 7_hospital_prices/*/converted/*.csv
 7_hospital_prices/*/downloads/*.csv
+7_hospital_prices/*/fixed/*.csv
 
 # C extensions
 *.so
