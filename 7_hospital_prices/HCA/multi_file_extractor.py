@@ -33,7 +33,7 @@ def parse_str(num,c):
     import sys; sys.exit()
 
 def parse_row(file, writer, columns):
-    rep = {"CPT/HCPC ": "", "ICD 9/10": "", "MS-DRG": "", " or ": "", ";": ",", "Code": "", "code":"", "codes":"", "Codes":"", "Includes CPT4 Codes": "", "HCPCS":"", "Excluded CPTs from the surgery range:":"", "ICD9 s": "", "(": "", ")":"", "'": ""}
+    rep = {"CPT/HCPC ": "", "ICD 9/10": "", "MS-DRG": "", " or ": "", ";": ",", "codes":"", "Codes":"", "Includes CPT4 Codes": "",  "Code": "", "code":"", "HCPCS":"", "ICD9 s": "", "(": "", ")":"", "'": "", "CPT": "", ":": "", "and/or": ",", " or ": ", "}
     rep = dict((re.escape(k), v) for k, v in rep.items())
     pattern = re.compile("|".join(rep.keys()))
 
@@ -46,7 +46,9 @@ def parse_row(file, writer, columns):
 
         reader = csv.DictReader(input_csv)
 
-        for row in tqdm(reader, total=line_count):
+        for i, row in enumerate(tqdm(reader, total=line_count)):
+            # if i < 350534:
+            #     continue
             try:
                 # Associated_Codes,description,payer,
                 price_info = {
@@ -77,34 +79,39 @@ def parse_row(file, writer, columns):
                         code = code.replace("REV", "").strip()
                     else: is_rev = False
 
+                    p2 = re.compile("\d\d\d\d\d/\d\d\d\d\d-\d\d")
+                    # print(bool(p2.match(code)))
                     if "," in code:
-                        p = re.compile('[a-zA-Z]{1}[0-9]{1}[a-zA-Z0-9]{1}.{1}[a-zA-Z0-9]{0,4}')
                         if "excluding" in code.lower():
-                            c_s = code.split("excluding")
-                            c_range, exclusions = c_s[0], c_s[1]
+                            # print("A")
+                            c_s = code.upper().split("EXCLUDING")
+                            # print(c_s)
+                            c_range, exclusions = c_s[0], c_s[1].split(",")
+                            exclusion_zone = []
+                            for exclusion in exclusions:
+                                if "-" in exclusion:
+                                    x, y = exclusion.split("-")
+                                    x, y = x.strip().strip(")"), y.strip().strip(")")
 
-                            
-                        for c in code.strip("-").split(","):
-                            if "-" in c.strip("-") and not bool(p.search(c.split("-")[0].strip())):
-                                d_split(c, price_info, writer, file, row, is_rev)
-                            else:
-                                if not is_rev:
-                                    # Double check to confirm
-                                    is_rev = rev_checker(c)
-
-                                if not str(c).strip() or str(c).strip() == "N/A" or str(c) == "	":
-                                    price_info["code"] = "NONE"
+                                    for codes in range(int(x), int(y) + 1):
+                                        exclusion_zone.append(codes)
                                 else:
-                                    if is_rev:
-                                        price_info["internal_revenue_code"] = c.strip().strip(";")
-                                        price_info["code"] = "NONE"
-
-                                    else:
-                                        price_info["code"] = c.strip().strip(";")
-
+                                    exclusion_zone.append(exclusion.strip())
+                            c_range = c_range.strip().strip(",").strip(".").strip()
+                            x, y = c_range.split("-")
+                            for codes in range(int(x),int(y)):
+                                if codes not in exclusion_zone:
+                                    price_info["code"] = codes
                                     write_data(price_info, writer, file, row)
-                    elif "-" in code.strip("-"):
-                        d_split(code, price_info, writer, file, row)
+
+
+                        else:
+                            comma_loop(code, price_info, writer, file, row, is_rev)
+                    elif "-" in code.strip("-").strip("-") and " - " not in code:
+                        if bool(p2.search(code)) or "28890/28890-50" in code:
+                            write_data(price_info, writer, file, row)
+                        else:
+                            d_split(code, price_info, writer, file, row)
                     else:
                         if rev_checker(code):
                             price_info["code"] = "NONE"
@@ -118,7 +125,32 @@ def parse_row(file, writer, columns):
                 tb.print_exc()
                 import sys; sys.exit()
                 pass
+def comma_loop(code, price_info, writer, file, row, is_rev):
+    p = re.compile('[a-zA-Z]{1}[0-9]{1}[a-zA-Z0-9]{1}.{1}[a-zA-Z0-9]{0,4}')
+    p2 = re.compile("\d\d\d\d\d/\d\d\d\d\d-\d\d")
+    for c in code.strip("-").split(","):
+        if not p2.match(c) and "28890/28890-50" not in c:
+            if "-" in c.strip().strip("-") and not bool(p.search(c.strip().split("-")[0].strip())):
+                if not c.split("-")[0].strip(): print(c.strip("-"))
+                d_split(c, price_info, writer, file, row, is_rev)
+            else:
+                if not is_rev:
+                    # Double check to confirm
+                    is_rev = rev_checker(c)
 
+                if not str(c).strip() or str(c).strip() == "N/A" or str(c) == "	":
+                    price_info["code"] = "NONE"
+                else:
+                    if is_rev:
+                        price_info["internal_revenue_code"] = c.strip().strip(";")
+                        price_info["code"] = "NONE"
+
+                    else:
+                        price_info["code"] = c.strip().strip(";")
+
+                    write_data(price_info, writer, file, row)
+        else:
+            write_data(price_info, writer, file, row)
 def d_split(c, price_info, writer, file, row, is_rev):
     padding = 0
     if "REV " in c.upper() or "REV" in c.upper():
@@ -132,11 +164,16 @@ def d_split(c, price_info, writer, file, row, is_rev):
 
     else: is_rev = rev_checker(c)
 
+    still_loop = True
     prepend = ""
     end_pend = ""
 
     # Split by - to get min and max
-    x, y = c.split("-")
+    try:
+        x, y = c.split("-")
+    except ValueError:
+        print("x,y split failed, too many values\n", row["code"])
+        import sys; sys.exit()
     x, y = x.strip().strip(")"), y.strip().strip(")")
     # I feel that the last item in the range is more likely to have a semicolon
     y = y.strip(";")
@@ -153,6 +190,8 @@ def d_split(c, price_info, writer, file, row, is_rev):
             else:
                 print("AAA")
                 print(x[0], y[0])
+                still_loop = False
+                write_data(price_info, writer, file, row)
         # Check last if last character is a letter, so that I can add it back in later
         if x[-1].strip().strip(";").isalpha() and y[-1].strip().strip(";").isalpha():
             if x[-1] == y[-1]:
@@ -164,52 +203,62 @@ def d_split(c, price_info, writer, file, row, is_rev):
             else:
                 print("BBB")
                 print(x[-1], y[-1])
+                still_loop = False
+                write_data(price_info, writer, file, row)
 
-        # Naive way to check if x is a float
-        if "." in x and "." in y:
-            isfloat = True
-        else:
-            isfloat = False
-
-        # Floats are only ICD 9/10 codes afaict
-        if isfloat:
-            # Number of steps between the two numbers, i.e. num of steps between 9 and 1 is 8
-            x2, y2 = x.split("."), y.split(".")
-            # Confirm that there is in fact numbers after the decimal point
-            if str(y2[-1].strip()) and str(x2[-1].strip()):
-                step = int(y.split(".")[-1].strip()) - int(x.split(".")[-1].strip())
-
-
-                for codes in np.linspace(parse_str(x, c),parse_str(y, c), num=step):
-                    if is_rev:
-                        # Figured I might as well leave this in just in case I'm wrong
-                        price_info["internal_revenue_code"] = str(codes)
-                        price_info["code"] = "NONE"
-                    else:
-                        # Re-add the removed letters
-                        price_info["code"] = "".join([prepend, "{:.2f}".format(codes), end_pend])
-
-                    write_data(price_info, writer, file, row)
+        if still_loop:
+            # Naive way to check if x is a float
+            if "." in x and "." in y:
+                isfloat = True
             else:
-                print("\nMissing an x or y for", c)
-        else:
-            try:
-                for codes in range(parse_str(x, c),parse_str(y, c) + 1):
-                    if is_rev:
-                        price_info["internal_revenue_code"] = str(codes)
-                        price_info["code"] = "NONE"
+                isfloat = False
 
+            # Floats are only ICD 9/10 codes afaict
+            if isfloat:
+                # Number of steps between the two numbers, i.e. num of steps between 9 and 1 is 8
+                x2, y2 = x.split("."), y.split(".")
+                # Confirm that there is in fact numbers after the decimal point
+                if str(y2[-1].strip()) and str(x2[-1].strip()):
+                    step = int(y.split(".")[-1].strip()) - int(x.split(".")[-1].strip())
+
+                    for codes in np.linspace(parse_str(x, c),parse_str(y, c), num=step):
+                        if is_rev:
+                            # Figured I might as well leave this in just in case I'm wrong
+                            price_info["internal_revenue_code"] = str(codes)
+                            price_info["code"] = "NONE"
+                        else:
+                            # Re-add the removed letters
+                            price_info["code"] = "".join([prepend, "{:.2f}".format(codes), end_pend])
+
+                        write_data(price_info, writer, file, row)
+                else:
+                    if str(y2[-1].strip()):
+                        price_info["code"] = y.strip()
+                        write_data(price_info, writer, file, row)
+                    elif str(x2[-1].strip()):
+                        price_info["code"] = x.strip()
+                        write_data(price_info, writer, file, row)
                     else:
-                        # Only need this here because it is within the generator
-                        if len(str(x)) == 3 and len(str(y)) == 3:
-                            price_info["code"] = str(codes).zfill(3).strip(";")
-                        else: price_info["code"] = "".join([prepend, str(codes).zfill(padding), end_pend])
-                        # print(str(codes).zfill(3).strip(";"))
-            except:
-                print("192 failure", c)
-                import sys; sys.exit(1)
+                        print("\nMissing an x or y for", c)
+            else:
+                try:
+                    for codes in range(parse_str(x, c),parse_str(y, c) + 1):
+                        if is_rev:
+                            price_info["internal_revenue_code"] = str(codes)
+                            price_info["code"] = "NONE"
+
+                        else:
+                            # Only need this here because it is within the generator
+                            if len(str(x)) == 3 and len(str(y)) == 3:
+                                price_info["code"] = str(codes).zfill(3).strip(";")
+                            else: price_info["code"] = "".join([prepend, str(codes).zfill(padding), end_pend])
+                            # print(str(codes).zfill(3).strip(";"))
+                except Exception as e:
+                    print(e)
+                    print(f"\nLine 192 failure: ({x}, {y})", c)
+                    import sys; sys.exit(1)
     else:
-        print("\nx or y is null: ", ",".join([x,y]))
+        print("\nx or y is null: ", ",".join([x,y]), row["code"])
 
 def rev_checker(c):
     c = c.strip()
