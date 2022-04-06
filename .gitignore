@@ -13,6 +13,7 @@ __pycache__/
 7_hospital_prices/*/converted/*.csv
 7_hospital_prices/*/downloads/*.csv
 7_hospital_prices/*/fixed/*.csv
+7_hospital_prices/*/split_files/split_file_*.csv
 
 # C extensions
 *.so
