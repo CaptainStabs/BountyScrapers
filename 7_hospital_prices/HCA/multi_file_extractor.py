@@ -5,6 +5,8 @@ import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import numpy as np
 import re
+import logging
+logging.basicConfig(level=logging.DEBUG)
 # import heartrate; heartrate.trace(browser=True, daemon=True)
 
 def write_data(price_info, writer,  file, row):
@@ -13,6 +15,16 @@ def write_data(price_info, writer,  file, row):
             price_info["code"] = "NONE"
     else: price_info["code"] = "NONE"
 
+    code = price_info["code"]
+    if str(code)[0] == "0" and len(str(code)) == 4 and "." not in str(code):
+        if price_info["internal_revenue_code"] == "NONE":
+            price_info["internal_revenue_code"] = code
+            price_info["code"] = "NONE"
+            print("Rev in code")
+        else:
+            print("Rev in code, rev occupided:", price_info["internal_revenue_code"])
+
+    price_info["code"] = str(code).strip().strip("-")
     writer.writerow(price_info)
 
 
@@ -33,7 +45,7 @@ def parse_str(num,c):
     import sys; sys.exit()
 
 def parse_row(file, writer, columns):
-    rep = {"CPT/HCPC ": "", "ICD 9/10": "", "MS-DRG": "", " or ": "", ";": ",", "codes":"", "Codes":"", "Includes CPT4 Codes": "",  "Code": "", "code":"", "HCPCS":"", "ICD9 s": "", "(": "", ")":"", "'": "", "CPT": "", ":": "", "and/or": ",", " or ": ", "}
+    rep = {"CPT/HCPC ": "", "ICD 9/10": "", "MS-DRG": "", " or ": "", ";": ",", "codes":"", "Codes":"", "Includes CPT4 Codes": "",  "Code": "", "code":"", "HCPCS":"", "ICD9 s": "", "(": "", ")":"", "'": "", "CPT": "", ":": "", "and/or": ",", " or ": ", ", "MS-DRG": ""}
     rep = dict((re.escape(k), v) for k, v in rep.items())
     pattern = re.compile("|".join(rep.keys()))
 
@@ -62,16 +74,17 @@ def parse_row(file, writer, columns):
                     "code_disambiguator": "NONE",
                 }
 
-                if str(" ".join(str(row["description"]).split())):
-                    price_info["code_disambiguator"] = " ".join(str(row["description"]).split())
+                # if str(" ".join(str(row["description"]).split())):
+                #     price_info["code_disambiguator"] = " ".join(str(row["description"]).split())
 
+                # Make my life easier and filter out garbage
                 code = str(row["code"]).strip()
                 code = pattern.sub(lambda m: rep[re.escape(m.group(0))], code)
 
                 if not str(code).strip() or str(code).strip() == "N/A" or str(code) == "	":
                     price_info["code"] = "NONE"
                     write_data(price_info, writer, file, row)
-                elif "level" in code.lower():
+                elif "level" in code.lower(): # edge case for emergency level stuff
                     price_info["code"] = row["code"].replace("CPT/HCPC ")
                 else:
                     if "REV " in code.upper() or "REV" in code.upper():
@@ -79,6 +92,7 @@ def parse_row(file, writer, columns):
                         code = code.replace("REV", "").strip()
                     else: is_rev = False
 
+        		    # regex for detecting ICD codes
                     p2 = re.compile("\d\d\d\d\d/\d\d\d\d\d-\d\d")
                     # print(bool(p2.match(code)))
                     if "," in code:
@@ -87,18 +101,20 @@ def parse_row(file, writer, columns):
                             c_s = code.upper().split("EXCLUDING")
                             # print(c_s)
                             c_range, exclusions = c_s[0], c_s[1].split(",")
-                            exclusion_zone = []
-                            for exclusion in exclusions:
+                            exclusion_zone = []  # I'm hilarious, I know
+                            logging.debug("Exclusion loop")
+                            for exclusion in tqdm(exclusions): # Generate excluded number list
                                 if "-" in exclusion:
                                     x, y = exclusion.split("-")
                                     x, y = x.strip().strip(")"), y.strip().strip(")")
 
-                                    for codes in range(int(x), int(y) + 1):
+                                    for codes in tqdm(range(int(x), int(y) + 1)):
                                         exclusion_zone.append(codes)
                                 else:
                                     exclusion_zone.append(exclusion.strip())
                             c_range = c_range.strip().strip(",").strip(".").strip()
                             x, y = c_range.split("-")
+                            logging.debug("Exclussion generation lop")
                             for codes in range(int(x),int(y)):
                                 if codes not in exclusion_zone:
                                     price_info["code"] = codes
@@ -111,7 +127,7 @@ def parse_row(file, writer, columns):
                         if bool(p2.search(code)) or "28890/28890-50" in code:
                             write_data(price_info, writer, file, row)
                         else:
-                            d_split(code, price_info, writer, file, row)
+                            d_split(code, price_info, writer, file, row, is_rev)
                     else:
                         if rev_checker(code):
                             price_info["code"] = "NONE"
@@ -126,8 +142,10 @@ def parse_row(file, writer, columns):
                 import sys; sys.exit()
                 pass
 def comma_loop(code, price_info, writer, file, row, is_rev):
+    # ICD 9/10 regex filters
     p = re.compile('[a-zA-Z]{1}[0-9]{1}[a-zA-Z0-9]{1}.{1}[a-zA-Z0-9]{0,4}')
     p2 = re.compile("\d\d\d\d\d/\d\d\d\d\d-\d\d")
+    # logging.debug("Comma loop main loop")
     for c in code.strip("-").split(","):
         if not p2.match(c) and "28890/28890-50" not in c:
             if "-" in c.strip().strip("-") and not bool(p.search(c.strip().split("-")[0].strip())):
@@ -182,6 +200,7 @@ def d_split(c, price_info, writer, file, row, is_rev):
         if x[0].isalpha() and y[0].isalpha():
             if x[0] == y[0]:
                 prepend = x[0]
+                print(prepend)
                 # Remove the first character to prevent errors
                 x, y = x.strip()[1:], y.strip()[1:]
                 if x[0] == "0":
@@ -196,15 +215,17 @@ def d_split(c, price_info, writer, file, row, is_rev):
         if x[-1].strip().strip(";").isalpha() and y[-1].strip().strip(";").isalpha():
             if x[-1] == y[-1]:
                 end_pend = x[-1]
+                print(end_pend)
                 x, y = x.strip()[:-1], y.strip()[:-1]
 
                 if x[0] == "0":
                     padding = len(x)
             else:
                 print("BBB")
+                print(x, y)
                 print(x[-1], y[-1])
                 still_loop = False
-                write_data(price_info, writer, file, row)
+                # write_data(price_info, writer, file, row)
 
         if still_loop:
             # Naive way to check if x is a float
@@ -220,8 +241,8 @@ def d_split(c, price_info, writer, file, row, is_rev):
                 # Confirm that there is in fact numbers after the decimal point
                 if str(y2[-1].strip()) and str(x2[-1].strip()):
                     step = int(y.split(".")[-1].strip()) - int(x.split(".")[-1].strip())
-
-                    for codes in np.linspace(parse_str(x, c),parse_str(y, c), num=step):
+                    logging.debug("float loop")
+                    for codes in tqdm(np.linspace(parse_str(x, c),parse_str(y, c), num=step)):
                         if is_rev:
                             # Figured I might as well leave this in just in case I'm wrong
                             price_info["internal_revenue_code"] = str(codes)
@@ -234,18 +255,22 @@ def d_split(c, price_info, writer, file, row, is_rev):
                 else:
                     if str(y2[-1].strip()):
                         price_info["code"] = y.strip()
-                        write_data(price_info, writer, file, row)
+                        print("y2=", y2)
+                        # write_data(price_info, writer, file, row)
                     elif str(x2[-1].strip()):
                         price_info["code"] = x.strip()
-                        write_data(price_info, writer, file, row)
+                        print("x2=", x2)
+                        # write_data(price_info, writer, file, row)
                     else:
                         print("\nMissing an x or y for", c)
             else:
                 try:
-                    for codes in range(parse_str(x, c),parse_str(y, c) + 1):
+                    logging.debug("Non float loop")
+                    for codes in tqdm(range(parse_str(x, c),parse_str(y, c) + 1)):
                         if is_rev:
-                            price_info["internal_revenue_code"] = str(codes)
+                            price_info["internal_revenue_code"] = str(codes).zfill(4)
                             price_info["code"] = "NONE"
+                            write_data(price_info, writer, file, row)
 
                         else:
                             # Only need this here because it is within the generator
@@ -253,6 +278,8 @@ def d_split(c, price_info, writer, file, row, is_rev):
                                 price_info["code"] = str(codes).zfill(3).strip(";")
                             else: price_info["code"] = "".join([prepend, str(codes).zfill(padding), end_pend])
                             # print(str(codes).zfill(3).strip(";"))
+                            write_data(price_info, writer, file, row)
+
                 except Exception as e:
                     print(e)
                     print(f"\nLine 192 failure: ({x}, {y})", c)
