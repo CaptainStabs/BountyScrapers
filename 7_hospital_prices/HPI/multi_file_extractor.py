@@ -38,8 +38,8 @@ def parse_row(file, writer, columns):
 
                 }
 
-                if str(" ".join(str(row["description"]).split())):
-                    price_info["code_disambiguator"] = " ".join(str(row["description"]).split())
+                # if str(" ".join(str(row["description"]).split())):
+                #     price_info["code_disambiguator"] = " ".join(str(row["description"]).split())
 
                 code = str(row["code"]).strip()
 
