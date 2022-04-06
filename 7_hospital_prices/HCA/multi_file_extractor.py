@@ -147,10 +147,13 @@ def comma_loop(code, price_info, writer, file, row, is_rev):
     p2 = re.compile("\d\d\d\d\d/\d\d\d\d\d-\d\d")
     # logging.debug("Comma loop main loop")
     for c in code.strip("-").split(","):
+        if bool(p.search(c.strip().split("-")[0].strip())):
+            print(c)
         if not p2.match(c) and "28890/28890-50" not in c:
-            if "-" in c.strip().strip("-") and not bool(p.search(c.strip().split("-")[0].strip())):
+            if "-" in c.strip().strip("-"):
                 if not c.split("-")[0].strip(): print(c.strip("-"))
                 d_split(c, price_info, writer, file, row, is_rev)
+
             else:
                 if not is_rev:
                     # Double check to confirm
@@ -309,11 +312,12 @@ if __name__ == "__main__":
     threads = []
     # "Charge # (Px Code)",Procedure Name,Procedure Code (CPT / HCPCS),Default Modifier,Gross Charge,Discounted Cash Charge,Hospital Inpatient / Outpatient / Both(Px Code)",Procedure Name,Procedure Code (CPT / HCPCS),Default Modifier,Gross Charge,Discounted Cash Charge,Hospital Inpatient / Outpatient / Both
     columns = ["cms_certification_num", "code","description", "payer", "price", "inpatient_outpatient", "code_disambiguator", "internal_revenue_code", "units"]
-    if os.path.exists("extracted_data.csv"):
-        os.remove("extracted_data.csv")
+    out_file = "extracted_data.csv"
+    if os.path.exists(out_file):
+        os.remove(out_file)
 
-    with open("extracted_data.csv", "a", newline="") as output_csv:
+    with open(out_file, "a", newline="") as output_csv:
         writer = csv.DictWriter(output_csv, fieldnames=columns)
         writer.writeheader()
-        file = "HCA.csv"
+        file = "hca.csv"
         parse_row(file, writer, columns)
