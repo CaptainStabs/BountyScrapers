@@ -6,7 +6,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import numpy as np
 import re
 import logging
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 # import heartrate; heartrate.trace(browser=True, daemon=True)
 
 def write_data(price_info, writer,  file, row):
@@ -103,12 +103,12 @@ def parse_row(file, writer, columns):
                             c_range, exclusions = c_s[0], c_s[1].split(",")
                             exclusion_zone = []  # I'm hilarious, I know
                             logging.debug("Exclusion loop")
-                            for exclusion in tqdm(exclusions): # Generate excluded number list
+                            for exclusion in exclusions: # Generate excluded number list
                                 if "-" in exclusion:
                                     x, y = exclusion.split("-")
                                     x, y = x.strip().strip(")"), y.strip().strip(")")
 
-                                    for codes in tqdm(range(int(x), int(y) + 1)):
+                                    for codes in range(int(x), int(y) + 1):
                                         exclusion_zone.append(codes)
                                 else:
                                     exclusion_zone.append(exclusion.strip())
@@ -197,25 +197,26 @@ def d_split(c, price_info, writer, file, row, is_rev):
     y = y.strip(";")
     if x and y:
         # Check if the first character is a letter, so that I can add it back in later
-        if x[0].isalpha() and y[0].isalpha():
+        if x[0].strip().strip("-").isalpha() and y[0].strip().strip("-").isalpha():
             if x[0] == y[0]:
                 prepend = x[0]
-                print(prepend)
+                print("prepend:", prepend)
                 # Remove the first character to prevent errors
                 x, y = x.strip()[1:], y.strip()[1:]
+                print("x, y:", x, y)
                 if x[0] == "0":
                     # Preserve any and all padding
                     padding = len(x)
             else:
                 print("AAA")
-                print(x[0], y[0])
+                print(x, y)
                 still_loop = False
                 write_data(price_info, writer, file, row)
         # Check last if last character is a letter, so that I can add it back in later
         if x[-1].strip().strip(";").isalpha() and y[-1].strip().strip(";").isalpha():
             if x[-1] == y[-1]:
                 end_pend = x[-1]
-                print(end_pend)
+                # print(end_pend)
                 x, y = x.strip()[:-1], y.strip()[:-1]
 
                 if x[0] == "0":
@@ -242,7 +243,7 @@ def d_split(c, price_info, writer, file, row, is_rev):
                 if str(y2[-1].strip()) and str(x2[-1].strip()):
                     step = int(y.split(".")[-1].strip()) - int(x.split(".")[-1].strip())
                     logging.debug("float loop")
-                    for codes in tqdm(np.linspace(parse_str(x, c),parse_str(y, c), num=step)):
+                    for codes in np.linspace(parse_str(x, c),parse_str(y, c), num=step):
                         if is_rev:
                             # Figured I might as well leave this in just in case I'm wrong
                             price_info["internal_revenue_code"] = str(codes)
@@ -256,17 +257,19 @@ def d_split(c, price_info, writer, file, row, is_rev):
                     if str(y2[-1].strip()):
                         price_info["code"] = y.strip()
                         print("y2=", y2)
-                        # write_data(price_info, writer, file, row)
+                        write_data(price_info, writer, file, row)
                     elif str(x2[-1].strip()):
                         price_info["code"] = x.strip()
                         print("x2=", x2)
-                        # write_data(price_info, writer, file, row)
+                        write_data(price_info, writer, file, row)
                     else:
                         print("\nMissing an x or y for", c)
             else:
                 try:
                     logging.debug("Non float loop")
-                    for codes in tqdm(range(parse_str(x, c),parse_str(y, c) + 1)):
+                    # if int(y) >= 60000:
+                    #     print(row["code"])
+                    for codes in range(parse_str(x, c),parse_str(y, c) + 1):
                         if is_rev:
                             price_info["internal_revenue_code"] = str(codes).zfill(4)
                             price_info["code"] = "NONE"
@@ -275,8 +278,10 @@ def d_split(c, price_info, writer, file, row, is_rev):
                         else:
                             # Only need this here because it is within the generator
                             if len(str(x)) == 3 and len(str(y)) == 3:
-                                price_info["code"] = str(codes).zfill(3).strip(";")
-                            else: price_info["code"] = "".join([prepend, str(codes).zfill(padding), end_pend])
+                                price_info["code"] = str(codes).zfill(3)
+                            else:
+                                price_info["code"] = "".join([prepend, str(codes).zfill(padding), end_pend])
+                                # print(price_info["code"])
                             # print(str(codes).zfill(3).strip(";"))
                             write_data(price_info, writer, file, row)
 
@@ -307,8 +312,8 @@ if __name__ == "__main__":
     if os.path.exists("extracted_data.csv"):
         os.remove("extracted_data.csv")
 
-    with open(f"extracted_data.csv", "a", newline="") as output_csv:
+    with open("extracted_data.csv", "a", newline="") as output_csv:
         writer = csv.DictWriter(output_csv, fieldnames=columns)
         writer.writeheader()
-        file = "hca.csv"
+        file = "HCA.csv"
         parse_row(file, writer, columns)
