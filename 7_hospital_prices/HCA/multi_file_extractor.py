@@ -143,14 +143,12 @@ def parse_row(file, writer, columns):
                 pass
 def comma_loop(code, price_info, writer, file, row, is_rev):
     # ICD 9/10 regex filters
-    p = re.compile('[a-zA-Z]{1}[0-9]{1}[a-zA-Z0-9]{1}.{1}[a-zA-Z0-9]{0,4}')
+    p = re.compile('[0-9]{1}[a-zA-Z]{1}[a-zA-Z0-9]{1}.{1}[a-zA-Z0-9]{0,4}')
     p2 = re.compile("\d\d\d\d\d/\d\d\d\d\d-\d\d")
     # logging.debug("Comma loop main loop")
     for c in code.strip("-").split(","):
-        if bool(p.search(c.strip().split("-")[0].strip())):
-            print(c)
         if not p2.match(c) and "28890/28890-50" not in c:
-            if "-" in c.strip().strip("-"):
+            if "-" in c.strip().strip("-") and not bool(p.search(c.strip().split("-")[0].strip())):
                 if not c.split("-")[0].strip(): print(c.strip("-"))
                 d_split(c, price_info, writer, file, row, is_rev)
 
