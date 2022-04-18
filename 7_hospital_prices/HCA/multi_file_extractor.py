@@ -201,10 +201,10 @@ def d_split(c, price_info, writer, file, row, is_rev):
         if x[0].strip().strip("-").isalpha() and y[0].strip().strip("-").isalpha():
             if x[0] == y[0]:
                 prepend = x[0]
-                print("prepend:", prepend)
+                # print("prepend:", prepend)
                 # Remove the first character to prevent errors
                 x, y = x.strip()[1:], y.strip()[1:]
-                print("x, y:", x, y)
+                # print("x, y:", x, y)
                 if x[0] == "0":
                     # Preserve any and all padding
                     padding = len(x)
