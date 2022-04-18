@@ -85,7 +85,7 @@ def parse_row(file, writer, columns):
                     price_info["code"] = "NONE"
                     write_data(price_info, writer, file, row)
                 elif "level" in code.lower(): # edge case for emergency level stuff
-                    price_info["code"] = row["code"].replace("CPT/HCPC ")
+                    price_info["code"] = row["code"].replace("CPT/HCPC ").strip()
                 else:
                     if "REV " in code.upper() or "REV" in code.upper():
                         is_rev = True
@@ -97,29 +97,8 @@ def parse_row(file, writer, columns):
                     # print(bool(p2.match(code)))
                     if "," in code:
                         if "excluding" in code.lower():
-                            # print("A")
-                            c_s = code.upper().split("EXCLUDING")
-                            # print(c_s)
-                            c_range, exclusions = c_s[0], c_s[1].split(",")
-                            exclusion_zone = []  # I'm hilarious, I know
-                            logging.debug("Exclusion loop")
-                            for exclusion in exclusions: # Generate excluded number list
-                                if "-" in exclusion:
-                                    x, y = exclusion.split("-")
-                                    x, y = x.strip().strip(")"), y.strip().strip(")")
-
-                                    for codes in range(int(x), int(y) + 1):
-                                        exclusion_zone.append(codes)
-                                else:
-                                    exclusion_zone.append(exclusion.strip())
-                            c_range = c_range.strip().strip(",").strip(".").strip()
-                            x, y = c_range.split("-")
-                            logging.debug("Exclussion generation lop")
-                            for codes in range(int(x),int(y)):
-                                if codes not in exclusion_zone:
-                                    price_info["code"] = codes
-                                    write_data(price_info, writer, file, row)
-
+                            price_info["code"] = code
+                            write_data(price_info, writer, file, row)
 
                         else:
                             comma_loop(code, price_info, writer, file, row, is_rev)
@@ -183,6 +162,7 @@ def d_split(c, price_info, writer, file, row, is_rev):
 
     else: is_rev = rev_checker(c)
 
+    has_letter = False
     still_loop = True
     prepend = ""
     end_pend = ""
@@ -199,99 +179,76 @@ def d_split(c, price_info, writer, file, row, is_rev):
     if x and y:
         # Check if the first character is a letter, so that I can add it back in later
         if x[0].strip().strip("-").isalpha() and y[0].strip().strip("-").isalpha():
+            has_letter = True
             if x[0] == y[0]:
                 prepend = x[0]
                 # print("prepend:", prepend)
                 # Remove the first character to prevent errors
-                x, y = x.strip()[1:], y.strip()[1:]
-                # print("x, y:", x, y)
-                if x[0] == "0":
-                    # Preserve any and all padding
-                    padding = len(x)
+                x2, y2 = x.strip()[1:], y.strip()[1:]
+
             else:
                 print("AAA")
                 print(x, y)
                 still_loop = False
+                price_info["code"] = c
                 write_data(price_info, writer, file, row)
         # Check last if last character is a letter, so that I can add it back in later
         if x[-1].strip().strip(";").isalpha() and y[-1].strip().strip(";").isalpha():
+            has_letter = True
             if x[-1] == y[-1]:
                 end_pend = x[-1]
                 # print(end_pend)
-                x, y = x.strip()[:-1], y.strip()[:-1]
+                x2, y2 = x.strip()[:-1], y.strip()[:-1]
 
-                if x[0] == "0":
-                    padding = len(x)
+
             else:
                 print("BBB")
                 print(x, y)
                 print(x[-1], y[-1])
                 still_loop = False
-                # write_data(price_info, writer, file, row)
+                price_info["code"] = c
+                write_data(price_info, writer, file, row)
 
-        if still_loop:
-            # Naive way to check if x is a float
-            if "." in x and "." in y:
-                isfloat = True
-            else:
-                isfloat = False
+            if still_loop:
+                if not has_letter:
+                    print(x,y)
+                    x2, y2 = x, y
 
-            # Floats are only ICD 9/10 codes afaict
-            if isfloat:
-                # Number of steps between the two numbers, i.e. num of steps between 9 and 1 is 8
-                x2, y2 = x.split("."), y.split(".")
-                # Confirm that there is in fact numbers after the decimal point
-                if str(y2[-1].strip()) and str(x2[-1].strip()):
-                    step = int(y.split(".")[-1].strip()) - int(x.split(".")[-1].strip())
-                    logging.debug("float loop")
-                    for codes in np.linspace(parse_str(x, c),parse_str(y, c), num=step):
-                        if is_rev:
-                            # Figured I might as well leave this in just in case I'm wrong
-                            price_info["internal_revenue_code"] = str(codes)
-                            price_info["code"] = "NONE"
+                if int(x2.strip()) + 1 == int(y2.strip()):
+                    if still_loop:
+                        # Naive way to check if x is a float
+                        if "." in x and "." in y:
+                            isfloat = True
                         else:
-                            # Re-add the removed letters
-                            price_info["code"] = "".join([prepend, "{:.2f}".format(codes), end_pend])
+                            isfloat = False
 
-                        write_data(price_info, writer, file, row)
-                else:
-                    if str(y2[-1].strip()):
-                        price_info["code"] = y.strip()
-                        print("y2=", y2)
-                        write_data(price_info, writer, file, row)
-                    elif str(x2[-1].strip()):
-                        price_info["code"] = x.strip()
-                        print("x2=", x2)
-                        write_data(price_info, writer, file, row)
-                    else:
-                        print("\nMissing an x or y for", c)
-            else:
-                try:
-                    logging.debug("Non float loop")
-                    # if int(y) >= 60000:
-                    #     print(row["code"])
-                    for codes in range(parse_str(x, c),parse_str(y, c) + 1):
-                        if is_rev:
-                            price_info["internal_revenue_code"] = str(codes).zfill(4)
-                            price_info["code"] = "NONE"
-                            write_data(price_info, writer, file, row)
+                        # Floats are only ICD 9/10 codes afaict
 
-                        else:
-                            # Only need this here because it is within the generator
-                            if len(str(x)) == 3 and len(str(y)) == 3:
-                                price_info["code"] = str(codes).zfill(3)
-                            else:
-                                price_info["code"] = "".join([prepend, str(codes).zfill(padding), end_pend])
-                                # print(price_info["code"])
-                            # print(str(codes).zfill(3).strip(";"))
-                            write_data(price_info, writer, file, row)
+                        try:
+                            logging.debug("Non float loop")
+                            # if int(y) >= 60000:
+                            #     print(row["code"])
+                            for codes in [x, y]:
+                                if is_rev:
+                                    price_info["internal_revenue_code"] = str(codes).zfill(4)
+                                    price_info["code"] = "NONE"
+                                    write_data(price_info, writer, file, row)
 
-                except Exception as e:
-                    print(e)
-                    print(f"\nLine 192 failure: ({x}, {y})", c)
-                    import sys; sys.exit(1)
+                                else:
+                                    if has_letter:
+                                        price_info["code"] = "".join([prepend, codes, end_pend])
+                                    else:
+                                        price_info["code"] = str(codes)
+                                    write_data(price_info, writer, file, row)
+
+                        except Exception as e:
+                            print(e)
+                            print(f"\nLine 192 failure: ({x}, {y})", c)
+                            import sys; sys.exit(1)
+
     else:
-        print("\nx or y is null: ", ",".join([x,y]), row["code"])
+        price_info["code"] = c
+        write_data(price_info, writer, file, row)
 
 def rev_checker(c):
     c = c.strip()
@@ -310,7 +267,7 @@ if __name__ == "__main__":
     threads = []
     # "Charge # (Px Code)",Procedure Name,Procedure Code (CPT / HCPCS),Default Modifier,Gross Charge,Discounted Cash Charge,Hospital Inpatient / Outpatient / Both(Px Code)",Procedure Name,Procedure Code (CPT / HCPCS),Default Modifier,Gross Charge,Discounted Cash Charge,Hospital Inpatient / Outpatient / Both
     columns = ["cms_certification_num", "code","description", "payer", "price", "inpatient_outpatient", "code_disambiguator", "internal_revenue_code", "units"]
-    out_file = "extracted_data.csv"
+    out_file = "F:\\hospital-price-transparency-v4\\extracted_data.csv"
     if os.path.exists(out_file):
         os.remove(out_file)
 
