@@ -3,13 +3,36 @@ from tqdm import tqdm
 import traceback as tb
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import re
 # import heartrate; heartrate.trace(browser=True, daemon=True)
 
 def write_data(price_info, writer, insurances, file, row):
     if "code" in price_info.keys():
-        if not str(price_info["code"]).strip():
+        if not str(price_info["code"]).strip() or str(price_info["code"]) == "NONE":
             price_info["code"] = "NONE"
-    else: price_info["code"] = "NONE"
+            price_info["code_disambiguator"] = price_info["description"]
+    else:
+        price_info["code"] = "NONE"
+        price_info["code_disambiguator"] = price_info["description"]
+
+    try:
+        if len(str(price_info["code"]).strip()) == 4 and str(price_info["code"])[0] == "0":
+            if str(price_info["internal_revenue_code"]) != "NONE":
+                print(price_info["internal_revenue_code"])
+            else:
+                price_info["internal_revenue_code"] = price_info["code"]
+                price_info["code"] = "NONE"
+                price_info["code_disambiguator"] = row["description"]
+        elif str(price_info["code"]).strip() == "0250":
+            print(str(price_info["code"]), str(len(price_info["code"])))
+    except KeyError:
+        pass
+
+    if re.compile('^\d$').search(price_info["code_disambiguator"]):
+        price_info["code_disambiguator"] = price_info["description"]
+        
+    if price_info["internal_revenue_code"] == "0250":
+        price_info["code_disambiguator"] = price_info["description"]
 
     writer.writerow(price_info)
 
@@ -32,7 +55,7 @@ def parse_row(file, writer, columns):
                     "description": " ".join(str(row["description"]).split()),
                     "inpatient_outpatient": row["inpatient_outpatient"],
                     "price": row["price"],
-                    "code_disambiguator": "NONE",
+                    "code_disambiguator": row["code_disambiguator"].replace("NDC", "").replace("HCPCS", "").replace("CPT", "").replace("MS-DRG", ""),
                     "internal_revenue_code": row["internal_revenue_code"],
                     "payer": row["payer"],
 
