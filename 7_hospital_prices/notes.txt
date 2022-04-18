@@ -1,0 +1,3 @@
+gpha/mercy/test.py That really efficent list comprehension thing you wrote to deal with multiple codes is here
+
+how to grep: https://stackoverflow.com/a/35280826
