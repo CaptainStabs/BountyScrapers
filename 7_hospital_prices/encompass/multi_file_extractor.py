@@ -44,6 +44,9 @@ def parse_row(in_directory, file, writer, columns):
                 internal_revenue_code = str(price_info["internal_revenue_code"])
                 multi_rev = False
 
+                if price_info["description"]:
+                    price_info["code_disambiguator"] = price_info["description"]
+
                 if internal_revenue_code == "250":
                     price_info["code_disambiguator"] = price_info["description"][:2048]
                 elif internal_revenue_code == "118; 120; 128; 138; 148; 158":
@@ -75,7 +78,7 @@ def parse_row(in_directory, file, writer, columns):
                         if "Note 2" in row[payer]:
                             continue
 
-                        price_info["price"] =   Decimal(sub(r'[^\d.]', '', row[payer]))
+                        price_info["price"] = Decimal(sub(r'[^\d.]', '', row[payer]))
 
                         try:
                             price_info["payer"] = payers[payer]
