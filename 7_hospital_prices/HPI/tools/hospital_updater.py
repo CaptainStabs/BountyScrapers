@@ -3,4 +3,4 @@ with open("nums.txt", 'r') as f:
     print(lines)
     # for line in f:
         # print("update hospitals set last_edited_by_username = 'captainstabs')
-176 hospitals
+# 176 hospitals

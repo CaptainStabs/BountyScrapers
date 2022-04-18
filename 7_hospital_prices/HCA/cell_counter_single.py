@@ -2,7 +2,7 @@ from tqdm import tqdm
 
 total_cells = 0
 total_rows = 0
-with open("extracted_data.csv", "r") as f:
+with open("F:/hospital-price-transparency-v4/extracted_data.csv", "r") as f:
     for i, line in tqdm(enumerate(f)):
         if i == 0:
             continue
