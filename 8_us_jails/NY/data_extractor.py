@@ -3,54 +3,71 @@ from tqdm import tqdm
 import traceback as tb
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import polars as pl
 import pandas as pd
-# import heartrate; heartrate.trace(browser=True, daemon=True)
+import doltcli as dolt
+import mysql.connector
 
+
+# import heartrate; heartrate.trace(browser=True, daemon=True)
+# pl.set_option('display.max_columns', 8)
 columns = ["snapshot_date", "total_off_site", "total", "convicted_or_sentenced", "detained_or_awaiting_trial", "other_offense", "id"]
 snap_dates = ["2021-04-01", "2021-05-01", "2021-06-01", "2021-07-01", "2021-08-01", "2021-09-01", "2021-10-01", "2021-11-01", "2021-12-01", "2022-02-01", "2022-03-01", "2022-04-01"]
 in_col = {
     0:""
 }
+conn = mysql.connector.connect(user='root', password='', host='127.0.0.1', database='us_jails')
+cursor = conn.cursor()
+if os.path.exists("extracted_data.csv"):
+    os.remove("extracted_data.csv")
+# db = dolt.Dolt("C:\\Users\\adria\\us-jails"\\)
 with open("extracted_data.csv", "a") as output_csv:
     writer = csv.DictWriter(output_csv, fieldnames=columns)
-    for file in os.listdir("./files/"):
-        # with open(f"./files/{file}", "r") as f:
-        #     line_count = len([line for line in f.readlines()]) - 1
-        #     f.seek(0)
-        #     # for i, line in tqdm(enumerate(f), total=line_count):
-        #     lines = []
-        #     for i, line in enumerate(f):
-        #         cols = line.split(',')[2:]
-        #         lines.append(line)
-        #
-        #         for j, col in cols:
-        #             if col[i].lower() == "census": continue
-        #
-        #             jail_info = {
-        #                 "id": file,
-        #                 "snapshot_date": snap_dates[j],
-        #
-        #             }
+    for i, file in enumerate(os.listdir("./files/")):
+        jail_name = " ".join(file.split()[:2])
+        cursor.execute(f"SELECT id from jails where facility_name like '{jail_name}%' and facility_state in ('NY');")
 
-        df = pd.read_csv(f"./files/{file}")
-        df = df.iloc[: , :-1]
-        # print(df)
-        df.columns=["jail", "type", "2021-04-01", "2021-05-01", "2021-06-01", "2021-07-01", "2021-08-01", "2021-09-01", "2021-10-01", "2021-11-01", "2021-12-01", "2022-01-01", "2022-02-01", "2022-03-01", "2022-04-01"]
-        df.drop("jail", 1, inplace=True)
-        df = df.transpose()
-        df = df.drop(df.columns[[0,2]], axis=1)
-        # print(df)
-        df.columns=["total_off_site", "total", "convicted_or_sentenced", "civil", "federal", "technical_parole_violators", "state_readies", "detained_or_awaiting_trial"]
-        df = df.iloc[1:, :]
-        # print(df)
-        df["other_offense"] = df[["civil", "federal", "state_readies"]].sum(axis=1)
-        df = df.drop(df.columns[[3,4,6]], axis=1)
-        df.columns=["snapshot_date", "total_off_site", "total", "convicted_or_sentenced", "detained_or_awaiting_trial", "other_offense"]
-        df["id"] = file
-        print(df['snapshot_date'].to_csv(index=False))
+        id = list()
+        for r in cursor:
+            id.append(r)
+        if len(id) > 1 or not int(len(id)):
+            print("TOO MANY/NOT ENOUGH IDS:", id, file)
+            continue
+        else:
+            id = id[0][0]
+        print(file)
+        df = pl.read_csv(f"./files/{file}")
+        # Drop last column (date range)
+        df = df.drop(['jail', 'delete'])
+        # Remove old header
+        df = df[1:]
 
+        df = df.transpose(include_header=True)
+        # print(df[0])
+        df = df.drop("column_1")
+        # print(df)
+        # df2 = df.to_pandas()
+        # print(df2[0])
+        df.columns = ["snapshot_date", "total_off_site", "total", "convicted_or_sentenced", "civil_offense", "federal_offense", "technical_parole_violators", "state_readies", "detained_or_awaiting_trial"]
+        df = df[1:]
+        # print(df)
+        df2 = df.to_pandas()
+        con_col = ["state_readies", "detained_or_awaiting_trial"]
+        # df2[con_col] = pd.to_numeric(df2[con_col].stack(), downcast="integer", errors='coerce').unstack()
+        df2["state_readies"] = pd.to_numeric(df2["state_readies"], downcast="integer")
+        df2["detained_or_awaiting_trial"] = pd.to_numeric(df2["detained_or_awaiting_trial"], downcast="integer")
 
-        # o_df = pd.DataFrame(columns=columns)
-        # o_df["id"] = file
-        # print(o_df)
-        break
+        df2["detained_or_awaiting_trial"] = df2[["detained_or_awaiting_trial", "state_readies"]].sum(axis=1)
+        # df = pl.from_pandas(df2)
+        df = df2
+        df = df.drop("state_readies", axis=1)
+        # df = df.to_pandas()
+        print(id)
+        df["id"] = id
+        df["source_url"] = "https://www.criminaljustice.ny.gov/crimnet/ojsa/jail_population.pdf"
+        # print(df.info())
+
+        if not i:
+            df.to_csv("extracted_data.csv", mode="a", index=False)
+        else:
+            df.to_csv("extracted_data.csv", mode="a", header=False, index=False)
