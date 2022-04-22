@@ -50,9 +50,28 @@ def jail_name_fixer(jail_name):
 
     return jail_name
 
+def female_detector(row):
+    if "female" in row.lower():
+        print("female")
+        return True
+    print("not female")
+    return False
+
 in_dir = "./csvs/"
 con_col = ["pre_trial_felony","pre_trial_misd", "TDOC_Backup"]
 conn = mysql.connector.connect(user='root', password='', host='127.0.0.1', database='us_jails')
+
+su = pl.read_csv("defemaled_urls.csv", has_header=False, skiprows=lambda x: female_detector(x))
+# su1.columns = ["file", "url"]
+# su1 = pd.read_csv("urls.csv", header=None)
+# print(su1)
+# su = pd.concat((x.query("'female' in url") for x in su1), ignore_index=True)
+
+su.columns = ["file", "url"]
+# su = su[su["url"].str.contains("female")]
+su = dict(zip(su["file"], su["url"]))
+# print(su)
+
 
 remove_file("extracted_data")
 for i, file in tqdm(enumerate(os.listdir(in_dir))):
@@ -68,15 +87,24 @@ for i, file in tqdm(enumerate(os.listdir(in_dir))):
     df = df.drop(con_col)
     df = df.drop(["felony1", "felony2"])
     df = df.to_pandas()
-    df["snapshot_date"] = file_month_incrementer(file)
-    if df["snapshot_date"].split("-")[0] in range(2000,2020):
-        year = df["snapshot_date"].split("-")[0]
+    date = " 01 ".join(file.split("-")[1][:-4].split())
+    # Check if file is one of the day-specific snapshots (2000-2019)
+
+    if "July" in date and int(date.split()[-1]) in range(2000,2020):
+        # print(date)
+        year = date.split()[-1]
         df["snapshot_date"] = str(year) + "-07-31"
+    else:
+        df["snapshot_date"] = file_month_incrementer(date)
+
+
 
     # df = pl.from_pandas(df)
     # print(df["jail"])
     df["jail"] = df.apply(lambda x: jail_name_fixer(x["jail"]), axis=1)
     df["id"] = df.apply(lambda x: jail_name_search(x["jail"], "TN", conn), axis=1)
+    df["source_url"] = su[file[7:-4]]
+    df["source_url1"] = "https://www.tn.gov/correction/statistics-and-information/jail-summary-reports.html"
     df.dropna(subset=["id"], inplace=True)
 
     df.drop("jail", axis=1, inplace=True)
