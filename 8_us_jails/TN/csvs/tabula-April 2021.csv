@@ -1,54 +1,54 @@
-"",,,Other,Fed
-"",TDOC,Local,Conv.,&
-FACILITY,Backup,Felons,Felons***,Oth
-Anderson,61,6,15,
-Bedford,6,6,3,
-Bedford Workhouse (closed),0,0,0,
-Benton,13,4,2,
-Bledsoe,75,0,0,
-Blount,47,6,0,
-Bradley,29,12,11,
-Campbell,97,11,7,
-Cannon,4,10,0,
-Carroll,20,18,0,
-Carter,10,7,1,
-Cheatham,3,2,0,
-Chester,24,3,0,
-Claiborne,41,29,0,
-Clay,4,2,0,
-Cocke Jail,2,9,0,
-Cocke Annex,3,15,0,
-Coffee Annex (not in use),0,0,0,
-Coffee,25,5,0,
-Crockett,0,8,0,
-Cumberland,14,8,0,
-Davidson CJC (demolished),0,0,0,
-Davidson DDC,0,62,39,
-Davidson HDC (closed),0,0,0,
-Davidson CDM,0,58,55,
-Davidson CDF,0,24,12,
-Davidson MCC,5,179,13,
-Davidson ORC (closed),0,0,0,
-Davidson CCA (MDF),0,0,0,
-Decatur,9,5,0,
-DeKalb,7,0,0,
-Dickson,16,2,0,
-Dyer,28,8,0,
-Dyer Annex,21,3,0,
-Fayette,0,7,2,
-Fentress,0,23,3,
-Franklin,22,21,0,
-Gibson,82,1,0,
-Giles,6,19,0,
-Grainger Co. Det. Center,4,15,7,
-Greene Det. Center,13,3,0,
-Greene WH,8,0,0,
-Grundy,16,0,0,
-Hamblen,30,4,0,
-Hamilton Jail,0,0,0,
-Hamilton - Silverdale CCA,0,0,76,
-Hancock,42,17,0,
-Hardeman,10,11,4,
+"",,,Other,Federal,,Pre-,Pre-,Total
+"",TDOC,Local,Conv.,&,Conv.,trial,trial,Jail
+FACILITY,Backup,Felons,Felons***,Others,Misd.,Felony,Misd.,Pop.
+Anderson,61,6,15,0,35,110,93,320
+Bedford,6,6,3,2,46,12,71,146
+Bedford Workhouse (closed),0,0,0,0,0,0,0,0
+Benton,13,4,2,2,4,17,24,66
+Bledsoe,75,0,0,0,5,14,2,96
+Blount,47,6,0,114,40,133,96,436
+Bradley,29,12,11,57,41,147,56,353
+Campbell,97,11,7,0,19,25,18,177
+Cannon,4,10,0,0,1,4,20,39
+Carroll,20,18,0,2,13,24,17,94
+Carter,10,7,1,38,71,106,12,245
+Cheatham,3,2,0,4,9,33,17,68
+Chester,24,3,0,0,11,24,9,71
+Claiborne,41,29,0,0,41,43,24,178
+Clay,4,2,0,0,2,5,5,18
+Cocke Jail,2,9,0,0,5,16,14,46
+Cocke Annex,3,15,0,0,9,24,23,74
+Coffee Annex (not in use),0,0,0,0,0,0,0,0
+Coffee,25,5,0,0,19,28,157,234
+Crockett,0,8,0,1,2,21,3,35
+Cumberland,14,8,0,3,22,48,20,115
+Davidson CJC (demolished),0,0,0,0,0,0,0,0
+Davidson DDC,0,62,39,59,29,316,25,530
+Davidson HDC (closed),0,0,0,0,0,0,0,0
+Davidson CDM,0,58,55,4,62,343,25,547
+Davidson CDF,0,24,12,1,11,71,9,128
+Davidson MCC,5,179,13,2,1,26,0,226
+Davidson ORC (closed),0,0,0,0,0,0,0,0
+Davidson CCA (MDF),0,0,0,0,0,0,0,0
+Decatur,9,5,0,0,6,33,6,59
+DeKalb,7,0,0,0,11,35,10,63
+Dickson,16,2,0,0,32,118,27,195
+Dyer,28,8,0,0,15,70,30,151
+Dyer Annex,21,3,0,0,2,0,0,26
+Fayette,0,7,2,14,6,27,19,75
+Fentress,0,23,3,4,40,37,24,131
+Franklin,22,21,0,0,41,45,18,147
+Gibson,82,1,0,0,41,65,59,248
+Giles,6,19,0,0,13,37,9,84
+Grainger Co. Det. Center,4,15,7,4,5,16,14,65
+Greene Det. Center,13,3,0,11,43,107,30,207
+Greene WH,8,0,0,0,97,30,23,158
+Grundy,16,0,0,0,3,26,4,49
+Hamblen,30,4,0,0,68,78,46,226
+Hamilton Jail,0,0,0,5,1,17,16,39
+Hamilton - Silverdale CCA,0,0,76,146,36,481,271,1010
+Hancock,42,17,0,0,8,3,15,85
+Hardeman,10,11,4,0,5,46,9,85
 Hardin,48,8,0,0,8,36,14,114
 Hawkins,34,0,0,0,68,66,24,192
 Haywood,0,23,0,1,5,44,4,77

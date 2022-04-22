@@ -61,9 +61,6 @@ Lake,24,0,0,0,0,17,6,47
 Lauderdale,4,65,1,0,11,17,10,108
 Lawrence,2,1,6,0,13,8,5,35
 Lewis,0,18,0,0,10,8,5,41
-"",,,Other,,,Pre-,Pre-,,Total
-"",TDOC,Local,Conv.,,Conv.,trial,trial,,Jail
-FACILITY,Backup,Felons,Felons**,Others,Misd.,Felony,Misd.,,Pop.
 Lincoln,44,0,0,0,39,4,14,,101
 Loudon,1,4,1,2,26,22,14,,70
 Macon,10,0,0,0,6,2,18,,36
@@ -114,4 +111,3 @@ Weakley,14,10,7,0,40,7,8,,86
 White,7,1,0,0,59,6,10,,83
 Williamson,29,0,0,13,48,81,84,,255
 Wilson,19,5,4,0,40,38,44,,150
-TOTAL,1735,3825,602,586,4954,5411,2062,,19175

@@ -1,50 +1,50 @@
-"",,,Other Federal,,,Pre-   Pre-,,Total
-"",TDOC,Local,Conv. &,,Conv.,trial trial,,Jail
-FACILITY,Backup Felons Felons** Others,,,,Misd. Felony Misd.,,,Pop.
-Anderson,44,11,9 0,,51,149 86,,350
-Bedford,41,1,12 0,,27,22 30,,133
-Bedford Workhouse,10,4,0 0,,56,0 1,,71
-Benton,20,11,0 0,,21,17 4,,73
-Bledsoe,35,0,21 0,,19,5 13,,93
-Blount,98,65,0 109,,83,149 74,,578
-Bradley,128,16,53 54,,35,88 33,,407
-Campbell,52,22,5 0,,15,85 22,,201
-Cannon,9,5,0 0,,20,3 20,,57
-Carroll,24,4,0 1,,40,12 30,,111
-Carter,21,10,0 0,,51,151 55,,288
-Cheatham,23,0,0 0,,23,30 17,,93
-Chester,18,3,0 0,,10,11 7,,49
-Claiborne,74,26,0 45,,14,57 20,,236
-Clay,4,2,0 0,,5,5 7,,23
-Cocke,35,23,0 0,,29,32 35,,154
-Coffee,42,27,0 0,,70,16 126,,281
-Crockett,12,3,0 0,,11,22 16,,64
-Cumberland,88,10,0 2,,53,46 33,,232
-Davidson CJC,13,6,64 57,,95,467 49,,751
-Davidson HDC,7,5,60 2,,61,237 1,,373
-Davidson CWC (CDC-M),0,38,98 16,,297,250 39,,738
-Davidson CDC (F),7,9,46 13,,94,136 21,,326
-Davidson CCA,0,1184,0 0,,0,0 0,,1184
-Decatur,1,2,12 0,,6,4 3,,28
-DeKalb,9,9,12 2,,25,17 30,,104
-Dickson,95,19,0 4,,106,112 26,,362
-Dyer,63,13,28 0,,28,50 14,,196
-Fayette,35,4,3 14,,4,50 14,,124
-Fentress,4,9,0 0,,18,10 24,,65
-Franklin,24,39,6 0,,24,34 14,,141
-Gibson,79,5,0 0,,28,68 20,,200
-Giles,27,16,0 0,,39,37 28,,147
-Grainger Co. Det. Center,45,4,0 0,,1,13 24,,87
-Greene,91,13,0 49,,118,107 52,,430
-Grundy,4,0,0 0,,11,24 10,,49
-Hamblen,22,81,0 1,,112,80 41,,337
-Hamilton Jail,1,0,51 82,,15,283 80,,512
-Hamilton - Silverdale CCA,2,0,10 78,,292,0 501,,883
-Hancock,0,40,35 0,,8,5 14,,102
-Hardeman,23,8,7 0,,6,63 18,,125
-Hardin,38,5,0 1,,20,44 15,,123
-Hawkins,124,2,0 0,,53,52 30,,261
-Haywood,0,48,0 2,,18,43 22,,133
+"",,Other Federal,,Pre-   Pre-,Total
+"",TDOC,Local,Conv. &,Conv.,trial trial,Jail
+FACILITY,Backup Felons Felons** Others,,Misd. Felony Misd.,,Pop.
+Anderson,44,11,9,0,51,149,86,350
+Bedford,41,1,12,0,27,22,30,133
+Bedford Workhouse,10,4,0,0,56,0,1,71
+Benton,20,11,0,0,21,17,4,73
+Bledsoe,35,0,21,0,19,5,13,93
+Blount,98,65,0,109,83,149,74,578
+Bradley,128,16,53,54,35,88,33,407
+Campbell,52,22,5,0,15,85,22,201
+Cannon,9,5,0,0,20,3,20,57
+Carroll,24,4,0,1,40,12,30,111
+Carter,21,10,0,0,51,151,55,288
+Cheatham,23,0,0,0,23,30,17,93
+Chester,18,3,0,0,10,11,7,49
+Claiborne,74,26,0,45,14,57,20,236
+Clay,4,2,0,0,5,5,7,23
+Cocke,35,23,0,0,29,32,35,154
+Coffee,42,27,0,0,70,16,126,281
+Crockett,12,3,0,0,11,22,16,64
+Cumberland,88,10,0,2,53,46,33,232
+Davidson CJC,13,6,64,57,95,467,49,751
+Davidson HDC,7,5,60,2,61,237,1,373
+Davidson CWC (CDC-M),0,38,98,16,297,250,39,738
+Davidson CDC (F),7,9,46,13,94,136,21,326
+Davidson CCA,0,1184,0,0,0,0,0,1184
+Decatur,1,2,12,0,6,4,3,28
+DeKalb,9,9,12,2,25,17,30,104
+Dickson,95,19,0,4,106,112,26,362
+Dyer,63,13,28,0,28,50,14,196
+Fayette,35,4,3,14,4,50,14,124
+Fentress,4,9,0,0,18,10,24,65
+Franklin,24,39,6,0,24,34,14,141
+Gibson,79,5,0,0,28,68,20,200
+Giles,27,16,0,0,39,37,28,147
+Grainger%Co%Det% Center,45,4,0,0,1,13,24,87
+Greene,91,13,0,49,118,107,52,430
+Grundy,4,0,0,0,11,24,10,49
+Hamblen,22,81,0,1,112,80,41,337
+Hamilton Jail,1,0,51,82,15,283,80,512
+Hamilton - Silverdale CCA,2,0,10,78,292,0,501,883
+Hancock,0,40,35,0,8,5,14,102
+Hardeman,23,8,7,0,6,63,18,125
+Hardin,38,5,0,1,20,44,15,123
+Hawkins,124,2,0,0,53,52,30,261
+Haywood,0,48,0,2,18,43,22,133
 Henderson,54,4,49,0,6,19,14,146
 Henry,78,21,0,0,19,31,13,162
 Hickman,2,37,5,0,19,40,9,112
