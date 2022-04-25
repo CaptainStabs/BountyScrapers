@@ -6,8 +6,6 @@ import polars as pl
 import pandas as pd
 import os
 import secrets
-from io import StringIO
-import csv
 
 
 @functools.lru_cache(maxsize=None)
@@ -75,16 +73,24 @@ def search_and_add(jail_name, state, conn, file="added_jails.csv", county=None, 
 def parse_address(jail_name, state, county, address, file, verbosity):
     address_dict = {"id": "STABS" + str(secrets.token_hex(16)), "county": county, "facility_name": jail_name, "facility_address": None, "facility_city": None,  "facility_state": state, "facility_zip": None, "is_private":0, "in_urban_area": 0, "holds_greater_than_72_hours": -9, "holds_less_than_1_yr": -9, "felonies_greater_than_1_yr": -9, "holds_greater_than_1_yr": -9, "hold_less_than_72_hours": -9, "facility_gender": 1, "num_inmates_rated_for": 0}
     dtype = {"id":str,
-            "facility_zip":str
+            "facility_zip":str,
+            "is_private": int,
+            "in_urban_area": int,
+            "holds_greater_than_72_hours": int,
+            "holds_less_than_1_yr": int,
+            "felonies_greater_than_1_yr": int,
+            "holds_greater_than_1_yr":int,
+            "hold_less_than_72_hours":int,
+            "facility_gender":int,
+            "num_inmates_rated_for":int
             }
     if not os.path.exists(file):
         header = True
-        df = pl.from_pandas(pd.DataFrame(columns=["id","county","facility_name","facility_address","facility_city","facility_state","facility_zip","is_private","in_urban_area","holds_greater_than_72_hours","holds_less_than_1_yr","felonies_greater_than_1_yr","holds_greater_than_1_yr","hold_less_than_72_hours","facility_gender","num_inmates_rated_for"], dtype=dtype))
+        df = pl.from_pandas(pd.DataFrame(columns=address_dict.keys(), dtype=int))
 
     else:
         df = pl.read_csv(file, has_header=True, dtype=dtype)
         header = False
-
 
     raw_address = str(address).upper().strip()
     try:
@@ -111,13 +117,10 @@ def parse_address(jail_name, state, county, address, file, verbosity):
         except KeyError:
             logging.warning("   [!] Zip key error")
 
-        adi = address_dict.items()
-        adl = list(adi)
+        adl = list(address_dict.items())
 
-        df = pl.concat([df, pl.DataFrame(adl, columns=address_dict.keys())[1:]])
-        print(df.unique(subset="facility_address"))
+        df = pd.concat([df, pd.DataFrame(adl, columns=address_dict.keys())[1:]])
         df = df.unique(subset="facility_address")
-        print(df)
         df = df.to_pandas()
         if header:
             df.to_csv(file, mode="a", index=False)
