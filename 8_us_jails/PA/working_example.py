@@ -27,14 +27,15 @@ def parse_address(jail_name, state, county, address, file, verbosity):
                 }
         if not os.path.exists(file):
             header = True
-            df = pl.from_pandas(pd.DataFrame(columns=["id","county","facility_name","facility_address","facility_city","facility_state","facility_zip","is_private","in_urban_area","holds_greater_than_72_hours","holds_less_than_1_yr","felonies_greater_than_1_yr","holds_greater_than_1_yr","hold_less_than_72_hours","facility_gender","num_inmates_rated_for"], dtype=int))
+            # df = pl.from_pandas(pd.DataFrame(columns=["id","county","facility_name","facility_address","facility_city","facility_state","facility_zip","is_private","in_urban_area","holds_greater_than_72_hours","holds_less_than_1_yr","felonies_greater_than_1_yr","holds_greater_than_1_yr","hold_less_than_72_hours","facility_gender","num_inmates_rated_for"], dtype=int))
 
         elif os.path.exists(file) and os.stat(file).st_size > 271:
-            df = pl.read_csv(file, has_header=True, dtype=dtype)
+            # df = pl.read_csv(file, has_header=True, dtype=dtype)
             header = False
+            # os.remove(file)
         else:
             header = True
-            df = pl.from_pandas(pd.DataFrame(columns=["id","county","facility_name","facility_address","facility_city","facility_state","facility_zip","is_private","in_urban_area","holds_greater_than_72_hours","holds_less_than_1_yr","felonies_greater_than_1_yr","holds_greater_than_1_yr","hold_less_than_72_hours","facility_gender","num_inmates_rated_for"], dtype=str))
+            # df = pl.from_pandas(pd.DataFrame(columns=["id","county","facility_name","facility_address","facility_city","facility_state","facility_zip","is_private","in_urban_area","holds_greater_than_72_hours","holds_less_than_1_yr","felonies_greater_than_1_yr","holds_greater_than_1_yr","hold_less_than_72_hours","facility_gender","num_inmates_rated_for"], dtype=str))
 
         raw_address = str(address).upper().strip()
         try:
@@ -62,18 +63,17 @@ def parse_address(jail_name, state, county, address, file, verbosity):
                 logging.warning("   [!] Zip key error")
 
             adl = list(address_dict.items())
-            # print(address_dict.values())
-            df = df.to_pandas()
+
             # Append the parsed data to the dataframe
-            df2 = pd.DataFrame(address_dict.values(), dtype=str)
+            df = pd.DataFrame(address_dict.values(), dtype=str)
 
-            # print(df)
-            df2 = pl.from_pandas(df2)
-            df2 = df2.transpose(include_header=False, column_names=address_dict.keys())
-
-            df = pd.concat([df, df2.to_pandas()])
-            df = df.drop_duplicates(subset=["id""facility_name", "facility_address", "county"])
-
+            # # print(df)
+            df = pl.from_pandas(df)
+            df = df.transpose(include_header=False, column_names=address_dict.keys())
+            #
+            # df = pd.concat([df, df2.to_pandas()])
+            # df = df.drop_duplicates(subset=["id","facility_name", "facility_address", "county"])
+            df = df.to_pandas()
 
             if header:
                 df.to_csv(file, mode="a", index=False)
