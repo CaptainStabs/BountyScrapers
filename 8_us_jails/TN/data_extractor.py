@@ -23,10 +23,11 @@ def jail_name_fixer(jail_name):
     if "Bedford" in jail_name and "Workhouse" in jail_name:
         jail_name = "abc"
 
-    if "Dyer" in jail_name and 'annex' not in jail_name:
+    if "Dyer" in jail_name and 'Annex' not in jail_name:
+
         jail_name = "Dyer%County Jail"
 
-    elif "Dyer" in jail_name and "Annex":
+    elif "Dyer" in jail_name and "Annex" in jail_name:
         jail_name = "Dyer%County%Correctional Work Center"
 
     if "Jefferson" in jail_name and "WH" not in jail_name:
@@ -73,7 +74,7 @@ su = dict(zip(su["file"], su["url"]))
 # print(su)
 
 
-remove_file("extracted_data")
+remove_file("extracted_data.csv")
 for i, file in tqdm(enumerate(os.listdir(in_dir))):
     print("\n", file)
     df = pl.read_csv(os.path.join(in_dir, file), has_header=False, skip_rows=3)
@@ -88,8 +89,8 @@ for i, file in tqdm(enumerate(os.listdir(in_dir))):
     df = df.drop(["felony1", "felony2"])
     df = df.to_pandas()
     date = " 01 ".join(file.split("-")[1][:-4].split())
-    # Check if file is one of the day-specific snapshots (2000-2019)
 
+    # Check if file is one of the day-specific snapshots (2000-2019)
     if "July" in date and int(date.split()[-1]) in range(2000,2020):
         # print(date)
         year = date.split()[-1]
@@ -104,10 +105,16 @@ for i, file in tqdm(enumerate(os.listdir(in_dir))):
     df["jail"] = df.apply(lambda x: jail_name_fixer(x["jail"]), axis=1)
     df["id"] = df.apply(lambda x: jail_name_search(x["jail"], "TN", conn), axis=1)
     df["source_url"] = su[file[7:-4]]
-    df["source_url1"] = "https://www.tn.gov/correction/statistics-and-information/jail-summary-reports.html"
+    df["source_url_2"] = "https://www.tn.gov/correction/statistics-and-information/jail-summary-reports.html"
     df.dropna(subset=["id"], inplace=True)
 
     df.drop("jail", axis=1, inplace=True)
+
+    # df = pl.from_pandas(df)
+    print(len(df))
+    df.drop_duplicates(subset=["snapshot_date","id"], inplace=True)
+    print(len(df))
+    # df = df.to_pandas()
 
     if not i:
         df.to_csv("extracted_data.csv", mode="a", index=False)
