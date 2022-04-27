@@ -72,7 +72,7 @@ def search_and_add(jail_name, state, conn, file="added_jails.csv", county=None, 
 @functools.lru_cache(maxsize=None)
 def parse_address(jail_name, state, county, address, file, verbosity):
     if "N/A" not in address:
-        address_dict = {"id": "STABS" + str(secrets.token_hex(16)), "county": county, "facility_name": jail_name, "facility_address": None, "facility_city": None,  "facility_state": state, "facility_zip": None, "is_private":0, "in_urban_area": 0, "holds_greater_than_72_hours": -9, "holds_less_than_1_yr": -9, "felonies_greater_than_1_yr": -9, "holds_greater_than_1_yr": -9, "hold_less_than_72_hours": -9, "facility_gender": 1, "num_inmates_rated_for": 0}
+        address_dict = {"id": "STABS" + str(secrets.token_hex(8)), "county": county, "facility_name": jail_name, "facility_address": None, "facility_city": None,  "facility_state": state, "facility_zip": None, "is_private":0, "in_urban_area": 0, "holds_greater_than_72_hours": -9, "holds_less_than_1_yr": -9, "felonies_greater_than_1_yr": -9, "hold_less_than_72_hours": -9, "facility_gender": 1, "num_inmates_rated_for": 0}
         dtype = {"id":str,
                 "facility_zip":str,
                 "is_private": int,
@@ -80,7 +80,6 @@ def parse_address(jail_name, state, county, address, file, verbosity):
                 "holds_greater_than_72_hours": int,
                 "holds_less_than_1_yr": int,
                 "felonies_greater_than_1_yr": int,
-                "holds_greater_than_1_yr":int,
                 "hold_less_than_72_hours":int,
                 "facility_gender":int,
                 "num_inmates_rated_for":int
