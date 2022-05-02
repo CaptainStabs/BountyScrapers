@@ -14,7 +14,16 @@ custom_templates = {
     "April 2009.pdf": "a2009",
     "August 2013.pdf": "a2013",
     "August 2021.pdf": "a2021",
-    "December 2014.pdf": "d2014"
+    "December 2014.pdf": "d2014",
+    "July 2013.pdf": "j2013",
+    "July 2016.pdf": "j2016",
+    "June 2013.pdf": "j2013",
+    "May 2013.pdf": "j2013",
+    "November 2013.pdf": "j2013",
+    "November 2018.pdf": "2_l", # No idea why this isn't detected as landascape
+    "October 2004.pdf": "o2004",
+    "October 2013.pdf": "j2013",
+    "September 2013": "j2013",
 }
 
 in_dir = "./pdfs/"
@@ -37,6 +46,9 @@ for file in tqdm(os.listdir(in_dir)):
             if page.getUpperRight_x() - page.getUpperLeft_x() > page.getUpperRight_y() - page.getLowerRight_y():
                 print("   [*] Landscape")
                 p = str(p) + "_l"
+
+            if "2013" in file:
+                p = "j2013"
 
         df_l = tabula.io.read_pdf_with_template(
             input_path=os.path.join(in_dir, file),
