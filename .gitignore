@@ -16,7 +16,9 @@ __pycache__/
 7_hospital_prices/*/split_files/split_file_*.csv
 8_us_jails/GA/*/*.pdf
 8_us_jails/GA/*/*/*.pdf
+8_us_jails/*/*/*.csv
 8_us_jails/GA/*/*.csv
+8_us_jails/*/pdfs
 
 # C extensions
 *.so
