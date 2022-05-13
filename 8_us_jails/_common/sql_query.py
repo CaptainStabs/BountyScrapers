@@ -18,9 +18,9 @@ def jail_name_search(jail_name, state, conn, county=None, split=True):
 
     cursor = conn.cursor()
     if not county:
-        cursor.execute(f"SELECT id from jails where facility_name like '{jail_name}%' and facility_state in ('{state}');")
+        cursor.execute(f'''SELECT id from jails where facility_name like "{jail_name}%" and facility_state in ("{state}");''')
     else:
-        cursor.execute(f"SELECT id from jails where facility_name like '{jail_name}%' and facility_state in ('{state}') and county like '{county}%';")
+        cursor.execute(f'''SELECT id from jails where facility_name like "{jail_name}%" and facility_state in ("{state}") and county like "{county}%";''')
         # print(f"SELECT id from jails where facility_name like '{jail_name}%' and facility_state in ('{state}') and county like '{county}%';")
 
     id = list()
