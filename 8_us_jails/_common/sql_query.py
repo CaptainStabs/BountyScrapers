@@ -9,7 +9,7 @@ import secrets
 
 
 @functools.lru_cache(maxsize=None)
-def jail_name_search(jail_name, state, conn, county=None, split=True):
+def jail_name_search(jail_name, state, conn, county=None, split=True, exact=False):
     b = jail_name
     if split:
         jail_name = " ".join(jail_name.split()[:2])
@@ -17,11 +17,18 @@ def jail_name_search(jail_name, state, conn, county=None, split=True):
         jail_name = jail_name
 
     cursor = conn.cursor()
-    if not county:
-        cursor.execute(f'''SELECT id from jails where facility_name like "{jail_name}%" and facility_state in ("{state}");''')
-    else:
-        cursor.execute(f'''SELECT id from jails where facility_name like "{jail_name}%" and facility_state in ("{state}") and county like "{county}%";''')
+    if not exact:
+        if not county:
+            cursor.execute(f'''SELECT id from jails where facility_name like "{jail_name}%" and facility_state in ("{state}");''')
+        else:
+            cursor.execute(f'''SELECT id from jails where facility_name like "{jail_name}%" and facility_state in ("{state}") and county like "{county}%";''')
         # print(f"SELECT id from jails where facility_name like '{jail_name}%' and facility_state in ('{state}') and county like '{county}%';")
+    else:
+        if not county:
+            cursor.execute(f'''SELECT id from jails where facility_name = "{jail_name}" and facility_state in ("{state}");''')
+        else:
+            cursor.execute(f'''SELECT id from jails where facility_name = "{jail_name}" and facility_state in ("{state}") and county like "{county}%";''')
+
 
     id = list()
     for r in cursor:
