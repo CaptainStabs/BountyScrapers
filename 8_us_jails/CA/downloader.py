@@ -1,38 +1,42 @@
-import requests, enlighten
-import math
-from concurrent.futures import ThreadPoolExecutor, as_completed
-import os
+import csv
+import sys
 from tqdm import tqdm
-# import heartrate; heartrate.trace(browser=True, daemon=True)
+import argparse
 
-def downloader(filename, url, manager):
-    headers = {
-        'User-Agent': 'Mozilla/6.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36',
-        'DNT': '1',
-        'Content-Type': 'text/xml; charset=UTF-8',
-        'Accept': '*/*',
-    }
+def csv_to_insert(filename, table_name):
+    output_filename = str(filename).strip(".csv") + "_sql.sql"
+    # Count lines in file for tqdm total
+    with open(filename, "r", encoding="utf-8") as input_csv:
+        line_count = 0
+        # Count lines in file
+        for line in input_csv.readlines():
+            line_count += 1
 
-    file = f"./pdfs/{filename}.pdf"
+        # Seek back to 0 to allow csv to read full file
+        input_csv.seek(0)
 
-    if not os.path.exists(file):
-        r = requests.get(url.strip("\n"), stream=True, headers=headers)
-        c_len = int(r.headers.get('Content-Length', '0')) or None
-        with MANAGER.counter(color = 'green', total = c_len and math.ceil(c_len / 2 ** 20), unit = 'MiB', leave = False) as ctr, \
-            open(file, 'wb', buffering =  2 ** 24) as f:
-            for chunk in r.iter_content(chunk_size=2 ** 20):
-                f.write(chunk)
-                ctr.update()
+        csv_reader = csv.reader(input_csv, delimiter=",", quotechar='"')
 
+        with open(output_filename, "a", encoding="utf8") as output_file:
+            for index, row in tqdm(enumerate(csv_reader), total=line_count):
+                # Get the header and parse to fields
+                if not index:
+                    fields = ",".join(row)
+                    continue
+                    # print(fields)
+
+                # Every other line
+                else:
+                    values = str(row).strip("[]")
+                    query_statement = f"INSERT INTO {table_name}({fields}) VALUES ({values});\n"
+                    output_file.write(query_statement)
 
 if __name__ == "__main__":
-    threads = []
-    MANAGER = enlighten.get_manager()
-    with open("22.csv", "r") as f:
-        with ThreadPoolExecutor(max_workers=5) as executor:
-            for line in f:
-                line = line.split(",")
-                # threads.append(executor.submit(downloader, line[0].replace('"', ''), line[1].replace('"', ''), MANAGER))
-                downloader(line[0].replace('"', ''), line[1].replace('"', ''), MANAGER)
-
-    # downloader("McKinney","https://www.bswhealth.com/SiteCollectionDocuments/patient-tools/estimate-cost-of-care/75-1037591_BAYLOR%20SCOTT%20&%20WHITE%20%20MEDICAL%20CENTER%20AT%20MCKINNEY_standardcharges.csv", MANAGER)
+    parser = argparse.ArgumentParser(description='Convert CSV to SQL inserts')
+    parser.add_argument('--f', type=str, help='Path to CSV, output will be same location')
+    parser.add_argument('--tn', type=str, help='Table name')
+    args = parser.parse_args()
+    if len(sys.argv)==1:
+        parser.print_help(sys.stderr)
+        sys.exit(1)
+    csv_to_insert(args.f, args.tn)
