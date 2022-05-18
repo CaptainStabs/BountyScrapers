@@ -18,6 +18,7 @@ from _secrets import binary_path
 import argparse
 # import heartrate; heartrate.trace(browser=True, daemon=True)
 import secrets
+import sys
 
 
 class WebDriver:
@@ -242,6 +243,7 @@ class WebDriver:
 
 
 if __name__ == "__main__":
+    import sys
     parser = argparse.ArgumentParser(description='Download binary files')
     parser.add_argument('--file', type=str, default= "jails.csv", help='Path to file')
     parser.add_argument('--state', type=str, help='Facility state')
