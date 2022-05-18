@@ -1,5 +1,5 @@
 import os
 
-def remove_file(file):
-    if os.path.exists("extracted_data.csv"):
-        os.remove("extracted_data.csv")
+def remove_file(file="extracted_data.csv"):
+    if os.path.exists(file):
+        os.remove(file)
