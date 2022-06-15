@@ -1,0 +1,3 @@
+dolt sql -q "LOAD DATA INFILE 'C:/Users/adria/github/BountyScrapers/8_us_jails/GA/extracted_data.csv' INTO TABLE inmate_population_
+snapshots FIELDS TERMINATED BY ',' LINES TERMINATED BY '\r\n' IGNORE 1 LINES (total, convicted_or_sentenced, detained_or_awaiting_trial, other_offense, sna
+pshot_date, id, source_url, source_url_2);
