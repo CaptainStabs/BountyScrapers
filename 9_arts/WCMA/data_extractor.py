@@ -26,12 +26,12 @@ df.drop(["ulan", "department", "paper_support", "catalogue_raisonne", "portfolio
        'height_cm', 'depth_cm', 'width_in', 'height_in', 'depth_in', 'area_in',
        'size_s_m_l', 'is_3d', 'orientation_p_l_s', 'copyright_holder',
        'publicCaption', 'artistNationality',  'paper_support', 'catalogue_raisonne', 'portfolio', 'signed', 'marks', 'description',
-       'terms', 'data_date', 'Description',  'source_name', "filename"], inplace=True, axis=1)
+       'terms', 'data_date',  'source_name', "filename"], inplace=True, axis=1)
 
 df.columns = ['object_number', 'accession_number', 'title', 'maker_full_name',
        'culture', 'period', 'date_description',
        'year_start', 'year_end', 'accession_year',
-       'category', 'materials', 'credit_line',
+       'category', 'materials', 'description', 'credit_line',
        'inscriptions', 'dimensions','artistLifeSpan']
 
 # Set `not found` to null
@@ -46,7 +46,7 @@ df[["maker_birth_year", "maker_death_year"]] = df.apply(lambda x: life_span(x["a
 df["maker_full_name"]=df["maker_full_name"].apply(lambda x: str(x).replace(", ", "|"))
 df.drop("artistLifeSpan", axis=1, inplace=True)
 
-df["institution_name"] = "Williams College Museum of Art ("
+df["institution_name"] = "Williams College Museum of Art"
 df["institution_city"] = "Williamstown"
 df["institution_state"] = "Massachusetts"
 df["institution_country"] = "United States"
