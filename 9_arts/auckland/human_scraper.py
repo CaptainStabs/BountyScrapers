@@ -29,7 +29,12 @@ headers = {
 def url_get(url, s):
     x = 0
     while x < 5:
-        r = s.get(url, headers=headers)
+        try:
+            r = s.get(url, headers=headers)
+        except:
+            x+=1
+            continue
+        
         if r.status_code == 404:
             return
         try:
@@ -74,6 +79,7 @@ def get_material_url(url_list, s):
 def get_material(url, s):
     mat_list = []
     r = url_get(url, s)
+    if not r: return None
     for mats in r["am:displayValue"]:
         mat_list.append(mats["value"])
     return "|".join(mat_list)
@@ -177,7 +183,7 @@ with open(filename, "a", encoding='utf-8') as output_file:
 
         ac = "am:classification"
         if ac in r.keys():
-            data["category"] = get_category(r[ac][0]["value"], s)
+            data["category"] = get_category(r[ac][0]["value"], s)[:300]
 
         aco = "am:culturalOrigin"
         if  aco in r.keys():
