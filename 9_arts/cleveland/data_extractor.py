@@ -3,7 +3,28 @@ import polars as pl
 import re
 
 def year_extractor(c):
+    y = c[c.find("(") + 1 : c.find(")")].replace("mid-", "mid ")
+    if "," in y:
+        y = y.split(", ")[-1] # gets content from inside (), gets content right of comma,
+    try:
+        if any(x in y for x in ["-", "–"]):
+            try:
+                birth_year, death_year = (
+                    y.split("-")
+                    )
+            except ValueError:
+                birth_year, death_year = (
+                    y.split("–")
+                )
+        else:
+            birth_year, death_year = y.strip(), ""
+    except ValueError:
+        print(y)
+        return "", ""
 
+    return birth_year, death_year
+
+# print(year_extractor("(, 1958)"))
 
 def creator_parser(creator):
     # creator format: name (nationality, birth_year-death_year), role
@@ -15,18 +36,10 @@ def creator_parser(creator):
         creators = creator.split(";")
         for c in creators:
             if c:
-                print(c)
                 if "(" in c:
                     name_list.append(c.split(" (")[0].strip())
                     role_list.append(re.sub(r"\([^)]*\)", "", c).split(" , ")[-1].strip())
-                    try:
-                        birth_year, death_year = (
-                            c[c.find("(") + 1 : c.find(")")].split(", ")[1].split("-") # gets content from inside (), gets content right of comma, then splits date range
-                        )
-                    except ValueError:
-                        birth_year, death_year = (
-                            c[c.find("(") + 1 : c.find(")")].split(", ")[1].split("–") # gets content from inside (), gets content right of comma, then splits date range
-                        )
+                    birth_year, death_year = year_extractor(c)
 
                     birth_list.append(birth_year)
                     death_list.append(death_year)
@@ -101,8 +114,23 @@ df.columns = [
     'provenance',
     'from_location',
     'description',
-    'source_1',
+    'source_2',
     'image_url'
 ]
 
 df[["maker_full_name", "maker_role", "maker_birth_year", "maker_death_year"]] = df.apply(lambda x: creator_parser(x["creators"]), axis=1, result_type='expand')
+
+df = df.drop("creators", axis=1)
+
+df["technique"] = df.apply(lambda x: df["technique"][:200])
+df["title"] = df.apply(lambda x: df["title"][:1000])
+
+df["institution_name"] = "The Cleveland Museum of Art"
+df["institution_city"] = "Cleveland"
+df["institution_state"] = "Ohio"
+df["institution_country"] = "United States"
+df["institution_latitude"] = 41.509209799356306
+df["institution_longitude"] = -81.61205957318529
+df["source_1"] = "https://github.com/ClevelandMuseumArt/openaccess/blob/master/data.csv"
+
+df.to_csv("extracted_data.csv", index=False)
