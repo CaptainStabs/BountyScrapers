@@ -1,6 +1,7 @@
 import csv
 import json
 import os
+import re
 
 import pandas as pd
 import requests
@@ -13,6 +14,10 @@ def url_get(url, s):
     while x < 5:
         try:
             r = s.get(url)
+        except KeyboardInterrupt:
+            print("Ctrl-c detected, exiting")
+            import sys; sys.exit()
+            raise KeyboardInterrupt
         except:
             x+=1
             continue
@@ -81,16 +86,17 @@ if __name__ == '__main__':
         "accession_number",
         "drop_me"
         ]
+
+    remove_escaped = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
     with open(filename, "a", encoding='utf-8') as output_file:
         writer = csv.DictWriter(output_file, fieldnames=columns)
 
         if os.stat(filename).st_size == 0:
             writer.writeheader()
 
+        s = requests.Session()
         for id in tqdm(range(last_id, 999999)):
             try:
-                s = requests.Session()
-
                 url = f"https://api.maas.museum/v2/objects/{id}"
                 jd = url_get(url, s)
                 if not jd: continue
@@ -105,10 +111,8 @@ if __name__ == '__main__':
                     "institution_latitude": -33.87848680715133,
                     "institution_longitude": 151.19954179528983,
                     "category": "|".join(jd["category"]),
-                    "title": jd["title"],
-                    "description": jd["description"][:10000],
+                    "description": remove_escaped.sub('', jd["description"][:10000]).replace("\n", ""),
                     "dimensions": dimensions(jd['dimensions']),
-                    "accession_year": jd["accessionedYear"],
                     "source_1": url,
                     "drop_me": id,
                 }
@@ -119,9 +123,9 @@ if __name__ == '__main__':
 
                 if len(events):
                     data["date_description"] = "|".join([x['date'] for x in events if not isinstance(x['date'], type(None))])
-                    data["from_location"] = "|".join([x['place'] for x in events if not isinstance(x['place'], type(None))])[:4000]
+                    data["from_location"] = "|".join([str(x['place']) for x in events if not isinstance(x['place'], type(None))])[:4000]
                     data["maker_full_name"] = "|".join([str(x['creator']) for x in events])
-                    data["maker_role"] = "|".join([x['role'] for x in events])
+                    data["maker_role"] = "|".join([str(x['role']) for x in events])
 
                 if len(history) and not len(events):
                     logging.info("Using history not events")
@@ -150,7 +154,17 @@ if __name__ == '__main__':
                 if "acquisitionCreditLine" in jd.keys():
                     data["credit_line"] = jd["acquisitionCreditLine"]
 
+                if "accessionedYear" in jd.keys():
+                    data["accession_year"] = jd["accessionedYear"]
+
+                if "title" in jd.keys():
+                    data["title"] = jd["title"]
+                else:
+                    if "summary" in jd.keys():
+                        data["title"] = jd["summary"]
+
                 writer.writerow(data)
+
 
             except Exception as e:
                 print("\n",id)
