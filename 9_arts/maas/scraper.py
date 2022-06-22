@@ -100,7 +100,10 @@ if __name__ == '__main__':
                 url = f"https://api.maas.museum/v2/objects/{id}"
                 jd = url_get(url, s)
                 if not jd: continue
-
+                try:
+                    temp = jd["_id"]
+                except TypeError:
+                    jd = jd[0]
                 data = {
                     "object_number": jd["_id"],
                     "accession_number": jd["registrationNumber"],
@@ -110,8 +113,7 @@ if __name__ == '__main__':
                     "institution_country": "Australia",
                     "institution_latitude": -33.87848680715133,
                     "institution_longitude": 151.19954179528983,
-                    "category": "|".join(jd["category"]),
-                    "description": remove_escaped.sub('', jd["description"][:10000]).replace("\n", ""),
+                    "category": "|".join([x for x in jd["category"] if not isinstance(x, type(None))]),
                     "dimensions": dimensions(jd['dimensions']),
                     "source_1": url,
                     "drop_me": id,
@@ -162,6 +164,12 @@ if __name__ == '__main__':
                 else:
                     if "summary" in jd.keys():
                         data["title"] = jd["summary"]
+
+                if "description" in jd.keys():
+                    data["description"] = remove_escaped.sub('', jd["description"][:10000]).replace("\n", "")
+                elif "significanceStatement" in jd.keys():
+                    if jd["significanceStatement"]:
+                        data["description"] =  remove_escaped.sub('', jd["significanceStatement"][:10000]).replace("\n", "")
 
                 writer.writerow(data)
 
