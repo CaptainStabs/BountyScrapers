@@ -7,6 +7,16 @@ def year_extractor(date):
         return date.split("-")[0]
     else: return pd.NA
 
+def dimensions(dim):
+    print(dim)
+    dimension = " x ".join([str(dim["circ"]), str(dim["depth"]), str(dim["diameter"]), str(dim["height"]), str(dim["length"]), str(dim["width"])])
+    dimension = " ".join([dimension, "cm"])
+    if not isinstance(dim["weight"], type(None)):
+        dimension = " ".join([dimension, str(dim["weight"]), "kg"])
+    if not isinstance(dim["duration"], type(None)):
+        dimension = " ".join([dimension, str(dim["duration"]), "sec."])
+    return dimension
+
 df = pd.read_csv("Artworks.csv")
 
 # ['Title', 'Artist',
@@ -31,11 +41,11 @@ df.columns = ["title",
               "department",
               "acquired_year",
               "object_number",
-              "source_1",
-              "image_url"
+              "source_2",
+              "image_url",
               ]
 
-print(df)
+df["source_1"] = "https://github.com/MuseumofModernArt/collection/blob/master/Artworks.csv"
 df["maker_birth_year"] = df["maker_birth_year"].str.replace(r'[()]+', '', regex = True)
 df["maker_death_year"] = df["maker_death_year"].str.replace(r'[()]+', '', regex = True)
 df["maker_gender"] = df["maker_gender"].str.replace(r'[()]+', '', regex = True)
