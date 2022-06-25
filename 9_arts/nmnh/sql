@@ -1,0 +1,8 @@
+update objects set from_location = provenance where institution_name in ('Smithsonian, National Musuem of Natural History, Fishes');
+update objects set current_location = NULL where institution_name in ('Smithsonian, National Musuem of Natural History, Fishes');
+update objects set provenance = NULL where institution_name in ('Smithsonian, National Musuem of Natural History, Fishes');
+update objects set year_start = null where year_start = "0";
+update objects set year_end = NULL where year_end = "0";
+update objects set maker_full_name = NULL where maker_full_name = "No Information";
+update objects set acquired_year = NULL where acquired_year = "0";
+update objects set accession_year = NULL where accession_year = "0";
