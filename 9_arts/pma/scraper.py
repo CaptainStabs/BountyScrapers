@@ -17,6 +17,8 @@ p = Path(__file__).resolve().parents[1]
 sys.path.insert(1, str(p))
 from _common import get_last_id
 
+global key_list
+
 def sleep_counter(seconds):
     for remaining in range(seconds, 0, -1):
         sys.stdout.write("\r")
@@ -27,6 +29,15 @@ def sleep_counter(seconds):
 def url_get(id, key, s):
     url = f"https://hackathon.philamuseum.org/api/v0/collection/object?query={id}&api_token={cur_key}"
     return s.get(url, verify=False)
+
+def key_iter(keys):
+    k = next(keys)
+    if k == cur_key:
+        k = next(keys)
+        return k
+    else:
+        return k
+
 
 filename =  "extracted_data.csv"
 
@@ -55,7 +66,7 @@ columns = [
     ]
 
 with open(filename, "a", encoding='utf-8', newline='') as output_file:
-    key_list = ["d3INVaCoZxa1PbuLmm3RhghHcdSJQzF0XHhXqxVWQez0VCBREn8cgGtajOK5", "jnFV09XMKDJ0yVYrcQd3si72VFN4EUeM15B479G6RkMfiu4BstY2GuaR19kI"]
+    key_list = ["jnFV09XMKDJ0yVYrcQd3si72VFN4EUeM15B479G6RkMfiu4BstY2GuaR19kI", "wfXOpPLeYwgissXKDoT5MzygR4ApP8Ev14HIR83LtHNMFY4JdHRuVyk3qJK7", "T3UWvnmQdtMSeZUZcjqi75gu7PTpjWJItRYdcicMtWx0xXEri1dBhW6RpfPd", "d3INVaCoZxa1PbuLmm3RhghHcdSJQzF0XHhXqxVWQez0VCBREn8cgGtajOK5"]
     keys = iter(key_list)
 
     cur_key = key_list[0]
@@ -75,28 +86,48 @@ with open(filename, "a", encoding='utf-8', newline='') as output_file:
         r = url_get(i, cur_key, s)
         ratelimit_remaining = int(r.headers['X-RateLimit-Remaining'])
         # print(ratelimit_remaining)
-        if ratelimit_remaining < 40:
+        if ratelimit_remaining < 20:
             print("\n", ratelimit_remaining)
 
         if ratelimit_remaining == 10:
             print("Sleeping for 60")
             # sleep_counter(120)
-            r = url_get(i, next(keys), s)
+
+            try:
+                cur_key = key_iter(keys)
+            except StopIteration:
+                keys = iter(key_list)
+                cur_key = key_iter(keys)
+            r = url_get(i, cur_key, s)
+
             print("ratelimit remaining under 10", r.headers["X-RateLimit-Remaining"])
             if r.headers["x-RateLimit-Remaining"] == 1: # don't use var here because we need to check current r headers
                 print("Has not reset, exiting.")
                 os.exit(1)
+        elif ratelimit_remaining < 10:
+            try:
+                cur_key = key_iter(keys)
+            except StopIteration:
+                keys = iter(key_list)
+                cur_key = key_iter(keys)
+            r = url_get(i, cur_key, s)
 
+        print(r.status_code)
         if r.status_code == 429:
             retry_after = int(r.headers["retry-after"]) + 1
-            sleep_counter(retry_after)
-            cur_key = next(keys)
+            # sleep_counter(retry_after)
+            try:
+                cur_key = key_iter(keys)
+            except StopIteration:
+                keys = iter(key_list)
+                cur_key = key_iter(keys)
             r = url_get(i, cur_key, s)
+
             if not r.headers["x-RateLimit-Remaining"]: # don't use var here because we need to check current r headers
                 print("Has not reset, exiting.")
                 os.exit(1)
 
-        if r.status_code != 500:
+        if r.status_code != 500 and r.status_code != 429:
             jd = r.json()
 
             data = {
