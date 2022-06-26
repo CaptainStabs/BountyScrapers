@@ -27,6 +27,7 @@ def sleep_counter(seconds):
         time.sleep(1)
 
 def url_get(id, key, s):
+    print("\n", id, key[:5])
     url = f"https://hackathon.philamuseum.org/api/v0/collection/object?query={id}&api_token={cur_key}"
     return s.get(url, verify=False)
 
@@ -104,7 +105,7 @@ with open(filename, "a", encoding='utf-8', newline='') as output_file:
             if r.headers["x-RateLimit-Remaining"] == 1: # don't use var here because we need to check current r headers
                 print("Has not reset, exiting.")
                 os.exit(1)
-        elif ratelimit_remaining < 10:
+        elif ratelimit_remaining < 10 and ratelimit_remaining:
             try:
                 cur_key = key_iter(keys)
             except StopIteration:
@@ -112,13 +113,13 @@ with open(filename, "a", encoding='utf-8', newline='') as output_file:
                 cur_key = key_iter(keys)
             r = url_get(i, cur_key, s)
 
-        print(r.status_code)
         if r.status_code == 429:
             retry_after = int(r.headers["retry-after"]) + 1
-            # sleep_counter(retry_after)
+            sleep_counter(retry_after)
             try:
                 cur_key = key_iter(keys)
             except StopIteration:
+                sleep_counter(retry_after)
                 keys = iter(key_list)
                 cur_key = key_iter(keys)
             r = url_get(i, cur_key, s)
