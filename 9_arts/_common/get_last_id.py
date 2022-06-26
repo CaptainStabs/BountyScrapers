@@ -2,8 +2,8 @@ import pandas as pd
 import os
 
 
-def get_last_id(filename):
-    if os.path.exists(filename) and os.stat(filename).st_size > 250:
+def get_last_id(filename, size=250):
+    if os.path.exists(filename) and os.stat(filename).st_size > size:
         df = pd.read_csv(filename)
         df_columns = list(df.columns)
         data_columns = ",".join(map(str, df_columns))
