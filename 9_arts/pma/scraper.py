@@ -17,7 +17,7 @@ p = Path(__file__).resolve().parents[1]
 sys.path.insert(1, str(p))
 from _common import get_last_id
 
-global key_list
+# global key_list
 
 def sleep_counter(seconds):
     for remaining in range(seconds, 0, -1):
@@ -27,8 +27,8 @@ def sleep_counter(seconds):
         time.sleep(1)
 
 def url_get(id, key, s):
-    print("\n", id, key[:5])
-    url = f"https://hackathon.philamuseum.org/api/v0/collection/object?query={id}&api_token={cur_key}"
+    # print("\n", id, key[:5])
+    url = f"https://hackathon.philamuseum.org/api/v0/collection/object?query={id}&api_token={key}"
     return s.get(url, verify=False)
 
 def key_iter(keys):
@@ -106,6 +106,7 @@ with open(filename, "a", encoding='utf-8', newline='') as output_file:
                 print("Has not reset, exiting.")
                 os.exit(1)
         elif ratelimit_remaining < 10 and ratelimit_remaining:
+            print(cur_key[:5])
             try:
                 cur_key = key_iter(keys)
             except StopIteration:
