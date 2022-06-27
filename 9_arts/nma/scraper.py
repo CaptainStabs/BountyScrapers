@@ -1,13 +1,14 @@
-import requests
 import csv
 import json
 import os
-import time
-import requests
 import sys
-from tqdm import tqdm
-from pathlib import Path
+import time
 import traceback as tb
+from pathlib import Path
+
+import requests
+from tqdm import tqdm
+
 p = Path(__file__).resolve().parents[1]
 sys.path.insert(1, str(p))
 from _common import get_last_id
@@ -21,6 +22,7 @@ with open(filename, "a", encoding='utf-8', newline='') as output_file:
 
     if os.path.exists(filename) and os.stat(filename).st_size > 283:
         start_id = get_last_id(filename, 300)
+        # start_id = 3320
     else:
         start_id = 0
 
@@ -64,15 +66,16 @@ with open(filename, "a", encoding='utf-8', newline='') as output_file:
                 if "hasFormat" in meta.keys():
                     data["image_url"] = meta["hasFormat"]
 
-                ex = jd["extent"]
-                try:
-                    units = list(ex.values())[1:-1]
-                    dim = " x ".join([str(x) for x in units])
-                    if "unitText" in ex.keys():
-                        data["dimensions"] = " ".join([dim, ex["unitText"]])
-                except KeyError:
-                    tb.print_exc()
-                    print(json.dumps(ex, indent=4))
+                if "extent" in jd.keys():
+                    ex = jd["extent"]
+                    try:
+                        units = list(ex.values())[1:-1]
+                        dim = " x ".join([str(x) for x in units])
+                        if "unitText" in ex.keys():
+                            data["dimensions"] = " ".join([dim, ex["unitText"]])
+                    except KeyError:
+                        tb.print_exc()
+                        print(json.dumps(ex, indent=4))
 
                 if "contributor" in jd.keys():
                     contrib = jd["contributor"]
@@ -81,22 +84,28 @@ with open(filename, "a", encoding='utf-8', newline='') as output_file:
                 if "creator" in jd.keys():
                     creator = jd["creator"]
                     mfn = "|".join([x["title"] for x in creator])
-                    mr = "|".join([x["roleName"] for x in creator])
+                    if "roleName" in creator:
+                        mr = "|".join([x["roleName"] for x in creator])
 
                     if contrib:
                         mfn1 =  "|".join([x["title"] for x in contrib])
-                        mr1 = "|".join([x["roleName"] for x in contrib])
+                        if "roleName" in contrib:
+                            mr1 = "|".join([x["roleName"] for x in contrib])
+                            mr = "|".join([mr, mr1])
 
                         mfn = "|".join([mfn, mfn1])
-                        mr = "|".join([mr, mr1])
+                        # mr = "|".join([mr, mr1])
+
 
                     data["maker_full_name"] = mfn
-                    data["maker_role"] = mr
-
+                    if contrib:
+                        if "roleName" in creator or "roleName" in contrib:
+                            data["maker_role"] = mr
 
                 elif contrib:
                     data["maker_full_name"] = "|".join([x["title"] for x in contrib])
-                    data["maker_role"] = "|".join([x["roleName"] for x in contrib])
+                    if "roleName" in contrib:
+                        data["maker_role"] = "|".join([x["roleName"] for x in contrib])
 
                 if "description" in jd.keys():
                     data["description"] = jd["description"][:10000].replace("n", "")
@@ -109,9 +118,20 @@ with open(filename, "a", encoding='utf-8', newline='') as output_file:
                     if jd["spatial"]:
                         if len(jd["spatial"][0].keys()) == 3:
                             data["from_location"] = '|'.join(x["title"] for x in jd["spatial"])
-                        else:
+                        elif "roleName" in jd["spatial"][0].keys():
                             try:
                                 data["from_location"] = '|'.join([": ".join([x["roleName"], x["title"]]) for x in jd["spatial"]])[:4000]
+                            except KeyError:
+                                try:
+                                    data["from_location"] = '|'.join([": ".join([x["title"]]) for x in jd["spatial"]])[:4000]
+                                except KeyError:
+                                    tb.print_exc()
+                                    print(json.dumps(jd["spatial"], indent=4))
+                                tb.print_exc()
+                                print(json.dumps(jd["spatial"], indent=4))
+                        else:
+                            try:
+                                data["from_location"] = '|'.join([": ".join([x["title"]]) for x in jd["spatial"]])[:4000]
                             except KeyError:
                                 tb.print_exc()
                                 print(json.dumps(jd["spatial"], indent=4))
@@ -121,9 +141,13 @@ with open(filename, "a", encoding='utf-8', newline='') as output_file:
                     temp = jd["temporal"][0]
                     if "roleName" in temp.keys():
                         data["date_description"] = ": ".join([temp["roleName"], temp["title"]])
-                    else:
+                    elif "interactionType" in temp.keys():
                         data["date_description"] = ": ".join([temp["interactionType"], temp["title"]])
                         print("using interaction type")
+                    elif "event" in temp.keys():
+                        data["date_description"] = ": ".join([temp["event"], temp["title"]])
+                    else:
+                        data["date_description"] = temp["title"]
 
                     try:
                         data["year_start"] = temp["startDate"]
