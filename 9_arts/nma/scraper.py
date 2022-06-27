@@ -120,7 +120,7 @@ with open(filename, "a", encoding='utf-8', newline='') as output_file:
                             data["from_location"] = '|'.join(x["title"] for x in jd["spatial"])
                         elif "roleName" in jd["spatial"][0].keys():
                             try:
-                                data["from_location"] = '|'.join([": ".join([x["roleName"], x["title"]]) for x in jd["spatial"]])[:4000]
+                                data["from_location"] = '|'.join([": ".join([x.get("roleName", ""), x.get("title")]) for x in jd["spatial"]])[:4000]
                             except KeyError:
                                 try:
                                     data["from_location"] = '|'.join([": ".join([x["title"]]) for x in jd["spatial"]])[:4000]
