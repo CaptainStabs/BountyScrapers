@@ -1,17 +1,20 @@
 #!/usr/bin/env python
 # Modified frmo https://github.com/Q42/SimpleOAIHarvester/blob/master/harvest.py
 import requests, os, sys
+import argparse
 from xml.dom import minidom
+from tqdm import tqdm
+import winsound
 
 if len(sys.argv) < 2: raise Exception('API key required')
-resumeFile = sys.argv[2] if len(sys.argv) >= 3 else None
+resumeFile = sys.argv[3] if len(sys.argv) >= 4 else None
 apikey = sys.argv[1]
-if len(sys.argv) == 3:
-    save_folder = sys.argv[3]
+if len(sys.argv) >= 3:
+    save_folder = sys.argv[2]
 else:
     save_folder = ""
 
-url = "http://www.rijksmuseum.nl/api/oai/%s/?verb=listrecords&metadataPrefix=oai_dc" % apikey
+url = "http://www.rijksmuseum.nl/api/oai/%s/?verb=listrecords&metadataPrefix=lido" % apikey
 url2 = "http://www.rijksmuseum.nl/api/oai/%s/?verb=listrecords&resumptiontoken=" % apikey
 count = 0 # keep track of number of records harvested
 token = ""
@@ -23,9 +26,34 @@ def getText(nodelist):
             rc.append(node.data)
     return ''.join(rc)
 
-def harvest(url):
+def url_get(url, s=None):
+    x = 0
+    while x < 5:
+        print(x)
+        try:
+            if s:
+                r = s.get(url)
+            else:
+                r = requests.get(url)
+        except KeyboardInterrupt:
+            print("Ctrl-c detected, exiting")
+            import sys; sys.exit()
+            raise KeyboardInterrupt
+        except Exception as e:
+            raise(e)
+            x+=1
+            continue
+
+        if r.status_code == 200:
+            x = 10
+    return r
+
+def harvest(url, s=None):
     print("downloading: " + url)
-    data = requests.get(url).text
+    if s:
+        data = url_get(url, s).text
+    else:
+        data = requests.get(url).text
 
     dom = minidom.parseString(data)
 
@@ -47,10 +75,9 @@ def harvest(url):
     return strToken, countRecords
 
 def save(data):
-
-    filename = os.path.join(".", save_folder, str(count) + '.xml')
+    filename = file_name(save_folder)
     print('saving: ' + filename)
-    with open(filename, 'w') as f:
+    with open(filename, 'w', encoding="utf-8") as f:
         for s in data:
             f.write(s)
 
@@ -62,7 +89,7 @@ def file_name(fn):
 
 
 def resume(filename):
-    with open(filename, 'r') as f:
+    with open(filename, 'r', encoding="utf-8") as f:
         data = f.read()
          # cache the data because this file-like object is not seekable
         cached  = ""
@@ -80,16 +107,20 @@ def resume(filename):
         return strToken, countRecords
 
 try:
+    s = requests.Session()
+    # s = None
     if resumeFile:
-        token, countRecords = resume(resumeFile)
+        token, countRecords = resume(os.path.join(save_folder, resumeFile))
         count += int(resumeFile.split('.')[0]) + countRecords
     else:
-        token, countRecords = harvest(url)
+        token, countRecords = harvest(url, s)
         count += countRecords
 
-    while token:
-        token, countRecords = harvest(url2 + token)
-        count += countRecords
+    with tqdm(total=4520) as pbar:
+        while token:
+            token, countRecords = harvest(url2 + token, s)
+            count += countRecords
+            pbar.update(1)
 
 except:
     print("\n!!!")
@@ -97,4 +128,5 @@ except:
     print("To resume run this script with the last succesfully harvested file as second paramater:")
     print("python harvest.py <API KEY> <LAST HARVESTED FILE>")
     print("!!!\n")
+    winsound.PlaySound("SystemHand", winsound.SND_ALIAS)
     raise
