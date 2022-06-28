@@ -25,12 +25,12 @@ def get_category(jd):
                     if isinstance(term, list): # check if term is a list
                         # print(term)
                         t_dict = build_dict(term, "@xml:lang")
-                        t = term[t_dict.get("en")["index"]]["#text"] # Find english text
+                        t = term[t_dict.get("en")["index"]].get("#text") # Find english text
                         term_list.append(t)
                     else:
-                        term_list.append(term["#text"])
+                        term_list.append(term.get("#text"))
                         # print("AAA", json.dumps(o_c_t, indent=2))
-                cats.append("|".join(term_list))
+                cats.append("|".join([x for x in term_list if x]))
 
             else:
                 try:
@@ -38,7 +38,10 @@ def get_category(jd):
                 except AttributeError:
                     cats.append(o_c.get("lido:objectWorkTypeWrap").get("lido:objectWorkType").get("lido:term")["#text"])
                 except KeyError:
-                    cats.append(o_c.get("lido:objectWorkTypeWrap").get("lido:objectWorkType").get("lido:term")["#text"])
+                    try:
+                        cats.append(o_c.get("lido:objectWorkTypeWrap").get("lido:objectWorkType").get("lido:term")["#text"])
+                    except:
+                        print(json.dumps(o_c.get("lido:objectWorkTypeWrap"), indent=4))
 
             # Get lido:classificationWrap
             if  o_c.get("lido:classificationWrap"):
@@ -47,11 +50,13 @@ def get_category(jd):
                 if isinstance(c_w, list):
                     term_list = []
                     for x in c_w:
-                        term = x["lido:term"]
+                        term = x.get("lido:term")
+                        if not term:
+                            continue
                         if isinstance(term, list):
                             # print(term)
                             t_dict = build_dict(term, "@xml:lang")
-                            t = term[t_dict.get("en")["index"]]["#text"]
+                            t = term[t_dict.get("en")["index"]].get("#text")
                             term_list.append(t)
                         else:
                             term_list.append(term["#text"])
@@ -116,9 +121,12 @@ def get_inscription(jd):
     return None
 
 def get_description(jdm):
-    desc_set = jdm.get("lido:objectIdentificationWrap").get("lido:objectDescriptionSet")
+    desc_set = jdm.get("lido:objectIdentificationWrap", {}).get("lido:objectDescriptionWrap", {}).get("lido:objectDescriptionSet")
     if desc_set:
-        return desc_set.get("lido:descriptiveNoteValue").get("#text")
+        if isinstance(desc_set, list):
+            return desc_set[0].get("lido:descriptiveNoteValue").get("#text")
+        else:
+            return desc_set.get("lido:descriptiveNoteValue").get("#text")
 
 def get_dimensions(jd):
     measures = jd.get("lido:objectIdentificationWrap", {}).get("lido:objectMeasurementsWrap", {}).get("lido:objectMeasurementsSet")
@@ -137,14 +145,15 @@ def get_dimensions(jd):
 
             if isinstance(x, list):
                 for u in x:
-                    y = u.get("lido:measurementValue")
-                    # print("C",sets.get("lido:measurementUnit")[0].get("#text"))
-                    unit = u.get("lido:measurementUnit")
-                    m_list.append(y)
+                    if u:
+                        y = u.get("lido:measurementValue")
+                        # print("C",sets.get("lido:measurementUnit")[0].get("#text"))
+                        unit = u.get("lido:measurementUnit")
+                        m_list.append(y)
 
-                    if unit:
-                        units = u.get("lido:measurementUnit")[0].get("#text")
-                        unit_list.append(units)
+                        if unit:
+                            units = u.get("lido:measurementUnit")[0].get("#text")
+                            unit_list.append(units)
 
             else:
                 try:
@@ -167,169 +176,192 @@ def get_dimensions(jd):
         else: return
 
 def get_maker_name(jdm):
-    events = jdm.get("lido:eventWrap").get("lido:eventSet")
-    names = []
-    for event in events:
-        if not isinstance(event, str):
-            event = event.get("lido:event")
-        else:
-            continue
-
-        event_set = event.get("lido:eventActor", {}).get("lido:actorInRole", {}).get("lido:actor", {}).get("lido:nameActorSet", None)
-        if event_set:
-            app_val = event_set.get("lido:appellationValue")
-            if isinstance(app_val, list):
-                names.append(event_set.get("lido:appellationValue", {})[0].get("#text", None))
+    events = jdm.get("lido:eventWrap", {})
+    events = events.get("lido:eventSet", None) if events else None
+    if events:
+        names = []
+        for event in events:
+            if not isinstance(event, str):
+                event = event.get("lido:event")
             else:
-                names.append(event_set.get("lido:appellationValue", {}).get("#text", None))
+                continue
 
-    return "|".join(names)
+            event_set = event.get("lido:eventActor", {}).get("lido:actorInRole", {}).get("lido:actor", {}).get("lido:nameActorSet", None)
+            if event_set:
+                app_val = event_set.get("lido:appellationValue")
+                if isinstance(app_val, list):
+                    names.append(event_set.get("lido:appellationValue", {})[0].get("#text", None))
+                else:
+                    names.append(event_set.get("lido:appellationValue", {}).get("#text", None))
+
+        return "|".join(names)
+    else:
+        return
 
 def get_maker_role(jdm):
-    events = jdm.get("lido:eventWrap").get("lido:eventSet")
-    roles = []
-    for event in events:
-        if not isinstance(event, str):
-            event = event.get("lido:event")
-        else:
-            continue
-
-        event_set = event.get("lido:eventActor", {}).get("lido:actorInRole", {}).get("lido:roleActor", None)
-
-        if event_set:
-            app_val = event_set.get("lido:term")
-            if isinstance(app_val, list):
-                roles.append(app_val[0].get("#text", None))
+    events = jdm.get("lido:eventWrap", {})
+    events = events.get("lido:eventSet") if events else None
+    if events:
+        roles = []
+        for event in events:
+            if not isinstance(event, str):
+                event = event.get("lido:event")
             else:
-                roles.append(app_val.get("#text", None))
+                continue
 
-    return "|".join([x for x in roles if x])
+            event_set = event.get("lido:eventActor", {}).get("lido:actorInRole", {}).get("lido:roleActor", None)
+
+            if event_set:
+                app_val = event_set.get("lido:term")
+                if isinstance(app_val, list):
+                    roles.append(app_val[0].get("#text", None))
+                else:
+                    roles.append(app_val.get("#text", None))
+
+        return "|".join([x for x in roles if x])
+    else: return
 
 def get_maker_birth(jdm, death=False):
-    events = jdm.get("lido:eventWrap").get("lido:eventSet")
-    births = []
-    for event in events:
-        if not isinstance(event, str):
-            event = event.get("lido:event")
-        else:
-            continue
-
-        event_set = event.get("lido:eventActor", {}).get("lido:actorInRole", {}).get("lido:actor", {}).get("lido:vitalDatesActor", None)
-        if event_set:
-            if not death:
-                if isinstance(event_set, list):
-                    b = event_set[0].get("lido:earliestDate", None)
-                else:
-                    b = event_set.get("lido:earliestDate", None)
+    events = jdm.get("lido:eventWrap", {})
+    events = events.get("lido:eventSet") if events else None
+    if events:
+        births = []
+        for event in events:
+            if not isinstance(event, str):
+                event = event.get("lido:event")
             else:
-                if isinstance(event_set, list):
-                    b = event_set[0].get("lido:latestDate", None)
-                else:
-                    b = event_set.get("lido:latestDate", None)
+                continue
 
-            if b:
-                births.append(b.split("-")[0])
-    return "|".join([x for x in births if x])
+            event_set = event.get("lido:eventActor", {}).get("lido:actorInRole", {}).get("lido:actor", {}).get("lido:vitalDatesActor", None)
+            if event_set:
+                if not death:
+                    if isinstance(event_set, list):
+                        b = event_set[0].get("lido:earliestDate", None)
+                    else:
+                        b = event_set.get("lido:earliestDate", None)
+                else:
+                    if isinstance(event_set, list):
+                        b = event_set[0].get("lido:latestDate", None)
+                    else:
+                        b = event_set.get("lido:latestDate", None)
+
+                if b:
+                    births.append(b.split("-")[0])
+        return "|".join([x for x in births if x])
+    else: return
 
 def get_year(jdm, start=True, acquisition=False, desc=False, mat=False):
-    events = jdm.get("lido:eventWrap").get("lido:eventSet")
-    births = []
-    for event in events:
-        if not isinstance(event, str):
-            event = event.get("lido:event")
-        else:
-            continue
+    events = jdm.get("lido:eventWrap", {})
+    events = events.get("lido:eventSet") if events else None
+    if events:
+        births = []
+        for event in events:
+            if not isinstance(event, str):
+                event = event.get("lido:event")
+            else:
+                continue
 
-        event_type = event.get("lido:eventType")
-        if event_type:
-            term = event_type.get("lido:term")
-        else:
-            term = ""
+            event_type = event.get("lido:eventType")
+            if event_type:
+                term = event_type.get("lido:term")
+            else:
+                term = ""
 
-        if isinstance(term, list):
-            term = term[0]
-            # print("\nIS term")
-            # print(json.dumps(term, indent=2))
-            # import sys; sys,exit()
+            if isinstance(term, list):
+                term = term[0]
+                # print("\nIS term")
+                # print(json.dumps(term, indent=2))
+                # import sys; sys,exit()
 
-        elif mat:
-            mats = event.get("lido:eventMaterialsTech")
+            elif mat:
+                mats = event.get("lido:eventMaterialsTech")
 
-            mat_list = []
-            if mats:
-                if isinstance(mats, list):
-                    for m in mats:
-                        terms = m.get("lido:materialsTech", {}).get("lido:termMaterialsTech", {}).get("lido:term", {})
+                mat_list = []
+                if mats:
+                    if isinstance(mats, list):
+                        for m in mats:
+                            terms = m.get("lido:materialsTech", {}).get("lido:termMaterialsTech", {}).get("lido:term", {})
 
-                        # if len(terms) > 2:
-                        #     print("\nTERMSSS:", terms)
+                            # if len(terms) > 2:
+                            #     print("\nTERMSSS:", terms)
 
-                        if isinstance(terms, list):
-                            m = terms[0].get("#text")
-                        else:
-                            m = terms.get("#text")
-                        mat_list.append(m)
-                    return "|".join([x for x in mat_list if x])
-                # else:
-                    # print(json.dumps(mats, indent=2))
-                    # print("mats is not list")
-                    # import sys; sys.exit()
-
-        else:
-            if "Acquisition" not in term.get("#text") and not acquisition:
-                if not desc:
-                    event_date = event.get("lido:eventDate", None)
-                    if event_date:
-                        l_date = event_date.get("libdo:date")
-                        ll_date = event_date.get("lido:date", [])
-                        if start:
-                            if isinstance(event_date, list):
-                                b = ll_date[0].get("lido:earliestDate", None)
+                            if isinstance(terms, list):
+                                m = terms[0].get("#text")
                             else:
-                                if l_date:
-                                    b = l_date.get("lido:date", None).get("lido:earliestDate", None)
-                        else:
-                            if isinstance(event_date, list):
-                                b = ll_date[0].get("lido:latestDate", None)
+                                m = terms.get("#text")
+                            mat_list.append(m)
+                        return "|".join([x for x in mat_list if x])
+                    # else:
+                        # print(json.dumps(mats, indent=2))
+                        # print("mats is not list")
+                        # import sys; sys.exit()
+
+            else:
+                if "Acquisition" not in term.get("#text") and not acquisition:
+                    if not desc:
+                        event_date = event.get("lido:eventDate", None)
+                        if event_date:
+                            l_date = event_date.get("libdo:date")
+                            ll_date = event_date.get("lido:date", [])
+                            b = None
+                            if start:
+                                if isinstance(event_date, list):
+                                    print(json.dumps(ll_date, indent=4))
+                                    b = ll_date[0].get("lido:earliestDate", None)
+                                else:
+                                    if l_date:
+                                        b = l_date.get("lido:date", None).get("lido:earliestDate", None)
                             else:
-                                if l_date:
-                                    b = l_date.get("lido:latestDate", None)
-                else:
-                    period_name = event.get("lido:periodName")
-                    if isinstance(period_name, list):
-                        # print("\n Period name length =",len(period_name), period_name)
+                                if isinstance(event_date, list):
+                                    print(json.dumps(ll_date, indent=4))
+                                    b = ll_date[0].get("lido:latestDate", None)
+                                else:
+                                    if l_date:
+                                        b = l_date.get("lido:latestDate", None)
+                            if b:
+                                return b.split("-")[0]
+                            else: return None
+                    else:
+                        period_name = event.get("lido:periodName")
+                        if isinstance(period_name, list):
+                            # print("\n Period name length =",len(period_name), period_name)
 
-                        period_name = period_name[0]
-                    # print(json.dumps(period_name, indent=4))
-                    if period_name:
-                        p = period_name.get("lido:term")
-                        if isinstance(p, list):
-                            b = p[0].get("#text")
-                        else:
-                            b = p.get("#text")
+                            period_name = period_name[0]
+                        # print(json.dumps(period_name, indent=4))
+                        if period_name:
+                            p = period_name.get("lido:term")
+                            if isinstance(p, list):
+                                b = p[0].get("#text")
+                            else:
+                                b = p.get("#text")
 
-                        return b
+                            return b
 
-            elif "Acquisition" in term.get("#text") and acquisition:
+                elif "Acquisition" in term.get("#text") and acquisition:
+                    print("!!!!acquisition")
                     event_date = event.get("lido:eventDate", None)
+
                     if event_date:
                         if start:
                             if isinstance(event_date, list):
                                 b = event_date.get("lido:date", [])[0].get("lido:earliestDate", None)
                             else:
                                 b = event_date.get("lido:date").get("lido:earliestDate", None)
+
                         else:
                             if isinstance(event_date, list):
                                 b = event_date.get("lido:date")[0].get("lido:latestDate", None)
                             else:
                                 b = event_date.get("lido:date").get("lido:latestDate", None)
-                    return b.split("-")[0]
-    try:
-        if b:
-            return b.split("-")[0]
-        else: return None
-    except UnboundLocalError:
-        return None
+                        return b.split("-")[0]
+        try:
+            if b:
+                return b.split("-")[0]
+            else: return None
+        except UnboundLocalError:
+            return None
+    else:
+        return
 # with open("0.xml", "r", encoding='utf-8') as f:
 columns = [
     "object_number",
@@ -359,7 +391,7 @@ columns = [
     ]
 
 filename = "extracted_data.csv"
-with open(filename, "a", encoding='utf-8') as output_file:
+with open(filename, "a", encoding='utf-8', newline='') as output_file:
     writer = csv.DictWriter(output_file, fieldnames=columns)
     if os.stat(filename).st_size == 0:
         writer.writeheader()
