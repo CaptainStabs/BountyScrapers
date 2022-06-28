@@ -142,24 +142,151 @@ def get_dimensions(jd):
                 m_list.append(y)
 
         if success:
-            print("A",unit_list)
             units = " ".join(unit_list)
-            print("B", units)
             m = " x ".join([x for x in m_list if str(x)])
             return " ".join([m, units])
         else: return
 
 def get_maker_name(jdm):
     events = jdm.get("lido:eventWrap").get("lido:eventSet")
-    # print("A", json.dumps(events, indent=4))
     names = []
     for event in events:
         event = event.get("lido:event")
+
         event_set = event.get("lido:eventActor", {}).get("lido:actorInRole", {}).get("lido:actor", {}).get("lido:nameActorSet", None)
         if event_set:
-            names.append(event_set.get("lido:appellationValue", {}).get("#text", None))
+            app_val = event_set.get("lido:appellationValue")
+            if isinstance(app_val, list):
+                names.append(event_set.get("lido:appellationValue", {})[0].get("#text", None))
+            else:
+                names.append(event_set.get("lido:appellationValue", {}).get("#text", None))
 
-    print(names)
+    return "|".join(names)
+
+def get_maker_role(jdm):
+    events = jdm.get("lido:eventWrap").get("lido:eventSet")
+    roles = []
+    for event in events:
+        event = event.get("lido:event")
+
+        event_set = event.get("lido:eventActor", {}).get("lido:actorInRole", {}).get("lido:roleActor", None)
+
+        if event_set:
+            app_val = event_set.get("lido:term")
+            if isinstance(app_val, list):
+                roles.append(app_val[0].get("#text", None))
+            else:
+                roles.append(app_val.get("#text", None))
+
+    return "|".join(roles)
+
+def get_maker_birth(jdm, death=False):
+    events = jdm.get("lido:eventWrap").get("lido:eventSet")
+    births = []
+    for event in events:
+        event = event.get("lido:event")
+
+        event_set = event.get("lido:eventActor", {}).get("lido:actorInRole", {}).get("lido:actor", {}).get("lido:vitalDatesActor", None)
+        if event_set:
+            if not death:
+                if isinstance(event_set, list):
+                    b = event_set[0].get("lido:earliestDate", None)
+                else:
+                    b = event_set.get("lido:earliestDate", None)
+            else:
+                if isinstance(event_set, list):
+                    b = event_set[0].get("lido:latestDate", None)
+                else:
+                    b = event_set.get("lido:latestDate", None)
+
+            if b:
+                births.append(b.split("-")[0])
+    return "|".join(births)
+
+def get_year(jdm, start=True, acquisition=False, desc=False, mat=False):
+    events = jdm.get("lido:eventWrap").get("lido:eventSet")
+    births = []
+    for event in events:
+        event = event.get("lido:event")
+
+        event_type = event.get("lido:eventType")
+        if event_type:
+            term = event_type.get("lido:term")
+        else:
+            term = ""
+
+        if isinstance(term, list):
+            print("IS term")
+            print(json.dumps(event))
+            import sys; sys,exit()
+
+        elif mat:
+            mats = event.get("lido:eventMaterialsTech")
+
+            mat_list = []
+            if mats:
+                if isinstance(mats, list):
+                    for m in mats:
+                        terms = m.get("lido:materialsTech", {}).get("lido:termMaterialsTech").get("lido:term")
+
+                        if len(terms) > 2:
+                            print("TERMSSS:", terms)
+
+                        if isinstance(terms, list):
+                            m = terms[0].get("#text")
+                        else:
+                            m = terms.get("#text")
+                        mat_list.append(m)
+
+                    return "|".join(mat_list)
+                else:
+                    # print(json.dumps(mats, indent=2))
+                    print("mats is not list")
+                    import sys; sys.exit()
+
+
+
+        else:
+            if "Acquisition" not in term.get("#text") and not acquisition:
+                if not desc:
+                    event_date = event.get("lido:eventDate", None)
+                    if event_date:
+                        if start:
+                            if isinstance(event_date, list):
+                                b = event_date.get("lido:date", [])[0].get("lido:earliestDate", None)
+                            else:
+                                b = event_date.get("lido:date").get("lido:earliestDate", None)
+                        else:
+                            if isinstance(event_date, list):
+                                b = event_date.get("lido:date")[0].get("lido:latestDate", None)
+                            else:
+                                b = event_date.get("lido:date").get("lido:latestDate", None)
+                else:
+                    period = event.get("lido:periodName", None)
+                    if period:
+                        p = period.get("lido:term")
+                        if isinstance(p, list):
+                            b = p[0].get("#text")
+                        else:
+                            b = p.get("#text")
+
+                return b
+            elif "Acquisition" in term.get("#text") and acquisition:
+                    event_date = event.get("lido:eventDate", None)
+                    if event_date:
+                        if start:
+                            if isinstance(event_date, list):
+                                b = event_date.get("lido:date", [])[0].get("lido:earliestDate", None)
+                            else:
+                                b = event_date.get("lido:date").get("lido:earliestDate", None)
+                        else:
+                            if isinstance(event_date, list):
+                                b = event_date.get("lido:date")[0].get("lido:latestDate", None)
+                            else:
+                                b = event_date.get("lido:date").get("lido:latestDate", None)
+                    return b
+
+    return b.split("-")[0]
 # with open("0.xml", "r", encoding='utf-8') as f:
 
 with open("20.xml", "r", encoding="utf-8") as f:
@@ -191,6 +318,13 @@ for jd in dd["record"]:
         "description": get_description(jdm),
         "dimensions": get_dimensions(jdm),
         "maker_full_name": get_maker_name(jdm),
+        "maker_role": get_maker_role(jdm),
+        "maker_birth_year": get_maker_birth(jdm),
+        "maker_death_year": get_maker_birth(jdm, death=True),
+        "year_start": get_year(jdm),
+        "year_end": get_year(jdm, start=False),
+        "date_description": get_year(jdm, desc=True),
+        "materials": get_year(jdm, mat=True)
+
     }
     # print(json.dumps(data, indent=4))
-    break
