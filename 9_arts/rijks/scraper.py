@@ -116,7 +116,7 @@ try:
         token, countRecords = harvest(url, s)
         count += countRecords
 
-    with tqdm(total=4520) as pbar:
+    with tqdm(total=13669) as pbar:
         while token:
             token, countRecords = harvest(url2 + token, s)
             count += countRecords
