@@ -301,19 +301,19 @@ def get_year(jdm, start=True, acquisition=False, desc=False, mat=False):
                     if not desc:
                         event_date = event.get("lido:eventDate", None)
                         if event_date:
-                            l_date = event_date.get("libdo:date")
+                            l_date = event_date.get("lido:date")
                             ll_date = event_date.get("lido:date", [])
                             b = None
                             if start:
                                 if isinstance(event_date, list):
-                                    print(json.dumps(ll_date, indent=4))
+                                    # print(json.dumps(ll_date, indent=4))
                                     b = ll_date[0].get("lido:earliestDate", None)
                                 else:
                                     if l_date:
-                                        b = l_date.get("lido:date", None).get("lido:earliestDate", None)
+                                        b = l_date.get("lido:earliestDate", None)
                             else:
                                 if isinstance(event_date, list):
-                                    print(json.dumps(ll_date, indent=4))
+                                    # print(json.dumps(ll_date, indent=4))
                                     b = ll_date[0].get("lido:latestDate", None)
                                 else:
                                     if l_date:
@@ -397,9 +397,13 @@ with open(filename, "a", encoding='utf-8', newline='') as output_file:
         writer.writeheader()
 
     dir = r"F:\museum-collections\rijks"
-    for files in tqdm(os.listdir(dir)):
-        with open(os.path.join(dir, files), "r", encoding="utf-8") as f:
+    # for files in tqdm(os.listdir(dir)):
+        # with open(os.path.join(dir, files), "r", encoding="utf-8") as f:
+        #     dd = xmltodict.parse(f.read())
+    for files in ["0.xml", "20.xml"]:
+        with open(files, "r", encoding="utf-8") as f:
             dd = xmltodict.parse(f.read())
+
 
         dd = dd["OAI-PMH"]["ListRecords"]
         dd = json.dumps({"data":dd})
@@ -434,7 +438,7 @@ with open(filename, "a", encoding='utf-8', newline='') as output_file:
                 "year_end": get_year(jdm, start=False),
                 "date_description": get_year(jdm, desc=True),
                 "materials": get_year(jdm, mat=True),
-                "accession_year": get_year(jdm, acquisition=True)
+                # "accession_year": get_year(jdm, acquisition=True)
             }
 
             writer.writerow(data)
