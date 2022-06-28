@@ -31,11 +31,11 @@ with open(filename, "a", encoding='utf-8', newline='') as output_file:
 
     s = requests.Session()
     for i in tqdm(range(start_id, 84402)):
-        st = time.perf_counter()
+        st = time.perf_counter() # Start timer
         url = f"https://data.nma.gov.au/object/{i}"
         r = s.get(url)
         jd = r.json()
-        et = time.perf_counter()
+        # et = time.perf_counter() # end timer
         # max 84401
         try:
             if jd["data"]:
@@ -83,12 +83,12 @@ with open(filename, "a", encoding='utf-8', newline='') as output_file:
                     contrib = None
                 if "creator" in jd.keys():
                     creator = jd["creator"]
-                    mfn = "|".join([x["title"] for x in creator])
+                    mfn = "|".join([x.get("title") for x in creator])
                     if "roleName" in creator:
                         mr = "|".join([x["roleName"] for x in creator])
 
                     if contrib:
-                        mfn1 =  "|".join([x["title"] for x in contrib])
+                        mfn1 =  "|".join([x.get("title") for x in contrib])
                         if "roleName" in contrib:
                             mr1 = "|".join([x["roleName"] for x in contrib])
                             mr = "|".join([mr, mr1])
@@ -136,7 +136,6 @@ with open(filename, "a", encoding='utf-8', newline='') as output_file:
                                 tb.print_exc()
                                 print(json.dumps(jd["spatial"], indent=4))
 
-
                 if "temporal" in jd.keys():
                     temp = jd["temporal"][0]
                     if "roleName" in temp.keys():
@@ -163,8 +162,14 @@ with open(filename, "a", encoding='utf-8', newline='') as output_file:
         except Exception as e:
             tb.print_exc()
             print(json.dumps(jd, indent=4))
-        et = time.perf_counter()
+
+        et = time.perf_counter() # stop timer
+        '''
+          API has a request limit of 1 per second, so to maximize the
+          efficiency, I subtract 1 from the difference of the time it
+          took to actually get the request and parse (matter of milliseconds)
+          so that each iteration takes exactly 1 second
+        '''
         st = 1 - (et - st)
-        # print((et - st))
         st = abs(st)
         time.sleep(st)
