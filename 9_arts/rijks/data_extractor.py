@@ -1,6 +1,9 @@
 import pandas as pd
 import xmltodict
 import json
+import os
+import csv
+from tqdm import tqdm
 
 
 def build_dict(seq, key):
@@ -216,8 +219,8 @@ def get_year(jdm, start=True, acquisition=False, desc=False, mat=False):
             term = ""
 
         if isinstance(term, list):
-            print("IS term")
-            print(json.dumps(event))
+            print("\nIS term")
+            print(json.dumps(term, indent=2))
             import sys; sys,exit()
 
         elif mat:
@@ -230,7 +233,7 @@ def get_year(jdm, start=True, acquisition=False, desc=False, mat=False):
                         terms = m.get("lido:materialsTech", {}).get("lido:termMaterialsTech").get("lido:term")
 
                         if len(terms) > 2:
-                            print("TERMSSS:", terms)
+                            print("\nTERMSSS:", terms)
 
                         if isinstance(terms, list):
                             m = terms[0].get("#text")
@@ -288,43 +291,78 @@ def get_year(jdm, start=True, acquisition=False, desc=False, mat=False):
 
     return b.split("-")[0]
 # with open("0.xml", "r", encoding='utf-8') as f:
+columns = [
+    "object_number",
+    "institution_name",
+    "institution_city",
+    "institution_state",
+    "institution_country",
+    "institution_latitude",
+    "institution_longitude",
+    "category",
+    "title",
+    "description",
+    "dimensions", #
+    "accession_year",
+    "credit_line",
+    "source_1",
+    "date_description",
+    "maker_full_name",
+    "maker_role",
+    "year_start",
+    "year_end",
+    "materials",
+    "maker_death_year",
+    "maker_birth_year",
+    "source_2"
+    ]
 
-with open("20.xml", "r", encoding="utf-8") as f:
-    dd = xmltodict.parse(f.read())
+filename = "extracted_data.csv"
+with open(filename, "a", encoding='utf-8') as output_file:
+    writer = csv.DictWriter(output_file, fieldnames=columns)
+    if os.stat(filename).st_size == 0:
+        writer.writeheader()
 
-dd = dd["OAI-PMH"]["ListRecords"]
-dd = json.dumps({"data":dd})
-dd = json.loads(dd)["data"]
+    dir = r"F:\museum-collections\rijks"
+    for files in tqdm(os.listdir(dir)):
+        with open(os.path.join(dir, files), "r", encoding="utf-8") as f:
+            dd = xmltodict.parse(f.read())
 
-for jd in dd["record"]:
-    # print(json.dumps(jd, indent=4))
-    header = jd["header"]
-    jd = jd["metadata"]["lido:lidoWrap"]["lido:lido"]
-    jdm = jd.get("lido:descriptiveMetadata")
-    # print(json.dumps(jd.get("lido:descriptiveMetadata").get("lido:objectIdentificationWrap").get("lido:titleWrap")["lido:titleSet"], indent=2))
-    data = {
-        "institution_name": "Rijksmuseum",
-        "institution_city": "Amsterdam",
-        "institution_state": "New Holland",
-        "institution_country": "Netherlands",
-        "institution_latitude": 52.36006965261019,
-        "institution_longitude": 4.885229527186643,
-        "object_number": header["identifier"].split(":")[-1],
-        "category": get_category(jd),
-        "source_1": "https://data.rijksmuseum.nl/object-metadata/harvest/",
-        "source_2": jd.get("lido:objectPublishedID").get("#text"),
-        "title": get_title(jd),
-        "inscriptions": get_inscription(jd),
-        "description": get_description(jdm),
-        "dimensions": get_dimensions(jdm),
-        "maker_full_name": get_maker_name(jdm),
-        "maker_role": get_maker_role(jdm),
-        "maker_birth_year": get_maker_birth(jdm),
-        "maker_death_year": get_maker_birth(jdm, death=True),
-        "year_start": get_year(jdm),
-        "year_end": get_year(jdm, start=False),
-        "date_description": get_year(jdm, desc=True),
-        "materials": get_year(jdm, mat=True)
+        dd = dd["OAI-PMH"]["ListRecords"]
+        dd = json.dumps({"data":dd})
+        dd = json.loads(dd)["data"]
 
-    }
-    # print(json.dumps(data, indent=4))
+        for jd in dd["record"]:
+            # print(json.dumps(jd, indent=4))
+            header = jd["header"]
+            jd = jd["metadata"]["lido:lidoWrap"]["lido:lido"]
+            jdm = jd.get("lido:descriptiveMetadata")
+            # print(json.dumps(jd.get("lido:descriptiveMetadata").get("lido:objectIdentificationWrap").get("lido:titleWrap")["lido:titleSet"], indent=2))
+            data = {
+                "institution_name": "Rijksmuseum",
+                "institution_city": "Amsterdam",
+                "institution_state": "New Holland",
+                "institution_country": "Netherlands",
+                "institution_latitude": 52.36006965261019,
+                "institution_longitude": 4.885229527186643,
+                "object_number": header["identifier"].split(":")[-1],
+                "category": get_category(jd),
+                "source_1": "https://data.rijksmuseum.nl/object-metadata/harvest/",
+                "source_2": jd.get("lido:objectPublishedID").get("#text"),
+                "title": get_title(jd),
+                "inscriptions": get_inscription(jd),
+                "description": get_description(jdm),
+                "dimensions": get_dimensions(jdm),
+                "maker_full_name": get_maker_name(jdm),
+                "maker_role": get_maker_role(jdm),
+                "maker_birth_year": get_maker_birth(jdm),
+                "maker_death_year": get_maker_birth(jdm, death=True),
+                "year_start": get_year(jdm),
+                "year_end": get_year(jdm, start=False),
+                "date_description": get_year(jdm, desc=True),
+                "materials": get_year(jdm, mat=True),
+                "accession_year": get_year(jdm, acquisition=True)
+            }
+
+            writer.writerow(data)
+            # print(json.dumps(data, indent=4))
