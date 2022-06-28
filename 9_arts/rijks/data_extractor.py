@@ -80,12 +80,13 @@ def get_title(jd):
     title_set = jd.get("lido:descriptiveMetadata").get("lido:objectIdentificationWrap").get("lido:titleWrap")["lido:titleSet"]
     if isinstance(title_set, list):
         for x in title_set:
-            if "@lido:type" not in x.keys():
-                app_val = x.get("lido:appellationValue")
+            if x:
+                if "@lido:type" not in x.keys():
+                    app_val = x.get("lido:appellationValue")
 
-                if isinstance(app_val, list):
-                    for y in app_val:
-                        t_list.append(y.get("#text"))
+                    if isinstance(app_val, list):
+                        for y in app_val:
+                            t_list.append(y.get("#text"))
         return "|".join(t_list)
     else:
         title_set = title_set["lido:appellationValue"]
@@ -115,7 +116,7 @@ def get_description(jdm):
         return desc_set.get("lido:descriptiveNoteValue").get("#text")
 
 def get_dimensions(jd):
-    measures = jd.get("lido:objectIdentificationWrap").get("lido:objectMeasurementsWrap").get("lido:objectMeasurementsSet")
+    measures = jd.get("lido:objectIdentificationWrap", {}).get("lido:objectMeasurementsWrap", {}).get("lido:objectMeasurementsSet")
     # print("A",json.dumps(measures, indent=2))
     if measures:
         m_list = []
@@ -133,20 +134,30 @@ def get_dimensions(jd):
                 for u in x:
                     y = u.get("lido:measurementValue")
                     # print("C",sets.get("lido:measurementUnit")[0].get("#text"))
-                    units = u.get("lido:measurementUnit")[0].get("#text")
+                    unit = u.get("lido:measurementUnit")
                     m_list.append(y)
-                    unit_list.append(units)
+
+                    if unit:
+                        units = u.get("lido:measurementUnit")[0].get("#text")
+                        unit_list.append(units)
 
             else:
-                y = x.get("lido:measurementValue")
-                units = x.get("lido:measurementUnit")[0].get("#text")
+                try:
+                    y = x.get("lido:measurementValue")
+                    m_list.append(y)
+                except AttributeError:
+                    pass
+                try:
+                    if x.get('lido:measurementUnit'):
+                        units = x.get("lido:measurementUnit")[0].get("#text")
+                        unit_list.append(units)
+                except AttributeError:
+                    pass
 
-                unit_list.append(units)
-                m_list.append(y)
 
         if success:
             units = " ".join(unit_list)
-            m = " x ".join([x for x in m_list if str(x)])
+            m = " x ".join([x for x in m_list if x != None])
             return " ".join([m, units])
         else: return
 
@@ -154,7 +165,10 @@ def get_maker_name(jdm):
     events = jdm.get("lido:eventWrap").get("lido:eventSet")
     names = []
     for event in events:
-        event = event.get("lido:event")
+        if not isinstance(event, str):
+            event = event.get("lido:event")
+        else:
+            continue
 
         event_set = event.get("lido:eventActor", {}).get("lido:actorInRole", {}).get("lido:actor", {}).get("lido:nameActorSet", None)
         if event_set:
@@ -170,7 +184,10 @@ def get_maker_role(jdm):
     events = jdm.get("lido:eventWrap").get("lido:eventSet")
     roles = []
     for event in events:
-        event = event.get("lido:event")
+        if not isinstance(event, str):
+            event = event.get("lido:event")
+        else:
+            continue
 
         event_set = event.get("lido:eventActor", {}).get("lido:actorInRole", {}).get("lido:roleActor", None)
 
@@ -187,7 +204,10 @@ def get_maker_birth(jdm, death=False):
     events = jdm.get("lido:eventWrap").get("lido:eventSet")
     births = []
     for event in events:
-        event = event.get("lido:event")
+        if not isinstance(event, str):
+            event = event.get("lido:event")
+        else:
+            continue
 
         event_set = event.get("lido:eventActor", {}).get("lido:actorInRole", {}).get("lido:actor", {}).get("lido:vitalDatesActor", None)
         if event_set:
@@ -210,7 +230,10 @@ def get_year(jdm, start=True, acquisition=False, desc=False, mat=False):
     events = jdm.get("lido:eventWrap").get("lido:eventSet")
     births = []
     for event in events:
-        event = event.get("lido:event")
+        if not isinstance(event, str):
+            event = event.get("lido:event")
+        else:
+            continue
 
         event_type = event.get("lido:eventType")
         if event_type:
@@ -219,9 +242,10 @@ def get_year(jdm, start=True, acquisition=False, desc=False, mat=False):
             term = ""
 
         if isinstance(term, list):
-            print("\nIS term")
-            print(json.dumps(term, indent=2))
-            import sys; sys,exit()
+            term = term[0]
+            # print("\nIS term")
+            # print(json.dumps(term, indent=2))
+            # import sys; sys,exit()
 
         elif mat:
             mats = event.get("lido:eventMaterialsTech")
@@ -230,50 +254,57 @@ def get_year(jdm, start=True, acquisition=False, desc=False, mat=False):
             if mats:
                 if isinstance(mats, list):
                     for m in mats:
-                        terms = m.get("lido:materialsTech", {}).get("lido:termMaterialsTech").get("lido:term")
+                        terms = m.get("lido:materialsTech", {}).get("lido:termMaterialsTech", {}).get("lido:term", {})
 
-                        if len(terms) > 2:
-                            print("\nTERMSSS:", terms)
+                        # if len(terms) > 2:
+                        #     print("\nTERMSSS:", terms)
 
                         if isinstance(terms, list):
                             m = terms[0].get("#text")
                         else:
                             m = terms.get("#text")
                         mat_list.append(m)
-
-                    return "|".join(mat_list)
-                else:
+                    return "|".join([x for x in mat_list if x])
+                # else:
                     # print(json.dumps(mats, indent=2))
-                    print("mats is not list")
-                    import sys; sys.exit()
-
-
+                    # print("mats is not list")
+                    # import sys; sys.exit()
 
         else:
             if "Acquisition" not in term.get("#text") and not acquisition:
                 if not desc:
                     event_date = event.get("lido:eventDate", None)
                     if event_date:
+                        l_date = event_date.get("libdo:date")
+                        ll_date = event_date.get("lido:date", [])
                         if start:
                             if isinstance(event_date, list):
-                                b = event_date.get("lido:date", [])[0].get("lido:earliestDate", None)
+                                b = ll_date[0].get("lido:earliestDate", None)
                             else:
-                                b = event_date.get("lido:date").get("lido:earliestDate", None)
+                                if l_date:
+                                    b = l_date.get("lido:date", None).get("lido:earliestDate", None)
                         else:
                             if isinstance(event_date, list):
-                                b = event_date.get("lido:date")[0].get("lido:latestDate", None)
+                                b = ll_date[0].get("lido:latestDate", None)
                             else:
-                                b = event_date.get("lido:date").get("lido:latestDate", None)
+                                if l_date:
+                                    b = l_date.get("lido:latestDate", None)
                 else:
-                    period = event.get("lido:periodName", None)
-                    if period:
-                        p = period.get("lido:term")
+                    period_name = event.get("lido:periodName")
+                    if isinstance(period_name, list):
+                        # print("\n Period name length =",len(period_name), period_name)
+
+                        period_name = period_name[0]
+                    # print(json.dumps(period_name, indent=4))
+                    if period_name:
+                        p = period_name.get("lido:term")
                         if isinstance(p, list):
                             b = p[0].get("#text")
                         else:
                             b = p.get("#text")
 
-                return b
+                        return b
+
             elif "Acquisition" in term.get("#text") and acquisition:
                     event_date = event.get("lido:eventDate", None)
                     if event_date:
@@ -287,9 +318,13 @@ def get_year(jdm, start=True, acquisition=False, desc=False, mat=False):
                                 b = event_date.get("lido:date")[0].get("lido:latestDate", None)
                             else:
                                 b = event_date.get("lido:date").get("lido:latestDate", None)
-                    return b
-
-    return b.split("-")[0]
+                    return b.split("-")[0]
+    try:
+        if b:
+            return b.split("-")[0]
+        else: return None
+    except UnboundLocalError:
+        return None
 # with open("0.xml", "r", encoding='utf-8') as f:
 columns = [
     "object_number",
@@ -314,7 +349,8 @@ columns = [
     "materials",
     "maker_death_year",
     "maker_birth_year",
-    "source_2"
+    "source_2",
+    "inscriptions"
     ]
 
 filename = "extracted_data.csv"
