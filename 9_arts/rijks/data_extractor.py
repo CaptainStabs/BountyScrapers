@@ -41,38 +41,43 @@ def get_category(jd):
                     cats.append(o_c.get("lido:objectWorkTypeWrap").get("lido:objectWorkType").get("lido:term")["#text"])
 
             # Get lido:classificationWrap
-            c_w = o_c.get("lido:classificationWrap").get("lido:classification")
+            if  o_c.get("lido:classificationWrap"):
+                c_w = o_c.get("lido:classificationWrap").get("lido:classification")
 
-            if isinstance(c_w, list):
-                term_list = []
-                for x in c_w:
-                    term = x["lido:term"]
-                    if isinstance(term, list):
-                        # print(term)
-                        t_dict = build_dict(term, "@xml:lang")
-                        t = term[t_dict.get("en")["index"]]["#text"]
-                        term_list.append(t)
-                    else:
-                        term_list.append(term["#text"])
-                        # print("AAA", json.dumps(c_w, indent=2))
-                cats.append("|".join(term_list))
-                # [print("A", x["lido:term"]) for x in c_w if x["lido:term"]["@xml:lang"] == "en"]
-                # b = [x.get("lido:term").get("#text") for x in a if x["lido:term"]["@xml:lang"] == "en"]
-                # print("AAAA")
-            else:
-                try:
-                    cats.append(o_c.get("lido:classificationWrap").get("lido:classification").get("lido:term")[0]["#text"])
-                except AttributeError:
-                    cats.append(o_c.get("lido:classificationWrap").get("lido:classification").get("lido:term")["#text"])
-                except KeyError:
-                    cats.append(o_c.get("lido:classificationWrap").get("lido:classification").get("lido:term")["#text"])
-            # Get
-        # o_d = desc_meta.get("lido:objectIdentificationWrap")
+                if isinstance(c_w, list):
+                    term_list = []
+                    for x in c_w:
+                        term = x["lido:term"]
+                        if isinstance(term, list):
+                            # print(term)
+                            t_dict = build_dict(term, "@xml:lang")
+                            t = term[t_dict.get("en")["index"]]["#text"]
+                            term_list.append(t)
+                        else:
+                            term_list.append(term["#text"])
+                            # print("AAA", json.dumps(c_w, indent=2))
+                    cats.append("|".join([x for x in term_list if x]))
+                    # [print("A", x["lido:term"]) for x in c_w if x["lido:term"]["@xml:lang"] == "en"]
+                    # b = [x.get("lido:term").get("#text") for x in a if x["lido:term"]["@xml:lang"] == "en"]
+                    # print("AAAA")
+                else:
+                    try:
+                        cats.append(o_c.get("lido:classificationWrap").get("lido:classification").get("lido:term")[0].get("#text"))
+                    except AttributeError:
+                        cats.append(o_c.get("lido:classificationWrap").get("lido:classification").get("lido:term").get("#text"))
+                    except KeyError:
+                        try:
+                            cats.append(o_c.get("lido:classificationWrap").get("lido:classification").get("lido:term").get("#text"))
+                        except AttributeError:
+                            print(json.dumps(o_c.get("lido:classificationWrap"), indent=4))
+                            cats.append(o_c.get("lido:classificationWrap").get("lido:classification").get("lido:term")[0].get("#text"))
+                # Get
+            # o_d = desc_meta.get("lido:objectIdentificationWrap")
 
         if len(cats) != 2:
             # print(json.dumps(desc_meta, indent=2))
             print("\n", "Not two category")
-        return "|".join(cats)
+        return "|".join([x for x in cats if x])
     return
 
 def get_title(jd):
@@ -198,7 +203,7 @@ def get_maker_role(jdm):
             else:
                 roles.append(app_val.get("#text", None))
 
-    return "|".join(roles)
+    return "|".join([x for x in roles if x])
 
 def get_maker_birth(jdm, death=False):
     events = jdm.get("lido:eventWrap").get("lido:eventSet")
@@ -224,7 +229,7 @@ def get_maker_birth(jdm, death=False):
 
             if b:
                 births.append(b.split("-")[0])
-    return "|".join(births)
+    return "|".join([x for x in births if x])
 
 def get_year(jdm, start=True, acquisition=False, desc=False, mat=False):
     events = jdm.get("lido:eventWrap").get("lido:eventSet")
