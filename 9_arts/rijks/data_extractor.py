@@ -4,6 +4,8 @@ import json
 import os
 import csv
 from tqdm import tqdm
+# import heartrate; heartrate.trace(browser=True, daemon=True)
+from send_mail import send_mail
 
 
 def build_dict(seq, key):
@@ -17,7 +19,14 @@ def get_category(jd):
         o_c = desc_meta.get("lido:objectClassificationWrap")
         if o_c:
             # Get lido:objectWorkTypeWrap
-            o_c_t = o_c.get("lido:objectWorkTypeWrap").get("lido:objectWorkType")
+            try:
+                o_c_t = o_c.get("lido:objectWorkTypeWrap", {}).get("lido:objectWorkType", None)
+            except:
+                return
+
+            if not o_c_t:
+                return
+
             if isinstance(o_c_t, list):
                 term_list = []
                 for x in o_c_t: # Iterate through o_c_t list as x
@@ -26,6 +35,9 @@ def get_category(jd):
                         # print(term)
                         t_dict = build_dict(term, "@xml:lang")
                         t = term[t_dict.get("en")["index"]].get("#text") # Find english text
+                        if not t:
+                            t = term[t_dict.get("nl")["index"]].get("#text")
+
                         term_list.append(t)
                     else:
                         term_list.append(term.get("#text"))
@@ -33,15 +45,20 @@ def get_category(jd):
                 cats.append("|".join([x for x in term_list if x]))
 
             else:
-                try:
-                    cats.append(o_c.get("lido:objectWorkTypeWrap").get("lido:objectWorkType").get("lido:term")[0]["#text"])
-                except AttributeError:
-                    cats.append(o_c.get("lido:objectWorkTypeWrap").get("lido:objectWorkType").get("lido:term")["#text"])
-                except KeyError:
-                    try:
-                        cats.append(o_c.get("lido:objectWorkTypeWrap").get("lido:objectWorkType").get("lido:term")["#text"])
-                    except:
-                        print(json.dumps(o_c.get("lido:objectWorkTypeWrap"), indent=4))
+                term = o_c_t["lido:term"]
+                if isinstance(term, list): # check if term is a list
+                    # print(term)
+                    t_dict = build_dict(term, "@xml:lang")
+                    t = term[t_dict.get("en")["index"]].get("#text") # Find english text
+                    if not t:
+                        t = term[t_dict.get("nl")["index"]].get("#text")
+
+                    term_list.append(t)
+                else:
+                    term_list.append(term.get("#text"))
+                    # print("AAA", json.dumps(o_c_t, indent=2))
+                cats.append("|".join([x for x in term_list if x]))
+                
 
             # Get lido:classificationWrap
             if  o_c.get("lido:classificationWrap"):
@@ -86,31 +103,35 @@ def get_category(jd):
     return
 
 def get_title(jd):
-    t_list = []
-    title_set = jd.get("lido:descriptiveMetadata").get("lido:objectIdentificationWrap").get("lido:titleWrap")["lido:titleSet"]
-    if isinstance(title_set, list):
-        for x in title_set:
-            if x:
-                if "@lido:type" not in x.keys():
-                    app_val = x.get("lido:appellationValue")
+    if jd:
+        t_list = []
+        try:
+            title_set = jd.get("lido:descriptiveMetadata", {}).get("lido:objectIdentificationWrap", {}).get("lido:titleWrap", {}).get("lido:titleSet", None)
+        except:
+            return
+        if isinstance(title_set, list):
+            for x in title_set:
+                if x:
+                    if "@lido:type" not in x.keys():
+                        app_val = x.get("lido:appellationValue")
 
-                    if isinstance(app_val, list):
-                        for y in app_val:
-                            t_list.append(y.get("#text"))
-        return "|".join(t_list)
-    else:
-        title_set = title_set["lido:appellationValue"]
+                        if isinstance(app_val, list):
+                            for y in app_val:
+                                t_list.append(y.get("#text"))
+            return "|".join(t_list)
+        else:
+            title_set = title_set["lido:appellationValue"]
 
-    if isinstance(title_set, list):
-        # # print(term)
-        t_dict = build_dict(title_set, "@xml:lang")
-        t = title_set[t_dict.get("en")["index"]]["#text"] # Find english text
-        return t
-    else:
-        return title_set["#text"]
+        if isinstance(title_set, list):
+            # # print(term)
+            t_dict = build_dict(title_set, "@xml:lang")
+            t = title_set[t_dict.get("en")["index"]]["#text"] # Find english text
+            return t
+        else:
+            return title_set["#text"]
 
 def get_inscription(jd):
-    inscription = jd.get("lido:descriptiveMetadata").get("lido:objectIdentificationWrap").get("lido:inscriptionsWrap")
+    inscription = jd.get("lido:descriptiveMetadata", {}).get("lido:objectIdentificationWrap", {}).get("lido:inscriptionsWrap", None)
     if inscription:
         i = inscription.get("lido:inscriptions")
         # print(json.dumps(i, indent=2))
@@ -390,56 +411,63 @@ columns = [
     "inscriptions"
     ]
 
-filename = "extracted_data.csv"
-with open(filename, "a", encoding='utf-8', newline='') as output_file:
-    writer = csv.DictWriter(output_file, fieldnames=columns)
-    if os.stat(filename).st_size == 0:
-        writer.writeheader()
+try:
+    filename = "extracted_data.csv"
+    with open(filename, "a", encoding='utf-8', newline='') as output_file:
+        writer = csv.DictWriter(output_file, fieldnames=columns)
+        if os.stat(filename).st_size == 0:
+            writer.writeheader()
 
-    dir = r"F:\museum-collections\rijks"
-    # for files in tqdm(os.listdir(dir)):
-        # with open(os.path.join(dir, files), "r", encoding="utf-8") as f:
-        #     dd = xmltodict.parse(f.read())
-    for files in ["0.xml", "20.xml"]:
-        with open(files, "r", encoding="utf-8") as f:
-            dd = xmltodict.parse(f.read())
+        dir = "F:\\museum-collections\\rijks\\"
+        for files in tqdm(os.listdir(dir)):
+            if "xml" not in files:
+                # skip directories
+                continue
+            with open(os.path.join(dir, files), "r", encoding="utf-8") as f:
+                dd = xmltodict.parse(f.read())
+        # for files in ["0.xml", "20.xml"]:
+        #     with open(files, "r", encoding="utf-8") as f:
+        #         dd = xmltodict.parse(f.read())
 
 
-        dd = dd["OAI-PMH"]["ListRecords"]
-        dd = json.dumps({"data":dd})
-        dd = json.loads(dd)["data"]
+            dd = dd["OAI-PMH"]["ListRecords"]
+            dd = json.dumps({"data":dd})
+            dd = json.loads(dd)["data"]
 
-        for jd in dd["record"]:
-            # print(json.dumps(jd, indent=4))
-            header = jd["header"]
-            jd = jd["metadata"]["lido:lidoWrap"]["lido:lido"]
-            jdm = jd.get("lido:descriptiveMetadata")
-            # print(json.dumps(jd.get("lido:descriptiveMetadata").get("lido:objectIdentificationWrap").get("lido:titleWrap")["lido:titleSet"], indent=2))
-            data = {
-                "institution_name": "Rijksmuseum",
-                "institution_city": "Amsterdam",
-                "institution_state": "New Holland",
-                "institution_country": "Netherlands",
-                "institution_latitude": 52.36006965261019,
-                "institution_longitude": 4.885229527186643,
-                "object_number": header["identifier"].split(":")[-1],
-                "category": get_category(jd),
-                "source_1": "https://data.rijksmuseum.nl/object-metadata/harvest/",
-                "source_2": jd.get("lido:objectPublishedID").get("#text"),
-                "title": get_title(jd),
-                "inscriptions": get_inscription(jd),
-                "description": get_description(jdm),
-                "dimensions": get_dimensions(jdm),
-                "maker_full_name": get_maker_name(jdm),
-                "maker_role": get_maker_role(jdm),
-                "maker_birth_year": get_maker_birth(jdm),
-                "maker_death_year": get_maker_birth(jdm, death=True),
-                "year_start": get_year(jdm),
-                "year_end": get_year(jdm, start=False),
-                "date_description": get_year(jdm, desc=True),
-                "materials": get_year(jdm, mat=True),
-                # "accession_year": get_year(jdm, acquisition=True)
-            }
+            for jd in dd["record"]:
+                # print(json.dumps(jd, indent=4))
+                header = jd["header"]
+                jd = jd["metadata"]["lido:lidoWrap"]["lido:lido"]
+                jdm = jd.get("lido:descriptiveMetadata")
+                # print(json.dumps(jd.get("lido:descriptiveMetadata").get("lido:objectIdentificationWrap").get("lido:titleWrap")["lido:titleSet"], indent=2))
+                data = {
+                    "institution_name": "Rijksmuseum",
+                    "institution_city": "Amsterdam",
+                    "institution_state": "New Holland",
+                    "institution_country": "Netherlands",
+                    "institution_latitude": 52.36006965261019,
+                    "institution_longitude": 4.885229527186643,
+                    "object_number": header["identifier"].split(":")[-1],
+                    "category": get_category(jd),
+                    "source_1": "https://data.rijksmuseum.nl/object-metadata/harvest/",
+                    "source_2": jd.get("lido:objectPublishedID").get("#text"),
+                    "title": get_title(jd),
+                    "inscriptions": get_inscription(jd),
+                    "description": get_description(jdm),
+                    "dimensions": get_dimensions(jdm),
+                    "maker_full_name": get_maker_name(jdm),
+                    "maker_role": get_maker_role(jdm),
+                    "maker_birth_year": get_maker_birth(jdm),
+                    "maker_death_year": get_maker_birth(jdm, death=True),
+                    "year_start": get_year(jdm),
+                    "year_end": get_year(jdm, start=False),
+                    "date_description": get_year(jdm, desc=True),
+                    "materials": get_year(jdm, mat=True),
+                    # "accession_year": get_year(jdm, acquisition=True)
+                }
 
-            writer.writerow(data)
-            # print(json.dumps(data, indent=4))
+                writer.writerow(data)
+                # print(json.dumps(data, indent=4))
+except:
+    send_mail("Extractor crashed", "")
+    raise

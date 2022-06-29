@@ -151,7 +151,7 @@ except:
 
     except:
         # requests.post("https://notify.run/c/BlqCBFeCJhxKLcEprOMg", data={"Hard crash, restart ASAP"})
-        # send_mail("hard crash, restart ASAP", " ")
+        send_mail("hard crash, restart ASAP", " ")
         print("\n!!!")
         print("Unexpected error")
         print("To resume run this script with the last succesfully harvested file as second paramater:")
