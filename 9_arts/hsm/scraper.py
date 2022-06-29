@@ -58,7 +58,9 @@ def dimensions(dim):
 
     d_list = [hgt, wid, dia, dep]
     dimension = " x ".join([x for x in d_list if x])
-    dimension = " ".join([dimension, uni])
+
+    if dimension and uni:
+        dimension = " ".join([dimension, uni])
 
     wgt = str(dim["weight"][0]) if len(dim["weight"]) else None
     if not isinstance(wgt, type(None)):
@@ -67,22 +69,29 @@ def dimensions(dim):
 
 
 def get_location(jd):
-    loc = jd["origins"]
-    place_list = []
-    for i in range(0, 5, -1):
-        place_list.append(",".join([x for x in loc[f"placeCreated{i}"]]))
-    return ",".join(place_list)
+    try:
+        loc = jd["origins"][0]
+    except KeyError:
+        loc = None
+    if loc:
+        place_list = []
+        for i in range(0, 5, -1):
+            place_list.append(",".join([x for x in loc[f"placeCreated{i}"]]))
+        return ",".join(place_list)
+    else:
+        return
 
 def get_image(jd):
-    media = jd["multimedia"][0]
+    try:
+        media = jd["multimedia"][0]
+    except IndexError:
+        media = None
     if media:
         img_path = media["path"]
         name = media["MulIdentifier"]
-
-
-
-    url = "https://hsm-online-collections-assets-prod.s3.eu-west-1.amazonaws.com/emu/emumultimedia/multimedia/"
-    return "".join([url, img_path, name])
+        url = "https://hsm-online-collections-assets-prod.s3.eu-west-1.amazonaws.com/emu/emumultimedia/multimedia/"
+        return "".join([url, img_path, name])
+    else: return
 
 
 def scraper(filename, start_num=False, end_num=False):
@@ -137,15 +146,15 @@ def scraper(filename, start_num=False, end_num=False):
                     "technique": "|".join([x for x in phys["technique"]]),
                     "from_location": get_location(jd),
                     "date_description": jd["dateCreated"],
-                    "year_start": str(jd["dateCreatedEarliest"]).split("-")[0],
-                    "year_end": str(jd["dateCreatedLatest"]).split("-")[0],
-                    "maker_full_name": "|".join([x["fullName"] for x in jd["persons"]]),
-                    "maker_first_name": "|".join([x["firstName"] for x in jd["persons"]]),
-                    "maker_last_name": "|".join([x["lastName"] for x in jd["persons"]]),
+                    "year_start": str(jd["dateCreatedEarliest"]).split("-")[0] if jd["dateCreatedEarliest"] else "",
+                    "year_end": str(jd["dateCreatedLatest"]).split("-")[0] if jd["dateCreatedLatest"] else "",
+                    "maker_full_name": "|".join([x["fullName"] for x in jd["persons"] if x["fullName"]]),
+                    "maker_first_name": "|".join([x["firstName"] for x in jd["persons"] if x["firstName"]]),
+                    "maker_last_name": "|".join([x["lastName"] for x in jd["persons"] if x["lastName"]]),
                     "maker_birth_year": "|".join([x["birthDate"].split("-")[0] for x in jd["persons"] if x["birthDate"]]),
                     "maker_death_year": "|".join([x["birthDate"].split("-")[-1] for x in jd["persons"] if x["birthDate"]]),
-                    "maker_role": "|".join([x["partyType"] for x in jd["persons"]]),
-                    "maker_gender": "|".join([x["sex"] for x in jd["persons"]]),
+                    "maker_role": "|".join([x["partyType"] for x in jd["persons"] if x["partyType"]]),
+                    "maker_gender": "|".join([x["sex"] for x in jd["persons"] if x["sex"]]),
                     "image_url": get_image(jd),
                     "provenance": jd["owner"]["provenance"],
                     "source_1": url,
@@ -200,3 +209,5 @@ if __name__ == "__main__":
             sys.exit()
             print("   [*] Finished joining...")
             # sys.exit(1)
+
+# scraper("test.csv", 0, 20)
