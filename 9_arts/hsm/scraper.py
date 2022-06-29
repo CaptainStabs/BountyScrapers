@@ -172,22 +172,22 @@ def scraper(filename, start_num=False, end_num=False):
 
 if __name__ == "__main__":
         arguments = []
-        end_id = 45899
+        end_id = 9180 #45899
         # start_num is supplemental for first run and is only used if the files don't exist
         for i in range(10):
             if i == 0:
                 start_num = 0
             else:
                 # Use end_id before it is added to
-                start_num = end_id - 45899
+                start_num = end_id - 9180
             print("Startnum: " + str(start_num))
             arguments.append([f"./files/extracted_data{i}.csv", start_num, end_id])
-            end_id = end_id + 45899
+            end_id = end_id + 9180
         print(arguments)
 
         try:
             pool = Pool(processes=len(arguments))
-            pool.starmap(scraper, arguments, total=len(arguments))
+            pool.starmap(scraper, arguments)
             # for _ in tqdm(pool.istarmap(scraper, arguments), total=len(arguments)):
             #     pass
             pool.close()
