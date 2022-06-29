@@ -1,5 +1,5 @@
 import smtplib
-from _secrets import gmail_user, gmail_password, sent_from, to
+from ._secrets import gmail_user, gmail_password, sent_from, to
 
 def send_mail(subject, message):
     try:
