@@ -22,6 +22,7 @@ __pycache__/
 
 # Secrets
 /9_arts/rijks/_secrets.py
+/9_arts/_common/_secrets.py
 
 # C extensions
 *.so
