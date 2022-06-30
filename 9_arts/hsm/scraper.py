@@ -15,7 +15,8 @@ import logging; logging.basicConfig(level=logging.INFO)
 from pathlib import Path
 p = Path(__file__).resolve().parents[1]
 sys.path.insert(1, str(p))
-from _common import get_last_id, send_mail
+from _common import get_last_id
+from _common.send_mail import send_mail
 
 
 def url_get(url, s):
@@ -62,10 +63,15 @@ def dimensions(dim):
     if dimension and uni:
         dimension = " ".join([dimension, uni])
 
-    wgt = str(dim["weight"][0]) if len(dim["weight"]) else None
-    if not isinstance(wgt, type(None)):
-        dimension = " ".join([dimension, str(dim["weight"][0]), dim["unitWeight"][0]])
-    return dimension
+    if len(dim["unitWeight"]):
+        wgt = str(dim["weight"][0]) if len(dim["weight"]) else None
+        uw = str(dim["unitWeight"][0]) if len(dim["unitWeight"]) else None
+        if not isinstance(wgt, type(None)) and uw:
+            dimension = " ".join([dimension, wgt, uw])
+        return dimension
+    elif dimension:
+        return dimension
+    else: return
 
 
 def get_location(jd):
@@ -96,7 +102,7 @@ def get_image(jd):
 
 def scraper(filename, start_num=False, end_num=False):
     # filename, start_num, end_num = filename[0], filename[1], filename[2]
-    signal.signal(signal.SIGINT, signal.SIG_IGN)
+    # signal.signal(signal.SIGINT, signal.SIG_IGN)
     print(start_num, end_num, filename)
     if os.path.exists(filename) and os.stat(filename).st_size > 515:
         start_id = get_last_id(filename, 515)
@@ -137,13 +143,13 @@ def scraper(filename, start_num=False, end_num=False):
                     "institution_longitude": -1.2554219667123852,
                     "object_number": ident.get("inventoryNo"),
                     "accession_number": ident.get("accessionNumber"),
-                    "category": "|".join([x for x in jd["subject"]]),
+                    "category": "|".join([x for x in jd["subject"] if x]),
                     "title": jd.get("recordTitle"),
                     "description": jd.get("recordDescription")[:10000] if jd.get("recordDescription")  else None,
                     "dimensions": dimensions(jd.get("dimensions")),
                     "inscription": "|".join([x for x in [insc["primaryInscriptions"], insc["otherInscriptions"]] if x]),
-                    "materials": "|".join([x for x in phys["material"]]),
-                    "technique": "|".join([x for x in phys["technique"]]),
+                    "materials": "|".join([x for x in phys["material"] if x]),
+                    "technique": "|".join([x for x in phys["technique"] if x]),
                     "from_location": get_location(jd),
                     "date_description": jd["dateCreated"],
                     "year_start": str(jd["dateCreatedEarliest"]).split("-")[0] if jd["dateCreatedEarliest"] else "",
@@ -166,48 +172,49 @@ def scraper(filename, start_num=False, end_num=False):
 
             except Exception as e:
                 print("\n",id)
+                send_mail("script crashed", "")
                 print(json.dumps(jd, indent=4))
                 print(e)
                 raise(e)
 
-if __name__ == "__main__":
-        arguments = []
-        end_id = 9180 #45899
-        # start_num is supplemental for first run and is only used if the files don't exist
-        for i in range(10):
-            if i == 0:
-                start_num = 0
-            else:
-                # Use end_id before it is added to
-                start_num = end_id - 9180
-            print("Startnum: " + str(start_num))
-            arguments.append([f"./files/extracted_data{i}.csv", start_num, end_id])
-            end_id = end_id + 9180
-        print(arguments)
-
-        try:
-            pool = Pool(processes=len(arguments))
-            pool.starmap(scraper, arguments)
-            # for _ in tqdm(pool.istarmap(scraper, arguments), total=len(arguments)):
-            #     pass
-            pool.close()
-            send_mail("Finished", "")
-            # pool.starmap(scraper, arguments), total=len(arguments)
-        except KeyboardInterrupt:
-            print("Quitting")
-            pool.terminate()
-            sys.exit()
-        except Exception as e:
-            raise(e)
-            print(e)
-            tb.print_exc()
-            pool.terminate()
-        finally:
-            print("   [*] Joining pool...")
-            pool.join()
-            send_mail("Scraper crashed", "")
-            sys.exit()
-            print("   [*] Finished joining...")
+# if __name__ == "__main__":
+#         arguments = []
+#         end_id = 9180 #45899
+#         # start_num is supplemental for first run and is only used if the files don't exist
+#         for i in range(10):
+#             if i == 0:
+#                 start_num = 0
+#             else:
+#                 # Use end_id before it is added to
+#                 start_num = end_id - 9180
+#             print("Startnum: " + str(start_num))
+#             arguments.append([f"./files/extracted_data{i}.csv", start_num, end_id])
+#             end_id = end_id + 9180
+#         print(arguments)
+#
+#         try:
+#             pool = Pool(processes=len(arguments))
+#             pool.starmap(scraper, arguments)
+#             # for _ in tqdm(pool.istarmap(scraper, arguments), total=len(arguments)):
+#             #     pass
+#             pool.close()
+#             send_mail("Finished", "")
+#             # pool.starmap(scraper, arguments), total=len(arguments)
+#         except KeyboardInterrupt:
+#             print("Quitting")
+#             pool.terminate()
+#             sys.exit()
+#         except Exception as e:
+#             raise(e)
+#             print(e)
+#             tb.print_exc()
+#             pool.terminate()
+#         finally:
+#             print("   [*] Joining pool...")
+#             pool.join()
+#             send_mail("Scraper crashed", "")
+#             sys.exit()
+#             print("   [*] Finished joining...")
             # sys.exit(1)
 
-# scraper("test.csv", 0, 20)
+scraper("extracted_data.csv", 45899, 99999)
