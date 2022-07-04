@@ -75,6 +75,8 @@ def get_contrib(jd, name=False, location=False):
     if location:
         if "production" in jd.keys():
             locations = "|".join([x.get("spatial", {}).get("title") if x.get("spatial", {}).get("title") else "" for x in jd["production"]]) if len(jd["production"]) else None
+            if locations == "|":
+                locations = None
 
         elif "evidenceFor" in jd.keys():
             loc_stuff = jd["evidenceFor"].get("atEvent", {}).get("atLocation", {})
@@ -94,6 +96,8 @@ def get_dates(jd, start=False, end=False, desc=False):
                 eventDate = at_event.get("eventDate")
                 if eventDate:
                     ed = eventDate.split("-")[0]
+                    if ed:
+                        ed = "".join(filter(str.isdigit, ed))
                 else:
                     ed = None
                 return ed
@@ -104,16 +108,19 @@ def get_dates(jd, start=False, end=False, desc=False):
         if len(jd["production"]):
             prod = jd["production"]
             if desc:
-                descs = "|".join([x["createdDate"] for x in prod])
+                descs = "|".join([x.get("createdDate") if x.get("createdDate") else "" for x in prod])
+                if descs == "|": descs = None
                 return descs
             elif start:
                 start = prod[0]["verbatimCreatedDate"].split("-")[0] if prod[0]["verbatimCreatedDate"] else None
+                if start:
+                    start = "".join(filter(str.isdigit, start))
                 return start
+
             elif end:
-                return prod[0]["verbatimCreatedDate"].split("-")[-1] if "-" in prod[0]["verbatimCreatedDate"] else None
-
-
-
+                end_d = prod[0]["verbatimCreatedDate"].split("-")[-1] if "-" in prod[0]["verbatimCreatedDate"] else None
+                if end_d:
+                    return "".join(filter(str.isdigit, end_d))
     else:
         return
 
@@ -159,17 +166,17 @@ def scraper(filename, start_num=False, end_num=False):
                     "title": jd["title"],
                     "maker_full_name": get_contrib(jd, name=True),
                     "maker_role": "|".join([x.get("role") if x.get("role") else "" for x in jd["production"]]) if jd.get("production") else None,
-                    "maker_birth_year": "|".join([x.get("contributor", {}).get("birthDate").split("-")[0] for x in jd["production"] if x.get("contributor", {}).get("birthDate") else ""]) if jd.get("production") else None,
-                    "maker_death_year": "|".join([x.get("contributor", {}).get("deathDate").split("-")[0] for x in jd["production"] if x.get("contributor", {}).get("deathDate") else ""]) if jd.get("production") else None,
-                    "technique": "|".join([x.get("title") for x in jd["productionUsedTechnique"]]),
+                    "maker_birth_year": "|".join([x.get("contributor", {}).get("birthDate").split("-")[0] if x.get("contributor", {}).get("birthDate") else "" for x in jd["production"]]) if jd.get("production") else None,
+                    "maker_death_year": "|".join([x.get("contributor", {}).get("deathDate").split("-")[0] if x.get("contributor", {}).get("deathDate") else "" for x in jd["production"]]) if jd.get("production") else None,
+                    "technique": "|".join([x.get("title") for x in jd["productionUsedTechnique"]]) if jd.get("productionUsedTechnique") else None,
                     "category": "|".join([x.get("title") for x in jd["isTypeOf"]]),
                     "materials": "|".join([x.get("title") for x in jd["isMadeOf"]]),
                     "source_1": url,
                     "source_2": check_url(id),
-                    "image_url": jd.get("hasRepresentation", [])[0].get("contentUrl") if len(jd.get("hasRepresentation")) else None,
+                    "image_url": jd.get("hasRepresentation", [])[0].get("contentUrl") if len(jd.get("hasRepresentation", [])) else None,
                     "description": jd.get("caption"),
                     "accession_number": jd.get("identifier"),
-                    "dimensions": "|".join([x["title"] for x in jd.get("observedDimension")]) if len(jd.get("observedDimension")) else None,
+                    "dimensions": "|".join([x["title"] for x in jd.get("observedDimension")]) if len(jd.get("observedDimension", [])) else None,
                     "from_location": get_contrib(jd, location=True),
                     "date_description": get_dates(jd, desc=True),
                     "year_start": get_dates(jd, start=True),
@@ -179,12 +186,11 @@ def scraper(filename, start_num=False, end_num=False):
 
                 writer.writerow(data)
 
-            except Exception as e:
+            except Exception:
                 print("\n",id)
-                send_mail("script crashed", "")
                 print(json.dumps(jd, indent=4))
-                print(e)
-                raise(e)
+                send_mail("script crashed", "")
+                raise
 
 # if __name__ == "__main__":
 #         arguments = []
