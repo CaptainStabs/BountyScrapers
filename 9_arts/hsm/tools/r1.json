@@ -1,0 +1,73 @@
+{
+    "id": "hsm-catalogue-1",
+    "type": "catalogue",
+    "museum": "hsm",
+    "collection": "HSM collection",
+    "inscriptions": {
+        "primaryInscriptions": null,
+        "otherInscriptions": null
+    },
+    "origins": {
+        "placeCreated0": [],
+        "placeCreated2": [],
+        "placeCreatedSummary": [],
+        "placeCreated1": [],
+        "placeCreated4": [],
+        "placeCreated3": []
+    },
+    "subject": [
+        "Microscopy"
+    ],
+    "isPublished": "Yes",
+    "EADAuthor": [],
+    "dimensions": {
+        "depth": [],
+        "weight": [],
+        "unitWeight": [],
+        "height": [],
+        "width": [],
+        "diameter": [],
+        "unitLength": []
+    },
+    "physical": {
+        "contentAnalysis": [],
+        "material": [],
+        "technique": [],
+        "watermark": null,
+        "support": null,
+        "medium": []
+    },
+    "owner": {
+        "provenance": null,
+        "relatedParties": [],
+        "collectionGroup": [],
+        "collectionGroupTitle": null
+    },
+    "dateCreatedLatest": null,
+    "EADUnitTitle": null,
+    "dateCreated": null,
+    "EADDescription": null,
+    "summaryData": "Inventory No. 55294, \"Winding key\"",
+    "identifier": {
+        "accessionNumber": null,
+        "inventoryNo": "55294"
+    },
+    "title": "Winding key",
+    "EADLevelAttribute": null,
+    "multimedia": [],
+    "EADUnitDate": null,
+    "object": {
+        "objectName": "Winding key",
+        "objectType": "Object"
+    },
+    "briefDescription": null,
+    "irn": 1,
+    "EADLanguageOfMaterial": [],
+    "persons": [],
+    "EADArchiveRef": null,
+    "EADExtent": [],
+    "dateCreatedEarliest": null,
+    "parentRecord": null,
+    "recordTitle": "Winding key",
+    "recordSubtitle": "Inventory Number 55294"
+}

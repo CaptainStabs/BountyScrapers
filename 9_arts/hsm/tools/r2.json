@@ -1,0 +1,103 @@
+{
+    "id": "hsm-catalogue-1850",
+    "type": "catalogue",
+    "museum": "hsm",
+    "collection": "HSM collection",
+    "owner": {
+        "provenance": null,
+        "collectionGroup": [],
+        "relatedParties": [],
+        "collectionGroupTitle": null
+    },
+    "dimensions": {
+        "unitWeight": [
+            "g"
+        ],
+        "weight": [
+            798
+        ],
+        "unitLength": [
+            "mm"
+        ],
+        "height": [
+            34
+        ],
+        "width": [
+            283
+        ],
+        "diameter": [],
+        "depth": [
+            244
+        ]
+    },
+    "physical": {
+        "support": null,
+        "technique": [],
+        "contentAnalysis": [],
+        "watermark": null,
+        "medium": [],
+        "material": [
+            "Wood",
+            "Metal"
+        ]
+    },
+    "dateCreatedLatest": null,
+    "identifier": {
+        "accessionNumber": null,
+        "inventoryNo": "74984"
+    },
+    "isPublished": "Yes",
+    "EADLanguageOfMaterial": [],
+    "summaryData": "Inventory No. 74984, \"Wet Collodion Single Plate Holder for Camera with Masks\", Wet-Colodian",
+    "EADExtent": [],
+    "briefDescription": "One large, rectangular, wooden, plate holder with a plate inserted and lid on the side which closes with metal clasps. Separately are two wooden plates with large rectangular cut-outs and metal poles at the corners. All objects have rectangular stickers with '104', two white, one orange.",
+    "irn": 1850,
+    "parentRecord": null,
+    "EADArchiveRef": null,
+    "inscriptions": {
+        "otherInscriptions": null,
+        "primaryInscriptions": null
+    },
+    "origins": {
+        "placeCreated0": [],
+        "placeCreated2": [],
+        "placeCreated3": [],
+        "placeCreated1": [],
+        "placeCreatedSummary": [],
+        "placeCreated4": []
+    },
+    "object": {
+        "objectName": null,
+        "objectType": "Object"
+    },
+    "subject": [
+        "Photography"
+    ],
+    "EADUnitTitle": null,
+    "EADUnitDate": null,
+    "dateCreatedEarliest": null,
+    "multimedia": [],
+    "EADLevelAttribute": null,
+    "dateCreated": null,
+    "EADDescription": null,
+    "title": "Wet Collodion Single Plate Holder for Camera with Masks",
+    "persons": [
+        {
+            "sex": null,
+            "birthDate": null,
+            "fullName": "Wet-Colodian",
+            "organisation": "Wet-Colodian",
+            "multimedia": [],
+            "personTitle": null,
+            "firstName": null,
+            "irn": 793,
+            "isPublished": "Yes",
+            "nationality": null,
+            "partyType": "Organisation",
+            "lastName": null
+        }
+    ],
+    "EADAuthor": [],
+    "recordTitle": "Wet Collodion Single Plate Holder for Camera with Masks",
+    "recordSubtitle": "Inventory Number 74984"
+}
