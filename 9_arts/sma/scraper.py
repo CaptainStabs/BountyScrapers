@@ -23,7 +23,7 @@ def url_get(url, p,  s):
     x = 0
     while x < 5:
         try:
-            r = s.get(url, data=p)
+            r = s.post(url, data=p)
         except KeyboardInterrupt:
             print("Ctrl-c detected, exiting")
             import sys; sys.exit()
@@ -48,6 +48,20 @@ def url_get(url, p,  s):
             # if x == 4:
             #     raise(e)
         x += 1
+# "|".join([",".join([x.get("RecordType", ""), x.get("Role", "")]) if x["RecordType"] or x["Role"] else "" for x in artists]),
+def get_roles(artists):
+    r_list = []
+    for info in artists:
+        rec_type = info["RecordType"]
+        role = info["Role"]
+        if rec_type and role:
+            r_list.append(",".join([rec_type, role]))
+        elif rec_type and not role:
+            r_list.append(str(rec_type) + ",")
+        elif role and not rec_type:
+            r_list.append("," + str(role))
+
+        return "|".join(r_list)
 
 def scraper(filename, start_num=False, end_num=False):
     # filename, start_num, end_num = filename[0], filename[1], filename[2]
@@ -76,17 +90,25 @@ def scraper(filename, start_num=False, end_num=False):
         for id in tqdm(range(start_id, end_num)):
             try:
 
-                pay = payload = "{\"objectID\":\"18475\"}"
+                pay =  "\r\n{\"objectID\":\"REP\"}".replace("REP", str(id))
                 jd = url_get(url, pay, s)
                 if not jd: continue
 
-                obj_info = jd.get("objectInformation", [])[0]
+                obj_info = jd.get("objectInformation", [])
                 if len(jd.get("objectInformation", [])) > 1:
                     print(json.dumps(obj_info, indent=2))
                     print(" [???] objectInformation greater than 1")
 
+                if len(obj_info):
+                    obj_info = obj_info[0]
+                else: continue
+
                 artists = jd.get("multipleArtists", [])
 
+                t = [x["Role"] for x in artists if x["Role"]]
+                if t:
+                    print("Role is not null", t)
+                    print([x["RecordType"] for x in artists if x["RecordType"]])
                 data = {
                     "institution_name": "Spencer Museum of Art",
                     "institution_city": "Lawrence",
@@ -107,9 +129,10 @@ def scraper(filename, start_num=False, end_num=False):
                     "maker_full_name": "|".join([x["FirstSortConcat"] if x["FirstSortConcat"] else "" for x in artists]),
                     "maker_first_name": "|".join([x["FirstName"] if x["FirstName"] else "" for x in artists]),
                     "maker_last_name": "|".join([x["SortName"] if x["SortName"] else "" for x in artists]),
-                    "maker_birth_year": "|".join([x["Date"].split("-")[0] if x["Date"] else "" for x in artists]),
-                    "maker_death_year": "|".join([x["Date"].split("-")[-1] if "-" in x["Date"] and x["Date"] else "" for x in artists]),
-                    "maker_role": "|".join([",".join([x.get("RecordType", ""), x.get("Role","")]) if x["RecordType"] or x["Role"] else "" for x in artists]),
+                    "maker_birth_year": "|".join([x["Date"].split("–")[0] if x["Date"] else "" for x in artists]),
+                    "maker_death_year": "|".join([x["Date"].split("–")[-1] if x["Date"] and "–" in x["Date"] else "" for x in artists]),
+                    # "maker_role": "|".join([",".join([x.get("RecordType", ""), x.get("Role", "")]) if x["RecordType"] or x["Role"] else "" for x in artists]),
+                    "maker_role": get_roles(artists),
                     "dimensions": "|".join(x["Dimensions"] for x in jd.get("objectDimensions", {}) if x["Dimensions"]),
                     "image_url": "https://smaapi.app.ku.edu/api/media/{}/full".format(obj_info.get("MulID")) if obj_info.get("MulID") else None,
                     "source_1": "https://smaapi.unit.ku.edu/sma/fetch-object",
@@ -121,7 +144,7 @@ def scraper(filename, start_num=False, end_num=False):
 
             except Exception as e:
                 print("\n",id)
-                send_mail("script crashed", "")
+                # send_mail("script crashed", "")
                 print(json.dumps(jd, indent=4))
                 print(e)
                 raise(e)
@@ -166,4 +189,4 @@ def scraper(filename, start_num=False, end_num=False):
 #             print("   [*] Finished joining...")
             # sys.exit(1)
 
-scraper("extracted_data.csv", 45899, 99999)
+scraper("extracted_data.csv", 3, 99999)
