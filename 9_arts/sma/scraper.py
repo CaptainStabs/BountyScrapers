@@ -105,10 +105,6 @@ def scraper(filename, start_num=False, end_num=False):
 
                 artists = jd.get("multipleArtists", [])
 
-                t = [x["Role"] for x in artists if x["Role"]]
-                if t:
-                    print("Role is not null", t)
-                    print([x["RecordType"] for x in artists if x["RecordType"]])
                 data = {
                     "institution_name": "Spencer Museum of Art",
                     "institution_city": "Lawrence",
@@ -119,7 +115,7 @@ def scraper(filename, start_num=False, end_num=False):
                     "object_number": obj_info.get("ObjID") if obj_info else None,
                     "title": obj_info.get("Title"),
                     "category": obj_info.get("ObjectType"),
-                    "materials": "|".join([x for x in obj_info.get("MaterialTechnique").split(", ") if x]),
+                    "materials": "|".join([x.strip() for x in obj_info.get("MaterialTechnique").split(", ") if x]) if obj_info.get("MaterialTechnique") else None,
                     "from_location": obj_info.get("GeogAssoc"),
                     "credit_line": obj_info.get("CreditLine"),
                     "description": obj_info.get("Description")[:10000] if jd.get("Description") else None,
