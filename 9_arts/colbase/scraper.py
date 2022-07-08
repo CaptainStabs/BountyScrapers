@@ -114,7 +114,7 @@ def scraper(filename, mus_info, org_id):
                     else:
                         death = None
 
-                    names = "|".join(re.split(re.compile(r"( and |, |;)"), re.sub(by_pat, "", re.sub(names_only, "", a)))).replace("Compiled by", "").replace("illustrated by", "").replace("Illustrated by", "") .replace("illustrated by", "").replace("Illustrated by", "") if item["sakusha"] else None
+                    names = "|".join(re.split(re.compile(r"( and |, |;)"), re.sub(by_pat, "", re.sub(names_only, "",  item["sakusha"])))).replace("Compiled by", "").replace("illustrated by", "").replace("Illustrated by", "") .replace("illustrated by", "").replace("Illustrated by", "") if item["sakusha"] else None
 
                     data = {
                         "institution_name": mus_info["institution_name"],
@@ -150,7 +150,7 @@ def scraper(filename, mus_info, org_id):
                             if not mdy:
                                 data["maker_death_year"] = int(str(mby)[4:])
 
-                        elif len(str(strmby)) == 6:
+                        elif len(str(mby)) == 6:
                             data["maker_death_year"] = int(str(mby)[:4])
 
                             if not mdy:
