@@ -123,7 +123,7 @@ def scraper(filename, mus_info, org_id):
                         "category": item["bunrui"],
                         "culture": item["bunkazai"],
                         "title": item["title"],
-                        "maker_full_name": "|".join(re.findall(re.compile(r"( and |, |;)")), re.sub(by_pat, "", re.sub(names_only, "", item["sakusha"])).replace("Compiled by", "").replace("illustrated by", "").replace("Illustrated by", "") if item["sakusha"] else None,
+                        "maker_full_name": "|".join(re.findall(re.compile(r"( and |, |;)")), re.sub(by_pat, "", re.sub(names_only, "", item["sakusha"]))).replace("Compiled by", "").replace("illustrated by", "").replace("Illustrated by", "") if item["sakusha"] else None,
                         "maker_birth_year": dates.split("-")[0] if dates else None,
                         "maker_death_year": death,
                         "materials": "|".join(item["hinshitu_keijo"].split(" and ")) if item["hinshitu_keijo"] else None,
