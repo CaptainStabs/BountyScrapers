@@ -123,7 +123,7 @@ def scraper(filename, mus_info, org_id):
                         "category": item["bunrui"],
                         "culture": item["bunkazai"],
                         "title": item["title"],
-                        "maker_full_name": re.sub(by_pat, "", re.sub(names_only, "", item["sakusha"])) if item["sakusha"] else None,
+                        "maker_full_name": "|".join(re.findall(re.compile(r"( and |, |;)")), re.sub(by_pat, "", re.sub(names_only, "", item["sakusha"])).replace("Compiled by", "").replace("illustrated by", "").replace("Illustrated by", "") if item["sakusha"] else None,
                         "maker_birth_year": dates.split("-")[0] if dates else None,
                         "maker_death_year": death,
                         "materials": "|".join(item["hinshitu_keijo"].split(" and ")) if item["hinshitu_keijo"] else None,
@@ -132,7 +132,7 @@ def scraper(filename, mus_info, org_id):
                         "source_1": url,
                         "source_2": f"https://colbase.nich.go.jp/collection_items/tnm/{item['organization_item_key']}" if item["organization_item_key"] else None,
                         "image_url": item["thumbnail_url"],
-                        "description": jd.get("descriptions", [])[0].get("text").replace("\n", "") if jd.get("descriptions") else None,
+                        "description": item.get("descriptions", [])[0].get("text").replace("\n", "") if item.get("descriptions") else None,
                         "date_description": item["jidai_seiki"],
                         "drop_me": page,
                     }
