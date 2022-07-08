@@ -67,6 +67,7 @@ def scraper(filename, mus_info, org_id):
     by_pat = re.compile(r"^By *")
     num_only = re.compile(r"[^0-9-]")
     names_only = re.compile(r"\([^)]*\)")
+    delims = ["and", ",",";"]
 
     with open(filename, "a", encoding='utf-8', newline='') as output_file:
         writer = csv.DictWriter(output_file, fieldnames=columns)
@@ -112,6 +113,8 @@ def scraper(filename, mus_info, org_id):
                     else:
                         death = None
 
+                    names = "|".join(re.split(re.compile(r"(and|, |;)"), re.sub(by_pat, "", re.sub(names_only, "", a)))).replace("Compiled by", "").replace("illustrated by", "").replace("Illustrated by", "") .replace("illustrated by", "").replace("Illustrated by", "") if item["sakusha"] else None
+
                     data = {
                         "institution_name": mus_info["institution_name"],
                         "institution_city": mus_info["institution_city"],
@@ -123,7 +126,7 @@ def scraper(filename, mus_info, org_id):
                         "category": item["bunrui"],
                         "culture": item["bunkazai"],
                         "title": item["title"],
-                        "maker_full_name": "|".join(re.findall(re.compile(r"( and |, |;)")), re.sub(by_pat, "", re.sub(names_only, "", item["sakusha"]))).replace("Compiled by", "").replace("illustrated by", "").replace("Illustrated by", "") if item["sakusha"] else None,
+                        "maker_full_name": "|".join([x for x in [x.strip() if not any(delims in x for delims in delims) else "" for x in names.split("|") ] if x.strip()]).replace("Compiled by", "") if names else None,
                         "maker_birth_year": dates.split("-")[0] if dates else None,
                         "maker_death_year": death,
                         "materials": "|".join(item["hinshitu_keijo"].split(" and ")) if item["hinshitu_keijo"] else None,
@@ -136,6 +139,15 @@ def scraper(filename, mus_info, org_id):
                         "date_description": item["jidai_seiki"],
                         "drop_me": page,
                     }
+
+                    mby = data["maker_birth_year"]
+                    mdy = data["maker_death_year"]
+                    if mby:
+                        if len(str(mby)) == 8:
+                            data["maker_birth_year"] = int(str(mby)[:4])
+
+                            if not mdy:
+                                data["maker_death_year"] = int(str(mby)[4:])
 
                     writer.writerow(data)
 
