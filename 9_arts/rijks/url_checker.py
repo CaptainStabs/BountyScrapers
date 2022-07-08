@@ -1,21 +1,29 @@
 import pandas as pd
 import requests
+from tqdm import tqdm
+
+tqdm.pandas()
 
 
 def url_check(url):
     try:
-        r = requests.get(url)
+        r = requests.head(url)
 
-        if r.status_code == 200:
+        if r.status_code == 302:
             return url
         else:
             return pd.NA
+
+    except KeyboardInterrupt:
+        import sys; sys.exit()
+
     except:
-        raise
+        # raise
         return pd.NA
 
-df = df.read_csv("extracted_data.csv")
+df = pd.read_csv("extracted_data1.csv")
 
-df["source_2"] = df["source_2"].apply(lambda x: url_check[x])
+s = requests.Session()
+df["source_2"] = df["source_2"].progress_apply(lambda x: url_check(x))
 
 df.to_csv("extracted_data2.csv", index=False)
