@@ -107,6 +107,7 @@ def scraper(filename, mus_info, org_id):
                 try:
                     dates = re.findall(dates_pat, item["sakusha"]) if item["sakusha"] else None
                     dates = dates[0] if dates else None
+                    dates = re.sub(num_only, "", dates) if dates else None
 
                     if dates:
                         death = dates.split("-")[-1] if len(dates.split("-")) > 1 else None
