@@ -21,7 +21,7 @@ def get_keys(file):
     print(re.findall(key_pat, dic))
 
 def cli():
-    parser = argparse.ArgumentParser(description='Download files from csv list')
+    parser = argparse.ArgumentParser(description='Get keys from data dictionary')
     parser.add_argument('file', type=str, metavar='FILE', help='Path to input script')
     args = parser.parse_args()
     get_keys(args.file)
