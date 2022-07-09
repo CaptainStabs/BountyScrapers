@@ -20,8 +20,12 @@ def get_keys(file):
     dic = " ".join(str_list)
     print(re.findall(key_pat, dic))
 
-if __name__ == "__main__":
+def cli():
     parser = argparse.ArgumentParser(description='Download files from csv list')
     parser.add_argument('file', type=str, metavar='FILE', help='Path to input script')
     args = parser.parse_args()
     get_keys(args.file)
+
+
+if __name__ == "__main__":
+    cli()
