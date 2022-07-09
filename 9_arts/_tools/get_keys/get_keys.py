@@ -1,9 +1,6 @@
-import re
 import argparse
 
 def get_keys(file):
-    key_pat = re.compile(r'"(.*?)":')
-
     str_list = []
     copy = False
     with open(file, "r") as f:
@@ -15,10 +12,9 @@ def get_keys(file):
                 copy = False
                 continue
             elif copy:
-                str_list.append(line.strip())
+                str_list.append(line.strip().replace('"', "").split(":")[0])
 
-    dic = " ".join(str_list)
-    print(re.findall(key_pat, dic))
+    print(str_list)
 
 def cli():
     parser = argparse.ArgumentParser(description='Get keys from data dictionary')
