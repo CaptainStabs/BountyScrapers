@@ -17,12 +17,13 @@ multi_years = [
 "(English, 1708-1794) (English, 1740-1825) (English, 1740-1825)",
 "(Italian, ca. 1445/1450 - 1498/1499)",
 "(Dutch, 1508/1509 - 1575)",
-"1480 - 1527-1534",
-"(1480-1527 - 1534)",
 "(Dutch, 1588 - 1650/1656)",
 "(Dutch, 1533 - before 1578) (Italian, 1540/1541-1609)",
 "(Italian, 1680 \u2013 1767) (Italian, 1503\u20131540)",
-"(German, 1782 - 1855) (German, 1776-1824)"
+"(German, 1782 - 1855) (German, 1776-1824)",
+"(1480 - 1527-1534)",
+"(1480-1527 - 1534)",
+"(Italian, ca. 1480 - 1527-1534)"
 ]
 
 # multi_years.extend(tests)
@@ -30,10 +31,12 @@ multi_years = [
 for x in multi_years:
     x = x.replace(" \u2013 ", "-").replace("\u2013", "-")
 
-    if all([re.findall(r"\s-\s", x), re.findall(r"[^\s]-[^\s]", x)]) and "/" not in x:
-        print("AAAA")
+    if re.findall(pat2, x):
+        print("\nAAAA")
         years = x.split(" - ")
-        years = [y.replace("-", "/") for y in years]
+        years = [y.replace("-", "/").strip("(").strip(")") for y in years]
+        years[0] = years[0].split(",")[1].strip() if len(years[0].split(",")) > 1 else years[0]
+
     elif "/" not in x:
         years = re.findall(pat, x)
     elif "/" in x:
