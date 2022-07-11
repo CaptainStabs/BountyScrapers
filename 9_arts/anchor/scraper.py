@@ -85,6 +85,8 @@ def scraper(filename, mus_info):
                     obj = item["_object"]
                     arts = item["Artists"]
                     classif = item["classification"]
+                    classif = "|".join([x["Classification1"] for x in classif])
+                    category = "|".join(x for x in [classif, item["ObjectName"]])
                     data = {
                         "institution_name": mus_info["institution_name"],
                         "institution_city": mus_info["institution_city"],
@@ -97,18 +99,18 @@ def scraper(filename, mus_info):
                         "year_end": obj["DateEnd"],
                         "inscription": obj["Inscribed"],
                         "date_description": item["Dated"],
-                        "title": "|".join([x for x in [item["Title"], item["ObjectName"]]]),
+                        "title": item["Title"],
                         "culture": item["CultureName"],
                         "accession_number": item["ObjectNumber"],
                         "dimensions": item["Dimensions"].replace("Overall Dimensions: ", "") if item["Dimensions"] else None,
                         "provenance": item["Provenance"],
-                        "materials": "|".join(item["Medium"].split(",")) if item["Medium"] else None,
+                        "materials": "|".join(item["Medium"].split(", ")) if item["Medium"] else None,
                         "credit_line": item["Credit"],
                         "description": item["PaperFileRef"],
                         "maker_full_name": "|".join([x["DisplayName"] for x in arts]) if arts else None,
                         "maker_first_name": "|".join([x["FirstName"] for x in arts]) if arts else None,
                         "maker_last_name": "|".join([x["LastName"] for x in arts]) if arts else None,
-                        "category": "|".join([x["Classification1"] for x in classif]),
+                        "category": category,
                         "source_1": "http://onlinecollections.anchoragemuseum.org/",
                         "source_2": "http://onlinecollections.anchoragemuseum.org/apiv2/api/getArtifacts/" + str(item["ObjectID"]) if item["ObjectID"] else None,
                         "image_url": "http://onlinecollections.anchoragemuseum.org/uploaded_files/" + item["media"][0]["fileName"] if len(item["media"]) else None,
