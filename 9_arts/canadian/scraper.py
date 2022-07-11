@@ -58,7 +58,7 @@ def scraper(filename, start_num=False, end_num=False):
     else:
         start_id = start_num
     print(start_id)
-    columns = ["object_number","institution_name","institution_city","institution_state","institution_country","institution_latitude","institution_longitude","category","title","description","dimensions","inscription","provenance","materials","technique","from_location","date_description","year_start","year_end","maker_full_name","maker_first_name","maker_last_name","maker_birth_year","maker_death_year","maker_role","maker_gender","accession_number","image_url","source_1","source_2", "drop_me"]
+    columns = ['institution_name', 'institution_city', 'institution_state', 'institution_country', 'institution_latitude', 'institution_longitude', 'object_number', 'maker_full_name', 'category', 'date_description', 'department', 'year_start', 'inscription', 'year_end', 'material', 'dimensions', 'image_url', 'title', 'from_location', 'image_url', 'description', 'drop_me']
 
     remove_escaped = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
 
@@ -93,11 +93,11 @@ def scraper(filename, start_num=False, end_num=False):
                     "inscription": jd["inscription"],
                     "year_end": jd["latest"].split("/")[0] if len(jd["latest"].split("/")) else None,
                     "material": "|".join([x for x in jd["material"]]),
-                    "dimensions": jd["dimensions"],
+                    "dimensions": jd["measurements"],
                     "image_url": jd.get("media", [])[0].get("url") if len(media) else None,
                     "title": jd["title"],
                     "from_location": "|".join([x["country"] for x in jd["places"]["origins"]]) if len(jd["places"]["origins"]) else None,
-                    "image_url": jd["media"][0]["url"] if len(jd["media"]) else None,
+                    "image_url": jd["media"][0]["url"] if len(jd.get("media", [])) else None,
                     "description": jd["model"],
                     "source_1": f"https://www.warmuseum.ca/_api/en/collections/artifact/{id}",
                     "source_2": f"https://www.warmuseum.ca/_api/en/collections/artifact/{id}",
