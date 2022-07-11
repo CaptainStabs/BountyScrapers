@@ -69,7 +69,6 @@ def scraper(filename, start_num=False, end_num=False):
             writer.writeheader()
 
         s = requests.Session()
-        s.headers.update(headers)
         for id in tqdm(range(start_id, end_num)):
             try:
                 url = f"https://www.warmuseum.ca/_api/en/collections/artifact/{id}"
@@ -87,7 +86,7 @@ def scraper(filename, start_num=False, end_num=False):
                     "institution_longitude": 75.7169418334961,
                     "object_number": jd["object_number"],
                     "maker_full_name": "|".join([x for x in jd["artist_maker"]]),
-                    "category": "|".join(["|".join([x for x in jd["category"]]), "|".join([x for x in jd["classification"]])),
+                    "category": "|".join(["|".join([x for x in jd["category"]]), "|".join([x for x in jd["classification"]])]),
                     "date_description": jd["date_made"],
                     "department": "|".join([x for x in jd["department"]]),
                     "year_start": jd["earliest"].split("/")[0] if len(jd["earliest"].split("/")) else None,
@@ -101,7 +100,7 @@ def scraper(filename, start_num=False, end_num=False):
                     "image_url": jd["media"][0]["url"] if len(jd["media"]) else None,
                     "description": jd["model"],
                     "source_1": f"https://www.warmuseum.ca/_api/en/collections/artifact/{id}",
-                    "source_2": f"https://www.warmuseum.ca/_api/en/collections/artifact/{id}"
+                    "source_2": f"https://www.warmuseum.ca/_api/en/collections/artifact/{id}",
                     "drop_me": id,
                 }
 
