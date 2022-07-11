@@ -151,7 +151,7 @@ def scraper(filename, mus_info, org_id):
                                 data["maker_death_year"] = int(str(mby)[4:])
 
                         elif len(str(mby)) == 6:
-                            data["maker_death_year"] = int(str(mby)[:4])
+                            data["maker_birth_year"] = int(str(mby)[:4])
 
                             if not mdy:
                                 data["maker_death_year"] = int(str(mby)[4:])
@@ -213,3 +213,35 @@ mus_info = {
     "institution_longitude": 139.77652834061385
 }
 scraper("tnm_extracted_data.csv", mus_info, 1)
+#
+mus_info = {
+    "institution_name": "Kyoto National Museum",
+    "institution_city": "Higashiyama Ward",
+    "institution_state": "Kyoto",
+    "institution_country": "Japan",
+    "institution_latitude": 34.990019424821085,
+    "institution_longitude": 135.77309454319115
+}
+scraper("knm_extracted_data.csv", mus_info, 2)
+
+mus_info = {
+    "institution_name": "Nara National Museum",
+    "institution_city": "Noboriojicho",
+    "institution_state": "Nara",
+    "institution_country": "Japan",
+    "institution_latitude": 34.68314503367105,
+    "institution_longitude": 135.8383054999939
+}
+scraper("nnm_extracted_data.csv", mus_info, 3)
+
+# Kyushu National Museum
+
+mus_info = {
+    "institution_name": "Kyushu National Museum",
+    "institution_city": "Dazaifu",
+    "institution_state": "Fukuoka ",
+    "institution_country": "Japan",
+    "institution_latitude": 33.51834946383219,
+    "institution_longitude": 130.53814445942692
+}
+scraper("kynm_extracted_data.csv", mus_info, 4)
