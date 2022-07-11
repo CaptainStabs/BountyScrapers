@@ -140,7 +140,7 @@ def scraper(filename, start_num=False, end_num=False):
 
             except Exception as e:
                 print("\n",id)
-                # send_mail("script crashed", "")
+                send_mail("script crashed", "")
                 print(json.dumps(jd, indent=4))
                 print(e)
                 raise(e)
@@ -185,4 +185,4 @@ def scraper(filename, start_num=False, end_num=False):
 #             print("   [*] Finished joining...")
             # sys.exit(1)
 
-scraper("extracted_data.csv", 3, 99999)
+scraper("extracted_data.csv", 3, 999999)

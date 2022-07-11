@@ -49,9 +49,9 @@ def url_get(url, s):
             #     raise(e)
         x += 1
 
-def check_url(id):
+def check_url(id, s):
     url = f"https://collections.tepapa.govt.nz/object/{id}"
-    r = requests.head(url)
+    r = s.head(url)
 
     if r.status_code == 200:
         return url
@@ -60,19 +60,21 @@ def check_url(id):
 
 def get_contrib(jd, name=False, location=False):
     if name:
+        names = None
         if "production" in jd.keys():
             names = "|".join([x.get("contributor", {}).get("title") if x.get("contributor", {}).get("title") else "" for x in jd["production"]])
         elif "evidenceFor" in jd.keys():
-            rec_by = jd["evidenceFor"]["atEvent"]["recordedBy"]
+            rec_by = jd["evidenceFor"]["atEvent"].get("recordedBy", [])
             if len(rec_by):
                 names = "|".join([x.get("title") if x.get("title") else "" for x in rec_by])
-        else:
-            print(json.dumps(jd, indent=2))
-            print(" [!!!] Neither production or evidenceFor, name")
+        # else:
+        #     print(json.dumps(jd, indent=2))
+        #     print(" [!!!] Neither production or evidenceFor, name")
 
         return names
 
     if location:
+        locations = None
         if "production" in jd.keys():
             locations = "|".join([x.get("spatial", {}).get("title") if x.get("spatial", {}).get("title") else "" for x in jd["production"]]) if len(jd["production"]) else None
             if locations == "|":
@@ -80,12 +82,11 @@ def get_contrib(jd, name=False, location=False):
 
         elif "evidenceFor" in jd.keys():
             loc_stuff = jd["evidenceFor"].get("atEvent", {}).get("atLocation", {})
-            title = loc_stuff.get("title")
-            country = loc_stuff.get("country")
-            locations = ",".join([title, country])
-        else:
-            print(json.dumps(jd, indent=2))
-            print(" [!!!] Neither production nor evidenceFor, location")
+            title_country = [loc_stuff.get("title"), loc_stuff.get("country")]
+            locations = ",".join([x for x in title_country if x])
+        # else:
+        #     print(json.dumps(jd, indent=2))
+        #     print(" [!!!] Neither production nor evidenceFor, location")
         return locations
 
 def get_dates(jd, start=False, end=False, desc=False):
@@ -112,13 +113,13 @@ def get_dates(jd, start=False, end=False, desc=False):
                 if descs == "|": descs = None
                 return descs
             elif start:
-                start = prod[0]["verbatimCreatedDate"].split("-")[0] if prod[0]["verbatimCreatedDate"] else None
+                start = prod[0]["verbatimCreatedDate"].split("-")[0] if prod[0].get("verbatimCreatedDate") else None
                 if start:
                     start = "".join(filter(str.isdigit, start))
                 return start
 
             elif end:
-                end_d = prod[0]["verbatimCreatedDate"].split("-")[-1] if "-" in prod[0]["verbatimCreatedDate"] else None
+                end_d = prod[0]["verbatimCreatedDate"].split("-")[-1] if prod[0].get("verbatimCreatedDate") else None
                 if end_d:
                     return "".join(filter(str.isdigit, end_d))
     else:
@@ -133,7 +134,7 @@ def scraper(filename, start_num=False, end_num=False):
     else:
         start_id = start_num
     print(start_id)
-    columns = ["object_number","institution_name","institution_city","institution_state","institution_country","institution_latitude","institution_longitude","category","title","description","dimensions","inscription","provenance","materials","technique","from_location","date_description","year_start","year_end","maker_full_name","maker_first_name","maker_last_name","maker_birth_year","maker_death_year","maker_role","maker_gender","accession_number","image_url","source_1","source_2", "drop_me"]
+    columns = ["object_number","institution_name","institution_city","institution_state","institution_country","institution_latitude","institution_longitude","category","title","description","dimensions","materials","technique","from_location","date_description","year_start","year_end","maker_full_name","maker_birth_year","maker_death_year","maker_role","accession_number","image_url","source_1","source_2", "drop_me"]
 
     remove_escaped = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
 
@@ -163,20 +164,20 @@ def scraper(filename, start_num=False, end_num=False):
                     "institution_longitude": 174.78208939970705,
                     "object_number": jd["id"],
                     "category": jd["collection"],
-                    "title": jd["title"],
+                    "title": jd.get("title"),
                     "maker_full_name": get_contrib(jd, name=True),
                     "maker_role": "|".join([x.get("role") if x.get("role") else "" for x in jd["production"]]) if jd.get("production") else None,
                     "maker_birth_year": "|".join([x.get("contributor", {}).get("birthDate").split("-")[0] if x.get("contributor", {}).get("birthDate") else "" for x in jd["production"]]) if jd.get("production") else None,
                     "maker_death_year": "|".join([x.get("contributor", {}).get("deathDate").split("-")[0] if x.get("contributor", {}).get("deathDate") else "" for x in jd["production"]]) if jd.get("production") else None,
                     "technique": "|".join([x.get("title") for x in jd["productionUsedTechnique"]]) if jd.get("productionUsedTechnique") else None,
-                    "category": "|".join([x.get("title") for x in jd["isTypeOf"]]),
-                    "materials": "|".join([x.get("title") for x in jd["isMadeOf"]]),
+                    "category": "|".join([x.get("title") for x in jd["isTypeOf"]]) if "isTypeOf" in jd.keys() else None,
+                    "materials": "|".join([x.get("title") for x in jd["isMadeOf"]]) if "isMadeOf" in jd.keys() else None,
                     "source_1": url,
-                    "source_2": check_url(id),
+                    "source_2": check_url(id, s),
                     "image_url": jd.get("hasRepresentation", [])[0].get("contentUrl") if len(jd.get("hasRepresentation", [])) else None,
                     "description": jd.get("caption"),
                     "accession_number": jd.get("identifier"),
-                    "dimensions": "|".join([x["title"] for x in jd.get("observedDimension")]) if len(jd.get("observedDimension", [])) else None,
+                    "dimensions": "|".join([x["title"] for x in jd.get("observedDimension") if x.get("title")]) if len(jd.get("observedDimension", [])) else None,
                     "from_location": get_contrib(jd, location=True),
                     "date_description": get_dates(jd, desc=True),
                     "year_start": get_dates(jd, start=True),
@@ -194,17 +195,17 @@ def scraper(filename, start_num=False, end_num=False):
 
 # if __name__ == "__main__":
 #         arguments = []
-#         end_id = 9180 #45899
+#         end_id = 5176 #45899
 #         # start_num is supplemental for first run and is only used if the files don't exist
-#         for i in range(10):
+#         for i in range(5):
 #             if i == 0:
 #                 start_num = 0
 #             else:
 #                 # Use end_id before it is added to
-#                 start_num = end_id - 9180
+#                 start_num = end_id - 5176
 #             print("Startnum: " + str(start_num))
 #             arguments.append([f"./files/extracted_data{i}.csv", start_num, end_id])
-#             end_id = end_id + 9180
+#             end_id = end_id + 5176
 #         print(arguments)
 #
 #         try:
@@ -230,6 +231,6 @@ def scraper(filename, start_num=False, end_num=False):
 #             send_mail("Scraper crashed", "")
 #             sys.exit()
 #             print("   [*] Finished joining...")
-            # sys.exit(1)
+#             sys.exit(1)
 
 scraper("extracted_data.csv", 0, 25878)
