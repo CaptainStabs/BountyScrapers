@@ -137,7 +137,7 @@ def scraper(filename, start_num=False, end_num=False):
                 data = {
                     "institution_name": "History of Science Museum",
                     "institution_city": "Oxford",
-                    "institution_state": "Oxfordshire ",
+                    "institution_state": "Oxfordshire",
                     "institution_country": "United Kingdom",
                     "institution_latitude": 51.75431763807817,
                     "institution_longitude": -1.2554219667123852,
@@ -145,22 +145,22 @@ def scraper(filename, start_num=False, end_num=False):
                     "accession_number": ident.get("accessionNumber"),
                     "category": "|".join([x for x in jd["subject"] if x]),
                     "title": jd.get("recordTitle"),
-                    "description": jd.get("recordDescription")[:10000] if jd.get("recordDescription")  else None,
+                    "description": jd.get("recordDescription").replace("\n", "")[:10000] if jd.get("recordDescription")  else None,
                     "dimensions": dimensions(jd.get("dimensions")),
-                    "inscription": "|".join([x for x in [insc["primaryInscriptions"], insc["otherInscriptions"]] if x]),
+                    "inscription": "|".join([x for x in [insc["primaryInscriptions"], insc["otherInscriptions"]] if x]).replace("\n", ""),
                     "materials": "|".join([x for x in phys["material"] if x]),
                     "technique": "|".join([x for x in phys["technique"] if x]),
                     "from_location": get_location(jd),
                     "date_description": jd["dateCreated"],
-                    "year_start": str(jd["dateCreatedEarliest"]).split("-")[0] if jd["dateCreatedEarliest"] else "",
-                    "year_end": str(jd["dateCreatedLatest"]).split("-")[0] if jd["dateCreatedLatest"] else "",
-                    "maker_full_name": "|".join([x["fullName"] for x in jd["persons"] if x["fullName"] else ""]),
-                    "maker_first_name": "|".join([x["firstName"] for x in jd["persons"] if x["firstName"] else ""]),
-                    "maker_last_name": "|".join([x["lastName"] for x in jd["persons"] if x["lastName"] else ""]),
-                    "maker_birth_year": "|".join([x["birthDate"].split("-")[0] for x in jd["persons"] if x["birthDate"] else ""]),
-                    "maker_death_year": "|".join([x["birthDate"].split("-")[-1] for x in jd["persons"] if x["birthDate"] else ""]),
-                    "maker_role": "|".join([x["partyType"] for x in jd["persons"] if x["partyType"] else ""]),
-                    "maker_gender": "|".join([x["sex"] for x in jd["persons"] if x["sex"] else ""]),
+                    "year_start": str(jd["dateCreatedEarliest"]).split("-")[0] if jd["dateCreatedEarliest"] else None,
+                    "year_end": str(jd["dateCreatedLatest"]).split("-")[0] if jd["dateCreatedLatest"] else None,
+                    "maker_full_name": "|".join([x["fullName"] if x["fullName"] else "" for x in jd["persons"]]),
+                    "maker_first_name": "|".join([x["firstName"]  if x["firstName"] else "" for x in jd["persons"]]),
+                    "maker_last_name": "|".join([x["lastName"] if x["lastName"] else "" for x in jd["persons"]]),
+                    "maker_birth_year": "|".join([x["birthDate"].split("-")[0] if x["birthDate"] else "" for x in jd["persons"]]),
+                    "maker_death_year": "|".join([x["birthDate"].split("-")[-1] if x["birthDate"] else "" for x in jd["persons"]]),
+                    "maker_role": "|".join([x["partyType"]  if x["partyType"] else "" for x in jd["persons"]]),
+                    "maker_gender": "|".join([x["sex"] if x["sex"] else "" for x in jd["persons"]]),
                     "image_url": get_image(jd),
                     "provenance": jd["owner"]["provenance"],
                     "source_1": url,
@@ -179,17 +179,17 @@ def scraper(filename, start_num=False, end_num=False):
 
 # if __name__ == "__main__":
 #         arguments = []
-#         end_id = 9180 #45899
+#         end_id = 10000 #45899
 #         # start_num is supplemental for first run and is only used if the files don't exist
 #         for i in range(10):
 #             if i == 0:
 #                 start_num = 0
 #             else:
 #                 # Use end_id before it is added to
-#                 start_num = end_id - 9180
+#                 start_num = end_id - 10000
 #             print("Startnum: " + str(start_num))
 #             arguments.append([f"./files/extracted_data{i}.csv", start_num, end_id])
-#             end_id = end_id + 9180
+#             end_id = end_id + 10000
 #         print(arguments)
 #
 #         try:
@@ -215,6 +215,7 @@ def scraper(filename, start_num=False, end_num=False):
 #             send_mail("Scraper crashed", "")
 #             sys.exit()
 #             print("   [*] Finished joining...")
-            # sys.exit(1)
+#             sys.exit(1)
 
-scraper("extracted_data.csv", 45899, 99999)
+# scraper("extracted_data.csv", 45899, 99999)
+scraper("extracted_data.csv", 0, 99999)
