@@ -87,7 +87,7 @@ def scraper(filename, start_num=False, end_num=False):
                     "institution_latitude": 45.4171028137207,
                     "institution_longitude": 75.7169418334961,
                     "object_number": jd["object_number"],
-                    "category": "|".join(["|".join([x for x in jd["category"]]), "|".join([x for x in jd["classification"]])]) ,
+                    "category": "|".join(["|".join([x for x in jd.get("category", [])]), "|".join([x for x in jd["classification"]])]),
                     "date_description": jd["date_made"] if jd.get("date_made") else None,
                     "department": "|".join([x for x in jd["department"]]) if jd.get("department") else None,
                     "year_start": jd["earliest"].split("/")[0] if jd.get("earliest") and len(jd["earliest"].split("/")) else None,
