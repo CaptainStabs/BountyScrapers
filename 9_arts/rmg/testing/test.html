@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-1e64a3d062546e2a03f",applicationID:"455895645"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<link rel="canonical" href="https://www.rmg.co.uk/collections/objects/rmgc-object-1" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="/themes/custom/rmg_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<script src="/sites/default/files/google_tag/tag_website/google_tag.script.js?reva9r" defer></script>
+
+    <title>Watchstand | Royal Museums Greenwich</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_9m8-tA3IQf8ThlLQYTTZUyEweCvyR908Tg0XCbKYOfY.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_QezocU078U4EzscSL738ISJvQPzkWoyqf77cWyYZlgw.css" />
+
+    
+  </head>
+  <body>
+        <a href="#main-content" class="visually-hidden focusable">
+      Skip to main content
+    </a>
+    <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKC7HF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+  <header role="banner" class="rmg-header">
+    <div class="rmg-header__background"></div>
+    <div class="rmg-header__container">
+      <div class="rmg-header__content">
+        
+        <section class="rmg-header__primary">
+          <a href="/" class="rmg-logo__container">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 56" class="rmg-logo"><title>Royal Museums Greenwich</title><path d="M116.147 25.493h1.753v-.882c0-1.82-1.366-3.218-3.377-3.218-2.01 0-3.394 1.379-3.394 3.199v.46c0 4.36 5.186 2.513 5.186 5.703v.497c0 .637-.34 1.226-.894 1.545-.554.318-1.236.318-1.79 0-.553-.319-.894-.908-.894-1.545v-1.117h-1.773v1.092c0 1.932 1.44 3.383 3.562 3.383s3.581-1.465 3.581-3.383v-.46c0-4.565-5.197-2.89-5.197-5.715v-.477c0-.974.591-1.636 1.624-1.636 1.034 0 1.624.662 1.624 1.636l-.01.918zm-12.32 4.414h1.623l1.661-3.956h.036v8.313h1.773V21.736h-1.773l-2.52 5.61-2.48-5.61h-1.773v12.545h1.772v-8.327h.037l1.643 3.953zM96.28 31.34c0 .925-.752 1.675-1.68 1.675-.928 0-1.68-.75-1.68-1.675v-9.605h-1.773v9.583c0 1.82 1.44 3.291 3.45 3.291 2.01 0 3.45-1.471 3.45-3.291v-9.583h-1.773l.006 9.605zm-11.439 1.38v-3.937h3.82v-1.543h-3.814v-3.972h4.502v-1.533h-6.272v12.545h6.272v-1.547l-4.508-.014zm-5.751-7.228h1.753v-.882c0-1.82-1.367-3.218-3.377-3.218-2.011 0-3.394 1.379-3.394 3.199v.46c0 4.36 5.186 2.513 5.186 5.703v.497c0 .637-.341 1.226-.895 1.545-.554.318-1.236.318-1.79 0-.553-.319-.894-.908-.894-1.545v-1.117h-1.773v1.092c0 1.932 1.44 3.383 3.562 3.383 2.123 0 3.562-1.454 3.562-3.383v-.46c0-4.562-5.183-2.87-5.183-5.704v-.488c0-.974.59-1.636 1.624-1.636 1.033 0 1.624.662 1.624 1.636l-.005.918zm-8.913 5.862c0 .925-.753 1.675-1.68 1.675-.928 0-1.68-.75-1.68-1.675v-9.619h-1.773v9.583c0 1.82 1.44 3.291 3.45 3.291 2.01 0 3.45-1.471 3.45-3.291v-9.583H70.17l.006 9.62zm46.645 8.43c2.123 0 3.506 1.491 3.506 3.367v1.142h-1.773v-1.178c.026-.635-.299-1.232-.846-1.557-.548-.325-1.23-.325-1.776 0-.548.325-.873.922-.847 1.557v6.551c-.026.634.3 1.232.847 1.557.547.324 1.228.324 1.776 0 .547-.325.872-.923.846-1.557v-1.195h1.764l.009 1.178c0 1.879-1.383 3.35-3.506 3.35-2.123 0-3.506-1.474-3.506-3.35v-6.498c0-1.876 1.383-3.367 3.506-3.367zm-59.26-.002c2.142 0 3.562 1.49 3.562 3.422v.681H59.35l-.003-.717c0-.986-.8-1.784-1.789-1.784-.988 0-1.79.798-1.79 1.784v6.445c0 .985.802 1.784 1.79 1.784s1.79-.799 1.79-1.784v-2.409h-1.79v-1.544h3.565v3.908c0 1.932-1.42 3.423-3.562 3.423S54 51.5 54 49.569v-6.364c0-1.932 1.42-3.422 3.562-3.422zm21.012.335v1.543h-4.502v3.975h3.814v1.544h-3.82v3.936l4.508.003v1.543h-6.272V40.118h6.272zm8.171 0v1.543h-4.5v3.975h3.814v1.544h-3.82v3.936l4.506.003v1.543h-6.272V40.118h6.272zm3.873 0l2.859 8.424h.073l-.02-8.424h1.773v12.541l-1.96.003-2.86-8.424h-.072l.02 8.424h-1.773V40.118h1.96zm33.53 0v5.535h3.08v-5.535H129v12.541h-1.773v-5.462h-3.08v5.465h-1.772V40.118h1.772zm-57.346-.014c.852-.022 1.678.296 2.295.882.616.587.972 1.395.99 2.244v1.85c-.007 1.265-.781 2.398-1.957 2.87l1.789 4.71h-1.918l-1.697-4.45h-1.198v4.438h-1.773V40.104zm32.362.01l1.12 8.654h.073l1.12-5.304h1.66l1.12 5.304h.073l1.12-8.653h1.79l-1.938 12.544h-1.792l-1.162-5.83h-.073l-1.162 5.83h-1.79l-1.937-12.544h1.778zm11.943.004v12.541h-1.784l.011-12.541h1.773zM66.802 41.66h-1.696v5.002l1.696.003c.413-.006.805-.178 1.09-.475.284-.298.436-.697.423-1.107v-1.84c.013-.41-.14-.81-.424-1.107-.284-.298-.676-.47-1.089-.476zM55.943 21.736l2.52 5.61 2.52-5.61h1.77v12.542h-1.77v-8.313h-.05l-1.66 3.956h-1.624l-1.67-3.967h-.036v8.327h-1.772V21.736h1.772zM66.562 3c2.103 0 3.598 1.488 3.598 3.475v6.273c0 1.987-1.495 3.458-3.598 3.458-2.103 0-3.599-1.47-3.599-3.458V6.475C62.963 4.491 64.46 3 66.562 3zm-8.922.33c.852-.022 1.678.295 2.294.882.617.587.973 1.394.99 2.244v1.84h.015c-.01 1.263-.784 2.396-1.96 2.869l1.789 4.71H58.85l-1.708-4.45h-1.199v4.45h-1.761V3.328zm15.415 0l1.846 5.15h.112l1.848-5.15h1.918l-2.935 7.137v5.407h-1.772v-5.407L71.137 3.33h1.918zm10.593 0l2.946 12.544h-1.809l-.453-1.954H80.99l-.46 1.954h-1.808L81.705 3.33h1.943zm6.55 0v11h4.17v1.544h-5.943V3.33h1.773zM67.534 4.715c-.59-.366-1.338-.366-1.928 0-.591.365-.923 1.033-.856 1.723v6.345c-.067.69.265 1.358.856 1.723.59.366 1.338.366 1.928 0 .591-.365.923-1.033.856-1.723V6.439c.067-.69-.265-1.358-.856-1.723zm15.17 1.687h-.072l-1.291 5.96h2.638l-1.274-5.96zM57.64 4.876h-1.697v5.002l1.697.003c.412-.007.805-.178 1.09-.476.283-.297.436-.696.422-1.107v-1.84c.014-.41-.139-.81-.423-1.107-.284-.297-.677-.469-1.089-.475zM24.376 24.46h18.532c-.671 10.126-8.597 18.205-18.532 18.898V24.46zm19.01-11.925C38.306 2.597 26.873-2.256 16.244 1.013 5.615 4.283-1.158 14.736.164 25.83c1.323 11.095 10.361 19.644 21.458 20.296V56h2.754v-9.874C36.516 45.404 45.994 35.3 46 23.076c0-.469-.042-.924-.07-1.384H21.622v21.666c-10.399-.724-18.603-9.515-18.603-20.28 0-11.24 8.946-20.34 19.98-20.34 7.78 0 14.488 4.546 17.785 11.156l2.602-1.359z"/></svg>
+</a>
+          <nav role="navigation" aria-labelledby="block-quickmenu-menu" id="block-quickmenu">
+            
+  <h2 class="visually-hidden" id="block-quickmenu-menu">Quick menu</h2>
+  
+
+        
+        <ul>
+            <li>
+        <a href="/plan-your-visit" data-gtm-name="nav: static" data-drupal-link-system-path="node/2931">Plan your visit</a>
+              </li>
+          <li>
+        <a href="/whats-on" data-gtm-name="nav: static" data-drupal-link-system-path="whats-on">What&#039;s on</a>
+              </li>
+          <li>
+        <a href="/collections" data-gtm-name="nav: static" data-drupal-link-system-path="collections">Collections</a>
+              </li>
+          <li>
+        <a href="/stories" data-gtm-name="nav: static" data-drupal-link-system-path="node/3560">Stories</a>
+              </li>
+          <li>
+        <a href="https://shop.rmg.co.uk/" title="Shop at RMG" data-gtm-name="nav: static">Shop</a>
+              </li>
+          <li>
+        <a href="#search" data-gtm-name="nav: static">Search</a>
+              </li>
+          <li>
+        <a href="#main-menu" data-gtm-name="nav: static">Menu</a>
+              </li>
+      </ul>
+  
+
+
+  </nav>
+
+
+        </section>
+              </div>
+    </div>
+      </header>
+
+  <div class="sticky-region__observer"></div>
+<section class="sticky-region">
+  <div class="sticky-region__container">
+  
+  </div>
+</section>
+
+
+  <div data-drupal-messages-fallback class="hidden"></div>
+<div id="block-visitornotices">
+  
+    
+      
+  </div>
+
+
+
+  
+
+  
+
+  
+
+  <main role="main">
+    <a id="main-content" tabindex="-1"></a>
+    <div class="layout-content">
+          <div id="block-rmg-theme-content">
+  
+    
+      
+<div class="collections-object-page">
+  <div class="collection-search__beta"><a href="/collections/beta-feedback">Beta</a></div>
+  <div class="collections-object-page__row">
+    <div class="collections-object-page__back-to-search-container">
+      <div class="collections-object-page__back-to-search"><a href="#">Back to Search Results</a></div>
+    </div>
+
+        <div class="collections-object-page__gallery">
+      
+  <div class="collections-image-gallery">
+    <div class="collections-image-gallery__container">
+      <div class="collections-image-gallery__content">
+        <div class="collections-image-gallery__slider-container">
+          <div class="collections-image-gallery__slider-container-wrapper">
+            <div class="collections-image-gallery__slider">
+                              <div class="collections-image-gallery__item">
+                  <div class="collections-image-gallery__item-inner">
+                    <div class="collections-image-gallery__item-image" data-key="0">
+                      <img src="https://collections.rmg.co.uk/media/438/227/f5396.jpg" data-img-full="https://collections.rmg.co.uk/media/438/227/f5396.jpg" alt="An image showing 'Watchstand'" class="image-gallery__image" data-zoom="0">
+                    </div>
+                  </div>
+                </div>
+                          </div>
+
+            <div class="collections-image-gallery__fullscreen" aria-label="View Fullscreen" tabindex="0" data-gtm-name="object UI">
+
+            </div>
+
+            <div class="collections-image-gallery__slide-controls">
+                          </div>
+
+            <div class="collections-image-gallery__zoom" aria-label="Zoom in and out" tabindex="0" data-gtm-name="object UI">
+              <span class="zoom-in" aria-label="Zoom in" data-gtm-name="object UI">+</span>
+              <span class="zoom-out disabled" aria-label="Zoom out" data-gtm-name="object UI">-</span>
+            </div>
+          </div>
+                  </div>
+      </div>
+    </div>
+  </div>
+    </div>
+        <div class="collections-object-page__text">
+      <h2>Watchstand</h2>
+
+      <div class="collections-object-page__description">
+        
+        Watchstand in the form of a house; it is made of three flat panels which slot together with inlaid banding. There is a circular aperture for the watch. The door and windows are glazed and cover watercolour drawings. There is a soldier in the doorway, a harlequin and juggler in the window above and flowers and window panes in the other windows. Bone columns flank the door with female figures above (partly missing). <br />
+It was said to have been made by a &#039;Marine Prisoner&#039; in France during the Peninsular War, but is very similar to a sailor-made Greenwich Hospital watchstand sold at Sotheby&#039;s on 3 May 1995. The item should stand on a base (now missing).
+      </div>
+
+      <div class="collections-object-page__back-to-search"><a href="#">Back to Search Results</a></div>
+    </div>
+    <div class="collections-object-page__details ">
+      
+<div class="collections-links slice__light">
+    <div class="collections-links__buttons">
+    <a href="https://prints.rmg.co.uk" data-gtm-name="CTA" data-gtm-detail="buy this image">Buy a print</a>
+    <a href="https://images.rmg.co.uk " data-gtm-name="CTA" data-gtm-detail="license this image">License an image</a>
+  </div>
+    <div class="collections-links__share-container">
+        <div class="collections-links__share">
+      <span>Share:</span>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.rmg.co.uk/collections/objects/rmgc-object-1" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 38">
+          <desc>Facebook Logo</desc>
+          <path d="M38 19a19 19 0 10-19 19h.3V23.2h-4v-4.7h4v-3.6c0-4 2.5-6.2 6.1-6.2l3.7.2V13h-2.5c-2 0-2.4 1-2.4 2.3v3H29l-.7 4.8h-4v14A19 19 0 0038 19z"/>
+        </svg>
+      </a>
+      <a href="https://twitter.com/intent/tweet?url=https://www.rmg.co.uk/collections/objects/rmgc-object-1" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 38">
+        <desc>Twitter Logo</desc>
+        <path d="M19 0a19 19 0 100 38 19 19 0 000-38zm8.4 15v.5c0 5.9-4.3 12.6-12.3 12.6a12 12 0 01-6.7-2 8.6 8.6 0 006.5-1.8 4.4 4.4 0 01-4-3 4.2 4.2 0 001.9-.1c-2-.5-3.5-2.3-3.5-4.4.6.3 1.2.5 2 .5a4.5 4.5 0 01-1.4-6c2.1 2.8 5.3 4.5 9 4.7l-.2-1c0-2.5 2-4.4 4.4-4.4 1.2 0 2.3.5 3.1 1.4 1-.2 2-.6 2.8-1.1-.4 1-1 1.9-2 2.4 1 0 1.8-.3 2.6-.7a9 9 0 01-2.2 2.3z"/>
+      </svg>
+      </a>
+      <button class="collections-links__copy-button copy-current-url">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 38">
+          <desc>Chain Links</desc>
+          <path d="M19 0a19 19 0 110 38 19 19 0 010-38zm2.3 14.8l-2.4 2.4h.2l1 .7c1 1 1 2.7 0 3.7l-4.4 4.5-.2.1a2.6 2.6 0 01-3.6-3.9l1.3-1.3v-.3a7.1 7.1 0 01-.4-3.7l-3.1 3.1-.2.2a5.8 5.8 0 008.4 8l4.5-4.5.1-.2a5.8 5.8 0 00-1.2-8.8zm7-5.1a5.8 5.8 0 00-8.2 0l-4.5 4.5-.1.2a5.8 5.8 0 001.2 8.8l2.4-2.4H19l-1-.7c-1-1-1-2.7 0-3.7l4.4-4.5.2-.1a2.6 2.6 0 013.6 3.9L24.8 17v.3c.5 1.2.6 2.4.4 3.7l3.1-3.1.2-.2c2-2.3 2-5.8-.2-8z"/>
+        </svg>
+      </button>
+      <div class="collections-links__copy-message copy-current-message hide">Link copied to your clipboard!</div>
+    </div>
+  </div>
+      <p>For more information about using images from our Collection, please contact <a href="mailto:images@rmg.co.uk">RMG Images</a>.</p>
+  </div>
+      
+<div class="collections-table">
+  <h3>Object Details</h3>
+  <table>
+          <tr>
+        <th>ID:</th>
+        <td>
+                                    AAA0001
+                              </td>
+      </tr>
+          <tr>
+        <th>Collection:</th>
+        <td>
+                                    <a href="/collections/object?category%5B0%5D=Decorative%20art">Decorative art</a>
+                              </td>
+      </tr>
+          <tr>
+        <th>Type:</th>
+        <td>
+                                    <a href="/collections/object?type%5B0%5D=Watchstand">Watchstand</a>
+                              </td>
+      </tr>
+          <tr>
+        <th>Display location:</th>
+        <td>
+                                    <a href="/collections/object?location%5B0%5D=Not%20on%20display">Not on display</a>
+                              </td>
+      </tr>
+          <tr>
+        <th>Creator:</th>
+        <td>
+                                    <a href="/collections/object?maker%5B0%5D=UK%20Armed%20Forces">UK Armed Forces</a>
+                              </td>
+      </tr>
+          <tr>
+        <th>Events:</th>
+        <td>
+                                    <a href="/collections/object?events%5B0%5D=Napoleonic%20Wars%3A%20Peninsular%20War%2C%201808-1814">Napoleonic Wars: Peninsular War, 1808-1814</a>
+                              </td>
+      </tr>
+          <tr>
+        <th>Date made:</th>
+        <td>
+                                    Late 18th century; 
+                          1808-14
+                              </td>
+      </tr>
+          <tr>
+        <th>Credit:</th>
+        <td>
+                                    National Maritime Museum, Greenwich, London
+                              </td>
+      </tr>
+          <tr>
+        <th>Measurements:</th>
+        <td>
+                      Overall: 510 x 460 x 51 mm
+                  </td>
+      </tr>
+          <tr>
+        <th>Parts:</th>
+        <td>
+                                    Watchstand
+                          <ul class="hierarchy"><li><a href="/collections/objects/rmgc-object-367439">Panel (AAA0001.1)</a></li><li><a href="/collections/objects/rmgc-object-367440">Panel (AAA0001.2)</a></li><li><a href="/collections/objects/rmgc-object-367441">Panel (AAA0001.3)</a></li></ul>
+                              </td>
+      </tr>
+      </table>
+</div>
+    </div>
+
+    
+    <div class="collections-object-page__hierarchy">
+          </div>
+  </div>
+</div>
+
+
+
+<div class="collections-order-modal" aria-labelledby="collections-order-modal" aria-modal="true" id="orders">
+  <div class="collections-order-modal__row">
+    <div class="collections-order-modal__inner">
+      <span class="collections-order-modal__button-close">
+        <svg viewBox="0 0 12 12" height="12" width="12">
+          <path d="M1,1 L11,11 M1,11 L11,1"/>
+        </svg>
+        Close
+      </span>
+
+      <h2>Your Request</h2>
+
+      <div>
+        <p class="collections-order-modal__offsite collections-order-modal__offsite-duration">If an item is shown as &ldquo;offsite&rdquo;, please allow eight days for your order to be processed. For further information, please contact Archive staff:</p>
+
+        <p class="collections-order-modal__offsite">Email: <a href="mailto:library@rmg.co.uk" class="collections-order-modal__email">library@rmg.co.uk</a><br />
+          Tel: <a href="tel:+442083126516" class="collections-order-modal__email">+44 (0)20 8312 6516</a> (during Library opening hours)</p>
+
+        <p><strong>Click &ldquo;Continue&rdquo; below to continue processing your order with the Library team.</strong></p>
+      </div>
+
+      <a href="#" class="button button--primary collections-order-modal__order-link" target="_blank">Continue</a>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+      window.dataLayer.push({
+      'event':'RMG Collection metadata',
+      'pageType':'collectionObject',
+      'pageTitle':' Watchstand',
+      'pageGroup':'Collections',
+      'objectId':'',
+      'objectCollection':'',
+      'objectExhibition':'',
+      'objectLocation':'<a href="/collections/object?location%5B0%5D=Not%20on%20display">Not on display</a>'
+    });
+  
+  
+  </script>
+
+
+<div class="grid-guide grid-guide--off">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+
+  </div>
+
+
+        </div>  </main>
+
+  <section id="menu-flyout" class="menu-flyout flyout slice slice__light">
+  <div class="menu-flyout__full-width">
+    <div class="menu-flyout__container">
+      <header>
+        <a href="/" class="rmg-logo__container">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 56" class="rmg-logo"><title>Royal Museums Greenwich</title><path d="M116.147 25.493h1.753v-.882c0-1.82-1.366-3.218-3.377-3.218-2.01 0-3.394 1.379-3.394 3.199v.46c0 4.36 5.186 2.513 5.186 5.703v.497c0 .637-.34 1.226-.894 1.545-.554.318-1.236.318-1.79 0-.553-.319-.894-.908-.894-1.545v-1.117h-1.773v1.092c0 1.932 1.44 3.383 3.562 3.383s3.581-1.465 3.581-3.383v-.46c0-4.565-5.197-2.89-5.197-5.715v-.477c0-.974.591-1.636 1.624-1.636 1.034 0 1.624.662 1.624 1.636l-.01.918zm-12.32 4.414h1.623l1.661-3.956h.036v8.313h1.773V21.736h-1.773l-2.52 5.61-2.48-5.61h-1.773v12.545h1.772v-8.327h.037l1.643 3.953zM96.28 31.34c0 .925-.752 1.675-1.68 1.675-.928 0-1.68-.75-1.68-1.675v-9.605h-1.773v9.583c0 1.82 1.44 3.291 3.45 3.291 2.01 0 3.45-1.471 3.45-3.291v-9.583h-1.773l.006 9.605zm-11.439 1.38v-3.937h3.82v-1.543h-3.814v-3.972h4.502v-1.533h-6.272v12.545h6.272v-1.547l-4.508-.014zm-5.751-7.228h1.753v-.882c0-1.82-1.367-3.218-3.377-3.218-2.011 0-3.394 1.379-3.394 3.199v.46c0 4.36 5.186 2.513 5.186 5.703v.497c0 .637-.341 1.226-.895 1.545-.554.318-1.236.318-1.79 0-.553-.319-.894-.908-.894-1.545v-1.117h-1.773v1.092c0 1.932 1.44 3.383 3.562 3.383 2.123 0 3.562-1.454 3.562-3.383v-.46c0-4.562-5.183-2.87-5.183-5.704v-.488c0-.974.59-1.636 1.624-1.636 1.033 0 1.624.662 1.624 1.636l-.005.918zm-8.913 5.862c0 .925-.753 1.675-1.68 1.675-.928 0-1.68-.75-1.68-1.675v-9.619h-1.773v9.583c0 1.82 1.44 3.291 3.45 3.291 2.01 0 3.45-1.471 3.45-3.291v-9.583H70.17l.006 9.62zm46.645 8.43c2.123 0 3.506 1.491 3.506 3.367v1.142h-1.773v-1.178c.026-.635-.299-1.232-.846-1.557-.548-.325-1.23-.325-1.776 0-.548.325-.873.922-.847 1.557v6.551c-.026.634.3 1.232.847 1.557.547.324 1.228.324 1.776 0 .547-.325.872-.923.846-1.557v-1.195h1.764l.009 1.178c0 1.879-1.383 3.35-3.506 3.35-2.123 0-3.506-1.474-3.506-3.35v-6.498c0-1.876 1.383-3.367 3.506-3.367zm-59.26-.002c2.142 0 3.562 1.49 3.562 3.422v.681H59.35l-.003-.717c0-.986-.8-1.784-1.789-1.784-.988 0-1.79.798-1.79 1.784v6.445c0 .985.802 1.784 1.79 1.784s1.79-.799 1.79-1.784v-2.409h-1.79v-1.544h3.565v3.908c0 1.932-1.42 3.423-3.562 3.423S54 51.5 54 49.569v-6.364c0-1.932 1.42-3.422 3.562-3.422zm21.012.335v1.543h-4.502v3.975h3.814v1.544h-3.82v3.936l4.508.003v1.543h-6.272V40.118h6.272zm8.171 0v1.543h-4.5v3.975h3.814v1.544h-3.82v3.936l4.506.003v1.543h-6.272V40.118h6.272zm3.873 0l2.859 8.424h.073l-.02-8.424h1.773v12.541l-1.96.003-2.86-8.424h-.072l.02 8.424h-1.773V40.118h1.96zm33.53 0v5.535h3.08v-5.535H129v12.541h-1.773v-5.462h-3.08v5.465h-1.772V40.118h1.772zm-57.346-.014c.852-.022 1.678.296 2.295.882.616.587.972 1.395.99 2.244v1.85c-.007 1.265-.781 2.398-1.957 2.87l1.789 4.71h-1.918l-1.697-4.45h-1.198v4.438h-1.773V40.104zm32.362.01l1.12 8.654h.073l1.12-5.304h1.66l1.12 5.304h.073l1.12-8.653h1.79l-1.938 12.544h-1.792l-1.162-5.83h-.073l-1.162 5.83h-1.79l-1.937-12.544h1.778zm11.943.004v12.541h-1.784l.011-12.541h1.773zM66.802 41.66h-1.696v5.002l1.696.003c.413-.006.805-.178 1.09-.475.284-.298.436-.697.423-1.107v-1.84c.013-.41-.14-.81-.424-1.107-.284-.298-.676-.47-1.089-.476zM55.943 21.736l2.52 5.61 2.52-5.61h1.77v12.542h-1.77v-8.313h-.05l-1.66 3.956h-1.624l-1.67-3.967h-.036v8.327h-1.772V21.736h1.772zM66.562 3c2.103 0 3.598 1.488 3.598 3.475v6.273c0 1.987-1.495 3.458-3.598 3.458-2.103 0-3.599-1.47-3.599-3.458V6.475C62.963 4.491 64.46 3 66.562 3zm-8.922.33c.852-.022 1.678.295 2.294.882.617.587.973 1.394.99 2.244v1.84h.015c-.01 1.263-.784 2.396-1.96 2.869l1.789 4.71H58.85l-1.708-4.45h-1.199v4.45h-1.761V3.328zm15.415 0l1.846 5.15h.112l1.848-5.15h1.918l-2.935 7.137v5.407h-1.772v-5.407L71.137 3.33h1.918zm10.593 0l2.946 12.544h-1.809l-.453-1.954H80.99l-.46 1.954h-1.808L81.705 3.33h1.943zm6.55 0v11h4.17v1.544h-5.943V3.33h1.773zM67.534 4.715c-.59-.366-1.338-.366-1.928 0-.591.365-.923 1.033-.856 1.723v6.345c-.067.69.265 1.358.856 1.723.59.366 1.338.366 1.928 0 .591-.365.923-1.033.856-1.723V6.439c.067-.69-.265-1.358-.856-1.723zm15.17 1.687h-.072l-1.291 5.96h2.638l-1.274-5.96zM57.64 4.876h-1.697v5.002l1.697.003c.412-.007.805-.178 1.09-.476.283-.297.436-.696.422-1.107v-1.84c.014-.41-.139-.81-.423-1.107-.284-.297-.677-.469-1.089-.475zM24.376 24.46h18.532c-.671 10.126-8.597 18.205-18.532 18.898V24.46zm19.01-11.925C38.306 2.597 26.873-2.256 16.244 1.013 5.615 4.283-1.158 14.736.164 25.83c1.323 11.095 10.361 19.644 21.458 20.296V56h2.754v-9.874C36.516 45.404 45.994 35.3 46 23.076c0-.469-.042-.924-.07-1.384H21.622v21.666c-10.399-.724-18.603-9.515-18.603-20.28 0-11.24 8.946-20.34 19.98-20.34 7.78 0 14.488 4.546 17.785 11.156l2.602-1.359z"/></svg>
+</a>
+        <div class="menu-flyout__buttons">
+          <a id="menu-flyout__search" class="button" href="#search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+              <circle cx="6" cy="6" r="5"/>
+              <line x1="10" y1="10" x2="14" y2="14"/>
+            </svg>
+            Search
+          </a>
+
+          <button id="menu-flyout__close">
+            <svg viewBox="0 0 12 12" height="12" width="12">
+              <path d="M1,1 L11,11 M1,11 L11,1"/>
+            </svg>
+            Close
+          </button>
+        </div>
+      </header>
+      <div class="menu-flyout__content">
+        <h1 class="menu-flyout__title">Visit Us</h1>
+        <div class="menu-flyout__branches">
+          <div id="block-highlightedmenu">
+  
+    
+      <nav class="highlighted-menu"><ul class="highlighted-menu__list"><li class="location-cutty-sark">
+          <a href="/cutty-sark" data-gtm-name="nav: burger">
+            <div>
+              <img src="/sites/default/files/styles/highlight_card/public/2020-07/RMG-JPEG-37-FB.jpg?itok=auGWwc80" width="426" height="334" alt="A woman walks along the main deck of Cutty Sark" loading="lazy" typeof="foaf:Image" />
+
+
+
+      </div>
+            <span>Cutty Sark</span>
+          </a>
+        </li><li class="location-national-maritime-museum">
+          <a href="/national-maritime-museum" data-gtm-name="nav: burger">
+            <div>
+              <img src="/sites/default/files/styles/highlight_card/public/National%20Maritime%20Museum%20L0529-008.jpg?itok=yYrzbMx6" width="426" height="334" loading="lazy" typeof="foaf:Image" />
+
+
+
+      </div>
+            <span>National Maritime Museum</span>
+          </a>
+        </li><li class="location-queens-house">
+          <a href="/queens-house" data-gtm-name="nav: burger">
+            <div>
+              <img src="/sites/default/files/styles/highlight_card/public/Green%20Means%20Time%20campaign%20Queen%27s%20House%20banner.jpg?itok=JVrJlFRd" width="426" height="334" loading="lazy" typeof="foaf:Image" />
+
+
+
+      </div>
+            <span>Queen&#039;s House</span>
+          </a>
+        </li><li class="location-royal-observatory">
+          <a href="/royal-observatory" data-gtm-name="nav: burger">
+            <div>
+              <img src="/sites/default/files/styles/highlight_card/public/2020-07/royal%20observatory%20prime%20meridian%20line.jpg?itok=FwGiiQEr" width="426" height="334" alt="A father and son play on the Prime Meridian Line outside the historic Flamsteed House building of the Royal Observatory" loading="lazy" typeof="foaf:Image" />
+
+
+
+      </div>
+            <span>Royal Observatory</span>
+          </a>
+        </li><li>
+          <a href="/plan-your-visit" data-gtm-name="nav: burger">
+            <div>
+              <img src="/sites/default/files/styles/highlight_card/public/Visit%20Greenwich_0.jpg?itok=gE2ljyyg" width="426" height="334" loading="lazy" typeof="foaf:Image" />
+
+
+
+      </div>
+            <span>Plan your visit</span>
+          </a>
+        </li></ul></nav>
+
+  </div>
+
+
+        </div>
+        <div class="menu-flyout__menus">
+          <div id="block-rmgmainmenu">
+  
+    
+      
+<nav class="main-menu"><ul class="main-menu__list"><li>
+            <a href="/whats-on" data-gtm-name="nav: burger">What&#039;s On</a>
+          </li><li>
+            <input type="checkbox" class="main-menu__control" aria-hidden="true" aria-controls="sect-69082116-5bc9-49d1-9cf2-839769b55d94" id="ctrl-69082116-5bc9-49d1-9cf2-839769b55d94" />
+      <label aria-expanded="false" class="main-menu__label" for="ctrl-69082116-5bc9-49d1-9cf2-839769b55d94">
+        Stories
+      </label>
+      <ul id="sect-69082116-5bc9-49d1-9cf2-839769b55d94" class="main-menu__child" aria-expanded="false" aria-hidden="true" hidden>
+                        <li><a href="/stories/blogs" data-gtm-name="nav: burger">Museum blog</a></li>
+                                <li><a href="/stories/2022-guide-night-sky" data-gtm-name="nav: burger">Guide to the night sky</a></li>
+                                <li><a href="/stories/royal-history" data-gtm-name="nav: burger">Royal history</a></li>
+                                <li class="main-menu__parent">
+          <a href="/stories" data-gtm-name="nav: burger">Stories</a>
+        </li>
+              </ul>
+          </li><li>
+            <input type="checkbox" class="main-menu__control" aria-hidden="true" aria-controls="sect-859e7ff0-3d80-4dc7-8cdf-044c80420427" id="ctrl-859e7ff0-3d80-4dc7-8cdf-044c80420427" />
+      <label aria-expanded="false" class="main-menu__label" for="ctrl-859e7ff0-3d80-4dc7-8cdf-044c80420427">
+        Schools &amp; Communities
+      </label>
+      <ul id="sect-859e7ff0-3d80-4dc7-8cdf-044c80420427" class="main-menu__child" aria-expanded="false" aria-hidden="true" hidden>
+                        <li><a href="/schools-communities/digital-school-sessions" data-gtm-name="nav: burger">Digital school sessions</a></li>
+                                <li><a href="/schools-communities/school-sessions" data-gtm-name="nav: burger">Onsite school sessions</a></li>
+                                <li><a href="/schools-communities/self-guided-school-visits" data-gtm-name="nav: burger">Self-guided school visits</a></li>
+                                <li><a href="/schools-communities/schools-resources" data-gtm-name="nav: burger">Schools resources</a></li>
+                                <li><a href="/schools-communities/learning-home-royal-observatory" data-gtm-name="nav: burger">Astronomy learning at home</a></li>
+                                <li><a href="/schools-communities/maritime-home-learning" data-gtm-name="nav: burger">Maritime learning at home</a></li>
+                                <li><a href="/schools-communities/young-people" data-gtm-name="nav: burger">Young People</a></li>
+                                <li class="main-menu__parent">
+          <a href="/schools-communities" data-gtm-name="nav: burger">Schools &amp; Communities</a>
+        </li>
+              </ul>
+          </li><li>
+            <a href="/collections/research-collections" data-gtm-name="nav: burger">Research &amp; Collections</a>
+          </li><li>
+            <input type="checkbox" class="main-menu__control" aria-hidden="true" aria-controls="sect-0ab8dc14-f45d-431b-a0d7-736f61be1510" id="ctrl-0ab8dc14-f45d-431b-a0d7-736f61be1510" />
+      <label aria-expanded="false" class="main-menu__label" for="ctrl-0ab8dc14-f45d-431b-a0d7-736f61be1510">
+        Membership
+      </label>
+      <ul id="sect-0ab8dc14-f45d-431b-a0d7-736f61be1510" class="main-menu__child" aria-expanded="false" aria-hidden="true" hidden>
+                        <li><a href="/membership/family-membership" data-gtm-name="nav: burger">Family membership</a></li>
+                                <li><a href="/membership/gift-membership" data-gtm-name="nav: burger">Gift membership</a></li>
+                                <li><a href="/support-us/corporate-partnerships/membership" data-gtm-name="nav: burger">Corporate membership</a></li>
+                                <li><a href="/membership/flamsteed-astronomy-society" data-gtm-name="nav: burger">The Flamsteed Astronomy Society</a></li>
+                                <li><a href="/membership/membership-faqs" data-gtm-name="nav: burger">Membership FAQs</a></li>
+                                <li class="main-menu__parent">
+          <a href="/membership" data-gtm-name="nav: burger">Membership</a>
+        </li>
+              </ul>
+          </li><li>
+            <input type="checkbox" class="main-menu__control" aria-hidden="true" aria-controls="sect-28d03541-5bb5-49cf-b0ae-835fbe5c24ab" id="ctrl-28d03541-5bb5-49cf-b0ae-835fbe5c24ab" />
+      <label aria-expanded="false" class="main-menu__label" for="ctrl-28d03541-5bb5-49cf-b0ae-835fbe5c24ab">
+        Support us
+      </label>
+      <ul id="sect-28d03541-5bb5-49cf-b0ae-835fbe5c24ab" class="main-menu__child" aria-expanded="false" aria-hidden="true" hidden>
+                        <li><a href="https://donate.rmg.co.uk/" data-gtm-name="nav: burger">Donate</a></li>
+                                <li><a href="/support-us/corporate-partnerships" data-gtm-name="nav: burger">Corporate partnerships</a></li>
+                                <li><a href="/support-us/become-patron" data-gtm-name="nav: burger">Become a patron</a></li>
+                                <li><a href="/support-us/legacy" data-gtm-name="nav: burger">Leave a legacy</a></li>
+                                <li><a href="/support-us/commemorative-giving" data-gtm-name="nav: burger">Commemoration &amp; Celebration</a></li>
+                                <li class="main-menu__parent">
+          <a href="/support-us" data-gtm-name="nav: burger">Support us</a>
+        </li>
+              </ul>
+          </li><li>
+            <input type="checkbox" class="main-menu__control" aria-hidden="true" aria-controls="sect-cea94ad6-efac-438a-9988-756dd2f1ba8b" id="ctrl-cea94ad6-efac-438a-9988-756dd2f1ba8b" />
+      <label aria-expanded="false" class="main-menu__label" for="ctrl-cea94ad6-efac-438a-9988-756dd2f1ba8b">
+        Venue hire
+      </label>
+      <ul id="sect-cea94ad6-efac-438a-9988-756dd2f1ba8b" class="main-menu__child" aria-expanded="false" aria-hidden="true" hidden>
+                        <li><a href="/venue-hire/corporate-events" data-gtm-name="nav: burger">Corporate events</a></li>
+                                <li><a href="/venue-hire/weddings-special-occasions" data-gtm-name="nav: burger">Weddings &amp; special occasions</a></li>
+                                <li><a href="/venue-hire/filming-photography" data-gtm-name="nav: burger">Filming &amp; photography</a></li>
+                                <li><a href="/venue-hire/bespoke-experiences" data-gtm-name="nav: burger">Bespoke experiences</a></li>
+                                <li><a href="/venue-hire/venue-news-faqs" data-gtm-name="nav: burger">News &amp; FAQs</a></li>
+                                                <li class="main-menu__parent">
+          <a href="/venue-hire" data-gtm-name="nav: burger">Venue hire</a>
+        </li>
+              </ul>
+          </li><li>
+            <input type="checkbox" class="main-menu__control" aria-hidden="true" aria-controls="sect-388567fa-a9d3-4097-92ff-88bc18435bf2" id="ctrl-388567fa-a9d3-4097-92ff-88bc18435bf2" />
+      <label aria-expanded="false" class="main-menu__label" for="ctrl-388567fa-a9d3-4097-92ff-88bc18435bf2">
+        About Us
+      </label>
+      <ul id="sect-388567fa-a9d3-4097-92ff-88bc18435bf2" class="main-menu__child" aria-expanded="false" aria-hidden="true" hidden>
+                        <li><a href="/about-us/what-we-do" data-gtm-name="nav: burger">What we do</a></li>
+                                                <li><a href="/about-us/jobs-volunteering" data-gtm-name="nav: burger">Jobs &amp; volunteering</a></li>
+                                <li><a href="/about-us/learning-partnerships-outreach" data-gtm-name="nav: burger">Learning, partnerships and outreach</a></li>
+                                <li><a href="/about-us/international-touring-activities" data-gtm-name="nav: burger">International touring &amp; activities</a></li>
+                                <li class="main-menu__parent">
+          <a href="/about-us" data-gtm-name="nav: burger">About Us</a>
+        </li>
+              </ul>
+          </li><li>
+            <a href="https://donate.rmg.co.uk/" data-gtm-name="nav: burger">Donate</a>
+          </li></ul></nav>
+
+  </div>
+<div id="block-minormenu">
+  
+    
+      <ul><li><a href="https://shop.rmg.co.uk/">Shop</a></li></ul>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <section id="search-flyout" class="search-flyout flyout slice slice__light">
+  <div class="search-flyout__full-width">
+    <div class="search-flyout__container">
+      <header>
+        <a href="/" class="rmg-logo__container">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 56" class="rmg-logo"><title>Royal Museums Greenwich</title><path d="M116.147 25.493h1.753v-.882c0-1.82-1.366-3.218-3.377-3.218-2.01 0-3.394 1.379-3.394 3.199v.46c0 4.36 5.186 2.513 5.186 5.703v.497c0 .637-.34 1.226-.894 1.545-.554.318-1.236.318-1.79 0-.553-.319-.894-.908-.894-1.545v-1.117h-1.773v1.092c0 1.932 1.44 3.383 3.562 3.383s3.581-1.465 3.581-3.383v-.46c0-4.565-5.197-2.89-5.197-5.715v-.477c0-.974.591-1.636 1.624-1.636 1.034 0 1.624.662 1.624 1.636l-.01.918zm-12.32 4.414h1.623l1.661-3.956h.036v8.313h1.773V21.736h-1.773l-2.52 5.61-2.48-5.61h-1.773v12.545h1.772v-8.327h.037l1.643 3.953zM96.28 31.34c0 .925-.752 1.675-1.68 1.675-.928 0-1.68-.75-1.68-1.675v-9.605h-1.773v9.583c0 1.82 1.44 3.291 3.45 3.291 2.01 0 3.45-1.471 3.45-3.291v-9.583h-1.773l.006 9.605zm-11.439 1.38v-3.937h3.82v-1.543h-3.814v-3.972h4.502v-1.533h-6.272v12.545h6.272v-1.547l-4.508-.014zm-5.751-7.228h1.753v-.882c0-1.82-1.367-3.218-3.377-3.218-2.011 0-3.394 1.379-3.394 3.199v.46c0 4.36 5.186 2.513 5.186 5.703v.497c0 .637-.341 1.226-.895 1.545-.554.318-1.236.318-1.79 0-.553-.319-.894-.908-.894-1.545v-1.117h-1.773v1.092c0 1.932 1.44 3.383 3.562 3.383 2.123 0 3.562-1.454 3.562-3.383v-.46c0-4.562-5.183-2.87-5.183-5.704v-.488c0-.974.59-1.636 1.624-1.636 1.033 0 1.624.662 1.624 1.636l-.005.918zm-8.913 5.862c0 .925-.753 1.675-1.68 1.675-.928 0-1.68-.75-1.68-1.675v-9.619h-1.773v9.583c0 1.82 1.44 3.291 3.45 3.291 2.01 0 3.45-1.471 3.45-3.291v-9.583H70.17l.006 9.62zm46.645 8.43c2.123 0 3.506 1.491 3.506 3.367v1.142h-1.773v-1.178c.026-.635-.299-1.232-.846-1.557-.548-.325-1.23-.325-1.776 0-.548.325-.873.922-.847 1.557v6.551c-.026.634.3 1.232.847 1.557.547.324 1.228.324 1.776 0 .547-.325.872-.923.846-1.557v-1.195h1.764l.009 1.178c0 1.879-1.383 3.35-3.506 3.35-2.123 0-3.506-1.474-3.506-3.35v-6.498c0-1.876 1.383-3.367 3.506-3.367zm-59.26-.002c2.142 0 3.562 1.49 3.562 3.422v.681H59.35l-.003-.717c0-.986-.8-1.784-1.789-1.784-.988 0-1.79.798-1.79 1.784v6.445c0 .985.802 1.784 1.79 1.784s1.79-.799 1.79-1.784v-2.409h-1.79v-1.544h3.565v3.908c0 1.932-1.42 3.423-3.562 3.423S54 51.5 54 49.569v-6.364c0-1.932 1.42-3.422 3.562-3.422zm21.012.335v1.543h-4.502v3.975h3.814v1.544h-3.82v3.936l4.508.003v1.543h-6.272V40.118h6.272zm8.171 0v1.543h-4.5v3.975h3.814v1.544h-3.82v3.936l4.506.003v1.543h-6.272V40.118h6.272zm3.873 0l2.859 8.424h.073l-.02-8.424h1.773v12.541l-1.96.003-2.86-8.424h-.072l.02 8.424h-1.773V40.118h1.96zm33.53 0v5.535h3.08v-5.535H129v12.541h-1.773v-5.462h-3.08v5.465h-1.772V40.118h1.772zm-57.346-.014c.852-.022 1.678.296 2.295.882.616.587.972 1.395.99 2.244v1.85c-.007 1.265-.781 2.398-1.957 2.87l1.789 4.71h-1.918l-1.697-4.45h-1.198v4.438h-1.773V40.104zm32.362.01l1.12 8.654h.073l1.12-5.304h1.66l1.12 5.304h.073l1.12-8.653h1.79l-1.938 12.544h-1.792l-1.162-5.83h-.073l-1.162 5.83h-1.79l-1.937-12.544h1.778zm11.943.004v12.541h-1.784l.011-12.541h1.773zM66.802 41.66h-1.696v5.002l1.696.003c.413-.006.805-.178 1.09-.475.284-.298.436-.697.423-1.107v-1.84c.013-.41-.14-.81-.424-1.107-.284-.298-.676-.47-1.089-.476zM55.943 21.736l2.52 5.61 2.52-5.61h1.77v12.542h-1.77v-8.313h-.05l-1.66 3.956h-1.624l-1.67-3.967h-.036v8.327h-1.772V21.736h1.772zM66.562 3c2.103 0 3.598 1.488 3.598 3.475v6.273c0 1.987-1.495 3.458-3.598 3.458-2.103 0-3.599-1.47-3.599-3.458V6.475C62.963 4.491 64.46 3 66.562 3zm-8.922.33c.852-.022 1.678.295 2.294.882.617.587.973 1.394.99 2.244v1.84h.015c-.01 1.263-.784 2.396-1.96 2.869l1.789 4.71H58.85l-1.708-4.45h-1.199v4.45h-1.761V3.328zm15.415 0l1.846 5.15h.112l1.848-5.15h1.918l-2.935 7.137v5.407h-1.772v-5.407L71.137 3.33h1.918zm10.593 0l2.946 12.544h-1.809l-.453-1.954H80.99l-.46 1.954h-1.808L81.705 3.33h1.943zm6.55 0v11h4.17v1.544h-5.943V3.33h1.773zM67.534 4.715c-.59-.366-1.338-.366-1.928 0-.591.365-.923 1.033-.856 1.723v6.345c-.067.69.265 1.358.856 1.723.59.366 1.338.366 1.928 0 .591-.365.923-1.033.856-1.723V6.439c.067-.69-.265-1.358-.856-1.723zm15.17 1.687h-.072l-1.291 5.96h2.638l-1.274-5.96zM57.64 4.876h-1.697v5.002l1.697.003c.412-.007.805-.178 1.09-.476.283-.297.436-.696.422-1.107v-1.84c.014-.41-.139-.81-.423-1.107-.284-.297-.677-.469-1.089-.475zM24.376 24.46h18.532c-.671 10.126-8.597 18.205-18.532 18.898V24.46zm19.01-11.925C38.306 2.597 26.873-2.256 16.244 1.013 5.615 4.283-1.158 14.736.164 25.83c1.323 11.095 10.361 19.644 21.458 20.296V56h2.754v-9.874C36.516 45.404 45.994 35.3 46 23.076c0-.469-.042-.924-.07-1.384H21.622v21.666c-10.399-.724-18.603-9.515-18.603-20.28 0-11.24 8.946-20.34 19.98-20.34 7.78 0 14.488 4.546 17.785 11.156l2.602-1.359z"/></svg>
+</a>
+        <div class="search-flyout__buttons">
+          <a id="search-flyout__menu" class="button" href="#main-menu">Menu</a>
+
+          <button id="search-flyout__close">
+            <svg viewBox="0 0 12 12" height="12" width="12">
+              <path d="M1,1 L11,11 M1,11 L11,1"/>
+            </svg>
+            Close
+          </button>
+        </div>
+      </header>
+      <div class="search-flyout__content">
+        <form action="/search" class="search-flyout__form">
+          <label class="search-flyout__title" for="search-term">Search</label>
+          <input name="search-term" id="search-term" class="search-flyout__input" placeholder="e.g. the cutty sark"/>
+        </form>
+          <a href="/collections">Want to search our collection? Search here.</a>
+  
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer class="my-footer slice">
+  <div class="my-footer__top">
+    <div class="my-footer__first my-footer__menu">
+      <nav role="navigation" aria-labelledby="block-footer-menu" id="block-footer">
+      
+  <h2 id="block-footer-menu">Our Work and Services</h2>
+  
+
+        
+        <ul>
+            <li>
+        <a href="/about-us/what-we-do" data-gtm-name="nav: footer" data-drupal-link-system-path="node/3567">What we do</a>
+              </li>
+          <li>
+        <a href="/venue-hire" data-gtm-name="nav: footer" data-drupal-link-system-path="node/3722">Venue Hire &amp; Weddings</a>
+              </li>
+          <li>
+        <a href="/venue-hire/filming-photography" data-gtm-name="nav: footer" data-drupal-link-system-path="node/3708">Filming &amp; Photography</a>
+              </li>
+          <li>
+        <a href="/about-us/brand-licensing" data-gtm-name="nav: footer" data-drupal-link-system-path="node/3231">Brand Licensing</a>
+              </li>
+          <li>
+        <a href="/about-us/publishing" data-gtm-name="nav: footer" data-drupal-link-system-path="node/3258">Publishing</a>
+              </li>
+          <li>
+        <a href="/about-us/image-library-licensing" data-gtm-name="nav: footer" data-drupal-link-system-path="node/3568">Images &amp; licensing</a>
+              </li>
+          <li>
+        <a href="/about-us/news-press" data-gtm-name="nav: footer" data-drupal-link-system-path="node/3198">News &amp; Press</a>
+              </li>
+          <li>
+        <a href="/about-us/jobs-volunteering" data-gtm-name="nav: footer" data-drupal-link-system-path="node/3061">Jobs &amp; Volunteering</a>
+              </li>
+          <li>
+        <a href="/contact" data-gtm-name="nav: footer" data-drupal-link-system-path="node/3209">Contact us</a>
+              </li>
+      </ul>
+  
+
+
+  </nav>
+
+
+    </div>
+    <div class="my-footer__second my-footer__menu">
+      <nav role="navigation" aria-labelledby="block-footersecond-menu" id="block-footersecond">
+      
+  <h2 id="block-footersecond-menu">Visit &amp; Shop</h2>
+  
+
+        
+        <ul>
+            <li>
+        <a href="/whats-on" data-gtm-name="nav: footer" data-drupal-link-system-path="whats-on">Events &amp; Exhibitions</a>
+              </li>
+          <li>
+        <a href="https://shop.rmg.co.uk/" data-gtm-name="nav: footer">Shop</a>
+              </li>
+          <li>
+        <a href="https://prints.rmg.co.uk/" data-gtm-name="nav: footer">Prints</a>
+              </li>
+          <li>
+        <a href="/plan-your-visit/groups-travel-trade" data-gtm-name="nav: footer" data-drupal-link-system-path="node/3575">Groups &amp; Travel Trade</a>
+              </li>
+          <li>
+        <a href="/membership" data-gtm-name="nav: footer" data-drupal-link-system-path="node/3564">Become a member</a>
+              </li>
+          <li>
+        <a href="https://tickets.rmg.co.uk/webstore/landingPage?CG=memtik&amp;C=CSMEM" data-gtm-name="nav: footer">Members tickets</a>
+              </li>
+          <li>
+        <a href="https://donate.rmg.co.uk" data-gtm-name="nav: footer">Make a donation</a>
+              </li>
+          <li>
+        <a href="/plan-your-visit/visit-greenwich" data-gtm-name="nav: footer" data-drupal-link-system-path="node/28">Things to do in Greenwich</a>
+              </li>
+      </ul>
+  
+
+
+  </nav>
+
+
+    </div>
+  </div>
+  <div class="my-footer__bottom">
+    <div class="my-footer__region-wrapper">
+      <div class="my-footer__social">
+        <a aria-label="Facebook" href="https://www.facebook.com/royalmuseumsgreenwich" data-gtm-name="nav: footer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
+    <path d="M15.5 0C6.94 0 0 6.94 0 15.5 0 24.06 6.94 31 15.5 31 24.06 31 31 24.06 31 15.5 31 6.94 24.06 0 15.5 0zm3.875 10.333h-1.744c-.695 0-.84.286-.84 1.005v1.579h2.584l-.27 2.583h-2.313v9.042h-3.875V15.5h-2.584v-2.583h2.584V9.936c0-2.285 1.202-3.478 3.912-3.478h2.546v3.875z"/>
+</svg>
+        </a>
+        <a aria-label="Twitter" href="http://www.twitter.com/RMGreenwich" data-gtm-name="nav: footer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
+    <path d="M15.5 0C6.94 0 0 6.94 0 15.5 0 24.06 6.94 31 15.5 31 24.06 31 31 24.06 31 15.5 31 6.94 24.06 0 15.5 0zm7.835 12.458c.237 5.218-3.655 11.036-10.545 11.036-2.095 0-4.044-.615-5.686-1.667 1.969.232 3.933-.316 5.492-1.536-1.622-.03-2.992-1.103-3.466-2.577.582.111 1.156.079 1.676-.063-1.784-.36-3.016-1.966-2.976-3.685.501.277 1.072.444 1.68.463-1.652-1.104-2.12-3.286-1.148-4.953 1.83 2.245 4.564 3.721 7.647 3.876-.541-2.32 1.22-4.556 3.615-4.556 1.066 0 2.03.451 2.708 1.172.844-.166 1.64-.476 2.356-.9-.278.866-.866 1.592-1.632 2.052.75-.09 1.466-.29 2.13-.585-.496.746-1.124 1.4-1.85 1.923z"/>
+</svg>
+        </a>
+        <a aria-label="Instagram" href="http://www.instagram.com/royalmuseumsgreenwich" data-gtm-name="nav: footer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
+    <path d="M19.154 8.14c-.953-.044-1.24-.052-3.654-.052-2.414 0-2.7.01-3.653.052-2.453.112-3.595 1.274-3.707 3.707-.043.953-.053 1.239-.053 3.653 0 2.414.01 2.7.053 3.654.112 2.427 1.25 3.595 3.707 3.707.952.043 1.239.053 3.653.053 2.415 0 2.7-.009 3.654-.053 2.453-.11 3.594-1.276 3.707-3.707.043-.953.052-1.24.052-3.654 0-2.414-.01-2.7-.052-3.653-.113-2.432-1.257-3.595-3.707-3.707zM15.5 20.144c-2.564 0-4.644-2.079-4.644-4.644 0-2.564 2.08-4.642 4.644-4.642s4.644 2.078 4.644 4.642c0 2.564-2.08 4.644-4.644 4.644zm4.827-8.385c-.6 0-1.085-.485-1.085-1.085 0-.599.486-1.085 1.085-1.085.6 0 1.085.486 1.085 1.085 0 .598-.486 1.085-1.085 1.085zM18.513 15.5c0 1.665-1.35 3.013-3.013 3.013-1.664 0-3.013-1.348-3.013-3.013 0-1.665 1.35-3.013 3.013-3.013 1.664 0 3.013 1.348 3.013 3.013zM15.5 0C6.94 0 0 6.94 0 15.5 0 24.06 6.94 31 15.5 31 24.06 31 31 24.06 31 15.5 31 6.94 24.06 0 15.5 0zm8.987 19.228c-.148 3.287-1.978 5.108-5.258 5.26-.965.043-1.274.054-3.729.054s-2.763-.01-3.728-.055c-3.286-.15-5.108-1.975-5.26-5.26-.043-.963-.054-1.272-.054-3.727s.01-2.763.055-3.728c.15-3.286 1.975-5.108 5.26-5.258.964-.045 1.272-.056 3.727-.056s2.764.01 3.729.056c3.287.151 5.111 1.979 5.258 5.258.044.965.055 1.273.055 3.728s-.01 2.764-.055 3.728z"/>
+</svg>
+        </a>
+        <a aria-label="Youtube" href="http://www.youtube.com/user/RoyalMuseumsGrnwich" data-gtm-name="nav: footer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
+    <path d="M15.5 0C6.94 0 0 6.94 0 15.5 0 24.06 6.94 31 15.5 31 24.06 31 31 24.06 31 15.5 31 6.94 24.06 0 15.5 0zm5.736 21.819c-2.715.186-8.762.186-11.474 0-2.94-.202-3.282-1.64-3.304-6.319.022-4.687.368-6.117 3.304-6.319 2.712-.186 8.76-.186 11.474 0 2.941.202 3.282 1.64 3.306 6.319-.024 4.687-.368 6.117-3.306 6.319zm-8.32-9.344l6.352 3.02-6.351 3.03v-6.05z"/>
+</svg>
+        </a>
+        <a aria-label="Weibo" href="https://www.weibo.com/u/7241857181" data-gtm-name="nav: footer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
+    <path d="M15.5 0C24.06 0 31 6.94 31 15.5 31 24.06 24.06 31 15.5 31 6.94 31 0 24.06 0 15.5 0 6.94 6.94 0 15.5 0zm-1.826 9.522c-1.532-.03-3.844 1.183-5.905 3.208-2.05 2.053-3.248 4.205-3.248 6.058 0 3.602 4.596 5.754 9.142 5.754 5.895 0 9.84-3.402 9.84-6.105 0-1.652-1.398-2.554-2.648-2.954-.298-.1-.498-.15-.348-.55.098-.24.244-.696.244-1.301 0-.688-.477-1.284-1.432-1.39-.474-.052-2.387-.045-3.657.488 0 0-.7.302-.501-.249.35-1.1.3-2.002-.25-2.503-.299-.3-.724-.447-1.237-.456zm-.412 5.513c3.726 0 6.745 1.903 6.745 4.254 0 2.348-3.019 4.251-6.745 4.251-3.723 0-6.742-1.903-6.742-4.251 0-2.35 3.019-4.254 6.742-4.254zm-.5 1c-1.44.01-2.841.8-3.449 2.019-.75 1.548-.05 3.25 1.747 3.8 1.798.6 3.944-.301 4.694-1.95.747-1.6-.2-3.3-1.997-3.748-.329-.086-.662-.124-.994-.122zm-1.359 2.52c.157.001.314.026.46.076.64.204.836.81.443 1.317-.343.506-1.128.758-1.72.506-.587-.252-.734-.861-.391-1.315.257-.381.737-.59 1.208-.585zm2.104-.5c.276 0 .5.223.5.5 0 .276-.224.5-.5.5s-.5-.224-.5-.5c0-.277.224-.5.5-.5zm6.767-11.597c-.372 0-.73.038-1.074.1-.26.044-.433.293-.388.552.044.262.292.436.552.39.302-.053.604-.085.91-.085 2.905 0 5.25 2.35 5.25 5.26 0 .63-.115 1.232-.32 1.796-.064.162-.036.345.074.48.112.134.286.198.457.166.172-.032.312-.155.366-.32.24-.66.378-1.372.378-2.122 0-3.428-2.784-6.217-6.205-6.217zm0 2.87c-.204 0-.396.02-.578.052-.26.047-.435.293-.388.555.044.26.292.433.552.388.14-.024.277-.039.414-.039 1.323 0 2.386 1.065 2.386 2.391 0 .286-.052.559-.147.817-.09.248.04.523.287.613.248.09.522-.038.612-.286.128-.355.203-.74.203-1.144 0-1.843-1.501-3.347-3.341-3.347z"/>
+</svg>
+        </a>
+      </div>
+      <div class="my-footer__region">
+        <a href="https://landing.rmg.co.uk/newsletter/subscribe.html" class="button">Sign up to our newsletter</a>
+      </div>
+    </div>
+    <div class="my-footer__legal my-footer__menu">
+      <nav role="navigation" aria-labelledby="block-legal-menu" id="block-legal">
+            
+  <h2 class="visually-hidden" id="block-legal-menu">Legal</h2>
+  
+
+        
+        <ul>
+            <li>
+        <a href="/terms-conditions" data-gtm-name="nav: footer" data-drupal-link-system-path="node/3172">Terms &amp; Conditions</a>
+              </li>
+          <li>
+        <a href="/privacy" data-gtm-name="nav: footer" data-drupal-link-system-path="node/3064">Privacy Notice</a>
+              </li>
+          <li>
+        <a href="/accessibility" data-gtm-name="nav: footer" data-drupal-link-system-path="node/3065">Accessibility</a>
+              </li>
+          <li>
+        <a href="/cookies" data-gtm-name="nav: footer" data-drupal-link-system-path="node/3066">Cookies Policy</a>
+              </li>
+      </ul>
+  
+
+
+  </nav>
+
+
+    </div>
+    <div class="my-footer__copyright">
+    </div>
+  </div>
+</footer>
+
+          <div class="cookie-banner visually-hidden" id="cookie-banner">
+  <div class="cookie-banner__row">
+    <div class="cookie-banner__contain slice__light">
+      <div class="cookie-banner__wrapper slice">
+        <div class="cookie-banner__content">
+          We use cookies to ensure you have the best browsing experience and to help us improve our website.
+                  </div>
+        <div class="cookie-banner__buttons-wrapper">
+          <div class="cookie-banner__buttons">
+            <a href="/cookies">Find out more</a>
+            <button class="cookie-banner__accept">Accept Cookies</button>
+          </div>
+        </div>
+      </div>
+      <div class="cookie-banner__close-wrapper">
+        <button class="cookie-banner__accept cookie-banner__close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+            <title>Close cookie banner</title>
+            <path d="M1 1L17 17M1 17L17, 1"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"collections\/objects\/rmgc-object-1","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"user":{"uid":0,"permissionsHash":"3e171e0f3fd6c3bfc0ad58ab492fcfe5fb5f569567529dacdc6f1bb0aab59b1a"}}</script>
+<script src="/sites/default/files/js/js_oI7j16PhjBCD3dSJ4WJDakHIWGgEnSRCNarjDTjcPKk.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-1e64a3d062546e2a03f","applicationID":"455895645","transactionName":"bgdRZkZZDRBZVxUIC1dNclFAUQwNF0QABgFmAVJRXF0=","queueTime":0,"applicationTime":11,"atts":"QkBSEA5DHh4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
