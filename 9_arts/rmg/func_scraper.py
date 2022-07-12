@@ -43,7 +43,14 @@ def url_get(url, s):
             raise
         x += 1
 
-def scraper(filename, start_num=False, end_num=False):
+def scraper(filename, start_num, end_num, position, lock):
+    # with lock:
+    #     bar = tqdm(
+    #         desc=f'Position {position}',
+    #         total=end_num,
+    #         position=position,
+    #         leave=False
+    #     )
     try:
         if os.path.exists(filename) and os.stat(filename).st_size > 515:
             start_id = get_last_id(filename, 515)
@@ -51,7 +58,7 @@ def scraper(filename, start_num=False, end_num=False):
             start_id = start_num
 
         s = requests.Session()
-        for i in tqdm(range(start_id, end_num)):
+        for i in tqdm(range(start_id, end_num), desc=f"{start_num}-{end_num}"):
             url = f"https://www.rmg.co.uk/collections/objects/rmgc-object-{i}"
             html = url_get(url, s)
 
@@ -88,11 +95,17 @@ def scraper(filename, start_num=False, end_num=False):
             for col in column:
                 if col not in df.columns.tolist():
                     df[col] = None
-                    
+
             if i == start_id:
                 df.to_csv(filename, mode="a+", index=False, columns=column, header=True)
             else:
                 df.to_csv(filename, mode="a+", index=False, columns=column, header=False)
+        #
+        #     with lock:
+        #         bar.update(1)
+        #
+        # with lock:
+        #     bar.close()
     except KeyboardInterrupt:
         return
 

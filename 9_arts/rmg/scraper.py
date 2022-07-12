@@ -1,6 +1,7 @@
 import sys
 import traceback as tb
 from multiprocessing import Pool
+from multiprocessing import Manager
 from pathlib import Path
 
 from func_scraper import scraper
@@ -11,6 +12,7 @@ from _common import get_last_id
 from _common.send_mail import send_mail
 
 if __name__ == "__main__":
+    lock = Manager().Lock()
     arguments = []
     end_id = 119790 #45899
     # start_num is supplemental for first run and is only used if the files don't exist
@@ -21,7 +23,7 @@ if __name__ == "__main__":
             # Use end_id before it is added to
             start_num = end_id - 119790
         print("Startnum: " + str(start_num))
-        arguments.append([f"./files/extracted_data{i}.csv", start_num, end_id])
+        arguments.append([f"./files/extracted_data{i}.csv", start_num, end_id, i, lock])
         end_id = end_id + 119790
     print(arguments)
 
