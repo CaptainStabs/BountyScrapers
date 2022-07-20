@@ -95,6 +95,7 @@ def scraper(filename, start_num=False, end_num=False):
                 if not jd: continue
 
                 obj_info = jd.get("objectInformation", [])
+                print(json.dumps(obj_info, indent=4))
                 if len(jd.get("objectInformation", [])) > 1:
                     print(json.dumps(obj_info, indent=2))
                     print(" [???] objectInformation greater than 1")
