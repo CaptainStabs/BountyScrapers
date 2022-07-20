@@ -24,10 +24,10 @@ def url_get(url, s):
     while x < 5:
         try:
             r = s.get(url)
-        except KeyboardInterrupt:
-            print("Ctrl-c detected, exiting")
-            import sys; sys.exit()
-            raise KeyboardInterrupt
+        # except KeyboardInterrupt:
+        #     print("Ctrl-c detected, exiting")
+        #     import sys; sys.exit()
+        #     raise KeyboardInterrupt
         except Exception as e:
             raise(e)
             x+=1
@@ -110,6 +110,9 @@ def scraper(filename, start_num=False, end_num=False):
                 }
 
                 writer.writerow(data)
+
+            except KeyboardInterrupt:
+                return
 
             except Exception:
                 print("\n",id)
