@@ -61,10 +61,10 @@ def url_get(url, s):
     while x < 5:
         try:
             r = s.get(url)
-        except KeyboardInterrupt:
-            print("Ctrl-c detected, exiting")
-            import sys; sys.exit()
-            raise KeyboardInterrupt
+        # except KeyboardInterrupt:
+        #     print("Ctrl-c detected, exiting")
+        #     import sys; sys.exit()
+        #     raise KeyboardInterrupt
         except Exception as e:
             raise(e)
             x+=1
@@ -126,6 +126,9 @@ def scraper(filename, start_num=False, end_num=False):
                 img = parser.xpath('//*[@id="mediaZone"]/div/img/@src')
                 dimens = parser.xpath("//*[@class='detailField dimensionsField']/span[@class='detailFieldValue']/text()")
                 insc = parser.xpath("//*[@class='detailField inscribedField']/span[@class='detailFieldValue']/text()")
+                mat = parser.xpath("//*[@class='detailField mediumField']/span[@class='detailFieldValue']/text()")
+                cred_line = parser.xpath("//*[@class='detailField creditlineField']/span[@class='detailFieldValue']/text()")
+                cult = parser.xpath("//*[@class='detailField cultureField']/span[@class='detailFieldValue']/a/text()")
 
                 data = {
                     "institution_name": "Zimmerli Art Museum, Rutgers University",
@@ -140,11 +143,11 @@ def scraper(filename, start_num=False, end_num=False):
                     "maker_birth_year": birth,
                     "maker_death_year": death,
                     "date_description": date_desc[0] if date_desc else None,
-                    "culture": parser.xpath("//*[@class='detailField cultureField']/span[@class='detailFieldValue']/a/text()")[0],
-                    "materials": parser.xpath("//*[@class='detailField mediumField']/span[@class='detailFieldValue']/text()")[0],
+                    "culture": cult[0] if cult else None,
+                    "materials": mat[0] if mat else None,
                     "dimensions": dimens[0] if dimens else None,
                     "category": parser.xpath("//*[@class='detailField classificationField']/span[@class='detailFieldValue']/text()")[0],
-                    "credit_line": parser.xpath("//*[@class='detailField creditlineField']/span[@class='detailFieldValue']/text()")[0],
+                    "credit_line": cred_line[0] if cred_line else None,
                     "object_number": parser.xpath("//*[@class='detailField invnoField']/span[@class='detailFieldValue']/text()")[0],
                     "inscription": insc[0] if insc else None,
                     "image_url": "https://zimmerli.emuseum.com/" + str(img[0]) if img else None,
@@ -154,10 +157,13 @@ def scraper(filename, start_num=False, end_num=False):
 
                 writer.writerow(data)
 
+            except KeyboardInterrupt:
+                return
+
             except Exception:
-                print("\n",id)
+                print("\nCRASHED ID:",id)
                 tb.print_exc()
                 # send_mail("script crashed", "")
                 raise
 
-# scraper("extracted_data.csv", 0, 60600)
+scraper("extracted_data.csv", 0, 60600)
