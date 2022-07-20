@@ -31,12 +31,12 @@ df["maker_full_name"] = df.apply(lambda x: maker_name(x), axis=1)
 
 df["category"] = df["category"].fillna('')
 df["sub_cat"] = df["sub_cat"].fillna('')
-df["category"] = df[["category", "sub_cat"]].apply("|".join, axis=1)
-df["category"] = df["category"].str.strip("|")
+df["category"] = df[["category", "sub_cat"]].apply(", ".join, axis=1)
+df["category"] = df["category"].str.strip(", ")
 
 df["description"] = df["description"][:10000]
 df["date_description"] = df["date_description"].apply(lambda x: " ".join(x.split()) if len(str(x)) > 500 else x)
-df["date_description"] = df["date_description"].apply(lambda x: x.replace(" - ", "|") if len(str(x)) > 500 else x)
+df["date_description"] = df["date_description"].apply(lambda x: x.replace(" - ", ",") if len(str(x)) > 500 else x)
 df["date_description"] = df["date_description"].apply(lambda x: x[:500] if len(str(x)) > 500 else x)
 
 df["institution_name"] = "National Maritime Museum"
