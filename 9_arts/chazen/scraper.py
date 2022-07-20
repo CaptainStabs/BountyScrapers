@@ -151,7 +151,7 @@ def scraper(filename, mus_info, limit=100):
                         "date_description": item["date"],
                         "year_start": yr_strt,
                         "year_end": yr_end,
-                        "acccession_number": item["accession_number"],
+                        "accession_number": item["accession_number"],
                         "source_1": url,
                         "drop_me": page,
                     }
