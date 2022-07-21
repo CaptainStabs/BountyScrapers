@@ -178,7 +178,7 @@ def scraper(filename, start_num, end_num, position, lock):
                 return
 
             except Exception:
-                print("\nCRASHED ID:",id)
+                print("\nCRASHED ID:",url)
                 tb.print_exc()
                 # send_mail("script crashed", "")
                 raise
