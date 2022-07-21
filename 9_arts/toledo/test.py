@@ -3,7 +3,9 @@ from lxml.html import fromstring
 from tqdm import tqdm
 from bs4 import BeautifulSoup
 import re
+import polars as pl
 
+pl.Config.set_tbl_rows(15)
 dates_pat = re.compile(r"(\d{4}|\d{3} \d{4}|\d{3})")
 pat1 = re.compile(r"(?:(?:(\d{4}|\d{3})\/)|(:?|\d{4}|\d{3}))(?:(\d{4}|\d{3})|(\d{4}|\d{3})(?:\)))")
 pat2 = re.compile(r"((\d{4}|\d{3}) - (\d{4}|\d{3})-(\d{4}|\d{3}))|((?!\d)(\d{4}|\d{3}) - |(\d{4}|\d{3})-(\d{4}|\d{3}) - (\d{4}|\d{3}))")
@@ -61,25 +63,32 @@ if len(dates):
     birth, death = get_dates(dates)
 
 
+data = [{
+        "Birth|death": ",".join([birth, death]),
+        "roles": "|".join(roles),
+        "names": "|".join(names) if names else None,
+        "title": str(parser.xpath('//*[@class="detailField titleField"]/h1/text()')[0]),
+        "date": str(parser.xpath("//*[@class='detailField displayDateField']/span[@class='detailFieldValue']/text()")),
+        "culture": str(parser.xpath("//*[@class='detailField cultureField']/span[@class='detailFieldValue']/text()")),
+        "materials": str(parser.xpath("//*[@class='detailField mediumField']/span[@class='detailFieldValue']/text()")),
+        "dimensions": str(parser.xpath("//*[@class='detailField dimensionsField']/span[@class='detailFieldValue']/div/text()")),
+        "category": str(parser.xpath("//*[@class='detailField classificationField']/span[@class='detailFieldValue']/text()")),
+        "credit": str(parser.xpath("//*[@class='detailField creditlineField']/span[@class='detailFieldValue']/text()")),
+        "num": str(parser.xpath("//*[@class='detailField invnoField']/span[@class='detailFieldValue']/text()")),
+        "not on view": str(parser.xpath("//*[@class='detailField currentLocationField']/text()")),
+        "cur loc": str(parser.xpath("//*[@class='detailField currentLocationField']/span[@class='detailFieldLabel']/text()")),
+        "description": str(parser.xpath("//*[@class='detailField labelTextField']/span[@class='detailFieldValue']/text()")),
+        "provenance": str(parser.xpath('//*[@id="detailView"]/div[2]/div/div[11]/span[2]/text()')),
+}]
 
-print(birth, death)
-print("Roles:", roles) # Remember to strip colons from roles
-print("Names:", names)
-# # for div in soup.find_all("div", attrs={'class': 'detail-item-details'}):
-print("Title:", parser.xpath('//*[@class="detailField titleField"]/h1/text()')[0])
-print("Date:", parser.xpath("//*[@class='detailField displayDateField']/span[@class='detailFieldValue']/text()"))
-print("Culture", parser.xpath("//*[@class='detailField cultureField']/span[@class='detailFieldValue']/text()")) # Culture
-print("Materials:", parser.xpath("//*[@class='detailField mediumField']/span[@class='detailFieldValue']/text()"))
-print("Dimensions:", parser.xpath("//*[@class='detailField dimensionsField']/span[@class='detailFieldValue']/div/text()"))
-print("Category:", parser.xpath("//*[@class='detailField classificationField']/span[@class='detailFieldValue']/text()"))
-print("Credit:", parser.xpath("//*[@class='detailField creditlineField']/span[@class='detailFieldValue']/text()"))
-print("Num:", parser.xpath("//*[@class='detailField invnoField']/span[@class='detailFieldValue']/text()"))
+df = pl.DataFrame(data)
+print(df)
+df = df.transpose(include_header=True)
+
+df["column"] = df["column"].str.rjust(5, " ")
+print(df)
+
 print("https://zimmerli.emuseum.com/" + str(parser.xpath('//*[@id="mediaZone"]/div/img/@src')))
-print("Not on view:", parser.xpath("//*[@class='detailField currentLocationField']/text()"))
-print("Cur Loc:", parser.xpath("//*[@class='detailField currentLocationField']/span[@class='detailFieldLabel']/text()"))
-print("Description:",  parser.xpath("//*[@class='detailField labelTextField']/span[@class='detailFieldValue']/text()"))
-print("Provenance:", parser.xpath('//*[@id="detailView"]/div[2]/div/div[11]/span[2]/text()'))
-print(parser.xpath("//*[@class='emuseum-detail-category detailField collectionsField']/span[@class='detailFieldValue']/text()"))
 
 desc_stuff = parser.xpath('//*[@class="detailField toggleField descriptionField"]/span[@class="toggleLabel detailFieldLabel"]/text()')
 print(desc_stuff)
