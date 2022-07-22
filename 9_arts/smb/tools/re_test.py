@@ -4,7 +4,7 @@ from dateutil import parser as dateparser
 dates_pat = re.compile(r"((?:(?<=\.)|(?<=\()|(?<=\(um )|(?<=\(ca\. ))\d{3,4} - (?:.*?(?<=\.)(?:\d{3,4})|(?:\d{3,4})))")
 dates_pat2 = re.compile(r"(\d{3,4}(?: - |-)\d{3,4})")
 single_date = re.compile(r"((?<=\()(?:\d{3,4})(?=\))|(?<=\()(?:\d{1,2}\.\d{1,2}\.\d{3,4})(?=\)))")
-born_pat = re.compile(r"(?: born )(\d{4})(?:\))")
+born_pat = re.compile(r"(?<=\()(\d{3,4} - )(?=u)")
 ca_nach = re.compile(r"(\d{3,4}(?: - |-)(?:nach) \d{3,4})")
 
 # print(re.findall(pat, string))
@@ -17,12 +17,8 @@ def get_dates(dates: list, url) -> tuple:
             continue
 
         bio = bio.replace("† ", "")
-        if re.findall(born_pat, bio):
-            years = re.findall(born_pat, bio)
-            # print("years:", years)
-            year_list.append([x for x in years])
 
-        elif re.findall(dates_pat2, bio):
+        if re.findall(dates_pat2, bio):
             years = re.findall(dates_pat2, bio)[0]
             year_list.append(years)
 
@@ -36,6 +32,10 @@ def get_dates(dates: list, url) -> tuple:
 
         elif "/" not in bio and re.findall(dates_pat, bio):
             years = re.findall(dates_pat, bio)[0]
+            year_list.append(years)
+
+        elif re.findall(born_pat, bio):
+            years = re.findall(born_pat, bio)[0].split("-")[0].strip()
             year_list.append(years)
 
         elif "/" in bio:
@@ -84,20 +84,20 @@ def get_dates(dates: list, url) -> tuple:
         death = None
     return birth, death
 
-# dates = [['S.M.S. Cormoran (25.7.1893 - 6.8.1914), Expedition', 'S.M.S. Hyäne (27.6.1878 - 1924)'], ["Adolf Bastian (26.6.1826 - 3.2.1905), Sammler","Albert Napp (1881), Grabungsassistent","Hermann Berendt (1876), Grabungsassistent"], ["(1855 - 3.3.1895)"], ["Herstellung: Johann Wilhelm Windter (um 1696 - 27.3.1765), Stecher & Radierer"]]
-# for date in dates:
-#     print(date)
-#     print(get_dates(date, "a"))
-#     print("\n")
-#
-# dates = ["Herstellung: Héloïse Leloir (um 1820 - 1874), Zeichnerin","Herstellung: Imprimerie Mariton (1860), Drucker","Herstellung: Eduard Ludewig, Verleger"]
-# print("\n", dates)
-# print(get_dates(dates, "A"))
-#
-# dates = ['Dr. Carl Wolf & Sohn (ca. 1847-nach 1949)']
-# print("\n", dates)
-# print(get_dates(dates, "A"))
+dates = [['S.M.S. Cormoran (25.7.1893 - 6.8.1914), Expedition', 'S.M.S. Hyäne (27.6.1878 - 1924)'], ["Adolf Bastian (26.6.1826 - 3.2.1905), Sammler","Albert Napp (1881), Grabungsassistent","Hermann Berendt (1876), Grabungsassistent"], ["(1855 - 3.3.1895)"], ["Herstellung: Johann Wilhelm Windter (um 1696 - 27.3.1765), Stecher & Radierer"]]
+for date in dates:
+    print(date)
+    print(get_dates(date, "a"))
+    print("\n")
 
-dates = ['Wasa Mende († 11.10.1899), Sammler']
+dates = ["Herstellung: Héloïse Leloir (um 1820 - 1874), Zeichnerin","Herstellung: Imprimerie Mariton (1860), Drucker","Herstellung: Eduard Ludewig, Verleger"]
+print("\n", dates)
+print(get_dates(dates, "A"))
+
+dates = ['Dr. Carl Wolf & Sohn (ca. 1847-nach 1949)']
+print("\n", dates)
+print(get_dates(dates, "A"))
+
+dates = ['Wasa Mende († 11.10.1899), Sammler', 'Jerry weraf (1891 - unbekant), eijasf jfkk']
 print("\n", dates)
 print(get_dates(dates, "A"))

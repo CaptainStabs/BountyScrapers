@@ -55,7 +55,7 @@ def url_get(url, s):
 dates_pat = re.compile(r"((?:(?<=\.)|(?<=\()|(?<=\(um )|(?<=\(ca\. ))\d{3,4} - (?:.*?(?<=\.)(?:\d{3,4})|(?:\d{3,4})))")
 dates_pat2 = re.compile(r"(\d{3,4}(?: - |-)\d{3,4})")
 single_date = re.compile(r"((?<=\()(?:\d{3,4})(?=\))|(?<=\()|(?<=\(† )(?:\d{1,2}\.\d{1,2}\.\d{3,4})(?=\)))")
-born_pat = re.compile(r"(?: born )(\d{4})(?:\))")
+born_pat = re.compile(r"(?<=\()(\d{3,4} - )(?=u)")
 ca_nach = re.compile(r"(\d{3,4}(?: - |-)(?:nach) \d{3,4})")
 
 # print(re.findall(pat, string))
@@ -66,12 +66,10 @@ def get_dates(dates: list, url) -> tuple:
         if not any(x.isdigit() for x in bio):
             year_list.append("b")
             continue
-        if re.findall(born_pat, bio):
-            years = re.findall(born_pat, bio)
-            # print("years:", years)
-            year_list.append([x for x in years])
 
-        elif re.findall(dates_pat2, bio):
+        bio = bio.replace("† ", "")
+
+        if re.findall(dates_pat2, bio):
             years = re.findall(dates_pat2, bio)[0]
             year_list.append(years)
 
@@ -84,8 +82,11 @@ def get_dates(dates: list, url) -> tuple:
             year_list.append(years)
 
         elif "/" not in bio and re.findall(dates_pat, bio):
-            print("AAA",re.findall(dates_pat, bio))
             years = re.findall(dates_pat, bio)[0]
+            year_list.append(years)
+
+        elif re.findall(born_pat, bio):
+            years = re.findall(born_pat, bio)[0].split("-")[0].strip()
             year_list.append(years)
 
         elif "/" in bio:
@@ -99,7 +100,7 @@ def get_dates(dates: list, url) -> tuple:
 
     b_list = []
     d_list = []
-    print("LIST", year_list)
+    # print("LIST", year_list)
     for year in year_list:
         if not year:
             continue
@@ -123,7 +124,7 @@ def get_dates(dates: list, url) -> tuple:
 
     birth_years = "|".join(b_list)
     death_years = "|".join(d_list)
-    print(birth_years, death_years)
+    # print(birth_years, death_years)
     if len(b_list):
         birth = birth_years
     else:
