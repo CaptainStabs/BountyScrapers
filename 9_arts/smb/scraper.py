@@ -25,16 +25,16 @@ def url_get(url, s):
     while x < 5:
         try:
             r = s.get(url)
-        except KeyboardInterrupt:
-            print("Ctrl-c detected, exiting")
-            import sys; sys.exit()
-            raise KeyboardInterrupt
+        # except KeyboardInterrupt:
+        #     print("Ctrl-c detected, exiting")
+        #     import sys; sys.exit()
+        #     raise KeyboardInterrupt
         except Exception as e:
             raise(e)
             x+=1
             continue
 
-        if r.status_code == 404:
+        if r.status_code in (404, 500, 401):
             return
 
         try:
@@ -123,17 +123,17 @@ def get_image(id, s):
             return img
 
 
-def scraper(filename, start_num=False, end_num=False):
-    with open("museums.json", "r", encoding="utf-8") as f:
-        mms = json.load(f)
+def scraper(filename, start_num, end_num, position, mms):
+    # with open("museums.json", "r", encoding="utf-8") as f:
+    #     mms = json.load(f)
     # filename, start_num, end_num = filename[0], filename[1], filename[2]
     # signal.signal(signal.SIGINT, signal.SIG_IGN)
-    print(start_num, end_num, filename)
+    # print(start_num, end_num, filename)
     if os.path.exists(filename) and os.stat(filename).st_size > 515:
         start_id = get_last_id(filename, 515)
     else:
         start_id = start_num
-    print(start_id)
+    # print(start_id)
     columns = ['institution_name', 'institution_city', 'institution_state', 'institution_country', 'institution_latitude', 'institution_longitude', 'credit_line', 'date_description', 'from_location', 'category', 'dimensions', 'from_location', 'object_number', 'description', 'materials', 'title', 'image_url', 'source_1', "maker_full_name", "maker_role", "drop_me", "maker_death_year", "maker_birth_year", "source_2"]
 
     remove_escaped = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
@@ -151,13 +151,19 @@ def scraper(filename, start_num=False, end_num=False):
 
         s2.headers.update(headers)
 
-        for page in tqdm(range(start_id, end_num), desc="Page", leave=False, position=1):
+        # for page in tqdm(range(start_id, end_num), desc=f"Page, t {position}", leave=False, position=position):
+        for page in range(start_id, end_num):
             url = f"https://api.smb.museum/search/?offset={page}"
 
             jd1 = url_get(url, s)
             if not jd1: continue
             # make sure to save page to allow resuming
-            for jd in tqdm(jd1["objects"], desc="Item", leave=False, position=2):
+            # for jd in tqdm(jd1["objects"], desc="       Item", leave=False, position=position*2+1):
+            try:
+                jd1["objects"]
+            except:
+                print(json.dumps(jd1, indent=4))
+            for jd in jd1["objects"]:
                 try:
                     dating = "|".join(jd.get("dating", []))
                     dates = [jd.get("dateRange"), dating]
@@ -194,7 +200,7 @@ def scraper(filename, start_num=False, end_num=False):
                         "institution_country": "Germany",
                         "institution_latitude": m["lat"],
                         "institution_longitude": m["lon"],
-                        "credit_line": "|".join(jd["acquisition"]) if jd["acquisition"] else None,
+                        "credit_line": "|".join(jd.get("acquisition", [])) if jd.get("acquisition") else None,
                         "date_description": ", ".join(dates) if dates else None,
                         "from_location": jd.get("compilation"),
                         "category": "|".join(cate),
@@ -216,12 +222,14 @@ def scraper(filename, start_num=False, end_num=False):
 
                     writer.writerow(data)
 
-                except Exception as e:
-                    print("\n",page)
-                    # send_mail("script crashed", "")
-                    # print(json.dumps(jd, indent=4))
-                    print(e)
-                    raise(e)
+                except KeyboardInterrupt:
+                    return
+
+                except Exception:
+                    print("\nCRASHED ID:",url)
+                    tb.print_exc()
+                    print(json.dumps(jd1, indent=4))
+                    raise
 
 
 # scraper("extracted_data.csv", 0, 9980)
