@@ -5,7 +5,7 @@ from multiprocessing import Pool, Manager
 from pathlib import Path
 import json
 import math
-from scraper import scraper
+from scraper_single import scraper
 
 p = Path(__file__).resolve().parents[1]
 sys.path.insert(1, str(p))
