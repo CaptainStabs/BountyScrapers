@@ -84,6 +84,7 @@ def get_dates(dates: list, url) -> tuple:
             year_list.append(years)
 
         elif "/" not in bio and re.findall(dates_pat, bio):
+            print("AAA",re.findall(dates_pat, bio))
             years = re.findall(dates_pat, bio)[0]
             year_list.append(years)
 
@@ -98,7 +99,7 @@ def get_dates(dates: list, url) -> tuple:
 
     b_list = []
     d_list = []
-    # print("LIST", year_list)
+    print("LIST", year_list)
     for year in year_list:
         if not year:
             continue
@@ -122,7 +123,7 @@ def get_dates(dates: list, url) -> tuple:
 
     birth_years = "|".join(b_list)
     death_years = "|".join(d_list)
-    # print(birth_years, death_years)
+    print(birth_years, death_years)
     if len(b_list):
         birth = birth_years
     else:
