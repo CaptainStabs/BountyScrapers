@@ -52,11 +52,9 @@ def url_get(url, s):
             #     raise(e)
         x += 1
 
-dates_pat = re.compile(r"((?<=\.)(\d{3,4})( - )(.*?(?<=\.)(\d{3,4})|(\d{3,4})))")
+dates_pat = re.compile(r"((?:(?<=\.)|(?<=\())\d{3,4} - (?:.*?(?<=\.)(?:\d{3,4})|(?:\d{3,4})))")
 dates_pat2 = re.compile(r"(\d{3,4}(?: - |-)\d{3,4})")
 single_date = re.compile(r"(?<=\()(\d{3,4})(?=\))")
-pat1 = re.compile(r"(?:(?:(\d{4}|\d{3})\/)|(:?|\d{4}|\d{3}))(?:(\d{4}|\d{3})|(\d{4}|\d{3})(?:\)))")
-pat2 = re.compile(r"((\d{4}|\d{3}) - (\d{4}|\d{3})-(\d{4}|\d{3}))|((?!\d)(\d{4}|\d{3}) - |(\d{4}|\d{3})-(\d{4}|\d{3}) - (\d{4}|\d{3}))")
 born_pat = re.compile(r"(?: born )(\d{4})(?:\))")
 ca_nach = re.compile(r"(\d{3,4}(?: - |-)(?:nach) \d{3,4})")
 
@@ -87,8 +85,9 @@ def get_dates(dates: list, url) -> tuple:
             year_list.append(years)
 
         elif "/" not in bio and re.findall(dates_pat, bio):
+            print("AAA",re.findall(dates_pat, bio))
             years = re.findall(dates_pat, bio)[0]
-            year_list.append(years[0])
+            year_list.append(years)
 
         elif "/" in bio:
             year_list.append("b")
@@ -101,7 +100,7 @@ def get_dates(dates: list, url) -> tuple:
 
     b_list = []
     d_list = []
-    # print("LIST", year_list)
+    print("LIST", year_list)
     for year in year_list:
         if not year:
             continue
@@ -119,13 +118,13 @@ def get_dates(dates: list, url) -> tuple:
         else:
             # print("YEAR2:", year)
             year = dateparser.parse(year.strip())
-            b_list.append(str(year))
+            b_list.append(str(year.year))
             d_list.append("")
 
 
     birth_years = "|".join(b_list)
     death_years = "|".join(d_list)
-    # print(birth_years, death_years)
+    print(birth_years, death_years)
     if len(b_list):
         birth = birth_years
     else:
