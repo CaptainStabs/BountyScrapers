@@ -4,7 +4,7 @@ import traceback as tb
 from multiprocessing import Pool, Manager
 from pathlib import Path
 import json
-
+import math
 from scraper import scraper
 
 p = Path(__file__).resolve().parents[1]
@@ -12,9 +12,11 @@ sys.path.insert(1, str(p))
 from _common import get_last_id
 from _common.send_mail import send_mail
 
-# 72923
-# 80011
+# 1997739
 if __name__ == "__main__":
+    threads = 16
+    end = 1997739
+    end_const = math.ceil(end/threads)
     lock = Manager().Lock()
     with open("museums.json", "r", encoding="utf-8") as f:
         mms = json.load(f)
@@ -22,17 +24,18 @@ if __name__ == "__main__":
     if not os.path.exists("./files/"):
         os.makedirs("./files/")
     arguments = []
-    end_id = 624 #45899
+
+    end_id = end_const #45899
     # start_num is supplemental for first run and is only used if the files don't exist
-    for i in range(16):
+    for i in range(threads):
         if i == 0:
             start_num = 0
         else:
             # Use end_id before it is added to
-            start_num = end_id - 624
+            start_num = end_id - end_const
         print("Startnum: " + str(start_num))
         arguments.append([f"./files/extracted_data{i}.csv", start_num, end_id, i, mms])
-        end_id = end_id + 624
+        end_id = end_id + end_const
     # print(arguments)
     # print("\n")
 
