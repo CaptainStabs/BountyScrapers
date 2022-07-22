@@ -6,17 +6,19 @@ import signal
 import sys
 import traceback as tb
 from multiprocessing import Pool
+from pathlib import Path
 
 import pandas as pd
 import requests
+from dateutil import parser as dateparser
 from tqdm import tqdm
-import sys
+
 import logging; logging.basicConfig(level=logging.INFO)
-from pathlib import Path
 p = Path(__file__).resolve().parents[1]
 sys.path.insert(1, str(p))
 from _common import get_last_id
 from _common.send_mail import send_mail
+
 # import heartrate; heartrate.trace(browser=True, daemon=True)
 
 
@@ -50,18 +52,19 @@ def url_get(url, s):
             #     raise(e)
         x += 1
 
-dates_pat = re.compile(r"(\d{3,4}\-\d{3,4})|(\d{3,4})")
+dates_pat = re.compile(r"((?<=\.)(\d{3,4})( - )(.*?(?<=\.)(\d{3,4})|(\d{3,4})))")
+dates_pat2 = re.compile(r"(\d{3,4} - \d{3,4})")
 pat1 = re.compile(r"(?:(?:(\d{4}|\d{3})\/)|(:?|\d{4}|\d{3}))(?:(\d{4}|\d{3})|(\d{4}|\d{3})(?:\)))")
 pat2 = re.compile(r"((\d{4}|\d{3}) - (\d{4}|\d{3})-(\d{4}|\d{3}))|((?!\d)(\d{4}|\d{3}) - |(\d{4}|\d{3})-(\d{4}|\d{3}) - (\d{4}|\d{3}))")
 born_pat = re.compile(r"(?: born )(\d{4})(?:\))")
 
-        # print(re.findall(pat, string))
+# print(re.findall(pat, string))
 
 def get_dates(dates: list, url) -> tuple:
     year_list = []
     for bio in dates:
         if not any(x.isdigit() for x in bio):
-            year_list.append("")
+            year_list.append("b")
             continue
 
         if re.findall(born_pat, bio):
@@ -69,41 +72,22 @@ def get_dates(dates: list, url) -> tuple:
             # print("years:", years)
             year_list.append([x for x in years])
 
+        elif re.findall(dates_pat2, bio):
+            years = re.findall(dates_pat2, bio)[0]
+            year_list.append(years)
+
         elif "/" not in bio and re.findall(dates_pat, bio):
             years = re.findall(dates_pat, bio)[0]
-            year_list.append("".join(years[1:]))
+            year_list.append(years[0])
 
         elif "/" in bio:
-            year_list.append("")
+            year_list.append("b")
             continue
 
         else:
             print("UNKNOWN FORMAT:", bio, url)
-            year_list.append("")
+            year_list.append("b")
             continue
-
-    b_list = []
-    d_list = []
-    for year in year_list:
-        if "-" in year:
-            b, d = year.split("-")
-            b_list.append(b.strip())
-            d_list.append(d.strip())
-        else:
-            b_list.append(year.strip())
-            d_list.append("")
-
-    birth_years = "|".join(b_list)
-    death_years = "|".join(d_list)
-    if len(birth_years):
-        birth = birth_years
-    else:
-        birth = None
-    if len(death_years):
-        death = death_years
-    else:
-        death = None
-    return birth, death
 
 def get_image(id, s):
     url = "https://api.smb.museum/v1/graphql"
