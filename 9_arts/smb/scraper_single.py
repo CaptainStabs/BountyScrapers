@@ -52,11 +52,9 @@ def url_get(url, s):
             #     raise(e)
         x += 1
 
-dates_pat = re.compile(r"((?<=\.)(\d{3,4})( - )(.*?(?<=\.)(\d{3,4})|(\d{3,4})))")
+dates_pat = re.compile(r"((?:(?<=\.)|(?<=\()|(?<=\(um )|(?<=\(ca\. ))\d{3,4} - (?:.*?(?<=\.)(?:\d{3,4})|(?:\d{3,4})))")
 dates_pat2 = re.compile(r"(\d{3,4}(?: - |-)\d{3,4})")
-single_date = re.compile(r"(?<=\()(\d{3,4})(?=\))")
-pat1 = re.compile(r"(?:(?:(\d{4}|\d{3})\/)|(:?|\d{4}|\d{3}))(?:(\d{4}|\d{3})|(\d{4}|\d{3})(?:\)))")
-pat2 = re.compile(r"((\d{4}|\d{3}) - (\d{4}|\d{3})-(\d{4}|\d{3}))|((?!\d)(\d{4}|\d{3}) - |(\d{4}|\d{3})-(\d{4}|\d{3}) - (\d{4}|\d{3}))")
+single_date = re.compile(r"((?<=\()(?:\d{3,4})(?=\))|(?<=\()|(?<=\(† )(?:\d{1,2}\.\d{1,2}\.\d{3,4})(?=\)))")
 born_pat = re.compile(r"(?: born )(\d{4})(?:\))")
 ca_nach = re.compile(r"(\d{3,4}(?: - |-)(?:nach) \d{3,4})")
 
@@ -68,7 +66,6 @@ def get_dates(dates: list, url) -> tuple:
         if not any(x.isdigit() for x in bio):
             year_list.append("b")
             continue
-
         if re.findall(born_pat, bio):
             years = re.findall(born_pat, bio)
             # print("years:", years)
@@ -78,8 +75,8 @@ def get_dates(dates: list, url) -> tuple:
             years = re.findall(dates_pat2, bio)[0]
             year_list.append(years)
 
-        elif re.findall(single_date, bio):
-            years = re.findall(single_date, bio)[0]
+        elif re.findall(single_date, bio) and re.findall(single_date, bio)[0] != '':
+            years = re.search(single_date, bio).group(0)
             year_list.append(years)
 
         elif re.findall(ca_nach, bio):
@@ -88,7 +85,7 @@ def get_dates(dates: list, url) -> tuple:
 
         elif "/" not in bio and re.findall(dates_pat, bio):
             years = re.findall(dates_pat, bio)[0]
-            year_list.append(years[0])
+            year_list.append(years)
 
         elif "/" in bio:
             year_list.append("b")
@@ -119,7 +116,7 @@ def get_dates(dates: list, url) -> tuple:
         else:
             # print("YEAR2:", year)
             year = dateparser.parse(year.strip())
-            b_list.append(str(year))
+            b_list.append(str(year.year))
             d_list.append("")
 
 
