@@ -1,6 +1,8 @@
 import signal
 from tqdm import tqdm
 import time
+import random
+import sys
 
 
 def scraper(filename, start_num, end_num, position, lock):
@@ -15,7 +17,14 @@ def scraper(filename, start_num, end_num, position, lock):
         # print("\nARGS:", filename, start_num, end_num)
         # for i in tqdm(range(start_num, end_num)):
         for i in range(start_num, end_num):
+            if i % 2 == 0:
+                with lock:
+                    sys.stdout.write("\r")
+                    sys.stdout.write("AAAA")
+                    sys.stdout.flush()
+                # print("AAA")
             time.sleep(0.05)
+            time.sleep(random.uniform(0.01,0.1))
 
             with lock:
                 bar.update(1)

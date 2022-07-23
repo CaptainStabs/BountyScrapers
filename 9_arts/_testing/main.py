@@ -9,16 +9,16 @@ def run_parallel():
     arguments = []
     end_id = 3333333 #45899
     # start_num is supplemental for first run and is only used if the files don't exist
-    for i in range(3):
+    for i in range(32):
         if i == 0:
             start_num = 0
         else:
             # Use end_id before it is added to
             start_num = end_id - 3333333
-        print("Startnum: " + str(start_num))
+        # print("Startnum: " + str(start_num))
         arguments.append([f"./files/extracted_data{i}.csv", start_num, end_id, i, lock])
         end_id = end_id + 3333333
-    print(arguments)
+    # print(arguments)
 
     try:
         pool = Pool(processes=len(arguments))
