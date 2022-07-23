@@ -3,9 +3,10 @@ from dateutil import parser as dateparser
 
 dates_pat = re.compile(r"((?:(?<=\.)|(?<=\()|(?<=\(um )|(?<=\(ca\. ))\d{3,4} - (?:.*?(?<=\.)(?:\d{3,4})|(?:\d{3,4})))")
 dates_pat2 = re.compile(r"(\d{3,4}(?: - |-)\d{3,4})")
-single_date = re.compile(r"((?<=\()(?:\d{3,4})(?=\))|(?<=\()(?:\d{1,2}\.\d{1,2}\.\d{3,4})(?=\)))")
-born_pat = re.compile(r"(?<=\()(\d{3,4} - )(?=u)")
-ca_nach = re.compile(r"(\d{3,4}(?: - |-)(?:nach) \d{3,4})")
+single_date = re.compile(r"(?:(?<=\()|(?<=\(\*))(?:\d{3,4})(?=\))|(?<=\()(?:\d{1,2}\.\d{1,2}\.\d{3,4})(?=\))")
+born_pat = re.compile(r"(?<=\()(\d{3,4}(?: - | -|-))(?:(?=u)|(?=\)))")
+ca_nach = re.compile(r"((?:\d{3,4}(?: - |-)(?:nach) \d{3,4})|(?<=\(\(nach\) )\d{3,4})")
+death_pat = re.compile(r"(?:(?<=\( - )|(?<=\(-))(\d{3,4})(?=\))")
 
 # print(re.findall(pat, string))
 
@@ -38,12 +39,17 @@ def get_dates(dates: list, url) -> tuple:
             years = re.findall(born_pat, bio)[0].split("-")[0].strip()
             year_list.append(years)
 
+        elif re.findall(death_pat, bio):
+            years = re.findall(death_pat, bio)[0]
+            print(" years", years)
+            year_list.append("death" + str(years))
+
         elif "/" in bio:
             year_list.append("b")
             continue
 
         else:
-            print("UNKNOWN FORMAT:", bio, url)
+            print("\nUNKNOWN FORMAT:", bio, url)
             year_list.append("b")
             continue
 
@@ -61,9 +67,17 @@ def get_dates(dates: list, url) -> tuple:
         if "-" in year:
             # print("YEAR", year)
             b, d = year.split("-")
-            b, d = dateparser.parse(b.strip()), dateparser.parse(d.strip())
+            try:
+                b, d = dateparser.parse(b.strip()), dateparser.parse(d.strip())
+            except:
+                b, d = dateparser.parse(b.strip().split(".")[-1]), dateparser.parse(d.strip().split(".")[-1])
+
             b_list.append(str(b.year))
             d_list.append(str(d.year))
+
+        elif "death" in year:
+            b_list.append("")
+            d_list.append(year.replace("death", ""))
         else:
             # print("YEAR2:", year)
             year = dateparser.parse(year.strip())
@@ -98,6 +112,10 @@ dates = ['Dr. Carl Wolf & Sohn (ca. 1847-nach 1949)']
 print("\n", dates)
 print(get_dates(dates, "A"))
 
-dates = ['Wasa Mende († 11.10.1899), Sammler', 'Jerry weraf (1891 - unbekant), eijasf jfkk']
+dates = ['Wasa Mende († 11.10.1899), Sammler', 'Jerry weraf (1891 - unbekant), eijasf jfkk', 'Jean de Saint-Igny ((nach) 1649.01.12)']
+print("\n", dates)
+print(get_dates(dates, "A"))
+
+dates = ["abcd (1924)", "acbad (1.12.1924)", "(*1924)", "(-1924)"]
 print("\n", dates)
 print(get_dates(dates, "A"))

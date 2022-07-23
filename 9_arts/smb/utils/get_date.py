@@ -5,7 +5,7 @@ dates_pat2 = re.compile(r"(\d{3,4}(?: - |-)\d{3,4})")
 single_date = re.compile(r"((?<=\()(?:\d{3,4})(?=\))|(?<=\()(?:\d{1,2}\.\d{1,2}\.\d{3,4})(?=\)))")
 born_pat = re.compile(r"(?<=\()(\d{3,4}(?: - | -|-))(?:(?=u)|(?=\)))")
 ca_nach = re.compile(r"((?:\d{3,4}(?: - |-)(?:nach) \d{3,4})|(?<=\(\(nach\) )\d{3,4})")
-death_pat = re.compile(r"((?<=\( - )|(?<=\(-))(\d{3,4})(?=\))")
+death_pat = re.compile(r"(?:(?<=\( - )|(?<=\(-))(\d{3,4})(?=\))")
 
 # print(re.findall(pat, string))
 
@@ -73,6 +73,11 @@ def get_dates(dates: list, url) -> tuple:
                 b, d = dateparser.parse(b.strip().split(".")[-1]), dateparser.parse(d.strip().split(".")[-1])
             b_list.append(str(b.year))
             d_list.append(str(d.year))
+
+        elif "death" in year:
+            b_list.append("")
+            d_list.append(year.replace("death", ""))
+
         else:
             # print("YEAR2:", year)
             year = dateparser.parse(year.strip())
