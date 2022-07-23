@@ -52,11 +52,11 @@ def url_get(url, s):
             #     raise(e)
         x += 1
 
-dates_pat = re.compile(r"((?:(?<=\.)|(?<=\()|(?<=\(um )|(?<=\(ca\. ))\d{3,4} - (?:.*?(?<=\.)(?:\d{3,4})|(?:\d{3,4})))")
+dates_pat = re.compile(r"((?:(?<=\.)|(?<=\()|(?<=\(um )|(?<=\(ca\. ))\d{3,4}(?: - |-)(?:.*?(?<=\.)(?:\d{3,4})|(?:\d{3,4})))")
 dates_pat2 = re.compile(r"(\d{3,4}(?: - |-)\d{3,4})")
-single_date = re.compile(r"((?<=\()(?:\d{3,4})(?=\))|(?<=\()|(?<=\(† )(?:\d{1,2}\.\d{1,2}\.\d{3,4})(?=\)))")
-born_pat = re.compile(r"(?<=\()(\d{3,4} - )(?=u)")
-ca_nach = re.compile(r"(\d{3,4}(?: - |-)(?:nach) \d{3,4})")
+single_date = re.compile(r"((?<=\()(?:\d{3,4})(?=\))|(?<=\()(?:\d{1,2}\.\d{1,2}\.\d{3,4})(?=\)))")
+born_pat = re.compile(r"(?<=\()(\d{3,4}(?: - | -|-))(?:(?=u)|(?=\)))")
+ca_nach = re.compile(r"((?:\d{3,4}(?: - |-)(?:nach) \d{3,4})|(?<=\(\(nach\) )\d{3,4})")
 
 # print(re.findall(pat, string))
 
@@ -94,7 +94,7 @@ def get_dates(dates: list, url) -> tuple:
             continue
 
         else:
-            print("UNKNOWN FORMAT:", bio, url)
+            print("\nUNKNOWN FORMAT:", bio, url)
             year_list.append("b")
             continue
 
@@ -112,7 +112,10 @@ def get_dates(dates: list, url) -> tuple:
         if "-" in year:
             # print("YEAR", year)
             b, d = year.split("-")
-            b, d = dateparser.parse(b.strip()), dateparser.parse(d.strip())
+            try:
+                b, d = dateparser.parse(b.strip()), dateparser.parse(d.strip())
+            except:
+                b, d = dateparser.parse(b.strip().split(".")[-1]), dateparser.parse(d.strip().split(".")[-1])
             b_list.append(str(b.year))
             d_list.append(str(d.year))
         else:
@@ -217,7 +220,7 @@ def scraper(filename, start_num, end_num, position, mms):
                 if desc:
                     if desc == "[SM8HF]":
                         desc = None
-                if inst_name in ["Zentralarchiv"]:
+                if inst_name in ["Zentralarchiv", "Institut für Museumsforschung"]:
                     continue
                 m = mms[inst_name]
                 data = {

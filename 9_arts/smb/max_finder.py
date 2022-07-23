@@ -4,9 +4,10 @@ from tqdm import tqdm
 
 s = requests.Session()
 
-for page in tqdm(range(9980, 99999)):
-    url = f"https://api.smb.museum/search/?offset={page}"
-    r = requests.head(url)
+for page in tqdm(range(2000400, 996867, -1)):
+    url = f"https://api.smb.museum/search/{page}"
+    r = s.head(url)
 
-    if r.status_code != 500:
-        print(page, r.status_code)
+    if r.status_code == 200:
+        print("\n",page, r.status_code)
+        break
