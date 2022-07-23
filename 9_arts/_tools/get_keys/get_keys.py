@@ -8,7 +8,7 @@ def get_keys(file):
             if "data = {" in line:
                 copy = True
                 continue
-            elif "}" in line:
+            elif "}\n" in line:
                 copy = False
                 continue
             elif copy:
