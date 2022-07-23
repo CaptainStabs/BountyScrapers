@@ -20,7 +20,7 @@ sys.path.insert(1, str(p))
 from _common import get_last_id
 from _common.send_mail import send_mail
 
-dates_pat = re.compile(r"(\d{3,4}\-\d{3,4})|(\d{3,4})")
+dates_pat = re.compile(r"(\d{3,4}(?:\-|\–)\d{3,4})")
 pat1 = re.compile(r"(?:(?:(\d{4}|\d{3})\/)|(:?|\d{4}|\d{3}))(?:(\d{4}|\d{3})|(\d{4}|\d{3})(?:\)))")
 pat2 = re.compile(r"((\d{4}|\d{3}) - (\d{4}|\d{3})-(\d{4}|\d{3}))|((?!\d)(\d{4}|\d{3}) - |(\d{4}|\d{3})-(\d{4}|\d{3}) - (\d{4}|\d{3}))")
 born_pat = re.compile(r"(?: born )(\d{4})(?:\))")
@@ -135,7 +135,7 @@ def scraper(filename, start_num, end_num, position, lock):
         )
 
     print(start_id)
-    columns = ['institution_name', 'institution_city', 'institution_state', 'institution_country', 'institution_latitude', 'institution_longitude', 'title', 'maker_full_name', 'maker_role', 'maker_birth_year', 'maker_death_year', 'date_description', 'title', 'date_description', 'dimensions', 'materials', 'category', 'credit_line', 'object_number', 'description', 'from_location', 'image_url', 'source_1', 'culture', 'current_location', 'drop_me']
+    columns = ['institution_name', 'institution_city', 'institution_state', 'institution_country', 'institution_latitude', 'institution_longitude', 'title', 'maker_full_name', 'maker_role', 'maker_birth_year', 'maker_death_year', 'date_description', 'dimensions', 'materials', 'category', 'credit_line', 'object_number', 'description', 'image_url', 'current_location', 'source_1', 'drop_me']
 
     with open(filename, "a", encoding='utf-8', newline='') as output_file:
         writer = csv.DictWriter(output_file, fieldnames=columns)
@@ -153,7 +153,7 @@ def scraper(filename, start_num, end_num, position, lock):
                 parser = fromstring(jd)
 
                 roles = parser.xpath("//div[@class='detailField peopleField']/*/text()")
-                names = [x.replace("\n", "") for x in parser.xpath("//div[@class='detailField peopleField']/span[2]/span[1]/text()")]
+                names = [x.replace("\n", "") for x in parser.xpath('//*[@class="detailField peopleField"]/span[@class="detailFieldValue"]/a/span[@property="name"]/text()')]
                 dates = [x.replace("\n", "").strip() for x in parser.xpath("//div[@class='detailField peopleField']/span[2]/span[last()]/text()")]
 
                 birth, death = None, None
