@@ -11,7 +11,6 @@ from utils import get_dates
 
 import pandas as pd
 import requests
-from dateutil import parser as dateparser
 from tqdm import tqdm
 
 import logging; logging.basicConfig(level=logging.INFO)

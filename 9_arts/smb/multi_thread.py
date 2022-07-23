@@ -34,7 +34,7 @@ if __name__ == "__main__":
             # Use end_id before it is added to
             start_num = end_id - end_const
         print("Startnum: " + str(start_num))
-        arguments.append([f"./files/extracted_data{i}.csv", start_num, end_id, i, mms])
+        arguments.append([f"./files/extracted_data{i}.csv", start_num, end_id, i, lock, mms])
         end_id = end_id + end_const
     # print(arguments)
     # print("\n")

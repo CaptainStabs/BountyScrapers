@@ -1,4 +1,5 @@
 import re
+from dateutil import parser as dateparser
 
 dates_pat = re.compile(r"((?:(?<=\.)|(?<=\()|(?<=\(um )|(?<=\(ca\. ))\d{3,4}(?: - |-)(?:.*?(?<=\.)(?:\d{3,4})|(?:\d{3,4})))")
 dates_pat2 = re.compile(r"(\d{3,4}(?: - |-)\d{3,4})")
