@@ -57,6 +57,7 @@ dates_pat2 = re.compile(r"(\d{3,4}(?: - |-)\d{3,4})")
 single_date = re.compile(r"((?<=\()(?:\d{3,4})(?=\))|(?<=\()(?:\d{1,2}\.\d{1,2}\.\d{3,4})(?=\)))")
 born_pat = re.compile(r"(?<=\()(\d{3,4}(?: - | -|-))(?:(?=u)|(?=\)))")
 ca_nach = re.compile(r"((?:\d{3,4}(?: - |-)(?:nach) \d{3,4})|(?<=\(\(nach\) )\d{3,4})")
+death_pat = re.compile(r"((?<=\( - )|(?<=\(-))(\d{3,4})(?=\))")
 
 # print(re.findall(pat, string))
 
@@ -87,6 +88,10 @@ def get_dates(dates: list, url) -> tuple:
 
         elif re.findall(born_pat, bio):
             years = re.findall(born_pat, bio)[0].split("-")[0].strip()
+            year_list.append(years)
+
+        elif re.findall(death_pat, bio):
+            years = re.findall(death_pat, bio)[0]
             year_list.append(years)
 
         elif "/" in bio:
@@ -167,7 +172,7 @@ def scraper(filename, start_num, end_num, position, mms):
     else:
         start_id = start_num
     # print(start_id)
-    columns = ['institution_name', 'institution_city', 'institution_state', 'institution_country', 'institution_latitude', 'institution_longitude', 'credit_line', 'date_description', 'from_location', 'category', 'dimensions', 'from_location', 'object_number', 'description', 'materials', 'title', 'image_url', 'source_1', "maker_full_name", "maker_role", "drop_me", "maker_death_year", "maker_birth_year", "source_2"]
+    columns = ['institution_name', 'institution_city', 'institution_state', 'institution_country', 'institution_latitude', 'institution_longitude', 'credit_line', 'date_description', 'from_location', 'category', 'dimensions', 'object_number', 'description', 'materials', 'title', 'image_url', 'source_1', 'source_2', 'maker_full_name', 'maker_birth_year', 'maker_death_year', 'maker_role', 'drop_me']
 
     remove_escaped = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
 

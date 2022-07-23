@@ -14,8 +14,8 @@ from _common.send_mail import send_mail
 
 # 1997739
 if __name__ == "__main__":
-    threads = 16
-    end = 1997739
+    threads = 32
+    end = 3000000
     end_const = math.ceil(end/threads)
     lock = Manager().Lock()
     with open("museums.json", "r", encoding="utf-8") as f:
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     # start_num is supplemental for first run and is only used if the files don't exist
     for i in range(threads):
         if i == 0:
-            start_num = 0
+            start_num = 1997739
         else:
             # Use end_id before it is added to
             start_num = end_id - end_const
