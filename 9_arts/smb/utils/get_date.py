@@ -49,7 +49,7 @@ def get_dates(dates: list, url) -> tuple:
 
         else:
             with open("unknown_formats.txt", "a") as f:
-                f.write(str(bio), str(url))
+                f.write(f"{bio}, {url}")
             # print("\nUNKNOWN FORMAT:", bio, url)
             year_list.append("b")
             continue
