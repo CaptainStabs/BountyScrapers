@@ -1,7 +1,7 @@
 import re
 from dateutil import parser as dateparser
 
-dates_pat = re.compile(r"((?:(?<=\.)|(?<=\()|(?<=\(um )|(?<=\(ca\. ))\d{3,4}(?: - |-| – |–)(?:.*?(?<=\.)(?:\d{3,4})|(?:\d{3,4})))")
+dates_pat = re.compile(r"((?:(?<=\.)|(?<=\()|(?<=\(um )|(?<=\(ca\. ))\d{3,4} - (?:.*?(?<=\.)(?:\d{3,4})|(?:\d{3,4})))")
 dates_pat2 = re.compile(r"(\d{3,4}(?: - |-)\d{3,4})")
 single_date = re.compile(r"(?:(?<=\()|(?<=\(\*))(?:\d{3,4})(?=\))|(?<=\()(?:\d{1,2}\.\d{1,2}\.\d{3,4})(?=\))")
 born_pat = re.compile(r"(?<=\()(\d{3,4}(?: - | -|-))(?:(?=u)|(?=\)))")
@@ -17,7 +17,7 @@ def get_dates(dates: list, url) -> tuple:
             year_list.append("b")
             continue
 
-        bio = bio.replace("† ", "")
+        bio = bio.replace("† ", "").replace("–","-")
 
         if re.findall(dates_pat2, bio):
             years = re.findall(dates_pat2, bio)[0]
