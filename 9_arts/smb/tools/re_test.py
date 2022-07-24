@@ -4,7 +4,7 @@ from dateutil import parser as dateparser
 dates_pat = re.compile(r"((?:(?<=\.)|(?<=\()|(?<=\(um )|(?<=\(ca\. ))\d{3,4} - (?:.*?(?<=\.)(?:\d{3,4})|(?:\d{3,4})))")
 dates_pat2 = re.compile(r"(\d{3,4}(?: - |-)\d{3,4})")
 single_date = re.compile(r"(?:(?<=\()|(?<=\(\*))(?:\d{3,4})(?=\))|(?<=\()(?:\d{1,2}\.\d{1,2}\.\d{3,4})(?=\))")
-born_pat = re.compile(r"(?<=\()(\d{3,4}(?: - | -|-))(?:(?=u)|(?=\)))")
+born_pat = re.compile(r"(?:(?<=\()|(?<=\.))(\d{3,4}(?: - | -|-))(?:(?=u)|(?=\)))")
 ca_nach = re.compile(r"((?:\d{3,4}(?: - |-)(?:nach) \d{3,4})|(?<=\(\(nach\) )\d{3,4})")
 death_pat = re.compile(r"(?:(?<=\( - )|(?<=\(-))(\d{3,4})(?=\))")
 
@@ -98,24 +98,46 @@ def get_dates(dates: list, url) -> tuple:
         death = None
     return birth, death
 
+def tests(a, b):
+    if str(a) == b:print("Passed!")
+    else:
+        print(a)
+        print("\nFailed!")
+
 dates = [['S.M.S. Cormoran (25.7.1893 - 6.8.1914), Expedition', 'S.M.S. Hyäne (27.6.1878 - 1924)'], ["Adolf Bastian (26.6.1826 - 3.2.1905), Sammler","Albert Napp (1881), Grabungsassistent","Hermann Berendt (1876), Grabungsassistent"], ["(1855 - 3.3.1895)"], ["Herstellung: Johann Wilhelm Windter (um 1696 - 27.3.1765), Stecher & Radierer"]]
-for date in dates:
+for i, date in enumerate(dates):
     print(date)
-    print(get_dates(date, "a"))
+    a = get_dates(date, "a")
+    b = ["('1893|1878', '1914|1924')", "('1826|1881|1876', '1905||')", "('1855', '1895')", "('1696', '1765')"]
+    tests(a, b[i])
     print("\n")
 
 dates = ["Herstellung: Héloïse Leloir (um 1820 - 1874), Zeichnerin","Herstellung: Imprimerie Mariton (1860), Drucker","Herstellung: Eduard Ludewig, Verleger"]
 print("\n", dates)
-print(get_dates(dates, "A"))
+a = get_dates(dates, "A")
+b = "('1820|1860|', '1874||')"
+tests(a, b)
 
 dates = ['Dr. Carl Wolf & Sohn (ca. 1847-nach 1949)']
 print("\n", dates)
-print(get_dates(dates, "A"))
+a = get_dates(dates, "A")
+b = "('1847', '1949')"
+tests(a, b)
 
 dates = ['Wasa Mende († 11.10.1899), Sammler', 'Jerry weraf (1891 - unbekant), eijasf jfkk', 'Jean de Saint-Igny ((nach) 1649.01.12)']
 print("\n", dates)
-print(get_dates(dates, "A"))
+a = get_dates(dates, "A")
+b = "('1899|1891|1649', '||')"
+tests(a, b)
 
 dates = ["abcd (1924)", "acbad (1.12.1924)", "(*1924)", "(-1924)", "(1924-)", "Paul Neu (09.11.1881 – 16.03.1940), Entwerfer"]
 print("\n", dates)
-print(get_dates(dates, "A"))
+a = get_dates(dates, "A")
+b = "('1924|1924|1924||1924|1881', '|||1924||1940')"
+tests(a, b)
+
+dates = ["Kurt Krieger (17.01.1920 - ), Sammler"]
+print("\n", dates)
+a = get_dates(dates, "A");
+b = "('1920', '')"
+tests(a, b)
