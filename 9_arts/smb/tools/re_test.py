@@ -1,7 +1,7 @@
 import re
 from dateutil import parser as dateparser
 
-dates_pat = re.compile(r"((?:(?<=\.)|(?<=\()|(?<=\(um )|(?<=\(ca\. ))\d{3,4} - (?:.*?(?<=\.)(?:\d{3,4})|(?:\d{3,4})))")
+dates_pat = re.compile(r"((?:(?<=\.)|(?<=\()|(?<=\(um )|(?<=\(ca\. ))\d{3,4}(?: - |-| – |–)(?:.*?(?<=\.)(?:\d{3,4})|(?:\d{3,4})))")
 dates_pat2 = re.compile(r"(\d{3,4}(?: - |-)\d{3,4})")
 single_date = re.compile(r"(?:(?<=\()|(?<=\(\*))(?:\d{3,4})(?=\))|(?<=\()(?:\d{1,2}\.\d{1,2}\.\d{3,4})(?=\))")
 born_pat = re.compile(r"(?<=\()(\d{3,4}(?: - | -|-))(?:(?=u)|(?=\)))")
@@ -116,6 +116,6 @@ dates = ['Wasa Mende († 11.10.1899), Sammler', 'Jerry weraf (1891 - unbekant),
 print("\n", dates)
 print(get_dates(dates, "A"))
 
-dates = ["abcd (1924)", "acbad (1.12.1924)", "(*1924)", "(-1924)"]
+dates = ["abcd (1924)", "acbad (1.12.1924)", "(*1924)", "(-1924)", "(1924-)", "Paul Neu (09.11.1881 – 16.03.1940), Entwerfer"]
 print("\n", dates)
 print(get_dates(dates, "A"))
