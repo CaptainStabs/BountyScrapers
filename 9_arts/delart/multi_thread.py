@@ -15,7 +15,7 @@ from _common.send_mail import send_mail
 # 1997739
 if __name__ == "__main__":
     threads = 16
-    end = 10289
+    end = 60000
     end_const = math.ceil(end/threads)
     lock = Manager().Lock()
 
