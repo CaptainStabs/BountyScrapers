@@ -81,15 +81,15 @@ def scraper(filename, start_num, end_num, position, lock, mms):
     else:
         start_id = start_num
 
-    with lock:
-        bar = tqdm(
-            desc=f'{start_num}-{end_num}',
-            total=end_num,
-            position=position,
-            leave=False
-        )
+    # with lock:
+    #     bar = tqdm(
+    #         desc=f'{start_num}-{end_num}',
+    #         total=end_num,
+    #         position=position,
+    #         leave=False
+    #     )
     # print(start_id)
-    columns = ['institution_name', 'institution_city', 'institution_state', 'institution_country', 'institution_latitude', 'institution_longitude', 'credit_line', 'date_description', 'from_location', 'category', 'dimensions', 'object_number', 'description', 'materials', 'title', 'image_url', 'source_1', 'source_2', 'maker_full_name', 'maker_birth_year', 'maker_death_year', 'maker_role', 'drop_me']
+    columns = ['object_number', 'institution_name', 'institution_city', 'institution_state', 'institution_country', 'institution_latitude', 'institution_longitude', 'credit_line', 'date_description', 'from_location', 'category', 'dimensions',  'description', 'materials', 'title', 'image_url', 'source_1', 'source_2', 'maker_full_name', 'maker_birth_year', 'maker_death_year', 'maker_role', 'drop_me']
 
     remove_escaped = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
 
@@ -142,7 +142,7 @@ def scraper(filename, start_num, end_num, position, lock, mms):
                 if desc:
                     if desc == "[SM8HF]":
                         desc = None
-                if inst_name in ["Zentralarchiv", "Institut für Museumsforschung"]:
+                if inst_name in ["Zentralarchiv", "Institut für Museumsforschung", "Kunstbibliothek"]:
                     continue
                 m = mms[inst_name]
                 data = {
@@ -172,6 +172,9 @@ def scraper(filename, start_num, end_num, position, lock, mms):
                 }
 
                 writer.writerow(data)
+
+                # with lock:
+                #     bar.update(1)
 
             except KeyboardInterrupt:
                 return
