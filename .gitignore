@@ -19,6 +19,8 @@ __pycache__/
 8_us_jails/*/*/*.csv
 8_us_jails/GA/*/*.csv
 8_us_jails/*/pdfs
+9_arts/smb/*/*.csv
+9_arts/smb/*.csv
 
 # Secrets
 /9_arts/rijks/_secrets.py
