@@ -1,0 +1,109 @@
+{
+    "_id": "5f04785bc574062c7723f80e",
+    "refId": 14,
+    "lastUpdated": "Tue Aug 17 2021 05:48:05 GMT+0000 (Coordinated Universal Time)",
+    "registrationNumber": "10007",
+    "title": "A didactic display illustrating pearl button manufacture",
+    "summary": "10007 Didactic display, illustrating pearl button manufacture, pearl shell / metal / cardboard, maker unknown, Sydney, Australia, 1875-1885",
+    "recordType": "Object",
+    "statement": "Didactic display, illustrating pearl button manufacture, pearl shell / metal / cardboard, maker unknown, Sydney, Australia, 1875-1885",
+    "description": "A didactic display illustrating pearl button manufacture. The display consists of half a pearl shell with three holes of varying sizes cut through its surface, three examples of different sized 'button blanks', these are the circular pieces of pearl removed from the shell, two metal tubular revolving saw attachments, used to remove the blanks from the pearl shell and a small cardboard label used in the display.",
+    "hasParts": true,
+    "accessionedDate": "1885-08-19T05:48:05.000Z",
+    "accessionedYear": 1885,
+    "productionNotes": "The material for this didactic display was made or sourced in Sydney between 1875 and 1885",
+    "events": [
+        {
+            "dateLatest": null,
+            "dateEarliest": null,
+            "date": null,
+            "address": null,
+            "place": "Sydney, New South Wales, Australia",
+            "creator": null,
+            "role": "Designed"
+        },
+        {
+            "dateLatest": "1885",
+            "dateEarliest": "1885",
+            "date": "1885",
+            "address": null,
+            "place": "Sydney, New South Wales, Australia",
+            "creator": null,
+            "role": "Made"
+        }
+    ],
+    "years": [
+        1885
+    ],
+    "hasMedia": true,
+    "isComplete": false,
+    "isLoan": false,
+    "status": "Accessioned",
+    "acquisitionCreditLine": "Gift of John Fagan, 1885",
+    "partIndex": 0,
+    "terms": [
+        {
+            "id": 6333,
+            "term": "Didactic displays"
+        },
+        {
+            "id": 10539,
+            "term": "Pearl shells"
+        },
+        {
+            "id": 2198,
+            "term": "Buttons"
+        }
+    ],
+    "history": [],
+    "production": [
+        {
+            "role": "Designed",
+            "creator": null,
+            "place": "Sydney, New South Wales, Australia",
+            "address": null,
+            "date": null,
+            "dateEarliest": null,
+            "dateLatest": null
+        },
+        {
+            "role": "Made",
+            "creator": null,
+            "place": "Sydney, New South Wales, Australia",
+            "address": null,
+            "date": "1885",
+            "dateEarliest": "1885",
+            "dateLatest": "1885"
+        }
+    ],
+    "multimedia": {
+        "video": [],
+        "document": [],
+        "documents": [],
+        "audio": [],
+        "videos": [],
+        "images": [
+            566786,
+            2593
+        ]
+    },
+    "significanceCategory": [
+        "C Object"
+    ],
+    "category": [
+        "Didactic Displays"
+    ],
+    "subjects": [
+        "Pearl shells",
+        "Australian manufacturing"
+    ],
+    "dimensions": {
+        "height": null,
+        "width": null,
+        "depth": null,
+        "diameter": null,
+        "unitLength": null,
+        "weight": null,
+        "unitWeight": null
+    }
+}

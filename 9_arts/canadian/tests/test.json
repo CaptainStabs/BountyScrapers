@@ -1,0 +1,86 @@
+{
+    "_meta_": {
+        "ClaMusCol": [
+            "Collection Search"
+        ],
+        "names": [
+            "The House of Vanheeus"
+        ],
+        "numbers": [
+            "19900228-007",
+            "PAR = 277208",
+            "other number: PAR = 277208"
+        ],
+        "subjects": [
+            "03 Clothing",
+            "male, adult"
+        ]
+    },
+    "alt_lang": {
+        "fr": {
+            "domain": "www.museedelaguerre.ca",
+            "id": "1122398",
+            "path": "/collections/artifact/1122398"
+        }
+    },
+    "artifact_num": "19900228-007",
+    "artist_maker": [
+        "The House of Vanheeus"
+    ],
+    "category": [
+        "personal artifacts"
+    ],
+    "classification": [
+        "Clothing"
+    ],
+    "department": [
+        "Dress and Insignia"
+    ],
+    "event": [
+        "1945-1989 Cold War"
+    ],
+    "filtered": {
+        "departments": [
+            "Dress and Insignia"
+        ],
+        "events": [
+            "1945-1989 Cold War"
+        ]
+    },
+    "id": "1122398",
+    "lang": "en",
+    "military": {
+        "branch": [
+            "Royal Canadian Army Chaplain Corps"
+        ],
+        "service": [
+            "civil",
+            "land"
+        ],
+        "service_component": [
+            "Canadian Army"
+        ]
+    },
+    "museum": "cwm",
+    "museum_name": "CWM",
+    "object_number": "19900228-007",
+    "path": "/en/collections/artifact/1122398.json",
+    "places": {
+        "origins": [
+            {
+                "continent": "Europe",
+                "country": "United Kingdom, England",
+                "municipality": "London"
+            }
+        ]
+    },
+    "related_activity": [
+        "chaplain"
+    ],
+    "site": "collections",
+    "site_type": "collections-artifact",
+    "sub_category": [
+        "clothing, outerwear"
+    ],
+    "type": "artifact"
+}

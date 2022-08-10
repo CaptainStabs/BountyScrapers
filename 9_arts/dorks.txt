@@ -1,0 +1,4 @@
+site:example.com ext:doc | ext:docx | ext:odt | ext:rtf | ext:sxw | ext:psw | ext:ppt | ext:pptx | ext:pps | ext:csv
+site:s3.amazonaws.com + example.com
+site:accounts.example.com inurl:user_id
+site:example.com inurl:login | inurl:signin | intitle:Login | intitle:"sign in"

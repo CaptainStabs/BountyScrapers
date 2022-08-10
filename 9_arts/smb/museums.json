@@ -1,0 +1,99 @@
+{
+    "Ägyptisches Museum und Papyrussammlung": {
+        "city": "Berlin",
+        "state": "Berlin",
+        "lat": 52.52019037041285,
+        "lon": 13.397619076222771
+
+    },
+    "Antikensammlung": {
+        "city": "München",
+        "state": "Bavaria",
+        "lat": 48.14535875116595,
+        "lon": 11.565064706751059
+    },
+    "Ethnologisches Museum": {
+        "city": "Berlin",
+        "state": "Berlin",
+        "lat": 52.51735774486351,
+        "lon": 13.401605210807642
+    },
+    "Gemäldegalerie": {
+        "city": "Berlin",
+        "state": "Berlin",
+        "lat": 52.50904572951483,
+        "lon": 13.365981412120718
+    },
+    "Kunstbibliothek": {
+        "city": "Berlin",
+        "state": "Berlin",
+        "lat": 52.50854140026466,
+        "lon":  13.366833439105871
+    },
+    "Kunstgewerbemuseum": {
+        "city": "Berlin",
+        "state": "Berlin",
+        "lat": 52.509789467808595,
+        "lon":  13.367357183284923
+    },
+    "Kupferstichkabinett": {
+        "city": "Berlin",
+        "state": "Berlin",
+        "lat": 52.50876227202575,
+        "lon":  13.365980872800096
+    },
+    "Münzkabinett": {
+        "city": "Dresden",
+        "state": "Saxony",
+        "lat": 51.05314873412223,
+        "lon":13.73766001393658
+    },
+    "Museum Europäischer Kulturen": {
+        "city": "Berlin",
+        "state": "Berlin",
+        "lat": 52.45552908999572,
+        "lon":  13.29273887408952
+    },
+    "Museum für Asiatische Kunst": {
+        "city": "Berlin",
+        "state": "Berlin",
+        "lat": 52.516967094846564,
+        "lon": 13.400972512120951
+    },
+    "Museum für Islamische Kunst": {
+        "city": "Berlin",
+        "state": "Berlin",
+        "lat": 52.52119563990817,
+        "lon":  13.397146109673148
+    },
+    "Museum für Vor- und Frühgeschichte": {
+        "city": "Berlin",
+        "state": "Berlin",
+        "lat": 52.520015875963,
+        "lon": 13.397994657523927
+    },
+    "Nationalgalerie": {
+        "city": "Berlin",
+        "state": "Berlin",
+        "lat": 52.50718960824378,
+        "lon": 13.367614735815666
+    },
+    "Skulpturensammlung und Museum für Byzantinische Kunst": {
+        "city": "Berlin",
+        "state": "Berlin",
+        "lat": 52.5218978918093,
+        "lon": 13.394254434165926
+    },
+    "Vorderasiatisches Museum": {
+        "city": "Berlin",
+        "state": "Berlin",
+        "lat": 52.520118440108234,
+        "lon":  13.39736156304638
+    },
+    "SIM | Musikinstrumenten-Museum": {
+      "city": "Berlin",
+      "state": "Berlin",
+      "lat": 52.51026017694841,
+      "lon": 13.371119629954288
+    }
+}
