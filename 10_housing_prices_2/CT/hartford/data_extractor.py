@@ -27,7 +27,7 @@ with open("Real_Estate_sales_2001-2019_GL.csv", "r") as input_csv:
                     "sale_price": row["Sale Amount"].split(".")[0],
                     "property_type": row["Property Type"].upper(),
                     "source_url": "https://data.ct.gov/Housing-and-Development/Real-Estate-Sales-2001-2019-GL/5mzw-sjtu",
-                    "appraisal_total": row["Assessed Value"]
+                    "assessed_total": row["Assessed Value"]
                 }
 
                 if row["Location"]:
