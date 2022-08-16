@@ -33,9 +33,8 @@ with open("Parcels.csv", "r") as input_csv:
                     "source_url": "https://www.arcgis.com/home/item.html?id=102a9bf3c6da4ca3b9b31f831a1e9f72",
                     "land_assessed_value": row["LAND_VAL"],
                     "building_assessed_value": row["IMPRVT_VAL"],
-                    "appraisal_total": row["NET_VALUE"],
+                    "assessed_total": row["NET_VALUE"],
                     "land_area_acres": row["CALC_ACRE"],
-                    "appraisal_total": row["NET_VALUE"]
 
                 }
                 #
