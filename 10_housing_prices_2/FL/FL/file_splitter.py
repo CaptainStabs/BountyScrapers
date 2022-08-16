@@ -3,12 +3,12 @@ from tqdm import tqdm
 chunk_size = 414652
 base = "F:\\_Bounty\\us-housing-prices-v2\\"
 def write_chunk(part, lines):
-    with open(base + 'csvs\\split_file_'+ str(part) +'.csv', 'w') as f_out:
+    with open('./csvs/split_file_'+ str(part) +'.csv', 'w') as f_out:
         f_out.write(header)
         for line in tqdm(lines, total=414652):
             f_out.write(line)
         # f_out.writelines(lines)
-with open(base + "extracted_data.csv", "r") as f:
+with open("extracted_data.csv", "r") as f:
     count = 0
     header = f.readline()
     lines = []
