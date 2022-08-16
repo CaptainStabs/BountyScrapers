@@ -21,6 +21,11 @@ __pycache__/
 8_us_jails/*/pdfs
 9_arts/smb/*/*.csv
 9_arts/smb/*.csv
+10_housing_prices_2/*/*.csv
+10_housing_prices_2/*/*/*.csv
+# FL mess
+10_housing_prices_2/*/*/*/*.csv
+10_housing_prices_2/*/*/*/*/*.csv
 
 # Secrets
 /9_arts/rijks/_secrets.py
