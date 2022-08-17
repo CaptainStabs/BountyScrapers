@@ -3,7 +3,7 @@ from dateutil import parser
 from tqdm import tqdm
 import functools
 
-columns = ["state", "county", "city", "sale_datetime", "property_street_address", "sale_price", "property_type", "source_url", "property_lat", "property_lon", "appraisal_total"]
+columns = ["state", "property_county", "property_city", "sale_datetime", "property_street_address", "sale_price", "property_type", "source_url", "property_lat", "property_lon", "assessed_total"]
 
 @functools.lru_cache(maxsize=None)
 def date_parse(date):
@@ -20,8 +20,8 @@ with open("Real_Estate_sales_2001-2019_GL.csv", "r") as input_csv:
             try:
                 land_info = {
                     "state": "CT",
-                    "county": "HARTFORD",
-                    "city": row["Town"].upper(),
+                    "property_county": "HARTFORD",
+                    "property_city": row["Town"].upper(),
                     "sale_datetime": date_parse(row["Date Recorded"]),
                     "property_street_address": " ".join(str(row["Address"]).upper().strip().split()),
                     "sale_price": row["Sale Amount"].split(".")[0],
