@@ -1,0 +1,228 @@
+id,title,url,author,status
+#231,Add License,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/231,spacelove,Merged
+#230,Add zips,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/230,captainstabs,Merged
+#229,Add Jefferson WA,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/229,captainstabs,Merged
+#228,"Add counties + cities based on zip, remove legal description being used as property_type",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/228,captainstabs,Merged
+#227,"Cambridge, MA",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/227,mysequel,Merged
+#226,Add Weld CO,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/226,captainstabs,Merged
+#225,Fix rows and re-add constraints,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/225,captainstabs,Merged
+#224,Add Boulder CO,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/224,captainstabs,Merged
+#223,Town of Cary,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/223,umar,Merged
+#222,New York (ACRIS data),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/222,abmyii,Merged
+#221,"Ramsey, MN",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/221,mysequel,Merged
+#220,"Milwaukee, WI",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/220,mysequel,Merged
+#219,Add Berks PA,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/219,captainstabs,Merged
+#218,"Manatee, FL",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/218,mysequel,Merged
+#217,Add Washoe NV,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/217,captainstabs,Merged
+#216,Add Mesa CO,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/216,captainstabs,Merged
+#215,Add Tompkins NY,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/215,captainstabs,Merged
+#214,Indiana (fix),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/214,mysequel,Merged
+#213,Savannah (fix),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/213,mysequel,Merged
+#212,Add Montgomery PA,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/212,captainstabs,Merged
+#211,Add cumberland PA,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/211,captainstabs,Merged
+#210,Add Chester PA,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/210,captainstabs,Merged
+#209,Add Alexander NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/209,captainstabs,Merged
+#208,Add sale type to Citrus PA,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/208,captainstabs,Merged
+#207,Add sale types to Gaston NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/207,captainstabs,Merged
+#206,Add sale types to Marion OR,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/206,captainstabs,Merged
+#205,Add sale type to Clermont OH,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/205,captainstabs,Closed
+#204,Add sale type to Wilson NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/204,captainstabs,Merged
+#203,Add missed sale types to Montezuma CO,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/203,captainstabs,Merged
+#202,Add sale type to lake IL,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/202,captainstabs,Merged
+#201,Add sale_type to Rowan NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/201,captainstabs,Merged
+#200,Add sale type to Montgomery NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/200,captainstabs,Merged
+#199,Maryland SDAT data (with `sale_type`),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/199,abmyii,Closed
+#198,"King County, WA (Reimport)",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/198,abmyii,Merged
+#197,"Madison, FL",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/197,mysequel,Merged
+#196,Add sale type Iredell NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/196,captainstabs,Merged
+#195,"Athens, OH",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/195,mysequel,Merged
+#194,Add sale types to harnett NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/194,captainstabs,Merged
+#193,Add sale types to Chatham NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/193,captainstabs,Merged
+#192,Add sale types to Leon FL,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/192,captainstabs,Merged
+#191,Add sale types to Montezuma CO,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/191,captainstabs,Merged
+#190,Fix Palm Beach FL,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/190,captainstabs,Merged
+#189,"Savannah Area, GA",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/189,mysequel,Merged
+#188,Add Florida,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/188,captainstabs,Merged
+#187,Add Cabarrus NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/187,captainstabs,Merged
+#186,Add Routt CO,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/186,captainstabs,Merged
+#185,Add Charleston SC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/185,captainstabs,Merged
+#184,Indiana (2021),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/184,mysequel,Merged
+#183,Maryland SDAT data (removed rows with incorrect dates),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/183,abmyii,Closed
+#182,Colorado,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/182,mysequel,Merged
+#181,Add Pinal AZ,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/181,captainstabs,Merged
+#180,Add Albemarle VA (No sale type),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/180,captainstabs,Merged
+#179,"Bulter, OH",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/179,mysequel,Merged
+#178,New York State,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/178,abmyii,Merged
+#177,New York,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/177,abmyii,Closed
+#176,Add Linn IA,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/176,captainstabs,Merged
+#175,Indiana 2021 data,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/175,mysequel,Closed
+#174,"King County, WA (Fixed)",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/174,abmyii,Merged
+#173,Delete old King County rows,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/173,abmyii2,Closed
+#172,Reimport NYC Citywide data with Apartment Numbers appended to `physical_address`,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/172,abmyii,Merged
+#171,Add `sale_type` (Most recent commit),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/171,captainstabs,Merged
+#170,Add `sale_type ` Column,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/170,captainstabs,Closed
+#169,Maryland SDAT data,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/169,abmyii,Closed
+#168,Add Lehigh PA,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/168,captainstabs,Merged
+#167,Add Deschutes OR,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/167,captainstabs,Merged
+#166,Add Hernando FL,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/166,captainstabs,Merged
+#165,Maryland Sales Data 2017-2021 (Deduped),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/165,abmyii,Merged
+#164,"Add Person, NC",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/164,captainstabs,Merged
+#163,"Add Lake, IL",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/163,captainstabs,Merged
+#162,Add Kitsap WA,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/162,captainstabs,Merged
+#161,Add Orange county FL,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/161,captainstabs,Merged
+#160,"Add Butte, CA",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/160,captainstabs,Merged
+#159,Maryland Sales Data,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/159,abmyii,Closed
+#158,Add Warren NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/158,captainstabs,Merged
+#157,Add Kittitas WA,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/157,captainstabs,Merged
+#156,Add Polk FL,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/156,captainstabs,Merged
+#155,"Fairfax, VA",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/155,abmyii,Merged
+#154,Add Scott MN,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/154,captainstabs,Merged
+#153,"Add Clermont, OH",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/153,captainstabs,Merged
+#152,"Hamilton County, OH",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/152,mysequel,Merged
+#151,Add Montezuma CO,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/151,captainstabs,Merged
+#150,Reimport NYC Citywide data with Apartment Numbers appended to `physical_address`,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/150,abmyii,Closed
+#149,Add New Jersey,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/149,captainstabs,Merged
+#148,"King County, WA (Fixed)",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/148,abmyii,Closed
+#147,Add Leon FL,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/147,captainstabs,Merged
+#146,"Fix cities and zips for Hillsborough County, FL",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/146,captainstabs,Merged
+#145,"Add St. Johns, FL",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/145,captainstabs,Merged
+#144,Add Garfield CO,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/144,captainstabs,Merged
+#143,Add Arapahoe CO,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/143,captainstabs,Merged
+#142,Add Glynn GA,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/142,captainstabs,Merged
+#141,Update Volusia FL,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/141,captainstabs,Merged
+#140,"Add Indian River, FL",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/140,captainstabs,Merged
+#139,Update Lee county FL,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/139,captainstabs,Merged
+#138,"St. Lucie County, FL",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/138,abmyii,Merged
+#137,"St Louis County, MO",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/137,abmyii,Merged
+#136,Minnesota Metro Counties,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/136,abmyii,Merged
+#135,Add Martin FL,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/135,captainstabs,Merged
+#134,Add Medina NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/134,captainstabs,Merged
+#133,Add Hyde NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/133,captainstabs,Merged
+#132,Add Lake OH,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/132,captainstabs,Merged
+#131,"Franklin County, OH",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/131,abmyii,Merged
+#130,Add Pitkin CO,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/130,captainstabs,Merged
+#129,Add Henrico VA,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/129,captainstabs,Merged
+#128,Add Fulton GA,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/128,captainstabs,Merged
+#127,"City of Jacksonville (Duval County), FL (DEDUPED)",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/127,abmyii,Merged
+#126,"Stark County, OH",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/126,mysequel,Merged
+#125,Add Yadkin NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/125,captainstabs,Merged
+#124,Add Wilson NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/124,captainstabs,Merged
+#123,Add Union NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/123,captainstabs,Merged
+#122,"City of Washington, DC",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/122,mysequel,Merged
+#121,Add Tyrrell NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/121,captainstabs,Merged
+#120,Add Gaston NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/120,captainstabs,Merged
+#119,Add Hyde NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/119,captainstabs,Closed
+#118,"Baltimore, MD",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/118,mysequel,Merged
+#117,Lee County (Constraints),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/117,abmyii,Merged
+#116,Add Surry NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/116,captainstabs,Merged
+#115,"Guilford County, NC",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/115,abmyii,Merged
+#114,Add Rowan NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/114,captainstabs,Merged
+#113,Add Pamlico NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/113,captainstabs,Merged
+#112,Add Nash NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/112,captainstabs,Merged
+#111,Add Montgomery NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/111,captainstabs,Merged
+#110,Add Martin NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/110,captainstabs,Merged
+#109,Add Lee NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/109,captainstabs,Merged
+#108,Add Jones NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/108,captainstabs,Merged
+#107,Add Jackson NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/107,captainstabs,Merged
+#106,Add Iredell NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/106,captainstabs,Merged
+#105,"City of Jacksonville (Duval County), FL",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/105,abmyii,Closed
+#104,"City of Washington, DC",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/104,mysequel,Closed
+#103,Add Hyde NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/103,captainstabs,Closed
+#102,Add skipped rows to Portage OH,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/102,captainstabs,Merged
+#101,Add Haywood NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/101,captainstabs,Merged
+#100,Add skipped rows to halifax NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/100,captainstabs,Merged
+#99,Add skipped rows to Durham NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/99,captainstabs,Merged
+#98,Add missed rows to Cumberland NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/98,captainstabs,Merged
+#97,Add missed rows for Chatham NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/97,captainstabs,Merged
+#96,Add missed rows for Carteret NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/96,captainstabs,Merged
+#95,Add missed rows Burke NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/95,captainstabs,Merged
+#94,Add Guilford NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/94,captainstabs,Merged
+#93,"Pasco County, FL (constraints)",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/93,abmyii,Closed
+#92,Add Cherokee NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/92,captainstabs,Merged
+#91,Add Harnett NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/91,captainstabs,Merged
+#90,Add Gaston NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/90,captainstabs,Closed
+#89,"Sarpy County, NE",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/89,abmyii,Merged
+#88,"Montgomery, PA",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/88,mysequel,Merged
+#87,"Lee County, FL",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/87,abmyii,Closed
+#86,"Baltimore, MD",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/86,mysequel,Closed
+#85,"City of Washington, DC",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/85,mysequel,Closed
+#84,"Denver, CO",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/84,mysequel,Merged
+#83,Add Durham NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/83,captainstabs,Merged
+#82,Add Carteret NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/82,captainstabs,Merged
+#81,Add Cumberland NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/81,captainstabs,Merged
+#80,Add Craven NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/80,captainstabs,Merged
+#79,Add Chatham NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/79,captainstabs,Merged
+#78,Add Burke NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/78,captainstabs,Merged
+#77,Add Halifax NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/77,captainstabs,Merged
+#76,Add Portage OH,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/76,captainstabs,Merged
+#75,"Pinellas County, FL",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/75,abmyii,Merged
+#74,Pasco County (Fix),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/74,abmyii,Merged
+#73,"Norfolk, VA",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/73,mysequel,Merged
+#72,"Hillsborough County, FL",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/72,abmyii,Merged
+#71,Add Citrus PA,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/71,captainstabs,Merged
+#70,Maryland Partial Data,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/70,adam,Merged
+#69,"Harris County, TX",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/69,mysequel,Merged
+#68,Pasco County,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/68,abmyii,Closed
+#67,Add Eagle County CO,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/67,captainstabs,Merged
+#66,"Douglas County, CO",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/66,abmyii,Merged
+#65,"Adams County, CO",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/65,abmyii,Merged
+#64,Add Volusia County Florida,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/64,captainstabs,Merged
+#63,Add York County SC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/63,captainstabs,Merged
+#62,Add Wilkes county NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/62,captainstabs,Merged
+#61,Add Fairfax VA,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/61,captainstabs,Closed
+#59,Add Wayne County OH,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/59,captainstabs,Merged
+#58,King County,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/58,abmyii,Merged
+#57,Add Marion OR (1940-2021),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/57,captainstabs,Merged
+#56,Add Adams OH,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/56,captainstabs,Merged
+#55,Add Wake and Chatham county NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/55,captainstabs,Merged
+#54,Add Hartford CT (2001-2019),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/54,captainstabs,Merged
+#53,Add Henderson County NC,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/53,captainstabs,Merged
+#52,Indiana (2008-2020),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/52,abmyii,Merged
+#51,Polk County,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/51,abmyii,Merged
+#50,Add Skagit County,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/50,captainstabs,Closed
+#49,massachusetts,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/49,adam,Merged
+#47,Add Eagle County CO,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/47,captainstabs,Closed
+#46,Oklahoma County deduplicated,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/46,abmyii,Closed
+#45,NY records updated and fixed,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/45,tendi,Merged
+#44,"Update book, pages, seller_name and property description for wake county",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/44,captainstabs,Merged
+#43,Riverside County,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/43,adam,Merged
+#42,New York (Reimport),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/42,abmyii,Merged
+#41,"Allegheny, PA",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/41,mysequel,Merged
+#40,"Mecklenburg, NC",https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/40,mysequel,Merged
+#39,Los Angeles County,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/39,adam,Merged
+#38,Add better source URLs to Oklahoma,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/38,captainstabs,Closed
+#37,Philadelphia (constraints),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/37,adam,Merged
+#36,St Louis City,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/36,xrendan,Merged
+#35,Virginia Beach,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/35,abmyii,Merged
+#34,Wisconsin,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/34,abmyii,Merged
+#33,Detroit books and pages,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/33,captainstabs,Merged
+#32,Detroit (Constraints),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/32,adam,Merged
+#31,Cook County (Constraints),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/31,adam,Merged
+#30,Cleaning Oklahoma County data,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/30,captainstabs,Closed
+#29,Tennessee,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/29,mysequel,Closed
+#28,Minneapolis,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/28,mysequel,Merged
+#27,NJ Monmouth data,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/27,abmyii,Merged
+#26,Williamson County,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/26,mysequel,Merged
+#25,50k clean records for New York house prices,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/25,tendi,Closed
+#24,New Jersey,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/24,mysequel,Merged
+#23,Palm Beach,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/23,adam,Merged
+#22,add philadelphia county pa,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/22,saewitz,Merged
+#21,Philadelphia,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/21,adam,Merged
+#20,add brevard county florida,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/20,saewitz,Merged
+#19,add brevard county florida,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/19,saewitz,Closed
+#18,Wake County,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/18,mysequel,Merged
+#17,Oklahoma County,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/17,abmyii,Merged
+#16,Cook County (larger dataset),https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/16,abmyii,Merged
+#15,add more NYC sales,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/15,saewitz,Merged
+#14,Buncombe County,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/14,abmyii,Merged
+#13,NYC Citywide,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/13,abmyii,Merged
+#12,add arlington county va,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/12,saewitz,Merged
+#11,Miami-Dade county,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/11,adam,Merged
+#9,STL City,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/9,jonathanleek,Closed
+#8,CT,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/8,adam,Merged
+#7,Add NY 2012-2017 data,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/7,xrendan,Merged
+#6,Detroit,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/6,adam,Merged
+#5,Add NY 2017 data,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/5,xrendan,Closed
+#4,Capitalisation of original data in the DB,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/4,abmyii,Closed
+#3,Import New York data,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/3,abmyii,Closed
+#1,Add 2020 Manhattan NY,https://www.dolthub.com/repositories/dolthub/us-housing-prices/pulls/1,saewitz,Merged
