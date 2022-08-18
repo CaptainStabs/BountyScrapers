@@ -1,6 +1,6 @@
 import requests
 import json
-import tqdm
+from tqdm import tqdm
 import csv
 import datetime
 import traceback as tb
@@ -55,13 +55,13 @@ def scraper(filename, start_num=False, end_num=False):
     else:
         start_id = start_num
 
+    columns = ['state', 'property_zip5', 'property_street_address', 'property_city', 'property_county', 'property_id', 'property_type', 'property_lat', 'property_lon', 'building_num_units', 'building_year_built', 'building_area_sqft', 'land_area_sqft', 'building_num_beds', 'building_num_baths', 'land_area_acres', 'land_assessed_value', 'land_assessed_date', 'building_assessed_value', 'building_assessed_date', 'sale_datetime', 'sale_price', 'total_assessed_value', 'transfer_deed_type']
     with open(filename, "a", encoding='utf-8', newline='') as output_file:
         writer = csv.DictWriter(output_file, fieldnames=columns)
 
         if os.stat(filename).st_size == 0:
             writer.writeheader()
 
-    columns = ['state', 'property_zip5', 'property_street_address', 'property_city', 'property_county', 'property_id', 'property_type', 'property_lat', 'property_lon', 'building_num_units', 'building_year_built', 'building_area_sqft', 'land_area_sqft', 'building_num_beds', 'building_num_baths', 'land_area_acres', 'land_assessed_value', 'land_assessed_date', 'building_assessed_value', 'building_assessed_date', 'sale_datetime', 'sale_price', 'total_assessed_value', 'transfer_deed_type']
     s = requests.Session()
 
     for id in tqdm(range(start_id, end_num)):
@@ -72,6 +72,10 @@ def scraper(filename, start_num=False, end_num=False):
             r = url_get(url, s)
             if not r: continue
             r = r["Parcel"]
+            if not r: continue
+
+            if r:
+                print("IS R")
 
             assessed_date = str(date_parse("-".join([r["CurrentRoll_BaseYear"], "01", "01"])))
             data = {
@@ -114,10 +118,10 @@ def scraper(filename, start_num=False, end_num=False):
             return
 
         except Exception:
-            print("\n",id)
-            print(json.dumps(jd, indent=4))
+            print("\n",r)
+            print(json.dumps(r, indent=4))
             send_mail("script crashed", tb.print_exc())
             raise
 
 
-scraper(r"C:\Users\adria\github\BountyScrapers\10_housing_prices_2\CA\los_angeles", 1, 10)
+# scraper(r"C:\Users\adria\github\BountyScrapers\10_housing_prices_2\CA\los_angeles", 1, 10)
