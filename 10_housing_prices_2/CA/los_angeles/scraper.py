@@ -62,66 +62,66 @@ def scraper(filename, start_num=False, end_num=False):
         if os.stat(filename).st_size == 0:
             writer.writeheader()
 
-    s = requests.Session()
+        s = requests.Session()
 
-    for id in tqdm(range(start_id, end_num)):
-        try:
-            # id = 20040010s04
-            url = f"https://portal.assessor.lacounty.gov/api/parceldetail?ain={id}"
+        for id in tqdm(range(start_id, end_num)):
+            try:
+                # id = 20040010s04
+                url = f"https://portal.assessor.lacounty.gov/api/parceldetail?ain={id}"
 
-            r = url_get(url, s)
-            if not r: continue
-            r = r["Parcel"]
-            if not r: continue
+                r = url_get(url, s)
+                if not r: continue
+                r = r["Parcel"]
+                if not r: continue
 
-            if r:
-                print("IS R")
+                if r:
+                    print("IS R")
 
-            assessed_date = str(date_parse("-".join([r["CurrentRoll_BaseYear"], "01", "01"])))
-            data = {
-                "state": "CA",
-                "property_zip5": r["SitusZipCode"][:5],
-                "property_street_address": " ".join(r["SitusStreet"].upper().split()),
-                "property_city": r["SitusCity"].strip(" CA").strip(),
-                "property_county": "LOS ANGELES",
-                "property_id": r["AIN"],
-                "property_type": r["UseType"],
-                "property_lat": r["Latitude"],
-                "property_lon": r["Longitude"],
-                "building_num_units": r["NumOfUnits"],
-                "building_year_built": r["YearBuilt"],
-                "building_area_sqft": r["SqftMain"],
-                "land_area_sqft": r["SqftLot"],
-                "building_num_beds": r["NumOfBeds"],
-                "building_num_baths": r["NumOfBaths"],
-                "land_area_acres": r["LandAcres"],
-                "land_assessed_value": r["CurrentRoll_LandValue"],
-                "land_assessed_date": assessed_date,
-                "building_assessed_value": r["CurrentRoll_ImpValue"],
-                "building_assessed_date": assessed_date,
-            }
+                assessed_date = str(date_parse("-".join([r["CurrentRoll_BaseYear"], "01", "01"])))
+                data = {
+                    "state": "CA",
+                    "property_zip5": r["SitusZipCode"][:5],
+                    "property_street_address": " ".join(r["SitusStreet"].upper().split()),
+                    "property_city": r["SitusCity"].strip(" CA").strip(),
+                    "property_county": "LOS ANGELES",
+                    "property_id": r["AIN"],
+                    "property_type": r["UseType"],
+                    "property_lat": r["Latitude"],
+                    "property_lon": r["Longitude"],
+                    "building_num_units": r["NumOfUnits"],
+                    "building_year_built": r["YearBuilt"],
+                    "building_area_sqft": r["SqftMain"],
+                    "land_area_sqft": r["SqftLot"],
+                    "building_num_beds": r["NumOfBeds"],
+                    "building_num_baths": r["NumOfBaths"],
+                    "land_area_acres": r["LandAcres"],
+                    "land_assessed_value": r["CurrentRoll_LandValue"],
+                    "land_assessed_date": assessed_date,
+                    "building_assessed_value": r["CurrentRoll_ImpValue"],
+                    "building_assessed_date": assessed_date,
+                }
 
-            sale_request = s.get(f"https://portal.assessor.lacounty.gov/api/parcel_ownershiphistory?ain={id}").json()
+                sale_request = s.get(f"https://portal.assessor.lacounty.gov/api/parcel_ownershiphistory?ain={id}").json()
 
-            sr = sale_request["Parcel_OwnershipHistory"]
+                sr = sale_request["Parcel_OwnershipHistory"]
 
-            for sale in sr:
-                if sale["DTTSalePrice"] is not None:
-                    data["sale_datetime"] = str(date_parse(sale["RecordingDate"]))
-                    data["sale_price"] = sale["DTTSalePrice"]
-                    data["total_assessed_value"] = sale["AssessedValue"]
-                    data["transfer_deed_type"] = sale["DocumentReasonCodeDesc"]
-                    writer.writerow(data)
-
-
-        except KeyboardInterrupt:
-            return
-
-        except Exception:
-            print("\n",r)
-            print(json.dumps(r, indent=4))
-            send_mail("script crashed", tb.print_exc())
-            raise
+                for sale in sr:
+                    if sale["DTTSalePrice"] is not None:
+                        data["sale_datetime"] = str(date_parse(sale["RecordingDate"]))
+                        data["sale_price"] = sale["DTTSalePrice"]
+                        data["total_assessed_value"] = sale["AssessedValue"]
+                        data["transfer_deed_type"] = sale["DocumentReasonCodeDesc"]
+                        writer.writerow(data)
 
 
-# scraper(r"C:\Users\adria\github\BountyScrapers\10_housing_prices_2\CA\los_angeles", 1, 10)
+            except KeyboardInterrupt:
+                return
+
+            except Exception:
+                print("\n",r)
+                print(json.dumps(r, indent=4))
+                send_mail("script crashed", tb.print_exc())
+                raise
+
+
+# scraper(r"./files/a.csv", 4328022016, 4328022018)
