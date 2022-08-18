@@ -26,6 +26,7 @@ __pycache__/
 # FL mess
 10_housing_prices_2/*/*/*/*.csv
 10_housing_prices_2/*/*/*/*/*.csv
+*_secrets.py
 
 # Secrets
 /9_arts/rijks/_secrets.py
