@@ -24,6 +24,7 @@ if __name__ == "__main__":
             start_num = end_id - 438254705
         print("Startnum: " + str(start_num))
         arguments.append([f"F:/_Bounty/LA/extracted_data{i}.csv", start_num, end_id])
+        # arguments.append([f"./files/extracted_data{i}.csv", start_num, end_id])
         end_id = end_id + 438254705
     print(arguments)
 

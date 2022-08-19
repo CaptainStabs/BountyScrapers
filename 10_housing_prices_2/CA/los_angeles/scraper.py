@@ -19,13 +19,18 @@ from _common import get_last_id
 
 def url_get(url, s):
     x = 0
-    while x < 5:
+    while x < 10:
         try:
             r = s.get(url)
         # except KeyboardInterrupt:
         #     print("Ctrl-c detected, exiting")
         #     # import sys; sys.exit()
         #     raise KeyboardInterrupt
+
+        except requests.exceptions.ConnectionError:
+            x+=1
+            continue
+
         except Exception as e:
             raise(e)
             x+=1
@@ -36,12 +41,13 @@ def url_get(url, s):
 
         try:
             r = r.json()
-            x=10
+            x=20
             return r
         except json.decoder.JSONDecodeError:
 
             if r.status_code == 200:
                 return None
+
             print(r)
             # if x == 4:
             #     raise(e)
