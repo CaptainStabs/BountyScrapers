@@ -14,18 +14,17 @@ from _common.send_mail import send_mail
 if __name__ == "__main__":
     arguments = []
 
-    end_id = 438254705 #7007001004
+    end_id = 584339605 #8,765,094,086
     # start_num is supplemental for first run and is only used if the files don't exist
     for i in range(15):
         if i == 0:
-            start_num = 0
+            start_num = 2004001003
         else:
             # Use end_id before it is added to
-            start_num = end_id - 438254705
+            start_num = end_id - 584339605
         print("Startnum: " + str(start_num))
         arguments.append([f"F:/_Bounty/LA/extracted_data{i}.csv", start_num, end_id])
-        # arguments.append([f"./files/extracted_data{i}.csv", start_num, end_id])
-        end_id = end_id + 438254705
+        end_id = end_id + 584339605
     print(arguments)
 
     try:

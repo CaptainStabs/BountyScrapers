@@ -6,7 +6,7 @@ import datetime
 import traceback as tb
 import os
 import random
-
+import time
 
 import sys
 from pathlib import Path
@@ -103,7 +103,11 @@ def scraper(filename, start_num=False, end_num=False):
         s = requests.Session()
 
         for id in tqdm(range(start_id, end_num)):
-            s.headers.update(get_user_agent())
+            if id % 1000 == 0:
+                s.headers.update(get_user_agent())
+                s = requests.Session()
+                time.sleep(1)
+
             try:
                 # id = 20040010s04
                 url = f"https://portal.assessor.lacounty.gov/api/parceldetail?ain={id}"
@@ -139,8 +143,7 @@ def scraper(filename, start_num=False, end_num=False):
                     "building_assessed_value": r["CurrentRoll_ImpValue"],
                     "building_assessed_date": assessed_date,
                 }
-
-                sale_request = s.get(f"https://portal.assessor.lacounty.gov/api/parcel_ownershiphistory?ain={id}").json()
+                sale_request = url_get(f"https://portal.assessor.lacounty.gov/api/parcel_ownershiphistory?ain={id}", s)
 
                 sr = sale_request["Parcel_OwnershipHistory"]
 
