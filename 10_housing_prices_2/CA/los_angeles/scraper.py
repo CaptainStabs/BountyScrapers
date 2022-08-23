@@ -84,7 +84,7 @@ def get_user_agent():
     }
     return headers
 
-def scraper(filename, start_num=False, end_num=False):
+def scraper(filename, input_file):
     # filename, start_num, end_num = filename[0], filename[1], filename[2]
     # signal.signal(signal.SIGINT, signal.SIG_IGN)
     # print(start_num, end_num, filename)
@@ -95,7 +95,7 @@ def scraper(filename, start_num=False, end_num=False):
 
     columns = ['state', 'property_zip5', 'property_street_address', 'property_city', 'property_county', 'property_id', 'property_type', 'property_lat', 'property_lon', 'building_num_units', 'building_year_built', 'building_area_sqft', 'land_area_sqft', 'building_num_beds', 'building_num_baths', 'land_area_acres', 'land_assessed_value', 'land_assessed_date', 'building_assessed_value', 'building_assessed_date', 'sale_datetime', 'sale_price', 'total_assessed_value', 'transfer_deed_type']
 
-    with open("LA.csv", "r") as f:
+    with open(input_file, "r") as f:
         with open(filename, "a", encoding='utf-8', newline='') as output_file:
             writer = csv.DictWriter(output_file, fieldnames=columns)
 
@@ -169,4 +169,4 @@ def scraper(filename, start_num=False, end_num=False):
                     raise
 
 
-scraper(r"./files/a.csv", 4328022016, 4328022018)
+# scraper(r"F:/_Bounty/LA/data.csv", 4328022016, 4328022018)
