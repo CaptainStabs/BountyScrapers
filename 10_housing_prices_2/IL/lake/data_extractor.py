@@ -15,7 +15,7 @@ from _common import date_parse
 # situs_addr_city,situs_addr_line_1,situs_addr_line_2,,situs_addr_state_legdat,situs_addr_zip_legdat
 #,PIN,,,,,,,,,,,, ,oby_yrblt1,style_desc
 #                d            d                 d        d           d          d                   d           d      d
-columns = ["property_id", "building_year_built", "sale_price", "sale_datetime", "property_city", "property_street_address", "building_num_units", "property_zip5", "property_type", "sale_type", "property_county", "state", "source_url", "land_area_acres", "building_area_sqft", "building_num_beds", "property_township", "building_num_baths", 'assessed_total', 'building_assessed_date', 'building_assessed_value', 'land_assessed_date', 'land_assessed_value', "building_num_stories"]
+columns = ["property_id", "building_year_built", "sale_price", "sale_datetime", "property_city", "property_street_address", "building_num_units", "property_zip5", "property_type", "sale_type", "property_county", "state", "source_url", "land_area_acres", "building_area_sqft", "building_num_beds", "property_township", "building_num_baths", 'total_assessed_value', 'building_assessed_date', 'building_assessed_value', 'land_assessed_date', 'land_assessed_value', "building_num_stories", "land_type"]
 with open("Parcels.csv", "r") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
@@ -38,11 +38,12 @@ with open("Parcels.csv", "r") as input_csv:
                     "building_num_beds": row["bedroom_count"],
                     "building_assessed_value": row["assess_bldg_assyr"],
                     "land_assessed_value": row["assess_land_assyr"],
-                    "assessed_total": row["assess_total_assyr"],
+                    "total_assessed_value": row["assess_total_assyr"],
                     "land_assessed_date": date_parse(row["assessment_year"]),
                     "building_assessed_date": date_parse(row["assessment_year"]),
                     "property_township": row["township"],
-                    "building_num_stories": row["stories"].replace(" STORY", "").strip()
+                    "building_num_stories": row["stories"].replace(" STORY", "").strip(),
+                    "land_type": row["land_use_code"]
                 }
 
 

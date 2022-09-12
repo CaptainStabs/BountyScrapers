@@ -3,7 +3,7 @@ UPDATE businesses SET city_physical = SUBSTRING(city_physical, 1, char_length(ci
 
 Revert cells to previous commit:
 update schools as s1 set district=(select district from schools as of '66c1ac1j8phaga1ubf4fcra0og5gfo31' where name=s1.name AND city=s1.city AND state=s1.state)
-
+update sales as s1 set district=(select district from schools as of '66c1ac1j8phaga1ubf4fcra0og5gfo31' where name=s1.name AND city=s1.city AND state=s1.state)
 Title case strings:
 update sic set description = CONCAT(UCASE(SUBSTRING(description, 1, 1)), LOWER(SUBSTRING(description, 2)));
 
