@@ -8,7 +8,7 @@ def date_parse(date):
     return parser.parse(date)
 
 # GIS_PIN,COUNTY,MUN_NAME,PROP_LOC,,FAC_NAME,DEED_BOOK,DEED_PAGE,DEED_DATE,YR_CONSTR,,SALE_PRICE,,ZIP5
-columns = ["property_id", "county", "city", "property_street_address", "property_type", "book", "page", "sale_datetime", "building_year_built", "sale_price", "zip5", "state", "source_url", "appraisal_total", "land_area_acres", "land_assessed_value", "building_assessed_value", "appraisal_total"]
+columns = ["property_id", "property_county", "property_city", "property_street_address", "property_type", "book", "page", "sale_datetime", "building_year_built", "sale_price", "property_zip5", "state", "source_url", "appraisal_total", "land_area_acres", "land_assessed_value", "building_assessed_value", "total_assessed_value"]
 with open("Parcels.csv", "r") as input_csv:
     line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
@@ -22,18 +22,18 @@ with open("Parcels.csv", "r") as input_csv:
             try:
                 land_info = {
                     "property_id": row["GIS_PIN"],
-                    "county": " ".join(str(row["COUNTY"]).upper().split()),
-                    "city": " ".join(str(row["MUN_NAME"]).upper().replace("CITY", "").split()),
+                    "property_county": " ".join(str(row["COUNTY"]).upper().split()),
+                    "property_city": " ".join(str(row["MUN_NAME"]).upper().replace("CITY", "").split()),
                     "property_street_address": " ".join(str(row["PROP_LOC"]).upper().split()),
                     "property_type": " ".join(str(row["FAC_NAME"]).upper().split()),
                     "sale_datetime": str(date_parse(row["DEED_DATE"])),
                     "sale_price": row["SALE_PRICE"],
-                    "zip5": str(row["ZIP5"]).strip(),
+                    "property_zip5": str(row["ZIP5"]).strip(),
                     "state": "NJ",
                     "source_url": "https://www.arcgis.com/home/item.html?id=102a9bf3c6da4ca3b9b31f831a1e9f72",
-                    "land_assessed_value": row["LAND_VAL"],
-                    "building_assessed_value": row["IMPRVT_VAL"],
-                    "assessed_total": row["NET_VALUE"],
+                    # "land_assessed_value": row["LAND_VAL"],
+                    # "building_assessed_value": row["IMPRVT_VAL"],
+                    # "assessed_total": row["NET_VALUE"],
                     "land_area_acres": row["CALC_ACRE"],
 
                 }
@@ -65,16 +65,16 @@ with open("Parcels.csv", "r") as input_csv:
                     pass
 
                 # Delete if no zip5
-                if land_info["zip5"] == "00000" or land_info["zip5"] == "0" or len(land_info["zip5"]) != 5:
-                    land_info["zip5"] = ""
+                if land_info["property_zip5"] == "00000" or land_info["property_zip5"] == "0" or len(land_info["property_zip5"]) != 5:
+                    land_info["property_zip5"] = ""
 
-                if "O" in land_info["zip5"]:
-                    land_info["zip5"] = land_info["zip5"].replace("O", "0")
+                if "O" in land_info["property_zip5"]:
+                    land_info["property_zip5"] = land_info["property_zip5"].replace("O", "0")
 
                 try:
-                    t = int(land_info["zip5"])
+                    t = int(land_info["property_zip5"])
                 except ValueError:
-                    land_info["zip5"] = ""
+                    land_info["property_zip5"] = ""
 
                 sale_date = land_info["sale_datetime"]
                 year = sale_date.split("-")[0]
