@@ -1,0 +1,8 @@
+Parcels:
+﻿OBJECTID,PIN,PARCELNB,SUBNAME,STREETNO,STREETDIR,STREETNAME,STREETSUF,STREETPOSTDIR,STREETALP,LOCCITY,LOCZIP,CONCATADDR1,CONCATADDR2,OWNERNAME1,OWNERNAME2,OWNERNAMEFULL,OWNERADDRESS,OWNERADDRESSFULL,OWNERCITY,OWNERSTATE,OWNERZIP,OWNERCSZ,OWNERPROVINCE,OWNERPOSTALCODE,OWNERCOUNTRY,OWNERCPP,LEGAL,SHAPE_Length,SHAPE_Area
+
+Property_Sales:
+OBJECTID,accountno,areaid,parcelnb,recptno,book,page,deedtype,salesp,saledt,grantor,grantee,docfee,docdt,pin
+
+Property_Values: spacelove
+OBJECTID,accountno,areaid,parcelnb,accttype,dateadd,datechg,actlandval,actimpsval,acttotalval,asdlandval,asdimpsval,asdtotalval,lotsize,lotmeasure,firename,schoolname,vacimp,milllevy,pin

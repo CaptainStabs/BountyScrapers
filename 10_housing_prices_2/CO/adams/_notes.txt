@@ -1,0 +1,39 @@
+joined with
+
+[Parcels](https://data-adcogov.opendata.arcgis.com/datasets/3309d11bc608475d82ac8b749779a907_0/about)
+[Sales](https://data-adcogov.opendata.arcgis.com/datasets/c518fafaabf8476fb83d5a7b7b1aa7be_0/about)
+[Property_values](https://data-adcogov.opendata.arcgis.com/datasets/a4a9939bd5f2492c94a37366a7985fbe_0/about)
+[Property_Improvements](https://data-adcogov.opendata.arcgis.com/datasets/bd9448988b68413597238e198bc8239b_0/explore)
+
+Joined with:
+```mysql
+SELECT Parcels.PARCELNB, Parcels.CONCATADDR1, Parcels.LOCCITY, Parcels.LOCZIP, Property_Sales.book, Property_Sales.page, Property_Sales.deedtype, Property_Sales.salesp, Property_Sales.saledt, Property_Sales.grantor, Property_Sales.grantee, Property_Values.accttype, Property_Values.actlandval, Property_Values.actimpsval, Property_Values.acttotalval, Property_Values.asdlandval, Property_Values.asdimpsval, Property_Values.asdtotalval, Property_Values.lotsize, Property_Values.lotmeasure, Property_Improvements.bltasdesc, Property_Improvements.proptype, Property_Improvements.yrblt, Property_Improvements.sf, Property_Improvements.rooms, Property_Improvements.bedrooms, Property_Improvements.baths
+FROM ((Parcels INNER JOIN Property_Sales ON Parcels.PARCELNB = Property_Sales.parcelnb) INNER JOIN Property_Values ON Parcels.PARCELNB = Property_Values.parcelnb) INNER JOIN Property_Improvements ON Parcels.PARCELNB = Property_Improvements.parcelnb;
+```
+
+Mapped with:
+```py
+df.rename(columns={
+    "PARCELNB": "property_id",
+    "CONCATADDR1": "property_street_address",
+    "LOCCITY": "property_city",
+    "LOCZIP":  "property_zip5",
+    "deedtype": "transfer_deed_type",
+    "salesp": "sale_price",
+    "grantor": "seller_1_name",
+    "grantee": "buyer_1_name",
+    "accttype": "land_type",
+    "actlandval": "land_appraised_value",
+    "actimpsval": "building_appraised_value",
+    "acttotalval": "total_appraised_value",
+    "asdlandval": "land_assessed_value",       # Dropped
+    "asdimpsval": "building_assessed_value",   # Dropped
+    "asdtotalval": "total_assessed_value",     # Dropped
+    "proptype": "property_type",
+    "yrblt": "building_year_built",
+    "sf": "building_area_sqft",
+    "bedrooms": "building_num_beds",
+    "baths": "building_num_baths",
+    "saledt": "sale_datetime"
+}, inplace=True)
+```
