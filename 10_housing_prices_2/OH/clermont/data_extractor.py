@@ -38,9 +38,6 @@ with open("Parcels.csv", "r") as input_csv:
                     "building_num_stories": row["STORIES"],
                     "building_num_beds": row["RMBED"],
                     "building_num_baths": row["FIXBATH"],
-
-
-
                 }
 
                 # If address is in separate fields
