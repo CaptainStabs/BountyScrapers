@@ -21,15 +21,6 @@ with open("extracted_data.csv", "r", encoding="utf-8") as f:
     with open("extracted_sales_data.csv", "a", encoding="utf-8", newline="") as output_csv:
         writer = csv.DictWriter(output_csv)
 r = requests.get("http://gis.summitcountyco.gov/Map/DetailData.aspx?Schno=6518029").text
-# parser = fromstring(r)
-#
-# table = parser.xpath("/html/body/table[1]")
-# print(parser.xpath("/html/body/table[1]/tr[12]/td[5]/text()"))
-# # table = parser.xpath("//*[contains(@class, 'style2b')]")
-# for tr in table:
-#
-#     print(tr)
-#     print(tr.xpath("//td[contains(@class, 'style2b')]/text()"))
 
 soup = BeautifulSoup(r, "html.parser")
 
