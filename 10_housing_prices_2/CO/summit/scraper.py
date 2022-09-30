@@ -58,6 +58,7 @@ with open("extracted_data.csv", "r", encoding="utf-8") as f:
     reader = csv.DictReader(f)
     with open("extracted_sales_data.csv", "a", encoding="utf-8", newline="") as output_csv:
         writer = csv.DictWriter(output_csv, fieldnames=columns)
+        writer.writeheader()
 
         for data in tqdm(reader, total=line_count):
             try:
