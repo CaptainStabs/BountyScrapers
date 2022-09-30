@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import json
 import csv
 from tqdm import tqdm
+import traceback as tb
 
 import sys
 from pathlib import Path
@@ -13,12 +14,44 @@ sys.path.insert(1, str(p))
 from _common import date_parse
 from _common.send_mail import send_mail
 
+def url_get(url, s):
+    x = 0
+    while x < 5:
+        try:
+            r = s.get(url)
+        except KeyboardInterrupt:
+            print("Ctrl-c detected, exiting")
+            import sys; sys.exit()
+            raise KeyboardInterrupt
+        except Exception as e:
+            raise(e)
+            x+=1
+            continue
+
+        if r.status_code == 404:
+            return
+
+        try:
+            r = r.text
+            x=10
+            return r
+        except json.decoder.JSONDecodeError:
+
+            if r.status_code == 200:
+                return None
+            print(r)
+            # if x == 4:
+            #     raise(e)
+        x += 1
 
 sale_types = json.load(open("./files/doctypes.json", "r"))
 
 
 columns = ["property_id","property_street_address","property_township","land_area_acres","land_area_sqft","property_type","building_num_stories","building_num_units","building_year_built","building_area_sqft","building_num_beds","building_num_baths","property_lat","property_lon", "sale_id", "sale_datetime", "transfer_deed_type", "sale_price", "source_url"]
 cols = ["id", "date", "type", "price"] # cols for sale dict
+
+s = requests.Session()
+
 with open("extracted_data.csv", "r", encoding="utf-8") as f:
     line_count = len([line for line in f.readlines()])
     f.seek(0)
@@ -30,7 +63,7 @@ with open("extracted_data.csv", "r", encoding="utf-8") as f:
             try:
                 url = f"http://gis.summitcountyco.gov/Map/DetailData.aspx?Schno={data['property_id']}"
                 data["source_url"] = url
-                r = requests.get(url).text
+                r = url_get(url, s)
 
                 soup = BeautifulSoup(r, "html.parser")
 
