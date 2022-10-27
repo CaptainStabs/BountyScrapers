@@ -1,3 +1,4 @@
+ensure wsl distribution has Ubuntu-20.04 selected, and start it
 cd /srv/nominatim/nominatim-project/nominatim-us
 sudo service postgresql start
 sudo nominatim serve
