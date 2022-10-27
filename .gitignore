@@ -22,9 +22,12 @@ __pycache__/
 9_arts/smb/*/*.csv
 9_arts/smb/*.csv
 10_housing_prices_2/*/*.csv
-10_housing_prices_2/*/*/*.csv
+#10_housing_prices_2/*/*/*.csv
 # FL mess
-10_housing_prices_2/*/*/*/*.csv
+10_housing_prices_2/FL/FL/*.csv
+10_housing_prices_2/FL/FL/csvs/*.csv
+
+#10_housing_prices_2/*/*/*/*.csv
 10_housing_prices_2/*/*/*/*/*.csv
 *_secrets.py
 
