@@ -1,0 +1,14 @@
+physical_street_address -> property_street_address
+sale_date -> sale_datetime
+
+remove parcels from laptop rips folder
+
+Resubmit Marion OH
+submit Volusia Florida in part 2 when appraisal total is added. ?????????
+Resubmit Hartford CT (rerun scraper) (On laptop) once assessed_total is added. DONE
+Resubmit NJ once assessed_total is added, no change neededW  DONE
+Resubmit Lee once assessed_total is added, no change needed
+Resubmit Leon FL once assessed_total is added, no change needed DONE
+resubmit Lake IL DONE
+Resubmit MOntgomery PA
+ DONE
