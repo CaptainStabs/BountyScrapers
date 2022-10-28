@@ -15,7 +15,8 @@ if __name__ == "__main__":
     arguments = []
     # start_num is supplemental for first run and is only used if the files don't exist
     for i in range(17):
-        arguments.append([f"F:/_Bounty/LA/extracted_data{i}.csv", f"F:/_Bounty/LA/input_files/split_file_{i}.csv"])
+        if i:
+            arguments.append([f"F:/_Bounty/LA/extracted_data{i}.csv", f"F:/_Bounty/LA/input_files/split_file_{i}.csv"])
 
     try:
         pool = Pool(processes=len(arguments))
