@@ -1,0 +1,9 @@
+Source:
+[https://gis.washoecounty.us/webservices/gisdataservice/DocumentFiles/AssessorOnlineReports/A7BE5E322AA4WC531ADMINCF8BC6597CX2B4/?fileId=GSAQuickInfo_2021Final.zip](https://gis.washoecounty.us/webservices/gisdataservice/DocumentFiles/AssessorOnlineReports/A7BE5E322AA4WC531ADMINCF8BC6597CX2B4/?fileId=GSAQuickInfo_2021Final.zip)
+`Property.txt` and `sales_dtl.txt`
+
+Joined with:
+```
+SELECT Property.[﻿ParcelID], Property.SitusNumber, Property.SitusDirection, Property.SitusStreet, Property.LandUseCode, Sales_dtl.SaleUseCode, Sales_dtl.SaleVerificationCode, Sales_dtl.DeedType, Sales_dtl.Grantor, Sales_dtl.Grantee, Sales_dtl.SaleDate, Sales_dtl.SaleAmount, Property.Township, Property.LandAppraised, Property.LandAssessed, Property.ImprovmentAppraised, Property.ImprovmentAssessed, Property.LandArea, Property.BldgSquareFeet, Property.LandUnitType, Property.BldgSquareFeet
+FROM Property INNER JOIN Sales_dtl ON Property.[﻿ParcelID] = Sales_dtl.[﻿ParcelID];
+```

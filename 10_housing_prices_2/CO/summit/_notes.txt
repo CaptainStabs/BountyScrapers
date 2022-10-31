@@ -1,0 +1,8 @@
+[Assessor data](https://gis.summitcountyco.gov/arcgis/rest/services/ParcelQueryTool/SummitMap1_v1081/MapServer/19)
+[Parcels](https://gis.summitcountyco.gov/arcgis/rest/services/ParcelQueryTool/SummitMap1_v1081/MapServer/18)
+
+PPI is closest to `property_id` but the search website uses the schedule number so I used that instead
+
+Deed type translated using http://gis.summitcountyco.gov/Map/pdfs/doctype.pdf
+
+Bad deed types (like `0`) that did not map were removed

@@ -1,0 +1,1 @@
+https://gismaps.pinalcountyaz.gov/webapps/rest/services/Parcels_Webservice/FeatureServer/0

@@ -1,0 +1,11 @@
+use esri2geojson to scrape the argis webservices
+
+
+in qgis, use
+
+for x to lon:
+
+x(transform($geometry, layer_property(@layer, 'crs'),'EPSG:4326'))
+
+for y to lat:
+y(transform($geometry, layer_property(@layer, 'crs'),'EPSG:4326'))

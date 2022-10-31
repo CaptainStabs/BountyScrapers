@@ -1,0 +1,2 @@
+Input csv for geocoding_v3 is created with the following query:
+select state, property_street_address, property_city, property_zip5, property_county, sale_datetime, sale_price, source_url from sales where concat(property_city, property_county, property_zip5) is null;

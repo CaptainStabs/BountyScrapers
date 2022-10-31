@@ -1,0 +1,11 @@
+Joined with:
+Step 1:
+```
+SELECT [00017 Sales Information].STRAP, [00017 Sales Information].SALE_ID, [00017 Sales Information].GRANTOR, [00017 Sales Information].OR_BK, [00017 Sales Information].OR_PG, [00017 Sales Information].DSCR, [00017 Sales Information].DOS, [00017 Sales Information].PRICE, [00001 Parcel].ASD_VAL, [00001 Parcel].BLD_VAL, [00001 Parcel].SQFT, [00001 Parcel].ACREAGE, [00005 Building].ACT, [00004 Site Address].STR_NUM, [00004 Site Address].STR_PFX, [00004 Site Address].Str, [00004 Site Address].STR_SFX, [00004 Site Address].STR_UNIT, [00004 Site Address].CITY, [00004 Site Address].ZIP, [00004 Site Address].BLD_NUM INTO query
+FROM (([00017 Sales Information] INNER JOIN [00001 Parcel] ON [00017 Sales Information].STRAP = [00001 Parcel].STRAP) INNER JOIN [00004 Site Address] ON [00017 Sales Information].STRAP = [00004 Site Address].STRAP) INNER JOIN [00005 Building] ON ([00005 Building].STRAP = [00017 Sales Information].STRAP) AND ([00005 Building].STRAP = [00017 Sales Information].STRAP) AND ([00017 Sales Information].STRAP = [00005 Building].STRAP);
+```
+Step 2:
+```
+SELECT step_1.*, [00011 Extra Feature].YR_BLT, [00001 Parcel].DSCR
+FROM (step_1 INNER JOIN [00011 Extra Feature] ON step_1.STRAP = [00011 Extra Feature].STRAP) INNER JOIN [00001 Parcel] ON step_1.STRAP = [00001 Parcel].STRAP;
+```

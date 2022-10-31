@@ -1,0 +1,11 @@
+Buildings:
+"strap","bld_num","section_num","designCode","designCodeDscr","qualityCode","qualityCodeDscr","bldgClass","bldgClassDscr","ConstCode","ConstCodeDscr","builtYear","CompCode","EffectiveYear","bsmtSF","bsmtType","bsmtTypeDscr","carStorageSF","carStorageType","carStorageTypeDscr","nbrBedRoom","nbrRoomsNobath","mainfloorSF","nbrThreeQtrBaths","nbrFullBaths","nbrHalfBaths","TotalFinishedSF","Ac","AcDscr","Heating","HeatingDscr","ExtWallPrim","ExtWallDscrPrim","ExtWallSec","ExtWallDscrSec","IntWall","IntWallDscr","Roof_Cover","Roof_CoverDscr","Stories","UnitCount","status_cd"
+
+Owner:
+"CreatedDate","strap","folio","status_cd","bld_num","str_num","str","str_pfx","str_sfx","str_unit","city","sub_code","sub_dscr","section","township","range","block","lot","owner_name","mail_to","mailingAddr1","mailingAddr2","mailingCity","mailingState","mailingZip","mailingCountry","role_cd","pct_own","taxArea","nh","mill_levy","legalDscr","waterFee","account_type"
+
+Parcels:
+"strap","Tdate","deed_type","price","str_num","str_pfx","Str","str_sfx","str_unit","city","mailingAddr1","mailingCity","mailingState","mailingZip","bldgClassDscr","builtYear","UnitCount","bsmtSF","carStorageSF","nbrBedRoom","nbrRoomsNobath","mainfloorSF","nbrThreeQtrBaths","nbrFullBaths","nbrHalfBaths","TotalFinishedSF","Stories"
+
+Sales:
+"strap","Tdate","deed_type","price","str_num","str_pfx","str","str_sfx","str_unit","city","mailingAddr1","mailingCity","mailingState","mailingZip","bldgClassDscr","builtYear","UnitCount"

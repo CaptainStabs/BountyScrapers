@@ -1,0 +1,5 @@
+Joined with:
+```
+SELECT SalesHistory.PARCEL_ID, SalesHistory.SALE_DATE, SalesHistory.SALE_PRICE, SalesHistory.BOOK, SalesHistory.PAGE, SalesHistory.INSTRUMENT_DESC, SalesHistory.GRANTOR, SalesHistory.GRANTEE, Certified_Data.LOCATION, Certified_Data.ZIP, Certified_Data.NUMBER_OF_BLDGS, Certified_Data.YRBLT, Certified_Data.PROPERTY_USE_DESC
+FROM SalesHistory INNER JOIN Certified_Data ON SalesHistory.PARCEL_ID = Certified_Data.PARID;
+```
