@@ -234,12 +234,13 @@ columns = ["state","property_zip5","property_street_address","property_city","pr
 #         runner(reader, writer, line_count, zip_cty_cnty, columns, url)
 
 
-with open("F:\\us-housing-prices-2\\zip5_added_test.csv", "r") as input_csv:
-    line_count = len([line for line in input_csv.readlines()])
-    # line_count = 6433664
+with open("F:\\_Bounty\\us-housing-prices-v2\\geocoding_input.csv", "r", encoding='utf-8') as input_csv:
+    # line_count = len([line for line in input_csv.readlines()])
+    # input_csv.seek(0)
+    line_count = 42741621
     reader = csv.DictReader(input_csv)
 
-    with open("F:\\us-housing-prices-2\\zip5_added_2.csv", "a", newline="") as output_csv:
+    with open("F:\\_Bounty\\us-housing-prices-v2\\zip5_added_2.csv", "a", newline="") as output_csv:
         writer = csv.DictWriter(output_csv, fieldnames=columns)
         writer.writeheader()
 
