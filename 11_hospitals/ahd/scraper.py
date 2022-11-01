@@ -6,6 +6,7 @@ import sys
 import time
 import webbrowser
 import random
+from nordvpn_switcher import initialize_VPN,rotate_VPN,terminate_VPN
 
 
 def solve_captcha(website, headers):
@@ -46,6 +47,12 @@ def get_user_agent():
     return headers
 
 
+
+captcha_string = "Please check the box or solve the question below to proceed."
+free_string = "You've reached your limit of free hospital profiles."
+
+# initialize_VPN(save=1,area_input=['random regions united states 10'])
+
 columns = ["name", "ccn", "homepage_url", "state_code"]
 with open("hospitals_state_code.csv", "r") as input_csv:
     total = line_count = len([line for line in input_csv.readlines()])
@@ -61,15 +68,23 @@ with open("hospitals_state_code.csv", "r") as input_csv:
             t_headers = get_user_agent()
             r = requests.get(url, headers=t_headers).text
 
-            with open("t.html", "w") as f:
-                f.write(r)
 
-            if "Please check the box or solve the question below to proceed." in r:
+            if captcha_string in r:
                 r = solve_captcha(url, t_headers)
 
-            if "You've reached your limit of free hospital profiles." in r:
+            if free_string in r:
                 print("\nFree limit reached")
-                break
+                # rotate_VPN()
+                input("Press enter after switching server")
+                r = requests.get(url, headers=t_headers).text
+
+                if free_string in r:
+                    print("\nGot limit reached twice, breaking")
+                    break
+
+                # Check again because we have re-requested the url
+                if captcha_string in r:
+                    r = solve_captcha(url, t_headers)
 
             p = fromstring(r)
             homepage_url = p.xpath(
@@ -98,6 +113,8 @@ with open("hospitals_state_code.csv", "r") as input_csv:
             # sys.stdout.write("\r")
             # sys.stdout.write(str(homepage_url))
             # sys.stdout.flush()
-            time.sleep(1)
+            time.sleep(0.7)
             # with open("t.html", "w") as f:
             #     f.write(r)
+
+# MEDICAL BEHAVIORAL HOSPITAL - MISHAWAKA
