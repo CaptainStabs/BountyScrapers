@@ -8,7 +8,7 @@ import webbrowser
 import random
 from nordvpn_switcher import initialize_VPN,rotate_VPN,terminate_VPN
 
-
+# url, headers, chrome path
 def solve_captcha(website, headers):
     webbrowser.open(website)
     input("\nPress enter to continue...")
@@ -50,16 +50,16 @@ def get_user_agent():
 
 captcha_string = "Please check the box or solve the question below to proceed."
 free_string = "You've reached your limit of free hospital profiles."
-
+banned_string = "Your access to AHD.com has been suspended for suspected abuse of our terms and conditions of use."
 # initialize_VPN(save=1,area_input=['random regions united states 10'])
 
-columns = ["name", "ccn", "homepage_url", "state_code"]
+columns = ["name", "ccn", "homepage_url", "state_code", "street", "city", "state", "zip", "beds", "telephone"]
 with open("hospitals_state_code.csv", "r") as input_csv:
     total = line_count = len([line for line in input_csv.readlines()])
     input_csv.seek(0)
     reader = csv.DictReader(input_csv)
 
-    with open("url_added.csv", "a", newline="") as output_csv:
+    with open("url_added_v2.csv", "a", newline="") as output_csv:
         writer = csv.DictWriter(output_csv, fieldnames=columns)
         # writer.writeheader()
 
@@ -86,6 +86,11 @@ with open("hospitals_state_code.csv", "r") as input_csv:
                 if captcha_string in r:
                     r = solve_captcha(url, t_headers)
 
+            if banned_string in r:
+                print("\nYou've been naughty, time for a new IP")
+                input("\nPress enter after switching server")
+                r = requests.get(url, headers=t_headers).text
+
             p = fromstring(r)
             homepage_url = p.xpath(
                 '//*[@id="main"]/div[2]/table[1]/tr/td[1]/table/tr[3]/td[2]/a/@href'
@@ -96,16 +101,28 @@ with open("hospitals_state_code.csv", "r") as input_csv:
                 time.sleep(1)
                 continue
 
-
             if homepage_url == "http://":
                 time.sleep(1)
                 continue
+
+            street = p.xpath('//*[@itemprop="streetAddress"]/text()')
+            city = p.xpath('//*[@itemprop="addressLocality"]/text()')
+            state = p.xpath('//*[@itemprop="addressRegion"]/text()')
+            zip = p.xpath('//*[@itemprop="postalCode"]/text()')
+            beds = p.xpath('//*[@id="main"]/div[2]/table[1]/tr/td[1]/table/tr[8]/td[2]/text()')
+            telephone = p.xpath('//*[@itemprop="telephone"]/text()')
 
             data = {
                 "name": row["name"],
                 "ccn": row["ccn"],
                 "homepage_url": homepage_url,
                 "state_code": row["state_code"],
+                "street": street[0] if street else None,
+                "city": city[0] if city else None,
+                "state": state[0] if state else None,
+                "zip": zip[0].strip() if zip else None,
+                "beds": beds[0] if beds else None,
+                "telephone": telephone[0] if telephone else None
             }
 
             writer.writerow(data)
