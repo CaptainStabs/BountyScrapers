@@ -23,7 +23,7 @@ def check_url(url, s):
     try:
         r = s.head(url)
     except Exception as e:
-        raise(e)
+        print(e)
         return url
 
     if r.status_code == 200:
