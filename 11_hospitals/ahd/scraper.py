@@ -7,6 +7,7 @@ import time
 import webbrowser
 import random
 from nordvpn_switcher import initialize_VPN,rotate_VPN,terminate_VPN
+import winsound
 
 # url, headers, chrome path
 def solve_captcha(website, headers):
@@ -73,6 +74,11 @@ with open("hospitals_state_code.csv", "r") as input_csv:
                 r = solve_captcha(url, t_headers)
 
             if free_string in r:
+                try:
+                    winsound.PlaySound("SystemHand", winsound.SND_ALIAS)
+                    winsound.MessageBeep(type=winsound.MB_ICONEXCLAMATION)
+                except:
+                    pass
                 print("\nFree limit reached")
                 # rotate_VPN()
                 input("Press enter after switching server")
