@@ -49,10 +49,10 @@ def check_url(url, s):
         print("\n",url)
         return url
 
-filename = "url_added_v2.csv"
+filename = "not_null_og.csv"
 df = pd.read_csv(filename)
 df["homepage_url"] = df["homepage_url"].progress_apply(lambda x: x if check_url(x, s) else pd.NA)
 
 df = df.dropna(subset=["homepage_url"])
 
-df.to_csv(filename[:-4] + "cleaned.csv", index=False)
+df.to_csv(filename[:-4] + "_cleaned.csv", index=False)

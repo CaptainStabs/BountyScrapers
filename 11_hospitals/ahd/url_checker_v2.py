@@ -56,13 +56,13 @@ def check_url(url):
 
 
 def process(df):
-    res = df["homepage_url"].progress_apply(check_url)
-    return res
+    df["homepage_url"] = df["homepage_url"].progress_apply(check_url)
+    return df
 
 if __name__ == "__main__":
     p = mp.Pool(processes=16)
 
-    filename = "not_null_og.csv"
+    filename = "dump0.csv"
     df = pd.read_csv(filename)
     split_df = np.array_split(df, 16)
 
@@ -70,9 +70,11 @@ if __name__ == "__main__":
     p.close()
     p.join()
 
-    parts = pd.concat([df, parts], axis=1)
+
+    parts = pd.concat(pool_results, axis=0)
+    print(parts)
     pdt.assert_series_equal(parts["ccn"], df["ccn"])
-    df["homepage_url"] = df["homepage_url"].progress_apply(check_url)
+    
 
     df = df.dropna(subset=["homepage_url"])
 
