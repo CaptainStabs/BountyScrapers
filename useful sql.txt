@@ -12,3 +12,18 @@ UPDATE businesses
 SET street_physical = SUBSTRING(street_physical, 1, LENGTH(street_physical) DIV 2)
 WHERE
 SUBSTRING(street_physical, 1, LENGTH(street_physical) DIV 2) = SUBSTRING(street_physical, LENGTH(street_physical) DIV 2 + 1, LENGTH(street_physical) DIV 2);
+
+
+compare previous commit and revert based on outer where conditionthe
+
+update hospitals, hospitals AS OF 'ksrc2pug8qjhkonf6dkqqgtij43hhp9p' as h2
+set hospitals.homepage_url = h2.homepage_url
+--select h1.homepage_url, h1.ccn, h2.homepage_url, h2.ccn from hospitals as h1
+where
+		h2.ccn=hospitals.ccn
+    AND    h2.state_code=hospitals.state_code
+    AND    Char_length(hospitals.homepage_url) < Char_length(h2.homepage_url)
+
+
+Add a / to the end of a string if it does not end in a /
+UPDATE hospitals SET homepage_url = CONCAT(homepage_url, '/') WHERE RIGHT(homepage_url, 1) != '/'
