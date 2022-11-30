@@ -5,18 +5,28 @@ from urllib.parse import urlparse
 from urllib3.exceptions import InsecureRequestWarning
 import warnings
 warnings.simplefilter('ignore', InsecureRequestWarning)
+# import heartrate; heartrate.trace(browser=True, daemon=True)
+
+from urllib.parse import urlparse
 
 import multiprocessing as mp
 # import pandas.util.testing as pdt
 import pandas.testing as pdt
 import numpy as np
 
-tqdm = tqdm.pandas()
+tqdm1 = tqdm.pandas()
+
+def is_url(url):
+    try:
+        a = urlparse(url)
+        return all([a.scheme, a.netloc])
+    except ValueError:
+        return False
 
 def check_url(df):
     checked_urls = []
     compared_urls = []
-    for url in df:
+    for url in tqdm(df):
         compared_urls.append(url)
         if not url:
             checked_urls.append(pd.NA)
@@ -43,8 +53,8 @@ def check_url(df):
             checked_urls.append(pd.NA)
             continue
         except Exception as e:
-            # print(e)
-            # print(url)
+            print(e)
+            print(url)
             checked_urls.append(url)
             continue
 
@@ -56,17 +66,22 @@ def check_url(df):
             continue
 
         elif r.status_code == 301 or r.status_code == 302:
-            checked_urls.append(r.headers.get("location"))
+            new_loc = r.headers.get("location")
+            if is_url(new_loc):
+                checked_urls.append(new_loc)
+            else:
+                checked_urls.append(pd.NA)
             continue
         elif r.status_code != 200 and r.status_code != 404:
             # print(f"\nUnknown code: {r.status_code}")
             # print("\n",url)
             checked_urls.append(url)
             continue
-    if checked_urls != compared_urls:
-        return checked_urls
-    else:
-        return pd.NA
+    return checked_urls
+    # if checked_urls != compared_urls:
+    #     return checked_urls
+    # else:
+    #     return pd.NA
     
 
 
@@ -76,19 +91,20 @@ def process(df):
     return df
 
 if __name__ == "__main__":
-    p = mp.Pool(processes=16)
+    p = mp.Pool(processes=8)
 
     filename = "non-null.csv"
     df = pd.read_csv(filename)
-    split_df = np.array_split(df, 16)
+    split_df = np.array_split(df, 8)
 
     pool_results = p.map(process, split_df)
     p.close()
     p.join()
+    
 
 
     parts = pd.concat(pool_results, axis=0)
-    print(parts)
-    pdt.assert_series_equal(parts["ccn"], df["ccn"])
+    # print(parts)
+    # pdt.assert_series_equal(parts["ccn"], df["ccn"])
 
-    df.to_csv(filename[:-4] + "_checked_urls.csv", index=False)
+    parts.to_csv(filename[:-4] + "_checked_urls.csv", index=False)
