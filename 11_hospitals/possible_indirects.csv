@@ -1,0 +1,720 @@
+ccn,name,state,city,homepage,cdm_indirect_url,cdm_url,possible_indirect,found_string
+050842,CENTRAL VALLEY SURGICAL CENTER LLC,CA,BAKERSFIELD,http://centralvalleysc.com/,,,,['pricing']
+271312,PHILLIPS COUNTY MEDICAL CENTER,MT,MALTA,http://pchospital.us/,https://ypo.496.myftpupload.com/community-transparency/,https://ypo496.a2cdn1.secureserver.net/wp-content/uploads/2022/01/Charge-Master.pdf,https://ypo.496.myftpupload.com/community-transparency/,['transparency']
+261327,RAY COUNTY MEMORIAL HOSPITAL,MO,RICHMOND,http://raycountyhospital.com/,,,./pricetransparency.html,"['price transparency', 'transparency']"
+170068,SOUTHWEST MEDICAL CENTER,KS,LIBERAL,http://www.swmedcenter.com/,http://www.swmedcenter.com/index.php/billing/billing-information-pricing/,,"https://www.swmedcenter.com/index.php/billing/ , https://www.swmedcenter.com/index.php/pricing-transparency/","['pricing', 'billing', 'transparency']"
+670214,ER NOW,TX,WICHITA FALLS,http://www.yourernow.com/,,,/new-billing.html,['billing']
+194087,FREEDOM BEHAVIORAL HOSPITAL OF MONROE,LA,MONROE,https://ahmgt.com/,,,,['pricing']
+454101,ALLEGIANCE BEHAVIORAL HEALTH CENTER OF PLAINVIEW,TX,PLAINVIEW,https://ahmgt.com/,,,,['pricing']
+280140,ADVANCED MEDICAL IMAGING SURGERY CENTER,NE,LINCOLN,https://amimaging.com/surgery-center/,,,https://amimaging.com/wp-content/uploads/2020/05/ASC-billing-85x11-1.pdf,"['pricing', 'billing']"
+114032,SO CRESCENT BEH HLTH SYS - ANCHOR HOSPITAL CAMPUS,GA,COLLEGE PARK,https://anchorhospital.com/,https://anchorhospital.com/standard-services-2/,https://uhsfilecdn.eskycity.net/bh/233044975-anchor-standard_charges.csv,https://anchorhospital.com/standard-services-2/,['standard services']
+224013,"ARBOUR HOSPITAL, THE",MA,BOSTON,https://arbourhospital.com/,https://arbourhospital.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/232238962-arbour-standard_charges.csv,https://arbourhospital.com/standard-services/,['standard services']
+364036,ARROWHEAD BEHAVIORAL HEALTH,OH,MAUMEE,https://arrowheadbehavioral.com/,https://arrowheadbehavioral.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/270608044-arrowhead-standard_charges.csv,https://arrowheadbehavioral.com/standard-services/,['standard services']
+454121,AUSTIN OAKS HOSPITAL,TX,AUSTIN,https://austinoakshospital.com/,https://austinoakshospital.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/841618661-austin-oaks-standard_charges.csv,https://austinoakshospital.com/standard-services/,['standard services']
+260321,BEACON SURGERY CENTER,MO,LEES SUMMIT,https://beaconsc.com/,,,,['billing']
+454107,BEHAVIORAL HOSPITAL OF BELLAIRE,TX,HOUSTON,https://bhbhospital.com/,https://bhbhospital.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/272849780-bellaire-standard_charges.csv,https://bhbhospital.com/standard-services/,['standard services']
+430091,BLACK HILLS SURGICAL HOSPITAL LLP,SD,RAPID CITY,https://bhsh.com/,,,https://bhsh.com/no-surprise-billing/,['billing']
+314023,ASPEN HILLS HEALTHCARE CENTER,NJ,PEMBERTON,https://buttonwoodbhh.com/,https://buttonwoodbhh.com/pricing-transparency/,,"https://transparency-in-coverage.uhc.com/ , https://buttonwoodbhh.com/pricing-transparency/","['pricing', 'transparency']"
+500155,MERIDIAN SURGERY CENTER,WA,EDGEWOOD,https://cascadehernia.com/,,,,"['pricing', 'billing']"
+531311,CROOK COUNTY HOSPITAL,WY,SUNDANCE,https://ccmsd.org/,,,https://ccmsd.org/billing/,['billing']
+374023,CEDAR RIDGE BEHAVIORAL HOSPITAL,OK,OKLAHOMA CITY,https://cedarridgebhs.com/,https://cedarridgebhs.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/202901605-cedar-ridge-standard_charges.csv,https://cedarridgebhs.com/standard-services/,['standard services']
+064007,CENTENNIAL PEAKS HOSPITAL,CO,LOUISVILLE,https://centennialpeaks.com/,https://centennialpeaks.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/263973154-centennial-peaks-standard_charges.csv,https://centennialpeaks.com/standard-services/,['standard services']
+420111,SURGERY CENTER OF CHARLESTON,SC,CHARLESTON,https://charlestonsurgerycenter.com/,,,,['billing']
+370100,CHOCTAW MEMORIAL HOSPITAL,OK,HUGO,https://choctawmemorial.com/,,,,['prices']
+114008,COASTAL HARBOR TREATMENT CENTER,GA,SAVANNAH,https://coastalharbor.com/,https://coastalharbor.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/200931196-coastal-bh-harbor-standard_charges.csv,https://coastalharbor.com/standard-services/,['standard services']
+331316,"COMMUNITY MEMORIAL HOSPITAL, INC",NY,HAMILTON,https://communitymemorial.org/,,,https://communitymemorial.org/about/billing/,['billing']
+371325,CORDELL MEMORIAL HOSPITAL,OK,CORDELL,https://cordellmemorialhospital.com/,,,https://cordellmemorialhospital.com/pricing-information/,"['pricing', 'billing']"
+050790,CENTER FOR SPECIALIZED SURGERY OF SANTA BARBARA,CA,SANTA BARBARA,https://cssofsb.com/,,,,['prices']
+521353,CUMBERLAND MEMORIAL HOSPITAL,WI,CUMBERLAND,https://cumberlandhealthcare.com/,,,,['transparency']
+493300,CUMBERLAND HOSPITAL LLC,VA,NEW KENT,https://cumberlandhospital.com/,https://cumberlandhospital.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/020567575-cumberland-hospital-standard_charges.csv,https://cumberlandhospital.com/standard-services/,"['transparency', 'standard services']"
+170206,CYPRESS SURGERY CENTER,KS,WICHITA,https://cypresssurgerywichita.com/,,,/billing-and-insurance,"['billing', 'prices']"
+450688,DALLAS REGIONAL MEDICAL CENTER,TX,MESQUITE,https://dallasregionalmedicalcenter.com/,,,"/billing-insurance-information/ , /pricing-transparency-policy/","['pricing', 'billing', 'transparency']"
+114029,EAST CENTRAL REGIONAL HOSPITAL,GA,AUGUSTA,https://dbhdd.georgia.gov/be-caring/east-central-regional-hospital-ecrh-augusta-and-gracewood-ga,,,,['transparency']
+114019,GEORGIA REGIONAL HOSPITAL ATLANTA,GA,DECATUR,https://dbhdd.georgia.gov/be-caring/georgia-regional-hospital-atlanta-grha-atlanta-ga,,,,"['charges', 'transparency']"
+114028,GEORGIA REGIONAL HOSP SAVANNAH,GA,SAVANNAH,https://dbhdd.georgia.gov/be-caring/georgia-regional-hospital-savannah-grhs-savannah-ga,,,,['transparency']
+054053,DEL AMO HOSPITAL,CA,TORRANCE,https://delamobehavioralhealth.com/,https://delamobehavioralhealth.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/232646424-del-amo-standard_charges.csv,https://delamobehavioralhealth.com/standard-services/,['standard services']
+36012E,DENISON UNIVERSITY INFIRMARY,OH,GRANVILLE,https://denison.edu/places/wellness,,,,['billing']
+294016,DESERT WINDS HOSPITAL,NV,LAS VEGAS,https://desertwindshospital.com/,,,https://desertwindshospital.com/standard-pricing-download/,"['pricing', 'standard services']"
+284003,LINCOLN REGIONAL CENTER,NE,LINCOLN,https://dhhs.ne.gov/Pages/Regional-Centers.aspx,,,,['billing']
+264004,FULTON STATE HOSPITAL,MO,FULTON,https://dmh.mo.gov/fulton-state-hospital,,,,['transparency']
+451340,SHAMROCK GENERAL HOSPITAL,TX,SHAMROCK,https://electrahospital.com/,,,,"['price transparency', 'billing', 'transparency']"
+451343,ELECTRA MEMORIAL HOSPITAL,TX,ELECTRA,https://electrahospital.com/,,,,"['price transparency', 'billing', 'transparency']"
+370153,ELKVIEW GENERAL HOSPITAL,OK,HOBART,https://elkviewhospital.com/,,,https://elkviewhospital.com/hospital-charges/,"['pricing', 'charges']"
+453313,EL PASO CHILDREN'S HOSPITAL,TX,EL PASO,https://elpasochildrens.org/,,,"https://elpasochildrens.org/no-surprise-billing/ , https://elpasochildrens.org/hospital-price-transparency/ , /wp-content/uploads/2022/10/26-3075429_el-paso-childrens-hospital_standardcharges.xml","['price transparency', 'standard charges', 'billing', 'charges', 'transparency']"
+173027,"WESLEY REHABILITATION HOSPITAL, AN AFFILIATE OF EN",KS,WICHITA,https://encompasshealth.com/,,,/inpatient-rehabilitation/resources-and-education/health-care-transparency,['transparency']
+423033,TIDELANDS HEALTH REHABILITATION HOSPITALS,SC,MURRELLS INLET,https://encompasshealth.com/,,,/inpatient-rehabilitation/resources-and-education/health-care-transparency,['transparency']
+673032,RELIANT REHABILITATION HOSPITAL OF CENTRAL TEXAS,TX,ROUND ROCK,https://encompasshealth.com/,,,/inpatient-rehabilitation/resources-and-education/health-care-transparency,['transparency']
+371337,EASTERN OKLAHOMA MEDICAL CENTER,OK,POTEAU,https://eomchospital.com/,,,https://eomchospital.com/price-transparency/,"['price transparency', 'pricing', 'prices', 'charges', 'transparency']"
+670172,SIGNATURE CARE EMERGENCY CENTER-MISSION BEND,TX,HOUSTON,https://ercare24.com/,,,https://ercare24.com/payment-and-billing/,['billing']
+670173,SIGNATURE CARE EMERGENCY CENTER-MONTROSE,TX,HOUSTON,https://ercare24.com/,,,https://ercare24.com/payment-and-billing/,['billing']
+390009,SAINT VINCENT HOSPITAL,PA,ERIE,https://erie.ahn.org/,,,"/patients-visitors/patients/hospital-charges.html , https://www.ahn.org/patients-visitors/patients/financial-services/hospital-charges.html",['charges']
+670254,ER NEAR ME ADDISON,TX,DALLAS,https://ernearmetx.com/,,,https://ernearmetx.com/er-billing/,['billing']
+670255,ER NEAR ME COIT,TX,DALLAS,https://ernearmetx.com/,,,https://ernearmetx.com/er-billing/,['billing']
+670256,ER NEAR ME PLANO,TX,PLANO,https://ernearmetx.com/,,,https://ernearmetx.com/er-billing/,['billing']
+670257,ER NEAR ME HULEN,TX,FORT WORTH,https://ernearmetx.com/,,,https://ernearmetx.com/er-billing/,['billing']
+670273,EXPRESS ER,TX,WACO,https://expressercare.com/,,,https://expressercare.com/billing/,['billing']
+670274,EXPRESS ER,TX,ABILENE,https://expressercare.com/,,,https://expressercare.com/billing/,['billing']
+670297,EXPRESS ER,TX,TEMPLE,https://expressercare.com/,,,https://expressercare.com/billing/,['billing']
+670298,EXPRESS ER,TX,HARKER HEIGHTS,https://expressercare.com/,,,https://expressercare.com/billing/,['billing']
+670307,FAMILY FIRST ER,TX,BAYTOWN,https://familyfirster.com/,,,,"['pricing', 'billing']"
+670236,"FASTERCARE, PLLC",TX,MIDLAND,https://fastercaretx.com/,,,,['charges']
+431301,FAULKTON AREA MEDICAL CENTER,SD,FAULKTON,https://faulktonmedical.org/,,,"/wp-content/uploads/363317416_Faulkton-Area-Medical-Center_Pharmacy-Standardcharges.xlsx , /wp-content/uploads/363317416_Faulkton-Area-Medical-Center_Standardcharges.xlsx","['billing', 'charges']"
+394038,FOUNDATIONS BEHAVIORAL HEALTH,PA,DOYLESTOWN,https://fbh.com/,https://fbh.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/208179692-foundations-standard_charges.csv,/standard-services/,['standard services']
+234030,FOREST VIEW PSYCHIATRIC HOSPITAL,MI,GRAND RAPIDS,https://forestviewhospital.com/,https://forestviewhospital.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/232285657-forest-view-standard_charges.csv,https://forestviewhospital.com/standard-services/,['standard services']
+154035,FOUR COUNTY COUNSELING CENTER,IN,LOGANSPORT,https://fourcounty.org/,,,https://fourcounty.org/patient-resources/insurance-and-billing,['billing']
+450658,FREESTONE MEDICAL CENTER,TX,FAIRFIELD,https://freestonemc.com/,https://freestonemc.com/financial-assistance/,,https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=011a4a74-dd3f-4ea4-ba83-ca6efe6b6b57,"['price transparency', 'pricing', 'billing', 'transparency']"
+394008,FRIENDS HOSPITAL,PA,PHILADELPHIA,https://friendshospital.com/,https://friendshospital.com/standard-services,https://uhsfilecdn.eskycity.net/bh/202523648-friends-standard_charges.csv,https://friendshospital.com/standard-services,['standard services']
+670253,FRONTLINE WHITEROCK MEDICAL CENTER LLC,TX,DALLAS,https://frontlineer.com/,,,https://frontlineer.com/contacting-our-billing-department/,['billing']
+050816,FULLERTON SURGICAL CENTER,CA,FULLERTON,https://fullerton-surgical.com/,,,/patient-information/#billing,"['pricing', 'billing']"
+171314,F W HUSTON MEDICAL CENTER,KS,WINCHESTER,https://fwhuston.com/,,,/billing,['billing']
+144039,GARFIELD PARK HOSPITAL,IL,CHICAGO,https://garfieldparkhospital.com/,https://garfieldparkhospital.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/460775763-garfield-park-standard_charges.csv,https://garfieldparkhospital.com/standard-services/,"['transparency', 'standard services']"
+471301,GIFFORD MEDICAL CENTER,VT,RANDOLPH,https://giffordhealthcare.org/,,,https://giffordhealthcare.org/patients/billing/,['billing']
+241376,GLACIAL RIDGE HOSPITAL,MN,GLENWOOD,https://glacialridge.org/,,,,"['standard charges', 'charges']"
+454050,GLEN OAKS HOSPITAL,TX,GREENVILLE,https://glenoakshospital.com/,https://glenoakshospital.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/232357811-glen-oaks-standard_charges.csv,https://glenoakshospital.com/standard-services/,['standard services']
+370019,GREAT PLAINS REGIONAL MEDICAL CENTER,OK,ELK CITY,https://gprmc-ok.com/,https://gprmc-ok.com/patient/financial-assistance/,,,"['billing', 'transparency']"
+031308,HUHU KAM MEMORIAL HOSPITAL,AZ,SACATON,https://grhc.org/,,,http://www.grhc.org/price-transparency,"['price transparency', 'transparency']"
+010176,GULF COAST SURGICAL PARTNERS LLC,AL,MOBILE,https://gulfcoastsurgicalcenter.com/,,,/billing-and-insurance,['billing']
+234023,HAVENWYCK HOSPITAL,MI,AUBURN HILLS,https://havenwyckhospital.com/,https://havenwyckhospital.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/382409580-havenwyck-standard_charges.csv,https://havenwyckhospital.com/standard-services/,['standard services']
+450578,HEMPHILL COUNTY HOSPITAL,TX,CANADIAN,https://hchdst.org/,,,https://hchdst.org/price-transparency/,['transparency']
+231316,HILLS & DALES GENERAL HOSPITAL,MI,CASS CITY,https://hdhlth.org/,,,"https://hdhlth.org/about-us/billing-financial-assistance/ , https://hdhlth.org/about-us/billing-financial-assistance/financial-assistance/ , https://hdhlth.org/about-us/billing-financial-assistance/billing-faq/ , https://hdhlth.org/about-us/billing-financial-assistance/price-list/ , https://hdhlth.org/about-us/billing-financial-assistance/online-bill-pay/",['billing']
+03030E,UNIVERSITY STUDENT HLTH UNIT,AZ,TUCSON,https://health.arizona.edu/,,,/charges-billing-payment,"['billing', 'charges']"
+534001,WYOMING STATE HOSPITAL,WY,EVANSTON,https://health.wyo.gov/behavioralhealth/statehospital/,,,https://health.wyo.gov/behavioralhealth/statehospital/billing-inforamation/,"['pricing', 'billing']"
+46004F,U S ARMY HOSPITAL,UT,DUGWAY,https://healthcare.utah.edu/,,,//healthcare.utah.edu/pricing/,"['pricing', 'billing', 'transparency']"
+380091,KAISER SUNNYSIDE MEDICAL CENTER,OR,CLACKAMAS,https://healthy.kaiserpermanente.org/front-door,,,,['billing']
+380103,KAISER FOUNDATION HOSPITAL - WESTSIDE,OR,HILLSBORO,https://healthy.kaiserpermanente.org/front-door,,,,['billing']
+45053E,UNIVERSITY OF TEXAS STUDENT HLTH CTR,TX,AUSTIN,https://healthyhorns.utexas.edu/,,,"charges.html , https://healthyhorns.utexas.edu/charges.html",['charges']
+040085,HELENA REGIONAL MEDICAL CENTER,AR,HELENA,https://helenarmc.com/,,,"https://helenarmc.com/billing-insurance/ , https://helenarmc.com/pricing-transparency/ , https://helenarmc.com/surprise-billing/ , https://helenarmc.com/healthcare-pricing-information/","['pricing', 'billing', 'transparency']"
+440008,HENDERSON COUNTY COMMUNITY HOSPITAL,TN,LEXINGTON,https://henderson.health/,,,/billing,['billing']
+452029,CONTINUECARE HOSPITAL AT HENDRICK MEDICAL CENTER,TX,ABILENE,https://hendrick.continuecare.org/,,,"https://hendrick.continuecare.org/for-families/cms-no-surprise-billing-information/ , https://hendrick.continuecare.org/for-families/pricing-transparency/ , https://hendrick.continuecare.org/wp-content/uploads/2022/05/463607347_Continue-Care-Hospital-at-Hendrick-Medical-Center_standardcharges_2022.xls.xlsx","['pricing', 'billing', 'charges', 'transparency']"
+100315,VIERA HOSPITAL,FL,MELBOURNE,https://hf.org/,,,,['billing']
+100316,PALM BAY HOSPITAL,FL,PALM BAY,https://hf.org/,,,,['billing']
+100019,HOLMES REGIONAL MEDICAL CENTER,FL,MELBOURNE,https://hf.org/,,,,['billing']
+100177,CAPE CANAVERAL HOSPITAL,FL,COCOA BEACH,https://hf.org/,,,,['billing']
+072004,HOSPITAL FOR SPECIAL CARE,CT,NEW BRITAIN,https://hfsc.org/,,,https://hfsc.org/for-patients/billing-financial-services/,['billing']
+14013E,ILLINOIS CHILDRENS HOSP,IL,CHICAGO,https://hospital.uillinois.edu/,,,/patients-and-visitors/patient-information/billing-and-pricing,"['pricing', 'billing']"
+400004,"ASOCIACION HOSPITAL DEL MAESTRO, INC",PR,SAN JUAN,https://hospitalelmaestro.org/,,,https://hospitalelmaestro.org/hospital-el-maestro-price-transparency-act/,"['price transparency', 'pricing', 'transparency']"
+050159,VENTURA COUNTY MEDICAL CENTER,CA,VENTURA,https://hospitals.vchca.org/,https://hospitals.vchca.org/cms-law-for-price-transparency-chargemaster,,,"['price transparency', 'transparency']"
+224018,ARBOUR HUMAN RESOURCE INSTITUTE,MA,BROOKLINE,https://hrihospital.com/,https://hrihospital.com/standard-services-2/,https://uhsfilecdn.eskycity.net/bh/232238958-hri-standard_charges.csv,https://hrihospital.com/standard-services-2/,['standard services']
+261336,IRON COUNTY MEDICAL CENTER,MO,PILOT KNOB,https://icmedcenter.org/,,,"http://iron.pixaura.com/patient_info/radiology-pricing-total-cost-estimate/ , /patient_info/radiology-pricing-total-cost-estimate/","['price transparency', 'pricing', 'transparency']"
+141328,HARDIN COUNTY GENERAL HOSPITAL,IL,ROSICLARE,https://ilhcgh.org/,,,/current-prices,"['prices', 'transparency']"
+521342,INDIANHEAD MEDICAL CENTER SHELL LAKE,WI,SHELL LAKE,https://indianheadmedicalcenter.com/,https://indianheadmedicalcenter.com/?page_id=618,,,"['price transparency', 'transparency']"
+17002F,US ARMY HOSP,KS,FORT RILEY,https://irwin.tricare.mil/,,,,['transparency']
+190053,OCHSNER AMERICAN LEGION HOSPITAL,LA,JENNINGS,https://jenningsamericanlegionhospital.com/,,,https://jenningsamericanlegionhospital.com/understanding-billing-charges/,"['billing', 'charges']"
+480002,GOV JUAN F LUIS HOSPITAL & MEDICAL CTR,VI,ST CROIX,https://jflusvi.org/,,,"https://jflusvi.org/patient-pricing/ , https://jflusvi.org/surprise-billing/","['pricing', 'billing']"
+170186,KANSAS HEART HOSPITAL,KS,WICHITA,https://kansasheart.com/,,,https://kansasheart.com/insurance-and-billing/,"['price transparency', 'billing', 'transparency']"
+451306,KIMBLE HOSPITAL,TX,JUNCTION,https://kimblehospital.org/,,,"https://kimblehospital.org/hospital-charges-price-transparency/ , https://kimblehospital.org/hospital-charges-price-transparency","['price transparency', 'pricing', 'billing', 'charges', 'transparency']"
+454103,KINGWOOD PINES HOSPITAL,TX,KINGWOOD,https://kingwoodpines.com/,https://kingwoodpines.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/731726290-kingwood-pines-standard_charges.csv,https://kingwoodpines.com/standard-services/,"['transparency', 'standard services']"
+170197,KANSAS MEDICAL CENTER LLC,KS,ANDOVER,https://ksmedcenter.com/,,,https://ksmedcenter.com/wp-content/uploads/2021/12/kmc-price-transparency.xlsx,"['price transparency', 'pricing', 'transparency']"
+050794,LOS ALAMITOS SURGERY CENTER,CA,LOS ALAMITOS,https://la-sc.com/,,,,"['pricing', 'billing']"
+050763,"L A DOWNTOWN MEDICAL CENTER, LLC",CA,LOS ANGELES,https://ladowntownmc.com/,,,"https://ladowntownmc.com/estimator/pricing.html , https://westcovinamc.com/downloads/service_pricing_codes_LADMC_New.xls","['pricing', 'transparency']"
+190259,LAFAYETTE SURGICAL SPECIALTY HOSPITAL,LA,LAFAYETTE,https://lafayettesurgical.com/,,,https://lafayettesurgical.com/patient-pricing/,['pricing']
+454060,LAUREL RIDGE TREATMENT CENTER,TX,SAN ANTONIO,https://laurelridgetc.com/,https://laurelridgetc.com/standard-services/,https://laurelridgetc.com/wp-content/uploads/2022/07/432002326-laurel-ridge-standard_charges.csv,/standard-services/,['standard services']
+640001,LBJ TROPICAL MEDICAL CENTER,AS,PAGO PAGO,https://lbjtmc.org/,,,,['pricing']
+451351,LYNN COUNTY HOSPITAL DISTRICT,TX,TAHOKA,https://lchdhealthcare.org/,,,,['pricing']
+170207,"MAO LEAWOOD SURGERY CENTER, LLC",KS,LEAWOOD,https://leawoodasc.com/,,,,['billing']
+341317,LIFEBRITE COMMUNITY HOSPITAL OF STOKES,NC,DANBURY,https://lifebritestokes.com/,,,https://lifebritestokes.com/patientsandvisitors/#billing-tips,"['billing', 'transparency']"
+351311,CHI LISBON HEALTH,ND,LISBON,https://lisbonhospital.com/,,,https://lisbonhospital.com/price-transparency/,"['price transparency', 'pricing', 'transparency']"
+050778,LOMA LINDA UNIVERSITY CHILDREN'S HOSPITAL,CA,LOMA LINDA,https://lluch.org/,,,"/patients-families/patients/billing-insurance , http://www.lluh.org/pricing","['standard charges', 'pricing', 'billing', 'charges']"
+050804,NORTHRIDGE OUTPATIENT SURGERY CENTER,CA,NORTHRIDGE,https://locations.dignityhealth.org/,,,https://www.dignityhealth.org/my-home/billing-help-and-faq,['billing']
+454118,LONE STAR BEHAVIORAL HEALTH CYPRESS,TX,CYPRESS,https://lonestarbehavioralhealth.com/,,,,['pricing']
+261302,MADISON MEDICAL CENTER,MO,FREDERICKTOWN,https://madisonmedicalcenter.net/,,,,['pricing']
+312014,"MATHENY SCHOOL & HOSPITAL, THE",NJ,PEAPACK,https://matheny.org/hospital/,,,,['charges']
+670010,MAYHILL HOSPITAL,TX,DENTON,https://mayhillhospital.com/,https://mayhillhospital.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/274126263-mayhill-standard_charges.csv,https://mayhillhospital.com/standard-services/,['standard services']
+210008,MERCY MEDICAL CENTER INC,MD,BALTIMORE,https://mdmercy.com/,,,"/patients-and-visitors/billing-and-insurance , /patients-and-visitors/billing-and-insurance/pay-your-bill , /patients-and-visitors/billing-and-insurance/get-an-estimate",['billing']
+670248,PHYSICIANS PREMIER,TX,ROUND ROCK,https://mdpremier.com/,,,,['billing']
+450489,MEDICAL ARTS HOSPITAL,TX,LAMESA,https://medicalartshospital.org/,,,https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=741f735f-d6cc-4802-8169-175329ceb889,"['price transparency', 'pricing', 'transparency']"
+45145E,MEDICAL ARTS CLINIC HOSP,TX,BIG SPRING,https://medicalartshospital.org/,,,https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=741f735f-d6cc-4802-8169-175329ceb889,"['price transparency', 'pricing', 'transparency']"
+140185,MEMORIAL HOSPITAL,IL,BELLEVILLE,https://memhosp.org/,,,https://memhosp.org/financial-assistance-and-billing-resources/,['billing']
+149808,MEMORIAL MEDICAL CENTER,IL,SPRINGFIELD,https://memorial.health/,,,"/financial/surprise-billing/ , /financial/price-transparency/","['billing', 'transparency']"
+061314,"MEMORIAL HOSPITAL, THE",CO,CRAIG,https://memorialregionalhealth.com/,,,"https://memorialregionalhealth.com/resources/billing-process/ , https://memorialregionalhealth.com/resources/billing-financial-assistance/","['price transparency', 'pricing', 'billing', 'charges', 'transparency']"
+014012,MARY S HARPER GERIATRIC PSYCHIATRY CENTER,AL,TUSCALOOSA,https://mh.alabama.gov/mary-starke-harper-geriatric-psychiatry-center/,,,https://mh.alabama.gov/substance-use-contract-billing-manual/,"['pricing', 'billing']"
+364040,MENTAL HEALTH SERVICES FOR CLARK AND MADISON COS,OH,SPRINGFIELD,https://mhscc.org/,,,,['billing']
+360147,MARIETTA MEMORIAL HOSPITAL,OH,MARIETTA,https://mhsystem.org/,,,../patientprices,"['billing', 'prices']"
+361319,SELBY GENERAL HOSPITAL,OH,MARIETTA,https://mhsystem.org/,,,../patientprices,"['billing', 'prices']"
+511304,SISTERSVILLE GENERAL HOSPITAL,WV,SISTERSVILLE,https://mhsystem.org/,,,../patientprices,"['billing', 'prices']"
+154047,MICHIANA BEHAVIORAL HEALTH CENTER,IN,PLYMOUTH,https://michianabehavioralhealth.com/,https://michianabehavioralhealth.com/,https://uhsfilecdn.eskycity.net/bh/200768028-michiana-standard_charges.csv,/standard-services,"['transparency', 'standard services']"
+451342,MITCHELL COUNTY HOSPITAL DISTRICT,TX,COLORADO CITY,https://mitchellcountyhospital.com/,https://mitchellcountyhospital.com/hospital-charges/,,https://secure.claraprice.net/price-transparency/mitchell-county,"['price transparency', 'transparency']"
+271310,GARFIELD COUNTY HEALTH CENTER,MT,JORDAN,https://mtha.org/,https://mtha.org/key-issues/affordability/price-quality-transparency-resources/,,https://mtha.org/key-issues/affordability/price-quality-transparency-resources/,"['prices', 'transparency']"
+429800,MUSC MEDICAL CENTER,SC,CHARLESTON,https://muschealth.org/,,,"/patients-visitors/billing , /patients-visitors/billing/no-surprises-act , /patients-visitors/billing/what-musc-charges , /patients-visitors/billing/financial-assistance , /patients-visitors/billing/payment-options , /patients-visitors/billing/faq","['billing', 'charges']"
+221300,MARTHA'S VINEYARD HOSPITAL INC,MA,OAK BLUFFS,https://mvhospital.org/,,,/patient-billing,['billing']
+500157,MICROSURGICAL SPINE CETNER,WA,PUYALLUP,https://mybackmylife.com/,,,,['prices']
+340071,BETSY JOHNSON REGIONAL  HOSPITAL,NC,DUNN,https://myharnetthealth.org/,,,,['pricing']
+450508,NACOGDOCHES MEMORIAL HOSPITAL,TX,NACOGDOCHES,https://nacmem.org/,,,,['pricing']
+100018,NAPLES COMMUNITY HOSPITAL,FL,NAPLES,https://nchmd.org/,,,https://nchmd.org/patients-and-visitors/compare-hospital-pricing/#transparency,"['pricing', 'transparency']"
+280133,"NEBRASKA SPINE HOSPITAL, LLC",NE,OMAHA,https://nebraskaspinehospital.com/,,,/resources/#billing,['billing']
+371336,NEWMAN MEMORIAL HOSPITAL,OK,SHATTUCK,https://newmanmemorialhospital.org/,,,https://newmanmemorialhospital.org/payment-billing/,['billing']
+531314,NIOBRARA HEALTH & LIFE CENTER,WY,LUSK,https://niobrarahospital.com/,,,,['billing']
+32026E,LEA GENERAL HOSP,NM,HOBBS,https://nor-lea.org/,,,,['billing']
+314018,NORTHBROOK BEHAVIORAL HEALTH HOSPITAL,NJ,BLACKWOOD,https://northbrookbhh.com/,,,pricing-transparency.html,"['pricing', 'transparency']"
+194007,NORTHLAKE BEHAVIORAL HEALTH SYSTEM,LA,MANDEVILLE,https://northlakebh.org/,,,https://northlakebh.org/rates-and-pricing,['pricing']
+451315,NORTH RUNNELS HOSPITAL,TX,WINTERS,https://northrunnelsmedicalcenter.com/,,,https://northrunnelsmedicalcenter.com/hospital-charges-101/,"['pricing', 'charges']"
+251318,NORTH SUNFLOWER MEDICAL CENTER CAH,MS,RULEVILLE,https://northsunflower.com/,,,https://northsunflower.com/patients-rights-responsibilities/pricing-transparency,"['pricing', 'transparency']"
+450808,NORTHWEST HILLS SURGICAL HOSPITAL,TX,AUSTIN,https://northwesthillssurgical.com/,,,"pricing/index.html , pricing/index.php , pricing/582028767_Northwest_Hills_Surgical_Hospital_standardcharges.csv","['pricing', 'billing', 'prices', 'charges']"
+154031,OAKLAWN PSYCHIATRIC CENTER INC,IN,GOSHEN,https://oaklawn.org/,,,,['pricing']
+370206,OKLAHOMA SPINE HOSPITAL,OK,OKLAHOMA CITY,https://oklahomaspine.com/,,,https://oklahomaspine.com/price-transparency/,"['price transparency', 'transparency']"
+344007,OLD VINEYARD YOUTH SERVICES,NC,WINSTON SALEM,https://oldvineyardbhs.com/,https://oldvineyardbhs.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/201943356-old-vineyard-standard_charges.csv,/standard-services,['standard services']
+451354,HAMILTON HOSPITAL,TX,OLNEY,https://olneyhamiltonhospital.com/,,,"https://olneyhamiltonhospital.com/services/service-charges/ , https://olneyhamiltonhospital.com/billing-information/ , https://secure.claraprice.net/price-transparency/olney-hamilton","['price transparency', 'billing', 'charges', 'transparency']"
+451320,OMNIPOINT HEALTH HOSPITAL,TX,ANAHUAC,https://omnipointhealth.com/locations/hospital/,,,"https://secure.claraprice.net/price-transparency/omnipoint-health , https://omnipoint-hospital-price-transparency-torchnet.hub.arcgis.com/","['price transparency', 'charges', 'transparency']"
+330412,OMNI SURGERY CENTER,NY,UTICA,https://omnisurgery.com/,,,,"['billing', 'charges']"
+331319,MEDINA MEMORIAL HOSPITAL,NY,MEDINA,https://orleanscommunityhealth.org/,,,https://orleanscommunityhealth.org/billing-rates-procedures/,['billing']
+280129,ORTHONEBRASKA HOSPITAL,NE,OMAHA,https://orthonebraska.com/,,,https://orthonebraska.com/patients-visitors/billing-insurance/,['billing']
+370078,OKLAHOMA STATE UNIVERSITY MEDICAL CENTER,OK,TULSA,https://osumc.com/,,,"https://osumc.com/resources/standard-hospital-charges/ , https://osumc.com/resources/no-surprise-billing/","['billing', 'charges']"
+050788,"PACIFIC HEIGHTS SURGERY CENTER OF SAN FRANCISCO, L",CA,SAN FRANCISCO,https://pacificheightssc.com/,,,https://pacificheightssc.com/patient-information/billing-insurance/,['billing']
+061328,PAGOSA SPRINGS MEDICAL CENTER,CO,PAGOSA SPRINGS,https://pagosaspringsmedicalcenter.org/,,,"/patients-families/insurance-billing/ , patients-families/transparency-pricing/ , /patients-families/insurance-billing/PatientsRights-En.pdf , /patients-families/insurance-billing/UniformApplication.pdf","['pricing', 'billing', 'transparency']"
+451332,PALACIOS COMMUNITY MEDICAL CENTER,TX,PALACIOS,https://palacioshospital.net/,,,https://palacioshospital.net/patients-visitors/pricing-transparency/,"['price transparency', 'pricing', 'billing', 'transparency']"
+424006,PALMETTO LOWCOUNTRY BEHAVIORAL HEALTH,SC,CHARLESTON,https://palmettobehavioralhealth.com/,https://palmettobehavioralhealth.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/571101380-palmetto-low-country-standard_charges.csv,https://palmettobehavioralhealth.com/standard-services/,['standard services']
+670138,"PARK AMBULATORY SURGERY CENTER, LLC",TX,PLANO,https://parksurgerycenter.com/,,,https://parksurgerycenter.com/transparency-information/,['transparency']
+171346,PATTERSON HEALTH CENTER,KS,ANTHONY,https://pattersonhc.org/,,,/price-transparency,"['price transparency', 'transparency']"
+144029,"PAVILION FOUNDATION, THE",IL,CHAMPAIGN,https://pavilionhospital.com/,https://pavilionhospital.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/232800410-pavilion-standard_charges.csv,https://pavilionhospital.com/standard-services/,['standard services']
+171345,PAWNEE VALLEY COMMUNITY HOSPITAL,KS,LARNED,https://pawneevalleyhospital.com/,,,,['billing']
+464014,PROVO CANYON BEHAVIORAL HOSPITAL,UT,OREM,https://pcbh.com/,https://pcbh.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/233044423-provo-canyon-standard_charges.csv,https://pcbh.com/standard-services/,['standard services']
+510046,PRINCETON COMMUNITY HOSPITAL,WV,PRINCETON,https://pchonline.org/,,,,"['pricing', 'billing']"
+510071,BLUEFIELD REGIONAL MEDICAL CENTER,WV,BLUEFIELD,https://pchonline.org/,,,,"['pricing', 'billing']"
+150166,PINNACLE HOSPITAL,IN,CROWN POINT,https://pinnaclehealthcare.net/,,,,['pricing']
+044013,PINNACLE POINTE BEHAVIORAL HEALTH SYSTEM,AR,LITTLE ROCK,https://pinnaclepointehospital.com/,https://pinnaclepointehospital.com/standard-services,https://uhsfilecdn.eskycity.net/bh/621658502-pinnacle-point-standard_charges.csv,https://pinnaclepointehospital.com/standard-services,['standard services']
+670286,"POST OAK ER, LLC",TX,HOUSTON,https://postoaker.com/,,,,"['pricing', 'charges']"
+371301,PRAGUE REGIONAL MEMORIAL HOSPITAL,OK,PRAGUE,https://prague.hospital/,,,https://prague.hospital/pricing/,"['price transparency', 'pricing', 'transparency']"
+271309,PRAIRIE COMMUNITY HOSPITAL,MT,TERRY,https://prairiecommunityhospital.com/,,,/pricing,['pricing']
+670139,HURST AMBULATORY SURGERY CENTER,TX,HURST,https://precinctsurgerycenter.com/,https://precinctsurgerycenter.com/transparency-information/,,https://precinctsurgerycenter.com/transparency-information/,['transparency']
+670174,PRESTIGE EMERGENCY ROOM,TX,SAN ANTONIO,https://prestigeer.com/,,,https://prestigeer.com/billing-insurance,"['pricing', 'billing']"
+670175,PRESTIGE EMERGENCY ROOM-POTRANCO LLC,TX,SAN ANTONIO,https://prestigeer.com/,,,https://prestigeer.com/billing-insurance,"['pricing', 'billing']"
+400122,PROFESSIONAL HOSPITAL GUAYNABO INC,PR,GUAYNABO,https://professionalhospital.net/,,,,['pricing']
+170146,PROVIDENCE MEDICAL CENTER,KS,KANSAS CITY,https://providencekc.com/,,,/billing-insurance-information/,"['pricing', 'billing', 'transparency']"
+370241,PHYSICIANS SURGICAL CENTER,OK,MOORE,https://pscnorman.com/,,,,['billing']
+193067,REHABILITATION HOSPITAL OF JENNINGS,LA,JENNINGS,https://rehabhospitalofjennings.com/,,,,"['price transparency', 'transparency']"
+441310,RHEA MEDICAL CENTER,TN,DAYTON,https://rheamedical.org/,,,"https://rheamedical.org/patients-visitors/price-listing/ , https://rheamedical.org/patients-visitors/billing-information/ , https://rheamedical.org/careers/uhc-transparency-in-coverage/ , /patients-visitors/billing-information/","['billing', 'price listing', 'transparency']"
+364047,RIDGEVIEW BEHAVIORAL HOSPITAL,OH,MIDDLE POINT,https://ridgeviewhospital.net/,,,"https://ridgeviewhospital.net/financial-resources/contact-billing/ , https://ridgeviewhospital.net/financial-resources/general-pricing-information/ , https://ridgeviewhospital.net/financial-resources/pricing-information-faqs/","['pricing', 'billing']"
+114012,RIDGEVIEW INSTITUTE,GA,SMYRNA,https://ridgeviewinstitute.com/,,,"https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=52d6da24-63d1-48f4-87af-82c3c73b3591 , https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=42d83c64-f601-40e2-8053-b7046597a2a0","['pricing', 'standard services']"
+114037,RIDGEVIEW INSTITUTE MONROE,GA,MONROE,https://ridgeviewinstitute.com/,,,"https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=52d6da24-63d1-48f4-87af-82c3c73b3591 , https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=42d83c64-f601-40e2-8053-b7046597a2a0","['pricing', 'standard services']"
+670272,RIGHT CHOICE EMERGENCY ROOM,TX,SPRING,https://rightchoiceurgentcare.com/,,,https://rightchoiceurgentcare.com/for-patients/billing-insurance/,['billing']
+144009,RIVEREDGE HOSPITAL,IL,FOREST PARK,https://riveredgehospital.com/,https://riveredgehospital.com/standard-services-2/,https://uhsfilecdn.eskycity.net/bh/223682760-riveredge-standard_charges.csv,https://riveredgehospital.com/standard-services-2/,"['transparency', 'standard services']"
+514008,RIVER PARK HOSPITAL,WV,HUNTINGTON,https://riverparkhospital.net/,,,/standard-services/,['standard services']
+010038,STRINGFELLOW CAMPUS OF NORTHEAST RMC,AL,ANNISTON,https://rmccares.org/,,,,['pricing']
+010078,NORTHEAST ALABAMA REGIONAL MEDICAL CENTER,AL,ANNISTON,https://rmccares.org/,,,,['pricing']
+084002,ROCKFORD CENTER,DE,NEWARK,https://rockfordcenter.com/,https://rockfordcenter.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/233044421-rockford-standard_charges.csv,https://rockfordcenter.com/standard-services/,['standard services']
+444007,ROLLING HILLS PSYCHIATRIC HOSPITAL,TN,FRANKLIN,https://rollinghillshospital.org/,https://rollinghillshospital.org/standard-services/,https://uhsfilecdn.eskycity.net/bh/205566098-rolling-hills-standard_charges.csv,"https://rollinghillshospital.org/standard-services/ , /standard-services",['standard services']
+670121,SAINT CAMILLUS MEDICAL CENTER,TX,HURST,https://saintcamillusmc.com/,,,"https://saintcamillusmc.com/patients-visitors/pricing-transparency/ , https://saintcamillusmc.com/patients-visitors/billing-insurance/","['pricing', 'billing', 'transparency']"
+464013,SALT LAKE BEHAVIORAL HEALTH,UT,SALT LAKE CITY,https://saltlakebehavioralhealth.com/,https://saltlakebehavioralhealth.com/standard-services-2/,https://uhsfilecdn.eskycity.net/bh/271365684-salt-lake-standard_charges.csv,https://saltlakebehavioralhealth.com/standard-services-2/,"['transparency', 'standard services']"
+234040,SAMARITAN BEHAVIORAL CENTER,MI,DETROIT,https://samaritancenterdetroit.org/,,,,['pricing']
+461308,SAN JUAN HOSPITAL,UT,MONTICELLO,https://sanjuanhealth.org/,,,,['pricing']
+380056,SANTIAM HOSPITAL,OR,STAYTON,https://santiamhospital.org/,,,https://santiamhospital.org/patients-visitors-info-2/patient-billing-financial-assistance/,"['pricing', 'billing']"
+281307,SAUNDERS MEDICAL CENTER,NE,WAHOO,https://saundersmedicalcenter.com/,,,https://saundersmedicalcenter.com/hospital/patient-information/pricing-information.html,"['pricing', 'billing', 'transparency']"
+190025,SAVOY MEDICAL CENTER,LA,MAMOU,https://savoymedical.com/,,,,['pricing']
+050792,"SAXON SURGICAL CENTER, INC",CA,THOUSAND OAKS,https://saxonsurgerycenter.com/,,,/insurance-billing,"['billing', 'transparency']"
+261306,SULLIVAN COUNTY MEMORIAL HOSPITAL,MO,MILAN,https://scmhospital.org/,,,https://scmhospital.org/charges-for-hospital-services/,['charges']
+250058,SOUTH CENTRAL REG MED CTR,MS,LAUREL,https://scrmc.com/,,,https://scrmc.com/patients-visitors/pricing-information/,['pricing']
+050789,"SEQUOIA SURGICAL CENTER, LP",CA,WALNUT CREEK,https://sequoiasurgery.org/,,,https://sequoiasurgery.org/billing-insurance/,['billing']
+459810,SETON MEDICAL CENTER,TX,AUSTIN,https://setonharkerheights.net/,,,https://setonharkerheights.net/surprise-billing,['billing']
+310047,SHORE MEDICAL CENTER,NJ,SOMERS POINT,https://shoremedicalcenter.org/,,,,['billing']
+054087,"SIERRA VISTA HOSPITAL, INC",CA,SACRAMENTO,https://sierravistahospital.com/,https://sierravistahospital.com/standard-services-2/,https://uhsfilecdn.eskycity.net/bh/621658512-sierra-vista-standard_charges.csv,https://sierravistahospital.com/standard-services-2/,['standard services']
+074014,SILVER HILL HOSPITAL INC,CT,NEW CANAAN,https://silverhillhospital.org/,,,,['pricing']
+351307,ST ANDREWS HEALTH CENTER - CAH,ND,BOTTINEAU,https://smphealth.org/,,,,['pricing']
+351327,SMP HEALTH ST ALOISIUS,ND,HARVEY,https://smphealth.org/,,,,['pricing']
+104049,SOUTHERN WINDS,FL,HIALEAH,https://southernwindshospital.com/,,,,"['pricing', 'charges', 'standard services']"
+450856,SOUTH TEXAS SPINE AND SURGICAL HOSPITAL,TX,SAN ANTONIO,https://southtexassurgical.com/,,,"https://southtexassurgical.com/pricing-information/ , /pricing-information/","['pricing', 'transparency']"
+190278,SPECIALISTS HOSPITAL SHREVEPORT,LA,SHREVEPORT,https://specialistshospitalshreveport.com/,,,"https://specialistshospitalshreveport.com/patient-resources/cms-mandate-hospital-price-transparency/ , https://specialistshospitalshreveport.com/about/notice-of-charges-common-procedures/","['price transparency', 'billing', 'charges', 'transparency']"
+190266,THE SPINE HOSPITAL OF LOUISIANA,LA,BATON ROUGE,https://spinehola.com/,,,"https://spinehola.com/for-patients/insurance-billing/ , https://spinehola.com/for-patients/patient-pricing-information/","['pricing', 'billing']"
+114016,ST SIMONS-BY-THE-SEA,GA,SAINT SIMONS ISLAND,https://ssbythesea.com/,https://ssbythesea.com/standard-services-2/,https://uhsfilecdn.eskycity.net/bh/203854107-st-simons-standard_charges.csv,https://ssbythesea.com/standard-services-2/,"['billing', 'standard services']"
+050283,STANFORD HEALTH CARE - VALLEYCARE,CA,PLEASANTON,https://stanfordhealthcare.org/,,,https://stanfordhealthcare.org/for-patients-visitors/billing.html,['billing']
+260085,ST JOSEPH MEDICAL CENTER,MO,KANSAS CITY,https://stjosephkc.com/,,,/billing-insurance-information/,"['pricing', 'billing']"
+260232,ST LOUIS SPINE AND OTHOPEDIC SURGERY CENTER,MO,TOWN AND COUNTRY,https://stlspine-ortho.com/,,,/billing-and-insurance,"['billing', 'prices']"
+260193,ST MARY'S MEDICAL CENTER,MO,BLUE SPRINGS,https://stmaryskc.com/,,,/billing-insurance-information/,"['pricing', 'billing']"
+144034,BHC STREAMWOOD HOSPITAL INC,IL,STREAMWOOD,https://streamwoodhospital.com/,https://streamwoodhospital.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/621658515-streamwood-standard_charges.csv,/standard-services/,['standard services']
+371316,STROUD REGIONAL MEDICAL CENTER,OK,STROUD,https://stroudhospital.com/,,,"https://stroudhospital.com/pricing/ , https://stroudhospital.com/pricingservices/","['standard charges', 'pricing', 'charges']"
+230096,STURGIS HOSPITAL,MI,STURGIS,https://sturgishospital.com/,,,https://sturgishospital.com/hospital-pricing/,['pricing']
+673068,PAM HEALTH REHABILITATION HOSPITAL OF SURGAR LAND,TX,SUGAR LAND,https://sugarlandrehabhospital.com/,,,,['pricing']
+104078,SUNCOAST BEHAVIORAL HEALTH CENTER,FL,BRADENTON,https://suncoastbhc.com/,https://suncoastbhc.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/650816927-suncoast-standard_charges.csv,/standard-services,['standard services']
+050846,SURGERY CENTER OF LONG BEACH,CA,LONG BEACH,https://surgerycenteroflongbeach.com/,,,"https://surgerycenteroflongbeach.com/for-patients/insurance-and-billing/ , /for-patients/insurance-and-billing , https://surgerycenteroflongbeach.com/billing-disclosure/",['billing']
+050825,SURGERY CENTER OF SOUTH BAY,CA,TORRANCE,https://surgerycentersouthbay.com/,,,"https://surgerycentersouthbay.com/for-patients/insurance-and-billing/ , /for-patients/insurance-and-billing , https://surgerycentersouthbay.com/billing-disclosure/",['billing']
+420116,SYNERGY SPINE CENTER,SC,SENECA,https://synergyspinecenter.com/,,,"https://synergyspinecenter.com/pricing/ , https://synergyspinecenter.com/pricing-disclaimer/",['pricing']
+050819,SYNERGY SURGICAL CENTER,CA,WESTLAKE VILLAGE,https://synergysurgicalcenter.com/,,,,['pricing']
+110135,TAYLOR REGIONAL HOSPITAL,GA,HAWKINSVILLE,https://taylorregional.org/,,,,['pricing']
+351331,TOWNER COUNTY MEDICAL CENTER,ND,CANDO,https://tcmedcenter.org/,,,,"['pricing', 'transparency']"
+044005,"BRIDGEWAY INC, THE",AR,NORTH LITTLE ROCK,https://thebridgeway.com/,https://thebridgeway.com/standard-services-2/,,https://thebridgeway.com/standard-services-2/,"['transparency', 'standard services']"
+184007,THE BROOK HOSPITAL - DUPONT,KY,LOUISVILLE,https://thebrookhospitals.com/,https://thebrookhospitals.com/standard-services-2/,,https://thebrookhospitals.com/standard-services-2/,['standard services']
+184008,THE BROOK HOSPITAL - KMI,KY,LOUISVILLE,https://thebrookhospitals.com/,https://thebrookhospitals.com/standard-services-2/,,https://thebrookhospitals.com/standard-services-2/,['standard services']
+424010,"CAROLINA CTR FOR BEHAVIORAL HEALTH,THE",SC,GREER,https://thecarolinacenter.com/,https://thecarolinacenter.com/standard-services-2/,,https://thecarolinacenter.com/standard-services-2/,['standard services']
+014016,"SANCTUARY AT THE WOODLANDS, THE",AL,CULLMAN,https://thesanctuaryatthewoodlands.com/,,,,['pricing']
+510031,SAINT FRANCIS HOSPITAL,WV,CHARLESTON,https://thomashealth.org/,,,"https://thomashealth.org/billing-and-financial-assistance/ , https://thomashealth.org/price-transparency/","['price transparency', 'billing', 'transparency']"
+424008,THREE RIVERS BEHAVIORAL HEALTH,SC,WEST COLUMBIA,https://threeriversbehavioral.org/,,,https://threeriversbehavioral.org/standard-services/,['standard services']
+670196,"TLC CORPUS EMERGENCY CARE, LLC",TX,CORPUS CHRISTI,https://tlcmedicalcenter.com/,,,,"['pricing', 'prices']"
+191301,UNION GENERAL HOSPITAL,LA,FARMERVILLE,https://uniongen.org/,https://www.uniongen.org/patient-info/hospital-charges/,,/patient-info/hospital-charges/,"['price transparency', 'charges', 'transparency']"
+32001E,CARRIE TINGLEY CRIPPLED CHILDREN HOSP,NM,TRUTH OR CONSEQUENCES,https://unmhealth.org/,,,https://unmhealth.org/patients-visitors/billing-insurance/index.html,['billing']
+07001F,US COAST GUARD ACADEMY HOSP,CT,NEW LONDON,https://uscga.edu/,,,,['billing']
+464001,UTAH STATE HOSPITAL,UT,PROVO,https://ush.utah.gov/,,,,['pricing']
+154024,VALLE VISTA HEALTH SYSTEM,IN,GREENWOOD,https://vallevistahospital.com/,,,/standard-services/,['standard services']
+290056,ORTHOPEDIC SPECIALTY HOSPITAL OF NEVADA,NV,LAS VEGAS,https://valleyhealthspecialty.com/,,,https://www.springvalleyhospital.com/patients-visitors/pricing-guide,['pricing']
+034026,VALLEY HOSPITAL,AZ,PHOENIX,https://valleyhospital-phoenix.com/,,,/standard-services/,['standard services']
+050517,VICTOR VALLEY GLOBAL MEDICAL CENTER,CA,VICTORVILLE,https://victorvalleyglobalmedicalcenter.com/,,,https://victorvalleyglobalmedicalcenter.com/billing-and-payments/,"['pricing', 'billing', 'transparency']"
+670229,RIVER OAKS EMERGENCY CENTER LLC,TX,HOUSTON,https://villageec.com/,,,"https://villageec.com/insurance-billing/ , /insurance-billing/ , /insurance-billing","['pricing', 'billing', 'prices']"
+670249,"VILLAGE EMERGENCY ROOM, LLC",TX,JERSEY VILLAGE,https://villageec.com/,,,"https://villageec.com/insurance-billing/ , /insurance-billing/ , /insurance-billing","['pricing', 'billing', 'prices']"
+531303,WESTON COUNTY HEALTH SERVICES,WY,NEWCASTLE,https://wchs-wy.org/,,,"https://wchs-wy.org/standard-charges/ , /understand-your-billing/","['pricing', 'billing', 'charges']"
+261308,WASHINGTON COUNTY MEMORIAL HOSPITAL,MO,POTOSI,https://wcmhosp.org/,,,"https://wcmhosp.org/patients-and-visitors/price-transparency/ , https://wcmhosp.org/wp-content/uploads/2022/08/430795215-washingtoncountymemorialhospital_standardcharges0522.csv","['price transparency', 'charges', 'transparency']"
+104069,WEKIVA SPRINGS,FL,JACKSONVILLE,https://wekivacenter.com/,,,https://wekivacenter.com/standard-services/,['standard services']
+104001,SOUTH FLORIDA STATE HOSPITAL,FL,PEMBROKE PINES,https://wellpathcare.com/,,,,['pricing']
+454026,WEST OAKS HOSPITAL,TX,HOUSTON,https://westoakshospital.com/,,,https://westoakshospital.com/standard-services,['standard services']
+501339,WHIDBEYHEALTH MEDICAL CENTER,WA,COUPEVILLE,https://whidbeyhealth.org/,,,,['billing']
+110124,WAYNE MEMORIAL HOSPITAL,GA,JESUP,https://wmhweb.com/,,,https://wmhweb.com/charges-list/,"['charges', 'transparency']"
+510001,"WEST VIRGINIA UNIVERSITY HOSPITALS, INC",WV,MORGANTOWN,https://wvumedicine.org/,,,https://wvumedicine.org/bill-pay/pricing-transparency/,"['price transparency', 'standard charges', 'pricing', 'charges', 'transparency']"
+510047,FAIRMONT REGIONAL MEDICAL CENTER,WV,FAIRMONT,https://wvumedicine.org/,,,https://wvumedicine.org/bill-pay/pricing-transparency/,"['price transparency', 'standard charges', 'pricing', 'charges', 'transparency']"
+45058F,US AIR FORCE HOSP,TX,ABILENE,https://www.59mdw.af.mil/,,,,['transparency']
+421300,ALLENDALE COUNTY HOSPITAL,SC,FAIRFAX,https://www.achospital.org/,,,,"['price transparency', 'transparency']"
+041323,ASHLEY COUNTY MEDICAL CENTER,AR,CROSSETT,https://www.acmconline.org/,,,/about-us/billing-insurance/,['billing']
+050773,SAN LEANDRO HOSPITAL,CA,SAN LEANDRO,https://www.alamedahealthsystem.org/locations/san-leandro-hospital/,,,https://www.alamedahealthsystem.org/ahs-quality-transparency-dashboard/,"['pricing', 'transparency']"
+250012,ALLIANCE HEALTHCARE SYSTEM,MS,HOLLY SPRINGS,https://www.alliancehcs.org/,,,,['pricing']
+050837,POWAY SURGERY CENTER,CA,POWAY,https://www.amsurg.com/,,,/billing-disclosure,['billing']
+450078,ANSON GENERAL HOSPITAL,TX,ANSON,https://www.ansongeneralhospital.com/,,,,"['price transparency', 'pricing', 'billing', 'prices', 'transparency']"
+04020E,ARKANSAS CHILDRENS COLONY HOSP,AR,CONWAY,https://www.archildrens.org/,,,"/patients-and-visitors/billing-and-insurance/insurance-and-managed-care , https://mychart.archildrens.org/mychart/billing/guestpay/payasguest , /patients-and-visitors/billing-and-insurance/",['billing']
+400127,ADMIN DE SERVICIOS MEDICOS  PUERTO RIC,PR,SAN JUAN,https://www.asem.pr.gov/,,,,['transparency']
+670093,ASPIRE HOSPITAL,TX,CONROE,https://www.aspirehealthcorp.com/,,,https://www.aspirehealthcorp.com/about-us/price-transparency/,"['price transparency', 'pricing', 'transparency']"
+490018,AUGUSTA HEALTH,VA,FISHERSVILLE,https://www.augustahealth.com/,,,/patients-visitors/patient-resources/billing/,['billing']
+112000,ROOSEVELT WARM SPRINGS LTAC HOSPITAL,GA,WARM SPRINGS,https://www.augustahealth.org/,,,"/billing/ , /billing/patient-pricing , https://www.augustahealth.org/billing/patient-pricing , /billing/financial-assistance/","['pricing', 'billing', 'transparency']"
+113028,ROOSEVELT WARM SPRINGS REHABILITATION HOSPITAL,GA,WARM SPRINGS,https://www.augustahealth.org/,,,"/billing/ , /billing/patient-pricing , https://www.augustahealth.org/billing/patient-pricing , /billing/financial-assistance/","['pricing', 'billing', 'transparency']"
+034035,AVENIR BEHAVIORAL HEALTH CENTER,AZ,SURPRISE,https://www.avenirseniorliving.com/senior-living/az/surprise/behavioral-health/,,,,"['pricing', 'transparency']"
+431302,AVERA MISSOURI RIVER HEALTH CENTER,SD,GETTYSBURG,https://www.avera.org/,,,"/patients-visitors/billing-insurance/pay-your-bill-online/ , /patients-visitors/price-transparency/get-an-estimate/","['billing', 'transparency']"
+061336,ARKANSAS VALLEY REGIONAL MEDICAL CENTER,CO,LA JUNTA,https://www.avrmc.org/,,,https://secure.claraprice.net/price-transparency/arkansas-valley?sub=For%20Patients,"['price transparency', 'transparency']"
+034021,ARIZONA STATE HOSPITAL,AZ,PHOENIX,https://www.azdhs.gov/az-state-hospital/index.php,,,,['transparency']
+030107,ARIZONA SPINE AND JOINT HOSPITAL,AZ,MESA,https://www.azspineandjoint.com/,,,https://www.azspineandjoint.com/patient-pricing-information/,['pricing']
+111327,BACON COUNTY HOSPITAL,GA,ALMA,https://www.baconcountyhospital.com/,,,,"['price transparency', 'transparency']"
+440017,HOLSTON VALLEY MEDICAL CENTER,TN,KINGSPORT,https://www.balladhealth.org/,,,/patients-visitors/price-estimator-standard-charges,"['price transparency', 'standard charges', 'billing', 'charges', 'transparency']"
+440063,JOHNSON CITY MEDICAL CENTER,TN,JOHNSON CITY,https://www.balladhealth.org/,,,/patients-visitors/price-estimator-standard-charges,"['price transparency', 'standard charges', 'billing', 'charges', 'transparency']"
+033042,BANNER REHABILITATION HOSPITAL-WEST,AZ,PEORIA,https://www.bannerhealth.com/,,,"/patients/billing , /patients/billing/financial-assistance","['billing', 'transparency']"
+400032,BAYAMON MEDICAL CENTER,PR,BAYAMON,https://www.bayamon-medical.com/,,,,['transparency']
+131317,BENEWAH COMMUNITY HOSPITAL,ID,ST MARIES,https://www.bchmed.org/,,,,['billing']
+239806,BEAUMONT HEALTH SYSTEM,MI,ROYAL OAK,https://www.beaumont.org/,,,"https://www.beaumont.org/patients-families/billing/pricing , https://www.beaumont.org/patients-families/billing/bill-pay , https://www.beaumont.org/patients-families/billing/insurance-enrollment , /patients-families/billing/insurance-plans , /patients-families/billing/pricing","['pricing', 'billing', 'transparency']"
+190050,BEAUREGARD MEMORIAL HOSPITAL,LA,DERIDDER,https://www.beauregard.org/,,,"/patients-and-visitors/financial-arrangements/pricing-transparency-chargemaster/ , /patients-and-visitors/financial-arrangements/average-charges-for-diagnosis-related-groups-drg/ , /patients-and-visitors/financial-arrangements/covid-19-test-prices/","['pricing', 'prices', 'charges', 'transparency']"
+080007,BEEBE MEDICAL CENTER,DE,LEWES,https://www.beebehealthcare.org/,,,/patients-visitors/billing-collection-policy,['billing']
+520049,BELLIN MEMORIAL HOSPITAL,WI,GREEN BAY,https://www.bellin.org/,,,"/patients_visitors/patient-information/price-transparency , /patients_visitors/billing-insurance","['price transparency', 'billing', 'transparency']"
+521356,BELLIN HEALTH OCONTO HOSPITAL,WI,OCONTO,https://www.bellin.org/,,,"/patients_visitors/patient-information/price-transparency , /patients_visitors/billing-insurance","['price transparency', 'billing', 'transparency']"
+524038,BELLIN PSYCHIATRIC CENTER,WI,GREEN BAY,https://www.bellin.org/,,,"/patients_visitors/patient-information/price-transparency , /patients_visitors/billing-insurance","['price transparency', 'billing', 'transparency']"
+520100,BELOIT MEMORIAL HOSPITAL,WI,BELOIT,https://www.beloithealthsystem.org/,,,/patients-visitors/insurance-billing/,['billing']
+131316,BEAR LAKE MEMORIAL HOSPITAL,ID,MONTPELIER,https://www.blmhospital.com/,,,"https://www.blmhospital.com/patient-services/no-surprise-billing-act/ , https://www.blmhospital.com/about-us/patient-pricing-resource/ , https://www.blmhospital.com/billing/","['pricing', 'billing']"
+420067,BEAUFORT COUNTY MEMORIAL HOSPITAL,SC,BEAUFORT,https://www.bmhsc.org/,,,"/patients-and-visitors/for-patients/billing-insurance/pay-my-bill-online , /patients-and-visitors/for-patients/billing-insurance/ , /patients-and-visitors/for-patients/billing-insurance/pay-my-bill-online.aspx , /patients-and-visitors/for-patients/billing-insurance/financial-assistance",['billing']
+180036,OUR LADY OF BELLEFONTE HOSPITAL,KY,ASHLAND,https://www.bonsecours.com/,,,,['pricing']
+490011,BON SECOURS DEPAUL MEDICAL CENTER,VA,NORFOLK,https://www.bonsecours.com/,,,,['pricing']
+224022,BOURNEWOOD HOSPITAL,MA,BOSTON COLLEGE,https://www.bournewood.com/,,,,"['standard charges', 'charges']"
+154014,OTIS R BOWEN CENTER FOR HUMAN SERVICES INC,IN,PIERCETON,https://www.bowencenter.org/,,,,['billing']
+254007,BRENTWOOD BEHAVIORAL HEALTHCARE OF MS,MS,FLOWOOD,https://www.brentwoodjackson.com/,,,https://www.brentwoodjackson.com/standard-services/,['standard services']
+450399,BROWNFIELD REGIONAL MEDICAL CENTER,TX,BROWNFIELD,https://www.brownfield-rmc.org/,,,https://secure.claraprice.net/price-transparency/brownfield-rmc,"['price transparency', 'pricing', 'billing', 'prices', 'transparency']"
+193028,BATON ROUGE REHAB HOSPITAL,LA,BATON ROUGE,https://www.brrehab.com/,,,/patient-info-center/understanding-hospital-charges,['charges']
+280139,GRAND ISLAND REGIONAL MEDICAL CENTER,NE,GRAND ISLAND,https://www.bryanhealth.com/,,,"/patients-visitors/pricing-insurance-financial-assistance-billing/ , /patients-visitors/pricing-insurance-financial-assistance-billing/pay-my-bill/","['pricing', 'billing']"
+110113,BURKE MEDICAL CENTER,GA,WAYNESBORO,https://www.burkehealth.com/,,,https://www.burkehealth.com/patients-visitors/billing-and-insurance/,['billing']
+210039,CALVERTHEALTH MEDICAL CENTER,MD,PRINCE FREDERICK,https://www.calverthealthmedicine.org/,,,,"['price transparency', 'charges', 'transparency']"
+504011,CASCADE BEHAVIORAL HOSPITAL,WA,TUKWILA,https://www.cascadebh.com/,https://www.cascadebh.com/admissions/insurance-payment-information/rates-pricing/,,/admissions/insurance-payment-information/rates-pricing/,['pricing']
+181309,CASEY COUNTY HOSPITAL,KY,LIBERTY,https://www.caseycountyhospital.com/,,,/patient-information/standard-charges,"['standard charges', 'charges']"
+340143,CATAWBA VALLEY MEDICAL CENTER,NC,HICKORY,https://www.catawbavalleyhealth.org/,,,,['billing']
+103027,ST ANTHONY'S REHABILITATION HOSPITAL,FL,LAUDERDALE LAKES,https://www.catholichealthservices.org/,,,"https://www.catholichealthservices.org/rehabilitation-hospitals/pricing-billing-information/ , https://www.catholichealthservices.org/rehabilitation-hospitals/pricing-billing-information/st-anthonys/ , https://www.catholichealthservices.org/rehabilitation-hospitals/pricing-billing-information/st-catherines/ , https://www.catholichealthservices.org/rehabilitation-hospitals/pricing-billing-information/st-catherines-west/","['pricing', 'billing']"
+351319,PEMBINA COUNTY MEMORIAL HOSPITAL,ND,CAVALIER,https://www.cavalierhospital.com/,,,,"['price transparency', 'transparency']"
+371319,MARY HURLEY HOSPITAL,OK,COALGATE,https://www.ccghospital.com/,,,,"['price transparency', 'transparency']"
+261323,CEDAR COUNTY MEMORIAL HOSPITAL,MO,EL DORADO SPRINGS,https://www.ccmh.co/,,,,"['price transparency', 'billing', 'transparency']"
+370056,COMANCHE COUNTY MEMORIAL HOSPITAL,OK,LAWTON,https://www.ccmhhealth.com/,,,https://www.ccmhhealth.com/insurance-and-pricing/,"['pricing', 'billing']"
+181310,CARROLL COUNTY MEMORIAL HOSPITAL,KY,CARROLLTON,https://www.ccmhosp.com/,,,"https://www.ccmhosp.com/financial-information/hospital-price-transparency/ , https://www.ccmhosp.com/financial-information/hospital-price-transparency/carroll-county-memorial-hospital-price-transparency-tools/","['price transparency', 'transparency']"
+021307,CORDOVA COMMUNITY MEDICAL CENTER,AK,CORDOVA,https://www.cdvcmc.com/,,,,"['pricing', 'billing', 'transparency']"
+490088,BEDFORD MEMORIAL HOSPITAL,VA,BEDFORD,https://www.centrahealth.com/,,,/pricing-information,['pricing']
+490090,"SOUTHSIDE COMMUNITY HOSPITAL, INC",VA,FARMVILLE,https://www.centrahealth.com/,,,/pricing-information,['pricing']
+461304,CENTRAL VALLEY MEDICAL CENTER - CAH,UT,NEPHI,https://www.centralvalleymedicalcenter.com/,,,"/patients-visitors/accounts-billing/ , /patients-visitors/accounts-billing/medical-records/ , /patients-visitors/accounts-billing/price-estimator/ , /patients-visitors/accounts-billing/financial-assistance/",['billing']
+492010,CENTRA SPECIALTY HOSPITAL,VA,LYNCHBURG,https://www.centraspecialtyhospital.com/,,,,"['pricing', 'billing']"
+40015E,EL BUEN PASTOR,PR,ARECIBO,https://www.centrobuenpastor.org/,,,,"['pricing', 'transparency']"
+170175,CENTURA ST CATHERINE HOSPITAL - DODGE CITY,KS,DODGE CITY,https://www.centura.org/,https://www.centura.org/patient-tools/pricing/costs-common-procedures,,"/patients-and-families/billing-and-financial-services , /patients-and-families/pricing , /patient-tools/billing-and-financial-services","['pricing', 'billing']"
+171354,"COMMUNITY HOSPITAL, ONAGA AND ST MARYS CAMPUS",KS,ONAGA,https://www.chcsks.org/,,,"/patients-families/billing-insurance , /patients-families/service-pricing-information","['pricing', 'billing']"
+300019,CHESHIRE MEDICAL CENTER,NH,KEENE,https://www.cheshiremed.org/,https://www.cheshiremed.org/patients-visitors/billing-charges,,/patients-visitors/billing-charges,"['billing', 'charges']"
+06019E,CHILDRENS HOSPITAL ASSOCIATION THE,CO,AURORA,https://www.childrenscolorado.org/,,,,"['prices', 'transparency']"
+069867,CHILDRENS HOSPITAL ASSOCIATION THE,CO,AURORA,https://www.childrenscolorado.org/,,,,"['prices', 'transparency']"
+249806,CHILDREN'S HOSPITALS OF MN ORGAN TRANSPLANT,MN,MINNEAPOLIS,https://www.childrensmn.org/,,,"/your-visit/after-your-visit/billing-and-financial-matters/price-transparency/ , /your-visit/after-your-visit/billing-and-financial-matters/online-bill-pay/","['billing', 'transparency']"
+450369,CHILDRESS REGIONAL MEDICAL CENTER,TX,CHILDRESS,https://www.childresshospital.com/,,,,"['price transparency', 'transparency']"
+180010,SAINT JOSEPH HOSPITAL,KY,LEXINGTON,https://www.chisaintjosephhealth.org/,,,,['billing']
+059813,CHILDREN'S HOSPITAL OF LOS ANGELES,CA,LOS ANGELES,https://www.chla.org/,,,/billing-and-insurance-paying-care,['billing']
+193300,CHILDRENS HOSPITAL,LA,NEW ORLEANS,https://www.chnola.org/,,,"/patients-visitors/billing-insurance/ , /documents/surprise-billing.pdf",['billing']
+053304,CHILDREN'S HOSPITAL OF ORANGE COUNTY,CA,ORANGE,https://www.choc.org/,https://www.choc.org/patients-family/pricing-transparency/,,"/patients-family/pricing-transparency/ , /patients-family/medical-records-billing/?link=top-nav , /patients-family/medical-records-billing/?link=footer","['pricing', 'billing', 'charges', 'transparency']"
+053306,CHILDREN'S HOSPITAL AT MISSION,CA,MISSION VIEJO,https://www.choc.org/,,,"/patients-family/pricing-transparency/ , /patients-family/medical-records-billing/?link=top-nav , /patients-family/medical-records-billing/?link=footer","['pricing', 'billing', 'charges', 'transparency']"
+49033E,VIRGINIA TREATMENT CENTER FOR CHILDREN,VA,RICHMOND,https://www.chrichmond.org/,,,"/chrichmond/patient-and-family-resources/insurance-and-billing , /patient-and-family-resources/insurance-and-billing",['billing']
+360121,COMMUNITY HOSPITALS AND WELLNESS CENTERS,OH,BRYAN,https://www.chwchospital.org/,,,"https://www.chwchospital.org/pricing-disclosure/ , https://www.chwchospital.org/surprise-billing-estimates/","['pricing', 'billing']"
+369806,CINCINNATI CHILDREN'S HOSPITAL MEDICAL CENTER,OH,CINCINNATI,https://www.cincinnatichildrens.org/,,,"/patients/resources/billing , /patients/resources/billing2",['billing']
+440057,CLAIBORNE MEDICAL CENTER,TN,TAZEWELL,https://www.claibornemedicalcenter.com/,,,https://www.claibornemedicalcenter.com/surprise-billing-notice/,['billing']
+010073,CLAY COUNTY HOSPITAL,AL,ASHLAND,https://www.claycountyhospital.com/,,,,"['billing', 'charges', 'transparency']"
+190298,CHRISTUS CENTRAL LOUISIANA SURGICAL HOSPITAL,LA,ALEXANDRIA,https://www.clshospital.com/,,,billing-insurance/index.html,"['price transparency', 'billing', 'transparency']"
+271345,CENTRAL MONTANA MEDICAL CENTER,MT,LEWISTOWN,https://www.cmmc.health/,,,https://www.cmmc.health/for-patients/billing-and-financial-assistance/,"['price transparency', 'billing', 'prices', 'transparency']"
+050797,COASTAL SURGERY CENTER PARTNER,CA,SANTA BARBARA,https://www.coastalsurgerycenter.net/,,,"/billing-insurance , /billing-insurance-1",['billing']
+054091,COMMUNITY BEHAVIORAL HEALTH CENTER,CA,FRESNO,https://www.communitymedical.org/home,,,"/commoncontent/menus/main-menu/specialties-departments/bottom-links/billing-insurance , /for-patients-families/paymybill/hospital-standard-charges-(1) , /for-patients-families/paymybill/your-rights-against-surprise-billing","['standard charges', 'billing', 'charges']"
+040029,"CONWAY REGIONAL MEDICAL CENTER, INC",AR,CONWAY,https://www.conwayregional.org/,,,"/patients-visitors/billing-insurance/estimate-my-cost , /patients-visitors/billing-insurance , /patients-visitors/billing-insurance/insurance-costs , /patients-visitors/billing-insurance/patient-loan-financing , /patients-visitors/billing-insurance/financial-faqs",['billing']
+043033,CONWAY REGIONAL REHABILITATION HOSPITAL,AR,CONWAY,https://www.conwayregional.org/,,,"/patients-visitors/billing-insurance/estimate-my-cost , /patients-visitors/billing-insurance , /patients-visitors/billing-insurance/insurance-costs , /patients-visitors/billing-insurance/patient-loan-financing , /patients-visitors/billing-insurance/financial-faqs",['billing']
+050357,GOLETA VALLEY COTTAGE HOSPITAL,CA,SANTA BARBARA,https://www.cottagehealth.org/,,,/billing/,['billing']
+230070,COVENANT MEDICAL CENTER,MI,SAGINAW,https://www.covenanthealthcare.com/,,,"/main/billing-information.aspx , https://www.covenanthealthcare.com/ch/no-surprise-billing-act",['billing']
+371333,CREEK NATION COMMUNITY HOSPITAL,OK,OKEMAH,https://www.creekhealth.org/,,,,"['price transparency', 'transparency']"
+260047,CAPITAL REGION MEDICAL CENTER,MO,JEFFERSON CITY,https://www.crmc.org/,,,"/patients-and-visitors/billing-insurance/ , /patients-and-visitors/billing-insurance/accepted-insurance/ , /patients-and-visitors/billing-insurance/financial-assistance/ , /patients-and-visitors/billing-insurance/financial-assistance-application/ , /patients-and-visitors/billing-insurance/financial-assistance-faq/ , /patients-and-visitors/billing-insurance/pricing-transparency/ , /patients-and-visitors/billing-insurance/zero-percent-financing/","['pricing', 'billing', 'transparency']"
+440059,COOKEVILLE REGIONAL MEDICAL CENTER,TN,COOKEVILLE,https://www.crmchealth.org/,,,https://www.crmchealth.org/pricing/,['pricing']
+451393,CROCKETT MEDICAL CENTER,TX,CROCKETT,https://www.crockettmedicalcenter.com/,,,,"['pricing', 'prices']"
+45187E,CROCKETT COUNTY HOSP,TX,OZONA,https://www.crockettmedicalcenter.com/,,,,"['pricing', 'prices']"
+399816,CROZER CHESTER MEDICAL CENTER - TRANSPLANT CENTER,PA,UPLAND,https://www.crozerhealth.org/,,,,['billing']
+051991,BROADVIEW INC,CA,LOS ANGELES,https://www.csbroadview.org/,,,,['pricing']
+141990,HILL TOP CENTER,IL,LAKE BLUFF,https://www.cslfallbrook.org/,,,,"['pricing', 'billing', 'prices', 'transparency']"
+241353,CUYUNA REGIONAL MEDICAL CENTER,MN,CROSBY,https://www.cuyunamed.org/contact/crosby,,,/patient-information/billing,['billing']
+454108,CYPRESS CREEK HOSPITAL,TX,HOUSTON,https://www.cypresscreekhospital.com/,,,https://www.cypresscreekhospital.com/standard-services/,['standard services']
+041317,DALLAS COUNTY MEDICAL CENTER,AR,FORDYCE,https://www.dallascountymedicalcenter.com/,,,,['pricing']
+070003,DAY KIMBALL HOSPITAL,CT,PUTNAM,https://www.daykimball.org/,,,"/resources/billing-and-insurance/ , /resources/billing-and-insurance/day-kimball-hospital-estimates/ , /resources/billing-and-insurance/no-surprises-act/","['pricing', 'billing']"
+351325,ST LUKE'S HOSPITAL,ND,CROSBY,https://www.dcstlukes.org/,,,,"['pricing', 'billing', 'prices']"
+050546,PORTERVILLE DEVELOPMENTAL CENTER,CA,PORTERVILLE,https://www.dds.ca.gov/services/state-facilities/porterville-dc/,,,/transparency/,['transparency']
+161340,DECATUR COUNTY HOSPITAL,IA,LEON,https://www.decaturcountyhospital.org/,,,,"['price transparency', 'transparency']"
+050838,DE LA VINA SURGICENTER,CA,SANTA BARBARA,https://www.delavinasurgicenter.com/,,,,['prices']
+459828,DELL CHILDREN'S MEDICAL CENTER TRANSPLANT PROGRAM,TX,AUSTIN,https://www.dellchildrens.net/,,,"https://www.seton.net/patient-and-family-resources/billing-and-insurance/pay-your-bill-online , https://healthcare.ascension.org/price-transparency","['price transparency', 'billing', 'transparency']"
+440159,DELTA SPECIALTY HOSPITAL,TN,MEMPHIS,https://www.deltaspecialtyhospital.com/,,,/admissions/payment-insurance/rates-pricing/,['pricing']
+041314,"DEWITT HOSPITAL & NURSING HOME, INC",AR,DE WITT,https://www.dewitthealth.org/,,,,"['price transparency', 'pricing', 'billing', 'transparency']"
+290045,SAINT ROSE DOMINICAN HOSPITALS - SIENA CAMPUS,NV,HENDERSON,https://www.dignityhealth.org/,,,https://www.dignityhealth.org/my-care/billing-help-and-faq,['billing']
+450643,DOCTORS HOSPITAL OF LAREDO,TX,LAREDO,https://www.doctorshosplaredo.com/,,,"https://www.doctorshosplaredo.com/patients-visitors/pricing-guide , /patients-visitors/pricing-guide","['price transparency', 'pricing', 'billing', 'transparency']"
+050852,DLV VISION ASC,CA,THOUSAND OAKS,https://www.doughertylaservision.com/,,,#pricing-pop,"['pricing', 'billing', 'transparency']"
+459823,DRISCOLL CHILDREN'S HOSPITAL TRANSPLANT CENTER,TX,CORPUS CHRISTI,https://www.driscollchildrens.org/,,,"/patients-family/services-support/patient-and-family-services/billing-financial-information/price , /patients-family/services-support/patient-and-family-services/billing-financial-information","['price transparency', 'billing', 'transparency']"
+054133,DEPT OF STATE HOSPITALS - METROPOLITAN - PSY,CA,NORWALK,https://www.dsh.ca.gov/Metropolitan/index.html,,,,['charges']
+054122,DEPT OF STATE HOSPITALS - NAPA,CA,NAPA,https://www.dsh.ca.gov/Napa/index.html,,,,['charges']
+430089,DUNES SURGICAL HOSPITAL,SD,DAKOTA DUNES,https://www.dunessurgicalhospital.com/,,,"//dunessurgicalhospital.com/hospital-pricing-information , https://web.healthsparq.com/app/public/#/one/insurerCode=WMRK_I&brandCode=WELLMARK&productCode=MRF/machine-readable-transparency-in-coverage?searchTerm=460423353&lock=True","['pricing', 'transparency']"
+444026,"ERLANGER BEHAVIORAL HOSPITAL, LLC",TN,CHATTANOOGA,https://www.erlangerbh.com/,,,/admissions/insurance-payment-information/rates-pricing/,['pricing']
+150024,ESKENAZI HEALTH,IN,INDIANAPOLIS,https://www.eskenazihealth.edu/,,,"https://www.eskenazihealth.edu/about/pricing-information , /patients/billing","['pricing', 'billing']"
+241360,DEER RIVER HEALTHCARE CENTER,MN,DEER RIVER,https://www.essentiahealth.org/,,,/patients-visitors/billing/pay-a-bill/,['billing']
+670194,EXCEL ER LONGVIEW,TX,LONGVIEW,https://www.excel247er.com/,,,,['billing']
+371318,FAIRFAX COMMUNITY HOSPITAL,OK,FAIRFAX,https://www.fairfaxcommunityhospital.com/,,,"https://www.fairfaxcommunityhospital.com/pricingtransparency/ , https://www.fairfaxcommunityhospital.com/standard-charges/","['standard charges', 'pricing', 'charges', 'transparency']"
+240040,UNIVERSITY MEDICAL CENTER-MESABI/ MESABA CLINICS,MN,HIBBING,https://www.fairview.org/,,,,['billing']
+371329,FAIRVIEW REGIONAL MEDICAL CENTER AUTHORITY,OK,FAIRVIEW,https://www.fairviewregionalmedicalcenter.com/,,,"http://www.fairviewregionalmedicalcenter.com/frmc-price-transparency-1_18_22/ , http://www.fairviewregionalmedicalcenter.com/frmc-price-transparency-_-medications-1_18_2022/","['price transparency', 'pricing', 'transparency']"
+450241,FAITH COMMUNITY HOSPITAL,TX,JACKSBORO,https://www.fchtexas.com/,,,,"['price transparency', 'transparency']"
+161347,FLOYD COUNTY MEDICAL CENTER,IA,CHARLES CITY,https://www.fcmc.us.com/,,,,"['pricing', 'transparency']"
+391303,FULTON COUNTY MEDICAL CENTER,PA,MCCONNELLSBURG,https://www.fcmcpa.org/index.php,,,/patient-billing-info,['billing']
+281311,FRANKLIN COUNTY MEMORIAL HOSPITAL,NE,FRANKLIN,https://www.fcmh.com/,,,https://www.fcmh.com/good-faith-surprise-billing,"['pricing', 'billing', 'charges', 'transparency']"
+501322,FERRY COUNTY MEMORIAL HOSPITAL,WA,REPUBLIC,https://www.fcphd.org/,,,#charges,"['pricing', 'billing', 'charges']"
+451313,FISHER COUNTY HOSPITAL DISTRICT,TX,ROTAN,https://www.fishercountyhospital.com/getpage.php?name=index,,,http://www.fishercountyhospital.com/getpage.php?name=pricetrans_surpbilling,['billing']
+250117,HIGHLAND COMMUNITY  HOSPITAL,MS,PICAYUNE,https://www.forresthealth.org/,,,https://www.bcbsms.com/about-us/transparency-in-coverage,"['billing', 'transparency']"
+251306,PERRY COUNTY GENERAL HOSPITAL,MS,RICHTON,https://www.forresthealth.org/,,,https://www.bcbsms.com/about-us/transparency-in-coverage,"['billing', 'transparency']"
+251324,WALTHALL COUNTY GENERAL HOSPITAL CAH,MS,TYLERTOWN,https://www.forresthealth.org/,,,https://www.bcbsms.com/about-us/transparency-in-coverage,"['billing', 'transparency']"
+251326,JEFFERSON DAVIS COMMUNITY HOSPITAL CAH,MS,PRENTISS,https://www.forresthealth.org/,,,https://www.bcbsms.com/about-us/transparency-in-coverage,"['billing', 'transparency']"
+251333,PEARL RIVER COUNTY HOSPITAL,MS,POPLARVILLE,https://www.forresthealth.org/,,,https://www.bcbsms.com/about-us/transparency-in-coverage,"['billing', 'transparency']"
+520071,FORT MEMORIAL HOSPITAL,WI,FORT ATKINSON,https://www.forthealthcare.com/,,,"https://www.forthealthcare.com/patient-info/financial-aid/emergency-urgent-care-provider-billing/ , https://www.forthealthcare.com/find-a-doctor-2/fort-medical-group/quality-safety-prices/","['billing', 'prices']"
+280125,FAITH REGIONAL HEALTH SERVICES,NE,NORFOLK,https://www.frhs.org/,,,"/patients-visitors/billing-insurance-financial-assistance/ , /patients-visitors/billing-insurance-financial-assistance/financial-assistance/",['billing']
+440110,FORT LOUDON MEDICAL CENTER,TN,LENOIR CITY,https://www.ftloudoun.com/,,,https://www.ftloudoun.com/surprise-billing-notice/,['billing']
+403301,UNIVERSITY PEDIATRIC HOSPITAL,PR,SAN JUAN,https://www.fundacionhospitalpediatrico.org/,,,,"['pricing', 'billing', 'prices']"
+331303,GARNET HEALTH MEDICAL CENTER-CATSKILLS(GMHERMANN),NY,CALLICOON,https://www.garnethealth.org/,https://www.garnethealth.org/patients-visitors/billing-insurance/price-transparency,,"/patients-visitors/billing-insurance , /patients-visitors/billing-insurance/pay-my-bill","['billing', 'transparency']"
+054028,GATEWAYS HOSP  MENTAL HEALTH CTR,CA,LOS ANGELES,https://www.gatewayshospital.org/,,,,"['pricing', 'billing']"
+170191,UNIVERSITY  OF KS HLTH SYSTEM GREAT BEND CAMPUS,KS,GREAT BEND,https://www.gbregional.com/,,,,"['pricing', 'billing']"
+194089,GENESIS BEHAVIORAL HOSPITAL,LA,BREAUX BRIDGE,https://www.genesisbh.com/,,,,"['pricing', 'billing']"
+360039,GENESIS HOSPITAL,OH,ZANESVILLE,https://www.genesishcs.org/find-locations/genesis-hospital,,,"/patients-section/patients/billing-and-insurance , /patients/billing-insurance/financial-assistance",['billing']
+141317,GIBSON COMMUNITY HOSPITAL,IL,GIBSON CITY,https://www.gibsonhospital.org/home,,,"/services-and-conditions/profile/patient-billing , /services-and-conditions/profile/provider-based-billing","['pricing', 'billing']"
+010148,EVERGREEN MEDICAL CENTER,AL,EVERGREEN,https://www.gilliardhealthservices.com/emc,,,,['billing']
+190160,GLENWOOD REGIONAL MEDICAL CENTER,LA,WEST MONROE,https://www.glenwoodregional.org/,,,"https://www.glenwoodregional.org/131/content/billing-payment-insurance , https://www.glenwoodregional.org/pricing-transparency , /131/content/billing-payment-insurance","['pricing', 'billing', 'transparency']"
+050257,GOOD SAMARITAN HOSPITAL,CA,BAKERSFIELD,https://www.goodsamhospital.com/,,,,"['pricing', 'billing', 'prices']"
+281358,GORDON MEMORIAL HOSPITAL DISTRICT,NE,GORDON,https://www.gordonmemorial.org/,,,"https://gordonmemorial.org/pricing , /pricing","['pricing', 'transparency']"
+511316,GRANT MEMORIAL HOSPITAL,WV,PETERSBURG,https://www.grantmemorial.com/,,,,"['price transparency', 'billing', 'transparency']"
+161365,GREATER REGIONAL MEDICAL CENTER,IA,CRESTON,https://www.greaterregional.org/,,,,"['pricing', 'billing', 'prices']"
+160057,SOUTHEAST IOWA REGIONAL MEDICAL CENTER,IA,WEST BURLINGTON,https://www.greatriverhealth.org/,,,"/patients-visitors/billing-financial-services/ , /patients-visitors/billing-financial-services/online-bill-pay/",['billing']
+070018,GREENWICH HOSPITAL ASSOCIATION -,CT,GREENWICH,https://www.greenwichhospital.org/,,,"https://www.greenwichhospital.org/patients-visitors/billing-insurance , https://www.greenwichhospital.org/patients-visitors/billing-insurance/Financial-assistance , https://www.ynhhs.org/patient-care/Patient-Rights-and-Responsibilities/no-surprise-billing",['billing']
+320016,GILA REGIONAL MEDICAL CENTER,NM,SILVER CITY,https://www.grmc.org/,,,,['pricing']
+171339,GREENWOOD COUNTY HOSPITAL,KS,EUREKA,https://www.gwch.org/,,,,"['price transparency', 'transparency']"
+099803,GEORGE WASHINGTON UNIVERSITY HOSPITAL,DC,WASHINGTON,https://www.gwhospital.com/,,,/patients-visitors/pricing-guide,"['pricing', 'billing']"
+050376,LAC/HARBOR-UCLA MED CENTER,CA,TORRANCE,https://www.harbor-ucla.org/,,,,['pricing']
+234021,HARBOR OAKS HOSPITAL,MI,NEW BALTIMORE,https://www.harboroaks.com/,,,/admissions/insurance-payment-information/rates-pricing/,['pricing']
+450289,HARRIS HEALTH SYSTEM,TX,HOUSTON,https://www.harrishealth.org/locations-hh/Pages/ben-taub.aspx,,,,"['pricing', 'transparency']"
+154054,HARSHA BEHAVIORAL CENTER INC,IN,TERRE HAUTE,https://www.harshacenter.com/,,,,['billing']
+144026,HARTGROVE HOSPITAL,IL,CHICAGO,https://www.hartgrovehospital.com/,,,/standard-services/,['standard services']
+324013,HAVEN BEHAVIORAL HOSPITAL OF ALBUQUERQUE,NM,ALBUQUERQUE,https://www.havenalbuquerque.com/,,,https://www.havenalbuquerque.com/price-transparency/,"['price transparency', 'transparency']"
+224039,WHITTIER PAVILION,MA,HAVERHILL,https://www.haverhillpavilion.com/,,,/admissions/insurance-payment/rates-pricing/,['pricing']
+120022,STRAUB CLINIC AND HOSPITAL,HI,HONOLULU,https://www.hawaiipacifichealth.org/,,,https://mychart.hawaiipacifichealth.org/web/billing/guestpay,"['billing', 'transparency']"
+231313,HARBOR BEACH COMMUNITY HOSPITAL,MI,HARBOR BEACH,https://www.hbch.org/,,,,"['pricing', 'billing', 'prices']"
+371324,HARPER COUNTY COMMUNITY HOSPITAL,OK,BUFFALO,https://www.hcchospital.com/,,,,"['pricing', 'billing', 'transparency']"
+440132,HENRY COUNTY MEDICAL CENTER,TN,PARIS,https://www.hcmc-tn.org/,,,"https://www.hcmc-tn.org/patients-visitors/billing-insurance/ , https://www.hcmc-tn.org/patients-visitors/billing-insurance/hospital-charges/ , https://www.hcmc-tn.org/patients-visitors/billing-insurance/health-insurance-marketplace/","['billing', 'charges']"
+030148,NORTHWEST MEDICAL CENTER SAHUARITA,AZ,SAHUARITA,https://www.healthiertucson.com/,,,,['billing']
+161336,HEGG MEMORIAL HEALTH CENTER,IA,ROCK VALLEY,https://www.hegghc.org/,,,https://www.hegghc.org/patients/billing-financial-assistance/,['billing']
+154067,HENDRICKS BEHAVIORAL HOSPITAL,IN,PLAINFIELD,https://www.hendricksbehavioralhospital.com/,,,https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=ed8a061d-1cb7-44f9-91d5-142f8b903deb,"['pricing', 'charges', 'standard services']"
+241339,HENDRICKS COMMUNITY HOSPITAL,MN,HENDRICKS,https://www.hendrickshosp.org/,,,,"['price transparency', 'transparency']"
+331990,HIGH RIDGE HOUSE,NY,BRONX,https://www.highridgehouse.org/,,,,['pricing']
+230037,HILLSDALE HOSPITAL,MI,HILLSDALE,https://www.hillsdalehospital.com/,,,"https://www.hillsdalehospital.com/resources/billing-process/ , https://www.hillsdalehospital.com/resources/pricing-estimates/ , https://www.hillsdalehospital.com/resources/insurance-patient-billing/ , https://www.hillsdalehospital.com/resources/no-surprise-billing/","['pricing', 'billing']"
+100073,HOLY CROSS HOSPITAL,FL,FORT LAUDERDALE,https://www.holy-cross.com/,,,"https://www.holy-cross.com/for-patients/billing-and-insurance/ , https://www.holy-cross.com/for-patients/billing-and-insurance/get-a-price-estimate , https://www.trinity-health.org/no-surprises-act-balance-billing-protections/",['billing']
+033038,"GLOBALREHAB - SCOTTSDALE, LLC",AZ,SCOTTSDALE,https://www.honorhealth-rehab.com/,,,,['billing']
+10039E,HOPE HAVEN CHILDRENS HOSP,FL,JACKSONVILLE,https://www.hope-haven.org/,,,,['billing']
+109808,JOHNS HOPKINS ALL CHILDREN'S HOSPITAL,FL,SAINT PETERSBURG,https://www.hopkinsallchildrens.org/,,,,['billing']
+224045,HOSPITAL FOR BEHAVIORAL MEDICINE,MA,WORCESTER,https://www.hospitalforbehavioralmedicine.com/,,,https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=1ea81f1b-4f1e-44b3-95f2-98519fe92de6,"['pricing', 'standard services']"
+404004,FIRST HOSPITAL PANAMERICANO,PR,CIDRA,https://www.hospitalpanamericano.com/,,,https://www.hospitalpanamericano.com/standard-services/,"['pricing', 'standard services']"
+400112,"HOSPITAL UPR, DR  FEDERICO TRILLA",PR,CAROLINA,https://www.hospitalupr.org/,,,https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.yourcareeverywhere.com%2Fcontent%2Fmedhost%2Fyour-care-everywhere%2Fpricing-estimator-page.html%3Ffacility_id%3D2ece4713-3f71-47d0-8ee5-6c4585b6cdc9&data=04%7C01%7Cerivera%40hospitalupr.org%7C6014cab5c34047eebcfe08d8c20d68c7%7C7c4c8632108c4bf0b320ec136749028f%7C0%7C0%7C637472710145660710%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=8JQ2v1LncY7NSHeBRaILZyf1HLOmHZwvVUZFALjIC1I%3D&reserved=0,['pricing']
+670008,HOUSTON PHYSICIANS' HOSPITAL,TX,WEBSTER,https://www.houstonphysicianshospital.com/,,,,"['price transparency', 'standard charges', 'pricing', 'charges', 'transparency']"
+06009E,HILL TOP HOSPITAL,CO,CRIPPLE CREEK,https://www.htop.org/,,,,['pricing']
+451307,IRAAN GENERAL HOSPITAL,TX,IRAAN,https://www.igh-hospital.com/,,,,"['price transparency', 'billing', 'charges', 'transparency']"
+430083,PHS INDIAN HOSPITAL AT EAGLE BUTTE,SD,EAGLE BUTTE,https://www.ihs.gov/greatplains/healthcarefacilities/cheyenneriver/,,,/billings,['billing']
+370170,LAWTON INDIAN HOSPITAL,OK,LAWTON,https://www.ihs.gov/oklahomacity/healthcarefacilities/lawton/,,,/billings,['billing']
+030113,WHITERIVER PHS INDIAN HOSPITAL,AZ,WHITERIVER,https://www.ihs.gov/phoenix/index.cfm/healthcarefacilities/whiteriver/,,,/billings,['billing']
+030074,SELLS HOSPITAL,AZ,SELLS,https://www.ihs.gov/tucson/healthcarefacilities/sellshospital/,,,/billings,"['billing', 'charges']"
+454083,INTRACARE NORTH HOSPITAL,TX,HOUSTON,https://www.intracare.org/,,,,"['price transparency', 'pricing', 'prices', 'transparency']"
+140059,JERSEY COMMUNITY HOSPITAL,IL,JERSEYVILLE,https://www.jch.org/,,,"https://www.jch.org/patients-visitors/billing-insurance/ , /patients-visitors/billing-insurance/bill-pay/",['billing']
+451363,JACKSON HEALTHCARE CENTER,TX,EDNA,https://www.jchd.org/,,,https://link.edgepilot.com/s/62255f2c/pLIBBUQ3i0qSrVkbKauTMw?u=https%3A%2F%2Fsecure.claraprice.net%2Fprice-transparency%2Fjackson-county&sub=Price+Transparency,"['price transparency', 'transparency']"
+531308,JOHNSON COUNTY HEALTHCARE CENTER,WY,BUFFALO,https://www.jchealthcare.com/,,,,['billing']
+373300,J D MCCARTY CENTER FOR CHILDREN,OK,NORMAN,https://www.jdmc.org/,,,/charges,['charges']
+460051,JORDAN VALLEY MEDICAL CENTER,UT,WEST JORDAN,https://www.jordanvalleymc.org/,,,"https://www.jordanvalleymc.org/166/content/billing-payment-insurance , https://www.jordanvalleymc.org/pricing-transparency , /166/content/billing-payment-insurance","['pricing', 'billing', 'transparency']"
+040071,JEFFERSON REGIONAL MEDICAL CENTER,AR,PINE BLUFF,https://www.jrmc.org/,https://www.jrmc.org/patients-visitors/billing-insurance/,,"https://www.jrmc.org/patients-visitors/billing-insurance/ , https://www.jrmc.org/patients-visitors/billing-insurance/financial-assistance/",['billing']
+100253,JUPITER MEDICAL CENTER,FL,JUPITER,https://www.jupitermed.com/,,,/patients-visitors/for-patients/billing-financial-information/,['billing']
+250057,KING'S DAUGHTERS MEDICAL CENTER-BROOKHAVEN,MS,BROOKHAVEN,https://www.kdmc.org/,,,https://www.kdmc.org/patients-visitors/billing-customer-service/,['billing']
+059819,KECK HOSPITAL OF USC,CA,LOS ANGELES,https://www.keckmedicine.org/,,,"https://www.keckmedicine.org/billing-and-insurance/ , https://www.keckmedicine.org/hospital-pricing-information/ , https://www.keckmedicine.org/quality-transparency/ , https://www.keckmedicine.org/quality-transparency/records/","['pricing', 'billing', 'transparency']"
+410009,KENT COUNTY MEMORIAL HOSPITAL,RI,WARWICK,https://www.kentri.org/,,,https://www.carenewengland.org/price-transparency?hsLang=en,"['price transparency', 'transparency']"
+050315,KERN MEDICAL CENTER,CA,BAKERSFIELD,https://www.kernmedical.com/,,,,"['pricing', 'transparency']"
+050853,"KINETIX SURGERY CENTER, INC",CA,SHERMAN OAKS,https://www.kinetixsc.com/,,,,"['pricing', 'prices']"
+120007,KUAKINI MEDICAL CENTER,HI,HONOLULU,https://www.kuakini.org/wps/portal/,,,"/wps/portal/public/Patient-Information/Financial-Information/hospital-pricing-transparency , /wps/portal/public/Patient-Information/Financial-Information/surprise%20billing%20disclosure","['pricing', 'billing', 'transparency']"
+501333,KITTITAS VALLEY COMMUNITY HOSPITAL,WA,ELLENSBURG,https://www.kvhealthcare.org/,https://www.kvhealthcare.org/patients-and-visitors/billing/,,"https://www.kvhealthcare.org/patients-and-visitors/billing/ , https://www.kvhealthcare.org/patients-and-visitors/billing/online-bill-payment/ , https://www.kvhealthcare.org/patients-and-visitors/billing/insurance-plans-accepted-at-kvh/ , https://www.kvhealthcare.org/patients-and-visitors/billing/insurance-vs-self-pay/ , https://www.kvhealthcare.org/patients-and-visitors/billing/washington-health-plan-finder/","['price transparency', 'billing', 'transparency']"
+054147,JOYCE EISENBERG KEEFER MEDICAL CENTER,CA,RESEDA,https://www.lajhealth.org/,,,,['billing']
+144042,LAKE BEHAVIORAL HOSPITAL,IL,WAUKEGAN,https://www.lakebehavioralhospital.com/,,,https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=e9c8ea5f-c409-4b74-92a3-af2e46ecab98,"['pricing', 'standard services']"
+140033,LAKE BEHAVIORAL HOSPITAL,IL,WAUKEGAN,https://www.lakebehavioralhospital.com/,,,https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=e9c8ea5f-c409-4b74-92a3-af2e46ecab98,"['pricing', 'standard services']"
+112018,LANDMARK HOSPITAL OF SAVANNAH,GA,SAVANNAH,https://www.landmarkhospitals.com/,,,https://www.landmarkhospitals.com/patient-billing/,"['price transparency', 'pricing', 'billing', 'transparency']"
+262015,"LANDMARK HOSPITAL OF CAPE GIRARDEAU, LLC",MO,CAPE GIRARDEAU,https://www.landmarkhospitals.com/,,,https://www.landmarkhospitals.com/patient-billing/,"['price transparency', 'pricing', 'billing', 'transparency']"
+262020,"LANDMARK HOSPITAL OF COLUMBIA, LLC",MO,COLUMBIA,https://www.landmarkhospitals.com/,https://www.landmarkhospitals.com/pricing-transparency/,,https://www.landmarkhospitals.com/patient-billing/,"['price transparency', 'pricing', 'billing', 'transparency']"
+263033,"LANDMARK REHABILITATION HOSPITAL OF COLUMBIA, LLC",MO,COLUMBIA,https://www.landmarkhospitals.com/,https://www.landmarkhospitals.com/pricing-transparency/,,https://www.landmarkhospitals.com/patient-billing/,"['price transparency', 'pricing', 'billing', 'transparency']"
+031317,LA PAZ REGIONAL HOSPITAL,AZ,PARKER,https://www.lapazhospital.org/,,,,"['price transparency', 'pricing', 'billing', 'transparency']"
+220010,LAWRENCE GENERAL HOSPITAL,MA,LAWRENCE,https://www.lawrencegeneral.org/,,,"/your-visit/billing-and-financial-assistance , /your-visit/billing-and-financial-assistance/pay-your-bill , /your-visit/billing-and-financial-assistance/important-numbers , /your-visit/billing-and-financial-assistance/financial-assistance-programs , /your-visit/billing-and-financial-assistance/price-transparency , /your-visit/billing-and-financial-assistance/understanding-your-insurance-coverage , /your-visit/billing-and-financial-assistance/cost-estimation , /your-visit/billing-and-financial-assistance/health-information-exchange","['price transparency', 'billing', 'transparency']"
+190060,LAKE CHARLES MEMORIAL HOSPITAL,LA,LAKE CHARLES,https://www.lcmh.com/,,,/patients-visitors/patient-center/billing-financial/,"['billing', 'charges']"
+440081,LECONTE MEDICAL CENTER,TN,SEVIERVILLE,https://www.lecontemedicalcenter.com/,,,https://www.lecontemedicalcenter.com/surprise-billing-notice/,['billing']
+389801,LEGACY TRANSPLANT SERVICES,OR,PORTLAND,https://www.legacyhealth.org/,,,https://www.legacyhealth.org:443/Patients-and-Visitors/paying-for-your-care/surprise-billing,"['pricing', 'billing']"
+452044,LIFECARE HOSPITALS OF NORTH TEXAS,TX,DALLAS,https://www.lifecare-health.com/dallas,,,,['billing']
+433300,LIFESCAPE,SD,SIOUX FALLS,https://www.lifescapesd.org/,,,"/billing-collections/pay-my-bill , https://www.lifescapesd.org/billing-collections , https://www.sanfordhealthplan.com/transparency-in-coverage-rule","['billing', 'transparency']"
+33022F,US AIR FORCE HOSP,NY,PLATTSBURGH,https://www.loc.gov/item/ny1966/,,,,['transparency']
+271336,LOGAN HEALTH - WHITEFISH,MT,WHITEFISH,https://www.logan.org/,,,"https://www.logan.org/health/locations/logan-health-chester/billing-and-payments , https://www.logan.org/health/locations/logan-health-whitefish/billing-and-payments , https://www.logan.org/health/locations/logan-health-conrad/billing-and-payments , https://www.logan.org/health/locations/logan-health-cut-bank/billing-and-payments , https://www.logan.org/health/locations/logan-health-shelby/billing-and-payments , https://www.allegiancecosttransparency.com/2022-07-01_LOGAN_HEALTH_index.json , /health/pay-bill/glossary-of-billing-and-insurance-terms , /health/pay-bill/pay-bill-for-lh-client-billing","['billing', 'transparency']"
+14034F,NORTH CHICAGO VETERANS ADMINISTRATION HOSPITAL,IL,NORTH CHICAGO,https://www.lovell.fhcc.va.gov/,,,"https://www.va.gov/transparency/ , /patients/billing.asp","['billing', 'transparency']"
+143300,ANN & ROBERT H LURIE CHILDRENS HOSPITAL OF CHICAGO,IL,CHICAGO,https://www.luriechildrens.org/,,,"/en/patients-visitors/billing-financial-assistance/ , /en/patients-visitors/billing-financial-assistance/understanding-hospital-charges/ , /en/patients-visitors/billing-financial-assistance/pay-your-bill-online/ , /en/patients-visitors/billing-financial-assistance/insurance/ , /en/patients-visitors/billing-financial-assistance/financial-assistance/","['billing', 'charges']"
+149804,ANN & ROBERT H LURIE CHILDRENS HOSPITAL OF CHICAGO,IL,CHICAGO,https://www.luriechildrens.org/,,,"/en/patients-visitors/billing-financial-assistance/ , /en/patients-visitors/billing-financial-assistance/understanding-hospital-charges/ , /en/patients-visitors/billing-financial-assistance/pay-your-bill-online/ , /en/patients-visitors/billing-financial-assistance/insurance/ , /en/patients-visitors/billing-financial-assistance/financial-assistance/","['billing', 'charges']"
+050568,MADERA COMMUNITY HOSPITAL,CA,MADERA,https://www.maderahospital.org/,,,/patients-visitors/price-transparency/,"['price transparency', 'transparency']"
+200039,MAINEGENERAL MEDICAL CENTER,ME,AUGUSTA,https://www.mainegeneral.org/,,,"/patients-visitors/billing-and-insurance/ , /patients-visitors/billing-insurance/no-surprises-act/",['billing']
+400114,MANATI MEDICAL CENTER DR OTERO LOPEZ,PR,MANATI,https://www.manatimedical.com/,,,,['transparency']
+170190,MANHATTAN SURGICAL HOSPITAL LLC,KS,MANHATTAN,https://www.manhattansurgical.com/,,,price-transparency.html,"['price transparency', 'transparency']"
+451333,MARTIN COUNTY HOSPITAL DISTRICT,TX,STANTON,https://www.martincountyhospital.org/,,,,"['price transparency', 'billing', 'transparency']"
+360197,MARY RUTAN HOSPITAL,OH,BELLEFONTAINE,https://www.maryrutan.org/about-us/mary-rutan-hospital/,,,"/patients-and-visitors/billing-information/ , /patients-and-visitors/billing-information/financial-assistance/ , /patients-and-visitors/billing-information/good-faith-estimates/",['billing']
+501336,MASON GENERAL HOSPITAL & FAMILY OF CLINICS,WA,SHELTON,https://www.masongeneral.com/,,,"https://www.masongeneral.com/patients/disclosure-of-healthcare-charges , https://www.masongeneral.com/patients/balance-billing-protection-act","['pricing', 'billing', 'charges', 'transparency']"
+070039,MASONICARE HEALTH CENTER,CT,WALLINGFORD,https://www.masonicare.org/,,,,"['standard charges', 'pricing', 'charges', 'transparency']"
+141323,MASSAC MEMORIAL HOSPITAL,IL,METROPOLIS,https://www.massachealth.org/,,,,['pricing']
+450465,MATAGORDA REGIONAL MEDICAL CENTER,TX,BAY CITY,https://www.matagordaregional.org/,,,https://www.matagordaregional.org/charges-estimates,"['standard charges', 'charges']"
+051305,MAYERS MEMORIAL HOSPITAL,CA,FALL RIVER MILLS,https://www.mayersmemorial.com/,,,,['transparency']
+249801,MAYO CLINIC METHODIST HOSPITAL,MN,ROCHESTER,https://www.mayoclinic.org/,,,"/patient-visitor-guide/billing-insurance , /patient-visitor-guide/billing-insurance/financial-assistance , /patient-visitor-guide/billing-insurance/financial-assistance/arizona-documents , /patient-visitor-guide/billing-insurance/financial-assistance/florida-documents , /patient-visitor-guide/billing-insurance/financial-assistance/minnesota-documents",['billing']
+25078E,MC COMB CITY HOSP,MS,MC COMB,https://www.mccomb-ms.gov/,,,,['billing']
+170166,MORTON COUNTY HOSPITAL,KS,ELKHART,https://www.mchswecare.com/,,,,"['standard charges', 'charges']"
+084003,MEADOWWOOD BEHAVIORAL HEALTH SYSTEM,DE,NEW CASTLE,https://www.meadowwoodhospital.com/,,,/admissions/payment-insurance/rates-pricing/,['pricing']
+241366,MEEKER MEMORIAL HOSPITAL,MN,LITCHFIELD,https://www.meekermemorial.org/,,,https://www.meekermemorial.org/pricing-and-financial-assistance/,['pricing']
+220070,MELROSEWAKEFIELD HEALTHCARE,MA,MELROSE,https://www.melrosewakefield.org/,,,"https://www.melrosewakefield.org/patients-visitors/financial-resources/financial-counseling-billing/ , https://www.melrosewakefield.org/patients-visitors/financial-resources/cost-estimate-price-transparency/","['billing', 'transparency']"
+670005,MEMORIAL HERMANN SURGICAL HOSPITAL KINGWOOD,TX,KINGWOOD,https://www.memorialhermannkingwood.com/,,,//memorialhermannkingwood.com/hospital-pricing-information,"['price transparency', 'pricing', 'transparency']"
+180102,LOURDES HOSPITAL,KY,PADUCAH,https://www.mercy.com/,,,,"['pricing', 'billing']"
+360161,MH ST JOSEPH WARREN HOSPITAL,OH,WARREN,https://www.mercy.com/,,,,"['pricing', 'billing']"
+373036,"EVEREST REHABILITATION HOSPITAL OKC, LLC",OK,MIDWEST CITY,https://www.mercy.net/,,,"/patients-visitors/billing/ , /profile/billing-statements , /patients-visitors/billing-2/?utm_source=homepage&utm_medium=website",['billing']
+160079,MERCY MEDICAL CENTER - CEDAR RAPIDS,IA,CEDAR RAPIDS,https://www.mercycare.org/,,,"/patients/billing-insurance/ , /patients/billing-insurance/financial-assistance/ , /patients/billing-insurance/pricing-transparency/ , /patients/billing-insurance/online-bill-pay/ , /patients/billing-insurance/no-surprise-billing/","['pricing', 'billing', 'transparency']"
+160029,MERCY HOSPITAL,IA,IOWA CITY,https://www.mercyiowacity.org/,,,/billing,['billing']
+673031,METHODIST REHABILITATION HOSPITAL,TX,DALLAS,https://www.methodist-rehab.com/,,,,"['price transparency', 'transparency']"
+044017,UNITED METHODIST BEHAVIORAL HOSPITAL,AR,MAUMELLE,https://www.methodistfamily.org/behavioral-hospital/,,,https://www.methodistfamily.org/transparency-in-coverage-rule/,['transparency']
+250167,METHODIST HEALTHCARE - OLIVE BRANCH HOSPITAL,MS,OLIVE BRANCH,https://www.methodisthealth.org/,,,,['billing']
+250152,MISSISSIPPI METHODIST REHAB CTR,MS,JACKSON,https://www.methodistonline.org/,,,"/current-standard-charges , /protections-against-surprise-billing","['standard charges', 'billing', 'charges']"
+234041,THE CENTER FOR FORENSIC PSYCHIATRY,MI,SALINE,https://www.michigan.gov/mdhhs/keep-mi-healthy/mentalhealth/mentalhealth/mentalillness/state-operated-hospitals/center-for-forensic-psychiatry,,,,['charges']
+110243,MIDTOWN UROLOGY SURGICAL CENTER,GA,ATLANTA,https://www.midtown-urology.com/,,,,['transparency']
+053309,MEMORIAL CARE MILLER CHILDREN'S &  WOMEN'S HOSP LB,CA,LONG BEACH,https://www.millerchildrens.memorialcare.org/,,,,['billing']
+270093,MISSOULA BONE & JOINT SURGERY CENTER LLC,MT,MISSOULA,https://www.missoulaboneandjoint.com/,,,/patient-resources/#insurance-payment-billing,['billing']
+241356,MILLE LACS HEALTH SYSTEM,MN,ONAMIA,https://www.mlhealth.org/,,,/patients-visitors/price-transparency,"['price transparency', 'transparency']"
+050779,"MARTIN LUTHER KING, JR. COMMUNITY HOSPITAL",CA,LOS ANGELES,https://www.mlkch.org/home,,,/billing-and-financial,['billing']
+330403,MONROE COMMUNITY HOSPITAL,NY,ROCHESTER,https://www.monroehosp.org/,,,,"['pricing', 'billing', 'prices']"
+150183,MONROE HOSPITAL,IN,BLOOMINGTON,https://www.monroehospital.com/,,,/patients-guests/billing/,['billing']
+440030,MORRISTOWN HAMBLEN HOSPITAL ASSOCIATION,TN,MORRISTOWN,https://www.morristownhamblen.com/,,,https://www.morristownhamblen.com/price-estimation/surprise-billing-notice/,['billing']
+390268,MOUNT NITTANY MEDICAL CENTER,PA,STATE COLLEGE,https://www.mountnittany.org/,,,"/billing-insurance/overview , /billing-insurance/billing-payment-options , /billing-insurance/accepted-insurance-providers , /billing-insurance/financial-assistance , /billing-insurance/patient-financial-counseling , /billing-insurance , https://mountnittany.org/billing-insurance/billing-payment-options",['billing']
+250134,WHITFIELD MEDICAL SURGICAL HOSPITAL,MS,WHITFIELD,https://www.msh.state.ms.us/,,,http://www.transparency.mississippi.gov/default.aspx,"['charges', 'transparency']"
+031319,MT. GRAHAM REGIONAL MEDICAL CENTER,AZ,SAFFORD,https://www.mtgraham.org/,,,"https://www.mtgraham.org/nosuprisebilling/ , https://www.mtgraham.org/pricing-transparency/","['pricing', 'billing', 'transparency']"
+501328,MID VALLEY HOSPITAL,WA,OMAK,https://www.mvhealth.org/,,,https://www.mvhealth.org/patients-visitors/billing-insurance-information/,"['pricing', 'billing']"
+213300,MOUNT WASHINGTON PEDIATRIC HOSPITAL,MD,BALTIMORE,https://www.mwph.org/,,,https://www.mwph.org/about-us/transparency-in-coverage,['transparency']
+034027,CHANGEPOINT PSYCHIATRIC HOSPITAL,AZ,LAKESIDE,https://www.mychangepoint.org/,,,,"['pricing', 'billing', 'prices']"
+141320,PARIS COMMUNITY HOSPITAL,IL,PARIS,https://www.myhorizonhealth.org/,,,/patients-visitors/billing-insurance/,['billing']
+45168E,WYLIE HOSP,TX,WYLIE,https://www.mymercymedical.com/,,,https://www.mymercymedical.com/billing-and-insurance-primary-care-clinic-in-wylie-tx,['billing']
+230239,MYMICHIGAN MEDICAL CENTER-SAULT,MI,SAULT SAINTE MARIE,https://www.mymichigan.org/,https://www.mymichigan.org/patients-visitors/billing-insurance/cost-estimates/,,https://my.midmichigan.net/MyChart/billing/guestpay/,['billing']
+260006,MOSAIC LIFE CARE AT ST JOSEPH,MO,SAINT JOSEPH,https://www.mymlc.com/,,,,['billing']
+040017,NORTH ARKANSAS REGIONAL MEDICAL CENTER,AR,HARRISON,https://www.narmc.com/,,,https://www.narmc.com/pricing-transparency,"['pricing', 'billing', 'transparency']"
+531309,NORTH BIG HORN HOSPITAL DISTRICT,WY,LOVELL,https://www.nbhh.com/,,,,['transparency']
+140252,NORTHWEST COMMUNITY HOSPITAL 1,IL,ARLINGTON HEIGHTS,https://www.nch.org/about/,,,https://www.nch.org/billing-insurance/,"['price transparency', 'billing', 'charges', 'transparency']"
+171336,NESS COUNTY HOSPITAL DISTRICT #2,KS,NESS CITY,https://www.nchospital.org/,,,,"['pricing', 'billing', 'transparency']"
+154050,NORTHEASTERN CENTER,IN,AUBURN,https://www.nec.org/,,,,['transparency']
+271300,POPLAR COMMUNITY HOSPITAL,MT,POPLAR,https://www.nemhs.net/,,,,['pricing']
+171384,NEWMAN REGIONAL HEALTH,KS,EMPORIA,https://www.newmanrh.org/,,,https://www.newmanrh.org/about-us/#patient-pricing-data-emporia,['pricing']
+251307,NOXUBEE GENERAL CRITICAL ACCESS HOSP,MS,MACON,https://www.ngcah.com/noxubee-general-hospital,,,,"['standard charges', 'pricing', 'charges', 'transparency']"
+314005,ANCORA PSYCH HOSP,NJ,HAMMONTON,https://www.nj.gov/health/integratedhealth/hospitals/ancora/,,,http://www.nj.gov/health/healthcare_transparency.shtml,['transparency']
+314016,GREYSTONE PARK PSYCH HOSP,NJ,GREYSTONE PARK,https://www.nj.gov/health/integratedhealth/hospitals/greystone/,,,http://www.nj.gov/health/healthcare_transparency.shtml,['transparency']
+314013,TRENTON PSYCHIATRIC HOSP,NJ,TRENTON,https://www.nj.gov/health/integratedhealth/hospitals/trenton/,,,http://www.nj.gov/health/healthcare_transparency.shtml,['transparency']
+260096,NORTH KANSAS CITY HOSPITAL,MO,NORTH KANSAS CITY,https://www.nkch.org/,,,"/patients-and-guests/for-patients/billing-and-insurance/accepted-insurance , /patients-and-guests/for-patients/billing-and-insurance/ , /patients-and-guests/for-patients/billing-and-insurance/patient-estimates",['billing']
+254009,NORTH MISSISSIPPI STATE HOSPITAL,MS,TUPELO,https://www.nmsh.state.ms.us/,,,http://www.transparency.mississippi.gov/,['transparency']
+050367,NORTHBAY MEDICAL CENTER,CA,FAIRFIELD,https://www.northbay.org/about/northbay-medical-center.cfm,,,"/patients-visitors/billing.cfm , /patients-visitors/health-care-costs-charges.cfm","['billing', 'charges']"
+241317,NORTH SHORE HEALTH,MN,GRAND MARAIS,https://www.northshorehealthgm.org/home,,,/billing-insurance,['billing']
+241337,NORTH VALLEY HEALTH CENTER,MN,WARREN,https://www.northvalleyhealth.org/,,,,"['pricing', 'billing', 'prices', 'charges']"
+470024,NORTHWESTERN MEDICAL CENTER INC,VT,SAINT ALBANS,https://www.northwesternmedicalcenter.org/,,,https://www.northwesternmedicalcenter.org/patients-visitors/pay-an-nmc-bill/billing-overview/,['billing']
+220126,NORWOOD HOSPITAL,MA,NORWOOD,https://www.norwood-hospital.org/,,,"/patient-visitor-information/billing-payment , https://www.norwood-hospital.org/pricing-transparency","['pricing', 'billing', 'transparency']"
+490019,UVA CULPEPER MEDICAL CENTER,VA,CULPEPER,https://www.novanthealthuva.org/,https://www.novanthealthuva.org/patients--visitors/billing--insurance/medical-center-standard-charges.aspx,,"https://www.novanthealthuva.org/patients--visitors/billing--insurance.aspx , https://www.novanthealthuva.org/patients--visitors/billing--insurance/culpeper-medical-center.aspx , https://www.novanthealthuva.org/patients--visitors/billing--insurance/haymarket-medical-center.aspx , https://www.novanthealthuva.org/patients--visitors/billing--insurance/prince-william-medical-center.aspx , https://www.novanthealthuva.org/patients--visitors/billing--insurance/online-bill-pay.aspx , https://www.novanthealthuva.org/patients--visitors/billing--insurance/medical-center-standard-charges.aspx","['standard charges', 'billing', 'charges']"
+190007,NATCHITOCHES REGIONAL MEDICAL CENTER,LA,NATCHITOCHES,https://www.nrmchospital.org/,https://www.nrmchospital.org/patients-information/,,,"['pricing', 'transparency']"
+501321,NORTH VALLEY HOSPITAL,WA,TONASKET,https://www.nvhospital.org/,,,http://www.wsha.org/hospitalpricing.cfm,"['pricing', 'billing']"
+330100,N Y EYE AND EAR INFIRMARY,NY,NEW YORK,https://www.nyee.edu/,,,/about/billing-insurance,['billing']
+450330,OAKBEND MEDICAL CENTER,TX,RICHMOND,https://www.oakbendmedcenter.org/,,,,"['billing', 'charges']"
+520196,OAKLEAF SURGICAL HOSPITAL,WI,ALTOONA,https://www.oakleafsurgical.com/,,,pricing.htm,"['pricing', 'billing']"
+250050,OCH REGIONAL MEDICAL CENTER,MS,STARKVILLE,https://www.och.org/,,,"https://www.och.org/admission-billing/ , https://www.och.org/accountability-and-transparency/","['pricing', 'billing', 'transparency']"
+451359,OCHILTREE GENERAL HOSPITAL,TX,PERRYTON,https://www.ochiltreehospital.com/,,,https://www.ochiltreehospital.com/pricing,"['pricing', 'billing', 'prices', 'transparency']"
+250069,RUSH FOUNDATION HOSPITAL,MS,MERIDIAN,https://www.ochsnerrush.org/,,,/patients-visitors/hospital-pricing-transparency/,"['pricing', 'transparency']"
+380009,OHSU HOSPITAL AND CLINICS,OR,PORTLAND,https://www.ohsu.edu/,,,"https://www.ohsu.edu/health/billing-and-insurance , /health/billing-and-insurance",['billing']
+240006,OLMSTED MEDICAL CENTER,MN,ROCHESTER,https://www.olmmed.org/,,,,"['pricing', 'billing']"
+131303,NELL J REDFIELD MEMORIAL HOSPITAL,ID,MALAD,https://www.oneidacountyhospital.com/,,,,['billing']
+190017,OPELOUSAS GENERAL HEALTH SYSTEM,LA,OPELOUSAS,https://www.opelousasgeneral.com/,,,/patient-resources/healthcare-price-transparency/,"['price transparency', 'transparency']"
+154057,OPTIONS BEHAVIORAL HEALTH SYSTEM,IN,INDIANAPOLIS,https://www.optionsbehavioralhealthsystem.com/,,,/admissions/payment-insurance/rates-pricing/,"['pricing', 'transparency']"
+150160,ORTHOINDY HOSPITAL,IN,INDIANAPOLIS,https://www.orthoindy.com/hospital,,,https://www.orthoindy.com/hospital-pricing/,['pricing']
+142013,GREATER PEORIA SPECIALTY HOSPITAL,IL,PEORIA,https://www.osftch.com/,,,,"['price transparency', 'charges', 'transparency']"
+501318,OTHELLO COMMUNITY HOSPITAL,WA,OTHELLO,https://www.othellocommunityhospital.org/about-us,,,,"['pricing', 'billing', 'prices']"
+054153,OCEAN VIEW PSYCHIATRIC HEALTH FACILITY,CA,LONG BEACH,https://www.ovphf.com/,,,,"['pricing', 'transparency']"
+260078,OZARKS HEALTHCARE,MO,WEST PLAINS,https://www.ozarkshealthcare.com/,,,"/patient-financial-services/billing--insurance/ , https://Health1.Meritain.com/app/public/#/one/insurerCode=MERITAIN_I&brandCode=MERITAINOVER/machine-readable-transparency-in-coverage?searchTerm=A5889&lock=true","['billing', 'transparency']"
+050423,PALO VERDE HOSPITAL,CA,BLYTHE,https://www.paloverdehospital.org/,,,,['billing']
+261315,PARKLAND HEALTH CENTER - BONNE TERRE,MO,BONNE TERRE,https://www.parklandhealthcenter.org/,,,,['billing']
+151310,"PARKVIEW WABASH HOSPITAL, INC",IN,WABASH,https://www.parkview.com/,,,/patients-visitors/billing-information-center,['billing']
+424011,PATRICK B HARRIS PSYCHIATRIC HOSPITAL,SC,ANDERSON,https://www.patrickbharris.com/,,,admissions---discharges.html,['charges']
+151333,PUTNAM COUNTY HOSPITAL,IN,GREENCASTLE,https://www.pchosp.org/,,,,['billing']
+051326,PLUMAS DISTRICT HOSPITAL,CA,QUINCY,https://www.pdh.org/,,,"/about/district-transparency , /patients/billing-insurance","['billing', 'transparency']"
+261993,PEACE HAVEN ASSOCIATION,MO,SAINT LOUIS,https://www.peacehavenassociation.org/,,,,"['pricing', 'billing', 'prices']"
+260070,PEMISCOT COUNTY MEMORIAL HOSPITAL,MO,HAYTI,https://www.pemiscot.org/,,,https://www.pemiscot.org/pricing,"['pricing', 'billing', 'prices']"
+110201,PIEDMONT MACON NORTH HOSPITAL,GA,MACON,https://www.piedmont.org/,https://www.piedmont.org/patient-tools/hospital-price-transparency,,,['pricing']
+180044,PIKEVILLE MEDICAL CENTER,KY,PIKEVILLE,https://www.pikevillehospital.org/,,,"https://www.pikevillehospital.org/billing/financial-assistance-policy/ , https://www.pikevillehospital.org/billing/pay-my-bill/ , https://www.pikevillehospital.org/hospital-price-transparency/","['price transparency', 'billing', 'transparency']"
+030149,"HEART AND VASCULAR SURGICAL CENTER, LLC",AZ,MESA,https://www.pimaheartandvascular.com/,,,https://www.pimaheartandvascular.com/transparency-in-coverage-rule/,['transparency']
+234006,PINE REST CHRISTIAN MENTAL HEALTH SERVICES,MI,GRAND RAPIDS,https://www.pinerest.org/,,,https://www.pinerest.org/patients/price-estimates-standard-charges/,"['standard charges', 'charges']"
+232039,PIONEER SPECIALTY HOSPITAL,MI,PONTIAC,https://www.pioneerspecialityhospital.com/,,,,"['pricing', 'billing']"
+034025,WINDHAVEN PSYCHIATRIC HOSPITAL,AZ,PRESCOTT VALLEY,https://www.polarahealth.com/,,,/billing.html,"['billing', 'transparency']"
+130028,PORTNEUF MEDICAL CENTER,ID,POCATELLO,https://www.portneuf.org/,,,"https://portneufmedicalgroup.org/surprise-billing , /patients-visitors/billing/","['pricing', 'billing']"
+104070,PORT ST LUCIE HOSPITAL,FL,PORT SAINT LUCIE,https://www.portstluciehospitalinc.com/,,,"https://www.portstluciehospitalinc.com/financial-resources/billing-faqs/ , https://www.portstluciehospitalinc.com/financial-resources/contact-billing/ , https://www.portstluciehospitalinc.com/financial-resources/general-pricing-information/","['pricing', 'billing']"
+170027,PRATT REGIONAL MEDICAL CENTER,KS,PRATT,https://www.prmc.org/,,,https://www.prmc.org/resources/prmc-standard-charges.html,"['standard charges', 'charges']"
+061323,PROWERS MEDICAL CENTER,CO,LAMAR,https://www.prowersmedical.com/,,,https://www.prowersmedical.com/patient_pricing/,"['pricing', 'transparency']"
+393053,PENN STATE HEALTH REHABILITATION HOSPITAL,PA,HUMMELSTOWN,https://www.psh-rehab.com/,,,,['billing']
+501331,PULLMAN REGIONAL HOSPITAL,WA,PULLMAN,https://www.pullmanregional.org/,,,https://www.pullmanregional.org/transparency,['transparency']
+111313,PUTNAM GENERAL HOSPITAL,GA,EATONTON,https://www.putnamgeneral.com/,,,/getpage.php?name=pricing_notification,"['price transparency', 'pricing', 'billing', 'transparency']"
+531310,POWELL VALLEY HOSPITAL,WY,POWELL,https://www.pvhc.org/,,,"https://www.pvhc.org/patients-visitors/our-prices/ , https://www.billingsclinic.com/patientconnect/","['billing', 'prices']"
+251339,QUITMAN COMMUNITY HOSPITAL,MS,MARKS,https://www.qchospital.org/,,,,"['pricing', 'prices']"
+340123,RANDOLPH HOSPITAL,NC,ASHEBORO,https://www.randolphhealth.org/,,,"/patients-and-visitors/billing-and-insurance/ , /patients-and-visitors/billing-and-insurance/hospital-chargemaster/ , /patients-and-visitors/billing-and-insurance/shoppable-services/ , /patients-and-visitors/billing-and-insurance/unitedhealthcare-transparency-in-coverage/","['billing', 'transparency']"
+171307,RAWLINS COUNTY HEALTH CENTER,KS,ATWOOD,https://www.rchc.us/,,,"https://www.rchc.us/patient-hospital-charges/ , https://pricetransparency.rchc.us/","['price transparency', 'charges', 'transparency']"
+153028,REHABILITATION HOSPITAL OF INDIANA INC,IN,INDIANAPOLIS,https://www.rhirehab.com/,,,"/becoming-our-patient/billing-financial-assistance/ , /becoming-our-patient/billing-financial-assistance/no-surprises-billing-act/",['billing']
+154020,REGIONAL MENTAL HEALTH CENTER,IN,MERRILLVILLE,https://www.rhs.care/,,,https://www.rhs.care/quotes-charges/,['charges']
+010046,RIVERVIEW REGIONAL MEDICAL CENTER,AL,GADSDEN,https://www.riverviewregional.com/,,,/patients-visitors/registration-billing-faq/,['billing']
+191313,RIVERSIDE MEDICAL CENTER,LA,FRANKLINTON,https://www.rmchospital.com/,,,,['billing']
+440031,ROANE MEDICAL CENTER,TN,HARRIMAN,https://www.roanemedical.com/,,,https://www.roanemedical.com/surprise-billing-notice/,['billing']
+374016,"ROLLING HILLS HOSPITAL, LLC",OK,ADA,https://www.rollinghillshospital.com/,,,/admissions/payment-insurance/rates-pricing/,['pricing']
+450055,ROLLING PLAINS MEMORIAL HOSPITAL,TX,SWEETWATER,https://www.rpmh.net/,,,https://secure.claraprice.net/price-transparency/rolling-plains,"['price transparency', 'transparency']"
+051333,RIDGECREST REGIONAL HOSPITAL,CA,RIDGECREST,https://www.rrh.org/,,,"/patients-visitors/billing-insurance/ , /patients-visitors/billing/",['billing']
+171342,RUSH COUNTY MEMORIAL HOSPITAL,KS,LA CROSSE,https://www.rushcountymemorialhospital.com/,,,,['billing']
+171350,RUSSELL REGIONAL HOSPITAL,KS,RUSSELL,https://www.russellhospital.org/,,,,['billing']
+192022,RUSTON REGIONAL SPECIALTY HOSPITAL,LA,RUSTON,https://www.rustonregional.com/,,,https://www.rustonregional.com/price-transparency-files,"['price transparency', 'transparency']"
+670156,SACRED HEART EMERGENCY CENTER,TX,HOUSTON,https://www.sacredheartemergency24.com/,,,,['billing']
+381319,ST ANTHONY HOSPITAL,OR,PENDLETON,https://www.sahpendleton.org/,,,/content/chi-st-anthony-hospital-or/en/patients-and-visitors/price-transparency.html,"['price transparency', 'transparency']"
+170133,SAINT LUKE'S CUSHING HOSPITAL,KS,LEAVENWORTH,https://www.saintlukeskc.org/,,,"/billing , /surprise-billing",['billing']
+444030,ASCENSION SAINT THOMAS BEHAVIORAL HEALTH HOSPITAL,TN,NASHVILLE,https://www.saintthomasbehavioral.com/,,,/admissions/insurance-payment/rates-pricing/,['pricing']
+380051,SALEM HOSPITAL,OR,SALEM,https://www.salemhealth.org/,,,"/patient-guide/billing-insurance , /about/pricing","['pricing', 'billing']"
+381308,SALEM HEALTH WEST VALLEY,OR,DALLAS,https://www.salemhealth.org/,,,"/patient-guide/billing-insurance , /about/pricing","['pricing', 'billing']"
+460003,SALT LAKE REGIONAL MEDICAL CENTER,UT,SALT LAKE CITY,https://www.saltlakeregional.org/,,,"https://www.saltlakeregional.org/181/content/billing-payment-insurance , https://www.saltlakeregional.org/pricing-transparency , /181/content/billing-payment-insurance","['pricing', 'billing', 'transparency']"
+381323,SAMARITAN LEBANON COMMUNITY HOSPITAL,OR,LEBANON,https://www.samhealth.org/,,,https://www.samhealth.org/patient-visitors/make-a-payment/learn-more-about-price-transparency,"['price transparency', 'billing', 'transparency']"
+050821,CENTER FOR ORTHOPEDIC SURGERY,CA,VAN NUYS,https://www.scoi.com/services/outpatient-surgery/center-orthopedic-surgery-cosi,,,/patient-resources/billing-and-insurance,['billing']
+462003,WESTERN PEAKS SPECIALTY HOSPITAL,UT,BOUNTIFUL,https://www.sdch.com/,,,,"['pricing', 'billing', 'transparency']"
+194100,SEASIDE BEHAVIORAL CENTER,LA,NEW ORLEANS,https://www.seasidehc.com/,,,,['pricing']
+194103,SEASIDE HEALTH SYSTEM,LA,BATON ROUGE,https://www.seasidehc.com/,,,,['pricing']
+500138,SEATTLE CANCER CARE ALLIANCE,WA,SEATTLE,https://www.seattlecca.org/,,,/patients/insurance-and-billing,['billing']
+371332,SEILING MUNICIPAL HOSPITAL,OK,SEILING,https://www.seilingmunicipalhospital.org/,,,,"['price transparency', 'transparency']"
+214000,"SHEPPARD AND ENOCH PRATT HOSPITAL, THE",MD,BALTIMORE,https://www.sheppardpratt.org/,,,https://www.sheppardpratt.org/cms-price-transparency/,"['price transparency', 'transparency']"
+051302,SOUTHERN INYO HOSPITAL,CA,LONE PINE,https://www.sihd.org/,,,"/district-transparency , /affordable-care-act-price-list-2718-e",['transparency']
+140213,SILVER CROSS HOSPITAL  AND MEDICAL CENTERS,IL,NEW LENOX,https://www.silvercross.org/,,,/patient-family/before/no-surprise-billing-act/,['billing']
+144041,SILVER OAKS BEHAVIORAL HOSPITAL,IL,NEW LENOX,https://www.silveroaksbehavioralhospital.com/,,,https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=3375ca1a-188c-404a-92eb-046d89ca80ad,"['pricing', 'standard services']"
+393056,HELEN M SIMPSON REHABILITATION HOSPITAL,PA,HARRISBURG,https://www.simpson-rehab.com/,,,,['billing']
+140018,MT SINAI HOSPITAL MEDICAL CENTER,IL,CHICAGO,https://www.sinaichicago.org/en/,,,,['billing']
+150076,SAINT JOSEPH REGIONAL MEDICAL CENTER - PLYMOUTH,IN,PLYMOUTH,https://www.sjmed.com/,,,"/patients-visitors/billing-and-assistance/ , /patients-visitors/billing-and-assistance/request-price-estimate/ , https://www.trinity-health.org/no-surprises-act-balance-billing-protections/",['billing']
+500003,SKAGIT VALLEY HOSPITAL,WA,MOUNT VERNON,https://www.skagitregionalhealth.org/,,,"/for-patients/finance-and-billing-information/bill-pay , /for-patients/finance-and-billing-information/financial-assistance",['billing']
+500060,CASCADE VALLEY HOSPITAL,WA,ARLINGTON,https://www.skagitregionalhealth.org/,,,"/for-patients/finance-and-billing-information/bill-pay , /for-patients/finance-and-billing-information/financial-assistance",['billing']
+171356,ST LUKE HOSPITAL & LIVING CENTER,KS,MARION,https://www.slhmarion.org/,,,,"['standard charges', 'pricing', 'charges']"
+190088,SPRINGHILL MEDICAL CENTER,LA,SPRINGHILL,https://www.smccare.com/,,,https://www.smccare.com/copy-of-billing-contact,"['standard charges', 'pricing', 'billing', 'charges', 'transparency']"
+261318,SALEM MEMORIAL DISTRICT HOSPITAL,MO,SALEM,https://www.smdh.net/,https://smdh.slicedhealth.io/home,,,"['price transparency', 'billing', 'transparency']"
+261313,MACON COUNTY SAMARITAN MEMORIAL HOSPITAL,MO,MACON,https://www.smhmo.org/,,,/patient-info/financial-assistanceprice-transparency,"['price transparency', 'transparency']"
+450498,STEPHENS MEMORIAL HOSPITAL,TX,BRECKENRIDGE,https://www.smhtx.com/,,,,"['price transparency', 'billing', 'transparency']"
+504012,SMOKEY POINT BEHAVIORAL HOSPITAL,WA,MARYSVILLE,https://www.smokeypointbehavioralhospital.com/,,,https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=09d28742-a15d-41ca-9a72-6f1874c29ca0,"['pricing', 'standard services']"
+190307,SOUTH CAMERON MEMORIAL HOSPITAL,LA,CAMERON,https://www.southcameronmemorial.com/,,,https://www.southcameronmemorial.com/billing-payment,"['pricing', 'billing', 'prices']"
+260210,SOUTH CITY HOSPITAL,MO,SAINT LOUIS,https://www.southcityhospitalstl.com/,,,,"['price transparency', 'transparency']"
+224041,SOUTHCOAST BEHAVIORAL HEALTH,MA,DARTMOUTH,https://www.southcoastbehavioral.com/,,,/admissions/insurance/rates-pricing/,['pricing']
+504015,SOUTH SOUND BEHAVIORAL HOSPITAL,WA,LACEY,https://www.southsoundbehavioralhospital.com/,,,https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=d58e7d02-3e41-4e57-85a4-90310204367e,"['pricing', 'standard services']"
+450119,SOUTH TEXAS HEALTH SYSTEM BEHAVIORAL,TX,EDINBURG,https://www.southtexashealthsystemedinburg.com/,,,https://www.southtexashealthsystem.com/patients-visitors/pricing-guide,"['price transparency', 'pricing', 'billing', 'transparency']"
+370212,OKLAHOMA CENTER FOR ORTHOPAEDIC & MULTI-SP,OK,OKLAHOMA CITY,https://www.southwestortho.com/,,,mailto:billing@southwestortho.com,['billing']
+239809,SPECTRUM HEALTH ADULT SOLID ORGAN TRANSPLANT PROGR,MI,GRAND RAPIDS,https://www.spectrumhealth.org/,,,/billing,['billing']
+230125,BERRIEN GENERAL HOSPITAL,MI,BERRIEN CENTER,https://www.spectrumhealthlakeland.org/,,,/patient-visitor-guide/patient/billing,['billing']
+104057,SPRINGBROOK HOSPITAL,FL,BROOKSVILLE,https://www.springbrookhospital.org/,,,"https://www.springbrookhospital.org/financial-resources/general-pricing-information/ , https://www.springbrookhospital.org/financial-resources/billing-faqs/ , https://www.springbrookhospital.org/financial-resources/contact-billing/ , /financial-resources/general-pricing-information","['pricing', 'billing']"
+670280,NORTH HOUSTON SURGICAL HOSPITAL LLC,TX,SPRING,https://www.springheights.care/,,,/pricing-transparency,"['pricing', 'prices', 'transparency']"
+143026,SHIRLEY RYAN ABILITYLAB,IL,CHICAGO,https://www.sralab.org/,,,,['transparency']
+480001,"ROY LESTER SCHNEIDER HOSPITAL,THE",VI,ST THOMAS,https://www.srmedicalcenter.org/,,,https://www.cdmpricing.com/22e19f859eea1f30b4920ffd04fa2406,"['pricing', 'transparency']"
+510007,ST MARY'S MEDICAL CENTER,WV,HUNTINGTON,https://www.st-marys.org/,,,/patients-and-visitors/billing/,['billing']
+070006,STAMFORD HOSPITAL,CT,STAMFORD,https://www.stamfordhealth.org/,,,/patients-visitors/hospital-charges/,['charges']
+454093,SUNRISE CANYON HOSPITAL,TX,LUBBOCK,https://www.starcarelubbock.org/services/mental-health-services/sunrise-canyon-hospital/,,,,['pricing']
+261330,STE GENEVIEVE COUNTY MEMORIAL HOSPITAL,MO,SAINTE GENEVIEVE,https://www.stegenevievehospital.org/,,,"/patients_visitors/how_to_read_your_hospital_and_physician_billing_statement.aspx , /patients_visitors/pricingbillinginsurance.aspx , /patients_visitors/pricingbillinginsurance/insurances_accepted.aspx , /patients_visitors/pricingbillinginsurance/price_transparency.aspx , /patients_visitors/pricingbillinginsurance/physician_billing.aspx , /patients_visitors/pricingbillinginsurance/online_bill_pay.aspx , /patients_visitors/pricingbillinginsurance/contact_us.aspx , /patients_visitors/pricingbillinginsurance/faqs.aspx , /patients_visitors/pricingbillinginsurance/helpful_links.aspx","['price transparency', 'pricing', 'billing', 'transparency']"
+269805,ST LOUIS CHILDREN'S HOSPITAL,MO,SAINT LOUIS,https://www.stlouischildrens.org/,,,,"['standard charges', 'billing', 'charges']"
+260176,ST LUKE'S DES PERES HOSPITAL,MO,SAINT LOUIS,https://www.stlukes-stl.com/,,,,"['billing', 'charges']"
+45190E,ST LUKE'S COMMUNITY MEDICAL CENTER,TX,THE WOODLANDS,https://www.stlukeshealth.org/,,,"https://www.stlukeshealth.org/patients-visitors/patients/billing-insurance/pay-your-bill-online , https://www.stlukeshealth.org/patients-visitors/price-transparency , https://www.stlukeshealth.org/patients-visitors/patients/billing-insurance/financial-assistance , https://www.stlukeshealth.org/patients-visitors/patients/billing-insurance/insurances-accepted","['price transparency', 'billing', 'transparency']"
+110006,ST MARY'S HOSPITAL,GA,ATHENS,https://www.stmaryshealthcaresystem.org/,,,"/for-patients/billing-insurance/ , /for-patients/billing-insurance/price-estimates , https://www.trinity-health.org/no-surprises-act-balance-billing-protections/ , /for-patients/billing-insurance/online-bill-pay",['billing']
+110027,"ST MARY'S SACRED HEART HOSPITAL, INC",GA,LAVONIA,https://www.stmaryshealthcaresystem.org/,,,"/for-patients/billing-insurance/ , /for-patients/billing-insurance/price-estimates , https://www.trinity-health.org/no-surprises-act-balance-billing-protections/ , /for-patients/billing-insurance/online-bill-pay",['billing']
+370026,ST MARY'S REGIONAL MEDICAL CENTER,OK,ENID,https://www.stmarysregional.com/,,,/patients-visitors/pricing-guide,"['pricing', 'billing']"
+451318,STONEWALL MEMORIAL HOSPITAL DISTRICT,TX,ASPERMONT,https://www.stonewallhospital.org/,,,https://www.stonewallhospital.org/hospital-charges/,"['price transparency', 'charges', 'transparency']"
+510038,STONEWALL JACKSON MEMORIAL HOSPITAL,WV,WESTON,https://www.stonewalljacksonhospital.com/,,,,['billing']
+050793,SUMMIT SURGERY CENTER,CA,SANTA BARBARA,https://www.summitsurgerycenter.com/,,,,['billing']
+364064,SUNRISEVISTA HEALTH AND WELLNESS,OH,CANTON,https://www.sunrisevistahealth.com/,,,,['charges']
+494017,SOUTHERN VIRGINIA MENTAL HEALTH INSTITUTE,VA,DANVILLE,https://www.svmhi.dbhds.virginia.gov/,,,,['transparency']
+509801,SWEDISH MEDICAL CENTER TRANSPLANT SERVICES,WA,SEATTLE,https://www.swedish.org/,https://www.providence.org/obp/pricing-transparency,,"/patient-visitor-info/billing/insurance-plan-information , /patient-visitor-info/billing , /patient-visitor-info/billing/financial-assistance , /patient-visitor-info/pricing-transparency-overview , http://www.swedish.org/patient-visitor-info/billing","['pricing', 'billing', 'transparency']"
+494029,SOUTHWESTERN VIRGINIA MENTAL HEALTH INSTITUTE,VA,MARION,https://www.swvmhi.dbhds.virginia.gov/swvmhi/,,,,['transparency']
+281309,SYRACUSE AREA HEALTH,NE,SYRACUSE,https://www.syracuseareahealth.com/,,,/patients-visitors/billing-and-insurance/,['billing']
+030073,TUBA CITY REGIONAL HEALTH CARE CORPORATION,AZ,TUBA CITY,https://www.tchealth.org/home2.html,,,,"['pricing', 'transparency']"
+054146,TELECARE HERITAGE PSYCHIATRIC HEALTH FACILITY,CA,OAKLAND,https://www.telecarecorp.com/,,,,['billing']
+054149,WILLOW ROCK CENTER,CA,SAN LEANDRO,https://www.telecarecorp.com/,,,,['billing']
+054152,SANTA CRUZ COUNTY PSYCHIATRIC HEALTH FACILITY,CA,SANTA CRUZ,https://www.telecarecorp.com/,,,,['billing']
+440056,TENNOVA HEALTHCARE JEFFERSON MEMORIAL HOSPITAL,TN,JEFFERSON CITY,https://www.tennovajefferson.com/,,,,['billing']
+440153,TENNOVA HEALTHCARE - NEWPORT MEDICAL CENTER,TN,NEWPORT,https://www.tennovanewport.com/,,,,['billing']
+670309,TEXAS HEALTH HOSPITAL MANSFIELD,TX,MANSFIELD,https://www.texashealth.org/,,,,['billing']
+450889,TEXAS INSTITUTE FOR SURGERY AT PRESBYTERIAN HOSPIT,TX,DALLAS,https://www.texasinstituteforsurgery.com/,,,https://www.texasinstituteforsurgery.com/standard-pricing/,['pricing']
+104081,BLACKBERRY CENTER,FL,SAINT CLOUD,https://www.theblackberrycenter.com/,https://www.theblackberrycenter.com/financial-resources/general-pricing-information/,,"https://www.theblackberrycenter.com/financial-resources/general-pricing-information/ , /financial-resources/general-pricing-information/","['pricing', 'transparency']"
+713027,SAGE SPECIALTY AND REHABILITATION CENTER OF LAFAYE,LA,LAFAYETTE,https://www.thecarpenterhealthnetwork.com/,,,,['pricing']
+193090,"THE NEUROMEDICAL CENTER REHABILITATION HOSPITAL, L",LA,BATON ROUGE,https://www.theneuromedicalcenter.com/rehabilitation-hospital/,,,https://www.theneuromedicalcenter.com/for-patients/billing-insurance/,['billing']
+104063,"WILLOUGH AT NAPLES, THE",FL,NAPLES,https://www.thewilloughatnaples.com/,,,"https://www.thewilloughatnaples.com/patient-financial-resource/billing-faqs/ , https://www.thewilloughatnaples.com/patient-financial-resource/general-pricing-information/ , https://www.thewilloughatnaples.com/patient-financial-resource/contact-billing/ , /patient-financial-resource/general-pricing-information/","['pricing', 'billing']"
+360247,"WOODS AT PARKSIDE,THE",OH,COLUMBUS,https://www.thewoodsatparkside.com/,,,"https://www.thewoodsatparkside.com/financial-resources/pricing-information-faqs/ , https://www.thewoodsatparkside.com/financial-resources/general-pricing-information/ , https://www.thewoodsatparkside.com/financial-resources/contact-billing/","['pricing', 'billing', 'transparency']"
+320091,THREE CROSSES REGIONAL HOSPITAL LLC,NM,LAS CRUCES,https://www.threecrossesregional.com/,https://www.threecrossesregional.com/pricing-transparency/,,https://www.threecrossesregional.com/pricing-transparency/,"['pricing', 'transparency']"
+251337,TIPPAH COUNTY HOSPITAL,MS,RIPLEY,https://www.tippahcountyhospital.com/,,,/patients-and-visitors/billing-info/,['billing']
+450080,TITUS REGIONAL MEDICAL CENTER,TX,MOUNT PLEASANT,https://www.titusregional.com/,,,"https://www.titusregional.com/price-transparency/ , https://www.titusregional.com/patients-visitors/billing-insurance/","['price transparency', 'pricing', 'billing', 'transparency']"
+180017,T J SAMSON COMMUNITY HOSPITAL,KY,GLASGOW,https://www.tjregionalhealth.org/,,,"/patients-visitors/billing-insurance-pricing/ , /patients-visitors/billing-insurance-pricing/surprise-medical-bills/ , /patients-visitors/billing-insurance-pricing/anthem-machine-readable-files/","['pricing', 'billing']"
+180149,T J HEALTH COLUMBIA,KY,COLUMBIA,https://www.tjregionalhealth.org/,,,"/patients-visitors/billing-insurance-pricing/ , /patients-visitors/billing-insurance-pricing/surprise-medical-bills/ , /patients-visitors/billing-insurance-pricing/anthem-machine-readable-files/","['pricing', 'billing']"
+521320,TOMAH MEMORIAL HOSPITAL,WI,TOMAH,https://www.tomahhealth.org/,,,"https://www.tomahhealth.org/patients-visitors/billing-insurance/general-hospital-billing-info/ , https://www.tomahhealth.org/patients-visitors/billing-insurance/cost-of-care/",['billing']
+140077,TOUCHETTE REGIONAL HOSPITAL INC,IL,CENTREVILLE,https://www.touchette.org/,,,"http://touchette.org/financial-assistance/surprise-billing , http://touchette.org/financial-assistance/current-standard-charges","['standard charges', 'billing', 'charges']"
+363041,TRIHEALTH REHABILITATION HOSPITAL LLC,OH,CINCINNATI,https://www.trihealthrehab.com/,,,,['billing']
+350006,TRINITY HOSPITALS,ND,MINOT,https://www.trinityhealth.org/,,,"https://www.trinityhealth.org/trinity-health-billing/ , https://www.trinityhealth.org/patients-visitors/trinity-hospitals-transparency-pricing/ , https://www.trinityhealth.org/locations/kenmare-community-hospital/kenmare-community-hospital-price-list/ , https://www.trinityhealth.org/providers/david-billings/ , https://www.trinityhealth.org/providers/?_location=trinity-health-billing","['pricing', 'billing', 'transparency']"
+224046,MIRAVISTA BEHAVIORAL HEALTH CENTER,MA,HOLYOKE,https://www.trinityhealthofne.org/,,,"/for-patients/billing-and-financial-resources/ , /for-patients/billing-and-financial-resources/price-estimates-lists , https://www.trinity-health.org/no-surprises-act-balance-billing-protections/",['billing']
+670319,TRINITY REGIONAL HOSPITAL SACHSE,TX,SACHSE,https://www.trinitysachse.com/,,,,['billing']
+220116,TUFTS MEDICAL CENTER,MA,BOSTON,https://www.tuftsmedicalcenter.org/,,,,['billing']
+229807,TUFTS MEDICAL CENTER - TRANSPLANT,MA,BOSTON,https://www.tuftsmedicalcenter.org/,,,,['billing']
+670185,TEXAS EMERGENCY CARE,TX,HUMBLE,https://www.txercare.com/,,,"/billing/ , /billing/billing-practices/",['billing']
+670186,TEXAS EMERGENCY CARE,TX,PEARLAND,https://www.txercare.com/,,,"/billing/ , /billing/billing-practices/",['billing']
+050112,SANTA MONICA - UCLA MED CTR & ORTHOPAEDIC HOSPITAL,CA,SANTA MONICA,https://www.uclahealth.org/,,,"/patients-families/billing-insurance , /patients-families/billing-insurance/health-insurance-accepted",['billing']
+310119,UNIVERSITY HOSPITAL,NJ,NEWARK,https://www.uhnj.org/,,,https://www.uhnj.org/patients-visitors/transparency-in-billing/,"['billing', 'transparency']"
+319805,"UNIVERSITY HOSPITAL, UNIVERSITY OF MEDICINE AND DE",NJ,NEWARK,https://www.uhnj.org/,,,https://www.uhnj.org/patients-visitors/transparency-in-billing/,"['billing', 'transparency']"
+290007,UNIVERSITY MEDICAL CENTER,NV,LAS VEGAS,https://www.umcsn.com/,,,/patients-visitors/prices-for-all-services,['prices']
+450803,UNITED MEMORIAL MEDICAL CENTER,TX,HOUSTON,https://www.ummc.care/,,,https://www.ummc.care/billingandfinancial,"['billing', 'prices']"
+264028,HAWTHORN CHILDREN'S PSYCHIATRIC HOSPITAL,MO,SAINT LOUIS,https://www.umsl.edu/slpic/Major%20Rotation%20Sites/Hawthorn%20Childrens%20Psychiatri%20Hosp.html,,,https://www.umsl.edu/sfs/billing-payment/index.html,['billing']
+340061,UNIVERSITY OF NORTH CAROLINA HOSPITAL,NC,CHAPEL HILL,https://www.uncmedicalcenter.org/uncmc/,https://www.unchealthcare.org/patients-families-visitors/billing-financial-assistance/chargemaster/,,"/uncmc/patients-visitors/billing/ , /app/files/public/1902c85a-5f29-4bd3-bb4d-2c906c48e769/pdf-system-surprise-billing-gfe-notice-english.pdf , /app/files/public/5f731a2c-291f-42ad-9a00-b15f4aa36478/pdf-system-surprise-billing-gfe-notice-spanish.pdf","['billing', 'charges']"
+450010,UNITED REGIONAL HEALTH CARE SYSTEM,TX,WICHITA FALLS,https://www.unitedregional.org/,,,"https://www.unitedregional.org/patients-and-visitors/billing-faqs/ , https://www.unitedregional.org/patients-and-visitors/billing-faqs/patient-estimate-information/ , https://www.unitedregional.org/unitedhealthcare-transparency-in-coverage/","['billing', 'transparency']"
+040163,UNITY HEALTH NEWPORT,AR,NEWPORT,https://www.unity-health.org/,,,"/patients-visitors/pricing/ , /advanced-care-hospital/pricing-and-financial-information/",['pricing']
+440007,UNITY MEDICAL CENTER,TN,MANCHESTER,https://www.unitymedicalmanchester.com/,,,,"['pricing', 'billing', 'prices']"
+450213,UNIVERSITY HEALTH SYSTEM,TX,SAN ANTONIO,https://www.universityhealthsystem.com/,,,"/patient-visitor-resources/billing-insurance , /patient-visitor-resources/billing-insurance/hospital-pricing","['price transparency', 'pricing', 'billing', 'transparency']"
+459803,UNIVERSITY HOSPITAL TRANSPLANT,TX,SAN ANTONIO,https://www.universityhealthsystem.com/,,,"/patient-visitor-resources/billing-insurance , /patient-visitor-resources/billing-insurance/hospital-pricing","['price transparency', 'pricing', 'billing', 'transparency']"
+05054E,UNIVERSITY OF SOUTHERN CALIFORNIA INF,CA,LOS ANGELES,https://www.usc.edu/,,,"http://priceschool.usc.edu/ , https://news.usc.edu/203594/thanksgiving-cost-prices-rise-black-friday/",['prices']
+449800,UNIVERSITY OF TN TRANSPLANT CENTER AT KNOXVILLE,TN,KNOXVILLE,https://www.utmedicalcenter.org/,,,"https://www.utmedicalcenter.org/patients-visitors/insurance-billing/ , /patients-visitors/insurance-billing/ , /patients-visitors/insurance-billing/?price-transparency-modal , /patients-visitors/insurance-billing/no-surprises-billing/","['price transparency', 'billing', 'charges', 'transparency']"
+02015E,HARBORVIEW MEM HOSP,AK,VALDEZ,https://www.uwmedicine.org/,,,/patient-resources/billing-and-insurance,['billing']
+39005F,ERIE VA MEDICAL CENTER,PA,ERIE,https://www.va.gov/erie-health-care/,,,/erie-health-care/billing-and-insurance,['billing']
+33013F,VA HOSP,NY,CANANDAIGUA,https://www.va.gov/finger-lakes-health-care/,,,/finger-lakes-health-care/billing-and-insurance,['billing']
+51004F,HUNTINGTON VA MEDICAL CENTER,WV,HUNTINGTON,https://www.va.gov/huntington-health-care/locations/hershel-woody-williams-va-medical-center/,,,/huntington-health-care/billing-and-insurance,['billing']
+044006,VALLEY BEHAVIORAL HEALTH SYSTEM,AR,BARLING,https://www.valleybehavioral.com/,,,/admissions/insurance-payment-information/rates-prices/,"['pricing', 'prices']"
+670190,"COMPLETE EMERGENCY CARE LA VERNIA, LLC",TX,LAVERNIA,https://www.visitcompletecare.com/,,,,"['pricing', 'billing', 'transparency']"
+224038,"WALDEN BEHAVIORAL CARE, LLC",MA,DEDHAM,https://www.waldeneatingdisorders.com/,,,,['transparency']
+451373,WARD MEMORIAL HOSPITAL,TX,MONAHANS,https://www.wardmemorial.com/,,,"/getpage.php?name=billinginsurance&sub=Patients%20%26%20Visitors , /docs/756001193_WardMemorialHospital_standardcharges.csv?sub=Patient%20Price%20Transparency","['price transparency', 'standard charges', 'billing', 'charges', 'transparency']"
+291302,WILLIAM BEE RIRIE HOSPITAL,NV,ELY,https://www.wbrhely.org/,,,/patients-visitors/billing-concerns-and-financial-aid,"['price transparency', 'billing', 'transparency']"
+110086,WASHINGTON COUNTY REGIONAL MEDICAL CENTER,GA,SANDERSVILLE,https://www.wcrmc.com/home/,,,,['transparency']
+300018,WENTWORTH-DOUGLASS HOSPITAL,NH,DOVER,https://www.wdhospital.org/wdh,,,"https://www.wdhospital.org/wdh/patients-and-visitors/billing-and-insurance , https://www.wdhospital.org/wdh/patients-and-visitors/billing-and-insurance/pay-your-bill-online , https://www.wdhospital.org/wdh/patients-and-visitors/billing-and-insurance/pricing-estimates , https://www.wdhospital.org/wdh/patients-and-visitors/billing-and-insurance/financial-assistance , https://www.wdhospital.org/wdh/patients-and-visitors/billing-and-insurance/health-insurance-marketplace , https://www.wdhospital.org/wdh/patients-and-visitors/billing-and-insurance/health-insurance-basics , https://www.wdhospital.org/wdh/patients-and-visitors/billing-and-insurance/express-care-visit-charges , https://www.wdhospital.org/wdh/patients-and-visitors/billing-and-insurance/wentworth-douglass-portsmouth-charges , https://www.wdhospital.org/wdh/patients-and-visitors/billing-and-insurance/cms-required-hospital-charge-data","['pricing', 'billing', 'charges']"
+49022E,WESTBROOK PSYCHIATRIC HOSP,VA,RICHMOND,https://www.westbrookhealth.org/mental-health/,,,,"['pricing', 'billing', 'prices']"
+050796,WEST COAST SURGERY INC,CA,PALM DESERT,https://www.westcoastsurgery.org/home,,,,"['pricing', 'prices']"
+410013,WESTERLY HOSPITAL,RI,WESTERLY,https://www.westerlyhospital.org/,,,"https://www.westerlyhospital.org/patients-visitors/billing-insurance , https://www.westerlyhospital.org/patients-visitors/billing-insurance/Financial-assistance , https://www.ynhhs.org/patient-care/Patient-Rights-and-Responsibilities/no-surprise-billing",['billing']
+36029E,WESTERN COLLEGE INFIRMARY HOSP,OH,OXFORD,https://www.westernreservehospital.org/,,,"/financial-assistance-program/billing-and-collections-policy , /your-charges-and-your-bill , /your-charges-and-your-bill/chargemaster-faq , /your-charges-and-your-bill/requesting-estimate , /disclosure-notice-regarding-surprise-billing , /surprise-billing","['billing', 'charges']"
+050195,WASHINGTON HOSPITAL,CA,FREMONT,https://www.whhs.com/,,,/patients-visitors/patient-billing/,['billing']
+222047,WHITTIER REHABILITATION HOSPITAL - BRADFORD,MA,BRADFORD,https://www.whittierhealth.com/,,,https://www.whittierhealth.com/about-whittier-health-network/whittier-rehabilitation-hospitals-pricing-transparency/,"['pricing', 'transparency']"
+501327,WHITMAN HOSPITAL AND MEDICAL CENTER,WA,COLFAX,https://www.whmc.org/,,,/patients-guests/pricing/,['pricing']
+501303,WILLAPA HARBOR HOSPITAL,WA,SOUTH BEND,https://www.willapaharborhospital.com/,,,,['billing']
+374017,WILLOW CREST HOSPITAL,OK,MIAMI,https://www.willowcresthospital.com/,,,,"['pricing', 'billing', 'standard services']"
+340168,WILMINGTON TREATMENT CENTER,NC,WILMINGTON,https://www.wilmingtontreatment.com/,,,/admissions/insurance-payment-information/rates-pricing/,['pricing']
+212002,WESTERN MARYLAND CENTER,MD,HAGERSTOWN,https://www.wmhc.us/,,,,['charges']
+670267,THE WOODLANDS SPECIALTY HOSPITAL,TX,SPRING,https://www.woodlandsspecialtyhospital.com/,,,,['pricing']
+521347,WESTERN WISCONSIN HEALTH,WI,BALDWIN,https://www.wwhealth.org/,,,https://www.wwhealth.org/your-visit/price-transparency/,"['price transparency', 'charges', 'transparency']"
+361329,WYANDOT MEMORIAL HOSPITAL,OH,UPPER SANDUSKY,https://www.wyandotmemorial.org/,,,https://www.wyandotmemorial.org/pricing/,"['pricing', 'transparency']"
+281336,YORK GENERAL HOSPITAL,NE,YORK,https://www.yorkgeneral.org/,,,,"['price transparency', 'transparency']"
+270091,YELLOWSTONE SURGERY CENTER LLC,MT,BILLINGS,https://yellowstonesurgerycenter.com/,,,"https://yellowstonesurgerycenter.com/about-yellowstone-surgery-center/billings-downtown-location/ , https://yellowstonesurgerycenter.com/about-yellowstone-surgery-center/billings-west-end/ , https://yellowstonesurgerycenter.com/billing-and-payment-faqs/ , https://yellowstonesurgerycenter.com/page/about/locations/billings-downtown , https://yellowstonesurgerycenter.com/page/about/locations/billings-west","['pricing', 'billing', 'charges']"
+270092,YELLOWSTONE SURGERY CENTER WEST,MT,BILLINGS,https://yellowstonesurgerycenter.com/,,,"https://yellowstonesurgerycenter.com/about-yellowstone-surgery-center/billings-downtown-location/ , https://yellowstonesurgerycenter.com/about-yellowstone-surgery-center/billings-west-end/ , https://yellowstonesurgerycenter.com/billing-and-payment-faqs/ , https://yellowstonesurgerycenter.com/page/about/locations/billings-downtown , https://yellowstonesurgerycenter.com/page/about/locations/billings-west","['pricing', 'billing', 'charges']"
