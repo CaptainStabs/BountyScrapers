@@ -230,29 +230,29 @@ ccn,name,state,city,homepage,cdm_indirect_url,cdm_url,possible_indirect,found_st
 050819,SYNERGY SURGICAL CENTER,CA,WESTLAKE VILLAGE,https://synergysurgicalcenter.com/,,,,['pricing']
 110135,TAYLOR REGIONAL HOSPITAL,GA,HAWKINSVILLE,https://taylorregional.org/,,,,['pricing']
 351331,TOWNER COUNTY MEDICAL CENTER,ND,CANDO,https://tcmedcenter.org/,,,,"['pricing', 'transparency']"
-044005,"BRIDGEWAY INC, THE",AR,NORTH LITTLE ROCK,https://thebridgeway.com/,https://thebridgeway.com/standard-services-2/,,https://thebridgeway.com/standard-services-2/,"['transparency', 'standard services']"
-184007,THE BROOK HOSPITAL - DUPONT,KY,LOUISVILLE,https://thebrookhospitals.com/,https://thebrookhospitals.com/standard-services-2/,,https://thebrookhospitals.com/standard-services-2/,['standard services']
-184008,THE BROOK HOSPITAL - KMI,KY,LOUISVILLE,https://thebrookhospitals.com/,https://thebrookhospitals.com/standard-services-2/,,https://thebrookhospitals.com/standard-services-2/,['standard services']
-424010,"CAROLINA CTR FOR BEHAVIORAL HEALTH,THE",SC,GREER,https://thecarolinacenter.com/,https://thecarolinacenter.com/standard-services-2/,,https://thecarolinacenter.com/standard-services-2/,['standard services']
+044005,"BRIDGEWAY INC, THE",AR,NORTH LITTLE ROCK,https://thebridgeway.com/,https://thebridgeway.com/standard-services-2/,https://uhsfilecdn.eskycity.net/bh/232238973-bridgeway-standard_charges.csv,https://thebridgeway.com/standard-services-2/,"['transparency', 'standard services']"
+184007,THE BROOK HOSPITAL - DUPONT,KY,LOUISVILLE,https://thebrookhospitals.com/,https://thebrookhospitals.com/standard-services-2/,https://uhsfilecdn.eskycity.net/bh/205048087-brook-dupont-standard_charges.csv,https://thebrookhospitals.com/standard-services-2/,['standard services']
+184008,THE BROOK HOSPITAL - KMI,KY,LOUISVILLE,https://thebrookhospitals.com/,https://thebrookhospitals.com/standard-services-2/,https://uhsfilecdn.eskycity.net/bh/205048153-brook-kmi-standard_charges.csv,https://thebrookhospitals.com/standard-services-2/,['standard services']
+424010,"CAROLINA CTR FOR BEHAVIORAL HEALTH,THE",SC,GREER,https://thecarolinacenter.com/,https://thecarolinacenter.com/standard-services-2/,https://uhsfilecdn.eskycity.net/bh/233044427-carolina-center-standard_charges.csv,https://thecarolinacenter.com/standard-services-2/,['standard services']
 014016,"SANCTUARY AT THE WOODLANDS, THE",AL,CULLMAN,https://thesanctuaryatthewoodlands.com/,,,,['pricing']
 510031,SAINT FRANCIS HOSPITAL,WV,CHARLESTON,https://thomashealth.org/,,,"https://thomashealth.org/billing-and-financial-assistance/ , https://thomashealth.org/price-transparency/","['price transparency', 'billing', 'transparency']"
-424008,THREE RIVERS BEHAVIORAL HEALTH,SC,WEST COLUMBIA,https://threeriversbehavioral.org/,,,https://threeriversbehavioral.org/standard-services/,['standard services']
+424008,THREE RIVERS BEHAVIORAL HEALTH,SC,WEST COLUMBIA,https://threeriversbehavioral.org/,https://threeriversbehavioral.org/standard-services/,https://uhsfilecdn.eskycity.net/bh/571106645-three-rivers-shreveport-standard_charges.csv,https://threeriversbehavioral.org/standard-services/,['standard services']
 670196,"TLC CORPUS EMERGENCY CARE, LLC",TX,CORPUS CHRISTI,https://tlcmedicalcenter.com/,,,,"['pricing', 'prices']"
 191301,UNION GENERAL HOSPITAL,LA,FARMERVILLE,https://uniongen.org/,https://www.uniongen.org/patient-info/hospital-charges/,,/patient-info/hospital-charges/,"['price transparency', 'charges', 'transparency']"
 32001E,CARRIE TINGLEY CRIPPLED CHILDREN HOSP,NM,TRUTH OR CONSEQUENCES,https://unmhealth.org/,,,https://unmhealth.org/patients-visitors/billing-insurance/index.html,['billing']
 07001F,US COAST GUARD ACADEMY HOSP,CT,NEW LONDON,https://uscga.edu/,,,,['billing']
 464001,UTAH STATE HOSPITAL,UT,PROVO,https://ush.utah.gov/,,,,['pricing']
-154024,VALLE VISTA HEALTH SYSTEM,IN,GREENWOOD,https://vallevistahospital.com/,,,/standard-services/,['standard services']
+154024,VALLE VISTA HEALTH SYSTEM,IN,GREENWOOD,https://vallevistahospital.com/,https://vallevistahospital.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/621740366-valle-vista-standard_charges.csv,/standard-services/,['standard services']
 290056,ORTHOPEDIC SPECIALTY HOSPITAL OF NEVADA,NV,LAS VEGAS,https://valleyhealthspecialty.com/,,,https://www.springvalleyhospital.com/patients-visitors/pricing-guide,['pricing']
-034026,VALLEY HOSPITAL,AZ,PHOENIX,https://valleyhospital-phoenix.com/,,,/standard-services/,['standard services']
+034026,VALLEY HOSPITAL,AZ,PHOENIX,https://valleyhospital-phoenix.com/,https://valleyhospital-phoenix.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/270355566-valley-hospital-standard_charges.csv,/standard-services/,['standard services']
 050517,VICTOR VALLEY GLOBAL MEDICAL CENTER,CA,VICTORVILLE,https://victorvalleyglobalmedicalcenter.com/,,,https://victorvalleyglobalmedicalcenter.com/billing-and-payments/,"['pricing', 'billing', 'transparency']"
 670229,RIVER OAKS EMERGENCY CENTER LLC,TX,HOUSTON,https://villageec.com/,,,"https://villageec.com/insurance-billing/ , /insurance-billing/ , /insurance-billing","['pricing', 'billing', 'prices']"
 670249,"VILLAGE EMERGENCY ROOM, LLC",TX,JERSEY VILLAGE,https://villageec.com/,,,"https://villageec.com/insurance-billing/ , /insurance-billing/ , /insurance-billing","['pricing', 'billing', 'prices']"
 531303,WESTON COUNTY HEALTH SERVICES,WY,NEWCASTLE,https://wchs-wy.org/,,,"https://wchs-wy.org/standard-charges/ , /understand-your-billing/","['pricing', 'billing', 'charges']"
 261308,WASHINGTON COUNTY MEMORIAL HOSPITAL,MO,POTOSI,https://wcmhosp.org/,,,"https://wcmhosp.org/patients-and-visitors/price-transparency/ , https://wcmhosp.org/wp-content/uploads/2022/08/430795215-washingtoncountymemorialhospital_standardcharges0522.csv","['price transparency', 'charges', 'transparency']"
-104069,WEKIVA SPRINGS,FL,JACKSONVILLE,https://wekivacenter.com/,,,https://wekivacenter.com/standard-services/,['standard services']
+104069,WEKIVA SPRINGS,FL,JACKSONVILLE,https://wekivacenter.com/,https://wekivacenter.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/204865588-wekiva-springs-standard_charges.csv,https://wekivacenter.com/standard-services/,['standard services']
 104001,SOUTH FLORIDA STATE HOSPITAL,FL,PEMBROKE PINES,https://wellpathcare.com/,,,,['pricing']
-454026,WEST OAKS HOSPITAL,TX,HOUSTON,https://westoakshospital.com/,,,https://westoakshospital.com/standard-services,['standard services']
+454026,WEST OAKS HOSPITAL,TX,HOUSTON,https://westoakshospital.com/,https://westoakshospital.com/standard-services,https://uhsfilecdn.eskycity.net/bh/621864265-west-oaks-standard_charges.csv,https://westoakshospital.com/standard-services,['standard services']
 501339,WHIDBEYHEALTH MEDICAL CENTER,WA,COUPEVILLE,https://whidbeyhealth.org/,,,,['billing']
 110124,WAYNE MEMORIAL HOSPITAL,GA,JESUP,https://wmhweb.com/,,,https://wmhweb.com/charges-list/,"['charges', 'transparency']"
 510001,"WEST VIRGINIA UNIVERSITY HOSPITALS, INC",WV,MORGANTOWN,https://wvumedicine.org/,,,https://wvumedicine.org/bill-pay/pricing-transparency/,"['price transparency', 'standard charges', 'pricing', 'charges', 'transparency']"
@@ -294,7 +294,7 @@ ccn,name,state,city,homepage,cdm_indirect_url,cdm_url,possible_indirect,found_st
 490011,BON SECOURS DEPAUL MEDICAL CENTER,VA,NORFOLK,https://www.bonsecours.com/,,,,['pricing']
 224022,BOURNEWOOD HOSPITAL,MA,BOSTON COLLEGE,https://www.bournewood.com/,,,,"['standard charges', 'charges']"
 154014,OTIS R BOWEN CENTER FOR HUMAN SERVICES INC,IN,PIERCETON,https://www.bowencenter.org/,,,,['billing']
-254007,BRENTWOOD BEHAVIORAL HEALTHCARE OF MS,MS,FLOWOOD,https://www.brentwoodjackson.com/,,,https://www.brentwoodjackson.com/standard-services/,['standard services']
+254007,BRENTWOOD BEHAVIORAL HEALTHCARE OF MS,MS,FLOWOOD,https://www.brentwoodjackson.com/,https://www.brentwoodjackson.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/200773985-brentwood-ms-standard_charges.csv,https://www.brentwoodjackson.com/standard-services/,['standard services']
 450399,BROWNFIELD REGIONAL MEDICAL CENTER,TX,BROWNFIELD,https://www.brownfield-rmc.org/,,,https://secure.claraprice.net/price-transparency/brownfield-rmc,"['price transparency', 'pricing', 'billing', 'prices', 'transparency']"
 193028,BATON ROUGE REHAB HOSPITAL,LA,BATON ROUGE,https://www.brrehab.com/,,,/patient-info-center/understanding-hospital-charges,['charges']
 280139,GRAND ISLAND REGIONAL MEDICAL CENTER,NE,GRAND ISLAND,https://www.bryanhealth.com/,,,"/patients-visitors/pricing-insurance-financial-assistance-billing/ , /patients-visitors/pricing-insurance-financial-assistance-billing/pay-my-bill/","['pricing', 'billing']"
@@ -349,7 +349,7 @@ ccn,name,state,city,homepage,cdm_indirect_url,cdm_url,possible_indirect,found_st
 051991,BROADVIEW INC,CA,LOS ANGELES,https://www.csbroadview.org/,,,,['pricing']
 141990,HILL TOP CENTER,IL,LAKE BLUFF,https://www.cslfallbrook.org/,,,,"['pricing', 'billing', 'prices', 'transparency']"
 241353,CUYUNA REGIONAL MEDICAL CENTER,MN,CROSBY,https://www.cuyunamed.org/contact/crosby,,,/patient-information/billing,['billing']
-454108,CYPRESS CREEK HOSPITAL,TX,HOUSTON,https://www.cypresscreekhospital.com/,,,https://www.cypresscreekhospital.com/standard-services/,['standard services']
+454108,CYPRESS CREEK HOSPITAL,TX,HOUSTON,https://www.cypresscreekhospital.com/,https://www.cypresscreekhospital.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/621864266-cypress-creek-standard_charges.csv,https://www.cypresscreekhospital.com/standard-services/,['standard services']
 041317,DALLAS COUNTY MEDICAL CENTER,AR,FORDYCE,https://www.dallascountymedicalcenter.com/,,,,['pricing']
 070003,DAY KIMBALL HOSPITAL,CT,PUTNAM,https://www.daykimball.org/,,,"/resources/billing-and-insurance/ , /resources/billing-and-insurance/day-kimball-hospital-estimates/ , /resources/billing-and-insurance/no-surprises-act/","['pricing', 'billing']"
 351325,ST LUKE'S HOSPITAL,ND,CROSBY,https://www.dcstlukes.org/,,,,"['pricing', 'billing', 'prices']"
@@ -409,7 +409,7 @@ ccn,name,state,city,homepage,cdm_indirect_url,cdm_url,possible_indirect,found_st
 234021,HARBOR OAKS HOSPITAL,MI,NEW BALTIMORE,https://www.harboroaks.com/,,,/admissions/insurance-payment-information/rates-pricing/,['pricing']
 450289,HARRIS HEALTH SYSTEM,TX,HOUSTON,https://www.harrishealth.org/locations-hh/Pages/ben-taub.aspx,,,,"['pricing', 'transparency']"
 154054,HARSHA BEHAVIORAL CENTER INC,IN,TERRE HAUTE,https://www.harshacenter.com/,,,,['billing']
-144026,HARTGROVE HOSPITAL,IL,CHICAGO,https://www.hartgrovehospital.com/,,,/standard-services/,['standard services']
+144026,HARTGROVE HOSPITAL,IL,CHICAGO,https://www.hartgrovehospital.com/,https://www.hartgrovehospital.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/232983574-hartgrove-standard_charges.csv,/standard-services/,['standard services']
 324013,HAVEN BEHAVIORAL HOSPITAL OF ALBUQUERQUE,NM,ALBUQUERQUE,https://www.havenalbuquerque.com/,,,https://www.havenalbuquerque.com/price-transparency/,"['price transparency', 'transparency']"
 224039,WHITTIER PAVILION,MA,HAVERHILL,https://www.haverhillpavilion.com/,,,/admissions/insurance-payment/rates-pricing/,['pricing']
 120022,STRAUB CLINIC AND HOSPITAL,HI,HONOLULU,https://www.hawaiipacifichealth.org/,,,https://mychart.hawaiipacifichealth.org/web/billing/guestpay,"['billing', 'transparency']"
@@ -427,7 +427,7 @@ ccn,name,state,city,homepage,cdm_indirect_url,cdm_url,possible_indirect,found_st
 10039E,HOPE HAVEN CHILDRENS HOSP,FL,JACKSONVILLE,https://www.hope-haven.org/,,,,['billing']
 109808,JOHNS HOPKINS ALL CHILDREN'S HOSPITAL,FL,SAINT PETERSBURG,https://www.hopkinsallchildrens.org/,,,,['billing']
 224045,HOSPITAL FOR BEHAVIORAL MEDICINE,MA,WORCESTER,https://www.hospitalforbehavioralmedicine.com/,,,https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=1ea81f1b-4f1e-44b3-95f2-98519fe92de6,"['pricing', 'standard services']"
-404004,FIRST HOSPITAL PANAMERICANO,PR,CIDRA,https://www.hospitalpanamericano.com/,,,https://www.hospitalpanamericano.com/standard-services/,"['pricing', 'standard services']"
+404004,FIRST HOSPITAL PANAMERICANO,PR,CIDRA,https://www.hospitalpanamericano.com/,https://www.hospitalpanamericano.com/standard-services/,https://uhsfilecdn.eskycity.net/bh/660490148-panamericano-standard_charges.csv,https://www.hospitalpanamericano.com/standard-services/,"['pricing', 'standard services']"
 400112,"HOSPITAL UPR, DR  FEDERICO TRILLA",PR,CAROLINA,https://www.hospitalupr.org/,,,https://nam10.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.yourcareeverywhere.com%2Fcontent%2Fmedhost%2Fyour-care-everywhere%2Fpricing-estimator-page.html%3Ffacility_id%3D2ece4713-3f71-47d0-8ee5-6c4585b6cdc9&data=04%7C01%7Cerivera%40hospitalupr.org%7C6014cab5c34047eebcfe08d8c20d68c7%7C7c4c8632108c4bf0b320ec136749028f%7C0%7C0%7C637472710145660710%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=8JQ2v1LncY7NSHeBRaILZyf1HLOmHZwvVUZFALjIC1I%3D&reserved=0,['pricing']
 670008,HOUSTON PHYSICIANS' HOSPITAL,TX,WEBSTER,https://www.houstonphysicianshospital.com/,,,,"['price transparency', 'standard charges', 'pricing', 'charges', 'transparency']"
 06009E,HILL TOP HOSPITAL,CO,CRIPPLE CREEK,https://www.htop.org/,,,,['pricing']
