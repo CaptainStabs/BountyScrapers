@@ -1,0 +1,42 @@
+ccn,name,state,city,homepage,cdm_indirect_url,cdm_url,found_string
+412001,ELEANOR SLATER HOSPITAL,RI,CRANSTON,https://bhddh.ri.gov/eleanor-slater-hospital,https://bhddh.ri.gov/cms-price-transparency,https://bhddh.ri.gov/media/5531/download?language=en,['price transparency']
+670251,BELLAIRE ER,TX,BELLAIRE,https://bellaireer.com/,,,"['pricing', 'billing']"
+260321,BEACON SURGERY CENTER,MO,LEES SUMMIT,https://beaconsc.com/,,,['billing']
+100008,BAPTIST HOSPITAL OF MIAMI,FL,MIAMI,https://baptisthealth.net/,https://baptisthealth.net/locations/hospitals/baptist-hospital-pricing,https://baptisthealth.net/-/media/documents/patient-resources/patient-pricing/2023/59-0910342_baptist-hospital-of-miami-inc_standardcharges.ashx,"['pricing', 'billing']"
+45069F,US ARMY HOSP,TX,FORT SAM HOUSTON,https://bamc.tricare.mil/,,,['billing']
+050822,BAHAMAS SURGERY CENTER LLC,CA,BAKERSFIELD,https://bahamassurgerycenter.com/,,,"['billing', 'prices']"
+171321,MEADE DISTRICT HOSPITAL,KS,MEADE,https://avhealthsystem.com/,,,['billing']
+320093,ASC OF THE HEART INSTITUTE,NM,LAS CRUCES,https://ascheart.com/,,,['pricing']
+030144,THE EYE CLINIC,AZ,COTTONWOOD,https://arizonaeyeclinic.com/,,,['billing']
+371328,ARBUCKLE MEMORIAL HOSPITAL AUTHORITY,OK,SULPHUR,https://arbucklehospital.com/,https://arbucklehospital.com/,https://arbucklehospital.com/hospital-charges/,"['price transparency', 'charges']"
+340051,WATAUGA MEDICAL CENTER,NC,BOONE,https://apprhs.org/,,,"['pricing', 'billing']"
+341323,CHARLES A CANNON JR MEMORIAL HOSPITAL,NC,LINVILLE,https://apprhs.org/,,,"['pricing', 'billing']"
+050807,ANTELOPE VALLEY SPECIALTY SURGICAL CENTER LLC,CA,PALMDALE,https://antelopevalleysurgerycenter.com/,,,['billing']
+280140,ADVANCED MEDICAL IMAGING SURGERY CENTER,NE,LINCOLN,https://amimaging.com/surgery-center/,,,"['pricing', 'billing']"
+050757,ALVARADO HOSPITAL MEDICAL CENTER,CA,SAN DIEGO,https://alvaradohospital.com/,,,"['pricing', 'billing']"
+240030,ALOMERE HEALTH,MN,ALEXANDRIA,https://alomerehealth.com/,,,['billing']
+194087,FREEDOM BEHAVIORAL HOSPITAL OF MONROE,LA,MONROE,https://ahmgt.com/,,,['pricing']
+454101,ALLEGIANCE BEHAVIORAL HEALTH CENTER OF PLAINVIEW,TX,PLAINVIEW,https://ahmgt.com/,,,['pricing']
+151330,ADAMS MEMORIAL HOSPITAL,IN,DECATUR,https://adamshospital.org/,,,"['pricing', 'billing']"
+190318,ACADIAN MEDICAL CENTER,LA,EUNICE,https://acadianmedicalcenter.com/,https://acadianmedicalcenter.com/health-education-center/,,"['price transparency', 'pricing']"
+140143,ST MARGARET'S HEALTH SPRING VALLEY,IL,SPRING VALLEY,https://aboutsmh.org/,,,"['price transparency', 'billing', 'charges']"
+670214,ER NOW,TX,WICHITA FALLS,http://www.yourernow.com/,,,['billing']
+451387,UVALDE MEMORIAL HOSPITAL,TX,UVALDE,http://www.umhtx.org/,,,['price transparency']
+351300,TIOGA MEDICAL CENTER,ND,TIOGA,http://www.tiogahealth.org/,,,"['pricing', 'billing']"
+170068,SOUTHWEST MEDICAL CENTER,KS,LIBERAL,http://www.swmedcenter.com/,http://www.swmedcenter.com/index.php/billing/billing-information-pricing/,,"['pricing', 'billing']"
+670157,"SUN CITY EMERGENCY ROOM, LLC",TX,EL PASO,http://www.suncityer.com/,,,"['billing', 'charges']"
+670160,"SUN CITY WEST EMERGENCY ROOM, LLC",TX,EL PASO,http://www.suncityer.com/,,,"['billing', 'charges']"
+261310,SCOTLAND COUNTY  HOSPITAL,MO,MEMPHIS,http://www.scotlandcountyhospital.com/,,,"['pricing', 'billing', 'charges']"
+291304,PERSHING GENERAL HOSPITAL,NV,LOVELOCK,http://www.pershinghospital.org/,,,"['pricing', 'billing']"
+230174,NORTH OTTAWA COMMUNITY HEALTH SYSTEM,MI,GRAND HAVEN,http://www.noch.org/,http://www.noch.org/main.aspx?id=96,,['billing']
+054135,NEWPORT BAY HOSPITAL,CA,NEWPORT BEACH,http://www.newportbayhospital.com/,,,['billing']
+194118,MERCY BEHAVIORAL HOSPITAL,LA,LECOMPTE,http://www.mercybh.com/,,,"['pricing', 'billing', 'prices']"
+670165,LAKE WOOD EMERGENCY ROOM,TX,DALLAS,http://www.lakewoodemergencyroom.com/,,,"['billing', 'charges']"
+250060,JEFFERSON COUNTY HOSPITAL,MS,FAYETTE,http://www.jeffhospital.com/,,,"['price transparency', 'pricing']"
+231304,HELEN NEWBERRY JOY HOSPITAL,MI,NEWBERRY,http://www.hnjh.org/HNJHWebsite/,,,"['pricing', 'billing']"
+324014,CENTRAL DESERT BEHAVIORAL HEALTH HOSPITAL,NM,ALBUQUERQUE,http://www.centraldesertbh.com/,,,['price transparency']
+321304,UNION COUNTY GENERAL HOSPITAL,NM,CLAYTON,http://ucgh.net/,,,"['price transparency', 'pricing']"
+194079,"RED RIVER BEHAVIORAL CENTER, LLC",LA,BOSSIER CITY,http://redriverbc.com/,,,['pricing']
+261327,RAY COUNTY MEMORIAL HOSPITAL,MO,RICHMOND,http://raycountyhospital.com/,,,['price transparency']
+371306,MERCY HEALTH LOVE COUNTY,OK,MARIETTA,http://mercyhealthlovecounty.com/,,,"['pricing', 'billing', 'prices']"
+050842,CENTRAL VALLEY SURGICAL CENTER LLC,CA,BAKERSFIELD,http://centralvalleysc.com/,,,['pricing']

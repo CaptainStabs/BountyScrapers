@@ -8,6 +8,7 @@ def test(df):
         if x == "cdm3" or x == "hpg1":
             x = pd.NA
         checked_urls.append(x)
+        print(checked_urls)
     return checked_urls
 
 
