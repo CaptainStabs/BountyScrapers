@@ -22,7 +22,7 @@ from _utils import istarmap
 #         tb.print_exc()
 
 def master_function(url, out, lock):
-    id = multiprocessing.current_process()._identity[0]
+    id = multiprocessing.current_process()._identity[0] + 1
     out = "./output/" + out
     try:
         json_mrf_to_csv(loc=str(url), url=str(url), npi_filter=import_csv_to_set("quest/npis.csv"), code_filter= import_csv_to_set("quest/codes.csv"), out_dir=out, pos=id, lock=lock)
