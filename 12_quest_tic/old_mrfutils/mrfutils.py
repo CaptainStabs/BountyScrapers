@@ -29,9 +29,6 @@ import ijson
 import requests
 
 from schema import SCHEMA
-from tqdm import tqdm
-from tqdm.asyncio import tqdm as tqdma
-
 
 # You can remove this if necessary, but be warned
 try:
@@ -72,6 +69,8 @@ class JSONOpen(io.BufferedIOBase):
 			self.suffix = ''.join(Path(parsed_url.path).suffixes)
 
 			if self.suffix not in ('.json.gz', '.json'):
+				print(f"Suffix is: '{self.suffix}'")
+
 				raise InvalidMRF(f'Suffix not JSON: {self.loc}')
 
 			self.is_remote = parsed_url.scheme in ('http', 'https')
@@ -101,7 +100,7 @@ class JSONOpen(io.BufferedIOBase):
 		else:
 			self.f = open(self.loc, 'rb')
 
-		log.info(f'Successfully opened file: {self.loc}')
+		# log.info(f'Successfully opened file: {self.loc}')
 		return self.f
 
 	def __exit__(self, exc_type, exc_val, exc_tb):
@@ -386,21 +385,37 @@ async def _fetch_remote_provider_reference(
 	provider_reference_loc: str,
 	npi_filter: set,
 ) -> dict:
-	async with session.get(provider_reference_loc) as response:
+	try:
+		async with session.get(provider_reference_loc) as response:
+			# log.info(f'Opened remote provider reference url:{provider_reference_loc}')
+			assert response.status == 200
 
-		log.info(f'Opened remote provider reference url:{provider_reference_loc}')
-		assert response.status == 200
+			f = await response.read()
 
-		f = await response.read()
+			unprocessed_data = json.loads(f)
+			unprocessed_data['provider_group_id'] = provider_group_id
 
-		unprocessed_data = json.loads(f)
-		unprocessed_data['provider_group_id'] = provider_group_id
+			processed_remote_provider_reference = _process_provider_reference(
+				item = unprocessed_data,
+				npi_filter = npi_filter,
+			)
+			return processed_remote_provider_reference
+	except requests.exceptions.ConnectionError:
+		asyncio.sleep(0.5)
+		async with session.get(provider_reference_loc) as response:
+			# log.info(f'Opened remote provider reference url:{provider_reference_loc}')
+			assert response.status == 200
 
-		processed_remote_provider_reference = _process_provider_reference(
-			item = unprocessed_data,
-			npi_filter = npi_filter,
-		)
-		return processed_remote_provider_reference
+			f = await response.read()
+
+			unprocessed_data = json.loads(f)
+			unprocessed_data['provider_group_id'] = provider_group_id
+
+			processed_remote_provider_reference = _process_provider_reference(
+				item = unprocessed_data,
+				npi_filter = npi_filter,
+			)
+			return processed_remote_provider_reference
 
 async def _fetch_remote_provider_references(
 	unfetched_provider_references: List[dict],
@@ -408,9 +423,9 @@ async def _fetch_remote_provider_references(
 	pos: int,
 ) -> List[dict]:
 	tasks = []
-	connector = aiohttp.TCPConnector(limit_per_host=10)
+	connector = aiohttp.TCPConnector(limit_per_host=15)
 	async with aiohttp.client.ClientSession(connector = connector) as session:
-		for unfetched_provider_reference in tqdm(unfetched_provider_references, desc=f"{pos}: Remote P refs", position=int(pos)):
+		for unfetched_provider_reference in unfetched_provider_references:
 			provider_group_id = unfetched_provider_reference['provider_group_id']
 			provider_reference_loc = unfetched_provider_reference['location']
 
@@ -421,12 +436,11 @@ async def _fetch_remote_provider_references(
 					provider_reference_loc = provider_reference_loc,
 					npi_filter = npi_filter,
 				),
-				timeout=5,
+				timeout=None,
 			)
-
 			tasks.append(task)
 
-		fetched_references = await tqdma.gather(*tasks, desc=f"{pos}: Fetching References", position=int(pos))
+		fetched_references = await asyncio.gather(*tasks)
 
 		fetched_references = [item for item in fetched_references if item]
 
@@ -559,7 +573,7 @@ def _process_in_network_item(
 
 def _ffwd(parser, to_prefix, to_event):
 	for prefix, event, _ in parser:
-		if (prefix, event) == (to_prefix, to_event):
+		if event == to_event and prefix == to_prefix:
 			return
 
 
@@ -601,7 +615,7 @@ def _make_provider_reference_map(
 	provider_references = ijson.ObjectBuilder()
 	provider_references.event('start_array', None)
 
-	for prefix, event, value in tqdm(parser, desc=f"{pos}: Provider Reference Map", position=int(pos)):
+	for prefix, event, value in parser:
 		provider_references.event(event, value)
 		if (prefix, event) == ('provider_references.item', 'end_map'):
 			unprocessed_reference = provider_references.value.pop()
@@ -650,7 +664,7 @@ def _in_network_items(
 
 	in_network_items = ijson.ObjectBuilder()
 	in_network_items.event('start_array', None)
-	for prefix, event, value in tqdm(parser, desc=f"{pos}: In Network Items gen", position=int(pos)):
+	for prefix, event, value in parser:
 		in_network_items.event(event, value)
 
 		# This line can be commented out! but it's faster with it in
