@@ -51,7 +51,6 @@ def apply_parallel(df, func, out):
             for _ in tqdm(pool.istarmap(func, [(row["url"], out) for _, row in df.iterrows()]), desc="Main Process", position=0, total=len(df)):
                 pass
             pool.close()
-            send_mail("Finished", "Finished")
 
     # catch sigint to prevent unstoppable crash
     except KeyboardInterrupt:
@@ -66,6 +65,7 @@ def apply_parallel(df, func, out):
 
     finally:
         pool.join()
+        send_mail("Finished", "Finished")
 
 
 if __name__ == '__main__':
