@@ -8,7 +8,7 @@ import traceback as tb
 import argparse
 from tqdm import tqdm
 from _utils import istarmap
-from _utils import send_mail
+from _utils.send_mail import send_mail
 
 import os
 
@@ -22,7 +22,18 @@ def work(url, out):
         if not os.path.exists(out):
             os.makedirs(out)
          # call the json_mrf_to_csv function with the given arguments
-        json_mrf_to_csv(url=str(url), npi_filter=import_csv_to_set("./quest/npis.csv"), code_filter= import_csv_to_set("./quest/codes.csv"), out_dir=out)
+
+        tries = 0
+        while tries < 2:
+            try:
+                json_mrf_to_csv(url=str(url), npi_filter=import_csv_to_set("./quest/npis.csv"), code_filter= import_csv_to_set("./quest/codes.csv"), out_dir=out)
+                tries = 6
+            except EOFError:
+                print(f"\n!!!EOFError: {url}")
+                tries += 1
+            except Exception as e:
+                print(f"{e}: {url}")
+                tries += 1
      
     except:
         print(url, "\n", id)
@@ -72,8 +83,8 @@ if __name__ == '__main__':
         if "size" in df.columns:
             df = df.sort_values(by=["size"])
 
-        df = df.iloc[500:]
-        df = df.head(500)
+        # df = df.iloc[1498:]
+        df = df.head(100)
         # apply the work function in parallel using apply_parallel
         results = apply_parallel(df, work, args.out)
     except KeyboardInterrupt:
