@@ -4,6 +4,11 @@ from idxutils import gen_in_network_links, JSONOpen
 from tqdm import tqdm
 import traceback as tb
 
+'''
+Not entirely sure why I wrote this, 
+I think I just fed it a csv file with a few urls as a test
+'''
+
 def process_row(row):
     try:
         files = [file for file in gen_in_network_links(row["url"])]
