@@ -32,7 +32,7 @@ def work(url, out):
                 print(f"\n!!!EOFError: {url}")
                 tries += 1
             except Exception as e:
-                print(f"{e}: {url}")
+                print(f"\n{e}: {url}")
                 tries += 1
      
     except:

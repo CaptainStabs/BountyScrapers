@@ -7,16 +7,13 @@ import os
 from itertools import chain
 from pathlib import Path
 from urllib.parse import urlparse
-import urllib3
 
 import requests
 
+from .exceptions import InvalidMRF
+
 log = logging.getLogger('mrfutils')
 log.setLevel(logging.INFO)
-
-
-class InvalidMRF(Exception):
-	pass
 
 
 def prepend(value, iterator):
@@ -53,7 +50,6 @@ class JSONOpen:
 		self.f = None
 		self.r = None
 		self.is_remote = None
-		self.s = requests.Session()
 
 		parsed_url = urlparse(self.filename)
 		self.suffix = ''.join(Path(parsed_url.path).suffixes)
@@ -68,25 +64,15 @@ class JSONOpen:
 			self.is_remote
 			and self.suffix == '.json.gz'
 		):
-		
-            # Try to get the file for a maximum of 5 attempts
-			tries = 0
-			while tries < 5:
-				try:
-					self.r = self.s.get(self.filename, stream=True)
-					self.f = gzip.GzipFile(fileobj=self.r.raw)
-					tries = 6 # Breaks the loop 
-				except EOFError:
-					tries += 1
-				
-				except urllib3.exceptions.ProtocolError:
-					tries += 1
-
+			self.s = requests.Session()
+			self.r = self.s.get(self.filename, stream=True)
+			self.f = gzip.GzipFile(fileobj=self.r.raw)
 
 		elif (
 			self.is_remote
 			and self.suffix == '.json'
 		):
+			self.s = requests.Session()
 			self.r = self.s.get(self.filename, stream=True)
 			self.r.raw.decode_content = True
 			self.f = self.r.raw
