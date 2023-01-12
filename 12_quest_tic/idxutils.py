@@ -5,7 +5,7 @@ from mrfutils import JSONOpen
 log = logging.getLogger('mrfutils')
 log.setLevel(logging.DEBUG)
 
-def gen_in_network_links(index_loc,):
+def gen_in_network_links(index_loc):
     """
     Gets in-network files from index.json files
     :param index.json URL:
