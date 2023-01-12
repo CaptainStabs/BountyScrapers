@@ -23,6 +23,7 @@ __pycache__/
 9_arts/smb/*.csv
 10_housing_prices_2/*/*.csv
 12_quest_tic/output/*/
+12_quest_tic/test/*/
 
 # Dolt
 11_hospitals/paylesshealth-1/.dolt*
