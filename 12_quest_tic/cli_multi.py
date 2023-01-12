@@ -1,7 +1,7 @@
 import multiprocessing
 import pandas as pd
 from mrfutils import json_mrf_to_csv
-from _mrf_stuff.helpers import import_csv_to_set
+from _utils.mrf.helpers import import_csv_to_set
 from multiprocessing import Pool, Manager
 import sys
 import traceback as tb
@@ -84,7 +84,7 @@ if __name__ == '__main__':
             df = df.sort_values(by=["size"])
 
         # df = df.iloc[1498:]
-        df = df.head(100)
+        df = df.head(50)
         # apply the work function in parallel using apply_parallel
         results = apply_parallel(df, work, args.out)
     except KeyboardInterrupt:
