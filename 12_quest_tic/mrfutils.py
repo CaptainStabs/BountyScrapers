@@ -45,20 +45,24 @@ from __future__ import annotations
 import asyncio
 from functools import partial
 from itertools import product
-from typing import Generator, Iterator
+from typing import Generator
 
 import aiohttp
 import ijson
 
-from _mrf_stuff.helpers import *
-from  _mrf_stuff.schema import SCHEMA
+from _utils.mrf.helpers import *
+from _utils.mrf.schema.schema import SCHEMA
 
 # You can remove this if necessary, but be warned
-# Right now this only works with python 3.9
-assert ijson.backend == 'yajl2_c'
+# Right now this only works with python 3.9/3.10
+# Install on Mac with
+# brew install yajl
+# or comment out this line!
+assert ijson.backend in ('yajl2_c', 'yajl2_cffi')
 
 log = logging.getLogger(__name__)
-log.setLevel(logging.INFO)
+logging.basicConfig(format='%(asctime)s - %(message)s')
+log.setLevel(logging.DEBUG)
 
 # To distinguish data from rows
 Row = dict
@@ -183,7 +187,7 @@ def price_row_from_dict(
 		'additional_information',
 	]
 
-	price_row = {key : price.get(key) for key in keys}
+	price_row = {key : price.get(key) if price.get(key) else None for key in keys}
 
 	optional_json_keys = [
 		'service_code',
@@ -203,6 +207,7 @@ def price_row_from_dict(
 	}
 
 	price_row.update(hashes)
+
 	price_row = append_hash(price_row, 'price_hash')
 
 	return price_row
@@ -659,6 +664,7 @@ def json_mrf_to_csv(
 	As of 1/2/2023 the filename is extracted from the URL, so this
 	isn't an optional parameter.
 	"""
+	assert url is not None
 
 	if file is None:
 		file = url
