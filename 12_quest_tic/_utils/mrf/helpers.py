@@ -83,7 +83,7 @@ class JSONOpen:
 		else:
 			self.f = open(self.filename, 'rb')
 
-		log.info(f'Opened file: {self.filename}')
+		log.debug(f'Opened file: {self.filename}')
 		return self.f
 
 	def __exit__(self, exc_type, exc_val, exc_tb):
