@@ -30,9 +30,11 @@ def work(url, out):
                 tries = 6
             except EOFError:
                 print(f"\n!!!EOFError: {url}")
+                print(f"\nRetrying, try: {tries}")
                 tries += 1
             except Exception as e:
                 print(f"\n{e}: {url}")
+                print(f"\nRetrying, try: {tries}")
                 tries += 1
      
     except:
@@ -55,7 +57,7 @@ def apply_parallel(df, func, out):
     # catch sigint to prevent unstoppable crash
     except KeyboardInterrupt:
         print("Quitting")
-        pool.terminate()
+        pool.terminate() 
         sys.exit()
     
     except Exception:
@@ -84,7 +86,7 @@ if __name__ == '__main__':
             df = df.sort_values(by=["size"])
 
         # df = df.iloc[1498:]
-        df = df.head(50)
+        df = df.head(100)
         # apply the work function in parallel using apply_parallel
         results = apply_parallel(df, work, args.out)
     except KeyboardInterrupt:
