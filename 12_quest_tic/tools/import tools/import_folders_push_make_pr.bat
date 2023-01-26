@@ -14,7 +14,7 @@ set tables=file insurer code price_metadata rate npi_rate
 for /L %%i in (1, 1, 10) do (
   for %%t in (%tables%) do (
     echo WRITING TABLE %%t
-    dolt table import -u %%t %out_dir%/%%i/%%t.csv --continue --quiet
+    dolt table import -u %%t %out_dir%/%%i/%%t.csv
   )
   dolt gc --shallow
 )
@@ -22,3 +22,5 @@ for /L %%i in (1, 1, 10) do (
 dolt add .
 dolt commit -m "%2"
 dolt push origin %3
+
+python make_pr_cli.py %2 %3
