@@ -45,8 +45,6 @@ from __future__ import annotations
 import asyncio
 from functools import partial
 import itertools
-# import os
-# import logging
 from typing import Generator
 
 import aiohttp
@@ -54,7 +52,6 @@ import ijson
 
 from _utils.mrf.helpers import *
 from _utils.mrf.schema.schema import SCHEMA
-
 # You can remove this if necessary, but be warned
 # Right now this only works with python 3.9/3.10
 # Install on Mac with
@@ -69,8 +66,9 @@ log.setLevel(logging.INFO)
 # To distinguish data from rows
 Row = dict
 
-def flatten(list_of_lists):
-    return itertools.chain.from_iterable(list_of_lists)
+
+def extract_filename_from_url(url: str) -> str:
+	return Path(url).stem.split('.')[0]
 
 
 def write_table(
@@ -99,31 +97,33 @@ def write_table(
 			writer.writerow(row)
 
 
-def file_row_from_filename(
-	filename: str,
+def file_row_from_mixed(
 	plan: dict,
 	url: str
 ) -> Row:
 
-	filename = Path(filename).stem.split('.')[0]
+	filename = extract_filename_from_url(url)
 
 	file_row = dict(
 		filename = filename,
-		url = url,
 		last_updated_on = plan['last_updated_on']
 	)
+
+	file_row = append_hash(file_row, 'id')
+
+	# URL is excluded from the hash
+	file_row['url'] = url
 
 	return file_row
 
 
 def write_file(
-	filename: str,
 	plan: dict,
 	url: str,
 	out_dir: str,
 ) -> None:
 
-	file_row = file_row_from_filename(filename, plan, url)
+	file_row = file_row_from_mixed(plan, url)
 	write_table(file_row, 'file', out_dir)
 
 
@@ -204,6 +204,21 @@ def price_metadata_combined_rows_from_dict(rate: dict) -> list[tuple[Row, float]
 	return price_metadata_combined_rows
 
 
+def file_rate_rows_from_mixed(
+	rate_rows: list[Row],
+	file_id: str,
+) -> list[Row]:
+
+	rate_ids = [row['id'] for row in rate_rows]
+
+	file_rate_rows = [
+		dict(file_id = file_id, rate_id = rate_id)
+		for rate_id in rate_ids
+	]
+
+	return file_rate_rows
+
+
 def rate_rows_from_mixed(
 	insurer_row: Row,
 	code_row: Row,
@@ -244,6 +259,7 @@ def npi_rate_rows_from_mixed(
 
 def write_in_network_item(
 	plan_metadata: dict,
+	file_id: str,
 	in_network_item: dict,
 	out_dir
 ) -> None:
@@ -264,6 +280,9 @@ def write_in_network_item(
 			price_metadata_combined_rows = price_metadata_combined_rows,
 		)
 		write_table(rate_rows, 'rate', out_dir)
+
+		file_rate_rows = file_rate_rows_from_mixed(rate_rows, file_id)
+		write_table(file_rate_rows, 'file_rate', out_dir)
 
 		# gather all the NPIs
 		groups = rate['provider_groups']
@@ -331,18 +350,10 @@ def process_rate(rate: dict, npi_filter: set) -> dict | None:
 
 	rate['provider_groups'] = groups
 
-	service_code_filter = ['19','20','21','22','23','24','53']
-
 	prices = []
 	for price in rate['negotiated_prices']:
-		if price['negotiated_type'] != 'percentage':
+		if price['negotiated_type'] == 'negotiated':
 			prices.append(price)
-			# if not price['service_code']:
-			# 	prices.append(price)
-			# else:
-			# 	price['service_code'] = [c for c in price['service_code'] if c in service_code_filter]
-			# 	if price['service_code']:
-			# 		prices.append(price)
 
 	if not prices:
 		return
@@ -586,6 +597,7 @@ async def _get_reference_map(parser, npi_filter) -> dict | None:
 		references = gen_references(parser)
 		return await make_reference_map(references, npi_filter)
 
+
 def get_reference_map(parser, npi_filter):
 	"""Wrapper to turn _get_reference_map into a sync function"""
 	return asyncio.run(_get_reference_map(parser, npi_filter))
@@ -682,6 +694,8 @@ def json_mrf_to_csv(
 	if file is None:
 		file = url
 
+	filename = extract_filename_from_url(url)
+
 	# Explicitly make this variable up-front since both sets of tables
 	# are linked by it (in_network and plan tables)
 
@@ -689,12 +703,14 @@ def json_mrf_to_csv(
 	content.start_conn()
 	plan_metadata = content.plan_metadata
 
-	processed_items = content.in_network_items()
+	file_row = file_row_from_mixed(plan_metadata, url)
+	file_id  = file_row['id']
 
 	make_dir(out_dir)
 
+	processed_items = content.in_network_items()
 	for item in processed_items:
-		write_in_network_item(plan_metadata, item, out_dir)
+		write_in_network_item(plan_metadata, file_id, item, out_dir)
 
-	write_file(file, plan_metadata, url, out_dir)
+	write_file(plan_metadata, url, out_dir)
 	write_insurer(plan_metadata, out_dir)
