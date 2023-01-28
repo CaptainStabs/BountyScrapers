@@ -76,5 +76,5 @@ s.headers.update(headers)
 
 df = pd.read_csv('prs.csv')
 
-df[["added_rows", "deleted_rows", "modified_rows", "modified_cells"]] = df.progress_apply(lambda x: get_url(x["url"], s), axis=1, result_type='expand')
+df[["added_rows", "deleted_rows", "modified_rows", "modified_cells"]] = df.progress_apply(lambda x: get_url(x["url"], x["username"], s), axis=1, result_type='expand')
 df.to_csv('prs_data.csv', index=False)
