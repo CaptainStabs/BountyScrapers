@@ -1,6 +1,6 @@
 import requests
 import json
-from _secrets import cookie
+from ._secrets import cookie
 
 headers = {
         'sec-ch-ua': '"Not_A Brand";v="99", "Google Chrome";v="109", "Chromium";v="109"',
@@ -28,11 +28,11 @@ def make_pr(title, branch):
         "fromBranchName": f"{branch}",
         "toBranchName": "main",
         "fromBranchOwnerName": "captainstabs",
-        "fromBranchRepoName": "quest-small",
+        "fromBranchRepoName": "quest-v3",
         "toBranchOwnerName": "dolthub",
-        "toBranchRepoName": "quest-small",
+        "toBranchRepoName": "quest-v3",
         "parentOwnerName": "dolthub",
-        "parentRepoName": "quest-small",
+        "parentRepoName": "quest-v3",
         "allowMaintainerToEditFromBranch": False
     },
         "query": "mutation CreatePullRequestWithForks($title: String!, $description: String!, $fromBranchName: String!, $toBranchName: String!, $fromBranchRepoName: String!, $fromBranchOwnerName: String!, $toBranchRepoName: String!, $toBranchOwnerName: String!, $parentRepoName: String!, $parentOwnerName: String!, $allowMaintainerToEditFromBranch: Boolean) {\n  createPullWithForks(\n    title: $title\n    description: $description\n    fromBranchName: $fromBranchName\n    toBranchName: $toBranchName\n    fromBranchOwnerName: $fromBranchOwnerName\n    fromBranchRepoName: $fromBranchRepoName\n    toBranchOwnerName: $toBranchOwnerName\n    toBranchRepoName: $toBranchRepoName\n    parentRepoName: $parentRepoName\n    parentOwnerName: $parentOwnerName\n    allowMaintainerToEditFromBranch: $allowMaintainerToEditFromBranch\n  ) {\n    _id\n    pullId\n    __typename\n  }\n}\n"
