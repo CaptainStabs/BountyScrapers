@@ -132,6 +132,7 @@ if __name__ == "__main__":
             print("\n", len(file_urls))
 
     with open("finished_files.txt", "a", newline="") as f:
+        f.write("url\n") # Write header
         for url in file_urls:
             f.write(url + "\n")
             
