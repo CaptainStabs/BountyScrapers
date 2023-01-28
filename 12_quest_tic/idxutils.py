@@ -3,7 +3,7 @@ import logging
 from mrfutils import JSONOpen
 
 log = logging.getLogger('mrfutils')
-log.setLevel(logging.DEBUG)
+log.setLevel(logging.INFO)
 
 def gen_in_network_links(index_loc,):
     """
