@@ -8,7 +8,9 @@
 import pandas as pd
 
 df1 = pd.read_csv("UHC_payers_deduped_sorted.csv")
-df2 = pd.read_csv("finished_files.txt")#["url"]
+# df1 = pd.read_csv("anthem_payers_sorted.csv")
+df2 = pd.read_csv("uhc_finished_files.txt")#["url"]
+
 
 # df = pd.concat([df1, df2]).drop_duplicates(keep=False)
 df = df1[~df1["url"].isin(df2["url"])]

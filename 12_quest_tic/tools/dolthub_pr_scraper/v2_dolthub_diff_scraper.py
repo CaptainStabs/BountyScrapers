@@ -71,7 +71,11 @@ def next_page_row_diff(next_page_token, headers, url, file_urls) -> set:
 
         tries = 0
         while tries < 3:
-            r = requests.request("POST", url, headers=headers, data=payload).json()
+            try:
+                r = requests.request("POST", url, headers=headers, data=payload).json()
+            except requests.exceptions.ConnectionError:
+                time.sleep(2)
+                tries +=1
             # API always returns 200 so error checking has to be done this way
             if r.get("errors"):
                 print(f"Got an error,\n{next_page_token}")
@@ -121,7 +125,7 @@ if __name__ == "__main__":
 
     file_urls = set()
     
-    with open("./prs/prs.csv", "r") as f:
+    with open("./prs/uhc_prs.csv", "r") as f:
         total = len(f.readlines())
         f.seek(0) # skip header
         
@@ -131,7 +135,7 @@ if __name__ == "__main__":
             file_urls = file_urls.union(file_url)
             print("\n", len(file_urls))
 
-    with open("finished_files.txt", "a", newline="") as f:
+    with open("uhc_finished_files.txt", "a", newline="") as f:
         f.write("url\n") # Write header
         for url in file_urls:
             f.write(url + "\n")
