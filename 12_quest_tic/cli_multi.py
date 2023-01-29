@@ -7,8 +7,10 @@ import sys
 import traceback as tb
 import argparse
 from tqdm import tqdm
+
 from _utils import istarmap
 from _utils.send_mail import send_mail
+from _utils.make_pr import make_pr
 
 import os
 
@@ -44,10 +46,10 @@ def work(url, out):
 
 
 # define the apply_parallel function that applies the master function in parallel
-def apply_parallel(df, func, out):
+def apply_parallel(df, func, out, processes):
     try:
         # create a pool with 10 processes
-        with multiprocessing.Pool(processes=10) as pool:
+        with multiprocessing.Pool(processes=processes) as pool:
             # apply the work function in parallel using the pool and tqdm to display progress
             # loop is for istarmap
             for _ in tqdm(pool.istarmap(func, [(row["url"], out) for _, row in df.iterrows()]), desc="Main Process", position=0, total=len(df)):
@@ -67,7 +69,6 @@ def apply_parallel(df, func, out):
 
     finally:
         pool.join()
-        send_mail("Finished", "Finished")
 
 
 if __name__ == '__main__':
@@ -75,8 +76,15 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--input', default="_input_csvs/first_100.csv")
     parser.add_argument('-o', '--out', default = 'test_100')
+    parser.add_argument('-mp', '--make_pr', default=False)
+    parser.add_argument('-he', '--head', default=100, type=int)
+    parser.add_argument('-b', '--branch')
+    parser.add_argument('-cm', '--commit_message')
+    parser.add_argument('-p', '--processes', default=10, type=int)
+    
     # Parse the arguments
     args = parser.parse_args()
+    print(args.branch, args.commit_message)
     
     try:
         # Read the input csv file into a pandas dataframe
@@ -86,9 +94,17 @@ if __name__ == '__main__':
             df = df.sort_values(by=["size"])
 
         # df = df.iloc[1498:]
-        df = df.head(100)
+        df = df.head(args.head)
         # apply the work function in parallel using apply_parallel
-        results = apply_parallel(df, work, args.out)
+        results = apply_parallel(df, work, args.out, args.processes)
+        if args.make_pr:
+            out = os.path.join("C:\\Users\\adria\\github\\BountyScrapers\\12_quest_tic\\", args.out)
+            os.system(f'cd /D F:\_Bounty\quest-v3\ & import_folders_push.bat {out} "{args.commit_message}" {args.branch} {args.processes}')
+            make_pr(title=args.commit_message, branch=args.branch)
+            send_mail(f"Finished {args.branch}", "Finished")
+        else:
+            send_mail("Finsihed", "Finished")
+            
     except KeyboardInterrupt:
         print("Quitting")
         sys.exit()
