@@ -10,10 +10,6 @@ SCHEMA = {
         "reporting_entity_name",
         "reporting_entity_type",
     ],
-    "file_rate": [
-        "file_id",
-        "rate_id",
-    ],
     "code": [
         "id",
         "billing_code_type_version",
@@ -36,8 +32,18 @@ SCHEMA = {
         "price_metadata_id",
         "negotiated_rate",
     ],
-    "npi_rate": [
-        "rate_id",
-        "npi",
+    "tin": [
+        "id",
+        "tin_type",
+        "tin_value",
     ],
+    "tin_rate_file": [
+        "tin_id",
+        "rate_id",
+        "file_id",
+    ],
+    "npi_tin": [
+        "npi",
+        "tin_id",
+    ]
 }

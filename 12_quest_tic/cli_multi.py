@@ -99,7 +99,7 @@ if __name__ == '__main__':
         results = apply_parallel(df, work, args.out, args.processes)
         if args.make_pr:
             out = os.path.join("C:\\Users\\adria\\github\\BountyScrapers\\12_quest_tic\\", args.out)
-            os.system(f'cd /D F:\_Bounty\quest-v3\ & import_folders_push.bat {out} "{args.commit_message}" {args.branch} {args.processes}')
+            os.system(f'cd /D F:\_Bounty\quest-v4\ & import_folders_push.bat {out} "{args.commit_message}" {args.branch} {args.processes}')
             make_pr(title=args.commit_message, branch=args.branch)
             send_mail(f"Finished {args.branch}", "Finished")
         else:
