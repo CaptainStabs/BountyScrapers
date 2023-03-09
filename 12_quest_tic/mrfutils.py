@@ -43,6 +43,7 @@ that you can track your depth in the JSON tree.
 from __future__ import annotations
 
 import asyncio
+asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 from functools import partial
 import itertools
 from typing import Generator
