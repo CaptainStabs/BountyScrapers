@@ -12,6 +12,7 @@ from _utils import istarmap
 # define the master function that will be applied in parallel
 def work(url, out):
     try:
+        print(out)
          # call the json_mrf_to_csv function with the given arguments
         json_mrf_to_csv(url=str(url), npi_filter=import_csv_to_set("./quest/npis.csv"), code_filter= import_csv_to_set("./quest/codes.csv"), out_dir=out)
      

@@ -17,4 +17,6 @@ def deduplicate(file_path, output_path):
                     unique_lines.add(line_hash)
                     output_file.write(line)
 
-deduplicate("F:\\_Bounty\\anthem_files.txt", "F:\\_Bounty\\anthem_deduped.txt")
+# deduplicate("F:\\_Bounty\\anthem_files.txt", "F:\\_Bounty\\anthem_deduped.txt")
+
+deduplicate("UHC_indexes.csv", "UHC_indexes_deduped.csv")

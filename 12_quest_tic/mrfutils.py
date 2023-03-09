@@ -53,53 +53,53 @@ import ijson
 
 from _utils.mrf.helpers import *
 from _utils.mrf.schema.schema import SCHEMA
+
 # You can remove this if necessary, but be warned
 # Right now this only works with python 3.9/3.10
-# Install on Mac with
+# install on Mac with
 # brew install yajl
 # or comment out this line!
 assert ijson.backend in ('yajl2_c', 'yajl2_cffi')
 
 log = logging.getLogger(__name__)
 logging.basicConfig(format='%(asctime)s - %(message)s')
-log.setLevel(logging.INFO)
+log.setLevel(logging.DEBUG)
 
 # To distinguish data from rows
 Row = dict
 
+# TODO handle npi_set and code_set in a custom data class
 
 def extract_filename_from_url(url: str) -> str:
 	return Path(url).stem.split('.')[0]
 
-
 def write_table(
-	rows: list[Row] | Row,
-	tablename: str,
+	row_data: list[Row] | Row,
+	table_name: str,
 	out_dir: str,
 ) -> None:
 
-	fieldnames = SCHEMA[tablename]
-	file_loc = f'{out_dir}/{tablename}.csv'
+	fieldnames = SCHEMA[table_name]
+	file_loc = f'{out_dir}/{table_name}.csv'
 	file_exists = os.path.exists(file_loc)
 
 	# newline = '' is to prevent Windows
 	# from adding \r\n\n to the end of each line
-	with open(file_loc, 'a', newline='') as f:
+	with open(file_loc, 'a', newline = '') as f:
 		writer = csv.DictWriter(f, fieldnames=fieldnames)
 
 		if not file_exists:
 			writer.writeheader()
 
-		if type(rows) == list:
-			writer.writerows(rows)
+		if isinstance(row_data, list):
+			writer.writerows(row_data)
 
-		if type(rows) == dict:
-			row = rows
-			writer.writerow(row)
+		elif isinstance(row_data, dict):
+			writer.writerow(row_data)
 
 
 def file_row_from_mixed(
-	plan: dict,
+	plan_data: dict,
 	url: str
 ) -> Row:
 
@@ -107,7 +107,7 @@ def file_row_from_mixed(
 
 	file_row = dict(
 		filename = filename,
-		last_updated_on = plan['last_updated_on']
+		last_updated_on = plan_data['last_updated_on']
 	)
 
 	file_row = append_hash(file_row, 'id')
@@ -128,14 +128,14 @@ def write_file(
 	write_table(file_row, 'file', out_dir)
 
 
-def insurer_row_from_dict(plan_item: dict) -> Row:
+def insurer_row_from_dict(plan_data: dict) -> Row:
 
 	keys = [
 		'reporting_entity_name',
 		'reporting_entity_type',
 	]
 
-	insurer_row = {key : plan_item[key] for key in keys}
+	insurer_row = {key : plan_data[key] for key in keys}
 	insurer_row = append_hash(insurer_row, 'id')
 
 	return insurer_row
@@ -158,7 +158,11 @@ def code_row_from_dict(in_network_item: dict) -> Row:
 		'billing_code',
 	]
 
-	code_row = {key : in_network_item[key] for key in keys}
+	# We use .get instead of [] because sometimes
+	# the insurance companies use improperly formatted files!
+	# ideally, because these fields aren't optional, we should do
+	# in_network_item[key]
+	code_row = {key : in_network_item.get(key) for key in keys}
 	code_row = append_hash(code_row, 'id')
 
 	return code_row
@@ -188,7 +192,11 @@ def price_metadata_price_tuple_from_dict(
 		if price_item.get(key):
 			price_item[key] = [value for value in price_item[key] if value is not None]
 			sorted_value = sorted(price_item[key])
-			price_metadata_row[key] = json.dumps(sorted_value)
+			if not sorted_value:
+				# [] should resove to None in the database
+				price_metadata_row[key] = None
+			else:
+				price_metadata_row[key] = json.dumps(sorted_value)
 
 	price_metadata_row = append_hash(price_metadata_row, 'id')
 	negotiated_rate = price_item['negotiated_rate']
@@ -206,19 +214,27 @@ def price_metadata_combined_rows_from_dict(rate: dict) -> list[tuple[Row, float]
 	return price_metadata_combined_rows
 
 
-def file_rate_rows_from_mixed(
+def tin_rate_file_rows_from_mixed(
+	tin_rows: list[Row],
 	rate_rows: list[Row],
 	file_id: str,
 ) -> list[Row]:
 
 	rate_ids = [row['id'] for row in rate_rows]
+	tin_ids = [row['id'] for row in tin_rows]
 
-	file_rate_rows = [
-		dict(file_id = file_id, rate_id = rate_id)
-		for rate_id in rate_ids
-	]
+	tin_rate_file_rows = []
 
-	return file_rate_rows
+	for rate_id, tin_id in itertools.product(rate_ids, tin_ids):
+		tin_rate_file_row = Row(
+			tin_id = tin_id,
+			rate_id = rate_id,
+			file_id = file_id,
+		)
+
+		tin_rate_file_rows.append(tin_rate_file_row)
+
+	return tin_rate_file_rows
 
 
 def rate_rows_from_mixed(
@@ -230,7 +246,7 @@ def rate_rows_from_mixed(
 	rate_rows = []
 
 	for price_metadata_row, negotiated_rate in price_metadata_combined_rows:
-		rate_row = dict(
+		rate_row = Row(
 			insurer_id = insurer_row['id'],
 			code_id = code_row['id'],
 			price_metadata_id = price_metadata_row['id'],
@@ -243,20 +259,29 @@ def rate_rows_from_mixed(
 	return rate_rows
 
 
-def npi_rate_rows_from_mixed(
-	rate_rows: list[Row],
-	npi_list: list[str],
-) -> list[Row]:
-	npi_rate_rows = []
+def tin_rows_and_npi_tin_rows_from_dict(
+	groups: dict,
+) -> tuple(list[Row], list[Row]):
 
-	for rate_row, npi in itertools.product(rate_rows, npi_list):
-		npi_rate_row = dict(
-			rate_id = rate_row['id'],
-			npi = npi
+	tin_rows = []
+	npi_tin_rows = []
+
+	for group in groups:
+		tin_row = Row(
+			tin_type = group['tin']['type'],
+			tin_value = group['tin']['value']
 		)
-		npi_rate_rows.append(npi_rate_row)
+		tin_row = append_hash(tin_row, 'id')
+		tin_rows.append(tin_row)
 
-	return npi_rate_rows
+		for npi in group['npi']:
+			npi_tin_row = Row(
+				tin_id = tin_row['id'],
+				npi = npi,
+			)
+			npi_tin_rows.append(npi_tin_row)
+
+	return tin_rows, npi_tin_rows
 
 
 def write_in_network_item(
@@ -272,6 +297,7 @@ def write_in_network_item(
 	insurer_row = insurer_row_from_dict(plan_metadata)
 
 	for rate in in_network_item['negotiated_rates']:
+
 		price_metadata_combined_rows = price_metadata_combined_rows_from_dict(rate)
 		price_metadata_rows = [a[0] for a in price_metadata_combined_rows]
 		write_table(price_metadata_rows, 'price_metadata', out_dir)
@@ -283,27 +309,22 @@ def write_in_network_item(
 		)
 		write_table(rate_rows, 'rate', out_dir)
 
-		file_rate_rows = file_rate_rows_from_mixed(rate_rows, file_id)
-		write_table(file_rate_rows, 'file_rate', out_dir)
-
-		# gather all the NPIs
 		groups = rate['provider_groups']
-		npi_set = set()
-		for group in groups:
-			sub_npi_list = group['npi']
-			for npi in sub_npi_list:
-				npi_set.add(npi)
-		npi_list = list(npi_set)
 
-		npi_rate_rows = npi_rate_rows_from_mixed(
+		tin_rows, npi_tin_rows = tin_rows_and_npi_tin_rows_from_dict(groups)
+		write_table(tin_rows, 'tin', out_dir)
+		write_table(npi_tin_rows, 'npi_tin', out_dir)
+
+		tin_rate_file_rows = tin_rate_file_rows_from_mixed(
 			rate_rows = rate_rows,
-			npi_list = npi_list,
+			tin_rows = tin_rows,
+			file_id = file_id
 		)
-		write_table(npi_rate_rows, 'npi_rate', out_dir)
+		write_table(tin_rate_file_rows, 'tin_rate_file', out_dir)
 
 	code_type = in_network_item['billing_code_type']
 	code = in_network_item['billing_code']
-	log.debug(f'Wrote {code_type} {code}')
+	# log.info(f'Wrote {code_type} {code}')
 
 
 def process_arr(func, arr, *args, **kwargs):
@@ -325,7 +346,13 @@ def process_group(group: dict, npi_filter: set) -> dict | None:
 
 	return group
 
-process_groups = partial(process_arr, process_group)
+
+def process_groups(groups: list[dict], npi_filter: set) -> list[dict] | None:
+	processed_arr = []
+	for group in groups:
+		if processed_item := process_group(group, npi_filter):
+			processed_arr.append(processed_item)
+	return processed_arr
 
 
 def process_reference(reference: dict, npi_filter: set) -> dict | None:
@@ -347,6 +374,7 @@ def process_rate(rate: dict, npi_filter: set) -> dict | None:
 	# Will not work if references haven't been swapped out yet
 	assert rate.get('provider_references') is None
 	groups = process_groups(rate['provider_groups'], npi_filter)
+
 	if not groups:
 		return
 
@@ -354,7 +382,7 @@ def process_rate(rate: dict, npi_filter: set) -> dict | None:
 
 	prices = []
 	for price in rate['negotiated_prices']:
-		if price['negotiated_type'] == 'negotiated':
+		if price['negotiated_type'] in ('negotiated', 'fee_schedule'):
 			prices.append(price)
 
 	if not prices:
@@ -363,7 +391,14 @@ def process_rate(rate: dict, npi_filter: set) -> dict | None:
 	rate['negotiated_prices'] = prices
 	return rate
 
-process_rates = partial(process_arr, process_rate)
+
+def process_rates(rates: list[dict], npi_filter: set) -> list[dict] | None:
+	processed_arr = []
+	for rate in rates:
+		if processed_item := process_rate(rate, npi_filter):
+			processed_arr.append(processed_item)
+	return processed_arr
+
 
 # TODO simplify
 def ffwd(
@@ -421,7 +456,6 @@ def gen_in_network_items(
 def gen_references(parser: Generator) -> Generator:
 
 	builder = ijson.ObjectBuilder()
-	# builder.event('start_array', None)
 
 	for prefix, event, value in parser:
 		builder.event(event, value)
@@ -449,7 +483,7 @@ def skip_item_by_code(
 
 	if code and code_type and code_filter:
 		if (code_type, str(code)) not in code_filter:
-			log.debug(f'Skipping {code_type} {code}: filtered out')
+			# log.info(f'Skipping {code_type} {code}: filtered out')
 			ffwd(parser, to_prefix='in_network.item', to_event='end_map')
 			builder.value.pop()
 			builder.containers.pop()
@@ -457,7 +491,7 @@ def skip_item_by_code(
 
 	arrangement = item.get('negotiation_arrangement')
 	if arrangement and arrangement != 'ffs':
-		log.debug(f"Skipping item: arrangement: {arrangement} not 'ffs'")
+		# log.info(f"Skipping item: arrangement: {arrangement} not 'ffs'")
 		ffwd(parser, to_prefix='in_network.item', to_event='end_map')
 		builder.value.pop()
 		builder.containers.pop()
@@ -471,7 +505,7 @@ async def fetch_remote_reference(
 	response = await session.get(url)
 	assert response.status == 200
 
-	log.debug(f'Opened remote provider reference: {url}')
+	# log.info(f'Opened remote provider reference: {url}')
 
 	data = await response.read()
 	reference = json.loads(data)
@@ -500,7 +534,7 @@ async def append_processed_remote_reference(
 
 		except AssertionError:
 			# Response status was 404 or something
-			log.debug(f'Encountered bad response status')
+			log.info('Encountered bad response status')
 		finally:
 			# Notify the queue that the "work item" has been processed.
 			queue.task_done()
@@ -659,8 +693,8 @@ class Content:
 		self.code_filter = code_filter
 
 	def start_conn(self):
-		self.parser  = start_parser(self.file)
-		self.plan_metadata    = get_plan(self.parser)
+		self.parser = start_parser(self.file)
+		self.plan_metadata = get_plan(self.parser)
 		self.ref_map = get_reference_map(self.parser, self.npi_filter)
 
 	def prepare_in_network(self):
@@ -696,7 +730,7 @@ def json_mrf_to_csv(
 	if file is None:
 		file = url
 
-	filename = extract_filename_from_url(url)
+	# filename = extract_filename_from_url(url)
 
 	# Explicitly make this variable up-front since both sets of tables
 	# are linked by it (in_network and plan tables)

@@ -103,9 +103,6 @@ def main(id, headers, url, file_urls):
     file_urls = next_page_row_diff(next_page_token, headers, url, file_urls)
     return file_urls
 
-
-
-
 if __name__ == "__main__":
     headers = {
         'sec-ch-ua': '"Not?A_Brand";v="8", "Chromium";v="108", "Google Chrome";v="108"',

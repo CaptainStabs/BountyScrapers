@@ -10,15 +10,14 @@ dolt checkout main
 dolt checkout -b %3
 dolt checkout %3
 
-set tables=file insurer code price_metadata rate npi_rate
+set tables=file insurer code price_metadata rate npi_rate file_rate
 
 
 for /L %%i in (1, 1, %4) do (
   for %%t in (%tables%) do (
     echo WRITING TABLE %%t
-    dolt table import -u %%t %out_dir%/%%i/%%t.csv
+    dolt table import -u %%t %out_dir%/%%i/%%t.csv 
   )
-  dolt gc --shallow
 )
 
 dolt add .
