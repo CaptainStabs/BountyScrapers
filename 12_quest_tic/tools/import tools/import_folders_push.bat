@@ -10,7 +10,7 @@ dolt checkout main
 dolt checkout -b %3
 dolt checkout %3
 
-set tables=file insurer code price_metadata rate npi_rate file_rate
+set tables=file insurer code price_metadata rate tin file_rate tin_rate_file npi_tin;
 
 
 for /L %%i in (1, 1, %4) do (
