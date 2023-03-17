@@ -25,7 +25,7 @@ def work(url, out):
     try:
         id = multiprocessing.current_process()._identity[0]
         out = "\\".join([out, str(id)]) + "\\"
-        url = "https://storage.googleapis.com/cms-humana-price-transparency-prd/prod/february/inn/" + url.strip("\n")
+        url = "https://developers.humana.com/syntheticdata/Resource/DownloadTOCFile?fileName=" + url.strip("\n")
         # url = "https://developers.humana.com/Resource/DownloadPCTFile?fileType=innetwork&fileName=" + url.strip("\n")
         if not os.path.exists(out):
             os.makedirs(out)

@@ -5,7 +5,6 @@ import os
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from ldm.dream.pngwriter import PngWriter
 from threading import Event
-
 class CanceledException(Exception):
     pass
 
