@@ -1,7 +1,6 @@
 import multiprocessing
 import pandas as pd
-from mrfutils import import_csv_to_set, json_mrf_to_csv
-from multiprocessing import Pool, Manager
+from mrfutils.flatteners import import_csv_to_set, in_network_file_to_csv
 import sys
 import traceback as tb
 import argparse
@@ -14,8 +13,9 @@ def work(url, out):
     try:
         print(out)
          # call the json_mrf_to_csv function with the given arguments
-        json_mrf_to_csv(url=str(url), npi_filter=import_csv_to_set("./quest/npis.csv"), code_filter= import_csv_to_set("./quest/codes.csv"), out_dir=out)
-     
+        in_network_file_to_csv(url=str(url), out_dir=out, code_filter=import_csv_to_set(".\\codes\\70_shoppables.csv"), npi_filter=import_csv_to_set(".\\codes\\npis.csv"))
+    except KeyboardInterrupt:
+        raise
     except:
         print(url, "\n", id)
         tb.print_exc()  # print the traceback for the exception

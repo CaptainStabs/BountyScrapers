@@ -28,14 +28,14 @@ def make_pr(title, branch):
         "fromBranchName": f"{branch}",
         "toBranchName": "main",
         "fromBranchOwnerName": "captainstabs",
-        "fromBranchRepoName": "quest-v3",
+        "fromBranchRepoName": "hospital-prices-allpayers",
         "toBranchOwnerName": "dolthub",
-        "toBranchRepoName": "quest-v3",
+        "toBranchRepoName": "hospital-prices-allpayers", 
         "parentOwnerName": "dolthub",
-        "parentRepoName": "quest-v3",
+        "parentRepoName": "hospital-prices-allpayers",
         "allowMaintainerToEditFromBranch": False
     },
-        "query": "mutation CreatePullRequestWithForks($title: String!, $description: String!, $fromBranchName: String!, $toBranchName: String!, $fromBranchRepoName: String!, $fromBranchOwnerName: String!, $toBranchRepoName: String!, $toBranchOwnerName: String!, $parentRepoName: String!, $parentOwnerName: String!, $allowMaintainerToEditFromBranch: Boolean) {\n  createPullWithForks(\n    title: $title\n    description: $description\n    fromBranchName: $fromBranchName\n    toBranchName: $toBranchName\n    fromBranchOwnerName: $fromBranchOwnerName\n    fromBranchRepoName: $fromBranchRepoName\n    toBranchOwnerName: $toBranchOwnerName\n    toBranchRepoName: $toBranchRepoName\n    parentRepoName: $parentRepoName\n    parentOwnerName: $parentOwnerName\n    allowMaintainerToEditFromBranch: $allowMaintainerToEditFromBranch\n  ) {\n    _id\n    pullId\n    __typename\n  }\n}\n"
+        "query": "mutation CreatePullRequestWithForks($title: String!, $description: String!, $fromBranchName: String!, $toBranchName: String!, $fromBranchRepoName: String!, $fromBranchOwnerName: String!, $toBranchRepoName: String!, $toBranchOwnerName: String!, $parentRepoName: String!, $parentOwnerName: String!, $allowMaintainerToEditFromBranch: Boolean) {\n  createPullWithForks(\n    title: $title\n    description: $description\n    fromBranchName: $fromBranchName\n    toBranchName: $toBranchName\n    fromBranchOwnerName: $fromBranchOwnerName\n    fromBranchRepoName: $fromBranchRepoName\n    toBranchOwnerName: $toBranchOwnerName\n    toBranchRepoName: $toBranchRepoName\n    parentRepoName: $parentRepoName\n    parentOwnerName: $parentOwnerName\n    allowMaintainerToEditFromBranch: $allowMaintainerToEditFromBranch\n  ) {\n    _id\n    pullId\n    __typename\n  }\n}"
         })
 
 

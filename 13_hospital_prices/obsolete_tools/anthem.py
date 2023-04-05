@@ -1,6 +1,7 @@
-from mrfutils import index_file_to_csv
+from mrfutils import toc_file_to_csv
 
 url = "https://antm-pt-prod-dataz-nogbd-nophi-us-east1.s3.amazonaws.com/anthem/2023-03-01_anthem_index.json.gz"
-out = ".\\anthem\\"
+file = "F:\\_Bounty\\2023-03-01_anthem_index.json.gz"
+out = "F:\\_Bounty\\anthem_toc\\"
 
-index_file_to_csv(url=url, out_dir=out)
+toc_file_to_csv(url=url, file=file, out_dir=out)
