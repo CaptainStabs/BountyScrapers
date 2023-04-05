@@ -24,6 +24,7 @@ __pycache__/
 10_housing_prices_2/*/*.csv
 12_quest_tic/output/*/
 12_quest_tic/test/*
+13_hospital_prices/output/*
 
 # Dolt
 11_hospitals/paylesshealth-1/.dolt*
