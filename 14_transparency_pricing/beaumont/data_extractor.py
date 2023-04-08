@@ -15,6 +15,14 @@ def payer_category(payer_category):
         return cats[payer_category]
     except KeyError:
         return "payer"
+    
+def code_type(x):
+    if pd.notna(x):
+        if "MSDRG" in x:
+            return "ms-drg"
+        elif len(x) == 5:
+            return "hcpcs_cpt"
+
 
 
 ccn_table = {
@@ -39,6 +47,7 @@ for file in tqdm(os.listdir(in_dir)):
         "Rev Code ": "rev_code",
         "Rev Code": "rev_code",
         "Procedure Description": "procedure_desc",
+        " NDC ": "ndc"
         })
 
     # Get the columns after `procedure_desc` (which are all payers)
@@ -46,16 +55,20 @@ for file in tqdm(os.listdir(in_dir)):
     payers = cols[cols.index("procedure_desc")+1:]
     id_vars = cols[:cols.index("procedure_desc")+1]
 
+    # Melt payers into new rows
     df_new = pd.melt(df, id_vars=id_vars, value_vars=payers)
 
+    # Rename the melted columns to match schema
     df = df_new.rename(columns={
         "variable": "payer_desc",
         "value": "rate"
         }
     )
 
-    df["code_type"] = df["code"].apply(lambda x: "ms-drg" if pd.notna(x) and "MSDRG" in x else pd.NA)
+    # Get code types and explode into separate columns
+    df["code_type"] = df["code"].apply(lambda x: code_type(x))
     df["ms_drg"] = df["code"].apply(lambda x: x.replace("MSDRG ", "") if pd.notna(x) and "MSDRG" in x else pd.NA)
+    df["hcpcs_cpt"] = df["code"].apply(lambda x: x if pd.notna(x) and len(x) == 5 else pd.NA)
 
 
     df["file_last_updated"] = "2023-01-01"
@@ -63,15 +76,18 @@ for file in tqdm(os.listdir(in_dir)):
     df["url"] = "https://www.beaumont.org/docs/default-source/default-document-library/cdm-documents/2023/" + file
     df["hospital_ein"] = file.split("_")[0]
 
+    # Strip all objects
     df_obj = df.select_dtypes(['object'])
     df[df_obj.columns] = df_obj.apply(lambda x: x.str.strip())
 
+    # Remove dollar sign and strip rate
     df["rate"] = df["rate"].apply(lambda x: x.replace("$", "").strip() if (pd.notna(x) and "$" in x) else pd.NA)
-
+    df = df[df['rate'] != 0.00]
     df["code_meta"] = df["code_meta"].apply(str.lower)
 
     df["payer_category"] = df["payer_desc"].apply(lambda x: payer_category(x))
 
+    # df["rev_code"] = df["rev_code"].str.rstrip(".")
     df["rev_code"] = df["rev_code"].fillna("nan")
 
     df["hospital_ccn"] = ccn_table[file.split("-")[2]]
