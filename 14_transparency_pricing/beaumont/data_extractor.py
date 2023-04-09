@@ -39,57 +39,61 @@ ccn_table = {
 in_dir = ".\\input_files\\"
 for file in tqdm(os.listdir(in_dir)):
     print(file)
-    df = pd.read_csv(in_dir + file, na_values='#N/A', encoding="iso-8859-1", dtype={"Code": str}, low_memory=False)
+    df = pd.read_csv(in_dir + file, na_values='#N/A', encoding="iso-8859-1", dtype={"Code": str, 'Rev Code': str, 'Rev Code ': str}, low_memory=False)
     df = df.rename(columns={
         " Code Type": "code_meta",
         "Procedure ": "internal_code",
         "Code": "code",
         "Rev Code ": "rev_code",
         "Rev Code": "rev_code",
-        "Procedure Description": "procedure_desc",
+        "Procedure Description": "description",
         " NDC ": "ndc"
         })
 
-    # Get the columns after `procedure_desc` (which are all payers)
+    # Get the columns after `description` (which are all payers)
     cols = df.columns.tolist()
-    payers = cols[cols.index("procedure_desc")+1:]
-    id_vars = cols[:cols.index("procedure_desc")+1]
+    payers = cols[cols.index("description")+1:]
+    id_vars = cols[:cols.index("description")+1]
 
     # Melt payers into new rows
-    df_new = pd.melt(df, id_vars=id_vars, value_vars=payers)
+    df_new = pd.melt(df, id_vars=id_vars, value_vars=payers, var_name='payer_desc', value_name='rate')
 
-    # Rename the melted columns to match schema
-    df = df_new.rename(columns={
-        "variable": "payer_desc",
-        "value": "rate"
-        }
-    )
+    df = df.dropna(subset=['rate'])
 
     # Get code types and explode into separate columns
     df["code_type"] = df["code"].apply(lambda x: code_type(x))
     df["ms_drg"] = df["code"].apply(lambda x: x.replace("MSDRG ", "") if pd.notna(x) and "MSDRG" in x else pd.NA)
     df["hcpcs_cpt"] = df["code"].apply(lambda x: x if pd.notna(x) and len(x) == 5 else pd.NA)
+    df = df[(df['code'] != 'SURG') & (df['hcpcs_cpt'] != 'SURG') & (df['hcpcs_cpt'] != 'MANUL') & (df['code'] != 'MANUL')]
+
+    # Remove dollar sign and strip rate
+    df["code"] = df["code"].str.replace('MSDRG ', '')
+    df['rate'] = df['rate'].str.replace(',', '').str.replace('$','').str.strip() # col is not object so is not stripped below
+    df = df[(df['rate'] != '-') & (df['rate'] != '#VALUE!')]
+
+    df = df.dropna(subset=['code', 'code_type'])
 
 
     df["file_last_updated"] = "2023-01-01"
     df["filename"] = file
     df["url"] = "https://www.beaumont.org/docs/default-source/default-document-library/cdm-documents/2023/" + file
-    df["hospital_ein"] = file.split("_")[0]
 
     # Strip all objects
     df_obj = df.select_dtypes(['object'])
     df[df_obj.columns] = df_obj.apply(lambda x: x.str.strip())
 
-    # Remove dollar sign and strip rate
-    df["rate"] = df["rate"].apply(lambda x: x.replace("$", "").strip() if (pd.notna(x) and "$" in x) else pd.NA)
-    df = df[df['rate'] != 0.00]
+
     df["code_meta"] = df["code_meta"].apply(str.lower)
 
     df["payer_category"] = df["payer_desc"].apply(lambda x: payer_category(x))
 
     # df["rev_code"] = df["rev_code"].str.rstrip(".")
-    df["rev_code"] = df["rev_code"].fillna("nan")
+    df["rev_code"] = df["rev_code"].fillna("na")
+    df['ndc'] = df['ndc'].fillna('na')
 
+    tin = file.split("_")[0]
+    tin = tin[:2] + "-" + tin[2:]
+    df['hospital_tin'] = tin
     df["hospital_ccn"] = ccn_table[file.split("-")[2]]
 
     df.to_csv(".\\output_files\\" + file.split("-")[2] + ".csv", index=False)
