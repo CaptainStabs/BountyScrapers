@@ -1,10 +1,12 @@
 import requests
 from tqdm import tqdm
 
-with open("aurorahealthcare.csv", "r") as f:
-    for line in tqdm(f):
+with open("beaumont.csv", "r") as f:
+    total = len(f.readlines())
+    f.seek(0)
+    for line in tqdm(f, total=total):
         line = line.replace("\n", "").replace('"',"")
-        url = line.split(',')[-1]
+        url = line
         filename = url.split('/')[-1]
 
         r = requests.get(url)
