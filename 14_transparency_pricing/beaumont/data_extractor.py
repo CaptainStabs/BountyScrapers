@@ -42,7 +42,7 @@ for file in tqdm(os.listdir(in_dir)):
     df = pd.read_csv(in_dir + file, na_values='#N/A', encoding="iso-8859-1", dtype={"Code": str, 'Rev Code': str, 'Rev Code ': str}, low_memory=False)
     df = df.rename(columns={
         " Code Type": "code_meta",
-        "Procedure ": "internal_code",
+        "Procedure ": "procedure_code",
         "Code": "code",
         "Rev Code ": "rev_code",
         "Rev Code": "rev_code",
@@ -56,22 +56,22 @@ for file in tqdm(os.listdir(in_dir)):
     id_vars = cols[:cols.index("description")+1]
 
     # Melt payers into new rows
-    df_new = pd.melt(df, id_vars=id_vars, value_vars=payers, var_name='payer_desc', value_name='rate')
+    df = pd.melt(df, id_vars=id_vars, value_vars=payers, var_name='payer_desc', value_name='rate')
 
     df = df.dropna(subset=['rate'])
 
     # Get code types and explode into separate columns
-    df["code_type"] = df["code"].apply(lambda x: code_type(x))
-    df["ms_drg"] = df["code"].apply(lambda x: x.replace("MSDRG ", "") if pd.notna(x) and "MSDRG" in x else pd.NA)
-    df["hcpcs_cpt"] = df["code"].apply(lambda x: x if pd.notna(x) and len(x) == 5 else pd.NA)
-    df = df[(df['code'] != 'SURG') & (df['hcpcs_cpt'] != 'SURG') & (df['hcpcs_cpt'] != 'MANUL') & (df['code'] != 'MANUL')]
+    df["code_type"] = df["code"].apply(code_type)
+    df["ms_drg"] = df["code"].str.replace("MSDRG ", "").where(df["code"].str.contains("MSDRG"), pd.NA)
+    df["hcpcs_cpt"] = df["code"].where(df["code"].str.len() == 5, pd.NA)
+    df = df[~df["code"].isin(["SURG", "MANUL"]) & ~df["hcpcs_cpt"].isin(["SURG", "MANUL"])]
 
     # Remove dollar sign and strip rate
     df["code"] = df["code"].str.replace('MSDRG ', '')
     df['rate'] = df['rate'].str.replace(',', '').str.replace('$','').str.strip() # col is not object so is not stripped below
     df = df[(df['rate'] != '-') & (df['rate'] != '#VALUE!')]
 
-    df = df.dropna(subset=['code', 'code_type'])
+    df = df.dropna(subset=['code', 'code_type', 'rate'])
 
 
     df["file_last_updated"] = "2023-01-01"
@@ -83,9 +83,9 @@ for file in tqdm(os.listdir(in_dir)):
     df[df_obj.columns] = df_obj.apply(lambda x: x.str.strip())
 
 
-    df["code_meta"] = df["code_meta"].apply(str.lower)
+    df["code_meta"] = df["code_meta"].str.lower()
 
-    df["payer_category"] = df["payer_desc"].apply(lambda x: payer_category(x))
+    df["payer_category"] = df["payer_desc"].apply(payer_category)
 
     # df["rev_code"] = df["rev_code"].str.rstrip(".")
     df["rev_code"] = df["rev_code"].fillna("na")
