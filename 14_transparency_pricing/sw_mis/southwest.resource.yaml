@@ -1,0 +1,279 @@
+encoding: utf-8
+format: csv
+hashing: md5
+name: 640468873_southwestmississippiregionalmedicalcenter_standardcharges
+path: 640468873_southwestmississippiregionalmedicalcenter_standardcharges.csv
+profile: tabular-data-resource
+schema:
+  fields:
+    - name: RecordType
+      type: integer
+    - name: FileInformation
+      type: string
+    - name: Description
+      type: string
+    - name: ProcedureCode
+      type: string
+    - name: Modifier
+      type: string
+    - name: RevenueCode
+      type: string
+    - name: MSDRG
+      type: string
+    - name: NDC
+      type: string
+    - name: InpatientGrossCharge
+      type: string
+    - name: OutpatientGrossCharge
+      type: string
+    - name: EmergencyRoomGrossCharge
+      type: string
+    - name: MSDRGAverageGrossCharge
+      type: string
+    - name: DiscountedCashPriceInpatient
+      type: string
+    - name: DiscountedCashPriceOutpatient
+      type: string
+    - name: DiscountedCashPriceEmergencyRoom
+      type: string
+    - name: MinimumNegotiatedCharge
+      type: string
+    - name: MaximumNegotiatedCharge
+      type: string
+    - name: AARP_OPPS
+      type: number
+    - name: AARP_IPPS
+      type: string
+    - name: AETNA_Outpatient_PercentofCharges
+      type: string
+    - name: AETNA_Inpatient_PercentofCharges
+      type: string
+    - name: AETNAMCAREFFS6005_OPPS
+      type: number
+    - name: AETNAMCAREFFS6005_IPPS
+      type: string
+    - name: AETNAMISCELLANEOUS_Outpatient_PercentofCharges
+      type: string
+    - name: AETNAMISCELLANEOUS_Inpatient_PercentofCharges
+      type: string
+    - name: AETNAPPOHMO_Outpatient_PercentofCharges
+      type: string
+    - name: AETNAPPOHMO_Inpatient_PercentofCharges
+      type: string
+    - name: AMBETTER68069_OPPS
+      type: number
+    - name: AMBETTER68069_IPPS
+      type: string
+    - name: AMERIHEALTHCARITASLA_OPPS
+      type: number
+    - name: AMERIHEALTHCARITASLA_IPPS
+      type: string
+    - name: BC/BSMSSTATEEMPLO_OPPS
+      type: number
+    - name: BC/BSMSSTATEEMPLO_IPPS
+      type: string
+    - name: BC/BSOFMSBASICPL_Outpatient_TieredFeeSchedule
+      type: string
+    - name: BC/BSOFMSBASICPL_Inpatient_PercentofCharges
+      type: string
+    - name: BC/BSOFMSFEDERAL_Outpatient_TieredFeeSchedule
+      type: string
+    - name: BC/BSOFMSFEDERAL_Inpatient_PercentofCharges
+      type: string
+    - name: BOONCHAPMAN_OPPS
+      type: number
+    - name: BOONCHAPMAN_IPPS
+      type: string
+    - name: CIGNA62308_Outpatient_PercentofCharges
+      type: string
+    - name: CIGNA62308_Inpatient_PercentofCharges
+      type: string
+    - name: CIGNAHEALTHCAREEOT_Outpatient_PercentofCharges
+      type: string
+    - name: CIGNAHEALTHCAREEOT_Inpatient_PercentofCharges
+      type: string
+    - name: CIGNAHEALTHSPRINGSFFS_OPPS
+      type: number
+    - name: CIGNAHEALTHSPRINGSFFS_IPPS
+      type: string
+    - name: CIGNASMRMC_Outpatient_PercentofCharges
+      type: string
+    - name: CIGNASMRMC_Inpatient_PercentofCharges
+      type: string
+    - name: CIGNASMRMCEMP638_Outpatient_PercentofCharges
+      type: string
+    - name: CIGNASMRMCEMP638_Inpatient_PercentofCharges
+      type: string
+    - name: CONSECO_OPPS
+      type: number
+    - name: CONSECO_IPPS
+      type: string
+    - name: EMPLOYEEBENEFITMAN_OPPS
+      type: number
+    - name: EMPLOYEEBENEFITMAN_IPPS
+      type: string
+    - name: EMPLOYEEBENEFITSER_OPPS
+      type: number
+    - name: EMPLOYEEBENEFITSER_IPPS
+      type: string
+    - name: FIRSTCHOICEHEALTH412MP_OPPS
+      type: number
+    - name: FIRSTCHOICEHEALTH412MP_IPPS
+      type: string
+    - name: FOXEVERETT64069_OPPS
+      type: number
+    - name: FOXEVERETT64069_IPPS
+      type: string
+    - name: GEHA57254_OPPS
+      type: number
+    - name: GEHA57254_IPPS
+      type: string
+    - name: GOLDENRULE37602_OPPS
+      type: number
+    - name: GOLDENRULE37602_IPPS
+      type: string
+    - name: GOVEMPLOYEESHSOP39026_OPPS
+      type: number
+    - name: GOVEMPLOYEESHSOP39026_IPPS
+      type: string
+    - name: GULFGUARANTYEMPBE_OPPS
+      type: number
+    - name: GULFGUARANTYEMPBE_IPPS
+      type: string
+    - name: GULFGUARANTYINMATE_OPPS
+      type: number
+    - name: GULFGUARANTYINMATE_IPPS
+      type: string
+    - name: HEALTHSCOPEBENEFITS_Outpatient_PercentofCharges
+      type: string
+    - name: HEALTHSCOPEBENEFITS_Inpatient_PercentofCharges
+      type: string
+    - name: HEALTHSCOPESWEMP71063_Outpatient_PercentofCharges
+      type: string
+    - name: HEALTHSCOPESWEMP71063_Inpatient_PercentofCharges
+      type: string
+    - name: HEALTHSMARTPREFCAR_OPPS
+      type: number
+    - name: HEALTHSMARTPREFCAR_IPPS
+      type: string
+    - name: HUMANA_OPPS
+      type: number
+    - name: HUMANA_IPPS
+      type: string
+    - name: HUMANAFFS61101_OPPS
+      type: number
+    - name: HUMANAFFS61101_IPPS
+      type: string
+    - name: HUMANAVITA61101_OPPS
+      type: number
+    - name: HUMANAVITA61101_IPPS
+      type: string
+    - name: KAISERPERMANENTEFFS_OPPS
+      type: number
+    - name: KAISERPERMANENTEFFS_IPPS
+      type: string
+    - name: LOCKARDWILLIAMS_OPPS
+      type: number
+    - name: LOCKARDWILLIAMS_IPPS
+      type: string
+    - name: MAGNOLIAHLTH68069_OPPS
+      type: number
+    - name: MAGNOLIAHLTH68069_IPPS
+      type: string
+    - name: MAGNOLIAHLTHCHIPS68069_OPPS
+      type: number
+    - name: MAGNOLIAHLTHCHIPS68069_IPPS
+      type: string
+    - name: MedicareA_OPPS
+      type: number
+    - name: MedicareA_IPPS
+      type: string
+    - name: MEDICAREA_OPPS_1
+      type: number
+    - name: MEDICAREA_IPPS_1
+      type: string
+    - name: MEDICAREPARTBONLY_OPPS
+      type: number
+    - name: MEDICAREPARTBONLY_IPPS
+      type: string
+    - name: MEDICARERAILROAD_OPPS
+      type: number
+    - name: MEDICARERAILROAD_IPPS
+      type: string
+    - name: MOLINAHEALTHPLAN_Outpatient_TieredFeeSchedule
+      type: string
+    - name: MolinaHealthcareofMS_Outpatient_TieredFeeSchedule
+      type: string
+    - name: MOLINAHLTHCAREMSCHIPS77010_Outpatient_TieredFeeSchedule
+      type: string
+    - name: MolinaMarketplace_IPPS
+      type: string
+    - name: MolinaMarketplace_OPPS
+      type: number
+    - name: PANAMERICANLIFE04218_OPPS
+      type: number
+    - name: PANAMERICANLIFE04218_IPPS
+      type: string
+    - name: PEOPLESHLTHFFS72126_OPPS
+      type: number
+    - name: PEOPLESHLTHFFS72126_IPPS
+      type: string
+    - name: PPOPLUS_Outpatient_PercentofCharges
+      type: string
+    - name: PPOPLUS_Inpatient_PercentofCharges
+      type: string
+    - name: SELFPAY_Outpatient_PercentofCharges
+      type: string
+    - name: StateofMSBCCP_OPPS
+      type: number
+    - name: StateofMSBCCP_IPPS
+      type: string
+    - name: TRICAREEAST_OPPS
+      type: number
+    - name: TRICAREEAST_IPPS
+      type: string
+    - name: UHC/SECUREHORIZONS_OPPS
+      type: number
+    - name: UHC/SECUREHORIZONS_IPPS
+      type: string
+    - name: UMR39026_OPPS
+      type: number
+    - name: UMR39026_IPPS
+      type: string
+    - name: UNITEDHEALTHCARE/_OPPS
+      type: number
+    - name: UNITEDHEALTHCARE/_IPPS
+      type: string
+    - name: UNITEDHEALTHCARE_OPPS
+      type: number
+    - name: UNITEDHEALTHCARE_IPPS
+      type: string
+    - name: UNITEDHEALTHCAREBA_OPPS
+      type: number
+    - name: UNITEDHEALTHCAREBA_IPPS
+      type: string
+    - name: UNITEDHEALTHCAREME_OPPS
+      type: number
+    - name: UNITEDHEALTHCAREME_IPPS
+      type: string
+    - name: VANTAGEHEALTHPLANFFS_IPPS
+      type: string
+    - name: VANTAGEHEALTHPLANFFS_OPPS
+      type: number
+    - name: WELLCAREFFS8551_OPPS
+      type: number
+    - name: WELLCAREFFS8551_IPPS
+      type: string
+    - name: WELLSFARGOTPA8781_OPPS
+      type: number
+    - name: WELLSFARGOTPA8781_IPPS
+      type: string
+    - name: WINDSORMCAREEXTRA_OPPS
+      type: number
+    - name: WINDSORMCAREEXTRA_IPPS
+      type: string
+
+  missingValues:
+   - ''
+   - 'N/A'
+scheme: file
