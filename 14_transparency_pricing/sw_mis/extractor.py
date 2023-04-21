@@ -87,6 +87,10 @@ for file in os.listdir(folder):
     # Drop rows where code is ms-drg and patient is outpatient per discussion with SL
     df = df[~((df['patient_class'] == 'outpatient') & (df['code_prefix'] == 'ms-drg'))]
 
+    # I could just drop this but figure it might change in the future so best to just set na
+    df['modifier'] = df['modifier'].fillna('na')
+    df['rev_code'] = df['rev_code'].fillna('na')
+    df['patient_class'] = df['patient_class'].fillna('na')
     # %%
     df['file_last_updated'] = '2023-02-01'
     df['url'] = 'https://pricetransparency.blob.core.windows.net/smrmc/' + file
