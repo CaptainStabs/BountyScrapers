@@ -28,23 +28,27 @@ def payer_category(x):
         return 'payer'
 
 def code_prefix(x):
+    if pd.isna(x):
+        return 'none'
+    
     x = str(x)
     prefixes = {
         'HCPCS': 'hcpcs_cpt',
         'CPT®': 'hcpcs_cpt',
         'Custom': 'custom'
     }
-
-    if len(str(x.split()[-1])) == 8:
-        return 'custom'
     
-    elif " " in x:
+    # if len(str(x.split()[-1])) == 8:
+    #     return 'custom'
+    
+    if " " in x:
         prefix = x.split(" ")[0]
         try:
             return prefixes[prefix]
         except KeyError:
             # print(x)
             pass
+    
     else:
         return 'none'
 
@@ -113,14 +117,24 @@ for file in tqdm(os.listdir(folder)):
 
     df['internal_code'].fillna('na', inplace=True)
     df['code'].fillna('na', inplace=True)
+    df['code'] = df['code'].str.replace('nan', 'na')
     df['rev_code'].fillna('na', inplace=True)
     df['rev_code'] = df['rev_code'].str.replace('nan', 'na')
     df['ndc'].fillna('na', inplace=True)
     df['code_prefix'].fillna('none', inplace=True)
 
-    is_hcpcs_cpt_and_length_6 = df['code_prefix'] == 'hcpcs_cpt'
-    is_hcpcs_cpt_and_length_6 &= df['code'].str.len() != 6
-    df.loc[~is_hcpcs_cpt_and_length_6, 'code_prefix'] = 'custom'
+    # is_hcpcs_cpt_and_length_6 = df['code_prefix'] == 'hcpcs_cpt'
+    # is_hcpcs_cpt_and_length_6 &= df['code'] != 'na'  # Exclude null cells (doesn't work for some reason)
+    # is_hcpcs_cpt_and_length_6 &= df['code'].str.len() != 6
+    # df.loc[~is_hcpcs_cpt_and_length_6, 'code_prefix'] = 'custom'
+
+    na_code = df['code'] == 'na'
+    df.loc[na_code, 'code_prefix'] = 'none'
+    df[df['code'] == 'na']
+
+    # drg_codes = df['code'] != 'nan'
+    # drg_codes &= df['code'].str.len() == 3
+    # df.loc[drg_codes, 'code_prefix'] = 'ms-drg'
 
 
     df['payer_name'] = df['payer_orig']
