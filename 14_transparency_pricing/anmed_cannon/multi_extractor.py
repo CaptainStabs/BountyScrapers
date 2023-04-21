@@ -65,6 +65,8 @@ for actual_file in tqdm(os.listdir('input_files')):
     df = df3
 
     df['rate'] = df['rate'].str.replace('$', '', regex=False).str.replace(',', '', regex=False)
+    df = df[~df['rate'].str.contains('%')]
+
 
     df['payer_orig'] = df['payer_name']
     df.loc[df["code_type"] == "revenuecode", ["code", "code_type"]] = [None, None]
@@ -72,13 +74,19 @@ for actual_file in tqdm(os.listdir('input_files')):
     # Set code_prefix based on code_type value using numpy.where
     df["code_prefix"] = np.where(df["code_type"] == "cpt", "hcpcs_cpt",
                                 np.where(df["code_type"] == "drg", "apr-drg", None))
+    df.loc[df["code"].str.contains("MS-"), "code_prefix"] = "ms-drg"
+    # Strip "MS-" from code column
+    df['code'] = df["code"].str.replace("MS-", "")
+    print(df.columns)
 
-    df['code'] = np.where(df['code_type'] == 'apr-drg', df['code'].str[:3] + '-' + df['code'].str[3:], df['code'])
+
+    df['code'] = np.where(df['code_prefix'] == 'apr-drg', df['code'].str[:3] + '-' + df['code'].str[3:], df['code'])
     # Add constants
-    df['hospital_tin'] = tin
+    df['hospital_ein'] = tin
     df['hospital_ccn'] = ccn
     df['filename'] = file
     df['url'] = 'https://anmed.org/sites/default/files/2023-01/Standard%20Charges_AnMed%20Cannon_2023.xlsx'
+    df['apc'] = df['rev_desc'].apply(lambda x: str(x).replace('APC ', '') if 'APC' in str(x) else None)
 
     df['rev_code'] = df['rev_code'].fillna('na')
     df['payer_category'] = df['payer_name'].apply(payer_category)
