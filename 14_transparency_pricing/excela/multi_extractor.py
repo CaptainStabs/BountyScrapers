@@ -1,4 +1,3 @@
-
 import pandas as pd
 import os
 
@@ -65,6 +64,11 @@ def plan_name(payer):
     except KeyError:
         return pd.NA
     
+def group_characters(modifier):
+    if pd.isna(modifier):
+        return None
+    else:
+        return ' '.join([modifier[i:i+2] for i in range(0, len(modifier), 2)])
 
 
 folder = '.\\input_files\\'
@@ -74,7 +78,7 @@ for file in os.listdir(folder):
 
     df.rename(columns={
         'SERVICE CODE': 'internal_code',
-        'SERVICE CODE DESC': 'desc',
+        'SERVICE CODE DESC': 'description',
         'CPT/HCPCS CODE': 'code_orig',
     }, inplace=True)
 
@@ -98,9 +102,32 @@ for file in os.listdir(folder):
     # Set code_prefix to 'hcpcs_cpt' if code is not na
     df.loc[df['code'].notna(), 'code_prefix'] = 'hcpcs_cpt'
     df.loc[df['plan_name'].notna(), 'plan_orig'] = df['payer_name']
+    df['plan_orig'] = df['plan_orig'].fillna('na')
 
-    df['code'].fillna('na')
-    df['code_prefix'].fillna('na')
+    df['code'] = df['code'].fillna('na')
+    df['code_prefix'] = df['code_prefix'].fillna('none')
+    df['modifier'] = df['code'].apply(lambda x: str(x)[5:] if len(str(x)) > 5 else pd.NA)
+    df['modifier'] = df['modifier'].apply(group_characters)
+    df['modifier'] = df['modifier'].fillna('na')
+
+
+    # This is nulling the entire code column for some reason
+    # df['code'] = df['code'].str[:5]
+
+    df['code'] = df['code'].apply(lambda x: str(x)[:5] if len(str(x)) > 5 else x)
+
+
+    df['rate'] = df['rate'].astype(str)
+    df = df[(df['rate'] != 'Follows Medicare Logic; Payment Varies By Case') & (df['rate'] != '0')]
+    df['rate'] = df['rate'].str.replace(',', '').str.replace('$', '', regex=False)
+    df['rate'] = df['rate'].str.strip()
+    df['rate_desc'] = df['rate'].apply(lambda x: " ".join(str(x).split()[1:]) if " " in str(x) else " ".join(str(x).split('/')[1:]) if "/" in str(x) else pd.NA)
+    df['rate'] = df['rate'].apply(lambda x: str(x).split()[0].split('/')[0] if " " in x or "/" in x else x)
+    df['rate'] = df['rate'].astype(float)
+    df.dropna(subset=['rate'], inplace=True)
+
+
+    
 
 
     ein = file.split("_")[0]
@@ -112,4 +139,5 @@ for file in os.listdir(folder):
     df['filename'] = file
     df['url'] = "https://www.excelahealth.org/documents/content/" + file
 
-    df.to_csv(".\\output_folder\\" + file.split("_")[0], index=False)
+    df.to_csv(".\\output_files\\" + file.split("_")[0] + '.csv', index=False)
+
