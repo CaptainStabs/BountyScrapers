@@ -22,6 +22,8 @@ def code_type(x):
             return "ms-drg"
         elif len(x) == 5:
             return "hcpcs_cpt"
+        else:
+            return "none"
 
 ccn_table = {
     "dearborn": "230020",
@@ -39,8 +41,8 @@ for file in tqdm(os.listdir(in_dir)):
     print(file)
     df = pd.read_csv(in_dir + file, na_values='#N/A', encoding="iso-8859-1", dtype={"Code": str, 'Rev Code': str, 'Rev Code ': str}, low_memory=False)
     df = df.rename(columns={
-        " Code Type": "code_meta",
-        "Procedure ": "procedure_code",
+        " Code Type": "code_type",
+        "Procedure ": "internal_code",
         "Code": "code",
         "Rev Code ": "rev_code",
         "Rev Code": "rev_code",
@@ -59,7 +61,7 @@ for file in tqdm(os.listdir(in_dir)):
     df = df.dropna(subset=['rate'])
 
     # Get code types and explode into separate columns
-    df["code_type"] = df["code"].apply(code_type)
+    df["code_prefix"] = df["code"].apply(code_type)
     # df["ms_drg"] = df["code"].str.replace("MSDRG ", "").where(df["code"].str.contains("MSDRG"), pd.NA)
     # df["hcpcs_cpt"] = df["code"].where(df["code"].str.len() == 5, pd.NA)
     # df = df[~df["code"].isin(["SURG", "MANUL"]) & ~df["hcpcs_cpt"].isin(["SURG", "MANUL"])]
@@ -83,9 +85,10 @@ for file in tqdm(os.listdir(in_dir)):
     df[df_obj.columns] = df_obj.apply(lambda x: x.str.strip())
 
 
-    df["code_meta"] = df["code_meta"].str.lower()
+    df["code_type"] = df["code_type"].str.lower()
 
     df["payer_category"] = df["payer_orig"].apply(payer_category)
+    df["payer_name"] = df["payer_orig"]
 
     # df["rev_code"] = df["rev_code"].str.rstrip(".")
     df["rev_code"] = df["rev_code"].fillna("na")
@@ -93,7 +96,7 @@ for file in tqdm(os.listdir(in_dir)):
 
     tin = file.split("_")[0]
     tin = tin[:2] + "-" + tin[2:]
-    df['hospital_tin'] = tin
+    df['hospital_ein'] = tin
     df["hospital_ccn"] = ccn_table[file.split("-")[2]]
 
     df.to_csv(".\\output_files\\" + file.split("-")[2] + ".csv", index=False)
