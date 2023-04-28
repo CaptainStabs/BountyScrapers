@@ -1,11 +1,12 @@
 import pandas as pd
 import polars as pl
 import os
+from tqdm import tqdm
 
 input_files = '.\\input_files\\'
 
 
-for file in os.listdir(input_files):
+for file in tqdm(os.listdir(input_files)):
 
     df = pd.read_csv(input_files + file, dtype=str)
 
@@ -67,8 +68,10 @@ for file in os.listdir(input_files):
 
     for location, ccn in file_locations.items():
         if location in file:
+            print("\n" + location, file, ccn)
             id = ccn
             name = location
+            break
 
     df['hospital_id'] = ccn
 

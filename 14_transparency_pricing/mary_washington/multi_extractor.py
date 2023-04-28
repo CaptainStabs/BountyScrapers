@@ -1,5 +1,10 @@
 import pandas as pd
 import os
+import re
+from tqdm import tqdm
+import polars as pl
+
+pattern = r"^[A-Z][0-9]{4}|[0-9]{5}|[0-9]{4}[A-Z]$"
 
 def payer_category(x):
     payers = {
@@ -17,7 +22,7 @@ def payer_category(x):
 
 folder = '.\\input_files\\'
 
-for file in os.listdir(folder):
+for file in tqdm(os.listdir(folder)):
     df = pd.read_excel(folder + file)
 
 
@@ -52,7 +57,33 @@ for file in os.listdir(folder):
     ein = file.split('_')[0]
     df['hospital_id'] = ccn[ein]
 
+    # df['hcpcs_cpt'].fillna('""', inplace=True)
+    # df['code'].fillna('""', inplace=True)
 
-    df.to_csv(file.split('_')[0] + '.csv', index=False)
+    df['hcpcs_cpt'] = df['hcpcs_cpt'].astype(str)
+    # df.loc[df['hcpcs_cpt'].str.contains(pattern), 'hcpcs_cpt'] = '""'
+    mask = ~df['hcpcs_cpt'].str.contains(pattern)
+    df.loc[mask, 'hcpcs_cpt'] = '' # '""'
+    df.loc[df['hcpcs_cpt'].str.contains('-'), 'hcpcs_cpt'] = pd.NA # '""'
+
+    df['code'] = df['code'].str.strip()
+    df['code'] = df['code'].apply(lambda x: str(x).zfill(3) if len(str(x)) < 3 else x)
+
+    df['apr_drg'] = ''
+    df.loc[df['code'].str.contains('-') & ~df['code'].isna(), 'apr_drg'] = df['code']
+
+    # df['ms_drg'] = ''
+    # df.loc[df['code'].str.len() == 3, 'ms_drg'] = df['code']
+
+    df['code'].fillna('', inplace=True)
+
+    # df.loc[df['ms_drg'] == '', 'ms_drg'] = '""'
+    # df.loc[df['apr_drg'] == '', 'apr_drg'] = '""'
+
+    # df = df.astype(str)
+    import csv
+    df.to_csv(file.split('_')[0] + '.csv', index=False, quoting=csv.QUOTE_NONNUMERIC)
+    # df = pl.from_pandas(df)
+    # df.write_csv(file.split('_')[0] + '.csv')
 
 

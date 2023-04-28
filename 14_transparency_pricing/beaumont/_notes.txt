@@ -1,0 +1,4 @@
+`MSDRG` had to be removed from `code`
+
+For Royal, one row had to be edited to remove a description from `procedure_code`: `SCREW, MESA DEFORMITY UNIPLANAR, 4MM X 30MM, 620134030` -> `620134030`
+Another row had to be removed due to the `procedure_code` being a description without a procedure_code in it.
