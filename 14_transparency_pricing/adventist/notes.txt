@@ -3,5 +3,6 @@
 - There is no way to always differentiate between icd codes and hcpcs codes
 
 - Could not find an EIN for (ADVENTIST HEALTH VALLEJO) 054074, 94-1279779
+- NDCs longer than 13 had their dashes removed
 
 duplicate eins: 812240617, 941279779
