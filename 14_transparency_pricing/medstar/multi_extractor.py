@@ -2,6 +2,8 @@
 import pandas as pd
 import numpy as np
 import os
+from tqdm import tqdm
+import polars as pl
 
 
 def payer_category(x):
@@ -17,8 +19,8 @@ def payer_category(x):
 
 folder = '.\\input_files\\'
 
-for file in os.listdir(folder):
-
+for file in tqdm(os.listdir(folder)):
+    print(file)
     df = pd.read_excel(folder + file, skiprows=3)
 
 
@@ -72,19 +74,27 @@ for file in os.listdir(folder):
     df.reset_index(drop=False, inplace=True)
 
 
-    df.drop(['level_0', 'index'], axis=1, inplace=True)
+    # df.drop(['level_0', 'index'], axis=1, inplace=True)
 
+    
+    df['code'].astype(str)
+    df['code'] = df['code'].str.upper()
 
     df.loc[df['code'].str.len() == 3, 'rev_code'] = df['code']
     df.loc[df['code'].str.len() == 5, 'hcpcs_cpt'] = df['code']
     df.loc[df['code'].str.len() == 7, 'hcpcs_cpt'] = df['code'].str[:5]
     df.loc[df['code'].str.len() == 7, 'modifiers'] = df['code'].str[-2:]
 
-    df['code'].fillna('""', inplace=True)
-    df['plan'].fillna('""', inplace=True)
-    df['rev_code'].fillna('""', inplace=True)
-    df['hcpcs_cpt'].fillna('""', inplace=True)
-    df['modifiers'].fillna('""', inplace=True)
+    df['rev_code'] = df['rev_code'].str.strip()
+    df['rev_code'] = df['rev_code'].apply(lambda x: str(x).zfill(4) if x != 'nan' and not pd.isna(x) else x)
+    
+
+    df['code'].fillna('', inplace=True)
+    df['plan'].fillna('', inplace=True)
+    df['rev_code'].fillna('', inplace=True)
+    df['hcpcs_cpt'].fillna('', inplace=True)
+    df['modifiers'].fillna('', inplace=True)
+
 
     ccn = {
         '460726303': '210062',
@@ -102,4 +112,5 @@ for file in os.listdir(folder):
 
     df['hospital_id'] = hosp_id
 
-    df.to_csv('.\\output_files\\' + hosp_id + '.csv', index=False)
+    df = pl.from_pandas(df)
+    df.write_csv('.\\output_files\\' + hosp_id + '.csv')
