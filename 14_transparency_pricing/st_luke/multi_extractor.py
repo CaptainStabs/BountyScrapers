@@ -53,23 +53,38 @@ for file in tqdm(os.listdir(folder)):
     df['code'].fillna('', inplace=True)
     df['local_code'].fillna('', inplace=True)
 
+    df.loc[df['payer'].str.contains('All Plans'), 'plan'] = 'all plans'
+    df['payer'] = df['payer'].str.replace(' (All Plans) Payment', '')
+    df['payer'] = df['payer'].str.replace(' Payment', '')
+    df['payer'] = df['payer'].str.replace(' (All Plans)', '')
+    df['payer'] = df['payer'].str.strip().str.strip()
 
-    ccn = {
-        '844475996': '390162',
-        '824432109': '390332',
-        '465143606': '390330',
-        '454394739': '390326',
-        '251550350': '390183',
-        '231352213': '390049',
-        '231352213': '390335',
-        '231352203': '390035',
-        '221494454': '310060'
-    }
+    df.loc[df['plan'].isna(), 'plan'] = ''
 
-    ein = file.split('_')[0]
+    if 'Bethlehem' in file:
+        id = '390049'
+    elif 'Lehighton' in file:
+        id = '390335'
 
-    df['hospital_id'] = ccn[ein]
+    else:
+        ccn = {
+            '844475996': '390162',
+            '824432109': '390332',
+            '465143606': '390330',
+            '454394739': '390326',
+            '251550350': '390183',
+            # '231352213': '390049',
+            # '231352213': '390335',
+            '231352203': '390035',
+            '221494454': '310060'
+        }
 
+        ein = file.split('_')[0]
+        id = ccn[ein]
+    
+    df['hospital_id'] = id
+
+    df.dropna(subset='standard_charge', inplace=True)
 
     df1 = pl.from_pandas(df)
     df1.write_csv('.\\output_files\\' + file.split('_')[1] + '.csv')
