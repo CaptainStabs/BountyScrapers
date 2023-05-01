@@ -76,6 +76,7 @@ for file in tqdm(os.listdir(folder)):
     ccns = {'38-3176536': '230029',
     '383175878': '230156',
     '383176225': '230069',
+    '383176536': '230029',
     '824757260': '230259',
     '383521763': '230002',
     '382589966': '230066',
@@ -91,6 +92,11 @@ for file in tqdm(os.listdir(folder)):
 
     df['description'] = df['description'].str.strip()
 
+    pattern = r'^[A-Z][0-9]{4}|[0-9]{5}|[0-9]{4}[A-Z]$'
+
+    df['hcpcs_cpt'] = df['hcpcs_cpt'].astype(str)
+    mask = df['hcpcs_cpt'].str.match(pattern)
+    df.loc[~mask, 'hcpcs_cpt'] = pd.NA
 
     df['ms_drg'].fillna('', inplace=True)
     df['hcpcs_cpt'].fillna('', inplace=True)
