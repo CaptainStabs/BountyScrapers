@@ -74,7 +74,7 @@ for file in tqdm(os.listdir(folder)):
         '27-4434451': '670088',
         '46-4007700': '670108',
         '81-3040663': '670136',
-        '74-2519752': '450187',
+        '74-2519752': '450187', 
         '82-4052186': '450885',
         '26-0194016': '450742',
         '75-1037591': '670082',
@@ -84,7 +84,26 @@ for file in tqdm(os.listdir(folder)):
 
     ein = file.split('_')[0]
 
-    df['hospital_id'] = ccn[ein]
+    if ein == '20-3749695':
+        if 'round-rock' in file:
+            id = '670034'
+        elif 'lakeway' in file:
+            id = '673058'
+        elif 'cedar-park' in file:
+            id = '670043'
+
+    elif ein == '81-3040663':
+        if 'plfugerville' in file:
+            id = '670128'
+        elif 'buda' in file:
+            id = '670131'
+
+        elif 'austin' in file:
+            if = '670136'
+
+    else:
+        id = ccn[ein]
+    df['hospital_id'] = id
 
     # Schema patches
     df['rev_code'] = df['rev_code'].str.zfill(4)
