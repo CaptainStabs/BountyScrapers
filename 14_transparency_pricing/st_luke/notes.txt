@@ -10,7 +10,11 @@ Sacred Heart 390197
 Upper Bucks 390035
 Warren 310060
 
-Nothing interesting about this one
+Length 5 `local_code`s are NOT cpt codes, i.e. `71728` is simply a service code, see this (hospital's service code description)[https://www.willsmemorialhospital.com/wp-content/uploads/2019/09/FinancialOrganizationalInfo.pdf]
+
+
+# Import stats
+![image](https://cdn.discordapp.com/attachments/880219214386974762/1103305060546531439/image.png)
 
 ```
 SLHospital.csv
