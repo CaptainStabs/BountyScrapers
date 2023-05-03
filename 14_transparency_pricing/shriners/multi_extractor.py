@@ -89,5 +89,3 @@ for file in tqdm(os.listdir(input_files)):
 
     df = pl.from_pandas(df)
     df.write_csv('.\\output_files\\' + name + '.csv')
-
-
