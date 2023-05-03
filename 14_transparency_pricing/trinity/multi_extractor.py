@@ -43,13 +43,13 @@ for file in tqdm(os.listdir(folder)):
     id_vars = cols[:3]
     value_vars = cols[3:]
 
-    df = pd.melt(df, id_vars=id_vars, value_vars=value_vars, var_name='payer', value_name='standard_charge')
+    df = pd.melt(df, id_vars=id_vars, value_vars=value_vars, var_name='payer_name', value_name='standard_charge')
 
 
     df.dropna(subset='standard_charge', inplace=True)
 
 
-    df['payer'] = df['payer'].str.replace('__Derived Contracted Rate', '')
+    df['payer_name'] = df['payer_name'].str.replace('__Derived Contracted Rate', '')
 
 
     mapping = {
@@ -59,7 +59,7 @@ for file in tqdm(os.listdir(folder)):
         'De-identified max contracted rate': 'max'
     }
 
-    df['payer_category'] = df['payer'].map(mapping).fillna('payer')
+    df['payer_category'] = df['payer_name'].map(mapping).fillna('payer')
 
 
     df['code'] = df['code'].astype(str)
@@ -67,9 +67,12 @@ for file in tqdm(os.listdir(folder)):
 
     df['setting'] = df['setting'].str.lower()
 
+    df['code'] = df['code'].astype(str)
+
 
     df.loc[df['code'].str.len() == 1, 'ms_drg'] = df['code'].str.zfill(3)
     df.loc[df['code'].str.len() == 3, 'ms_drg'] = df['code']
+    df.loc[df['code'].str.match(r'\d{3}X'), 'ms_drg'] = df['code'].str.strip('X')
     df.loc[df['code'].str.len() == 5, 'hcpcs_cpt'] = df['code']
 
 
@@ -87,7 +90,15 @@ for file in tqdm(os.listdir(folder)):
 
     ein = file.split('_')[0]
 
-    df['hospital_id'] = ccns[ein]
+    if ein == '382589966':
+        if 'Shelby' in file:
+            id = '231320'
+        elif 'Muskegon' in file:
+            id = '230066'
+    else:
+        id = ccns[ein]
+
+    df['hospital_id'] = id
 
 
     df['description'] = df['description'].str.strip()
@@ -98,9 +109,9 @@ for file in tqdm(os.listdir(folder)):
     mask = df['hcpcs_cpt'].str.match(pattern)
     df.loc[~mask, 'hcpcs_cpt'] = pd.NA
 
-    df['ms_drg'].fillna('', inplace=True)
-    df['hcpcs_cpt'].fillna('', inplace=True)
-    df['code'].fillna('', inplace=True)
+    # df['ms_drg'].fillna('', inplace=True)
+    # df['hcpcs_cpt'].fillna('', inplace=True)
+    # df['code'].fillna('', inplace=True)
 
     df = pl.from_pandas(df)
 
