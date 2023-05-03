@@ -14,65 +14,67 @@
 ### `hcpcs_cpt` > 5
 ![image](https://cdn.discordapp.com/attachments/1016365454270402692/1101637497903124480/image.png)
 
+```
 20-2850920.csv
-Rows Processed: 117,244, Additions: 109,962, Modifications: 3,147, Had No Effect: 4,135
+Rows Processed: 117,244, Additions: 113,071, Modifications: 0, Had No Effect: 4,173
 
 20-3749695.csv
-Rows Processed: 256,321, Additions: 245,773, Modifications: 6,383, Had No Effect: 4,165
+Rows Processed: 256,321, Additions: 252,088, Modifications: 0, Had No Effect: 4,233
 
 26-0194016.csv
-Rows Processed: 170,777, Additions: 165,908, Modifications: 4,721, Had No Effect: 148
+Rows Processed: 170,777, Additions: 170,591, Modifications: 0, Had No Effect: 186
 
 26-3603862.csv
-Rows Processed: 123,964, Additions: 120,035, Modifications: 3,801, Had No Effect: 128
+Rows Processed: 123,964, Additions: 123,806, Modifications: 0, Had No Effect: 158
 
 27-4434451.csv
-Rows Processed: 200,420, Additions: 190,659, Modifications: 5,605, Had No Effect: 4,156
+Rows Processed: 200,420, Additions: 196,198, Modifications: 0, Had No Effect: 4,222
 
 41-2101361.csv
-Rows Processed: 130,430, Additions: 126,278, Modifications: 4,020, Had No Effect: 132
+Rows Processed: 130,430, Additions: 130,266, Modifications: 0, Had No Effect: 164
 
 46-4007700.csv
-Rows Processed: 222,955, Additions: 214,865, Modifications: 3,924, Had No Effect: 4,166
+Rows Processed: 222,955, Additions: 218,753, Modifications: 0, Had No Effect: 4,202
 
 74-1161944.csv
-Rows Processed: 232,699, Additions: 222,762, Modifications: 5,780, Had No Effect: 4,157
+Rows Processed: 232,699, Additions: 228,480, Modifications: 0, Had No Effect: 4,219
 
 74-1166904.csv
-Rows Processed: 271,038, Additions: 260,275, Modifications: 6,594, Had No Effect: 4,169
+Rows Processed: 271,038, Additions: 266,799, Modifications: 0, Had No Effect: 4,239
 
 74-1595711.csv
-Rows Processed: 241,677, Additions: 231,593, Modifications: 5,925, Had No Effect: 4,159
+Rows Processed: 241,677, Additions: 237,454, Modifications: 0, Had No Effect: 4,223
 
 74-2519752.csv
-Rows Processed: 264,129, Additions: 257,824, Modifications: 6,250, Had No Effect: 55
+Rows Processed: 264,129, Additions: 264,028, Modifications: 0, Had No Effect: 101
 
 75-1008430.csv
-Rows Processed: 193,959, Additions: 188,818, Modifications: 4,987, Had No Effect: 154
+Rows Processed: 193,959, Additions: 193,765, Modifications: 0, Had No Effect: 194
 
 75-1037591.csv
-Rows Processed: 196,705, Additions: 191,581, Modifications: 4,968, Had No Effect: 156
+Rows Processed: 196,705, Additions: 196,509, Modifications: 0, Had No Effect: 196
 
 75-1777119.csv
-Rows Processed: 183,985, Additions: 179,324, Modifications: 4,511, Had No Effect: 150
+Rows Processed: 183,985, Additions: 183,799, Modifications: 0, Had No Effect: 186
 
 75-1837454.csv
-Rows Processed: 210,711, Additions: 205,364, Modifications: 5,187, Had No Effect: 160
+Rows Processed: 210,711, Additions: 210,509, Modifications: 0, Had No Effect: 202
 
 75-1844139.csv
-Rows Processed: 214,067, Additions: 208,480, Modifications: 5,425, Had No Effect: 162
+Rows Processed: 214,067, Additions: 213,861, Modifications: 0, Had No Effect: 206
 
 75-2586857.csv
-Rows Processed: 204,193, Additions: 199,086, Modifications: 4,949, Had No Effect: 158
+Rows Processed: 204,193, Additions: 203,995, Modifications: 0, Had No Effect: 198
 
 75-2834135.csv
-Rows Processed: 136,253, Additions: 131,861, Modifications: 4,258, Had No Effect: 134
+Rows Processed: 136,253, Additions: 136,085, Modifications: 0, Had No Effect: 168
 
 81-3040663.csv
-Rows Processed: 242,428, Additions: 232,281, Modifications: 5,984, Had No Effect: 4,163
+Rows Processed: 242,428, Additions: 238,201, Modifications: 0, Had No Effect: 4,227
 
 82-0551704.csv
-Rows Processed: 189,048, Additions: 184,404, Modifications: 4,492, Had No Effect: 152
+Rows Processed: 189,048, Additions: 188,860, Modifications: 0, Had No Effect: 188
 
 82-4052186.csv
-Rows Processed: 172,469, Additions: 167,596, Modifications: 4,735, Had No Effect: 138
+Rows Processed: 172,469, Additions: 172,293, Modifications: 0, Had No Effect: 176
+```

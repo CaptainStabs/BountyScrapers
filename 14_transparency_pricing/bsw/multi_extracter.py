@@ -37,15 +37,15 @@ for file in tqdm(os.listdir(folder)):
     id_vars = cols[:9]
     value_vars = cols[9:]
 
-    df = pd.melt(df, id_vars=id_vars, value_vars=value_vars, var_name='payer', value_name='standard_charge')
+    df = pd.melt(df, id_vars=id_vars, value_vars=value_vars, var_name='payer_name', value_name='standard_charge')
 
 
     df['standard_charge'] = pd.to_numeric(df['standard_charge'], errors='coerce')
     df.dropna(subset=['standard_charge'], inplace=True)
 
 
-    empty_cols = ['ms_drg', 'apr_drg', 'local_code', 'ndc', 'rev_code', 'hcpcs_cpt']
-    df.loc[:, empty_cols] = df[empty_cols].fillna('')
+    # empty_cols = ['ms_drg', 'apr_drg', 'local_code', 'ndc', 'rev_code', 'hcpcs_cpt']
+    # df.loc[:, empty_cols] = df[empty_cols].fillna('')
 
 
     mapping = {
@@ -55,7 +55,7 @@ for file in tqdm(os.listdir(folder)):
         'De-Identified Maximum Reimbursement*': 'max',
     }
 
-    df['payer_category'] = df['payer'].map(mapping).fillna('payer')
+    df['payer_category'] = df['payer_name'].map(mapping).fillna('payer')
 
 
     ccn = {
@@ -99,7 +99,7 @@ for file in tqdm(os.listdir(folder)):
             id = '670131'
 
         elif 'austin' in file:
-            if = '670136'
+            id = '670136'
 
     else:
         id = ccn[ein]
@@ -108,10 +108,12 @@ for file in tqdm(os.listdir(folder)):
     # Schema patches
     df['rev_code'] = df['rev_code'].str.zfill(4)
     df['ms_drg'] = df['ms_drg'].str.zfill(3)
-    df.loc[df['rev_code'] == '-000', 'rev_code'] = ''
-    df.loc[df['rev_code'] == '0000', 'rev_code'] = ''
-    df.loc[df['ms_drg'] == '000', 'ms_drg'] = ''
-    df.loc[df['hcpcs_cpt'].str.len() > 5, 'hcpcs_cpt'] = ''
+    df.loc[df['rev_code'] == '-000', 'rev_code'] = pd.NA
+    df.loc[df['rev_code'] == '0000', 'rev_code'] = pd.NA
+    df.loc[df['ms_drg'] == '000', 'ms_drg'] = pd.NA
+    df.loc[df['hcpcs_cpt'].str.len() > 5, 'hcpcs_cpt'] = pd.NA
+
+    df['row_id'] = pd.NA
 
     df = pl.from_pandas(df)
     df.write_csv('.\\output_files\\' + ein + '.csv')
