@@ -1,0 +1,2 @@
+# Notes
+- Could not get data for Bedford or Richmond, HPI seems to not have any data
