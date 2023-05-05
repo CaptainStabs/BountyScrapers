@@ -1,0 +1,2 @@
+# Notes
+- `Sanford Thief River Falls Behavioral Health Hospital` (244018) and `SANFORD MEDICAL CENTER THIEF RIVER FALLS` (241381) share the same source file
