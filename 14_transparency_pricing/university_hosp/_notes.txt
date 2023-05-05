@@ -1,2 +1,39 @@
 # Notes
 - Could not get data for Bedford or Richmond, HPI seems to not have any data
+
+
+# Duplication Check
+
+![image](https://cdn.discordapp.com/attachments/775844038984990770/1103720346307264684/image.png)
+
+```
+264827222_360359.csv
+Rows Processed: 54,995, Additions: 23,455, Modifications: 0, Had No Effect: 31,540
+
+340714461_361307.csv
+Rows Processed: 33,852, Additions: 15,904, Modifications: 0, Had No Effect: 17,948
+
+340714535_360002.csv
+Rows Processed: 54,577, Additions: 25,051, Modifications: 0, Had No Effect: 29,526
+
+340714550_361308.csv
+Rows Processed: 27,235, Additions: 12,925, Modifications: 0, Had No Effect: 14,310
+
+340714612_360145.csv
+Rows Processed: 51,445, Additions: 22,573, Modifications: 0, Had No Effect: 28,872
+
+340816492_360192.csv
+Rows Processed: 53,075, Additions: 22,806, Modifications: 0, Had No Effect: 30,269
+
+340827442_360041.csv
+Rows Processed: 48,765, Additions: 21,535, Modifications: 0, Had No Effect: 27,230
+
+341260978_360123.csv
+Rows Processed: 48,965, Additions: 21,892, Modifications: 0, Had No Effect: 27,073
+
+341567805_363302.csv
+Rows Processed: 78,015, Additions: 32,209, Modifications: 0, Had No Effect: 45,806
+
+461382538_360078.csv
+Rows Processed: 50,690, Additions: 22,142, Modifications: 0, Had No Effect: 28,548
+```

@@ -7,6 +7,8 @@ folder = '.\\input_files\\'
 
 
 for file in tqdm(os.listdir(folder)):
+    if '.json' not in file:
+        continue
     file_path = folder + file
     with open(file_path,'r') as f:
         jf = json.load(f)
@@ -62,9 +64,11 @@ for file in tqdm(os.listdir(folder)):
     df['setting'] = df['setting'].str.lower()
 
 
-    df.loc[df['code'].str.match(r'^[A-Z][0-9]{4}|[0-9]{5}|[0-9]{4}[A-Z]$'), 'hcpcs_cpt'] = df['code']
-    df.loc[df['code'].str.match(r'[0-9]{3}'), 'ms_drg'] = df['code']
-    df.loc[df['code'].str.len() == 4, 'rev_code'] = df['code']
+    df.loc[(df['code'].str.match(r'^[A-Z][0-9]{4}|[0-9]{5}|[0-9]{4}[A-Z]$')) & (df['code'].str.len() == 5), 'hcpcs_cpt'] = df['code']
+    df.loc[df['code'].str.match(r'^[0-9]{3}$'), 'ms_drg'] = df['code']
+    df.loc[df['code'].str.len() == 4, 'apr_drg'] = df['code'][:2] + '-' + df['code'][2:]
+    df['apr_drg'] = df['code'].apply(lambda x: x[:3] + '-' + x[-1] if len(str(x)) == 4 else pd.NA)
+    df.loc[df['code'].str.len() == 2, 'apr_drg'] = df['code'].str.zfill(3)
 
 
     ccns = {'340714535': '360002',
@@ -85,7 +89,10 @@ for file in tqdm(os.listdir(folder)):
 
     df['hospital_id'] = id
 
+    df['standard_charge'] = pd.to_numeric(df['standard_charge'], errors='coerce')
 
-    df.to_csv('.\\output_files\\' + ein + '_' id + '.csv', index=False)
+    df.dropna(subset='standard_charge', inplace=True)
+
+    df.to_csv('.\\output_files\\' + ein + '_' + id + '.csv', index=False)
 
 
