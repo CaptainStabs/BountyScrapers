@@ -1,0 +1,5 @@
+# Notes
+
+- `Cohen Children's Medical Center` is same ccn and ein as `Long Island Jewish Forest Hills`
+- `11-2241326_Long Island Jewish Hospital_StandardCharges.json` is the file for `Jewish Medical Center`
+- `Zucker Hillside Hospital` shares a ccn with `Long Island Jewish Medical Center` as well
