@@ -1,0 +1,57 @@
+### How many hospital systems are in this pull request? Which ones?
+    1, Novant Health.
+
+    The following hospitals were not in the hospital db:
+        - `Clemmons Medical Center`
+        - 'Kernersville Medical Center'
+
+### Was the same MRF used for multiple hospitals?
+    No
+
+### Does the same hospital have multiple MRFs?
+    No
+
+### About how many unique file schemas are in this pull request? (If more than one, please give examples of each)
+    1
+
+### Were there any code types you were unable to assign to a column?
+    No
+
+### Did you have to truncate any codes? If yes, please give an example
+    No
+
+### Did you have to pad any CPT codes? If yes, please give an example
+    No
+
+### Did any HCPCS/CPT codes have modifiers?
+    No
+
+### Were there any standard charge values with contracting type = 'other'? If so, please give examples
+    Yes:
+    - `Surgery Center Alt`
+    - `Specimen Alt`
+    - `Cancer Center Alt`
+    - `Imaging Center Alt`
+    - `L&D Alt`
+    - `Surgery Center Alt`
+    - `Cardiact Surgery Alt`
+    - `Specimen Alt`
+    - `Endo Alt`
+
+### Were any values set to NULL?
+    - `contracting_method` equal to `Standard Charge`
+    - Prices equal to `-`
+
+### Did any rows count as "modifications" and not "additions" when inserting into Dolt?
+    Yes. Every hospiatl except Pender Memorial had 4 modifications, with Pender having 48
+
+### Were there any rows you weren't sure what to do with?
+
+### How did you determine "last updated"?
+
+
+`line_type` is from the description
+
+
+Please note that not all codes that appear to be CPT codes that are in the `code` column are CPT. The description dictates that they are `SUP` codes.
+![image](https://media.discordapp.net/attachments/1117130878997504112/1117133041899409570/image.png?width=1440&height=81)

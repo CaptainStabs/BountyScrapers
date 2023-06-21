@@ -1,2 +1,64 @@
 # Notes
 - `Sanford Thief River Falls Behavioral Health Hospital` (244018) and `SANFORD MEDICAL CENTER THIEF RIVER FALLS` (241381) share the same source file
+
+# Import stats
+```
+411266009_241328.csv
+Rows Processed: 106,094, Additions: 6,344, Modifications: 0, Had No Effect: 99,750
+
+450409348_241304.csv
+Rows Processed: 62,074, Additions: 4,478, Modifications: 0, Had No Effect: 57,596
+
+450409348_241381.csv
+Rows Processed: 494,856, Additions: 20,136, Modifications: 0, Had No Effect: 474,720
+
+450409348_351309.csv
+Rows Processed: 76,666, Additions: 3,940, Modifications: 0, Had No Effect: 72,726
+
+450409348_351329.csv
+Rows Processed: 43,669, Additions: 3,145, Modifications: 0, Had No Effect: 40,524
+
+460388596_161381.csv
+Rows Processed: 115,585, Additions: 5,103, Modifications: 0, Had No Effect: 110,482
+
+460388596_240022.csv
+Rows Processed: 177,514, Additions: 7,146, Modifications: 0, Had No Effect: 170,368
+
+460388596_240128.csv
+Rows Processed: 124,347, Additions: 6,327, Modifications: 0, Had No Effect: 118,020
+
+460388596_241302.csv
+Rows Processed: 41,503, Additions: 3,091, Modifications: 0, Had No Effect: 38,412
+
+460388596_241303.csv
+Rows Processed: 55,376, Additions: 3,726, Modifications: 0, Had No Effect: 51,650
+
+460388596_241315.csv
+Rows Processed: 57,648, Additions: 4,036, Modifications: 0, Had No Effect: 53,612
+
+460388596_241347.csv
+Rows Processed: 61,996, Additions: 4,172, Modifications: 0, Had No Effect: 57,824
+
+460388596_430097.csv
+Rows Processed: 210,405, Additions: 6,099, Modifications: 0, Had No Effect: 204,306
+
+460388596_431307.csv
+Rows Processed: 37,286, Additions: 2,342, Modifications: 0, Had No Effect: 34,944
+
+460388596_431311.csv
+Rows Processed: 40,570, Additions: 2,482, Modifications: 0, Had No Effect: 38,088
+
+460388596_431329.csv
+Rows Processed: 116,533, Additions: 3,545, Modifications: 0, Had No Effect: 112,988
+
+460388596_431333.csv
+Rows Processed: 64,875, Additions: 3,627, Modifications: 0, Had No Effect: 61,248
+
+460388596_431336.csv
+Rows Processed: 152,687, Additions: 5,711, Modifications: 0, Had No Effect: 146,976
+
+```
+
+# Duplication check:
+![image](https://cdn.discordapp.com/attachments/775844038984990770/1104049749386068068/image.png)
+![image](https://cdn.discordapp.com/attachments/775844038984990770/1104053169358635091/image.png)

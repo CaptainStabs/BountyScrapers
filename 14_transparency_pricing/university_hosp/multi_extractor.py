@@ -84,10 +84,22 @@ for file in tqdm(os.listdir(folder)):
     '340714550': '361308',
     '371848577': '360367'}
 
-    ein = file.split('_')[0]
-    id = ccns[ein]
+    if file == '341567805_uh-cleveland-medical-center_standardcharges.json':
+        ein = '341567805'
+        id = '360137_363302'
+        df1 = df.copy()
+        df1['hospital_id'] = '360137'
 
-    df['hospital_id'] = id
+        df2 = df.copy()
+        df2['hospital_id'] = '363302'
+
+        df = pd.concat([df1, df2])
+
+    else: 
+        ein = file.split('_')[0]
+        id = ccns[ein]
+
+        df['hospital_id'] = id
 
     df['standard_charge'] = pd.to_numeric(df['standard_charge'], errors='coerce')
 

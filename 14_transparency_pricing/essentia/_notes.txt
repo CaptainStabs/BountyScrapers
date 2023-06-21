@@ -1,1 +1,8 @@
 Remember to make all files have 3 rows before header
+
+- `standard_charge`s equal to `#VALUE!|#DIV/0!|#REF!|N/A|-` were removed. 
+- `setting` is from `payer_name`
+- `hcpcs_cpt` is confirmed through regex
+
+A blank line had to be added to the fargo and sandstone source file for parsing
+![image](https://cdn.discordapp.com/attachments/775844038984990770/1105574095506124932/image.png)

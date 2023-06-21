@@ -1,0 +1,36 @@
+### How many hospital systems are in this pull request? Which ones?
+    1, Northwell
+
+### Was the same MRF used for multiple hospitals?
+    No
+
+### Does the same hospital have multiple MRFs?
+    No
+### About how many unique file schemas are in this pull request? (If more than one, please give examples of each)
+    1
+### Were there any code types you were unable to assign to a column?
+    No
+### Did you have to truncate any codes? If yes, please give an example
+    rev codes had their description attached to them.
+    `0300 - LABORATORY` -> `0300`
+    `0480 - CARDIOLOGY` -> `0480`
+
+### Did you have to pad any CPT codes? If yes, please give an example
+    No
+### Did any HCPCS/CPT codes have modifiers?
+    No
+### Were there any standard charge values with contracting type = 'other'? If so, please give examples
+    - Charges equal to `POC`, `NSP`, `Packaged`, or `APG - Bundling` were nulled, their `contracting_method` set to `other`, and `additional_payer_notes` set to their respective value.
+    - Charges ending in `PD` had `PD` moved to `additional_payer_notes`
+
+### Were any values set to NULL?
+    - Charges equal to `-`, `N/A`, `,`, `NULL` and `` were nulled.
+    
+### Did any rows count as "modifications" and not "additions" when inserting into Dolt?
+    No
+### Were there any rows you weren't sure what to do with?
+    Rows where the standard charge was just `case rate` with no price were dropped.
+    ![image](https://media.discordapp.net/attachments/709894614919938140/1115342245667807272/image.png?width=1440&height=328)
+
+### How did you determine "last updated"?
+    Date on top of file

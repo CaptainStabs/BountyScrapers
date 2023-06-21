@@ -52,6 +52,7 @@ for file in tqdm(os.listdir(folder)):
     mapping = {
         'Avg_Gross_Charge': 'gross',
         'Cash_Discount': 'cash',
+        'Cash_Discount_Price': 'cash',
         'Deidentified_Min_Allowed': 'min',
         'DeIdentified_Max_Allowed':'max',
         }
@@ -103,6 +104,8 @@ for file in tqdm(os.listdir(folder)):
         df2 = df.copy()
         df2['hospital_id'] = '241381'
         df1['hospital_id'] = '244018'
+
+        id = '241381'
         df = pd.concat([df1, df2])
     
     else:

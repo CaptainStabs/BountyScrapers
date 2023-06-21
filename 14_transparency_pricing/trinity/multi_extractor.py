@@ -95,7 +95,7 @@ for file in tqdm(os.listdir(folder)):
             id = '231320'
         elif 'Muskegon' in file:
             id = '230066'
-    else:
+    else:   
         id = ccns[ein]
 
     df['hospital_id'] = id
@@ -115,4 +115,4 @@ for file in tqdm(os.listdir(folder)):
 
     df = pl.from_pandas(df)
 
-    df.write_csv('.\\output_files\\' + ein + '.csv')
+    df.write_csv('.\\output_files\\' + id + '.csv')

@@ -53,13 +53,13 @@ for file in tqdm(os.listdir(folder)):
     # df['code'].fillna('', inplace=True)
     # df['local_code'].fillna('', inplace=True)
 
-    df.loc[df['payer_name'].str.contains('All Plans'), 'plan'] = 'all plans'
+    df.loc[df['payer_name'].str.contains('All Plans'), 'plan_name'] = 'all plans'
     df['payer_name'] = df['payer_name'].str.replace(' (All Plans) Payment', '')
     df['payer_name'] = df['payer_name'].str.replace(' Payment', '')
     df['payer_name'] = df['payer_name'].str.replace(' (All Plans)', '')
     df['payer_name'] = df['payer_name'].str.strip().str.strip()
 
-    df.loc[df['plan'].isna(), 'plan'] = ''
+    # df.loc[df['plan'].isna(), 'plan'] = ''
 
     if 'Bethlehem' in file:
         id = '390049'
