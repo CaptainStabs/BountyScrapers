@@ -1,0 +1,11 @@
+hospital_id,row_id,line_type,description,rev_code,local_code,code,ms_drg,apr_drg,eapg,hcpcs_cpt,modifiers,thru,apc,icd,ndc,drug_hcpcs_multiplier,drug_quantity,drug_unit_of_measurement,drug_type_of_measurement,billing_class,setting,payer_category,payer_name,plan_name,standard_charge,standard_charge_percent,contracting_method,additional_generic_notes,additional_payer_specific_notes
+330239,52120748734640,,CARVEDILOL CR 20MG,,,,,,,,,,,,00007-3371-13,,,,,,,payer,UPMC For You,,0.00,,,,
+330239,80257277511155,,SPECIAL STAIN P0063,,,87207,,,,87207,,,,,,,,,,,,gross,Gateway MA,,6.29,,,,
+330239,104109058271018,,SELEXIPAG 800MCG TABLET,,,,,,,,,,,,66215-0608-06,,,,,,,max,Max Rate,,810.75,,,,
+330239,106468575786440,,COZAAR 50MG TAB,,,,,,,,,,,,,,,,,,,payer,CCBHO,,0.06,,,,
+330239,169475475601515,,BENZONATATE 100MG TAB,,,,,,,,,,,,67877-0105-01,,,,,,,payer,Nova Comm,,0.00,,,,
+330239,277228143616374,,ORIAHNN WKLY BLSTR PK 14 CAPS,,,,,,,,,,,,00074-1017-56,,,,,,,payer,Gateway MA,,0.00,,,,
+330239,365917153514502,,ARIPIPRAZOLE 10MG TAB,,,,,,,,,,,,00093-7580-56,,,,,,,payer,Independent Health MC,,0.00,,,,
+330239,369920605783378,,US OB NUCHAL MEAS 1ST GEST,,,76813,,,,76813,,,,,,,,,,,,djagbsdkgh,Gateway MA,,106.89,,,,
+330239,408776729699764,,MOMETASONE 0.1% OINT 15GM,,,,,,,,,,,,00085-0370-01,,,,,,,payer,United Comm,,50.49,,,,
+330239,430145217729263,,TUBE SALEM SUMP W/A-RFLX 18FR,,,B4082,,,,B4082,,,,,,,,,,,,payer,UPMC For You,,0.00,,,,
