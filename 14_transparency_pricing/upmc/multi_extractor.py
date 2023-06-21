@@ -9,8 +9,11 @@ folder = '.\\input_files\\'
 file = '160743226_upmc-chautauqua_standardcharges.csv'
 
 for file in tqdm(os.listdir(folder)):
-        
-    df = pd.read_csv(folder + file, dtype=str)
+    print(file)
+    try:
+        df = pd.read_csv(folder + file, dtype=str)
+    except UnicodeDecodeError:
+        df = pd.read_csv(folder + file, dtype=str, encoding='ansi')
 
 
     df.rename(columns={
@@ -32,7 +35,7 @@ for file in tqdm(os.listdir(folder)):
 
 
 
-    df['setting'] = np.where(df['payer_name'].str.startswith('IP ') | df['payer_name'].str.endswith(' IP'), 'inpatient', np.where(df['payer_name'].str.startswith('OP ') | df['payer_name'].str.endswith(' OP'), 'outpatient', 1))
+    df['setting'] = np.where(df['payer_name'].str.startswith('IP ') | df['payer_name'].str.endswith(' IP'), 'inpatient', np.where(df['payer_name'].str.startswith('OP ') | df['payer_name'].str.endswith(' OP'), 'outpatient', pd.NA))
 
 
     df.drop('Hospital', axis=1, inplace=True)
@@ -59,11 +62,17 @@ for file in tqdm(os.listdir(folder)):
 
 
     df['standard_charge'] = df['standard_charge'].str.strip()
-    df['standard_charge'] = df['standard_charge'].str.replace('\$|,', '')
+    df['standard_charge'] = df['standard_charge'].str.replace('\$|,', '', regex=True)
+    df['standard_charge'] = df['standard_charge'].str.replace(',', '', regex=False)
 
+    df['standard_charge'].replace(['N/A', '-', 'Cost'], inplace=True, value=pd.NA)
+    df.dropna(subset='standard_charge', inplace=True)
+
+    df.loc[df['standard_charge'] == 'cost', 'standard_charge'] = pd.NA
 
     df.dropna(subset='standard_charge', inplace=True)
 
+    df.loc[df['standard_charge'] == 'Bundled', ['standard_charge', 'contracting_method', 'additional_generic_notes']] = [pd.NA, 'other', 'Bundled']
 
     ccns = {
     '160743226': '330239',
@@ -96,4 +105,11 @@ for file in tqdm(os.listdir(folder)):
 
     df['hospital_id'] = id
 
-    df.to_csv('.\\output_files\\' + id + '.csv', index=False)
+    df['hcpcs_cpt'] = df['hcpcs_cpt'].astype(str)
+    df['hcpcs_cpt'] = df['hcpcs_cpt'].str.upper()
+    df.loc[~df['hcpcs_cpt'].str.match(r'^[A-Z][0-9]{4}|[0-9]{5}|[0-9]{4}[A-Z]$'), 'hcpcs_cpt'] = pd.NA
+
+    if 'ndc' in df.columns:
+        df.loc[df['ndc'].str.len() > 10, 'ndc'] = pd.NA
+
+    df.to_csv('.\\output_files\\' + ein + '_' + id + '.csv', index=False)
