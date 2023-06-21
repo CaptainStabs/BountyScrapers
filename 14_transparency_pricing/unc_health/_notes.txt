@@ -1,0 +1,43 @@
+# Notes
+- `ms_drg` from codes starting with `MS`
+- There are what appear to be local codes in `code`, but not 100% sure so I left them there.
+
+# Duplication check
+![image](https://cdn.discordapp.com/attachments/775844038984990770/1105495605410811944/image.png)
+
+
+# Import stats
+```
+237027004_340147.csv
+Rows Processed: 155,990, Additions: 105,358, Modifications: 0, Had No Effect: 50,632
+
+463176429_340090.csv
+Rows Processed: 212,573, Additions: 108,671, Modifications: 0, Had No Effect: 103,902
+
+560530233_340050.csv
+Rows Processed: 25,172, Additions: 25,172, Modifications: 0, Had No Effect: 0
+
+560554202_340041.csv
+Rows Processed: 217,008, Additions: 90,494, Modifications: 0, Had No Effect: 126,514
+
+560611546_341311.csv
+Rows Processed: 94,591, Additions: 87,091, Modifications: 0, Had No Effect: 7,500
+
+561118388_340061.csv
+Rows Processed: 706,061, Additions: 213,669, Modifications: 0, Had No Effect: 492,392
+
+561484844_340010.csv
+Rows Processed: 111,197, Additions: 92,489, Modifications: 0, Had No Effect: 18,708
+
+561509260_340114.csv
+Rows Processed: 400,529, Additions: 149,857, Modifications: 0, Had No Effect: 250,672
+
+562084959_340017.csv
+Rows Processed: 298,770, Additions: 106,628, Modifications: 0, Had No Effect: 192,142
+
+566000674_340027.csv
+Rows Processed: 74,694, Additions: 63,228, Modifications: 0, Had No Effect: 11,466
+
+823745228_340060.csv
+Rows Processed: 73,305, Additions: 64,771, Modifications: 0, Had No Effect: 8,534
+```

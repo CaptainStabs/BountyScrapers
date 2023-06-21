@@ -41,7 +41,7 @@ for file in tqdm(os.listdir(folder)):
     df['standard_charge'] = df['standard_charge'].str.replace('$', '').str.replace(',', '')
 
 
-    df.loc[(~df['code'].isna()) & (df['code'].str.match(r'^[A-Z][0-9]{4}|[0-9]{5}|[0-9]{4}[A-Z]$')), 'hcpcs_cpt'] = df['code']
+    df.loc[(~df['code'].isna()) & (df['code'].str.match(r'^(?:[A-Z][0-9]{4}|[0-9]{5}|[0-9]{4}[A-Z])$')), 'hcpcs_cpt'] = df['code']
     df.loc[(~df['code'].isna()) & (df['code'].str.match(r'MS(\d{3})')), 'ms_drg'] = df['code'].str.extract(r'MS(\d+)', expand=False)
 
 
@@ -61,6 +61,7 @@ for file in tqdm(os.listdir(folder)):
 
     id = ccns[file]
     ein = file.split('_')[0]
+    df['hospital_id'] = id
     output_name = '.\\output_files\\' + ein + '_' + id + '.csv'
     df.to_csv(output_name, index=False)
 
