@@ -47,7 +47,7 @@ for file in tqdm(os.listdir(folder)):
     # empty_cols = ['ms_drg', 'apr_drg', 'local_code', 'ndc', 'rev_code', 'hcpcs_cpt']
     # df.loc[:, empty_cols] = df[empty_cols].fillna('')
 
-
+    df['payer_name'] = df['payer_name'].str.strip()
     mapping = {
         'Gross Charge': 'gross',
         'Discounted Cash Price': 'cash',
@@ -70,10 +70,10 @@ for file in tqdm(os.listdir(folder)):
         '74-1595711': '451374',
         '20-2850920': '452105',
         '41-2101361': '670025',
-        '20-3749695': '670043',
+        # '20-3749695': '670043',
         '27-4434451': '670088',
         '46-4007700': '670108',
-        '81-3040663': '670136',
+        # '81-3040663': '670136',
         '74-2519752': '450187', 
         '82-4052186': '450885',
         '26-0194016': '450742',
@@ -93,7 +93,7 @@ for file in tqdm(os.listdir(folder)):
             id = '670043'
 
     elif ein == '81-3040663':
-        if 'plfugerville' in file:
+        if file == '81-3040663_baylor-scott-and-white-med-center-pflugerville_standardcharges.csv':
             id = '670128'
         elif 'buda' in file:
             id = '670131'
@@ -116,4 +116,6 @@ for file in tqdm(os.listdir(folder)):
     df['row_id'] = pd.NA
 
     df = pl.from_pandas(df)
-    df.write_csv('.\\output_files\\' + ein + '.csv')
+    # df.write_csv('.\\output_files\\' + file.replace('baylor-scott-and-white', '') + '.csv')
+
+    df.write_csv('.\\output_files\\' + id + '.csv')

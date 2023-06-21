@@ -66,7 +66,7 @@ for file in tqdm(os.listdir(folder)):
 
 
     mask = (~df['code'].isna()) & (df['line_type'] == 'apr-drg' )
-    df.loc[mask, 'apr_drg'] = df['code'].str.zfill(3)
+    df.loc[mask, 'apr_drg'] = df['code'].str.zfill(4)
 
 
     df.loc[df['drug_quantity'] == '1', 'drug_quantity'] = pd.NA
@@ -84,7 +84,7 @@ for file in tqdm(os.listdir(folder)):
 
     mask = ~(df['hcpcs_cpt'].astype(str).str.match(r'^[A-Z][0-9]{4}$|^[0-9]{5}$|^[0-9]{4}[A-Z]$'))
     df.loc[mask, 'hcpcs_cpt'] = pd.NA
-    df.loc[df['apr_drg'].str.len() > 3, 'apr_drg'] = df['apr_drg'][:3] + '-' + df['apr_drg'][3:]
+    df.loc[~df['apr_drg'].isna(), 'apr_drg'] = df.loc[~df['apr_drg'].isna(), 'apr_drg'].str[:3] + '-' + df.loc[~df['apr_drg'].isna(), 'apr_drg'].str[3:]
 
 
     df['local_code'] = df['local_code'].apply(fix_decimal_precision)
