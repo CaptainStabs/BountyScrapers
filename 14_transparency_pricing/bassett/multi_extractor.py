@@ -77,7 +77,7 @@ for file in tqdm(os.listdir(folder)):
     df.dropna(subset='standard_charge', inplace=True)
 
 
-    df.loc[(~df['code'].isna()) & (df['code'].str.match('HCPCS|CPT®')), 'hcpcs_cpt'] = df['code'].str.replace('HCPCS |CPT® ', '', regex=True)
+    df.loc[(~df['code'].isna()) & (df['code'].str.match('HCPCS|CPT')), 'hcpcs_cpt'] = df['code'].str.replace('HCPCS |CPT« ', '', regex=True)
     df['hcpcs_cpt'] = df['hcpcs_cpt'].str.strip()
     df.loc[(df['hcpcs_cpt'].str.len() == 8) | (df['hcpcs_cpt'] == 'CUSTOM') | (df['hcpcs_cpt'].str.len() != 5), 'hcpcs_cpt'] = pd.NA
 

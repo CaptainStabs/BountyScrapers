@@ -39,6 +39,11 @@ for file in tqdm(os.listdir(folder)):
     df['ms_drg'] = df['code'].str.extract(r'MS-DRG V40 \(FY 2023\) (.*)')
 
 
+    mask = df['code'].str.match(r'CPT® HB\d{5}')
+    df.loc[mask, 'billing_class'] = 'facility'
+    df.loc[mask, 'hcpcs_cpt'] = df['code'].str.replace('CPT® HB', '')
+    # df.loc[mask, 'modifiers'] = 'HB'
+
     payer_mapping = {
         'Gross_Charge': 'gross',
         'Deidentified_Minimum_Negotiated_Charge': 'min',
@@ -47,6 +52,8 @@ for file in tqdm(os.listdir(folder)):
     }
 
     df['payer_category'] = df['payer_name'].map(payer_mapping).fillna('payer')
+
+    df.dropna(subset='standard_charge', inplace=True)
 
 
     id_mapping = {

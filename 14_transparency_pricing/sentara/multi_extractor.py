@@ -17,6 +17,9 @@ rename_dict = {
         'CPT/HCPCS': 'hcpcs_cpt',
         'HCPCS': 'hcpcs_cpt',
         'MS-DRG': 'ms_drg',
+        'MSDRG': 'ms_drg',
+        'APC': 'apc',
+        'Payer Specific Negotiated Charge': 'standard_charge',
     }
 
 for file in tqdm(os.listdir(folder)):
@@ -31,12 +34,7 @@ for file in tqdm(os.listdir(folder)):
 
     gc_df = pd.read_excel(xls, 'Gross Charges', dtype=str, skiprows=4)
 
-    gc_df.rename(columns={
-        'CDM': 'local_code',
-        'CDM Description': 'description',
-        'Revenue Code': 'rev_code',
-        
-    }, inplace=True)
+    gc_df.rename(columns=rename_dict, inplace=True)
 
     cols = gc_df.columns.tolist()
     id_vars = cols[:4]
@@ -64,12 +62,7 @@ for file in tqdm(os.listdir(folder)):
         psc = pd.read_excel(xls, pharm_sheet, dtype=str, skiprows=4)
 
 
-    psc.rename(columns={
-        'CDM': 'local_code',
-        'CDM DESCRIPTION': 'description',
-        'HCPCS': 'hcpcs_cpt',
-        'Revenue Code': 'rev_code'
-    }, inplace=True)
+    psc.rename(columns=rename_dict, inplace=True)
 
     cols = psc.columns.tolist()
     id_vars = cols[:4]
@@ -86,10 +79,7 @@ for file in tqdm(os.listdir(folder)):
 
     ipmin = pd.read_excel(xls, 'Inpatient Minimum', dtype=str, skiprows=4)
 
-    ipmin.rename(columns={
-        'MS-DRG': 'ms_drg',
-        'Description': 'description',
-    }, inplace=True)
+    ipmin.rename(columns=rename_dict, inplace=True)
 
     cols = ipmin.columns.tolist()
     id_vars = cols[:2]
@@ -107,10 +97,7 @@ for file in tqdm(os.listdir(folder)):
 
     ipmax = pd.read_excel(xls, 'Inpatient Maximum', dtype=str, skiprows=4)
 
-    ipmax.rename(columns={
-        'MS-DRG': 'ms_drg',
-        'Description': 'description',
-    }, inplace=True)
+    ipmax.rename(columns=rename_dict, inplace=True)
 
     cols = ipmax.columns.tolist()
     id_vars = cols[:2]
@@ -128,10 +115,7 @@ for file in tqdm(os.listdir(folder)):
 
     opmin = pd.read_excel(xls, 'Outpatient Minimum', dtype=str, skiprows=4)
 
-    opmin.rename(columns={
-        'APC': 'apc',
-        'Description': 'description',
-    }, inplace=True)
+    opmin.rename(columns=rename_dict, inplace=True)
 
     cols = opmin.columns.tolist()
     id_vars = cols[:2]
@@ -153,10 +137,7 @@ for file in tqdm(os.listdir(folder)):
 
     opmax = pd.read_excel(xls, 'Outpatient Maximum', dtype=str, skiprows=4)
 
-    opmax.rename(columns={
-        'APC': 'apc',
-        'Description': 'description',
-    }, inplace=True)
+    opmax.rename(columns=rename_dict, inplace=True)
 
     cols = opmax.columns.tolist()
     id_vars = cols[:2]
@@ -187,11 +168,7 @@ for file in tqdm(os.listdir(folder)):
         df.columns = df.loc[5]
         df = df.loc[6:]
         
-        df.rename(columns={
-        'MS-DRG': 'ms_drg',
-        'Description': 'description',
-        'Payer Specific Negotiated Charge': 'standard_charge'
-        }, inplace=True)
+        df.rename(columns=rename_dict, inplace=True)
 
         df['payer_name'] = payer
         df['rate_category'] = 'negotiated'
@@ -216,11 +193,7 @@ for file in tqdm(os.listdir(folder)):
         df.columns = df.loc[5]
         df = df.loc[6:]
 
-        df.rename(columns={
-            'APC': 'apc',
-            'Description': 'description',
-            'Payer Specific Negotiated Charge': 'standard_charge'
-        }, inplace=True)
+        df.rename(columns=rename_dict, inplace=True)
 
         df['payer_name'] = payer
         df['rate_category'] = 'negotiated'
@@ -256,4 +229,10 @@ for file in tqdm(os.listdir(folder)):
     hosp_id = id_map[file]
     df['hospital_id'] = hosp_id
 
-    df.to_csv('./output_files/' + hosp_id + file.split('_')[1] + '.csv', index=False)
+    mask = ~df['rev_code'].isna() & (df['rev_code'].str.len() < 4)
+
+    df.loc[mask, 'rev_code'] = df.loc[mask, 'rev_code'].str.zfill(4)
+
+    df['hcpcs_cpt'] = df['hcpcs_cpt'].str.upper()
+
+    df.to_csv('./output_files/' + hosp_id + file.split('_')[0] + '.csv', index=False)

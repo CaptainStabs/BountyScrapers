@@ -22,8 +22,8 @@
     codes equal to `NOCPT`
 
 ### Did any rows count as "modifications" and not "additions" when inserting into Dolt?
-
+    No
 ### Were there any rows you weren't sure what to do with?
-
+    No
 ### How did you determine "last updated"?
     Second line of file

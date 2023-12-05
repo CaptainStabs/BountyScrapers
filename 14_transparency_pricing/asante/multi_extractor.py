@@ -67,8 +67,12 @@ for file in tqdm(os.listdir(folder)):
         'OP Price': 'gross',   
         'OP De-Identified MIN': 'min',
         'OP De-Identified MAX': 'max',
-        '<Self-pay>': 'cash'
-    }
+        '<Self-pay>': 'cash',
+        'De-Identified IP MIN': 'min',
+        'De-Identified IP MAX': 'max',
+        'De-Identified OP MIN':'min',
+        'De-Identified OP MAX':'max'
+    } 
 
     df['payer_category'] = df['payer_name'].map(payer_mapping)
 
@@ -79,7 +83,7 @@ for file in tqdm(os.listdir(folder)):
     df.loc[~df['payer_temp'].isna(), 'payer_category'] = 'payer'
 
 
-    df.drop(columns='payer_temp', inplace=True)
+    # df.drop(columns='payer_temp', inplace=True)
 
 
     df['code'] = df['code'].str.strip()
@@ -91,7 +95,8 @@ for file in tqdm(os.listdir(folder)):
     df.loc[~df['code'].isna() & df['code'].str.match(r"MS\d{3}"), 'ms_drg'] = df['code'].str.replace('MS', '')
 
 
-    df['ms_drg'] = df['ms_drg'].astype(str)
+    # df['ms_drg'] = df['ms_drg'].astype(str)
+
 
 
     df.reset_index(drop=True, inplace=True)
@@ -102,12 +107,34 @@ for file in tqdm(os.listdir(folder)):
 
 
     df.loc[df['hcpcs_cpt'].str.len() == 7, 'hcpcs_cpt'] = pd.NA
+    df.loc[df['hcpcs_cpt'] == 'SART', ['hcpcs_cpt', 'alt_hcpcs_cpt']] = [pd.NA, 'SART']
+
+    mask = ~df['hcpcs_cpt'].fillna('').isna() & ~(df['hcpcs_cpt'].fillna('').str.match(r'^[A-Z][0-9]{4}$|^[0-9]{5}$|^[0-9]{4}[A-Z]$'))
+    df.loc[mask, 'alt_hcpcs_cpt'] = df['hcpcs_cpt']
+    df.loc[mask, 'hcpcs_cpt'] = pd.NA
 
 
     df.loc[~df['plan_name'].isna() & df['plan_name'].str.contains(',')]
 
 
     df = df.assign(plan_name=df['plan_name'].str.split(', ')).explode('plan_name')
+
+    payer_mapping = {
+    'IP Price': 'gross',
+    'IP De-Identified MIN': 'min',
+    'IP De-Identified MAX': 'max',
+    'OP Price': 'gross',   
+    'OP De-Identified MIN': 'min',
+    'OP De-Identified MAX': 'max',
+    '<Self-pay>': 'cash'
+    }
+
+    df['payer_category'] = df['payer_name'].map(payer_mapping).fillna('payer')
+
+    df['setting'] = np.where(df['payer_name'].str.startswith('IP'), 'inpatient', np.where(df['payer_name'].str.startswith('OP'), 'outpatient', 1))
+    df['setting'] = np.where(df['payer_temp'].notnull() & df['payer_temp'].str.startswith('IP'), 'inpatient', np.where(df['payer_temp'].notnull() & df['payer_temp'].str.startswith('OP'), 'outpatient', df['setting']))
+
+    df['payer_category'] = df['payer_name'].map(payer_mapping)
 
 
     df['standard_charge'] = df['standard_charge'].str.replace(',', '')

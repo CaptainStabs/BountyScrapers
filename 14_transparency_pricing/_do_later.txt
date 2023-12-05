@@ -1,5 +1,7 @@
-70mb files, https://www.texashealth.org/Costs-and-Billing/Hospital-Charge-Information
 1.5gb files, https://iuhealth.org/schedule-an-appointment/price-estimates/standard-charge-listing
-
-big zip files, https://www.massgeneralbrigham.org/en/patient-care/patient-visitor-information/billing/cms-required-hospital-charge-data
+64mb zipped, 900mb+ unzipped, https://iuhealth.org/schedule-an-appointment/price-estimates/standard-charge-listing
+900mb json files, https://atriumhealth.org/for-patients-visitors/financial-assistance/pricing
+700mb+ json files, https://www.mercy.com/pay-a-bill/estimate-your-cost ("SELECT * FROM `hospital` where system_name in ('Mercy Health') or name like '%MERCY HEALTH%' or alt_name like '%MERCY HEALTH%' ORDER BY `id` ASC")
 big xml files, https://www.mclaren.org/main/mclaren-charge-master-files
+300mb, https://www.ochsner.org/patients-visitors/billing-and-financial-services/estimates
+200mb+ big zip files,https://www.massgeneralbrigham.org/en/patient-care/patient-visitor-information/billing/cms-required-hospital-charge-data

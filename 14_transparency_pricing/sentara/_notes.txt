@@ -1,0 +1,3 @@
+APC codes with an `N` i.e. `N890` were moved to `code`
+
+Column `Fee Schedule Name` was moved to `additonal_payer_specfic_notes`

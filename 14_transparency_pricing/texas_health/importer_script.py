@@ -4,18 +4,8 @@ import argparse
 
 def importer(hospital):
     folder = 'G:\\transparency-in-pricing\\'
-
-    drive = drive.lower()
-
     
-    db_path = 'G:\\transparency-in-pricing\\'
-
-    confirm = input(f'\nData will be imported to the database at {db_path}, continue? y/n ')
-    if confirm.lower() == 'y':
-        pass
-    else:
-        os._exit(1)
-    
+    db_path = 'G:\\transparency-in-pricing\\'   
 
     if hospital:
         file = os.path.join(folder, hospital)

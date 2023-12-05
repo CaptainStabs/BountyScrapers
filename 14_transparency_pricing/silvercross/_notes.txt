@@ -12,11 +12,13 @@
     No
 ### Did you have to pad any CPT codes? If yes, please give an example
     ms_drg codes were zfilled. `1` -> `001`
+    rev_code were zfilled.
+    apc was zfilled
 
 ### Did any HCPCS/CPT codes have modifiers?
     There were columns for modifiers, but they were both empty
 ### Were there any standard charge values with contracting type = 'other'? If so, please give examples
-    No
+    Yes, `70% of Gross Charges`
 ### Were any values set to NULL?
     No
 ### Did any rows count as "modifications" and not "additions" when inserting into Dolt?
