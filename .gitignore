@@ -25,6 +25,9 @@ __pycache__/
 12_quest_tic/output/*/
 12_quest_tic/test/*
 13_hospital_prices/output/*
+14_transparency_pricing/*/input_files/*
+14_transparency_pricing/*/output_files/*.csv
+
 
 # Dolt
 11_hospitals/paylesshealth-1/.dolt*
@@ -244,3 +247,4 @@ flycheck_*.el
 
 ## directory configuration
 .dir-locals.el
+14_transparency_pricing/hackensack/hackensack.7z

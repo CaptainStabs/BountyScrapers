@@ -1,0 +1,28 @@
+# Notes
+- rates equal to `cost` were dropped
+- rates equal to `Bundled` were nulled, `contracting_method` set to `other`, and `additional_generic_notes` to `Bundled`.
+- Malformed NDCs were nulled
+
+
+# Import stats
+```
+251778644_390067.csv
+Rows Processed: 435,037, Additions: 424,106, Modifications: 0, Had No Effect: 10,931
+
+820844453_390068.csv
+Rows Processed: 405,340, Additions: 127,006, Modifications: 0, Had No Effect: 278,334
+
+820880337_390058.csv
+Rows Processed: 474,031, Additions: 463,254, Modifications: 0, Had No Effect: 10,777
+
+820912090_390101.csv
+Rows Processed: 489,614, Additions: 479,352, Modifications: 0, Had No Effect: 10,262
+```
+
+
+# Duplicates
+### 820844453_390068
+![image](https://cdn.discordapp.com/attachments/775844038984990770/1103389893666799677/image.png)
+
+### 251778644_390067
+![image](https://cdn.discordapp.com/attachments/775844038984990770/1103391125055742043/image.png)

@@ -1,0 +1,37 @@
+## Notes
+
+- `Derived contracted rate` col was dropped from source
+- '__Derived Contracted Rate` was removed from payers
+
+## Import stats
+```
+231352191.csv
+Rows Processed: 23,321, Additions: 23,321, Modifications: 0, Had No Effect: 0
+
+231913910.csv
+Rows Processed: 34,893, Additions: 34,893, Modifications: 0, Had No Effect: 0
+
+232794121.csv
+Rows Processed: 21,887, Additions: 21,887, Modifications: 0, Had No Effect: 0
+
+382589966.csv
+Rows Processed: 7,876, Additions: 7,876, Modifications: 0, Had No Effect: 0
+
+383175878.csv
+Rows Processed: 36,334, Additions: 36,334, Modifications: 0, Had No Effect: 0
+
+383176225.csv
+Rows Processed: 17,882, Additions: 17,882, Modifications: 0, Had No Effect: 0
+
+383176536.csv
+Rows Processed: 26,500, Additions: 26,500, Modifications: 0, Had No Effect: 0
+
+383521763.csv
+Rows Processed: 22,035, Additions: 22,035, Modifications: 0, Had No Effect: 0
+
+510064326.csv
+Rows Processed: 6,377, Additions: 6,377, Modifications: 0, Had No Effect: 0
+
+824757260.csv
+Rows Processed: 16,828, Additions: 16,828, Modifications: 0, Had No Effect: 0
+```

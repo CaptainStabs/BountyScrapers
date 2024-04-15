@@ -1,0 +1,8 @@
+Had to move payers down a row and replace IP/OP with them
+
+Egleston's ccn was sourced from here: https://www.medicarelist.com/hospital/childrens-healthcare-of-atlanta-at-egleston-atlanta-ga/
+
+`code_type`s equal to `'ed', 'ed ', 'er', 'ct', 'mri', 'ip per diem'` were nullified.
+`code_type` 'champus drg - v33' -> `drg`
+
+`code`s where prefix was `HCPCS` and code length was not 6 were set to custom (they were manufacturer's number)

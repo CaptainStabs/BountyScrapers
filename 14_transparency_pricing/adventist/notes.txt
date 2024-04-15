@@ -1,0 +1,8 @@
+- `_ALL_PLANS` and `ALL_OTHER_PLANS` and `_ALL_PAYER_-_ALL_OTHER_PLANS` were removed from payer strings and put into `plan`
+- Drug multipliers equal to `0` were nulled
+- There is no way to always differentiate between icd codes and hcpcs codes
+
+- Could not find an EIN for (ADVENTIST HEALTH VALLEJO) 054074, 94-1279779
+- NDCs longer than 13 had their dashes removed
+
+duplicate eins: 812240617, 941279779

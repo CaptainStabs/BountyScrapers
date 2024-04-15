@@ -1,0 +1,38 @@
+### How many hospital systems are in this pull request? Which ones?
+    1, Freeman Health System
+### Was the same MRF used for multiple hospitals?
+    No
+
+### Does the same hospital have multiple MRFs?
+    No
+
+### About how many unique file schemas are in this pull request? (If more than one, please give examples of each)
+    1
+
+### Were there any code types you were unable to assign to a column?
+    No
+
+### Did you have to truncate any codes? If yes, please give an example
+    Yes, the trailing `X` had to be removed from the apr-drg codes
+
+### Did you have to pad any codes? If yes, please give an example
+    Yes, ms_drg codes had to be padded. 
+        `3` -> `003`
+
+### Did any HCPCS/CPT codes have modifiers?
+    No
+
+### Were there any standard charge values with contracting type = 'other'? If so, please give examples
+    No
+
+### Were any values set to NULL?
+    No
+
+### Did any rows count as "modifications" and not "additions" when inserting into Dolt?
+    No
+
+### Were there any rows you weren't sure what to do with?
+    Column `Package/Line_Level` was either `Package` or `Line`
+
+### How did you determine "last updated"?
+    top of CDM pricing page

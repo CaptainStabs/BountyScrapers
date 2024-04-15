@@ -1,0 +1,34 @@
+internal_code,code,rev_code,procedure_desc,payer_desc,rate,file_last_updated,filename
+MS795,MSDRG 795,,Normal Newborn,GROSS CHARGE,"$5,630",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,DE-IDENTIFIED  MINIMUM,"$1,080",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,DE-IDENTIFIED MAXIMUM,"$5,630",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,CASH PRICE,"$5,630",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,AETNA HMO POS [17005],"$2,447",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,AETNA MICHIGAN PREFERRED [18005],"$2,716",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,AETNA VARIPRO [1958],"$3,132",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,ANGELA HOSPICE [1015],"$1,991",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,APOSTROPHE [1936],"$3,147",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,BCN HMO [1016],"$2,051",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,BEAUMONT HEALTH EMPLOYEE PLAN [18010],"$2,387",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,FARMERS [1810],,2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,FIRST HEALTH [18030],"$2,000",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,HAP ALLIANCE HMO [17010],"$2,394",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,HAP ALLIANCE PPO EPA EPO [18035],"$2,613",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,HIX AMBETTER FROM MERIDIAN [1959],"$2,276",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,HIX PRIORITY BEAUMONT HEALTH [14040],"$1,296",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,MCD OR CSHCS [1077],"$1,080",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,MCLAREN HMO [17020],"$2,361",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,MCR RAILROAD [1046],,2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,MMCD ABH AETNA [19005],"$1,113",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,MMCD UHC HMO [19050],"$1,080",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,MMCR ABH AETNA MI HEALTH LINK OON [1963],,2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,MMCR LONGEVITY [19070],,2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,MMCR MCLAREN [12055],,2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,MMCR MOLINA MEDICARE COMPLETE CARE [12042],,2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,MMCR MOLINA MI HEALTH LINK [12040],,2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,MMCR ZING HEALTH [19066],,2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,MULTIPLAN PPO [18050],"$5,027",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,PNOA [19069],"$4,334",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,PRIORITY HEALTH HMO EPO POS [17025],"$1,728",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,UHC GOLDEN RULE [18065],"$2,000",2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv
+MS795,MSDRG 795,,Normal Newborn,WC OTHER [1171],,2023-01-01,2_381405141_beaumont-hospital-dearborn-hospital_standardcharges.csv

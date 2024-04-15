@@ -1,0 +1,43 @@
+```
+Boston.csv
+Rows Processed: 18,820, Additions: 18,820, Modifications: 0, Had No Effect: 0
+Import completed successfully.
+
+Chicago.csv
+Rows Processed: 36,816, Additions: 36,816, Modifications: 0, Had No Effect: 0
+Import completed successfully.
+
+Greenville.csv
+Rows Processed: 2,671, Additions: 2,671, Modifications: 0, Had No Effect: 0
+Import completed successfully.
+
+Hawaii.csv
+Rows Processed: 875, Additions: 448, Modifications: 37, Had No Effect: 390
+Import completed successfully.
+
+Louis.csv
+Rows Processed: 26,677, Additions: 26,677, Modifications: 0, Had No Effect: 0
+Import completed successfully.
+
+Northern.csv
+Rows Processed: 3,671, Additions: 3,671, Modifications: 0, Had No Effect: 0
+Import completed successfully.
+
+Ohio.csv
+Rows Processed: 1,737, Additions: 879, Modifications: 60, Had No Effect: 798
+Import completed successfully.
+
+Philadelphia.csv
+Rows Processed: 2,686, Additions: 2,686, Modifications: 0, Had No Effect: 0
+Import completed successfully.
+
+Portland.csv
+Rows Processed: 6,835, Additions: 4,145, Modifications: 574, Had No Effect: 2,116
+Import completed successfully.
+
+Spokane.csv
+Rows Processed: 2,897, Additions: 2,897, Modifications: 0, Had No Effect: 0
+Import completed successfully.
+
+Texas.csv
+Rows Processed: 1,601, Additions: 1,601, Modifications: 0, Had No Effect: 0

@@ -1,0 +1,121 @@
+fields:
+  - name: hospital_id
+    type: string
+    consraints.required: true
+  - name: row_id
+    type: integer
+    constraints.required: false
+    minimum: 0
+  - name: line_type
+    type: string
+    maxLength: 25
+  - name: description
+    type: string
+    maxLength: 2000
+  - name: rev_code
+    type: string
+    pattern: '^[0-9]{4}$'
+  - name: local_code
+    type: string
+    maxLength: 40
+  - name: code
+    type: string
+    maxLength: 50
+  - name: ms_drg
+    type: string
+    pattern: '^[0-9]{3}$'
+  - name: apr_drg
+    type: string
+    pattern: '^[0-9]{3}|[0-9]{3}-[0-4]$'
+  - name: eapg
+    type: string
+    maxLength: 5
+  - name: hcpcs_cpt
+    type: string
+    pattern: '^[A-Z][0-9]{4}|[0-9]{5}|[0-9]{4}[A-Z]$'
+  - name: modifiers
+    type: string
+    pattern: '^([A-Z0-9]{2})(\\|[A-Z0-9]{2}){0,3}$'
+    maxLength: 14
+  - name: thru
+    type: string
+    maxLength: 10
+  - name: apc
+    type: string
+    pattern: '^[0-9]{4}$'
+  - name: icd
+    type: string
+    maxLength: 15
+  - name: ndc
+    type: string
+    maxLength: 13
+  - name: drug_hcpcs_multiplier
+    type: integer
+  - name: drug_quantity
+    type: string
+    maxLength: 25
+  - name: drug_unit_of_measurement
+    type: string
+    maxLength: 25
+  - name: drug_type_of_measurement
+    type: string
+    enum: ['gr', 'mg', 'ml', 'un']
+  - name: billing_class
+    type: string
+    enum: ['professional', 'facility']
+  - name: setting
+    type: string
+    enum: ['inpatient', 'outpatient', 'both']
+  - name: payer_category
+    type: string
+    enum: ['gross', 'cash', 'min', 'max', 'payer']
+    constraints.required: true
+  - name: payer_name
+    type: string
+    maxLength: 1000
+  - name: plan_name
+    type: string
+    maxLength: 1000
+  - name: standard_charge
+    type: number
+    minimum: 0
+  - name: standard_charge_percent
+    type: number
+    minimum: 0
+    maximum: 100
+  - name: contracting_method
+    type: string
+    enum: ['capitation', 'case rate', 'fee schedule', 'percent of total billed charge', 'per diem', 'other']
+  - name: additional_generic_notes
+    type: string
+    format: 'default'
+  - name: additional_payer_specific_notes
+    type: string
+    format: 'default'
+primaryKey:
+  - hospital_id
+  - row_id
+foreignKeys:
+  - fields: hospital_id
+    reference:
+      resource: hospitals.csv
+      fields: id
+constraints:
+  - name: primary_key
+    args: [hospital_id, row_id]
+  - name: payer_category_rule
+    message: 'Invalid value for payer_category field'
+    args: []
+    script: >
+      if row['payer_category'] == 'gross':
+          if ('gross' not in row.get('payer_name', '').lower() and
+              row.get('payer_name', '').lower() not in ['price', 'charge']):
+              return {'valid': False}
+      return {'valid': True}
+  - name: standard_charge_rule
+    message: 'Invalid value for standard_charge field'
+    args: []
+    script: >
+      if row.get('standard_charge') and not isinstance(row['standard_charge'], (float, int)):
+          return {'valid': False}
+      return {'valid': True}

@@ -1,0 +1,21 @@
+Non-numeric rates were dropped
+
+
+# Import stats
+```
+050258937inpatient.csv
+Rows Processed: 34,930, Additions: 34,930, Modifications: 0, Had No Effect: 0
+
+
+050258896inpatient.csv
+Rows Processed: 35,254, Additions: 35,254, Modifications: 0, Had No Effect: 0
+
+
+050258896outpatient.csv
+Rows Processed: 700,576, Additions: 699,316, Modifications: 1,260, Had No Effect: 0
+
+
+050258937outpatient.csv
+Rows Processed: 281,028, Additions: 0, Modifications: 25,750, Had No Effect: 255,278
+
+```

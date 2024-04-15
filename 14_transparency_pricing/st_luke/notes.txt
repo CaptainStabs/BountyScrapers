@@ -1,0 +1,43 @@
+Saint Luke's Allentown Campus 390242 (missing from db)
+Anderson 390326
+Bethlehem 390049
+Easton 390162
+Geisinger 390332
+Leighton 390335
+Miners 390183
+Monroe 390330
+Sacred Heart 390197
+Upper Bucks 390035
+Warren 310060
+
+Length 5 `local_code`s are NOT cpt codes, i.e. `71728` is simply a service code, see this (hospital's service code description)[https://www.willsmemorialhospital.com/wp-content/uploads/2019/09/FinancialOrganizationalInfo.pdf]
+
+
+# Import stats
+![image](https://cdn.discordapp.com/attachments/880219214386974762/1103305060546531439/image.png)
+
+```
+SLHospital.csv
+Rows Processed: 1,036,295, Additions: 1,016,570, Modifications: 13,519, Had No Effect: 6,206
+
+StLukesHospitalAndersonCampus.csv
+Rows Processed: 1,050,468, Additions: 1,030,743, Modifications: 13,519, Had No Effect: 6,206
+
+StLukesHospitalEastonCampus.csv
+Rows Processed: 1,028,249, Additions: 1,008,549, Modifications: 13,496, Had No Effect: 6,204
+
+StLukesHospitalMinersCampus.csv
+Rows Processed: 1,045,306, Additions: 1,025,606, Modifications: 13,496, Had No Effect: 6,204
+
+StLukesHospitalMonroeCampus.csv
+Rows Processed: 1,046,416, Additions: 1,026,691, Modifications: 13,521, Had No Effect: 6,204
+
+StLukesHospitalUpperBucksCampus.csv
+Rows Processed: 1,046,220, Additions: 1,026,520, Modifications: 13,496, Had No Effect: 6,204
+
+StLukesHospitalWarrenCampus.csv
+Rows Processed: 1,041,739, Additions: 1,022,017, Modifications: 13,517, Had No Effect: 6,205
+
+StLukesHospitalBethlehemCampus.csv
+Rows Processed: 1,063,764, Additions: 1,044,039, Modifications: 13,518, Had No Effect: 6,207
+```

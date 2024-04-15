@@ -1,0 +1,80 @@
+# Notes
+- `rev_code` and `ms_drg`s were zfilled where necessary
+- `rev_code`s equal to `-000` and `0000` were nulled
+- `ms_drg`s equal to `000` were nulled
+- `hcpcs_cpt` longer than 5 characters were nulled (they were local_code)
+
+
+### Dupes in source file
+![image](https://media.discordapp.net/attachments/1016365454270402692/1101629980246560790/image.png?width=929&height=676)
+
+### Dupes in output
+![image](https://cdn.discordapp.com/attachments/1016365454270402692/1101630012588822660/image.png)
+
+### `hcpcs_cpt` > 5
+![image](https://cdn.discordapp.com/attachments/1016365454270402692/1101637497903124480/image.png)
+
+```
+20-2850920.csv
+Rows Processed: 117,244, Additions: 113,071, Modifications: 0, Had No Effect: 4,173
+
+20-3749695.csv
+Rows Processed: 256,321, Additions: 252,088, Modifications: 0, Had No Effect: 4,233
+
+26-0194016.csv
+Rows Processed: 170,777, Additions: 170,591, Modifications: 0, Had No Effect: 186
+
+26-3603862.csv
+Rows Processed: 123,964, Additions: 123,806, Modifications: 0, Had No Effect: 158
+
+27-4434451.csv
+Rows Processed: 200,420, Additions: 196,198, Modifications: 0, Had No Effect: 4,222
+
+41-2101361.csv
+Rows Processed: 130,430, Additions: 130,266, Modifications: 0, Had No Effect: 164
+
+46-4007700.csv
+Rows Processed: 222,955, Additions: 218,753, Modifications: 0, Had No Effect: 4,202
+
+74-1161944.csv
+Rows Processed: 232,699, Additions: 228,480, Modifications: 0, Had No Effect: 4,219
+
+74-1166904.csv
+Rows Processed: 271,038, Additions: 266,799, Modifications: 0, Had No Effect: 4,239
+
+74-1595711.csv
+Rows Processed: 241,677, Additions: 237,454, Modifications: 0, Had No Effect: 4,223
+
+74-2519752.csv
+Rows Processed: 264,129, Additions: 264,028, Modifications: 0, Had No Effect: 101
+
+75-1008430.csv
+Rows Processed: 193,959, Additions: 193,765, Modifications: 0, Had No Effect: 194
+
+75-1037591.csv
+Rows Processed: 196,705, Additions: 196,509, Modifications: 0, Had No Effect: 196
+
+75-1777119.csv
+Rows Processed: 183,985, Additions: 183,799, Modifications: 0, Had No Effect: 186
+
+75-1837454.csv
+Rows Processed: 210,711, Additions: 210,509, Modifications: 0, Had No Effect: 202
+
+75-1844139.csv
+Rows Processed: 214,067, Additions: 213,861, Modifications: 0, Had No Effect: 206
+
+75-2586857.csv
+Rows Processed: 204,193, Additions: 203,995, Modifications: 0, Had No Effect: 198
+
+75-2834135.csv
+Rows Processed: 136,253, Additions: 136,085, Modifications: 0, Had No Effect: 168
+
+81-3040663.csv
+Rows Processed: 242,428, Additions: 238,201, Modifications: 0, Had No Effect: 4,227
+
+82-0551704.csv
+Rows Processed: 189,048, Additions: 188,860, Modifications: 0, Had No Effect: 188
+
+82-4052186.csv
+Rows Processed: 172,469, Additions: 172,293, Modifications: 0, Had No Effect: 176
+```

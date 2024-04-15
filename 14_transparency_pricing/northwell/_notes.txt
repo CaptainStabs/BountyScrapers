@@ -1,0 +1,24 @@
+# Notes
+
+- `Cohen Children's Medical Center` is same ccn and ein as `Long Island Jewish Forest Hills`
+- `11-2241326_Long Island Jewish Hospital_StandardCharges.json` is the file for `Jewish Medical Center`
+- `Zucker Hillside Hospital` shares a ccn with `Long Island Jewish Medical Center` as well
+
+- Charges equal to `POC`, `NSP`, `Packaged`, or `APG - Bundling` were nulled, their `contracting_method` set to `other`, and `additional_payer_notes` set to their respective value.
+- Charges ending in `PD` had `PD` moved to `additional_payer_notes`
+
+- `ms_drg` codes are from codes that contain `MSDRG`
+- `hcpcs_cpt` codes are matched with regex.
+- `apr_drg` codes are from codes that contain `APR DRG`
+- There were no 4 digit codes in `Billing_Code`
+- Some `CMG` codes were observed in `Billing_Code`
+
+### Mapping
+`Identifier_Code` -> `local_code`
+`Billing_Code` -> `code`
+
+
+### Duplicates
+There were no duplicates on import.
+
+330185,11-1639818,11-1639818_Mather Memorial Hospital_StandardCharges.json,https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/11-1639818_John%20T.%20Mather%20Memorial%20Hospital_standardcharges.zip,JOHN T MATHER MEMORIAL HOSPITAL  OF PORT JEFFERSON,Mather Hospital,Northwell Health,75 NORTH COUNTRY ROAD,PORT JEFFERSON,NY,11777,6314731320,U,Short Term,FOR PROFIT - PARTNERSHIP,ACTIVE PROVIDER,2023-03-23,,https://www.northwell.edu/billing-and-insurance/price-estimator-tools,

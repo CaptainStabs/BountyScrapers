@@ -1,0 +1,2 @@
+local_code,code,description,payer_name,standard_charge,payer_category,apr_drg,hcpcs_cpt,ms_drg,contracting_method,additional_payer_specific_notes,hospital_id
+,MSDRG987,NON-EXTENSIVE O.R. PROCEDURES UNRELATED TO PRINCIPAL DIAGNOSIS WITH MCC,GHI HMO IP,97673.79,payer,,,987,,,330185
